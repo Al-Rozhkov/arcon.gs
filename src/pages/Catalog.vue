@@ -1,20 +1,22 @@
 <template>
   <Layout>
-    <h1>Каталог режущего инструмента Arconit</h1>
+    <main class="block">
+      <h1>Каталог режущего инструмента Arconit</h1>
 
-    <catalog-block />
+      <categories-list />
 
-    <ul>
-      <li v-for="edge in $page.series.edges" :key="edge.node.slug">
-        <g-link :to="edge.node.path">{{ edge.node.series }}</g-link> {{ edge.node.coating }} 
-      </li>
-    </ul>
+      <ul>
+        <li v-for="edge in filteredNodes" :key="edge.node.slug">
+          <series-teaser :node="edge.node" />
+        </li>
+      </ul>
+    </main>
   </Layout>
 </template>
 
 <page-query>
 query Catalog {
-  series: allProductSeries(sortBy: "series", order: ASC, perPage: 100) {
+  series: allProductSeries(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
         series
@@ -43,16 +45,27 @@ query Catalog {
 
 
 <script>
-import CatalogBlock from "~/components/catalog/CatalogBlock"
+import CategoriesList from "~/components/catalog/CategoriesList"
+import SeriesTeaser from '~/components/catalog/SeriesTeaser'
 
 export default {
   components: {
-    CatalogBlock
+    CategoriesList,
+    SeriesTeaser
+  },
+
+  data() {
+    return {
+      filters: []
+    }
   },
 
   computed: {
-    groupedSeries() {
+    filteredNodes() {
+      const result = this.$page.series.edges
+      return result.filter(node => {
 
+      })
     }
   },
 

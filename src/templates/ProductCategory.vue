@@ -10,7 +10,7 @@
         <series-item :node="edge.node" />
       </div>
 
-      <sprite-features style="display: none;" />
+      <svg-sprite-features style="display: none;" />
     </main>
   </Layout>
 </template>
@@ -25,6 +25,7 @@
             ...on ProductSeries {
               id
               series
+              fusion
               body
               material
               coating
@@ -50,12 +51,12 @@
 
 <script>
 import SeriesItem from '~/components/catalog/SeriesItem'
-import SpriteFeatures from '~/components/catalog/SpriteFeatures'
+import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 
 export default {
   components: {
     SeriesItem,
-    SpriteFeatures
+    SvgSpriteFeatures
   },
 
   metaInfo () {

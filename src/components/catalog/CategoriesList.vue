@@ -1,12 +1,9 @@
 <template>
-  <section>
-    <h2>Каталог режущего инструмента Arconit</h2>
-    <ul class="catalog-sections-menu">
-      <li v-for="edge in $static.categories.edges" :key="edge.node.slug">
-        <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
-      </li>
-    </ul>
-  </section>
+  <ul class="catalog-categories-list">
+    <li v-for="edge in $static.categories.edges" :key="edge.node.slug">
+      <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
+    </li>
+  </ul>
 </template>
 
 <static-query>
@@ -28,7 +25,7 @@ query CatalogMenu {
 </script>
 
 <style lang="scss">
-.catalog-sections-menu {
+.catalog-categories-list {
   list-style-type: none;
 
   li {
