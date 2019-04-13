@@ -1,0 +1,36 @@
+{
+  "series": "1C109",
+  "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
+  "productCategory": "terminal-non-ferrous-alloys",
+  "scheme": [
+    {
+      "a": "cylinder-conus"
+    },
+    {
+      "b": "cylinder"
+    }
+  ],
+  "material": [
+    "n1"
+  ],
+  "coating": "pp",
+  "tail": "cylinder",
+  "endShapes": [
+    "sharp"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 1
+    }
+  ],
+  "grooveInclination": {
+    "type": "permanent",
+    "angles": [
+      30
+    ]
+  },
+  "cuttingPart": [
+    "middle", "long"
+  ]
+}

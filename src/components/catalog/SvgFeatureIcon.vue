@@ -1,0 +1,58 @@
+<template>
+  <div v-tooltip="tooltipText" class="icon-attr">
+    <svg>
+      <use :xlink:href="'#' + iconId" />
+      <slot />
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    iconId: {
+      type: String,
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      featuresDesc: {
+        'coating-ng': 'Покрытие: nACo-G',
+        'tail-cylinder': 'Цилиндрический хвостовик',
+        'form-sharp': 'Торец без фаски, наостро',
+        'form-sharp-r': 'Торец с притуплением',
+        'form-sharp-f': 'Торец с фаской chх45˚',
+        'form-radius': 'Радиусной торец',
+        'form-sphere': 'Сферический торец',
+        'cogs-variable-4': 'Переменный шаг зубьев, 4 зуба',
+        'angle-42-45': 'Переменный угол спиральной канавки'
+      }
+    }
+  },
+
+  computed: {
+    tooltipText() {
+      return this.featuresDesc[this.iconId]
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.icon-attr {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: .5rem;
+
+  cursor: default;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

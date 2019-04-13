@@ -1,0 +1,61 @@
+.root {
+    border-top: 4px solid $cyan;
+}
+
+.nav-header {
+    border-bottom: 1px solid rgba($cyan, .2);
+}
+  
+.nav {
+    display: flex;
+    padding-top: 1.5rem;
+  
+    @include container-xl();
+}
+
+.logo-link {
+    padding-bottom: .25rem;
+}
+  
+.logo {
+    margin-right: 2rem;
+  
+    @include media-breakpoint-up(md) {
+        margin-left: -32px;
+    }
+}
+
+.block {
+    @extend .section;
+    @extend .container-xl;
+}
+
+.row {
+    @include grid-row-wrap();
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col-5 {
+    flex: 1 1 20%;
+    max-width: 20%;
+}
+
+.sidebar-20 {
+    max-width: 20%;
+    flex: 1 1 20%;
+    margin-top: 2rem;
+    padding: 0 2rem 2rem 0;
+}
+
+.sidebar-25 {
+    max-width: 25%;
+    flex: 1 1 25%;
+    margin-top: 2rem;
+    padding: 0 2rem 2rem 0;
+}
+

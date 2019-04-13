@@ -1,0 +1,41 @@
+{
+    "series": "1C501",
+    "body": "Цельная твердосплавная концевая фреза, 6 зубьев, с короткой режущей частью, с заниженной шейкой.",
+    "productCategory": "terminal-hardened-steel",
+    "scheme": [
+        {
+            "b": "cylinder-lower-r"
+        }
+    ],
+    "material": [
+        "h", "p"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "sharp", "sharp-r"
+    ],
+    "cogs": [
+        {
+          "cogsPitch": "permanent",
+          "cogsNumber": 6
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            45
+        ]
+    },
+    "cuttingPart": [
+        "short"
+    ],
+    "usage": {
+        "base": [
+            "p", "k", "m"
+        ],
+        "possible": [
+            "s", "h1.1"
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "series": "1S172",
+    "body": "Цельная твердосплавная сферическая концевая фреза, 2 зуба, со средней режущей частью, с заниженной шейкой.",
+    "productCategory": "terminal-non-ferrous-alloys",
+    "scheme": [
+      {
+        "a": "sphere-conus-lower-r"
+      },
+      {
+        "b": "sphere-lower-r"
+      }
+    ],
+    "material": [
+      "n1"
+    ],
+    "coating": "pp",
+    "tail": "cylinder",
+    "endShapes": [
+      "sphere"
+    ],
+    "cogs": [
+      {
+        "cogsPitch": "permanent",
+        "cogsNumber": 2
+      }
+    ],
+    "grooveInclination": {
+      "type": "permanent",
+      "angles": [
+        37.5
+      ]
+    }
+  }
+  

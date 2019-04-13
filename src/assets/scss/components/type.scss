@@ -1,0 +1,60 @@
+
+p, ul {
+    margin: 0 0 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+
+    @include media-breakpoint-between(sm, xl) {
+        font-size: 2.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: 3.25rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 1.75rem;
+    }
+}
+
+.block-title {
+    margin-bottom: 2rem;
+}
+
+.small {
+    font-size: 80%;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.25;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 1.5rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-danger {
+    color: #d12229;
+}
+
+.link {
+    color: #000000;
+    border-bottom: 1px solid rgba($cyan, .3);
+}

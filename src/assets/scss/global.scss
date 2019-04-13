@@ -1,0 +1,8 @@
+// Import variables
+@import '_styleResources';
+
+// Build Bootstrap Reboot
+@import '~@/../node_modules/bootstrap/scss/reboot';
+
+// Build app components
+@import 'components/_import.scss';

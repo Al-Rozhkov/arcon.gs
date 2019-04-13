@@ -1,0 +1,24 @@
+{
+  "name": "arcon.gs",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "dev": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.18",
+    "gridsome": "^0.5.7",
+    "v-tooltip": "^2.0.0"
+  },
+  "devDependencies": {
+    "@gridsome/source-drupal": "^0.1.1",
+    "@gridsome/source-filesystem": "^0.3.0",
+    "@gridsome/transformer-csv": "^0.1.0",
+    "@gridsome/transformer-json": "^0.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-resources-loader": "^1.2.1"
+  }
+}

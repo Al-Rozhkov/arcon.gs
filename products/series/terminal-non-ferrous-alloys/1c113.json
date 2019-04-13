@@ -1,0 +1,34 @@
+{
+    "series": "1C113",
+    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+    "productCategory": "terminal-non-ferrous-alloys",
+    "scheme": [
+      {
+        "b": "cylinder-f"
+      }
+    ],
+    "material": [
+      "n1"
+    ],
+    "coating": "pp",
+    "tail": "cylinder",
+    "endShapes": [
+      "sharp-f"
+    ],
+    "cogs": [
+      {
+        "cogsPitch": "permanent",
+        "cogsNumber": 3
+      }
+    ],
+    "grooveInclination": {
+      "type": "permanent",
+      "angles": [
+        50
+      ]
+    },
+    "cuttingPart": [
+      "middle", "long"
+    ]
+  }
+  
