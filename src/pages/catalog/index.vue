@@ -6,7 +6,7 @@
       <categories-list />
 
       <ul>
-        <li v-for="edge in filteredNodes" :key="edge.node.slug">
+        <li v-for="edge in $page.series.edges" :key="edge.node.slug">
           <series-teaser :node="edge.node" />
         </li>
       </ul>

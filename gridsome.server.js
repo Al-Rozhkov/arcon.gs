@@ -7,6 +7,42 @@
 
 module.exports = function (api) {
   api.loadSource(store => {
-    // Use the Data store API here: https://gridsome.org/docs/data-store-api
+    const path = require('path')
+    const { imageType } = require('gridsome/lib/graphql/types/image')
+    const productSeries = store.getContentType('ProductSeries')
+
+    productSeries.addSchemaField('imgTeaser', () => ({
+      type: imageType.type,
+      args: imageType.args,
+      async resolve (node, args, context, info) {
+        let fileName = node.fields.series
+        if (node.fields.hasOwnProperty('photos')) {
+          fileName = node.fields.photos.length > 0
+            ? node.fields.photos[0]
+            : node.fields.series
+        }
+        const value = path.join(__dirname, 'static', 'series', `${fileName}.jpg`)
+  
+        try {
+          result = await context.queue.add(value, args)
+        } catch (err) {
+          return null
+        }
+    
+        if (result.isUrl) {
+          return result.src
+        }
+    
+        return {
+          type: result.type,
+          mimeType: result.mimeType,
+          src: result.src,
+          size: result.size,
+          sizes: result.sizes,
+          srcset: result.srcset,
+          dataUri: result.dataUri
+        }
+      }
+    }))
   })
 }
