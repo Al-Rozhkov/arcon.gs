@@ -5,12 +5,12 @@
   >
     <header @click="expandTool">
       <h3>{{ node.series }}</h3>
-      <img
-        v-if="nodeImg"
-        :src="nodeImg"
+      <g-image
+        v-if="node.imgTeaser"
+        :src="node.imgTeaser"
         :alt="node.series"
         class="series-img"
-      >
+      />
     </header>
 
     <div class="series-body">
@@ -96,16 +96,6 @@ export default {
   },
 
   computed: {
-    nodeImg() {
-      const imgUrl = this.node.photos.length === 0
-        ? `/series/${this.node.series}.jpg`
-        : `/series/${this.node.photos[0]}.jpg`
-      
-      return (urlExists(imgUrl))
-        ? imgUrl
-        : false
-    },
-
     seriesFeatures() {
       return [
         'coating',

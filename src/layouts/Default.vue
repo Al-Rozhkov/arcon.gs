@@ -47,11 +47,7 @@
 
     <slot />
 
-    <footer class="footer">
-      <div class="block">
-        © 2015—2019.<br>Группа компаний «Аркон».
-      </div>
-    </footer>
+    <app-footer />
   </div>
 </template>
 
@@ -62,6 +58,13 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default {
+
+}
+</script>
+
 
 <style lang="scss">
 
