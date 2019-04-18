@@ -2,17 +2,16 @@
    Component: Section
  ========================================================================== */
 .section {
-    @include section();
+    @extend %section;
 }
-  
+
 .section-top {
-    @include section-top();
+    @extend %section-top;
 }
-  
+
 .section-bottom {
-    @include section-bottom();
+    @extend %section-bottom;
 }
-  
 
 .section-sm {
     padding-top: 10px;

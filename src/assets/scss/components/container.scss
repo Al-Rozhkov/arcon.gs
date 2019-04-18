@@ -1,7 +1,7 @@
 .container-lg {
-    @include container-lg();
+    @extend %container-lg;
 }
 
 .container-xl {
-    @include container-xl();
+    @extend %container-xl;
 }

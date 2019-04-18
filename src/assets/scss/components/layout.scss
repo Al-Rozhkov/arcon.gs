@@ -10,7 +10,7 @@
     display: flex;
     padding-top: 1.5rem;
   
-    @include container-xl();
+    @extend %container-xl;
 }
 
 .logo-link {
@@ -26,12 +26,12 @@
 }
 
 .block {
-    @extend .section;
-    @extend .container-xl;
+    @extend %section;
+    @extend %container-xl;
 }
 
 .row {
-    @include grid-row-wrap();
+    @extend %grid-row-wrap;
 }
 
 .col {
@@ -44,18 +44,3 @@
     flex: 1 1 20%;
     max-width: 20%;
 }
-
-.sidebar-20 {
-    max-width: 20%;
-    flex: 1 1 20%;
-    margin-top: 2rem;
-    padding: 0 2rem 2rem 0;
-}
-
-.sidebar-25 {
-    max-width: 25%;
-    flex: 1 1 25%;
-    margin-top: 2rem;
-    padding: 0 2rem 2rem 0;
-}
-

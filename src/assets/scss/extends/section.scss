@@ -7,7 +7,7 @@ $section-padding-lg: 40px !default;
 /* ========================================================================
    Component: Container
  ========================================================================== */
-@mixin section() {
+%section {
   padding-top: $section-padding;
   padding-bottom: $section-padding;
 
@@ -19,7 +19,7 @@ $section-padding-lg: 40px !default;
   @include clearfix();
 }
 
-@mixin section-top() {
+%section-top {
   padding-top: $section-padding;
 
   @include media-breakpoint-up(lg) {
@@ -29,7 +29,7 @@ $section-padding-lg: 40px !default;
   @include clearfix();
 }
 
-@mixin section-bottom() {
+%section-bottom {
   padding-bottom: $section-padding;
 
   @include media-breakpoint-up(lg) {

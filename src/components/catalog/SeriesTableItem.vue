@@ -1,78 +1,27 @@
 <template>
-  <div
-    class="series-item"
-    :class="{ expanded: toolExpanded }"
-  >
-    <header @click="expandTool">
-      <h3>{{ node.series }}</h3>
+  <tr>
+    <td>
+      <h2>{{ node.series.toUpperCase() }}</h2>
+    </td>
+    <td>
+      {{ node.myField }}
+    </td>
+    <td>
+      <svg-icon
+        :icon-id="'coating-' + node.coating"
+        :size="30"
+      />
+    </td>
+    <td>
       <g-image
         v-if="node.imgTeaser"
         :src="node.imgTeaser"
-        :alt="node.series"
-        class="series-img"
       />
-    </header>
-
-    <div class="series-body">
-      <div class="row">
-        <div class="series-material">
-          <material-icon
-            v-for="(m, index) in node.material"
-            :key="index"
-            :mat-id="m"
-          />
-        </div>
-        <div class="series-attr">
-          <svg-icon
-            v-for="icon in seriesFeatures"
-            :key="icon"
-            :icon-id="icon"
-          />
-        </div>
-      </div>
-      <div v-html="node.body" />
-    </div>
-
-    <!-- <transition name="expand"> -->
-    <div v-if="toolExpanded" class="series-details">
-      <div v-for="(scheme, index) in node.scheme" :key="index" class="series-scheme">
-        <img :src="'/img/scheme/' + scheme + '.svg'">
-      </div>
-
-      <p class="small">
-        Единицы измерения — мм
-      </p>
-      <table class="d-table">
-        <thead class="table-thead">
-          <tr>
-            <td
-              v-for="(col, index) in node.headers"
-              :key="index"
-              class="table-thead-col"
-              :class="index"
-              v-html="col"
-            />
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(row, index) in node.params" :key="index" class="table-row">
-            <td v-for="(col, i) in row" :key="i" class="table-col" :class="i">
-              <span v-if="i === 'serial'" class="hd">
-                {{ node.code }}
-              </span>
-              <span class="td">{{ col }}</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- </transition> -->
-  </div>
+    </td>
+  </tr>
 </template>
 
 <script>
-import urlExists from '~/utils/utils'
-
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
 import MaterialIcon from '~/components/catalog/MaterialIcon'
 

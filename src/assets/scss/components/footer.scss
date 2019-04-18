@@ -3,7 +3,7 @@
     position: relative;
     z-index: 150;
     
-    @include section-top();
+    @extend %section-top;
 
     .menu {
         list-style-type: none;

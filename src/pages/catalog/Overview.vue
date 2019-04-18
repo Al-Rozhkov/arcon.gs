@@ -9,29 +9,12 @@
         <thead>
         </thead>
         <tbody>
-          <tr
-            v-for="edge in filteredNodes"
-            :key="edge.node.slug"
-          >
-            <td>
-              <h2>{{ edge.node.series.toUpperCase() }}</h2>
-            </td>
-            <td>
-              {{ edge.node.myField }}
-            </td>
-            <td>
-              <svg-icon
-                :icon-id="'coating-' + edge.node.coating"
-                :size="30"
-              />
-            </td>
-            <td>
-              <g-image
-                v-if="edge.node.imgTeaser"
-                :src="edge.node.imgTeaser"
-              />
-            </td>
-          </tr>
+          <template v-for="edge in filteredNodes">
+            <series-item
+              :node="edge.node"
+              :key="edge.node.slug"
+            />
+          </template>
         </tbody>
       </table>
     </main>
@@ -72,21 +55,24 @@ query Catalog {
 
 <script>
 import CategoriesList from "~/components/catalog/CategoriesList"
+import SeriesItem from "~/components/catalog/SeriesTableItem"
 import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
-import SeriesImg from '~/components/catalog/SeriesImg'
 
 export default {
   components: {
     CategoriesList,
+    SeriesItem,
     SvgSpriteFeatures,
-    SvgIcon,
-    SeriesImg
+    SvgIcon
   },
 
   data() {
     return {
-      filters: []
+      filters: [],
+      usageKeys: [
+        'p', 'k', 'm', 'n1', 'n3', 's', 'h1.1', 'h1.2'
+      ]
     }
   },
 

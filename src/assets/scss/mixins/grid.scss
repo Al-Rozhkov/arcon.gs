@@ -67,8 +67,3 @@ $grid-padding-horizontal-m: $global-medium-gutter !default; // 60px;
     padding-left: $gutter-value-m;
   }
 }
-
-@mixin grid-row-wrap() {
-  display: flex;
-  flex-wrap: wrap;
-}

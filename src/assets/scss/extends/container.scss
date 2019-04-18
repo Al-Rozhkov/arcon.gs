@@ -9,12 +9,12 @@ $container-padding-horizontal-m:         $global-medium-gutter !default;
    Component: Container
  ========================================================================== */
 
-@mixin block-center() {
+%block-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin container() {  
+%container {  
   padding-left: $container-padding-horizontal;
   padding-right: $container-padding-horizontal;
 
@@ -29,15 +29,15 @@ $container-padding-horizontal-m:         $global-medium-gutter !default;
   }
 }
 
-@mixin container-md() {
-  @include container();
-  @include block-center();
+%container-md {
+  @extend %container;
+  @extend %block-center;
 
   max-width: map-get($grid-breakpoints, 'md');
 }
 
-@mixin container-lg() {
-  @include container();
+%container-lg {
+  @extend %container;
 
   max-width: map-get($grid-breakpoints, 'lg');
 
@@ -49,9 +49,9 @@ $container-padding-horizontal-m:         $global-medium-gutter !default;
   }
 }
 
-@mixin container-xl() {
-  @include container();
-  @include block-center();
+%container-xl {
+  @extend %container;
+  @extend %block-center;
 
   max-width: map-get($grid-breakpoints, 'xl');
 }

@@ -50,7 +50,7 @@
 </page-query>
 
 <script>
-import SeriesItem from '~/components/catalog/SeriesItem'
+import SeriesItem from '~/components/catalog/SeriesTeaser'
 import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 
 export default {

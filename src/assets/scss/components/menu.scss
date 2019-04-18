@@ -1,7 +1,7 @@
 .menu {
     list-style-type: none;
     padding: 0;
-    @include grid-row-wrap();
+    @extend %grid-row-wrap;
 
     @include media-breakpoint-down(lg) {
         flex-grow: 1;
