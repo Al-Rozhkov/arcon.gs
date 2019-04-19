@@ -2,8 +2,8 @@
 // ========================================================================
 
 $grid-padding-horizontal-xs: 15px !default;
-$grid-padding-horizontal-s: $global-gutter !default; // 30px;
-$grid-padding-horizontal-m: $global-medium-gutter !default; // 60px;
+$grid-padding-horizontal-s: $grid-gutter-width !default; // 30px;
+$grid-padding-horizontal-m: $grid-gutter-width * 2 !default; // 60px;
 
 /* ========================================================================
    Component: Grid

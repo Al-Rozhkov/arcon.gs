@@ -2,8 +2,8 @@
 // ========================================================================
 
 $container-padding-horizontal:           15px !default;
-$container-padding-horizontal-s:         $global-gutter !default;
-$container-padding-horizontal-m:         $global-medium-gutter !default;
+$container-padding-horizontal-s:         $grid-gutter-width !default;
+$container-padding-horizontal-m:         $grid-gutter-width * 2 !default;
 
 /* ========================================================================
    Component: Container

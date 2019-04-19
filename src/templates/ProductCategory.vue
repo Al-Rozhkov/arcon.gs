@@ -26,6 +26,7 @@
               id
               series
               fusion
+              imgTeaser (width: 300, quality: 75)
               body
               material
               coating

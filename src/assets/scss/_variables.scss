@@ -94,8 +94,9 @@ $global-muted-background: #f0f0f0;
 // Spacings
 //
 $spacer: 1rem;
-$global-gutter: 30px;
-$global-medium-gutter: 60px;
+$grid-gutter-width: 30px;
+
+$grid-columns: 24;
 
 $headings-margin-bottom: ($spacer / 2);
 $paragraph-margin-bottom: 1rem;

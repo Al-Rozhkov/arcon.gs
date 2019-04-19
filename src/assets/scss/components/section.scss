@@ -1,16 +1,9 @@
 /* ========================================================================
    Component: Section
  ========================================================================== */
-.section {
+.block {
     @extend %section;
-}
-
-.section-top {
-    @extend %section-top;
-}
-
-.section-bottom {
-    @extend %section-bottom;
+    @extend %container-xl;
 }
 
 .section-sm {

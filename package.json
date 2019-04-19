@@ -18,8 +18,11 @@
     "@gridsome/source-filesystem": "^0.3.0",
     "@gridsome/transformer-csv": "^0.1.0",
     "@gridsome/transformer-json": "^0.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-gridsome": "^1.1.1",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "style-resources-loader": "^1.2.1"
+    "style-resources-loader": "^1.2.1",
+    "vue-eslint-parser": "^6.0.3"
   }
 }

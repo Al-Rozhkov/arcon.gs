@@ -127,10 +127,10 @@ export default {
 
 <style lang="scss">
 .series-item {
+  @extend %grid-row-wrap;
+  
   width: 100%;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
   padding: 15px 20px;
   border-bottom: 1px solid fade-out($color: #000000, $amount: .9);
   margin-top: -1px;
@@ -154,9 +154,7 @@ export default {
 
     &:hover {
       &:before {
-        content: " ";
-        display: block;
-        position: absolute;
+        @include pseudo();
         top: 0;
         left: 0;
         width: 100%;
@@ -220,7 +218,6 @@ export default {
 .table-thead,
 .table-row {
   width: 100%;
-
 }
 
 .table-col,
