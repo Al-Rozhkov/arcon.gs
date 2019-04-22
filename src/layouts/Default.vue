@@ -5,7 +5,12 @@
         <g-link class="logo-link" to="/">
           <app-logo />
         </g-link>
-        <ul class="menu main-menu">
+
+        <a class="nav-phone" href="tel:+78412458990">
+          +7&nbsp;8412&nbsp;45-89-90
+        </a>
+
+        <ul class="menu">
           <li>
             <g-link to="/about">
               О компании

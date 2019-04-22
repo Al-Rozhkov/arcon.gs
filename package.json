@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.18",
-    "gridsome": "^0.5.7",
+    "bootstrap-vue": "^2.0.0-rc.19",
+    "gridsome": "^0.5.8",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "v-tooltip": "^2.0.1"
   },
@@ -23,6 +23,6 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1",
-    "vue-eslint-parser": "^6.0.3"
+    "vue-eslint-parser": "^6.0.4"
   }
 }

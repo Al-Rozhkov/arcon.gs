@@ -38,15 +38,16 @@ $container-padding-horizontal-m:         $grid-gutter-width * 2 !default;
 
 %container-lg {
   @extend %container;
+  @extend %block-center;
 
   max-width: map-get($grid-breakpoints, 'lg');
 
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: 0;
 
   @media screen and (min-width: 1600px) {
     margin-right: auto;
-  }
+  } */
 }
 
 %container-xl {
