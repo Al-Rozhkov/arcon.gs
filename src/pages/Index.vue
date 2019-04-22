@@ -4,11 +4,9 @@
     <main class="block">
       <h1>Hello, world!</h1>
 
-      <p>Show router</p>
+      <p>Show me the stuff</p>
     
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-      </p>
+      <catalog-block />
 
       <front-advantages />
     </main>
@@ -25,11 +23,13 @@
 <script>
 import FrontAdvantages from '~/components/blocks/FrontAdvantages'
 import FrontServices from '~/components/blocks/FrontServices'
+import CatalogBlock from '~/components/blocks/CatalogBlock'
 
 export default {
   components: {
     FrontAdvantages,
-    FrontServices
+    FrontServices,
+    CatalogBlock
   },
 
   metaInfo: {

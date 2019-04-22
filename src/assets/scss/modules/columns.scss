@@ -1,40 +1,40 @@
 .cc-4cols {
-  @extend %grid-row-wrap;
-  @include make-grid-gutter($col-selector: ".col, .line");
+    @extend %grid-row-wrap;
+    @include make-grid-gutter($col-selector: ".col, .line");
 
-  .col {
-    margin-bottom: 1rem;
-    
-    @include media-breakpoint-up(md) {
-        @include make-col(12);
+    .col {
+        margin-bottom: 1rem;
+        
+        @include media-breakpoint-up(md) {
+            @include make-col(12);
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(6);
+        }
     }
 
-    @include media-breakpoint-up(lg) {
-        @include make-col(6);
+    h2 {
+        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(md) {
+        font-size: 3rem;
+        }
     }
-  }
 
-  h2 {
-    margin-bottom: 2rem;
-
-    @include media-breakpoint-up(md) {
-      font-size: 3rem;
+    h3 {
+        font-weight: $font-weight-base;
+        font-size: 1.7rem;
+        line-height: 1.1;
     }
-  }
 
-  h3 {
-    font-weight: $font-weight-base;
-    font-size: 1.7rem;
-    line-height: 1.1;
-  }
+    p {
+        line-height: 1.2;
+    }
 
-  p {
-    line-height: 1.2;
-  }
+    /* background: $pink;
 
-  /* background: $pink;
-
-  .span {
-      background: gray("200");
-  } */
+    .span {
+        background: gray("200");
+    } */
 }

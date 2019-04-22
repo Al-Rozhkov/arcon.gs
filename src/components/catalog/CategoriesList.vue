@@ -1,6 +1,9 @@
 <template>
-  <ul class="catalog-categories-list">
-    <li v-for="edge in $static.categories.edges" :key="edge.node.slug">
+  <ul class="catalog-categories-list menu">
+    <li
+      v-for="edge in $static.categories.edges"
+      :key="edge.node.slug"
+    >
       <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
     </li>
   </ul>
@@ -19,18 +22,3 @@ query CatalogMenu {
   }
 }
 </static-query>
-
-<script>
-
-</script>
-
-<style lang="scss">
-.catalog-categories-list {
-  list-style-type: none;
-
-  li {
-    display: inline-block;
-    padding: .5rem .75rem;
-  }
-}
-</style>

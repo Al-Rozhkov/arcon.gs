@@ -1,9 +1,11 @@
 <template>
   <Layout>
+    <section class="container-xl">
+      <categories-list class="catalog-submenu" />
+    </section>
+
     <main class="block">
       <h1>Каталог режущего инструмента Arconit</h1>
-
-      <categories-list />
 
       <ul>
         <li v-for="edge in $page.series.edges" :key="edge.node.slug">
@@ -74,3 +76,23 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.catalog-submenu {
+  margin: 1rem 0;
+
+  li {
+    margin-bottom: .75rem;
+  }
+
+  a {
+    color: darken($cyan, 10%);
+    border-bottom: 1px solid rgba(darken($cyan, 10%), .25);
+
+    &:hover {
+      color: $link-hover-color;
+      border-bottom: 1px solid $red;
+    }
+  }
+}
+</style>

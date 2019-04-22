@@ -53,12 +53,12 @@ h2 {
     text-align: right;
 }
 
-.text-danger {
-    color: #d12229;
+.text-red {
+    color: $red;
 }
 
-.text-line-1 {
-    line-height: 1.2;
+.text-muted {
+    color: $text-muted;
 }
 
 .link {
