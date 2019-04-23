@@ -4,6 +4,7 @@
 import '~/assets/scss/global.scss'
 import DefaultLayout from '~/layouts/Default.vue'
 import AppLogo from '~/components/AppLogo'
+import AppNav from '~/components/AppNav'
 import AppFooter from '~/components/AppFooter'
 
 import VTooltip from 'v-tooltip'
@@ -12,6 +13,7 @@ export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.component('AppLogo', AppLogo)
+  Vue.component('AppNav', AppNav)
   Vue.component('AppFooter', AppFooter)
 
   Vue.use(VTooltip)

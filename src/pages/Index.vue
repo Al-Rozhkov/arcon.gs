@@ -4,7 +4,7 @@
     <main class="block">
       <h1>Hello, world!</h1>
 
-      <p>Show me the stuff</p>
+      <front-news />
     
       <catalog-block />
 
@@ -23,12 +23,14 @@
 <script>
 import FrontAdvantages from '~/components/blocks/FrontAdvantages'
 import FrontServices from '~/components/blocks/FrontServices'
+import FrontNews from '~/components/blocks/FrontNews'
 import CatalogBlock from '~/components/blocks/CatalogBlock'
 
 export default {
   components: {
     FrontAdvantages,
     FrontServices,
+    FrontNews,
     CatalogBlock
   },
 

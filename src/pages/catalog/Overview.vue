@@ -3,7 +3,7 @@
     <main class="block">
       <h1>Рекомендации по&nbsp;выбору концевых фрез для металлобработки</h1>
 
-      <categories-list />
+      <!-- <categories-list class="catalog-submenu" /> -->
 
       <table>
         <thead>

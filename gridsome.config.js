@@ -47,7 +47,8 @@ module.exports = {
           productCategory: 'ProductCategory'
         }
       }
-    }
+    },
+
     // {
     //   use: '@gridsome/source-filesystem',
     //   options: {

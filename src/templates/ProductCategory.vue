@@ -1,5 +1,9 @@
 <template>
   <Layout>
+    <section class="container-xl">
+      <categories-list class="catalog-submenu" />
+    </section>
+
     <main class="block">
       <h2>{{ $page.category.title }}</h2>
 
@@ -51,11 +55,13 @@
 </page-query>
 
 <script>
+import CategoriesList from "~/components/catalog/CategoriesList"
 import SeriesItem from '~/components/catalog/SeriesTeaser'
 import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 
 export default {
   components: {
+    CategoriesList,
     SeriesItem,
     SvgSpriteFeatures
   },
