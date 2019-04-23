@@ -1,6 +1,6 @@
 <template>
   <div v-tooltip="tooltipText" class="icon-attr">
-    <svg :width="size" :height="size">
+    <svg :width="width" :height="height">
       <use :xlink:href="'#' + iconId" />
       <slot />
     </svg>
@@ -15,7 +15,12 @@ export default {
       required: true
     },
 
-    size: {
+    width: {
+      type: Number,
+      default: 50
+    },
+
+    height: {
       type: Number,
       default: 50
     }

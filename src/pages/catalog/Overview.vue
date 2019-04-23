@@ -5,7 +5,7 @@
 
       <!-- <categories-list class="catalog-submenu" /> -->
 
-      <table>
+      <table class="series-overview">
         <thead>
         </thead>
         <tbody>
@@ -29,9 +29,9 @@ query Catalog {
     edges {
       node {
         series
-        imgTeaser (width: 300, quality: 75)
+        imgTeaser (width: 260, quality: 75)
         fusion
-        path
+        material
         cuttingPart
         cogs {
           cogsPitch
@@ -94,3 +94,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.series-overview {
+  tr {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: .5rem 0;
+    margin: 0 -.5rem
+  }
+
+  td {
+    padding: 0 .5rem;
+  }
+}
+</style>

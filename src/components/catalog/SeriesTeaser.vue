@@ -1,10 +1,15 @@
 <template>
   <div
     class="series-item"
-    :class="{ expanded: toolExpanded }"
   >
-    <header @click="expandTool">
-      <h3>{{ node.series }}</h3>
+    <header>
+      <h3>{{ node.series.toUpperCase() }}</h3>
+      <svg-icon
+        v-if="node.fusion"
+        icon-id="series-fusion"
+        :width="100"
+        :height="25"
+      />
       <g-image
         v-if="node.imgTeaser"
         :src="node.imgTeaser"
@@ -14,7 +19,7 @@
     </header>
 
     <div class="series-body">
-      <div class="row">
+      <div class="flex-row">
         <div class="series-material">
           <material-icon
             v-for="(m, index) in node.material"
@@ -33,8 +38,12 @@
       <div v-html="node.body" />
     </div>
 
+    <div class="series-sizes">
+      {{ sizesValue }} размеров
+    </div>
+
     <!-- <transition name="expand"> -->
-    <div v-if="toolExpanded" class="series-details">
+    <!-- <div v-if="toolExpanded" class="series-details">
       <div v-for="(scheme, index) in node.scheme" :key="index" class="series-scheme">
         <img :src="'/img/scheme/' + scheme + '.svg'">
       </div>
@@ -65,7 +74,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
     <!-- </transition> -->
   </div>
 </template>
@@ -89,11 +98,11 @@ export default {
     }
   },
 
-  data: () => {
+  /* data: () => {
     return {
       toolExpanded: false
     }
-  },
+  }, */
 
   computed: {
     seriesFeatures() {
@@ -114,14 +123,21 @@ export default {
         }
         return result
       }, [])
+    },
+
+    sizesValue() {
+      const min = 9
+      const max = 99
+      const rand = min - 0.5 + Math.random() * (max - min + 1)
+      return Math.round(rand)
     }
   },
 
-  methods: {
+  /* methods: {
     expandTool() {
       this.toolExpanded = !this.toolExpanded
     }
-  }
+  } */
 }
 </script>
 
@@ -132,7 +148,7 @@ export default {
   width: 100%;
   position: relative;
   padding: 15px 20px;
-  border-bottom: 1px solid fade-out($color: #000000, $amount: .9);
+  border-bottom: 1px solid rgba(0,0,0,.1);
   margin-top: -1px;
 
   &:last-child {
@@ -167,12 +183,18 @@ export default {
   }
 
   .series-body {
-    max-width: 70%;
-    flex: 0 0 70%;
+    max-width: 58%;
+    flex: 0 0 58%;
 
     @include media-breakpoint-up(md) {
       padding-left: 40px;
     }
+  }
+
+  .series-sizes {
+    max-width: 12%;
+    flex: 0 0 12%;
+    text-align: right;
   }
 
   .series-attr {
@@ -181,6 +203,7 @@ export default {
   }
 
   h3 {
+    display: inline-block;
     font-size: 1.75rem;
     margin: 0 0 1rem;
   }

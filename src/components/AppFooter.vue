@@ -32,6 +32,11 @@
               </g-link>
             </li>
             <li>
+              <g-link to="/partners">
+                Официальные партнеры
+              </g-link>
+            </li>
+            <li>
               <g-link to="/contact">
                 Контакты
               </g-link>

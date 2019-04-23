@@ -1,17 +1,18 @@
 <template>
   <Layout>
     <section class="container-xl">
-      <categories-list class="catalog-submenu" />
+      <categories-list class="submenu" />
     </section>
 
     <main class="block">
       <h2>{{ $page.category.title }}</h2>
 
-      <div
-        v-for="edge in $page.category.belongsTo.edges"
-        :key="edge.node.id"
-      >
-        <series-item :node="edge.node" />
+      <div class="product-category-list">
+        <series-item
+          v-for="edge in $page.category.belongsTo.edges"
+          :key="edge.node.id"
+          :node="edge.node"
+        />
       </div>
 
       <svg-sprite-features style="display: none;" />
@@ -73,3 +74,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.product-category-list {
+  margin: 0 -15px;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 -30px;
+  }
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td>
-      <h2>{{ node.series.toUpperCase() }}</h2>
+      <h3>{{ node.series.toUpperCase() }}</h3>
     </td>
     <td>
       {{ node.myField }}
@@ -16,6 +16,15 @@
       <g-image
         v-if="node.imgTeaser"
         :src="node.imgTeaser"
+      />
+    </td>
+    <td
+      v-for="key in usageKeys"
+      :key="key"
+    >
+      <material-icon
+        v-if="node.material.some(e => e === key)"
+        :mat-id="key"
       />
     </td>
   </tr>
@@ -40,7 +49,9 @@ export default {
 
   data: () => {
     return {
-      toolExpanded: false
+      usageKeys: [
+        'p', 'k', 'm', 'n1', 'n3', 's', 'h1.1', 'h1.2'
+      ]
     }
   },
 

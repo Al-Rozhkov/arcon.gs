@@ -7,12 +7,16 @@
     <main class="block">
       <h1>Каталог режущего инструмента Arconit</h1>
 
-      <ul>
-        <li v-for="edge in $page.series.edges" :key="edge.node.slug">
-          <series-teaser :node="edge.node" />
-        </li>
-      </ul>
+      <div class="catalog-list">
+        <series-teaser
+          v-for="edge in $page.series.edges"
+          :key="edge.node.slug"
+          :node="edge.node"
+        />
+      </div>
     </main>
+
+    <svg-sprite-features style="display: none;" />
   </Layout>
 </template>
 
@@ -21,10 +25,16 @@ query Catalog {
   series: allProductSeries(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
+        id
         series
         fusion
-        path
-        cuttingPart
+        imgTeaser (width: 300, quality: 75)
+        body
+        material
+        coating
+        tail
+        endShapes
+        cuttingShapes
         cogs {
           cogsPitch
           cogsNumber
@@ -33,8 +43,6 @@ query Catalog {
           type
           angles
         }
-        photos
-        coating
         usage {
           base
           possible
@@ -49,11 +57,13 @@ query Catalog {
 <script>
 import CategoriesList from "~/components/catalog/CategoriesList"
 import SeriesTeaser from '~/components/catalog/SeriesTeaser'
+import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 
 export default {
   components: {
     CategoriesList,
-    SeriesTeaser
+    SeriesTeaser,
+    SvgSpriteFeatures
   },
 
   data() {
@@ -76,3 +86,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.catalog-list {
+  margin: 0 -15px;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 -30px;
+  }
+}
+</style>
