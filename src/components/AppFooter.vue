@@ -25,7 +25,18 @@
         </div>
 
         <div class="col">
-          ...
+          <ul class="menu">
+            <li>
+              <g-link to="/policy">
+                Политика конфиденциальности
+              </g-link>
+            </li>
+            <li>
+              <g-link to="/contact">
+                Контакты
+              </g-link>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

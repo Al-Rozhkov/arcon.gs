@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="container-xl">
-      <categories-list class="catalog-submenu" />
+      <categories-list class="submenu" />
     </section>
 
     <main class="block">
@@ -76,23 +76,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.catalog-submenu {
-  margin: 1rem 0;
-
-  li {
-    margin-bottom: .75rem;
-  }
-
-  a {
-    color: darken($cyan, 10%);
-    border-bottom: 1px solid rgba(darken($cyan, 10%), .25);
-
-    &:hover {
-      color: $link-hover-color;
-      border-bottom: 1px solid $red;
-    }
-  }
-}
-</style>
