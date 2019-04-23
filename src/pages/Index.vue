@@ -2,7 +2,7 @@
   <Layout>
     
     <main class="block">
-      <h1>Hello, world!</h1>
+      <front-hero />
 
       <front-news />
     
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import FrontHero from '~/components/blocks/FrontHero'
 import FrontAdvantages from '~/components/blocks/FrontAdvantages'
 import FrontServices from '~/components/blocks/FrontServices'
 import FrontNews from '~/components/blocks/FrontNews'
@@ -28,6 +29,7 @@ import CatalogBlock from '~/components/blocks/CatalogBlock'
 
 export default {
   components: {
+    FrontHero,
     FrontAdvantages,
     FrontServices,
     FrontNews,
