@@ -1,0 +1,36 @@
+{
+    "series": "1s072",
+    "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью.",
+    "productCategory": "terminal-steel-carbon",
+    "scheme": [
+        {
+            "a": "sphere-conus"
+        },
+        {
+            "b": "sphere"
+        }
+    ],
+    "mainUsage": [
+        "p", "h1.1"
+    ],
+    "possibleUsage": [
+        "k", "m", "n3", "s"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "sphere"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            30
+        ]
+    }
+}

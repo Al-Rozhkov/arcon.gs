@@ -9,9 +9,9 @@ module.exports = function (api) {
   api.loadSource(store => {
     const path = require('path')
     const { imageType } = require('gridsome/lib/graphql/types/image')
-    const productSeries = store.getContentType('ProductSeries')
+    const productCutter = store.getContentType('ProductCutter')
 
-    productSeries.addSchemaField('imgTeaser', () => ({
+    productCutter.addSchemaField('imgTeaser', () => ({
       type: imageType.type,
       args: imageType.args,
       async resolve (node, args, context, info) {

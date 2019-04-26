@@ -1,0 +1,37 @@
+{
+    "series": "7r02",
+    "body": "Цельная твердосплавная фасочная фреза со внутренним 7R02 радиусом, для обработки галтелей, 4—8 зубьев.",
+    "productCategory": "shaped-treatment",
+    "scheme": [
+        {
+            "b": "undefined"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m", "n", "s"
+    ],
+    "possibleUsage": [
+        "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "cuttingShapes": [
+        "inner-radius"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 4
+        },
+        {
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 6
+        },
+        {
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 10
+        }
+    ]
+}

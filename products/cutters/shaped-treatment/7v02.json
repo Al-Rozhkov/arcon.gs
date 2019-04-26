@@ -1,0 +1,38 @@
+{
+    "series": "7v02",
+    "body": "Цельная твердосплавная фасонная фасочная фреза, 60°, 90° и 120°, 3—6 зубьев. Без возможности засверливания.",
+    "productCategory": "shaped-treatment",
+    "scheme": [
+        {
+            "b": "undefined"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m", "n", "s"
+    ],
+    "possibleUsage": [
+        "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "cuttingShapes": [
+        "conus"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 3
+        },
+        {
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 4
+        },
+        {
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 6
+        }
+    ]
+}

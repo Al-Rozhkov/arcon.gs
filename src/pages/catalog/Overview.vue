@@ -25,13 +25,14 @@
 
 <page-query>
 query Catalog {
-  series: allProductSeries(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductCutter(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
         series
         imgTeaser (width: 260, quality: 75)
         fusion
-        material
+        mainUsage
+        possibleUsage
         cuttingPart
         cogs {
           cogsPitch
@@ -42,10 +43,6 @@ query Catalog {
           angles
         }
         coating
-        usage {
-          base
-          possible
-        }
       }
     }
   }
@@ -69,10 +66,7 @@ export default {
 
   data() {
     return {
-      filters: [],
-      usageKeys: [
-        'p', 'k', 'm', 'n1', 'n3', 's', 'h1.1', 'h1.2'
-      ]
+      filters: []
     }
   },
 

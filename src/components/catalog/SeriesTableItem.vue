@@ -18,13 +18,18 @@
         :src="node.imgTeaser"
       />
     </td>
-    <td
-      v-for="key in usageKeys"
-      :key="key"
-    >
+    <td>
       <material-icon
-        v-if="node.material.some(e => e === key)"
-        :mat-id="key"
+        v-for="(m, index) in node.mainUsage"
+        :key="index"
+        :mat-id="m"
+      />
+    </td>
+    <td class="possible-usage">
+      <material-icon
+        v-for="(m, index) in node.possibleUsage"
+        :key="index"
+        :mat-id="m"
       />
     </td>
   </tr>
@@ -44,14 +49,6 @@ export default {
     node: {
       type: Object,
       required: true
-    }
-  },
-
-  data: () => {
-    return {
-      usageKeys: [
-        'p', 'k', 'm', 'n1', 'n3', 's', 'h1.1', 'h1.2'
-      ]
     }
   },
 
@@ -86,5 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.possible-usage {
+  opacity: .5;
+}
 </style>

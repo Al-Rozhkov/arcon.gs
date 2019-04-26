@@ -22,7 +22,7 @@
 
 <page-query>
 query Catalog {
-  series: allProductSeries(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductCutter(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
         id
@@ -30,7 +30,7 @@ query Catalog {
         fusion
         imgTeaser (width: 300, quality: 75)
         body
-        material
+        mainUsage
         coating
         tail
         endShapes
@@ -42,10 +42,6 @@ query Catalog {
         grooveInclination {
           type
           angles
-        }
-        usage {
-          base
-          possible
         }
       }
     }

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import FrontNews from '~/components/blocks/FrontNews'
+import FrontNews from '~/components/blocks/FrontNews.vue'
 
 export default {
   components: {

@@ -22,7 +22,7 @@
       <div class="flex-row">
         <div class="series-material">
           <material-icon
-            v-for="(m, index) in node.material"
+            v-for="(m, index) in node.mainUsage"
             :key="index"
             :mat-id="m"
           />

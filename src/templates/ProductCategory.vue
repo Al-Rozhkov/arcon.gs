@@ -27,13 +27,13 @@
       belongsTo (sortBy: "series", order: ASC) {
         edges {
           node {
-            ...on ProductSeries {
+            ...on ProductCutter {
               id
               series
               fusion
               imgTeaser (width: 300, quality: 75)
               body
-              material
+              mainUsage
               coating
               tail
               endShapes

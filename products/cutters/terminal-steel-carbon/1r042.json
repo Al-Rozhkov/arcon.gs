@@ -1,0 +1,34 @@
+{
+    "series": "1r042",
+    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+    "productCategory": "terminal-steel-carbon",
+    "scheme": [
+        {
+            "b": "radius-r"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m"
+    ],
+    
+    "possibleUsage": [
+        "s", "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "radius"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "variable",
+            "cogsNumber": 4
+        }
+    ],
+    "grooveInclination": {
+        "type": "variable",
+        "angles": [
+            43, 45
+        ]
+    }
+}

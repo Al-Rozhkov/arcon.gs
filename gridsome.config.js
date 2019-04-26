@@ -40,9 +40,9 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/series/**/*.json',
-        typeName: 'ProductSeries',
-        route: '/catalog/products/series/:series',
+        path: 'products/cutters/**/*.json',
+        typeName: 'ProductCutter',
+        route: '/catalog/products/cutters/:series',
         refs: {
           productCategory: 'ProductCategory'
         }

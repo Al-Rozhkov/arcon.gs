@@ -1,0 +1,33 @@
+{
+    "series": "7mf03",
+    "body": "Цельный твердосплавный многофункциональный инструмент, угол в торце 40°, 60°, 90°, 100° и 120°, 2 зуба, удлиненная серия.",
+    "productCategory": "multifunctional",
+    "scheme": [
+        {
+            "b": "undefined"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m", "s"
+    ],
+    "possibleUsage": [
+        "n1", "n3"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "cuttingShapes": [
+        "conus"
+    ],
+    "cogs": [
+        {
+        "cogsPitch": "permanent",
+        "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            30
+        ]
+    }
+}
