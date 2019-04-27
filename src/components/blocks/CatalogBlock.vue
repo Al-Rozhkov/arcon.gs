@@ -1,6 +1,6 @@
 <template>
   <section class="catalog-block">
-    <article class="col body">
+    <article class="body col">
       <header>
         <h2>Каталог режущего инструмента Arconit™</h2>
       </header>
@@ -21,7 +21,7 @@
       </ul>
     </article>
 
-    <aside class="col ill">
+    <aside class="ill col">
       <g-image src="~/assets/img/catalog-block-teaser.jpg" />
     </aside>
   </section>
@@ -58,13 +58,13 @@ export default {
     header {
       background: $white;
       // display: inline-block;
-      margin: -3rem -1rem 0;
+      margin: -3rem -15px 0;
       padding: 1rem;
       max-width: 500px;
     }
   }
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     border: 1px solid gray("300");
     border-radius: 6px;
 
@@ -80,7 +80,7 @@ export default {
   }
 
   .menu {
-    margin: 0 -1rem .5rem 0;
+    margin: 0 -15px .5rem 0;
 
     li {
       flex: 0 0 50%;
