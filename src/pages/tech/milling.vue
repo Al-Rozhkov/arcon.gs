@@ -2,7 +2,7 @@
   <Layout>
 
     <main class="block">
-      <h1>Продукция и услуги</h1>
+      <h1>Фрезерная ЧПУ обработка</h1>
 
       <p class="lead">
         ...
@@ -15,7 +15,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Услуги'
+    title: 'Фрезерная ЧПУ обработка'
   }
 }
 </script>

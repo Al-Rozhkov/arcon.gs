@@ -32,6 +32,11 @@
               </g-link>
             </li>
             <li>
+              <g-link to="/disclosure">
+                Раскрытие информации
+              </g-link>
+            </li>
+            <li>
               <g-link to="/partners">
                 Официальные партнеры
               </g-link>

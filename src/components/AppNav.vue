@@ -20,18 +20,13 @@
         </g-link>
       </li>
       <li>
-        <g-link to="/catalog">
+        <g-link class="highlight" to="/catalog">
           Режущий инструмент
         </g-link>
       </li>
       <li>
-        <g-link to="/products">
-          Продукция
-        </g-link>
-      </li>
-      <li>
         <g-link to="/services">
-          Услуги
+          Продукция и услуги
         </g-link>
       </li>
       <li>

@@ -2,7 +2,7 @@
   <Layout>
 
     <main class="block">
-      <h1>Продукция</h1>
+      <h1>Электроэрозионная обработка</h1>
 
       <p class="lead">
         ...
@@ -15,7 +15,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Продукция'
+    title: 'Электроэрозионная обработка'
   }
 }
 </script>

@@ -13,7 +13,7 @@
             ООО «ЦВМ "Аркон"»
           </h3>
           <p>Россия, г. Пенза</p>
-          <p>Тел.: (8412) 45-89-90, <span class="text-nowrap">8 927 361-22-87</span></p>
+          <p>Тел.: (8412) 45-89-90, <span class="text-nowrap">+7 927 361-22-87</span></p>
           <p>www.cvm-arcon.ru gid@cvm-arcon.ru</p>
         </div>
 
@@ -37,7 +37,7 @@
             ООО «Аркон-Урал»
           </h3>
           <p>Россия, г. Екатеринбург</p>
-          <p>Тел.: (343) 318-27-47, <span class="text-nowrap">8 922 113-52-47</span></p>
+          <p>Тел.: (343) 318-27-47, <span class="text-nowrap">+7 922 113-52-47</span></p>
           <p>ural@cvm-arcon.ru</p>
         </div>
 
@@ -49,7 +49,7 @@
             ООО «ТЗТС»
           </h3>
           <p>Россия, г. Тула</p>
-          <p>Тел.: (4872) 36-73-45, <span class="text-nowrap">8(903)844-55-45</span></p>
+          <p>Тел.: (4872) 36-73-45, <span class="text-nowrap">+7 903 844-55-45</span></p>
           <p>tz-ts-tula@mail.ru</p>
         </div>
 
@@ -73,7 +73,7 @@
             ООО «ПромСнабСервис»
           </h3>
           <p>Россия, г. Смоленск</p>
-          <p>Тел.: (4812) 54-86-00, <span class="text-nowrap">8 930 305-86-00</span></p>
+          <p>Тел.: (4812) 54-86-00, <span class="text-nowrap">+7 930 305-86-00</span></p>
           <p>sml.pss@yandex.ru</p>
         </div>
 

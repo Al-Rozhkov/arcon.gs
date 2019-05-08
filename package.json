@@ -11,7 +11,7 @@
     "bootstrap-vue": "^2.0.0-rc.19",
     "gridsome": "^0.5.8",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
-    "v-tooltip": "^2.0.1"
+    "v-tooltip": "^2.0.2"
   },
   "devDependencies": {
     "@gridsome/source-drupal": "^0.1.1",
@@ -19,8 +19,8 @@
     "@gridsome/transformer-csv": "^0.1.0",
     "@gridsome/transformer-json": "^0.1.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-gridsome": "^1.1.1",
-    "node-sass": "^4.11.0",
+    "eslint-plugin-gridsome": "^1.2.4",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1",
     "vue-eslint-parser": "^6.0.4"

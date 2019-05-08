@@ -6,7 +6,10 @@
 
       <section class="tile-root">
         <div class="tile-row">
-          <article class="left1">
+          <g-link
+            to="/tech/grinding"
+            class="left1"
+          >
             <h2>
               Шлифовальная обработка
             </h2>
@@ -14,9 +17,12 @@
               Шлифование круглое наружное, бесцентровое, плоское, координатное, круглое внутреннее
             </p>
             <div class="bg"></div>
-          </article>
+          </g-link>
 
-          <article class="right1">
+          <g-link
+            to="/tech/electroerosion"
+            class="right1"
+          >
             <h2>
               Электроэрозионная обработка
             </h2>
@@ -27,11 +33,14 @@
               Cтанки прошивные для формирования глухих пазов, с минимальными радиусами на всех контактных точках.
             </p>
             <div class="bg"></div>
-          </article>
+          </g-link>
         </div>
 
         <div class="tile-row">
-          <article class="left2">
+          <g-link
+            to="/tech/milling"
+            class="left2"
+          >
             <h2>
               Фрезерная ЧПУ обработка
             </h2>
@@ -39,9 +48,12 @@
               Обработка ведется полным циклом, от создания 3д-моделей, разработки управляющих программ, ведения техпроцесса с промежуточными операциями контроля.
             </p>
             <div class="bg"></div>
-          </article>
+          </g-link>
 
-          <article class="right2">
+          <g-link
+            to="/tech/lathe"
+            class="right2"
+          >
             <h2>
               Токарная ЧПУ обработка
             </h2>
@@ -52,7 +64,7 @@
               Максимальная длина точения — 584 мм.
             </p>
             <div class="bg"></div>
-          </article>
+          </g-link>
         </div>
       </section>
 
