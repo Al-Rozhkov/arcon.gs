@@ -1,0 +1,33 @@
+{
+    "series": "1r442",
+    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+    "productCategory": "titan",
+    "scheme": [
+        {
+            "b": "radius-r"
+        }
+    ],
+    "mainUsage": [
+        "s"
+    ],
+    "possibleUsage": [
+        "p", "m"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "radius"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "variable",
+            "cogsNumber": 4
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            44
+        ]
+    }    
+}

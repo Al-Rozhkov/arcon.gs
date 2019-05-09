@@ -1,0 +1,33 @@
+{
+    "series": "1r542",
+    "body": "Цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью.",
+    "productCategory": "hardened-steel",
+    "scheme": [
+        {
+            "b": "radius"
+        }
+    ],
+    "mainUsage": [
+        "h", "p"
+    ],
+    "possibleUsage": [
+        "k"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "radius"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 6
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            45
+        ]
+    }
+}

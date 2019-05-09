@@ -22,11 +22,11 @@ module.exports = {
 
   plugins: [
     /* {
-      use: '@gridsome/plugin-critical',
+      use: '@gridsome/source-filesystem',
       options: {
-        paths: ['/'],
-        width: 1260,
-        height: 900
+        path: 'products/types/*.json',
+        typeName: 'ProductType',
+        route: '/catalog/type/:slug'
       }
     }, */
     {
@@ -40,23 +40,37 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/cutters/**/*.json',
-        typeName: 'ProductCutter',
-        route: '/catalog/products/cutters/:series',
+        path: 'products/end-mills/**/*.json',
+        typeName: 'ProductEndMill',
+        route: '/catalog/end-mills/:series',
         refs: {
           productCategory: 'ProductCategory'
         }
       }
     },
-
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'products/ProductCategories.csv',
-    //     typeName: 'CSVCategory',
-    //     route: '/csv/:slug'
-    //   }
-    // },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'products/drills/**/*.json',
+        typeName: 'ProductDrill',
+        route: '/catalog/drills/:series',
+        // refs: {
+        //   productCategory: 'ProductCategory'
+        // }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'products/thread-mills/**/*.json',
+        typeName: 'ProductThreadMill',
+        route: '/catalog/thread-mills/:series',
+        // refs: {
+        //   productCategory: 'ProductCategory'
+        // }
+      }
+    },
+    
     // {
     //   use: '@gridsome/source-filesystem',
     //   options: {

@@ -27,7 +27,7 @@
       belongsTo (sortBy: "series", order: ASC) {
         edges {
           node {
-            ...on ProductCutter {
+            ...on ProductEndMill {
               id
               series
               fusion

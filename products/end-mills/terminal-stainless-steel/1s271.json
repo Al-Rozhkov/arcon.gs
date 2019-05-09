@@ -1,0 +1,36 @@
+{
+    "series": "1s271",
+    "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
+    "productCategory": "stainless-steel",
+    "scheme": [
+        {
+            "a": "sphere-conus-lower"
+        },
+        {
+            "b": "sphere-lower"
+        }
+    ],
+    "mainUsage": [
+        "m", "p", "s"
+    ],
+    "possibleUsage": [
+        "k", "n3"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "sphere"
+    ],
+    "cogs": [
+        {
+          "cogsPitch": "variable",
+          "cogsNumber": 4
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            45
+        ]
+    }
+}

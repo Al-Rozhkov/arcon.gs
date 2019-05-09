@@ -9,40 +9,44 @@ module.exports = function (api) {
   api.loadSource(store => {
     const path = require('path')
     const { imageType } = require('gridsome/lib/graphql/types/image')
-    const productCutter = store.getContentType('ProductCutter')
 
-    productCutter.addSchemaField('imgTeaser', () => ({
-      type: imageType.type,
-      args: imageType.args,
-      async resolve (node, args, context, info) {
-        let fileName = node.fields.series
-        if (node.fields.hasOwnProperty('photos')) {
-          fileName = node.fields.photos.length > 0
-            ? node.fields.photos[0]
-            : node.fields.series
-        }
-        const value = path.join(__dirname, 'static', 'series', `${fileName}.jpg`)
-  
-        try {
-          result = await context.queue.add(value, args)
-        } catch (err) {
-          return null
-        }
+    const productTypes = ['ProductEndMill', 'ProductDrill', 'ProductThreadMill']
+    for (let i = 0, len = productTypes.length; i < len; i++) {
+      
+      store.getContentType(productTypes[i]).addSchemaField('imgTeaser', () => ({
+        type: imageType.type,
+        args: imageType.args,
+        async resolve (node, args, context, info) {
+          let fileName = node.fields.series
+          if (node.fields.hasOwnProperty('photos')) {
+            fileName = node.fields.photos.length > 0
+              ? node.fields.photos[0]
+              : node.fields.series
+          }
+          const value = path.join(__dirname, 'static', 'series', `${fileName}.jpg`)
     
-        if (result.isUrl) {
-          return result.src
+          try {
+            result = await context.queue.add(value, args)
+          } catch (err) {
+            return null
+          }
+      
+          if (result.isUrl) {
+            return result.src
+          }
+      
+          return {
+            type: result.type,
+            mimeType: result.mimeType,
+            src: result.src,
+            size: result.size,
+            sizes: result.sizes,
+            srcset: result.srcset,
+            dataUri: result.dataUri
+          }
         }
-    
-        return {
-          type: result.type,
-          mimeType: result.mimeType,
-          src: result.src,
-          size: result.size,
-          sizes: result.sizes,
-          srcset: result.srcset,
-          dataUri: result.dataUri
-        }
-      }
-    }))
+      }))
+
+    }
   })
 }

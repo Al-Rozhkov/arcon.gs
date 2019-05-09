@@ -1,0 +1,40 @@
+{
+    "series": "1c006",
+    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+    "productCategory": "steel-carbon",
+    "fusion": true,
+    "scheme": [
+        {
+            "a": "cylinder-conus-f"
+        },
+        {
+            "b": "cylinder-f"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m"
+    ],
+    "possibleUsage": [
+        "n1", "s"
+    ],
+    "coating": "tan",
+    "tail": "cylinder",
+    "endShapes": [
+        "sharp", "sharp-f"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 4
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            35
+        ]
+    },
+    "cuttingPart": [
+        "middle"
+    ]
+}

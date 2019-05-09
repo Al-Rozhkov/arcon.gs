@@ -1,0 +1,41 @@
+{
+    "series": "1c503",
+    "body": "Цельная твердосплавная концевая фреза, 4-6 зубьев, с длинной режущей частью.",
+    "productCategory": "hardened-steel",
+    "scheme": [
+        {
+            "a": "cylinder-conus-r"
+        },
+        {
+            "b": "cylinder-r"
+        }
+    ],
+    "mainUsage": [
+        "h", "p"
+    ],
+    "possibleUsage": [],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "sharp", "sharp-r"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 4
+        },
+        {
+          "cogsPitch": "permanent",
+          "cogsNumber": 6
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            45
+        ]
+    },
+    "cuttingPart": [
+        "long"
+    ]
+}

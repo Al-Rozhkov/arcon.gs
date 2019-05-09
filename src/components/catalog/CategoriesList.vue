@@ -1,5 +1,5 @@
 <template>
-  <ul class="catalog-categories-list menu">
+  <ul class="menu">
     <li
       v-for="edge in $static.categories.edges"
       :key="edge.node.slug"

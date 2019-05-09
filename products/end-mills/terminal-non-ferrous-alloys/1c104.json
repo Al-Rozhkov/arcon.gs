@@ -1,0 +1,49 @@
+{
+    "series": "1c104",
+    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
+    "productCategory": "non-ferrous-alloys",
+    "fusion": true,
+    "scheme": [
+        {
+            "a": "cylinder-conus-f"
+        },
+        {
+            "b": "cylinder-f"
+        },
+        {
+            "c": "cylinder-conus-lower-f"
+        },
+        {
+            "d": "cylinder-lower-f"
+        }
+    ],
+    "photos": [
+        "1c104-m", "1c104-l"
+    ],
+    "mainUsage": [
+        "n1"
+    ],
+    "possibleUsage": [
+        "n3"
+    ],
+    "coating": "pp",
+    "tail": "cylinder",
+    "endShapes": [
+        "sharp", "sharp-f"
+    ],
+    "cogs": [
+        {
+        "cogsPitch": "permanent",
+        "cogsNumber": 3
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            37.5
+        ]
+    },
+    "cuttingPart": [
+        "middle"
+    ]
+}

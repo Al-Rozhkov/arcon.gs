@@ -118,6 +118,7 @@ export default {
     background: gray("100");
     border: 2px solid $white;
     min-height: 280px;
+    color: $black;
     cursor: pointer;
 
     .bg {

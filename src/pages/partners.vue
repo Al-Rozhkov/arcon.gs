@@ -10,7 +10,7 @@
             <!-- <g-image src="~/assets/news-img/12.jpg" width="255" height="150" /> -->
           </figure>
           <h3>
-            ООО «ЦВМ "Аркон"»
+            ООО «ЦВМ «Аркон»
           </h3>
           <p>Россия, г. Пенза</p>
           <p>Тел.: (8412) 45-89-90, <span class="text-nowrap">+7 927 361-22-87</span></p>

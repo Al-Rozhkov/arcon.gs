@@ -25,7 +25,7 @@
 
 <page-query>
 query Catalog {
-  series: allProductCutter(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductEndMill(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
         series

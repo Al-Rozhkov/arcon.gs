@@ -1,6 +1,8 @@
 <template>
   <Layout>
 
+    <techs-list />
+    
     <main class="block">
       <h1>Токарная ЧПУ обработка</h1>
 
@@ -13,7 +15,13 @@
 </template>
 
 <script>
+import TechsList from '~/components/TechsList.vue'
+
 export default {
+  components: {
+    TechsList
+  },
+
   metaInfo: {
     title: 'Токарная ЧПУ обработка'
   }

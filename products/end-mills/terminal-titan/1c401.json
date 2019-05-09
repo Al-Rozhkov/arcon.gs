@@ -1,0 +1,40 @@
+{
+    "series": "1c401",
+    "body": "Цельная твердосплавная концевая фреза, 2—4 зуба, с короткой режущей частью, с заниженной шейкой.",
+    "productCategory": "titan",
+    "scheme": [
+        {
+            "b": "cylinder-lower-r"
+        }
+    ],
+    "mainUsage": [
+        "s"
+    ],
+    "possibleUsage": [
+        "p", "m"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "sharp", "sharp-r"
+    ],
+    "cogs": [
+        {
+          "cogsPitch": "variable",
+          "cogsNumber": 2
+        },
+        {
+            "cogsPitch": "variable",
+            "cogsNumber": 4
+          }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+            44
+        ]
+    },
+    "cuttingPart": [
+        "short"
+    ]
+}
