@@ -17,11 +17,12 @@ module.exports = function (api) {
         type: imageType.type,
         args: imageType.args,
         async resolve (node, args, context, info) {
-          let fileName = node.fields.series
-          if (node.fields.hasOwnProperty('photos')) {
-            fileName = node.fields.photos.length > 0
-              ? node.fields.photos[0]
-              : node.fields.series
+          // console.log(node)
+          let fileName = node.series
+          if (node.hasOwnProperty('photos')) {
+            fileName = node.photos.length > 0
+              ? node.photos[0]
+              : node.series
           }
           const value = path.join(__dirname, 'static', 'series', `${fileName}.jpg`)
     

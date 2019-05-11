@@ -2,7 +2,7 @@
   <ul class="menu">
     <li
       v-for="edge in $static.categories.edges"
-      :key="edge.node.slug"
+      :key="edge.node.id"
     >
       <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
     </li>
@@ -16,7 +16,7 @@ query CatalogMenu {
       node {
         title
         path
-        slug
+        id
       }
     }
   }

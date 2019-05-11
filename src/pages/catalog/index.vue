@@ -10,7 +10,7 @@
       <div class="catalog-list">
         <series-teaser
           v-for="edge in $page.series.edges"
-          :key="edge.node.slug"
+          :key="edge.node.id"
           :node="edge.node"
         />
       </div>
