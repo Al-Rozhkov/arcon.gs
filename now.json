@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "arcon",
-  "alias": "arcon",
+  "alias": "cvm-arcon",
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
   ]
