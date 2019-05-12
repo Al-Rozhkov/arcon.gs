@@ -89,7 +89,7 @@
           d="M33.898,3c0.551,0,1,0.449,1,1v29.898c0,0.552-0.449,1-1,1H4c-0.551,0-1-0.448-1-1V4 c0-0.551,0.449-1,1-1H33.898 M33.898,0H4C1.791,0,0,1.791,0,4v29.898c0,2.209,1.791,4,4,4h29.898c2.209,0,4-1.791,4-4V4 C37.898,1.791,36.107,0,33.898,0L33.898,0z"
         />
       </g>
-      <text transform="matrix(1 0 0 1 26.8672 31.626)" style="font-family:'PF Bague Sans Pro'; font-size:9;">R</text>
+      <text transform="matrix(1 0 0 1 26.8672 31.626)" style="font-size:9;">R</text>
     </symbol>
 
     <!-- form-sharp-f -->
@@ -126,7 +126,7 @@
           V4.051C37.908,1.842,36.117,0.051,33.908,0.051L33.908,0.051z"
         />
       </g>
-      <text transform="matrix(1 0 0 1 26.877 31.6768)" style="font-family:'PF Bague Sans Pro'; font-size:9;">F</text>
+      <text transform="matrix(1 0 0 1 26.877 31.6768)" style="font-size:9;">F</text>
     </symbol>
 
     <!-- form-radius -->
@@ -428,7 +428,7 @@
           C37.898,1.791,36.107,0,33.898,0L33.898,0z"
         />
       </g>
-      <text transform="matrix(1 0 0 1 19.7085 12.9595)" style="font-family:'PF Bague Sans Pro'; font-size:9;">50&#xB0;</text>
+      <text transform="matrix(1 0 0 1 19.7085 12.9595)" style="font-size:9;">50&#xB0;</text>
     </symbol>
 
     <!-- angle-42-45 -->
@@ -481,8 +481,8 @@
           C37.898,1.791,36.107,0,33.898,0L33.898,0z"
         />
       </g>
-      <text transform="matrix(1 0 0 1 19.7085 12.9595)" style="font-family:'PF Bague Sans Pro'; font-size:9;">42&#xB0;</text>
-      <text transform="matrix(1 0 0 1 19.7085 22.9595)" style="font-family:'PF Bague Sans Pro'; font-size:9;">45&#xB0;</text>
+      <text transform="matrix(1 0 0 1 19.7085 12.9595)" style="font-size:9;">42&#xB0;</text>
+      <text transform="matrix(1 0 0 1 19.7085 22.9595)" style="font-size:9;">45&#xB0;</text>
     </symbol>
 
     <!-- series-fusion -->
