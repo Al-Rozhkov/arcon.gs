@@ -141,7 +141,7 @@ export default {
 
   .left1 {
     .bg {
-      background-image: url(/tech/shlif.jpg);
+      background-image: url(/img/tech/shlif.jpg);
     }
 
     @include media-breakpoint-up(lg) {
@@ -151,7 +151,7 @@ export default {
 
   .right1 {
     .bg {
-      background-image: url(/tech/electroeroz.jpg);
+      background-image: url(/img/tech/electroeroz.jpg);
     }
 
     @include media-breakpoint-up(lg) {
@@ -161,7 +161,7 @@ export default {
 
   .left2 {
     .bg {
-      background-image: url(/tech/frezer.jpg);
+      background-image: url(/img/tech/frezer.jpg);
     }
 
     @include media-breakpoint-up(lg) {
@@ -171,7 +171,7 @@ export default {
 
   .right2 {
     .bg {
-      background-image: url(/tech/tokar.jpg);
+      background-image: url(/img/tech/tokar.jpg);
     }
 
     @include media-breakpoint-up(lg) {

@@ -17,17 +17,16 @@ module.exports = function (api) {
         type: imageType.type,
         args: imageType.args,
         async resolve (node, args, context, info) {
-          // console.log(node)
           let fileName = node.series
-          if (node.hasOwnProperty('photos')) {
+          if ('photos' in node) {
             fileName = node.photos.length > 0
               ? node.photos[0]
               : node.series
           }
-          const value = path.join(__dirname, 'static', 'series', `${fileName}.jpg`)
+          const value = path.join(__dirname, 'static', 'img', 'series', `${fileName}.jpg`)
     
           try {
-            result = await context.queue.add(value, args)
+            result = await context.assets.add(value, args)
           } catch (err) {
             return null
           }
@@ -35,7 +34,7 @@ module.exports = function (api) {
           if (result.isUrl) {
             return result.src
           }
-      
+
           return {
             type: result.type,
             mimeType: result.mimeType,
