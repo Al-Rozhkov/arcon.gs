@@ -1,17 +1,15 @@
 <template>
   <Layout>
     
-    <LazyHydrate ssr-only>
-      <main class="block">
-        <front-hero />
+    <main class="block">
+      <front-hero />
+      <front-news />
+      <catalog-block />
 
-        <front-news />
-      
-        <catalog-block />
-
+      <LazyHydrate ssr-only>
         <front-advantages />
-      </main>
-    </LazyHydrate>
+      </LazyHydrate>
+    </main>
 
     <LazyHydrate ssr-only>
       <section class="services-wrapper">
