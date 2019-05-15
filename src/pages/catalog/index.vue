@@ -1,23 +1,24 @@
 <template>
-  <Layout>
-    <section class="container-xl">
-      <categories-list class="submenu" />
-    </section>
-
+  <page-layout>
+        
     <main class="block">
-      <h1>Каталог режущего инструмента Arconit</h1>
+      <h1>Рекомендации по&nbsp;выбору концевых фрез для металлобработки</h1>
 
-      <div class="catalog-list">
-        <series-teaser
-          v-for="edge in $page.series.edges"
-          :key="edge.node.id"
-          :node="edge.node"
-        />
-      </div>
+      <table class="series-overview">
+        <thead>
+        </thead>
+        <tbody>
+          <template v-for="edge in filteredNodes">
+            <series-item
+              :node="edge.node"
+              :key="edge.node.slug"
+            />
+          </template>
+        </tbody>
+      </table>
     </main>
 
-    <svg-sprite-features style="display: none;" />
-  </Layout>
+  </page-layout>
 </template>
 
 <page-query>
@@ -25,16 +26,12 @@ query Catalog {
   series: allProductEndMill(sortBy: "series", order: ASC, perPage: 125) {
     edges {
       node {
-        id
         series
+        productImg (width: 260, quality: 75)
         fusion
-        imgTeaser (width: 300, quality: 75)
-        body
         mainUsage
-        coating
-        tail
-        endShapes
-        cuttingShapes
+        possibleUsage
+        cuttingPart
         cogs {
           cogsPitch
           cogsNumber
@@ -43,6 +40,7 @@ query Catalog {
           type
           angles
         }
+        coating
       }
     }
   }
@@ -51,15 +49,16 @@ query Catalog {
 
 
 <script>
-import CategoriesList from "~/components/catalog/CategoriesList"
-import SeriesTeaser from '~/components/catalog/SeriesTeaser'
-import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
+import PageLayout from '~/layouts/Catalog.vue'
+
+import CatalogCategories from '~/components/catalog/CatalogCategories'
+import SeriesItem from '~/components/catalog/SeriesTableItem'
 
 export default {
   components: {
-    CategoriesList,
-    SeriesTeaser,
-    SvgSpriteFeatures
+    PageLayout,
+    CatalogCategories,
+    SeriesItem
   },
 
   data() {
@@ -72,23 +71,31 @@ export default {
     filteredNodes() {
       const result = this.$page.series.edges
       return result.filter(node => {
-
+        return node
       })
+    },
+
+    seriesUsage() {
+      return []
     }
   },
 
   metaInfo: {
-    title: 'Каталог режущего инструмента Arconit (Арконит)'
+    title: 'Рекомендации по выбору концевых фрез для металлобработки'
   }
 }
 </script>
 
 <style lang="scss">
-.catalog-list {
-  margin: 0 -15px;
+.series-overview {
+  tr {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: .5rem 0;
+    margin: 0 -.5rem
+  }
 
-  @include media-breakpoint-up(lg) {
-    margin: 0 -30px;
+  td {
+    padding: 0 .5rem;
   }
 }
 </style>

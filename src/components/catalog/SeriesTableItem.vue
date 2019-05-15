@@ -14,8 +14,8 @@
     </td>
     <td>
       <g-image
-        v-if="node.imgTeaser"
-        :src="node.imgTeaser"
+        v-if="node.productImg.length > 0"
+        :src="node.productImg[0]"
       />
     </td>
     <td>

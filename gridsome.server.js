@@ -9,11 +9,12 @@ module.exports = function (api) {
   api.loadSource(store => {
     const path = require('path')
     const { imageType } = require('gridsome/lib/graphql/types/image')
+    const { GraphQLList } = require('graphql')
 
     const productTypes = ['ProductEndMill', 'ProductDrill', 'ProductThreadMill']
     for (let i = 0, len = productTypes.length; i < len; i++) {
       
-      store.getContentType(productTypes[i]).addSchemaField('imgTeaser', () => ({
+      /* store.getContentType(productTypes[i]).addSchemaField('imgTeaser', () => ({
         type: imageType.type,
         args: imageType.args,
         async resolve (node, args, context, info) {
@@ -44,6 +45,43 @@ module.exports = function (api) {
             srcset: result.srcset,
             dataUri: result.dataUri
           }
+        }
+      })) */
+
+      store.getContentType(productTypes[i]).addSchemaField('productImg', () => ({
+        type: new GraphQLList(imageType.type),
+        args: imageType.args,
+        async resolve (node, args, context, info) {
+          const getPath = (fileName) => path.join(__dirname, 'static', 'img', 'series', `${fileName}.jpg`)
+          
+          const fileNames = ('photos' in node && node.photos.length > 0)
+            ? node.photos.map(p => getPath(p))
+            : [ getPath(node.series) ]
+    
+          return fileNames.reduce(
+            async (acc, fileName) => {
+              try {
+                result = await context.assets.add(fileName, args)
+
+                if (result.isUrl) {
+                  acc.push(result.src)
+                } else {
+                  acc.push({
+                    type: result.type,
+                    mimeType: result.mimeType,
+                    src: result.src,
+                    size: result.size,
+                    sizes: result.sizes,
+                    srcset: result.srcset,
+                    dataUri: result.dataUri
+                  })
+                }
+              } catch (err) {
+                console.log(err.code)
+              }
+
+              return acc
+            }, [])
         }
       }))
 

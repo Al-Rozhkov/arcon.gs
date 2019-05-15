@@ -1,23 +1,20 @@
 <template>
-  <Layout>
-    <section class="container-xl">
-      <categories-list class="submenu" />
-    </section>
+  <page-layout>
 
     <main class="block">
-      <h2>{{ $page.category.title }}</h2>
+      <h1>{{ $page.category.title }}</h1>
+      <categories-list class="submenu" />
 
-      <div class="product-category-list">
-        <series-item
+      <div class="catalog-list">
+        <series-teaser
           v-for="edge in $page.category.belongsTo.edges"
           :key="edge.node.id"
           :node="edge.node"
         />
       </div>
-
-      <svg-sprite-features style="display: none;" />
     </main>
-  </Layout>
+
+  </page-layout>
 </template>
 
 <page-query>
@@ -29,9 +26,10 @@
           node {
             ...on ProductEndMill {
               id
+              path
               series
               fusion
-              imgTeaser (width: 300, quality: 75)
+              productImg (width: 300, quality: 75)
               body
               mainUsage
               coating
@@ -56,15 +54,16 @@
 </page-query>
 
 <script>
+import PageLayout from '~/layouts/Catalog.vue'
+
 import CategoriesList from "~/components/catalog/CategoriesList"
-import SeriesItem from '~/components/catalog/SeriesTeaser'
-import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
+import SeriesTeaser from '~/components/catalog/SeriesTeaser'
 
 export default {
   components: {
+    PageLayout,
     CategoriesList,
-    SeriesItem,
-    SvgSpriteFeatures
+    SeriesTeaser
   },
 
   metaInfo () {
@@ -76,11 +75,5 @@ export default {
 </script>
 
 <style lang="scss">
-.product-category-list {
-  margin: 0 -15px;
 
-  @include media-breakpoint-up(lg) {
-    margin: 0 -30px;
-  }
-}
 </style>

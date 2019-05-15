@@ -9,10 +9,11 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.19",
-    "gridsome": "^0.6.0",
+    "bootstrap-vue": "^2.0.0-rc.20",
+    "gridsome": "^0.6.1",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
-    "v-tooltip": "^2.0.2"
+    "v-tooltip": "^2.0.2",
+    "vue-lazy-hydration": "^1.0.0-beta.7"
   },
   "devDependencies": {
     "@gridsome/source-filesystem": "^0.4.1",
