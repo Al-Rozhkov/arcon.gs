@@ -69,6 +69,10 @@ module.exports = {
         //   productCategory: 'ProductCategory'
         // }
       }
+    },
+    {
+      use: '~/source-xls',
+      options: {}
     }
   ],
 

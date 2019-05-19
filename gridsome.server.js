@@ -4,10 +4,11 @@
 
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const path = require('path')
 
 module.exports = function (api) {
   api.loadSource(store => {
-    const path = require('path')
+    
     const { imageType } = require('gridsome/lib/graphql/types/image')
     const { GraphQLList } = require('graphql')
 

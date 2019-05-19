@@ -10,7 +10,7 @@
       <LazyHydrate when-idle>
         <front-news />
       </LazyHydrate>
-      
+
       <LazyHydrate when-idle>
         <catalog-block />
       </LazyHydrate>
@@ -34,13 +34,6 @@
 <script>
 // import { hydrateSsrOnly } from 'vue-lazy-hydration'
 import LazyHydrate from 'vue-lazy-hydration'
-
-/* 
-import FrontHero from '~/components/blocks/FrontHero.vue'
-import FrontNews from '~/components/blocks/FrontNews.vue'
-import FrontAdvantages from '~/components/blocks/FrontAdvantages'
-import FrontServices from '~/components/blocks/FrontServices'
-*/
 
 export default {
   components: {
