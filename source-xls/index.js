@@ -1,5 +1,4 @@
 const XLSX = require('xlsx')
-const glob = require('globby')
 
 const createNodes = (contentType, filePath) => {
   const xls = XLSX.readFile(filePath)
@@ -19,15 +18,12 @@ module.exports = function (api, options) {
   api.loadSource(async ({ addContentType }) => {
     
     // Mills
-    const ProductItemMill = addContentType({
-      typeName: 'ProductItemMill'
+    const ProductItemEndMill = addContentType({
+      typeName: 'ProductItemEndMill'
     })
-    ProductItemMill.addReference('series', 'ProductEndMill')
-
-    const files = await glob('products/product-items/mills/*.xls')
-    await Promise.all(files.map(async file => {
-      createNodes(ProductItemMill, file)
-    }))
+    ProductItemEndMill.addReference('series', 'ProductEndMill')
+    createNodes(ProductItemEndMill, 'products/product-items/mills/mills--lower.xls')
+    createNodes(ProductItemEndMill, 'products/product-items/mills/mills.xls')
 
     // Drills
     const ProductItemDrill = addContentType({

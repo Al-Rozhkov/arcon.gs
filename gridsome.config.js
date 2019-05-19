@@ -53,10 +53,7 @@ module.exports = {
       options: {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
-        route: '/catalog/drills/:series',
-        // refs: {
-        //   productCategory: 'ProductCategory'
-        // }
+        route: '/catalog/drills/:series'
       }
     },
     {
@@ -64,10 +61,7 @@ module.exports = {
       options: {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
-        route: '/catalog/thread-mills/:series',
-        // refs: {
-        //   productCategory: 'ProductCategory'
-        // }
+        route: '/catalog/thread-mills/:series'
       }
     },
     {

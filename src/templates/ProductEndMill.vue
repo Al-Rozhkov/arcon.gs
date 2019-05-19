@@ -2,40 +2,15 @@
   <page-layout>
 
     <main class="block">
-      <series-header :node="$page.tool" />
+      <series-header :node="$page.series" />
 
-      <!-- <div v-if="toolExpanded" class="series-details">
-        <div v-for="(scheme, index) in node.scheme" :key="index" class="series-scheme">
+      <div class="product-items-list">
+        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
           <img :src="'/img/scheme/' + scheme + '.svg'">
-        </div>
+        </div> -->
 
-        <p class="small">
-          Единицы измерения — мм
-        </p>
-        <table class="d-table">
-          <thead class="table-thead">
-            <tr>
-              <td
-                v-for="(col, index) in node.headers"
-                :key="index"
-                class="table-thead-col"
-                :class="index"
-                v-html="col"
-              />
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(row, index) in node.params" :key="index" class="table-row">
-              <td v-for="(col, i) in row" :key="i" class="table-col" :class="i">
-                <span v-if="i === 'serial'" class="hd">
-                  {{ node.code }}
-                </span>
-                <span class="td">{{ col }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
+        <product-items-table :tools="$page.tools" />
+      </div>
 
       <section class="section-top">
         <h2>Похожие инструменты</h2>
@@ -46,8 +21,8 @@
 </template>
 
 <page-query>
-  query Tool ($path: String) {
-    tool: productEndMill (path: $path) {
+  query Tool ($path: String, $series: String!) {
+    series: productEndMill (path: $path) {
       id
       series
       fusion
@@ -68,6 +43,22 @@
       }
       photos
     }
+    tools: allProductItemEndMill (filter: { series: { eq: $series } }) {
+      edges {
+        node {
+          id
+          d1
+          d2
+          d3
+          r
+          f45
+          l1
+          l2
+          z
+          form
+        }
+      }
+    }
   }
 </page-query>
 
@@ -75,18 +66,20 @@
 import PageLayout from '~/layouts/Catalog.vue'
 
 import SeriesHeader from '~/components/catalog/SeriesHeader.vue'
+import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
 
 export default {
   components: {
     PageLayout,
-    SeriesHeader
+    SeriesHeader,
+    ProductItemsTable
   },
 
-  /* metaInfo () {
+  metaInfo () {
     return {
-      title: this.$page.category.title
+      title: this.$page.series.id
     }
-  } */
+  }
 }
 </script>
 
