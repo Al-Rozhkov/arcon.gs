@@ -5,7 +5,13 @@
       
       <LazyHydrate when-idle>
         <front-hero />
+      </LazyHydrate>
+
+      <LazyHydrate when-idle>
         <front-news />
+      </LazyHydrate>
+      
+      <LazyHydrate when-idle>
         <catalog-block />
       </LazyHydrate>
 
@@ -40,9 +46,9 @@ export default {
   components: {
     LazyHydrate,
     FrontHero: () => import('~/components/blocks/FrontHero.vue'),
+    FrontNews: () => import('~/components/blocks/FrontNews.vue'),
     FrontAdvantages: () => import('~/components/blocks/FrontAdvantages.vue'),
     FrontServices: () => import('~/components/blocks/FrontServices.vue'),
-    FrontNews: () => import('~/components/blocks/FrontNews.vue'),
     CatalogBlock: () => import('~/components/blocks/CatalogBlock.vue'),
     /* FrontHero: hydrateSsrOnly(
       () => import('~/components/blocks/FrontHero.vue')
