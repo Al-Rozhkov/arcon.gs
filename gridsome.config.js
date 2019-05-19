@@ -40,7 +40,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/end-mills/**/*.json',
+        path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
         route: '/catalog/end-mills/:series',
         refs: {
@@ -51,7 +51,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/drills/**/*.json',
+        path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
         route: '/catalog/drills/:series',
         // refs: {
@@ -62,23 +62,14 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/thread-mills/**/*.json',
+        path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
         route: '/catalog/thread-mills/:series',
         // refs: {
         //   productCategory: 'ProductCategory'
         // }
       }
-    },
-    
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'products/ProductSeries.csv',
-    //     typeName: 'CSVSeries',
-    //     route: '/csv/products/tools/:slug'
-    //   }
-    // }
+    }
   ],
 
   chainWebpack: config => {

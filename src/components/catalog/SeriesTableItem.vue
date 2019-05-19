@@ -25,11 +25,12 @@
         :mat-id="m"
       />
     </td>
-    <td class="possible-usage">
+    <td>
       <material-icon
         v-for="(m, index) in node.possibleUsage"
         :key="index"
         :mat-id="m"
+        :mat-main="false"
       />
     </td>
   </tr>
@@ -83,7 +84,5 @@ export default {
 </script>
 
 <style lang="scss">
-.possible-usage {
-  opacity: .5;
-}
+
 </style>

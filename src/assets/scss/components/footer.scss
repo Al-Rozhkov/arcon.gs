@@ -1,7 +1,7 @@
 .footer {
     @extend %section-top;
     
-    background: $global-muted-background;
+    background: $gray-100;
     position: relative;
 
     .menu {
@@ -15,12 +15,7 @@
 
             a {
                 display: block;
-                // color: #000000;
                 line-height: 1.3;
-            }
-            a:hover {
-                // color: $cyan;
-                // border-bottom: 1px solid $yellow;
             }
         }
     }

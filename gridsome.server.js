@@ -61,7 +61,7 @@ module.exports = function (api) {
           return fileNames.reduce(
             async (acc, fileName) => {
               try {
-                result = await context.assets.add(fileName, args)
+                const result = await context.assets.add(fileName, args)
 
                 if (result.isUrl) {
                   acc.push(result.src)
@@ -77,7 +77,7 @@ module.exports = function (api) {
                   })
                 }
               } catch (err) {
-                console.log(err.code)
+                // if (error.code !== 'MODULE_NOT_FOUND') throw error
               }
 
               return acc

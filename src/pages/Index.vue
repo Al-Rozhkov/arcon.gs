@@ -2,9 +2,12 @@
   <Layout>
     
     <main class="block">
-      <front-hero />
-      <front-news />
-      <catalog-block />
+      
+      <LazyHydrate when-idle>
+        <front-hero />
+        <front-news />
+        <catalog-block />
+      </LazyHydrate>
 
       <LazyHydrate ssr-only>
         <front-advantages />
@@ -26,11 +29,12 @@
 // import { hydrateSsrOnly } from 'vue-lazy-hydration'
 import LazyHydrate from 'vue-lazy-hydration'
 
-/* import FrontHero from '~/components/blocks/FrontHero'
+/* 
+import FrontHero from '~/components/blocks/FrontHero.vue'
+import FrontNews from '~/components/blocks/FrontNews.vue'
 import FrontAdvantages from '~/components/blocks/FrontAdvantages'
 import FrontServices from '~/components/blocks/FrontServices'
-import FrontNews from '~/components/blocks/FrontNews'
-import CatalogBlock from '~/components/blocks/CatalogBlock' */
+*/
 
 export default {
   components: {
@@ -39,7 +43,7 @@ export default {
     FrontAdvantages: () => import('~/components/blocks/FrontAdvantages.vue'),
     FrontServices: () => import('~/components/blocks/FrontServices.vue'),
     FrontNews: () => import('~/components/blocks/FrontNews.vue'),
-    CatalogBlock: () => import('~/components/blocks/CatalogBlock.vue')
+    CatalogBlock: () => import('~/components/blocks/CatalogBlock.vue'),
     /* FrontHero: hydrateSsrOnly(
       () => import('~/components/blocks/FrontHero.vue')
     ),
