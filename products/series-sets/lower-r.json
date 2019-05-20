@@ -1,14 +1,14 @@
 {
   "id": "lower-r",
-  "set": {
-    "d1": "D<sup>1</sup>",
-    "d2": "D<sup>2</sup>",
-    "d3": "D<sup>3</sup>",
-    "r": "R",
-    "l1": "L<sup>1</sup>",
-    "l2": "L<sup>2</sup>",
-    "ap": "a<sup>p</sup>",
-    "z": "Z",
-    "form": "Форма"
-  }
+  "set": [
+    "d1",
+    "d2",
+    "d3",
+    "r",
+    "l1",
+    "l2",
+    "ap",
+    "z",
+    "form"
+  ]
 }

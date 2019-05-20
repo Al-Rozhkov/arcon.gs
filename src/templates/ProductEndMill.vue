@@ -9,12 +9,15 @@
           <img :src="'/img/scheme/' + scheme + '.svg'">
         </div> -->
 
-        <product-items-table :tools="$page.tools" />
+        <product-items-table
+          :fields-set="$page.series.productSeriesSet.set"
+          :tools="$page.tools.edges"
+        />
       </div>
 
-      <section class="section-top">
+      <!-- <section class="section-top">
         <h2>Похожие инструменты</h2>
-      </section>
+      </section> -->
     </main>
 
   </page-layout>
@@ -41,12 +44,19 @@
         type
         angles
       }
-      photos
+      photos,
+      productSeriesSet {
+        set
+      }
     }
     tools: allProductItemEndMill (filter: { series: { eq: $series } }) {
       edges {
         node {
           id
+          series {
+            id
+          }
+          name
           d1
           d2
           d3
@@ -54,6 +64,7 @@
           f45
           l1
           l2
+          ap
           z
           form
         }

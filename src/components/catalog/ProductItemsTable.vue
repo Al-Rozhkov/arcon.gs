@@ -4,24 +4,31 @@
       Единицы измерения — мм
     </p>
     <table class="pi-table">
-      <!-- <thead class="table-thead">
+      <thead class="table-thead">
         <tr>
+          <td>Обозначение</td>
           <td
-            v-for="(col, index) in $page.series.headers"
-            :key="index"
+            v-for="col in fieldsSet"
+            :key="col"
             class="table-thead-col"
-            :class="index"
-            v-html="col"
+            :class="col"
+            v-html="setNames[col]"
           />
         </tr>
-      </thead> -->
+      </thead>
       <tbody>
-        <tr v-for="(row, id) in tools.edges" :key="id" class="table-row">
-          <td v-for="(col, i) in row.node" :key="i" class="table-col" :class="i">
-            <span v-if="i === 'serial'" class="hd">
-              {{ node.code }}
-            </span>
-            <span class="td">{{ col }}</span>
+        <tr v-for="(row, id) in tools" :key="id" class="table-row">
+          <td>
+            <span class="hd">{{ row.node.series.id.toUpperCase() }}</span>
+            <span class="td">{{ row.node.name.toUpperCase() }}</span>
+          </td>
+          <td
+            v-for="i in fieldsSet"
+            :key="i"
+            class="table-col"
+            :class="i"
+          >
+            {{ row.node[i] }}
           </td>
         </tr>
       </tbody>
@@ -32,9 +39,33 @@
 <script>
 export default {
   props: {
+    fieldsSet: {
+      type: Array,
+      required: true
+    },
+    
     tools: {
       type: Array,
       required: true
+    }
+  },
+
+  data() {
+    return {
+      setNames: {
+        "name": "Обозначение",
+        "d1": "D<sub>1</sub>",
+        "d2": "D<sub>2</sub>",
+        "d3": "D<sub>3</sub>",
+        "r": "R",
+        "f45": "Fх45°",
+        "l1": "L<sub>1</sub>",
+        "l2": "L<sub>2</sub>",
+        "ap": "a<sub>p</sub>",
+        "z": "Z",
+        "a": "α°",
+        "form": "Форма"
+      }
     }
   }
 }
@@ -49,7 +80,7 @@ export default {
 
 .table-col,
 .table-thead-col {
-  padding: .2rem .3rem;
+  padding: .2rem 1.25rem .2rem .3rem;
 }
 
 .pi-table {

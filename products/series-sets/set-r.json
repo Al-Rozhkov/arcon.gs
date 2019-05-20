@@ -1,12 +1,12 @@
 {
   "id": "set-r",
-  "set": {
-    "d1": "D<sup>1</sup>",
-    "d2": "D<sup>2</sup>",
-    "r": "R",
-    "l1": "L<sup>1</sup>",
-    "ap": "a<sup>p</sup>",
-    "z": "Z",
-    "form": "Форма"
-  }
+  "set": [
+    "d1",
+    "d2",
+    "r",
+    "l1",
+    "ap",
+    "z",
+    "form"
+  ]
 }
