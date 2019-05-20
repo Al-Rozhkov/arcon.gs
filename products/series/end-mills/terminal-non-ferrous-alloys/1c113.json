@@ -3,12 +3,12 @@
     "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
     "productCategory": "non-ferrous-alloys",
     "scheme": [
-      {
-        "b": "cylinder-f"
-      }
+        {
+            "b": "cylinder-f"
+        }
     ],
     "mainUsage": [
-      "n1"
+        "n1"
     ],
     "possibleUsage": [
         "n3"
@@ -16,22 +16,23 @@
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-      "sharp-f"
+        "sharp-f"
     ],
     "cogs": [
-      {
-        "cogsPitch": "permanent",
-        "cogsNumber": 3
-      }
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 3
+        }
     ],
     "grooveInclination": {
-      "type": "permanent",
-      "angles": [
-        50
-      ]
+        "type": "permanent",
+        "angles": [
+            50
+        ]
     },
     "cuttingPart": [
-      "middle", "long"
-    ]
-  }
+        "middle", "long"
+    ],
+    "productSeriesSet": "simple"
+}
   

@@ -1,0 +1,13 @@
+{
+  "id": "profile",
+  "set": {
+    "a": "α°",
+    "d1": "D<sup>1</sup>",
+    "d2": "D<sup>2</sup>",
+    "d3": "D<sup>3</sup>",
+    "l1": "L<sup>1</sup>",
+    "ap": "a<sup>p</sup>",
+    "z": "Z",
+    "form": "Форма"
+  }
+}

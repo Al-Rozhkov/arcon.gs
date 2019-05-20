@@ -40,11 +40,19 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        path: 'products/series-sets/*.json',
+        typeName: 'ProductSeriesSet'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
         path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
         route: '/catalog/end-mills/:series',
         refs: {
-          productCategory: 'ProductCategory'
+          productCategory: 'ProductCategory',
+          productSeriesSet: 'ProductSeriesSet'
         }
       }
     },
@@ -53,7 +61,10 @@ module.exports = {
       options: {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
-        route: '/catalog/drills/:series'
+        route: '/catalog/drills/:series',
+        refs: {
+          productSeriesSet: 'ProductSeriesSet'
+        }
       }
     },
     {
@@ -61,7 +72,10 @@ module.exports = {
       options: {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
-        route: '/catalog/thread-mills/:series'
+        route: '/catalog/thread-mills/:series',
+        refs: {
+          productSeriesSet: 'ProductSeriesSet'
+        }
       }
     },
     {

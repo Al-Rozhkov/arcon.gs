@@ -13,8 +13,7 @@ const createNodes = (contentType, filePath) => {
   })
 }
 
-module.exports = function (api, options) {
-
+module.exports = function (api) {
   api.loadSource(async ({ addContentType }) => {
     
     // Mills
@@ -22,8 +21,7 @@ module.exports = function (api, options) {
       typeName: 'ProductItemEndMill'
     })
     ProductItemEndMill.addReference('series', 'ProductEndMill')
-    createNodes(ProductItemEndMill, 'products/product-items/mills/mills--lower.xls')
-    createNodes(ProductItemEndMill, 'products/product-items/mills/mills.xls')
+    createNodes(ProductItemEndMill, 'products/product-items/mills.xls')
 
     // Drills
     const ProductItemDrill = addContentType({
