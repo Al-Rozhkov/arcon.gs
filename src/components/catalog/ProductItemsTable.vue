@@ -4,20 +4,20 @@
       Единицы измерения — мм
     </p>
     <table class="pi-table">
-      <thead class="table-thead">
+      <thead>
         <tr>
           <td>Обозначение</td>
           <td
             v-for="col in fieldsSet"
             :key="col"
-            class="table-thead-col"
+            class="col"
             :class="col"
             v-html="setNames[col]"
           />
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, id) in tools" :key="id" class="table-row">
+        <tr v-for="(row, id) in tools" :key="id">
           <td>
             <span class="hd">{{ row.node.series.id.toUpperCase() }}</span>
             <span class="td">{{ row.node.name.toUpperCase() }}</span>
@@ -25,7 +25,7 @@
           <td
             v-for="i in fieldsSet"
             :key="i"
-            class="table-col"
+            class="col"
             :class="i"
           >
             {{ row.node[i] }}
@@ -73,30 +73,44 @@ export default {
 
 
 <style lang="scss">
-.table-thead,
-.table-row {
-  width: 100%;
-}
-
-.table-col,
-.table-thead-col {
-  padding: .2rem 1.25rem .2rem .3rem;
-}
-
 .pi-table {
   margin: 0 -.3rem;
 
-  .table-thead {
+  thead, tr {
+    width: 100%;
+  }
+  
+  thead {
     font-weight: $font-weight-bold;
     border-bottom: 1px solid $gray-300;
     margin-bottom: 1rem;
   }
 
-  .table-row:hover {
-    background: fade-out($color: $yellow, $amount: .8);
+  .col {
+    padding: .2rem 1.25rem .2rem .3rem;
+  }
 
-    .hd {
-      visibility: visible;
+  tbody {
+    tr {
+      border-bottom: 2px solid $white;
+    }
+
+    tr:nth-child(4n), tr:nth-child(4n-1) {
+      background: fade-out($yellow, .8);
+    }
+
+    &:hover {
+      tr:nth-child(4n), tr:nth-child(4n-1) {
+        background: transparent;
+      }
+
+      tr:hover {
+        background: fade-out($yellow, .7);
+
+        .hd {
+          visibility: visible;
+        }
+      }
     }
   }
 
@@ -122,9 +136,5 @@ export default {
     max-width: 3rem;
     flex: 1 1 3rem;
   } */
-
-  .table-row .form {
-    text-transform: uppercase;
-  }
 }
 </style>

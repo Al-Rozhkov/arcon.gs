@@ -27,7 +27,6 @@
             ...on ProductEndMill {
               id
               path
-              series
               fusion
               productImg (width: 300, quality: 75)
               body

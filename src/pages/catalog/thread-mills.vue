@@ -24,7 +24,6 @@ query Catalog {
       node {
         id
         path
-        series
         productImg (width: 300, quality: 75)
         body
         mainUsage

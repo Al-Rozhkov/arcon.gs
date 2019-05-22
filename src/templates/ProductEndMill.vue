@@ -24,10 +24,9 @@
 </template>
 
 <page-query>
-  query Tool ($path: String, $series: String!) {
+  query Tool ($path: String, $id: String!) {
     series: productEndMill (path: $path) {
       id
-      series
       fusion
       productImg (width: 800, quality: 75)
       body
@@ -49,7 +48,7 @@
         set
       }
     }
-    tools: allProductItemEndMill (filter: { series: { eq: $series } }) {
+    tools: allProductItemEndMill (filter: { series: { eq: $id } }) {
       edges {
         node {
           id

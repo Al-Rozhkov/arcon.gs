@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td>
-      <h3>{{ node.series.toUpperCase() }}</h3>
+      <h3>{{ node.id.toUpperCase() }}</h3>
     </td>
     <td>
       {{ node.myField }}

@@ -3,7 +3,7 @@
     
     <header :to="node.path">
       <div class="series-title">
-        <h2>{{ node.series.toUpperCase() }}</h2>
+        <h2>{{ node.id.toUpperCase() }}</h2>
 
         <svg-plain-icon
           v-if="node.fusion"
@@ -16,7 +16,7 @@
       <g-image
         v-if="node.productImg.length > 0"
         :src="node.productImg[0]"
-        :alt="node.series"
+        :alt="node.id"
         class="series-img"
       />
     </header>

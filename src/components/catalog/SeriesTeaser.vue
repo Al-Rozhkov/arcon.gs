@@ -1,7 +1,7 @@
 <template>
   <article class="series-item">
     <g-link :to="node.path">
-      <h3>{{ node.series.toUpperCase() }}</h3>
+      <h3>{{ node.id.toUpperCase() }}</h3>
       <svg-plain-icon
         v-if="node.fusion"
         icon-id="series-fusion"
@@ -11,7 +11,7 @@
       <g-image
         v-if="node.productImg.length > 0"
         :src="node.productImg[0]"
-        :alt="node.series"
+        :alt="node.id"
         class="series-img"
       />
     </g-link>

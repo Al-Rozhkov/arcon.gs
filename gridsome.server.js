@@ -57,7 +57,7 @@ module.exports = function (api) {
           
           const fileNames = ('photos' in node && node.photos.length > 0)
             ? node.photos.map(p => getPath(p))
-            : [ getPath(node.series) ]
+            : [ getPath(node.id) ]
     
           return fileNames.reduce(
             async (acc, fileName) => {

@@ -2,6 +2,7 @@
     "id": "1c001",
     "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
     "productCategory": "steel-carbon",
+    "fusion": false,
     "scheme": [
         {
             "b": "cylinder-lower-r"
