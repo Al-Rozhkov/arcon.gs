@@ -21,7 +21,7 @@
   query Category ($path: String) {
     category: productCategory (path: $path) {
       title,
-      belongsTo (sortBy: "series", order: ASC) {
+      belongsTo (sortBy: "id", order: ASC) {
         edges {
           node {
             ...on ProductEndMill {

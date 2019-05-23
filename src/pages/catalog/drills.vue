@@ -3,7 +3,7 @@
 
     <main class="block">
       <h1>Сверла Arconit™</h1>
-      <categories-list class="submenu" />
+      <!-- <categories-list class="submenu" /> -->
 
       <div class="catalog-list">
         <series-teaser

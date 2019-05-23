@@ -3,7 +3,7 @@
 
     <main class="block">
       <h1>Резьбовые фрезы Arconit™</h1>
-      <categories-list class="submenu" />
+      <!-- <categories-list class="submenu" /> -->
 
       <div class="catalog-list">
         <series-teaser

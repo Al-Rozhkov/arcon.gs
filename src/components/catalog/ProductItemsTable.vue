@@ -17,8 +17,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, id) in tools" :key="id">
-          <td>
+        <tr
+          v-for="(row, id) in tools"
+          :key="id"
+          v-tooltip="row.node.tip"
+        >
+          <td class="col">
             <span class="hd">{{ row.node.series.id.toUpperCase() }}</span>
             <span class="td">{{ row.node.name.toUpperCase() }}</span>
           </td>
@@ -88,6 +92,7 @@ export default {
 
   .col {
     padding: .2rem 1.25rem .2rem .3rem;
+    vertical-align: top;
   }
 
   tbody {
