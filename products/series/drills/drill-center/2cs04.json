@@ -10,6 +10,9 @@
   "mainUsage": [
       "p", "k", "m", "s"
   ],
+  "photos": [
+    "2cs-ng"
+  ],
   "coating": "ng",
   "tail": "cylinder",
   "cuttingShapes": [

@@ -1,31 +1,34 @@
 {
-  "id": "2cs02",
-  "body": "Цельное твердосплавное центровочное сверло, 90°, 120° и 142°. средняя, длинная и сверхдлинная серии.",
-  "productCategory": "drill-center",
-  "scheme": [
-      {
-          "b": "undefined"
-      }
-  ],
-  "mainUsage": [
-      "p", "k", "m", "s"
-  ],
-  "coating": "ng",
-  "tail": "cylinder",
-  "cuttingShapes": [
-    "conus"
-  ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsCenter": "overlap",
-      "cogsNumber": 2
+    "id": "2cs02",
+    "body": "Цельное твердосплавное центровочное сверло, 90°, 120° и 142°. средняя, длинная и сверхдлинная серии.",
+    "productCategory": "drill-center",
+    "scheme": [
+        {
+            "b": "undefined"
+        }
+    ],
+    "mainUsage": [
+        "p", "k", "m", "s"
+    ],
+    "photos": [
+        "2cs-ng"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "cuttingShapes": [
+        "conus"
+    ],
+    "cogs": [
+        {
+        "cogsPitch": "permanent",
+        "cogsCenter": "overlap",
+        "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": {
+        "type": "permanent",
+        "angles": [
+        30
+        ]
     }
-  ],
-  "grooveInclination": {
-    "type": "permanent",
-    "angles": [
-      30
-    ]
-  }
 }

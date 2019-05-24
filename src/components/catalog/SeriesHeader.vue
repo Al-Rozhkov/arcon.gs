@@ -36,6 +36,17 @@
             :key="icon"
             :icon-id="icon"
           />
+          <svg-icon
+            v-if="node.grooveInclination"
+            icon-id="cogs-angle"
+          >
+            <text transform="matrix(1 0 0 1 27 16)" style="font-size:12px;">{{ node.grooveInclination.angles[0]}}&#xB0;</text>
+            <text
+              v-if="node.grooveInclination.angles[1]"
+              transform="matrix(1 0 0 1 27 28)"
+              style="font-size:12px;"
+            >{{ node.grooveInclination.angles[1]}}&#xB0;</text>
+          </svg-icon>
         </div>
       </div>
 
@@ -70,8 +81,7 @@ export default {
         'coating',
         'tail',
         'endShapes',
-        'cogs',
-        'grooveInclination'
+        'cogs'
       ].reduce((result, f) => {
         if (this.node[f] && typeof this.node[f] === "string") {
           result.push(`${f}-${this.node[f]}`)
