@@ -4,11 +4,18 @@
     <main class="block">
       <h1>Рекомендации по&nbsp;выбору концевых фрез для металлобработки</h1>
 
-      <table class="series-overview">
+      <table class="series-overview sticky-header">
         <thead>
+          <tr>
+            <th>Серия</th>
+            <th></th>
+            <th>Основное применение</th>
+            <th>Возможное применение</th>
+            <th></th>
+          </tr>
         </thead>
         <tbody>
-          <template v-for="edge in filteredNodes">
+          <template v-for="edge in groupedNodes">
             <series-item
               :node="edge.node"
               :key="edge.node.slug"
@@ -27,6 +34,7 @@ query Catalog {
     edges {
       node {
         id
+        path
         productImg (width: 260, quality: 75)
         fusion
         mainUsage
@@ -68,15 +76,10 @@ export default {
   },
 
   computed: {
-    filteredNodes() {
-      const result = this.$page.series.edges
-      return result.filter(node => {
-        return node
-      })
-    },
-
-    seriesUsage() {
-      return []
+    groupedNodes() {
+      const all = this.$page.series.edges
+      const groups = []
+      return all
     }
   },
 
@@ -87,15 +90,18 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/modules/table.scss';
+
 .series-overview {
-  tr {
-    border-top: 1px solid rgba(0,0,0,.1);
-    padding: .5rem 0;
-    margin: 0 -.5rem
+  margin: 0 -.5rem;
+
+  h2 {
+    font-size: 1.5rem;
   }
 
   td {
-    padding: 0 .5rem;
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: .3rem .5rem;
   }
 }
 </style>

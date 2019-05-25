@@ -3,11 +3,11 @@
     <p class="small">
       Единицы измерения — мм
     </p>
-    <table class="pi-table">
+    <table class="pi-table sticky-header">
       <thead>
         <tr>
-          <td>Обозначение</td>
-          <td
+          <th>Обозначение</th>
+          <th
             v-for="col in fieldsSet"
             :key="col"
             class="col"
@@ -16,6 +16,7 @@
           />
         </tr>
       </thead>
+
       <tbody>
         <tr
           v-for="(row, id) in tools"
@@ -77,17 +78,13 @@ export default {
 
 
 <style lang="scss">
+@import '~/assets/scss/modules/table.scss';
+
 .pi-table {
   margin: 0 -.3rem;
 
   thead, tr {
     width: 100%;
-  }
-  
-  thead {
-    font-weight: $font-weight-bold;
-    border-bottom: 1px solid $gray-300;
-    margin-bottom: 1rem;
   }
 
   .col {
@@ -96,7 +93,7 @@ export default {
   }
 
   tbody {
-    tr {
+    td {
       border-bottom: 2px solid $white;
     }
 

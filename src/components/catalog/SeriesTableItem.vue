@@ -1,21 +1,21 @@
 <template>
   <tr>
-    <td>
-      <h3>{{ node.id.toUpperCase() }}</h3>
-    </td>
-    <td>
-      {{ node.myField }}
+    <td class="td-flex">
+      <g-link
+        :to="node.path"
+        class="link-flex"
+      >
+        <h2>{{ node.id.toUpperCase() }}</h2>
+        <g-image
+          v-if="node.productImg.length > 0"
+          :src="node.productImg[0]"
+        />
+      </g-link>
     </td>
     <td>
       <svg-icon
         :icon-id="'coating-' + node.coating"
         :size="30"
-      />
-    </td>
-    <td>
-      <g-image
-        v-if="node.productImg.length > 0"
-        :src="node.productImg[0]"
       />
     </td>
     <td>
@@ -32,6 +32,19 @@
         :mat-id="m"
         :mat-main="false"
       />
+    </td>
+    <td>
+      <svg-icon
+        v-if="node.grooveInclination"
+        icon-id="cogs-angle"
+      >
+        <text transform="matrix(1 0 0 1 27 16)" style="font-size:12px;">{{ node.grooveInclination.angles[0]}}&#xB0;</text>
+        <text
+          v-if="node.grooveInclination.angles[1]"
+          transform="matrix(1 0 0 1 27 28)"
+          style="font-size:12px;"
+        >{{ node.grooveInclination.angles[1]}}&#xB0;</text>
+      </svg-icon>
     </td>
   </tr>
 </template>
@@ -59,8 +72,7 @@ export default {
         'coating',
         'tail',
         'endShapes',
-        'cogs',
-        'grooveInclination'
+        'cogs'
       ].reduce((result, f) => {
         if (this.node[f] && typeof this.node[f] === "string") {
           result.push(`${f}-${this.node[f]}`)
@@ -84,5 +96,13 @@ export default {
 </script>
 
 <style lang="scss">
+.link-flex {
+  @extend %grid-row-wrap;
+  color: $black;
 
+  h2 {
+    padding-top: .75rem;
+    padding-right: .5rem;
+  }
+}
 </style>

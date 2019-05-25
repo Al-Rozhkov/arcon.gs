@@ -35,6 +35,8 @@ export default {
       featuresDesc: {
         'coating-ng': 'Покрытие: nACo-G',
         'coating-tan': 'Покрытие: TiAlN',
+        'coating-tin': 'Покрытие: TiN',
+        'coating-pp': 'PurePolish. Полировка',
         'tail-cylinder': 'Цилиндрический хвостовик',
         'form-sharp': 'Торец без фаски, наостро',
         'form-sharp-r': 'Торец с притуплением',
