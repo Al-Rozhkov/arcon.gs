@@ -19,7 +19,7 @@
 
 <page-query>
 query Catalog {
-  series: allProductThreadMill(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductThreadMill(sortBy: "id", order: ASC, perPage: 125) {
     edges {
       node {
         id

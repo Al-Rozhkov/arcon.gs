@@ -69,7 +69,9 @@ export default {
         "ap": "a<sub>p</sub>",
         "z": "Z",
         "a": "α°",
-        "form": "Форма"
+        "form": "Форма",
+        "step": "Шаг",
+        "thread": "Резьба"
       }
     }
   }

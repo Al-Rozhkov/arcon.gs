@@ -17,5 +17,6 @@
     "tail": "cylinder",
     "cuttingShapes": [
         "t"
-    ]
+    ],
+    "productSeriesSet": "thread-mills"
 }
