@@ -104,5 +104,10 @@ export default {
     padding-top: .75rem;
     padding-right: .5rem;
   }
+
+  img {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 </style>
