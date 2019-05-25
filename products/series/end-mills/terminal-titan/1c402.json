@@ -1,5 +1,5 @@
 {
-    "series": "1c402",
+    "id": "1c402",
     "body": "Цельная твердосплавная концевая фреза, 2-4 зуба, со средней режущей частью.",
     "productCategory": "titan",
     "scheme": [
@@ -39,5 +39,6 @@
     },
     "cuttingPart": [
         "middle"
-    ]
+    ],
+    "productSeriesSet": "set-r"
 }

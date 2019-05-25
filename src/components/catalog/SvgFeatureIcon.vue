@@ -1,6 +1,10 @@
 <template>
   <div v-tooltip="tooltipText" class="icon-attr">
-    <svg :width="width" :height="height">
+    <svg
+      :width="width"
+      :height="height"
+      role="img"
+    >
       <use :xlink:href="'#' + iconId" />
       <slot />
     </svg>
@@ -30,6 +34,9 @@ export default {
     return {
       featuresDesc: {
         'coating-ng': 'Покрытие: nACo-G',
+        'coating-tan': 'Покрытие: TiAlN',
+        'coating-tin': 'Покрытие: TiN',
+        'coating-pp': 'PurePolish. Полировка',
         'tail-cylinder': 'Цилиндрический хвостовик',
         'form-sharp': 'Торец без фаски, наостро',
         'form-sharp-r': 'Торец с притуплением',
@@ -57,10 +64,5 @@ export default {
   margin-right: .5rem;
 
   cursor: default;
-
-  /* svg {
-    width: 100%;
-    height: 100%;
-  } */
 }
 </style>

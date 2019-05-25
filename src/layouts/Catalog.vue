@@ -10,7 +10,8 @@
 
     <slot />
 
-    <svg-sprite-features style="display: none;" />
+    <svg-sprite-coating />
+    <svg-sprite-features />
 
     <app-footer />
   </div>
@@ -25,12 +26,14 @@ query {
 </static-query>
 
 <script>
-import CatalogCategories from "~/components/catalog/CatalogCategories"
+import CatalogCategories from '~/components/catalog/CatalogCategories'
+import SvgSpriteCoating from '~/components/catalog/SvgSpriteCoating'
 import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
 
 export default {
   components: {
     CatalogCategories,
+    SvgSpriteCoating,
     SvgSpriteFeatures
   },
 }

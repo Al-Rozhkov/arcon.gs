@@ -1,5 +1,5 @@
 {
-    "series": "1r042",
+    "id": "1r042",
     "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
     "productCategory": "steel-carbon",
     "scheme": [
@@ -30,5 +30,6 @@
         "angles": [
             43, 45
         ]
-    }
+    },
+    "productSeriesSet": "set-r"
 }

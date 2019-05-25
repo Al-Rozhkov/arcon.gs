@@ -3,7 +3,7 @@
 
     <main class="block">
       <h1>Сверла Arconit™</h1>
-      <categories-list class="submenu" />
+      <!-- <categories-list class="submenu" /> -->
 
       <div class="catalog-list">
         <series-teaser
@@ -24,7 +24,6 @@ query Catalog {
       node {
         id
         path
-        series
         productImg (width: 300, quality: 75)
         body
         mainUsage

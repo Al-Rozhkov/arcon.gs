@@ -1,5 +1,5 @@
 {
-  "series": "1c005",
+  "id": "1c005",
   "body": "Цельная твердосплавная концевая фреза, 6-8 зубьев, со средней режущей частью.",
   "productCategory": "steel-carbon",
   "scheme": [
@@ -39,5 +39,6 @@
   },
   "cuttingPart": [
     "middle"
-  ]
+  ],
+  "productSeriesSet": "set-f45"
 }

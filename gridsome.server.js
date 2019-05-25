@@ -4,10 +4,11 @@
 
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const path = require('path')
 
 module.exports = function (api) {
   api.loadSource(store => {
-    const path = require('path')
+    
     const { imageType } = require('gridsome/lib/graphql/types/image')
     const { GraphQLList } = require('graphql')
 
@@ -56,7 +57,7 @@ module.exports = function (api) {
           
           const fileNames = ('photos' in node && node.photos.length > 0)
             ? node.photos.map(p => getPath(p))
-            : [ getPath(node.series) ]
+            : [ getPath(node.id) ]
     
           return fileNames.reduce(
             async (acc, fileName) => {

@@ -1,5 +1,5 @@
 {
-    "series": "7v52",
+    "id": "7v52",
     "body": "Цельная твердосплавная фасонная фасочная фреза, 60°, 90° и 120°, 6-8 зубьев. Без возможности засверливания. Схематичное изображение совместимо с 7V02.",
     "productCategory": "shaped-treatment",
     "scheme": [
@@ -29,5 +29,6 @@
             "cogsCenter": "overlap",
             "cogsNumber": 10
         }
-    ]
+    ],
+    "productSeriesSet": "profile"
 }

@@ -19,12 +19,11 @@
 
 <page-query>
 query Catalog {
-  series: allProductEndMill(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductEndMill(sortBy: "id", order: ASC, perPage: 125) {
     edges {
       node {
         id
         path
-        series
         fusion
         productImg (width: 300, quality: 75)
         body

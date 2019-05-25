@@ -1,0 +1,85 @@
+<template>
+  <page-layout>
+
+    <main class="block">
+      <series-header :node="$page.series" />
+
+      <div class="product-items-list">
+        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
+          <img :src="'/img/scheme/' + scheme + '.svg'">
+        </div> -->
+
+        <product-items-table
+          :fields-set="$page.series.productSeriesSet.set"
+          :tools="$page.tools.edges"
+        />
+      </div>
+
+      <!-- <section class="section-top">
+        <h2>Похожие инструменты</h2>
+      </section> -->
+    </main>
+
+  </page-layout>
+</template>
+
+<page-query>
+  query Tool ($path: String, $id: String!) {
+    series: productThreadMill (path: $path) {
+      id
+      productImg (width: 800, quality: 75)
+      body
+      mainUsage
+      coating
+      tail
+      cuttingShapes
+      photos,
+      productSeriesSet {
+        set
+      }
+    }
+    tools: allProductItemThreadMill (filter: { series: { eq: $id } }) {
+      edges {
+        node {
+          id
+          series {
+            id
+          }
+          name
+          step
+          thread
+          d1
+          d2
+          l1
+          l2
+          z
+        }
+      }
+    }
+  }
+</page-query>
+
+<script>
+import PageLayout from '~/layouts/Catalog.vue'
+
+import SeriesHeader from '~/components/catalog/SeriesHeader.vue'
+import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
+
+export default {
+  components: {
+    PageLayout,
+    SeriesHeader,
+    ProductItemsTable
+  },
+
+  metaInfo () {
+    return {
+      title: this.$page.series.id
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+
+</style>

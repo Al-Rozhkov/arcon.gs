@@ -1,5 +1,5 @@
 {
-    "series": "1c104",
+    "id": "1c104",
     "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
     "productCategory": "non-ferrous-alloys",
     "fusion": true,
@@ -45,5 +45,6 @@
     },
     "cuttingPart": [
         "middle"
-    ]
+    ],
+    "productSeriesSet": "lower-f45"
 }

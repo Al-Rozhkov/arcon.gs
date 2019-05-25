@@ -1,5 +1,5 @@
 {
-    "series": "1c006",
+    "id": "1c006",
     "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
     "productCategory": "steel-carbon",
     "fusion": true,
@@ -36,5 +36,6 @@
     },
     "cuttingPart": [
         "middle"
-    ]
+    ],
+    "productSeriesSet": "set-f45"
 }

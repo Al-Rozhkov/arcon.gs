@@ -3,7 +3,7 @@
 
     <main class="block">
       <h1>Резьбовые фрезы Arconit™</h1>
-      <categories-list class="submenu" />
+      <!-- <categories-list class="submenu" /> -->
 
       <div class="catalog-list">
         <series-teaser
@@ -19,12 +19,11 @@
 
 <page-query>
 query Catalog {
-  series: allProductThreadMill(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductThreadMill(sortBy: "id", order: ASC, perPage: 125) {
     edges {
       node {
         id
         path
-        series
         productImg (width: 300, quality: 75)
         body
         mainUsage

@@ -1,5 +1,5 @@
 {
-    "series": "1c202",
+    "id": "1c202",
     "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
     "productCategory": "stainless-steel",
     "scheme": [
@@ -35,5 +35,6 @@
     },
     "cuttingPart": [
         "middle"
-    ]
+    ],
+    "productSeriesSet": "set-r"
 }

@@ -1,5 +1,5 @@
 {
-    "series": "1c109",
+    "id": "1c109",
     "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
     "productCategory": "non-ferrous-alloys",
     "scheme": [
@@ -35,5 +35,6 @@
     },
     "cuttingPart": [
         "middle", "long"
-    ]
+    ],
+    "productSeriesSet": "simple"
 }

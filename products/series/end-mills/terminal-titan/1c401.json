@@ -1,5 +1,5 @@
 {
-    "series": "1c401",
+    "id": "1c401",
     "body": "Цельная твердосплавная концевая фреза, 2—4 зуба, с короткой режущей частью, с заниженной шейкой.",
     "productCategory": "titan",
     "scheme": [
@@ -36,5 +36,6 @@
     },
     "cuttingPart": [
         "short"
-    ]
+    ],
+    "productSeriesSet": "lower-r"
 }

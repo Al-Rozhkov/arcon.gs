@@ -1,0 +1,23 @@
+table {
+  thead {
+    font-weight: $font-weight-bold;
+    border-bottom: 1px solid $gray-300;
+  }
+}
+
+table.sticky-header {
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead {
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      border-bottom: 1px solid $black;
+      padding: .25rem .5rem;
+    }
+  }
+}

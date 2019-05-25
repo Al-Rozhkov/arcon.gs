@@ -1,7 +1,7 @@
 <template>
   <article class="series-item">
     <g-link :to="node.path">
-      <h3>{{ node.series.toUpperCase() }}</h3>
+      <h3>{{ node.id.toUpperCase() }}</h3>
       <svg-plain-icon
         v-if="node.fusion"
         icon-id="series-fusion"
@@ -11,7 +11,7 @@
       <g-image
         v-if="node.productImg.length > 0"
         :src="node.productImg[0]"
-        :alt="node.series"
+        :alt="node.id"
         class="series-img"
       />
     </g-link>
@@ -31,6 +31,17 @@
             :key="icon"
             :icon-id="icon"
           />
+          <svg-icon
+            v-if="node.grooveInclination"
+            icon-id="cogs-angle"
+          >
+            <text transform="matrix(1 0 0 1 27 16)" style="font-size:12px;">{{ node.grooveInclination.angles[0]}}&#xB0;</text>
+            <text
+              v-if="node.grooveInclination.angles[1]"
+              transform="matrix(1 0 0 1 27 28)"
+              style="font-size:12px;"
+            >{{ node.grooveInclination.angles[1]}}&#xB0;</text>
+          </svg-icon>
         </div>
       </div>
       <div v-html="node.body" />
@@ -74,8 +85,7 @@ export default {
         'coating',
         'tail',
         'endShapes',
-        'cogs',
-        'grooveInclination'
+        'cogs'
       ].reduce((result, f) => {
         if (this.node[f] && typeof this.node[f] === "string") {
           result.push(`${f}-${this.node[f]}`)
@@ -195,60 +205,5 @@ export default {
 .series-scheme img {
   min-width: 360px;
   height: auto;
-}
-
-.table-thead,
-.table-row {
-  width: 100%;
-}
-
-.table-col,
-.table-thead-col {
-  padding: .2rem .3rem;
-}
-
-.d-table {
-  margin: 0 -.3rem;
-
-  .table-thead {
-    font-weight: bold;
-    border-bottom: 1px solid $gray-300;
-    margin-bottom: 1rem;
-  }
-
-  .table-row:hover {
-    background: fade-out($color: $yellow, $amount: .8);
-
-    .hd {
-      visibility: visible;
-    }
-  }
-
-  .td {
-    padding-right: 1.25rem;
-  }
-
-  .hd {
-    visibility: hidden;
-  }
-
-  /* .serial {
-    max-width: 8rem;
-    flex: 2 1 8rem;
-  }
-
-  .d1, .d2, .d3, .r {
-    max-width: 4rem;
-    flex: 1 1 4rem;
-  }
-
-  .l1, .l2, .ap, .z {
-    max-width: 3rem;
-    flex: 1 1 3rem;
-  } */
-
-  .table-row .form {
-    text-transform: uppercase;
-  }
 }
 </style>

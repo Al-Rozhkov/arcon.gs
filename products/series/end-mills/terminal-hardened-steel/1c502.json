@@ -1,5 +1,5 @@
 {
-    "series": "1c502",
+    "id": "1c502",
     "body": "Цельная твердосплавная концевая фреза, 4—6 зубьев, со средней режущей частью.",
     "productCategory": "hardened-steel",
     "scheme": [
@@ -37,5 +37,6 @@
     },
     "cuttingPart": [
         "middle"
-    ]
+    ],
+    "productSeriesSet": "set-r"
 }

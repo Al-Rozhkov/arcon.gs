@@ -2,55 +2,27 @@
   <Layout>
     
     <main class="block">
-      
-      <LazyHydrate when-idle>
-        <front-hero />
-      </LazyHydrate>
-
-      <LazyHydrate when-idle>
-        <front-news />
-      </LazyHydrate>
-      
-      <LazyHydrate when-idle>
-        <catalog-block />
-      </LazyHydrate>
-
-      <LazyHydrate ssr-only>
-        <front-advantages />
-      </LazyHydrate>
+      <front-hero />
+      <front-news />
+      <catalog-block />
+      <front-advantages />
     </main>
 
-    <LazyHydrate ssr-only>
-      <section class="services-wrapper">
-        <div class="block">
-          <front-services />
-        </div>
-      </section>
-    </LazyHydrate>
+    <section class="services-wrapper">
+      <div class="block">
+        <front-services />
+      </div>
+    </section>
 
   </Layout>
 </template>
 
 <script>
-// import { hydrateSsrOnly } from 'vue-lazy-hydration'
-import LazyHydrate from 'vue-lazy-hydration'
-
-/* 
-import FrontHero from '~/components/blocks/FrontHero.vue'
-import FrontNews from '~/components/blocks/FrontNews.vue'
-import FrontAdvantages from '~/components/blocks/FrontAdvantages'
-import FrontServices from '~/components/blocks/FrontServices'
-*/
+import { hydrateSsrOnly, hydrateWhenIdle } from 'vue-lazy-hydration'
 
 export default {
   components: {
-    LazyHydrate,
-    FrontHero: () => import('~/components/blocks/FrontHero.vue'),
-    FrontNews: () => import('~/components/blocks/FrontNews.vue'),
-    FrontAdvantages: () => import('~/components/blocks/FrontAdvantages.vue'),
-    FrontServices: () => import('~/components/blocks/FrontServices.vue'),
-    CatalogBlock: () => import('~/components/blocks/CatalogBlock.vue'),
-    /* FrontHero: hydrateSsrOnly(
+    FrontHero: hydrateWhenIdle(
       () => import('~/components/blocks/FrontHero.vue')
     ),
     FrontAdvantages: hydrateSsrOnly(
@@ -59,12 +31,12 @@ export default {
     FrontServices: hydrateSsrOnly(
       () => import('~/components/blocks/FrontServices.vue')
     ),
-    FrontNews: hydrateSsrOnly(
+    FrontNews: hydrateWhenIdle(
       () => import('~/components/blocks/FrontNews.vue')
     ),
-    CatalogBlock: hydrateSsrOnly(
+    CatalogBlock: hydrateWhenIdle(
       () => import('~/components/blocks/CatalogBlock.vue')
-    ) */
+    )
   },
 
   metaInfo: {
