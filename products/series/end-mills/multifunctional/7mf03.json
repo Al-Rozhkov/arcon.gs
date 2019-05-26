@@ -4,14 +4,19 @@
     "productCategory": "multifunctional",
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
-        "p", "k", "m", "s"
+        "p",
+        "k",
+        "m",
+        "s"
     ],
     "possibleUsage": [
-        "n1", "n3"
+        "n1",
+        "n3"
     ],
     "coating": "ng",
     "tail": "cylinder",
@@ -20,8 +25,8 @@
     ],
     "cogs": [
         {
-        "cogsPitch": "permanent",
-        "cogsNumber": 2
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
         }
     ],
     "grooveInclination": {

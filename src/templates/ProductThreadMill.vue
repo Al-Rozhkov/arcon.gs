@@ -74,7 +74,7 @@ export default {
 
   metaInfo () {
     return {
-      title: this.$page.series.id
+      title: `Резьбовая фреза ${this.$page.series.id}`
     }
   }
 }

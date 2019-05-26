@@ -81,7 +81,7 @@ export default {
 
   metaInfo () {
     return {
-      title: this.$page.series.id
+      title: `Сверло ${this.$page.series.id}`
     }
   }
 }

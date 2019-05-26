@@ -4,22 +4,28 @@
     "productCategory": "steel-carbon",
     "scheme": [
         {
-            "a": "cylinder-conus-r"
+            "name": "a",
+            "scheme": "cylinder-conus-r"
         },
         {
-            "b": "cylinder-r"
+            "name": "b",
+            "scheme": "cylinder-r"
         }
     ],
     "mainUsage": [
-        "p", "k", "m"
+        "p",
+        "k",
+        "m"
     ],
     "possibleUsage": [
-        "s", "h1.1"
+        "s",
+        "h1.1"
     ],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
@@ -30,7 +36,8 @@
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            43, 45
+            43,
+            45
         ]
     },
     "cuttingPart": [

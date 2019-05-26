@@ -3,21 +3,25 @@
     "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
     "productCategory": "non-ferrous-alloys",
     "scheme": [
-    {
-        "a": "cylinder-conus-lower-f"
-    },
-    {
-        "b": "cylinder-lower-f"
-    }
+        {
+            "name": "a",
+            "scheme": "cylinder-conus-lower-f"
+        },
+        {
+            "name": "b",
+            "scheme": "cylinder-lower-f"
+        }
     ],
     "mainUsage": [
-        "n1", "n3"
+        "n1",
+        "n3"
     ],
     "possibleUsage": [],
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-f"
+        "sharp",
+        "sharp-f"
     ],
     "cogs": [
         {
@@ -28,7 +32,8 @@
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            40, 42
+            40,
+            42
         ]
     },
     "cuttingPart": [

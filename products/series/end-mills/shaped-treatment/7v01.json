@@ -5,14 +5,19 @@
     "fusion": true,
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
-        "p", "m", "n1"
+        "p",
+        "m",
+        "n1"
     ],
     "possibleUsage": [
-        "k", "n3", "s"
+        "k",
+        "n3",
+        "s"
     ],
     "coating": "tan",
     "tail": "cylinder",

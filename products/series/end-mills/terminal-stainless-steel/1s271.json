@@ -4,17 +4,22 @@
     "productCategory": "stainless-steel",
     "scheme": [
         {
-            "a": "sphere-conus-lower"
+            "name": "a",
+            "scheme": "sphere-conus-lower"
         },
         {
-            "b": "sphere-lower"
+            "name": "b",
+            "scheme": "sphere-lower"
         }
     ],
     "mainUsage": [
-        "m", "p", "s"
+        "m",
+        "p",
+        "s"
     ],
     "possibleUsage": [
-        "k", "n3"
+        "k",
+        "n3"
     ],
     "coating": "ng",
     "tail": "cylinder",
@@ -23,8 +28,8 @@
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 4
+            "cogsPitch": "variable",
+            "cogsNumber": 4
         }
     ],
     "grooveInclination": {

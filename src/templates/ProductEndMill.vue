@@ -5,9 +5,13 @@
       <series-header :node="$page.series" />
 
       <div class="product-items-list">
-        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
-          <img :src="'/img/scheme/' + scheme + '.svg'">
-        </div> -->
+        <div>
+          <img
+            v-for="(scheme, id) in $page.series.scheme"
+            :key="id"
+            :src="'/img/schemes/' + scheme + '.png'"
+          >
+        </div>
 
         <product-items-table
           :fields-set="$page.series.productSeriesSet.set"
@@ -88,7 +92,7 @@ export default {
 
   metaInfo () {
     return {
-      title: this.$page.series.id
+      title: `Концевая фреза ${this.$page.series.id}`
     }
   }
 }

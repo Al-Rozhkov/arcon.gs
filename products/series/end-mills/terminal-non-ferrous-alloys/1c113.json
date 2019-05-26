@@ -4,7 +4,8 @@
     "productCategory": "non-ferrous-alloys",
     "scheme": [
         {
-            "b": "cylinder-f"
+            "name": "b",
+            "scheme": "cylinder-f"
         }
     ],
     "mainUsage": [
@@ -31,8 +32,8 @@
         ]
     },
     "cuttingPart": [
-        "middle", "long"
+        "middle",
+        "long"
     ],
     "productSeriesSet": "simple"
 }
-  

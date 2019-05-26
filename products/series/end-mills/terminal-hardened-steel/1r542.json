@@ -4,11 +4,13 @@
     "productCategory": "hardened-steel",
     "scheme": [
         {
-            "b": "radius"
+            "name": "b",
+            "scheme": "radius"
         }
     ],
     "mainUsage": [
-        "h", "p"
+        "h",
+        "p"
     ],
     "possibleUsage": [
         "k"

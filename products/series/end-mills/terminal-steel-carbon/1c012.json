@@ -4,11 +4,13 @@
     "productCategory": "steel-carbon",
     "scheme": [
         {
-            "b": "cylinder-f"
+            "name": "b",
+            "scheme": "cylinder-f"
         }
     ],
     "mainUsage": [
-        "p", "m"
+        "p",
+        "m"
     ],
     "possibleUsage": [
         "s"
@@ -27,11 +29,13 @@
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            43, 45
+            43,
+            45
         ]
     },
     "cuttingPart": [
-        "middle", "long"
+        "middle",
+        "long"
     ],
     "productSeriesSet": "simple"
 }

@@ -4,33 +4,40 @@
     "productCategory": "stainless-steel",
     "scheme": [
         {
-            "a": "cylinder-conus-r"
+            "name": "a",
+            "scheme": "cylinder-conus-r"
         },
         {
-            "b": "cylinder-r"
+            "name": "b",
+            "scheme": "cylinder-r"
         }
     ],
     "mainUsage": [
-        "m", "s"
+        "m",
+        "s"
     ],
     "possibleUsage": [
-        "p", "k", "h1.1"
+        "p",
+        "k",
+        "h1.1"
     ],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 4
+            "cogsPitch": "variable",
+            "cogsNumber": 4
         }
     ],
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            42, 45
+            42,
+            45
         ]
     },
     "cuttingPart": [

@@ -4,17 +4,23 @@
     "productCategory": "steel-carbon",
     "scheme": [
         {
-            "a": "sphere-conus"
+            "name": "a",
+            "scheme": "sphere-conus"
         },
         {
-            "b": "sphere"
+            "name": "b",
+            "scheme": "sphere"
         }
     ],
     "mainUsage": [
-        "p", "h1.1"
+        "p",
+        "h1.1"
     ],
     "possibleUsage": [
-        "k", "m", "n3", "s"
+        "k",
+        "m",
+        "n3",
+        "s"
     ],
     "coating": "ng",
     "tail": "cylinder",

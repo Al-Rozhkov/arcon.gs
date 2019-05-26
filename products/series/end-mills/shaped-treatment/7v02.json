@@ -4,11 +4,16 @@
     "productCategory": "shaped-treatment",
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
-        "p", "k", "m", "n", "s"
+        "p",
+        "k",
+        "m",
+        "n",
+        "s"
     ],
     "possibleUsage": [
         "h1.1"

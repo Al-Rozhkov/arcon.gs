@@ -5,19 +5,24 @@
     "fusion": false,
     "scheme": [
         {
-            "b": "cylinder-lower-r"
+            "name": "b",
+            "scheme": "cylinder-lower-r"
         }
     ],
     "mainUsage": [
-        "p", "k", "m"
+        "p",
+        "k",
+        "m"
     ],
     "possibleUsage": [
-        "s", "h1.1"
+        "s",
+        "h1.1"
     ],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
@@ -28,7 +33,8 @@
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            43, 45
+            43,
+            45
         ]
     },
     "cuttingPart": [

@@ -4,11 +4,13 @@
     "productCategory": "stainless-steel",
     "scheme": [
         {
-            "b": "cylinder-r"
+            "name": "b",
+            "scheme": "cylinder-r"
         }
     ],
     "mainUsage": [
-        "m", "s"
+        "m",
+        "s"
     ],
     "possibleUsage": [
         "p"
@@ -20,18 +22,20 @@
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 4
+            "cogsPitch": "variable",
+            "cogsNumber": 4
         }
     ],
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            42, 45
+            42,
+            45
         ]
     },
     "cuttingPart": [
-        "middle", "long"
+        "middle",
+        "long"
     ],
     "productSeriesSet": "simple"
 }

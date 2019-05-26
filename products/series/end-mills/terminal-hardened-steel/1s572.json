@@ -4,17 +4,21 @@
     "productCategory": "hardened-steel",
     "scheme": [
         {
-            "a": "sphere-conus-r"
+            "name": "a",
+            "scheme": "sphere-conus-r"
         },
         {
-            "b": "sphere-r"
+            "name": "b",
+            "scheme": "sphere-r"
         }
     ],
     "mainUsage": [
-        "h", "p"
+        "h",
+        "p"
     ],
     "possibleUsage": [
-        "m", "s"
+        "m",
+        "s"
     ],
     "coating": "ng",
     "tail": "cylinder",

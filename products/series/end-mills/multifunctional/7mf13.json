@@ -4,7 +4,8 @@
     "productCategory": "multifunctional",
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
@@ -19,8 +20,8 @@
     ],
     "cogs": [
         {
-        "cogsPitch": "permanent",
-        "cogsNumber": 2
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
         }
     ],
     "grooveInclination": {
