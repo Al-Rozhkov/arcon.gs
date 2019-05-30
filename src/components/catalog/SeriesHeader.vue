@@ -81,6 +81,7 @@ export default {
         'coating',
         'tail',
         'endShapes',
+        'cuttingShapes',
         'cogs'
       ].reduce((result, f) => {
         if (this.node[f] && typeof this.node[f] === "string") {
@@ -89,6 +90,11 @@ export default {
         if (this.node[f] && f === 'endShapes') {
           result = result.concat(
             this.node[f].map(shape => `form-${shape}`)
+          )
+        }
+        if (this.node[f] && f === 'cuttingShapes') {
+          result = result.concat(
+            this.node[f].map(shape => `cutting-${shape}`)
           )
         }
         return result
