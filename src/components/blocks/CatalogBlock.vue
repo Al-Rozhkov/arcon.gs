@@ -5,18 +5,40 @@
         <h2>Каталог режущего инструмента Arconit™</h2>
       </header>
 
-      <categories-list />
+      <section>
+        <h3 class="menu">
+          <g-link to="/catalog/end-mills">Концевые фрезы</g-link>
+        </h3>
+        <categories-list />
+      </section>
 
       <ul class="menu">
         <li>
-          <a class="text-red" href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf">
-            Скачать каталог в&nbsp;PDF
-          </a> <span class="text-muted">(15,6&nbsp;Mb)</span>
+          <h3>
+            <g-link to="/catalog/drills">Сверла</g-link>
+          </h3>
         </li>
         <li>
-          <g-link class="text-red" to="/constructor">
-            Онлайн конструктор инструмента по&nbsp;параметрам
-          </g-link>
+          <h3>
+            <g-link to="/catalog/thread-mills">Резьбовые фрезы</g-link>
+          </h3>
+        </li>
+      </ul>
+
+      <ul class="links">
+        <li>
+          <h3>
+            <a class="text-red" href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf">
+              Скачать каталог в&nbsp;PDF
+            </a> <span class="text-muted">(15,6&nbsp;Mb)</span>
+          </h3>
+        </li>
+        <li>
+          <h3>
+            <g-link class="text-red" to="/constructor">
+              Онлайн конструктор инструмента по&nbsp;параметрам
+            </g-link>
+          </h3>
         </li>
       </ul>
     </article>
@@ -57,11 +79,14 @@ export default {
   .body {
     header {
       background: $white;
-      // display: inline-block;
       margin: -3rem -15px 0;
       padding: 1rem;
       max-width: 500px;
     }
+  }
+
+  section {
+    margin-bottom: 1rem;
   }
 
   @include media-breakpoint-up(md) {
@@ -83,9 +108,23 @@ export default {
     margin: 0 -15px .5rem 0;
 
     li {
-      flex: 0 0 50%;
       margin-right: 0;
       padding: .3rem 1rem .3rem 0;
+    }
+
+    a {
+      @include link-underline();
+    }
+  }
+
+  .links {
+    @extend %grid-row-wrap;
+    list-style-type: none;
+    margin: 1rem -15px .5rem 0;
+    padding: 0;
+
+    li {
+      flex: 0 0 50%;
     }
   }
 
@@ -94,6 +133,10 @@ export default {
       font-size: 2.5rem;
       line-height: 1;
     }
+  }
+
+  h3 {
+    font-weight: $font-weight-base;
   }
 }
 </style>

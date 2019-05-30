@@ -28,22 +28,22 @@
           <ul class="menu">
             <li>
               <g-link to="/policy">
-                Политика конфиденциальности
+                <span>Политика конфиденциальности</span>
               </g-link>
             </li>
             <li>
               <g-link to="/disclosure">
-                Раскрытие информации
+                <span>Раскрытие информации</span>
               </g-link>
             </li>
             <li>
               <g-link to="/partners">
-                Официальные партнеры
+                <span>Официальные партнеры</span>
               </g-link>
             </li>
             <li>
               <g-link to="/contact">
-                Контакты
+                <span>Контакты</span>
               </g-link>
             </li>
           </ul>

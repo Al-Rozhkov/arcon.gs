@@ -4,7 +4,7 @@
       v-for="edge in $static.categories.edges"
       :key="edge.node.id"
     >
-      <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
+      <g-link :to="edge.node.path">{{ edge.node.short }}</g-link>
     </li>
   </ul>
 </template>
@@ -15,6 +15,7 @@ query CatalogMenu {
     edges {
       node {
         title
+        short
         path
         id
       }
