@@ -15,10 +15,14 @@
           </tr>
         </thead>
         <tbody>
-          <template v-for="edge in groupedNodes">
+          <template v-for="group in groups">
+            <tr :key="`tr-${group.name}`">
+              <td colspan="5" class="series-cutting-group">{{ group.label }}</td>
+            </tr>
             <series-item
-              :node="edge.node"
-              :key="edge.node.slug"
+              v-for="nodeIndex in groupedNodes[group.name]"
+              :node="$page.series.edges[nodeIndex].node"
+              :key="`${group.name}-${nodeIndex}`"
             />
           </template>
         </tbody>
@@ -71,15 +75,37 @@ export default {
 
   data() {
     return {
-      filters: []
+      filters: [],
+      groups: [
+        {
+          name: 'short',
+          label: 'Короткая режущая часть'
+        },
+        {
+          name: 'middle',
+          label: 'Средняя режущая часть'
+        },
+        {
+          name: 'long',
+          label: 'Длинная режущая часть'
+        }
+      ]
     }
   },
 
   computed: {
     groupedNodes() {
       const all = this.$page.series.edges
-      const groups = []
-      return all
+
+      const groups = {}
+      for (let i = 0, len = all.length; i < len; i++) {
+        // groups[all[i].cuttingPart].items
+        all[i].node.cuttingPart.forEach(element => {
+          (groups[element] = groups[element] || []).push(i)
+        })
+      }
+
+      return groups
     }
   },
 
@@ -102,6 +128,10 @@ export default {
   td {
     border-top: 1px solid rgba(0,0,0,.1);
     padding: .3rem .5rem;
+  }
+
+  td.series-cutting-group {
+    padding-top: 1.75rem;
   }
 }
 </style>

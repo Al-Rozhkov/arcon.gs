@@ -83,7 +83,7 @@ export default {
 @import '~/assets/scss/modules/table.scss';
 
 .pi-table {
-  margin: 0 -.3rem;
+  margin: 0 auto;
 
   thead, tr {
     width: 100%;

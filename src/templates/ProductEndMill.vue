@@ -113,6 +113,7 @@ export default {
     display: block;
     max-width: 460px;
     height: auto;
+    margin: 1.5rem 1rem;
   }
 }
 </style>
