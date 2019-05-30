@@ -5,11 +5,11 @@
       <series-header :node="$page.series" />
 
       <div class="product-items-list">
-        <div>
+        <div class="series-scheme">
           <img
             v-for="(scheme, id) in $page.series.scheme"
             :key="id"
-            :src="'/img/schemes/' + scheme + '.png'"
+            :src="'/img/schemes/' + scheme.scheme + '.png'"
           >
         </div>
 
@@ -34,6 +34,10 @@
       fusion
       productImg (width: 800, quality: 75)
       body
+      scheme {
+        name
+        scheme
+      }
       mainUsage
       coating
       tail
@@ -99,5 +103,16 @@ export default {
 </script>
 
 <style lang="scss">
+.series-scheme {
+  @extend %grid-row-wrap;
+  padding: 2rem 0;
+  justify-content: space-around;
+  align-items: flex-end;
 
+  img {
+    display: block;
+    max-width: 460px;
+    height: auto;
+  }
+}
 </style>
