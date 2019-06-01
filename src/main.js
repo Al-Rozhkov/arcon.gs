@@ -21,10 +21,10 @@ export default function (Vue, { router, appOptions, isClient }) {
   Vue.use(VTooltip)
 
   appOptions.render = h => {
-    return h('div', { class: 'root' }, [
+    return h('div', { class: 'root', attrs: { id: 'app' } }, [
       // h('app-loading', { ref: 'loading' }),
       h('app-nav'),
-      h('router-view', { attrs: { id: 'app' }}),
+      h('router-view'),
       h('app-footer'),
     ])
   }

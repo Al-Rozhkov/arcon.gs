@@ -1,9 +1,5 @@
 <template>
-  <div class="root">
-    <div class="nav-header">
-      <app-nav />
-    </div>
-
+  <div class="layout">
     <div class="block">
       <div class="cc-news-section">
         <main class="body">
