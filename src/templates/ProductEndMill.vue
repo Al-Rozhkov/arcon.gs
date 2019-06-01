@@ -5,9 +5,13 @@
       <series-header :node="$page.series" />
 
       <div class="product-items-list">
-        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
-          <img :src="'/img/scheme/' + scheme + '.svg'">
-        </div> -->
+        <div class="series-scheme">
+          <img
+            v-for="(scheme, id) in $page.series.scheme"
+            :key="id"
+            :src="'/img/schemes/' + scheme.scheme + '.png'"
+          >
+        </div>
 
         <product-items-table
           :fields-set="$page.series.productSeriesSet.set"
@@ -30,6 +34,10 @@
       fusion
       productImg (width: 800, quality: 75)
       body
+      scheme {
+        name
+        scheme
+      }
       mainUsage
       coating
       tail
@@ -88,12 +96,24 @@ export default {
 
   metaInfo () {
     return {
-      title: this.$page.series.id
+      title: `Концевая фреза ${this.$page.series.id}`
     }
   }
 }
 </script>
 
 <style lang="scss">
+.series-scheme {
+  @extend %grid-row-wrap;
+  padding: 2rem 0;
+  justify-content: space-around;
+  align-items: flex-end;
 
+  img {
+    display: block;
+    max-width: 460px;
+    height: auto;
+    margin: 1.5rem 1rem;
+  }
+}
 </style>

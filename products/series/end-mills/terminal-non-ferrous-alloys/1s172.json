@@ -4,10 +4,12 @@
     "productCategory": "non-ferrous-alloys",
     "scheme": [
         {
-        "a": "sphere-conus-lower-r"
+            "name": "a",
+            "scheme": "sphere-conus-lower-r"
         },
         {
-        "b": "sphere-lower-r"
+            "name": "b",
+            "scheme": "sphere-lower-r"
         }
     ],
     "mainUsage": [
@@ -23,8 +25,8 @@
     ],
     "cogs": [
         {
-        "cogsPitch": "permanent",
-        "cogsNumber": 2
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
         }
     ],
     "grooveInclination": {

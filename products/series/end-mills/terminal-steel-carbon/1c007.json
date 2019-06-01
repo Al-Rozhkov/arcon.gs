@@ -5,14 +5,18 @@
     "fusion": true,
     "scheme": [
         {
-            "a": "cylinder-conus-f"
+            "name": "a",
+            "scheme": "cylinder-conus-f"
         },
         {
-            "b": "cylinder-f"
+            "name": "b",
+            "scheme": "cylinder-f"
         }
     ],
     "mainUsage": [
-        "p", "k", "m"
+        "p",
+        "k",
+        "m"
     ],
     "possibleUsage": [
         "s"
@@ -20,7 +24,8 @@
     "coating": "tan",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-f"
+        "sharp",
+        "sharp-f"
     ],
     "cogs": [
         {

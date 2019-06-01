@@ -4,22 +4,25 @@
     "productCategory": "hardened-steel",
     "scheme": [
         {
-            "b": "cylinder-lower-r"
+            "name": "b",
+            "scheme": "cylinder-lower-r"
         }
     ],
     "mainUsage": [
-        "h", "p"
+        "h",
+        "p"
     ],
     "possibleUsage": [],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
-          "cogsPitch": "permanent",
-          "cogsNumber": 6
+            "cogsPitch": "permanent",
+            "cogsNumber": 6
         }
     ],
     "grooveInclination": {

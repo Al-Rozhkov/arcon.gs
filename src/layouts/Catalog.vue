@@ -1,8 +1,5 @@
 <template>
-  <div class="root">
-    <div class="nav-header">
-      <app-nav />
-    </div>
+  <div class="layout">
 
     <section class="container-xl">
       <catalog-categories class="submenu" />
@@ -10,10 +7,9 @@
 
     <slot />
 
-    <svg-sprite-coating />
-    <svg-sprite-features />
+    <svg-sprite-coating class="d-none" />
+    <svg-sprite-features class="d-none" />
 
-    <app-footer />
   </div>
 </template>
 

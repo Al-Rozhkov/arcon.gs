@@ -4,14 +4,23 @@
     "productCategory": "shaped-treatment",
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
-        "p", "m", "h1.1"
+        "p",
+        "m",
+        "h1.1"
     ],
     "possibleUsage": [
-        "k", "n1", "s", "h1.2"
+        "k",
+        "n1",
+        "s",
+        "h1.2"
+    ],
+    "photos": [
+        "7v02"
     ],
     "coating": "ng",
     "tail": "cylinder",

@@ -4,14 +4,19 @@
     "productCategory": "thread-mills",
     "scheme": [
         {
-            "a": "cylinder-conus-r"
+            "name": "a",
+            "scheme": "cylinder-conus-r"
         }
     ],
     "mainUsage": [
-        "p", "k", "m", "s"
+        "p",
+        "k",
+        "m",
+        "s"
     ],
     "possibleUsage": [
-        "n", "h1.1"
+        "n",
+        "h1.1"
     ],
     "coating": "ng",
     "tail": "cylinder",

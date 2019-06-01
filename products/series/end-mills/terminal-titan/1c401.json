@@ -4,29 +4,32 @@
     "productCategory": "titan",
     "scheme": [
         {
-            "b": "cylinder-lower-r"
+            "name": "b",
+            "scheme": "cylinder-lower-r"
         }
     ],
     "mainUsage": [
         "s"
     ],
     "possibleUsage": [
-        "p", "m"
+        "p",
+        "m"
     ],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 2
+            "cogsPitch": "variable",
+            "cogsNumber": 2
         },
         {
             "cogsPitch": "variable",
             "cogsNumber": 4
-          }
+        }
     ],
     "grooveInclination": {
         "type": "permanent",

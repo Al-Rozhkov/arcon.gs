@@ -4,11 +4,15 @@
     "productCategory": "drill-center",
     "scheme": [
         {
-            "b": "undefined"
+            "name": "b",
+            "scheme": "undefined"
         }
     ],
     "mainUsage": [
-        "p", "k", "m", "s"
+        "p",
+        "k",
+        "m",
+        "s"
     ],
     "photos": [
         "2cs-ng"
@@ -20,15 +24,15 @@
     ],
     "cogs": [
         {
-        "cogsPitch": "permanent",
-        "cogsCenter": "overlap",
-        "cogsNumber": 2
+            "cogsPitch": "permanent",
+            "cogsCenter": "overlap",
+            "cogsNumber": 2
         }
     ],
     "grooveInclination": {
         "type": "permanent",
         "angles": [
-        30
+            30
         ]
     },
     "productSeriesSet": "drills"

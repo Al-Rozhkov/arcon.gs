@@ -4,14 +4,18 @@
     "productCategory": "stainless-steel",
     "scheme": [
         {
-            "b": "radius-r"
+            "name": "b",
+            "scheme": "radius-r"
         }
     ],
     "mainUsage": [
-        "m", "s"
+        "m",
+        "s"
     ],
     "possibleUsage": [
-        "p", "k", "h1.1"
+        "p",
+        "k",
+        "h1.1"
     ],
     "coating": "ng",
     "tail": "cylinder",
@@ -20,14 +24,15 @@
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 4
+            "cogsPitch": "variable",
+            "cogsNumber": 4
         }
     ],
     "grooveInclination": {
         "type": "variable",
         "angles": [
-            42, 45
+            42,
+            45
         ]
     },
     "productSeriesSet": "set-r"

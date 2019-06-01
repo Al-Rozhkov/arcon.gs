@@ -4,20 +4,24 @@
     "productCategory": "hardened-steel",
     "scheme": [
         {
-            "a": "cylinder-conus-r"
+            "name": "a",
+            "scheme": "cylinder-conus-r"
         },
         {
-            "b": "cylinder-r"
+            "name": "b",
+            "scheme": "cylinder-r"
         }
     ],
     "mainUsage": [
-        "h", "p"
+        "h",
+        "p"
     ],
     "possibleUsage": [],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
@@ -25,8 +29,8 @@
             "cogsNumber": 4
         },
         {
-          "cogsPitch": "permanent",
-          "cogsNumber": 6
+            "cogsPitch": "permanent",
+            "cogsNumber": 6
         }
     ],
     "grooveInclination": {

@@ -127,10 +127,6 @@ export default {
     padding: 20px 30px;
   }
 
-  /* &.expanded {
-    border-left: 2px solid fade-out($color: #000000, $amount: .95)
-  } */
-
   a {
     max-width: 30%;
     flex: 0 0 30%;
@@ -200,10 +196,5 @@ export default {
     margin: 0 0 0 auto;
     padding-left: 40px;
   }
-}
-
-.series-scheme img {
-  min-width: 360px;
-  height: auto;
 }
 </style>

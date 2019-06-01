@@ -3,12 +3,14 @@
     "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
     "productCategory": "non-ferrous-alloys",
     "scheme": [
-    {
-        "a": "cylinder-conus"
-    },
-    {
-        "b": "cylinder"
-    }
+        {
+            "name": "a",
+            "scheme": "cylinder-conus"
+        },
+        {
+            "name": "b",
+            "scheme": "cylinder"
+        }
     ],
     "mainUsage": [
         "n1"
@@ -34,7 +36,8 @@
         ]
     },
     "cuttingPart": [
-        "middle", "long"
+        "middle",
+        "long"
     ],
     "productSeriesSet": "simple"
 }

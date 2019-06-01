@@ -4,14 +4,16 @@
     "productCategory": "titan",
     "scheme": [
         {
-            "b": "radius-r"
+            "name": "b",
+            "scheme": "radius-r"
         }
     ],
     "mainUsage": [
         "s"
     ],
     "possibleUsage": [
-        "p", "m"
+        "p",
+        "m"
     ],
     "coating": "ng",
     "tail": "cylinder",

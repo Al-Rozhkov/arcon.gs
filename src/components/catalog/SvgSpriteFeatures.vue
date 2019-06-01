@@ -160,7 +160,7 @@
     </symbol>
 
     <!-- cogs-variable-4 -->
-    <symbol id="cogs-variable-4" x="0px" y="0px" viewBox="0 0 38 38">
+    <!-- <symbol id="cogs-variable-4" x="0px" y="0px" viewBox="0 0 38 38">
       <path
         style="fill:#8EBE3F;"
         d="M37.898,33.898c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4c0-2.209,1.791-4,4-4h29.898 c2.209,0,4,1.791,4,4V33.898z"
@@ -225,7 +225,7 @@
           <path d="M6.216,15.107c0.038-1.06-0.075-2.439-0.4-3.4l1.31,1.19l1.768,0.077C7.987,13.428,6.936,14.329,6.216,15.107z" />
         </g>
       </g>
-    </symbol>
+    </symbol> -->
 
     <!-- cogs-angle -->
     <symbol id="cogs-angle" x="0px" y="0px" viewBox="0 0 38 38">
@@ -269,9 +269,15 @@
         d="M13.575,26.229c0,0,2.294,3.459,2.602,8.959
         "
       />
-      <!-- <text transform="matrix(1 0 0 1 19.7085 12.9595)" style="font-size:9;">42&#xB0;</text> -->
-      <!-- <text transform="matrix(1 0 0 1 19.7085 22.9595)" style="font-size:9;">999&#xB0;</text> -->
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-green"/>
+    </symbol>
+
+    <!-- cutting-t -->
+    <symbol id="cutting-t" x="0px" y="0px" viewBox="0 0 38 38">
+      <rect class="svg-fill-teal cls-5" x="15.38" y="1.93" width="7.11" height="15.92"/>
+      <polygon class="svg-fill-teal cls-5" points="21.76 30.17 16.15 30.17 6.02 23.77 15.38 17.85 22.49 17.85 31.88 23.77 21.76 30.17"/>
+      <line class="cls-4" x1="27.51" y1="20.82" x2="23.58" y2="29.03"/><line class="cls-4" x1="25.54" y1="19.9" x2="20.63" y2="30.18"/><line class="cls-4" x1="22.56" y1="18.19" x2="16.82" y2="30.18"/><line class="cls-4" x1="20.17" y1="17.94" x2="14.8" y2="29.16"/><line class="cls-4" x1="16.48" y1="17.85" x2="11.87" y2="27.48"/><line class="cls-4" x1="13.5" y1="18.98" x2="10" y2="26.3"/>
+      <use width="38" height="38" xlink:href="#icon_stroke_panel" style="fill:#2FAC66"/>
     </symbol>
 
     <!-- series-fusion -->
@@ -330,6 +336,10 @@
   fill: #8EBE3F;
 }
 
+.svg-fill-teal{
+  fill:#00a199;
+}
+
 .cls-txt {
   isolation: isolate;
   font-size: 9px;
@@ -339,4 +349,8 @@
 .cls-3{stroke-linejoin:round;}
 
 .cls-4{stroke-miterlimit:10;}
+
+.cls-5{stroke:#000;stroke-miterlimit:10;}
+
+// .cls-1,.cls-2{stroke:#1d1d1b;stroke-miterlimit:10;}.cls-2{fill:none;}
 </style>

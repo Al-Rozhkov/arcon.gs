@@ -4,7 +4,8 @@
     "productCategory": "non-ferrous-alloys",
     "scheme": [
         {
-            "a": "cylinder-f"
+            "name": "a",
+            "scheme": "cylinder-f"
         }
     ],
     "mainUsage": [
@@ -16,12 +17,13 @@
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-f"
+        "sharp",
+        "sharp-f"
     ],
     "cogs": [
         {
-        "cogsPitch": "permanent",
-        "cogsNumber": 3
+            "cogsPitch": "permanent",
+            "cogsNumber": 3
         }
     ],
     "grooveInclination": {

@@ -4,32 +4,36 @@
     "productCategory": "titan",
     "scheme": [
         {
-            "a": "cylinder-conus-r"
+            "name": "a",
+            "scheme": "cylinder-conus-r"
         },
         {
-            "b": "cylinder-r"
+            "name": "b",
+            "scheme": "cylinder-r"
         }
     ],
     "mainUsage": [
         "s"
     ],
     "possibleUsage": [
-        "p", "m"
+        "p",
+        "m"
     ],
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-r"
+        "sharp",
+        "sharp-r"
     ],
     "cogs": [
         {
-          "cogsPitch": "variable",
-          "cogsNumber": 2
+            "cogsPitch": "variable",
+            "cogsNumber": 2
         },
         {
             "cogsPitch": "variable",
             "cogsNumber": 4
-          }
+        }
     ],
     "grooveInclination": {
         "type": "permanent",

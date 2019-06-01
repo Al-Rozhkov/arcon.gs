@@ -29,6 +29,10 @@
       id
       productImg (width: 800, quality: 75)
       body
+      scheme {
+        name
+        scheme
+      }
       mainUsage
       coating
       tail
@@ -74,7 +78,7 @@ export default {
 
   metaInfo () {
     return {
-      title: this.$page.series.id
+      title: `Резьбовая фреза ${this.$page.series.id}`
     }
   }
 }

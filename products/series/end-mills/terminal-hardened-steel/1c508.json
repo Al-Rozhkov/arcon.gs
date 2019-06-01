@@ -4,7 +4,8 @@
     "productCategory": "hardened-steel",
     "scheme": [
         {
-            "b": "cylinder"
+            "name": "b",
+            "scheme": "cylinder"
         }
     ],
     "mainUsage": [

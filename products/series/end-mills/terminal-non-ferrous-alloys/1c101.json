@@ -4,20 +4,25 @@
     "productCategory": "non-ferrous-alloys",
     "scheme": [
         {
-            "a": "cylinder-conus-f"
+            "name": "a",
+            "scheme": "cylinder-conus-f"
         },
         {
-            "b": "cylinder-f"
+            "name": "b",
+            "scheme": "cylinder-f"
         },
         {
-            "c": "cylinder-conus-lower-f"
+            "name": "c",
+            "scheme": "cylinder-conus-lower-f"
         },
         {
-            "d": "cylinder-lower-f"
+            "name": "d",
+            "scheme": "cylinder-lower-f"
         }
     ],
     "photos": [
-        "1c101-m", "1c101-l"
+        "1c101-m",
+        "1c101-l"
     ],
     "mainUsage": [
         "n1"
@@ -28,12 +33,13 @@
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-        "sharp", "sharp-f"
+        "sharp",
+        "sharp-f"
     ],
     "cogs": [
         {
-          "cogsPitch": "permanent",
-          "cogsNumber": 2
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
         }
     ],
     "grooveInclination": {
@@ -43,7 +49,8 @@
         ]
     },
     "cuttingPart": [
-        "middle", "long"
+        "middle",
+        "long"
     ],
     "productSeriesSet": "lower-f45"
 }

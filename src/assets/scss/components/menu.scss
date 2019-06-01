@@ -30,12 +30,6 @@
     }
   
     a {
-        color: darken($cyan, 10%);
-        border-bottom: 1px solid rgba(darken($cyan, 10%), .25);
-    
-        &:hover {
-            color: $link-hover-color;
-            border-bottom: 1px solid $red;
-        }
+        @include link-underline($color: darken($cyan, 10%));
     }
 }
