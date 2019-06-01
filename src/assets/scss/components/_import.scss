@@ -1,27 +1,11 @@
-@import "container";
-@import "section";
+@import "container.scss";
+@import "section.scss";
+@import "utils.scss";
 
-@import "menu";
-@import "layout";
-@import "footer";
-@import "type";
-@import "legend";
-@import "tooltip";
-@import "transition";
-
-/* @import "animation";
-@import "aside";
-@import "badge";
-@import "button";
-@import "image";
-
-@import "loading";
-
-
- */
-
-/*
- * Class Prefixes:
- * - l-* - for layout
- * - a-* - for animations
- */
+@import "menu.scss";
+@import "layout.scss";
+@import "footer.scss";
+@import "type.scss";
+@import "legend.scss";
+@import "tooltip.scss";
+@import "transition.scss";

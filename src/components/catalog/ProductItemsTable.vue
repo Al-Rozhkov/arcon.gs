@@ -81,6 +81,9 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/modules/table.scss';
+.product-items-table {
+  overflow-x: auto;
+}
 
 .pi-table {
   margin: 0 auto;

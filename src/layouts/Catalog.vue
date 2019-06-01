@@ -7,8 +7,8 @@
 
     <slot />
 
-    <svg-sprite-coating />
-    <svg-sprite-features />
+    <svg-sprite-coating class="d-none" />
+    <svg-sprite-features class="d-none" />
 
   </div>
 </template>
