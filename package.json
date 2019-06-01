@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.21",
+    "bootstrap-vue": "^2.0.0-rc.22",
     "gridsome": "^0.6.3",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "v-tooltip": "^2.0.2",
