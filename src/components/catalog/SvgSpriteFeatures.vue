@@ -5,7 +5,7 @@
   >
     <defs>
       <symbol id="Red_tool" data-name="Red tool" viewBox="0 0 18.16 26.59">
-        <polygon class="cls-3" points="0.73 0.5 1.55 15.64 6.52 13.08 0.73 0.5"/><path class="cls-4" d="M0.73,0.5L4.29,9.67S0.79,16.19.73,17.43s0,7.16,0,7.16a65.91,65.91,0,0,1,8-.68c2.8,0.06,9,.68,9,0.68V13.14L16.3,8.53l1.37-4.61V0.5H0.73Z"/><path class="cls-4" d="M13.37,21.48s1-.23,1,0.47v2.34l-3.73-.36S12.23,21.67,13.37,21.48Z"/><path class="cls-3" d="M10.34,0.5a28.26,28.26,0,0,0-5.9,8.83C2.92,12.64.73,17.43,0.73,17.43v7.16s1.27-1.25,4.81-5c1,0.62,1,1,1,1V24l2.24,0.62,4.61-3.11L15.86,9.09V0.5H10.34Z"/><path class="cls-4" d="M16.29,8.53l1.37-4.61V0.5H13.18l1.18,7.78L5.42,25.86s2.69-.62,3.34-1.27C9.58,23.78,16.29,8.53,16.29,8.53Z"/>
+        <polygon class="cls-3" points="0.73 0.5 1.55 15.64 6.52 13.08 0.73 0.5"/><path class="svg-form-tool" d="M0.73,0.5L4.29,9.67S0.79,16.19.73,17.43s0,7.16,0,7.16a65.91,65.91,0,0,1,8-.68c2.8,0.06,9,.68,9,0.68V13.14L16.3,8.53l1.37-4.61V0.5H0.73Z"/><path class="svg-form-tool" d="M13.37,21.48s1-.23,1,0.47v2.34l-3.73-.36S12.23,21.67,13.37,21.48Z"/><path class="cls-3" d="M10.34,0.5a28.26,28.26,0,0,0-5.9,8.83C2.92,12.64.73,17.43,0.73,17.43v7.16s1.27-1.25,4.81-5c1,0.62,1,1,1,1V24l2.24,0.62,4.61-3.11L15.86,9.09V0.5H10.34Z"/><path class="svg-form-tool" d="M16.29,8.53l1.37-4.61V0.5H13.18l1.18,7.78L5.42,25.86s2.69-.62,3.34-1.27C9.58,23.78,16.29,8.53,16.29,8.53Z"/>
       </symbol>
 
       <!-- common stroke for square icons -->
@@ -22,14 +22,14 @@
 
     <!-- form-sharp-r -->
     <symbol id="form-sharp-r" x="0px" y="0px" viewBox="0 0 38 38">
-      <text class="cls-txt" transform="translate(26.82 31.57)">R</text>
+      <text class="svg-txt" transform="translate(26.82 31.57)">R</text>
       <use width="18.16" height="26.59" transform="translate(6.42 0.52)" xlink:href="#Red_tool"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
     </symbol>
 
     <!-- form-sharp-f -->
     <symbol id="form-sharp-f" x="0px" y="0px" viewBox="0 0 38 38">
-      <text class="cls-txt" transform="translate(26.89 31.68)">F</text>
+      <text class="svg-txt" transform="translate(26.89 31.68)">F</text>
       <use width="18.16" height="26.59" transform="translate(6.02 0.89)" xlink:href="#Red_tool"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
     </symbol>
@@ -37,20 +37,20 @@
     <!-- form-radius -->
     <symbol id="form-radius" x="0px" y="0px" viewBox="0 0 38 38">
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M26.428,4.759c0,0,3.375,5.688,3.625,8.813 s0.438,9.313-1.813,11.25s-2.5,1.943-2.5,1.943s-3.189-0.325-5.938-1.26c-2.749-0.934-1.062-13.496-1.062-13.496l5.375-10.625
         L26.428,4.759z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M8.366,1.384l3.375,17.25c0,0-2.75,3.875-3.375,5.813 c2.5,2.25,2.5,2.25,2.5,2.25s7.75,0.875,13.25-3.625c5.5-4.5,2.313-18.313,2.313-18.313l-2.313-3.375H8.366z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M24.115,1.384l-12.375,17.25c0,0-2.75,3.875-3.375,5.813 c0.413,0.371,1.046,0.939,1.046,0.939L27.348,1.384H24.115z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M9.412,25.386 c1.454,1.311,1.454,1.311,1.454,1.311s7.75,0.875,13.25-3.625l-6.259,0.813l-7.627,0.408L9.412,25.386z"
       />
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
@@ -59,34 +59,34 @@
     <!-- form-sphere -->
     <symbol id="form-sphere" x="0px" y="0px" viewBox="0 0 38 38">
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M11.662,2.095c0,0,0.125,3.676,0.313,6.051 s0.875,7.688,0.875,7.688s-2.063,2.438-2.063,6.5s4.513,7.75,8.163,7.75c3.65,0,8.838-2.388,8.838-8.313 c0-5.55-2.625-9.375-2.625-9.375s1.313-6.227,1.313-10.301C24.412,2.095,11.662,2.095,11.662,2.095z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M17.599,2.095c0,0,0.75,2.488,1.35,6.051 c-3.225,2.813-6.1,7.688-6.1,7.688s-2.063,2.438-2.063,6.5l1.313-0.563c0,0,3.26-7.373,6.411-10.216
         c4.402-3.972,7.823-6.78,7.823-6.78l0.142-2.68H17.599z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M10.787,22.333c0,4.063,4.513,7.75,8.163,7.75l-1.1-2.666
         c0,0-2.583-0.834-2.792-4.459c-0.583-0.625-0.75-1-0.75-1l-2.208-0.188L10.787,22.333z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M22.058,22.167h-2.902l-4.098,0.791
         c0.208,3.625,2.792,4.459,2.792,4.459C20.475,25.083,22.058,22.167,22.058,22.167z"
       />
       <path
-        class="cls-4"
+        class="svg-form-tool"
         d="M22.058,22.167c0,0-1.583,2.916-4.208,5.25l1.1,2.666
         c0,0,5.983-1.916,6.608-7.916l-1.583-0.668L22.058,22.167z"
       />
       <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10;"
+        class="svg-stroke"
         d="M25.162,12.396c-0.688,3.125-1.252,7.044-3.104,9.771"
       />
-      <polyline style="fill:none;stroke:#000000;stroke-miterlimit:10;" points="27.78,22.033 25.558,22.167 24.467,15.692" />
+      <polyline class="svg-stroke" points="27.78,22.033 25.558,22.167 24.467,15.692" />
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
     </symbol>
 
@@ -136,96 +136,30 @@
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-blue"/>
     </symbol>
 
-    <!-- cogs-permanent-3 -->
-    <symbol id="cogs-permanent-3" x="0px" y="0px" viewBox="0 0 38 38">
-      <!-- <path
-        style="fill:#8EBE3F;"
-        d="M37.949,33.949c0,2.209-1.791,4-4,4H4.051c-2.209,0-4-1.791-4-4V4.051c0-2.209,1.791-4,4-4h29.898
-        c2.209,0,4,1.791,4,4V33.949z"
-      /> -->
-      <g>
-        <circle style="fill:#FFFFFF;" cx="19" cy="19" r="16.177" />
-        <rect x="18" y="2.824" width="2" height="17.43" />
-      </g>
-      <g>
-        <rect x="26.842" y="18.136" transform="matrix(-0.4999 0.8661 -0.8661 -0.4999 62.6367 12.0418)" width="2" height="11.937" />
-      </g>
-      <g>
-        <rect x="9.16" y="18.136" transform="matrix(-0.4999 -0.8661 0.8661 -0.4999 -5.6368 44.9542)" width="2" height="11.937" />
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;" x1="2.823" y1="19" x2="4.323" y2="19" />
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;stroke-dasharray:3.2615,3.2615;" x1="7.585" y1="19" x2="32.046" y2="19" />
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;" x1="33.677" y1="19" x2="35.177" y2="19" />
-      </g>
-      <!-- <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-green"/> -->
+    <!-- cogs-base -->
+    <symbol id="cogs-base" x="0px" y="0px" viewBox="0 0 38 38">
+      <path class="svg-stroke-2" d="M31.42,34.9a12.47,12.47,0,1,0-24.94,0"/>
+      <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-green"/>
     </symbol>
 
-    <!-- cogs-variable-4 -->
-    <!-- <symbol id="cogs-variable-4" x="0px" y="0px" viewBox="0 0 38 38">
-      <path
-        style="fill:#8EBE3F;"
-        d="M37.898,33.898c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4c0-2.209,1.791-4,4-4h29.898 c2.209,0,4,1.791,4,4V33.898z"
-      />
-      <circle style="fill:#FFFFFF;" cx="18.949" cy="18.949" r="16.177" />
-      <rect x="17.949" y="2.772" width="2" height="11.795" />
-      <rect x="19.949" y="19.401" width="15.177" height="2" />
-      <rect x="2.772" y="16.484" width="15.177" height="2" />
-      <rect x="17.949" y="23.443" width="2" height="11.684" />
-      <g>
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;" x1="2.772" y1="18.949" x2="4.272" y2="18.949" />
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;stroke-dasharray:3.2615,3.2615;" x1="7.534" y1="18.949" x2="31.995" y2="18.949" />
-        <line style="fill:none;stroke:#EF4136;stroke-miterlimit:10;" x1="33.626" y1="18.949" x2="35.126" y2="18.949" />
-      </g>
-      <g>
-        <path style="fill:none;stroke:#000000;stroke-miterlimit:10;" d="M31.892,15.933c-1.009-4.358-4.153-7.895-8.276-9.441" />
-        <g>
-          <path
-            d="M32.204,18.024c0.208-1.04,0.637-2.356,1.174-3.216l-1.549,0.856l-1.738-0.333
-            C30.869,15.981,31.685,17.101,32.204,18.024z"
-          />
-        </g>
-        <g>
-          <path d="M21.583,5.911c1.058-0.07,2.42-0.321,3.342-0.741l-1.052,1.423l0.103,1.767C23.433,7.502,22.431,6.547,21.583,5.911z" />
-        </g>
-      </g>
-      <g>
-        <path style="fill:none;stroke:#000000;stroke-miterlimit:10;" d="M23.616,31.406c3.204-1.201,5.818-3.603,7.301-6.657" />
-        <g>
-          <path
-            d="M21.583,31.988c1.059,0.063,2.422,0.305,3.348,0.719l-1.063-1.416l0.091-1.768
-            C23.423,30.385,22.427,31.346,21.583,31.988z"
-          />
-        </g>
-        <g>
-          <path
-            d="M31.686,22.777c-0.036,1.06,0.078,2.439,0.405,3.399l-1.313-1.188l-1.768-0.075
-            C29.917,24.459,30.968,23.557,31.686,22.777z"
-          />
-        </g>
-      </g>
-      <g>
-        <path style="fill:none;stroke:#000000;stroke-miterlimit:10;" d="M6.003,21.953c0.988,4.284,4.041,7.774,8.058,9.364" />
-        <g>
-          <path d="M5.693,19.86c-0.208,1.04-0.636,2.356-1.174,3.216l1.549-0.856l1.738,0.333C7.028,21.903,6.213,20.784,5.693,19.86z" />
-        </g>
-        <g>
-          <path
-            d="M16.083,31.934c-1.059,0.049-2.425,0.273-3.356,0.678l1.079-1.404l-0.068-1.768
-            C14.264,30.307,15.248,31.281,16.083,31.934z"
-          />
-        </g>
-      </g>
-      <g>
-        <path style="fill:none;stroke:#000000;stroke-miterlimit:10;" d="M14.06,6.583c-3.098,1.225-5.624,3.577-7.073,6.553" />
-        <g>
-          <path
-            d="M16.083,5.965c-1.059-0.043-2.427-0.261-3.359-0.659l1.087,1.397l-0.059,1.769C14.273,7.603,15.251,6.623,16.083,5.965z"
-          />
-        </g>
-        <g>
-          <path d="M6.216,15.107c0.038-1.06-0.075-2.439-0.4-3.4l1.31,1.19l1.768,0.077C7.987,13.428,6.936,14.329,6.216,15.107z" />
-        </g>
-      </g>
-    </symbol> -->
+    <!-- cogs-variable -->
+    <symbol id="cogs-variable" x="0px" y="0px" viewBox="0 0 38 38">
+      <line class="svg-stroke" x1="8.5" y1="18.95" x2="28.4" y2="18.95"/>
+      <path class="svg-fill-black" d="M5.48,18.95a15.11,15.11,0,0,1,4.27,2.38L8.89,18.95l0.86-2.38A15.1,15.1,0,0,1,5.48,18.95Z"/>
+      <path class="svg-fill-black" d="M31.42,18.95a15.11,15.11,0,0,0-4.27,2.38L28,18.95l-0.86-2.38A15.1,15.1,0,0,0,31.42,18.95Z"/>
+    </symbol>
+
+    <!-- cogs-center-cut -->
+    <symbol id="cogs-center-cut" x="0px" y="0px" viewBox="0 0 38 38">
+      <path class="svg-fill-red" d="M18.95,29.54a5.35,5.35,0,0,0-5.35,5.35H24.3A5.35,5.35,0,0,0,18.95,29.54Z"/>
+      <use width="38" height="38" xlink:href="#cogs-base" />
+    </symbol>
+
+    <!-- cogs-center-overlap -->
+    <symbol id="cogs-center-overlap" x="0px" y="0px" viewBox="0 0 38 38">
+      <rect class="svg-fill-red" x="16.29" y="22.71" width="5.37" height="14"/>
+      <use width="38" height="38" xlink:href="#cogs-base" />
+    </symbol>
 
     <!-- cogs-angle -->
     <symbol id="cogs-angle" x="0px" y="0px" viewBox="0 0 38 38">
@@ -276,7 +210,7 @@
     <symbol id="cutting-t" x="0px" y="0px" viewBox="0 0 38 38">
       <rect class="svg-fill-teal cls-5" x="15.38" y="1.93" width="7.11" height="15.92"/>
       <polygon class="svg-fill-teal cls-5" points="21.76 30.17 16.15 30.17 6.02 23.77 15.38 17.85 22.49 17.85 31.88 23.77 21.76 30.17"/>
-      <line class="cls-4" x1="27.51" y1="20.82" x2="23.58" y2="29.03"/><line class="cls-4" x1="25.54" y1="19.9" x2="20.63" y2="30.18"/><line class="cls-4" x1="22.56" y1="18.19" x2="16.82" y2="30.18"/><line class="cls-4" x1="20.17" y1="17.94" x2="14.8" y2="29.16"/><line class="cls-4" x1="16.48" y1="17.85" x2="11.87" y2="27.48"/><line class="cls-4" x1="13.5" y1="18.98" x2="10" y2="26.3"/>
+      <line class="svg-form-tool" x1="27.51" y1="20.82" x2="23.58" y2="29.03"/><line class="svg-form-tool" x1="25.54" y1="19.9" x2="20.63" y2="30.18"/><line class="svg-form-tool" x1="22.56" y1="18.19" x2="16.82" y2="30.18"/><line class="svg-form-tool" x1="20.17" y1="17.94" x2="14.8" y2="29.16"/><line class="svg-form-tool" x1="16.48" y1="17.85" x2="11.87" y2="27.48"/><line class="svg-form-tool" x1="13.5" y1="18.98" x2="10" y2="26.3"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" style="fill:#2FAC66"/>
     </symbol>
 
@@ -324,6 +258,10 @@
   stroke-miterlimit:10;
 }
 
+.svg-fill-black {
+  fill: #000000;
+}
+
 .svg-fill-lila {
   fill: $lila;
 }
@@ -332,25 +270,41 @@
   fill: #1c75bc;
 }
 
+.svg-fill-red {
+  fill: #e5332a;
+}
+
 .svg-fill-green {
   fill: #8EBE3F;
 }
 
 .svg-fill-teal{
-  fill:#00a199;
+  fill: #00a199;
 }
 
-.cls-txt {
+.svg-stroke,
+.cls-3,
+.svg-form-tool {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.svg-stroke-2 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+
+.svg-txt {
   isolation: isolate;
   font-size: 9px;
 }
 
-.cls-3,.cls-4{fill:#ee2a7b;stroke:#000;}
-.cls-3{stroke-linejoin:round;}
+.cls-3,
+.svg-form-tool {
+  fill:#ee2a7b;
+}
 
-.cls-4{stroke-miterlimit:10;}
-
-.cls-5{stroke:#000;stroke-miterlimit:10;}
-
-// .cls-1,.cls-2{stroke:#1d1d1b;stroke-miterlimit:10;}.cls-2{fill:none;}
+.cls-3 {stroke-linejoin:round;}
 </style>

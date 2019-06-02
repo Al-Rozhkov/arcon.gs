@@ -26,7 +26,8 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsNumber": 2
+            "cogsNumber": 2,
+            "cogsCenter": "cut"
         }
     ],
     "grooveInclination": {

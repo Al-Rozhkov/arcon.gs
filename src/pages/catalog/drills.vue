@@ -33,6 +33,7 @@ query Catalog {
         cogs {
           cogsPitch
           cogsNumber
+          cogsCenter
         }
         grooveInclination {
           type

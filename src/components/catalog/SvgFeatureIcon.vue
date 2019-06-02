@@ -30,9 +30,9 @@ export default {
     }
   },
 
-  data() {
-    return {
-      featuresDesc: {
+  computed: {
+    tooltipText() {
+      const featuresDesc = {
         'coating-ng': 'Покрытие: nACo-G',
         'coating-tan': 'Покрытие: TiAlN',
         'coating-tin': 'Покрытие: TiN',
@@ -43,16 +43,12 @@ export default {
         'form-sharp-f': 'Торец с фаской chх45˚',
         'form-radius': 'Радиусной торец',
         'form-sphere': 'Сферический торец',
+        'cutting-conus': 'Режущая часть — конус',
         'cutting-t': 'Т-образная режущая часть',
-        'cogs-variable-4': 'Переменный шаг зубьев, 4 зуба',
-        'angle-42-45': 'Переменный угол спиральной канавки'
+        'cogs-angle': 'Угол подъема спиральной канавки'
       }
-    }
-  },
-
-  computed: {
-    tooltipText() {
-      return this.featuresDesc[this.iconId]
+      
+      return featuresDesc[this.iconId]
     }
   }
 }

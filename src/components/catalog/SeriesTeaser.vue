@@ -31,6 +31,11 @@
             :key="icon"
             :icon-id="icon"
           />
+          <svg-cogs-icon
+            v-for="(obj, index) in node.cogs"
+            :key="index"
+            :cogs="obj"
+          />
           <svg-icon
             v-if="node.grooveInclination"
             icon-id="cogs-angle"
@@ -47,21 +52,23 @@
       <div v-html="node.body" />
     </div>
 
-    <div class="series-sizes">
-      {{ sizesValue }} диаметров
-    </div>
+    <!-- <div class="series-sizes">
+      Диапазон диаметров {{ sizesValue }}
+    </div> -->
 
   </article>
 </template>
 
 <script>
 import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
+import SvgCogsIcon from '~/components/catalog/SvgCogsIcon'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
 import MaterialIcon from '~/components/catalog/MaterialIcon'
 
 export default {
   components: {
     SvgPlainIcon,
+    SvgCogsIcon,
     SvgIcon,
     MaterialIcon
   },
