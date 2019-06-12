@@ -11,6 +11,9 @@
     "mainUsage": [
         "n"
     ],
+    "possibleUsage": [
+        "p"
+    ],
     "photos": [
         "2cs"
     ],
@@ -31,5 +34,8 @@
             30
         ]
     },
+    "cuttingPart": [
+        "middle"
+    ],
     "productSeriesSet": "drills"
 }

@@ -40,6 +40,7 @@
       cogs {
         cogsPitch
         cogsNumber
+        cogsCenter
       }
       grooveInclination {
         type

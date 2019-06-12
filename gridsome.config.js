@@ -34,7 +34,7 @@ module.exports = {
       options: {
         path: 'products/categories/*.json',
         typeName: 'ProductCategory',
-        route: '/catalog/:slug'
+        route: '/catalog/:type/category/:id'
       }
     },
     {

@@ -14,6 +14,11 @@
         "m",
         "s"
     ],
+    "possibleUsage": [
+        "n1",
+        "n3",
+        "h1.1"
+    ],
     "photos": [
         "2cs-ng"
     ],
@@ -35,5 +40,8 @@
             30
         ]
     },
+    "cuttingPart": [
+        "long"
+    ],
     "productSeriesSet": "drills"
 }

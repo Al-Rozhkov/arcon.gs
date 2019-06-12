@@ -34,6 +34,13 @@
       />
     </td>
     <td>
+      <svg-cogs-icon
+        v-for="(obj, index) in node.cogs"
+        :key="index"
+        :cogs="obj"
+      />
+    </td>
+    <td>
       <svg-icon
         v-if="node.grooveInclination"
         icon-id="cogs-angle"
@@ -51,11 +58,13 @@
 
 <script>
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
+import SvgCogsIcon from '~/components/catalog/SvgCogsIcon'
 import MaterialIcon from '~/components/catalog/MaterialIcon'
 
 export default {
   components: {
     SvgIcon,
+    SvgCogsIcon,
     MaterialIcon
   },
 
@@ -66,7 +75,7 @@ export default {
     }
   },
 
-  computed: {
+  /* computed: {
     seriesFeatures() {
       return [
         'coating',
@@ -85,7 +94,7 @@ export default {
         return result
       }, [])
     }
-  },
+  }, */
 
   methods: {
     expandTool() {
