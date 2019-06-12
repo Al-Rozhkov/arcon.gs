@@ -5,9 +5,13 @@
       <series-header :node="$page.series" />
 
       <div class="product-items-list">
-        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
-          <img :src="'/img/scheme/' + scheme + '.svg'">
-        </div> -->
+        <div class="series-scheme">
+          <img
+            v-for="(scheme, id) in $page.series.scheme"
+            :key="id"
+            :src="'/img/schemes/' + scheme.scheme + '.png'"
+          >
+        </div>
 
         <product-items-table
           :fields-set="$page.series.productSeriesSet.set"
@@ -93,5 +97,5 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import '~/assets/scss/modules/series.scss';
 </style>

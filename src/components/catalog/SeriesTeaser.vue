@@ -80,12 +80,6 @@ export default {
     }
   },
 
-  /* data: () => {
-    return {
-      toolExpanded: false
-    }
-  }, */
-
   computed: {
     seriesFeatures() {
       return [
