@@ -184,12 +184,6 @@ export default {
     max-width: 100%;
     height: auto;
   }
-
-  /* &:hover {
-    // background: #ffffff;
-    border-bottom: 1px solid transparent;
-    // box-shadow: 0px 5px 60px 0 rgba(0,0,0,0.1);
-  } */
 }
 
 .series-details {
