@@ -150,14 +150,15 @@
     </symbol>
 
     <!-- cogs-center-cut -->
-    <symbol id="cogs-center-cut" x="0px" y="0px" viewBox="0 0 38 38">
+    <!-- <symbol id="cogs-center-cut" x="0px" y="0px" viewBox="0 0 38 38">
       <path class="svg-fill-red" d="M18.95,29.54a5.35,5.35,0,0,0-5.35,5.35H24.3A5.35,5.35,0,0,0,18.95,29.54Z"/>
+      <rect class="svg-fill-red" x="16.29" y="22.71" width="5.37" height="14"/>
       <use width="38" height="38" xlink:href="#cogs-base" />
-    </symbol>
+    </symbol> -->
 
     <!-- cogs-center-overlap -->
     <symbol id="cogs-center-overlap" x="0px" y="0px" viewBox="0 0 38 38">
-      <rect class="svg-fill-red" x="16.29" y="22.71" width="5.37" height="14"/>
+      <path class="svg-fill-red" d="M18.95,29.54a5.35,5.35,0,0,0-5.35,5.35H24.3A5.35,5.35,0,0,0,18.95,29.54Z"/>
       <use width="38" height="38" xlink:href="#cogs-base" />
     </symbol>
 
@@ -211,6 +212,12 @@
       <rect class="svg-fill-teal cls-5" x="15.38" y="1.93" width="7.11" height="15.92"/>
       <polygon class="svg-fill-teal cls-5" points="21.76 30.17 16.15 30.17 6.02 23.77 15.38 17.85 22.49 17.85 31.88 23.77 21.76 30.17"/>
       <line class="svg-form-tool" x1="27.51" y1="20.82" x2="23.58" y2="29.03"/><line class="svg-form-tool" x1="25.54" y1="19.9" x2="20.63" y2="30.18"/><line class="svg-form-tool" x1="22.56" y1="18.19" x2="16.82" y2="30.18"/><line class="svg-form-tool" x1="20.17" y1="17.94" x2="14.8" y2="29.16"/><line class="svg-form-tool" x1="16.48" y1="17.85" x2="11.87" y2="27.48"/><line class="svg-form-tool" x1="13.5" y1="18.98" x2="10" y2="26.3"/>
+      <use width="38" height="38" xlink:href="#icon_stroke_panel" style="fill:#2FAC66"/>
+    </symbol>
+
+    <!-- cutting-conus -->
+    <symbol id="cutting-conus" x="0px" y="0px" viewBox="0 0 38 38">
+      <rect class="svg-fill-teal cls-5" x="15.38" y="1.93" width="7.11" height="15.92"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" style="fill:#2FAC66"/>
     </symbol>
 

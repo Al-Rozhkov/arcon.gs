@@ -22,7 +22,7 @@
         {
             "cogsPitch": "permanent",
             "cogsNumber": 2,
-            "cogsCenter": "cut"
+            "cogsCenter": "overlap"
         }
     ],
     "grooveInclination": {

@@ -40,18 +40,17 @@ export default {
 
   computed: {
     iconId() {
-      if (!this.cogs.cogsCenter) { return 'cogs-base' }
-      return this.cogs.cogsCenter === 'overlap' ? 'cogs-center-overlap' : 'cogs-center-cut'
+      return !this.cogs.cogsCenter ? 'cogs-base' : 'cogs-center-overlap'
+      // return this.cogs.cogsCenter === 'overlap' ? 'cogs-center-overlap' : 'cogs-center-cut'
     },
     
     tooltipText() {
       const pitch = (this.cogs.cogsPitch === 'variable') ? 'Переменный шаг зубьев' : 'Постоянный шаг зубьев'
       const center = {
         'cogs-base': 'Без режущего центра',
-        'cogs-center-overlap': 'С перекрытием центра',
-        'cogs-center-cut': 'С режущим центром'
+        'cogs-center-overlap': 'С перекрытием центра'
       }
-      return `${pitch}<br />${center[this.iconId]}`
+      return `Зубьев: ${this.cogs.cogsNumber}<br />${pitch}<br />${center[this.iconId]}`
     }
   }
 }
