@@ -2,16 +2,32 @@
   <page-layout>
 
     <main class="block">
-      <h1>Сверла Arconit™</h1>
-      <!-- <categories-list class="submenu" /> -->
+      <h1>Рекомендации по&nbsp;выбору сверл</h1>
 
-      <div class="catalog-list">
-        <series-teaser
-          v-for="edge in $page.series.edges"
-          :key="edge.node.id"
-          :node="edge.node"
-        />
-      </div>
+      <table class="series-overview sticky-header">
+        <thead>
+          <tr>
+            <th>Серия</th>
+            <th></th>
+            <th>Основное применение</th>
+            <th>Возможное применение</th>
+            <th>Зубья</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <template v-for="group in groups">
+            <tr :key="`tr-${group.name}`">
+              <td colspan="5" class="series-cutting-group">{{ group.label }}</td>
+            </tr>
+            <series-item
+              v-for="nodeIndex in groupedNodes[group.name]"
+              :node="$page.series.edges[nodeIndex].node"
+              :key="`${group.name}-${nodeIndex}`"
+            />
+          </template>
+        </tbody>
+      </table>
     </main>
 
   </page-layout>
@@ -19,17 +35,15 @@
 
 <page-query>
 query Catalog {
-  series: allProductDrill(sortBy: "series", order: ASC, perPage: 125) {
+  series: allProductDrill(sortBy: "id", order: ASC, perPage: 125) {
     edges {
       node {
         id
         path
-        productImg (width: 300, quality: 75)
-        body
+        productImg (width: 260, quality: 75)
         mainUsage
-        coating
-        tail
-        cuttingShapes
+        possibleUsage
+        cuttingPart
         cogs {
           cogsPitch
           cogsNumber
@@ -39,6 +53,7 @@ query Catalog {
           type
           angles
         }
+        coating
       }
     }
   }
@@ -48,38 +63,51 @@ query Catalog {
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-
-import CategoriesList from "~/components/catalog/CategoriesList"
-import SeriesTeaser from '~/components/catalog/SeriesTeaser'
+import SeriesItem from '~/components/catalog/SeriesTableItem.vue'
 
 export default {
   components: {
     PageLayout,
-    CategoriesList,
-    SeriesTeaser
+    SeriesItem
   },
 
   data() {
     return {
-      filters: []
+      filters: [],
+      groups: [
+        {
+          name: 'middle',
+          label: 'Средняя серия'
+        },
+        {
+          name: 'long',
+          label: 'Длинная серия'
+        }
+      ]
     }
   },
 
   computed: {
-    filteredNodes() {
-      const result = this.$page.series.edges
-      return result.filter(node => {
+    groupedNodes() {
+      const all = this.$page.series.edges
 
-      })
+      const groups = {}
+      for (let i = 0, len = all.length; i < len; i++) {
+        all[i].node.cuttingPart.forEach(element => {
+          (groups[element] = groups[element] || []).push(i)
+        })
+      }
+
+      return groups
     }
   },
 
   metaInfo: {
-    title: 'Сверла Arconit (Арконит)'
+    title: 'Рекомендации по выбору сверл'
   }
 }
 </script>
 
 <style lang="scss">
-
+@import '~/assets/scss/modules/table.scss';
 </style>

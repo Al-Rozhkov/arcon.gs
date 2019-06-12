@@ -11,6 +11,7 @@
             <th></th>
             <th>Основное применение</th>
             <th>Возможное применение</th>
+            <th>Зубья</th>
             <th></th>
           </tr>
         </thead>
@@ -47,6 +48,7 @@ query Catalog {
         cogs {
           cogsPitch
           cogsNumber
+          cogsCenter
         }
         grooveInclination {
           type
@@ -62,14 +64,11 @@ query Catalog {
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-
-import CatalogCategories from '~/components/catalog/CatalogCategories'
 import SeriesItem from '~/components/catalog/SeriesTableItem'
 
 export default {
   components: {
     PageLayout,
-    CatalogCategories,
     SeriesItem
   },
 
@@ -117,21 +116,4 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/modules/table.scss';
-
-.series-overview {
-  margin: 0 -.5rem;
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  td {
-    border-top: 1px solid rgba(0,0,0,.1);
-    padding: .3rem .5rem;
-  }
-
-  td.series-cutting-group {
-    padding-top: 1.75rem;
-  }
-}
 </style>

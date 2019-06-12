@@ -80,19 +80,13 @@ export default {
     }
   },
 
-  /* data: () => {
-    return {
-      toolExpanded: false
-    }
-  }, */
-
   computed: {
     seriesFeatures() {
       return [
         'coating',
         'tail',
         'endShapes',
-        'cogs'
+        'cuttingShapes'
       ].reduce((result, f) => {
         if (this.node[f] && typeof this.node[f] === "string") {
           result.push(`${f}-${this.node[f]}`)
@@ -100,6 +94,11 @@ export default {
         if (this.node[f] && f === 'endShapes') {
           result = result.concat(
             this.node[f].map(shape => `form-${shape}`)
+          )
+        }
+        if (this.node[f] && f === 'cuttingShapes') {
+          result = result.concat(
+            this.node[f].map(shape => `cutting-${shape}`)
           )
         }
         return result
@@ -185,12 +184,6 @@ export default {
     max-width: 100%;
     height: auto;
   }
-
-  /* &:hover {
-    // background: #ffffff;
-    border-bottom: 1px solid transparent;
-    // box-shadow: 0px 5px 60px 0 rgba(0,0,0,0.1);
-  } */
 }
 
 .series-details {

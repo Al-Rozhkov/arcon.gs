@@ -31,5 +31,11 @@
   
     a {
         @include link-underline($color: darken($cyan, 10%));
+
+        &.active--exact {
+            color: $red;
+            border-bottom: none;
+            cursor: default;
+        }
     }
 }

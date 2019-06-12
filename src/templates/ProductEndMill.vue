@@ -104,17 +104,5 @@ export default {
 </script>
 
 <style lang="scss">
-.series-scheme {
-  @extend %grid-row-wrap;
-  padding: 2rem 0;
-  justify-content: space-around;
-  align-items: flex-end;
-
-  img {
-    display: block;
-    max-width: 460px;
-    height: auto;
-    margin: 1.5rem 1rem;
-  }
-}
+@import '~/assets/scss/modules/series.scss';
 </style>

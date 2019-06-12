@@ -21,3 +21,20 @@ table.sticky-header {
     }
   }
 }
+
+.series-overview {
+  margin: 0 -.5rem;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  td {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: .3rem .5rem;
+  }
+
+  td.series-cutting-group {
+    padding-top: 1.75rem;
+  }
+}
