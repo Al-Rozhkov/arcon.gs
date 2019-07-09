@@ -10,7 +10,7 @@ import AppFooter from '~/components/AppFooter.vue'
 
 import VTooltip from 'v-tooltip'
 
-export default function (Vue, { router, appOptions, isClient }) {
+export default function (Vue, { router, appOptions, isClient, head }) {
   // Set global components
   Vue.component('Layout', DefaultLayout)
   Vue.component('AppLogo', AppLogo)
@@ -28,6 +28,26 @@ export default function (Vue, { router, appOptions, isClient }) {
       h('app-footer'),
     ])
   }
+
+  // Remove "generator" meta tag
+  const gIndex = head.meta.findIndex(e => e.name === 'generator')
+  if (gIndex !== -1)
+    head.meta.splice(gIndex, 1)
+  
+  // Preload font
+  head.link.push({
+    rel: 'preload',
+    href: '/fonts/arcon-regular.woff2',
+    as: 'font',
+    crossorigin: 'anonymous'
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/arcon-bold.woff2',
+    as: 'font',
+    crossorigin: 'anonymous'
+  })
+  head.htmlAttrs.lang = 'ru'
   
   /* router.beforeEach((to, from, next) => {
     AppLoading.methods.start()

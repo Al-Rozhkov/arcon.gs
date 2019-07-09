@@ -72,3 +72,14 @@
         color: $orange;
     }
 }
+
+@media print {
+    .mat-main {
+        color: #ffffff !important;
+        background: $gray-600 !important;
+    }
+    .mat-possible {
+        color: $gray-600 !important;
+        border: 2px solid $gray-600 !important;
+    }
+}

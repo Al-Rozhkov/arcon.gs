@@ -6,6 +6,10 @@
 
 .nav-header {
     border-bottom: 1px solid rgba($cyan, .2);
+
+    @media print {
+        display: none;
+    }
 }
   
 .nav {
@@ -74,10 +78,11 @@
 
 .flex-row {
     @extend %grid-row-wrap;
+}
 
-    /* &.with-gutters {
-        @include make-row-negative-margin();
-    } */
+.flex-row-nowrap {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .w-100 {
@@ -86,4 +91,16 @@
 
 .mb-3 {
     margin-bottom: 3.5rem;
+}
+
+@media print {
+    .nav-header,
+    footer.footer,
+    .d-print-none {
+        display: none;
+    }
+
+    .root {
+        border: 0;
+    }
 }

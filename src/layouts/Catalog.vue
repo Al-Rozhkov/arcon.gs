@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
 
-    <section class="container-xl">
+    <section class="container-xl d-print-none">
       <catalog-categories class="submenu" />
     </section>
 

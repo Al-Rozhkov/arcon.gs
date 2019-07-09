@@ -1,7 +1,7 @@
 <template>
   <page-layout>
 
-    <main class="block">
+    <main class="block" ref="printTarget">
       <series-header :node="$page.series" />
 
       <div class="product-items-list">
