@@ -1,10 +1,6 @@
 <template>
   <div v-tooltip="tooltipText" class="icon-attr">
-    <svg
-      :width="width"
-      :height="height"
-      role="img"
-    >
+    <svg :width="width" :height="height" role="img">
       <use :xlink:href="'#' + iconId" />
       <slot />
     </svg>
@@ -48,7 +44,7 @@ export default {
         'cutting-t': 'Т-образная режущая часть',
         'cogs-angle': 'Угол подъема спиральной канавки'
       }
-      
+
       return featuresDesc[this.iconId]
     }
   }
@@ -59,7 +55,7 @@ export default {
 .icon-attr {
   position: relative;
   display: inline-block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 
   cursor: default;
 }

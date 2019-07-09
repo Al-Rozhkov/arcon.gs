@@ -1,9 +1,6 @@
 <template>
   <ul class="menu">
-    <li
-      v-for="edge in $static.categories.edges"
-      :key="edge.node.id"
-    >
+    <li v-for="edge in $static.categories.edges" :key="edge.node.id">
       <g-link :to="edge.node.path">{{ edge.node.short }}</g-link>
     </li>
   </ul>

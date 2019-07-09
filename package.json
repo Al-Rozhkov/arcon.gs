@@ -25,5 +25,9 @@
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1",
     "vue-eslint-parser": "^6.0.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
