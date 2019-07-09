@@ -1,6 +1,5 @@
 <template>
   <page-layout>
-
     <main class="block">
       <series-header :node="$page.series" />
 
@@ -10,7 +9,7 @@
             v-for="(scheme, id) in $page.series.scheme"
             :key="id"
             :src="'/img/schemes/' + scheme.scheme + '.png'"
-          >
+          />
         </div>
 
         <product-items-table
@@ -21,9 +20,8 @@
 
       <!-- <section class="section-top">
         <h2>Похожие инструменты</h2>
-      </section> -->
+      </section>-->
     </main>
-
   </page-layout>
 </template>
 
@@ -88,7 +86,7 @@ export default {
     ProductItemsTable
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: `Сверло ${this.$page.series.id}`
     }

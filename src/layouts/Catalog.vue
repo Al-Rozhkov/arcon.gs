@@ -1,6 +1,5 @@
 <template>
   <div class="layout">
-
     <section class="container-xl d-print-none">
       <catalog-categories class="submenu" />
     </section>
@@ -9,7 +8,6 @@
 
     <svg-sprite-coating class="d-none" />
     <svg-sprite-features class="d-none" />
-
   </div>
 </template>
 
@@ -31,7 +29,7 @@ export default {
     CatalogCategories,
     SvgSpriteCoating,
     SvgSpriteFeatures
-  },
+  }
 }
 </script>
 

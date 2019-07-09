@@ -1,6 +1,5 @@
 <template>
   <page-layout>
-
     <main class="block">
       <h1>{{ $page.category.title }}</h1>
       <categories-list class="submenu" />
@@ -13,7 +12,6 @@
         />
       </div>
     </main>
-
   </page-layout>
 </template>
 
@@ -56,7 +54,7 @@
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 
-import CategoriesList from "~/components/catalog/CategoriesList"
+import CategoriesList from '~/components/catalog/CategoriesList'
 import SeriesTeaser from '~/components/catalog/SeriesTeaser'
 
 export default {
@@ -66,7 +64,7 @@ export default {
     SeriesTeaser
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: this.$page.category.title
     }
@@ -75,5 +73,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>

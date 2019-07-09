@@ -77,23 +77,23 @@ export default {
 
   computed: {
     seriesFeatures() {
-      return ["coating", "tail", "endShapes", "cuttingShapes", "cogs"].reduce(
+      return ['coating', 'tail', 'endShapes', 'cuttingShapes', 'cogs'].reduce(
         (result, f) => {
-          if (this.node[f] && typeof this.node[f] === "string") {
-            result.push(`${f}-${this.node[f]}`);
+          if (this.node[f] && typeof this.node[f] === 'string') {
+            result.push(`${f}-${this.node[f]}`)
           }
-          if (this.node[f] && f === "endShapes") {
-            result = result.concat(this.node[f].map(shape => `form-${shape}`));
+          if (this.node[f] && f === 'endShapes') {
+            result = result.concat(this.node[f].map(shape => `form-${shape}`))
           }
-          if (this.node[f] && f === "cuttingShapes") {
+          if (this.node[f] && f === 'cuttingShapes') {
             result = result.concat(
               this.node[f].map(shape => `cutting-${shape}`)
-            );
+            )
           }
-          return result;
+          return result
         },
         []
-      );
+      )
     },
 
     sizesValue() {
@@ -109,14 +109,14 @@ export default {
       if (window) window.print()
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
 .series-header-title {
   @extend %grid-row-wrap;
   align-items: baseline;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 .series-header {
@@ -147,7 +147,7 @@ export default {
 
     .print-it {
       flex-basis: 7rem;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       text-align: right;
     }
   }

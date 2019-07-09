@@ -1,10 +1,5 @@
 <template>
-  <span
-    v-tooltip="matDesc"
-    :class="matClass"
-  >
-    {{ matId }}
-  </span>
+  <span v-tooltip="matDesc" :class="matClass">{{ matId }}</span>
 </template>
 
 <script>
@@ -27,23 +22,23 @@ export default {
   data: () => {
     return {
       materialDesc: {
-        'p': 'Углеродистая и легированная сталь',
-        'k': 'Чугун',
-        'm': 'Нержавеющая сталь',
-        'h': 'Закаленная сталь',
+        p: 'Углеродистая и легированная сталь',
+        k: 'Чугун',
+        m: 'Нержавеющая сталь',
+        h: 'Закаленная сталь',
         'h1.1': 'Закаленная сталь',
         'h1.2': 'Закаленная сталь',
-        'n': 'Цветные металлы',
-        'n1': 'Сплавы на основе алюминия',
-        'n3': 'Сплавы на основе меди',
-        's': 'Суперсплавы и титан (жаропрочные сплавы)'
+        n: 'Цветные металлы',
+        n1: 'Сплавы на основе алюминия',
+        n3: 'Сплавы на основе меди',
+        s: 'Суперсплавы и титан (жаропрочные сплавы)'
       }
     }
   },
 
   computed: {
     matDesc() {
-      return (this.showTooltip) ? this.materialDesc[this.matId] : false
+      return this.showTooltip ? this.materialDesc[this.matId] : false
     },
     matClass() {
       const usageType = this.matMain ? 'mat-main' : 'mat-possible'
