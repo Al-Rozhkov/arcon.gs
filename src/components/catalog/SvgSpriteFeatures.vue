@@ -279,6 +279,10 @@
   fill: #000000;
 }
 
+.svg-fill-black {
+  fill: #000000;
+}
+
 .svg-fill-lila {
   fill: $lila;
 }

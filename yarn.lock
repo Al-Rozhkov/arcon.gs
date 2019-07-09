@@ -669,10 +669,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@gridsome/cli@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.2.0.tgz#cbccebe7ffd9c151a87402fd801f8470e8d46ded"
-  integrity sha512-8mLzvvZ2+LRoNk7E18tRSsQ7oqE+ckqZ60ychsVPWZ5EUgbu60s//LR936HQ5uea76tMtGi4BrZ++yh/uXOGfg==
+"@gridsome/cli@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.2.1.tgz#be8d51e390e6b4d0a21a7f096a2fe298a103ce93"
+  integrity sha512-2J0PBCbuMeuY5w+ica11tMgLAut0RUMTa8zf/j8iW/bsa4waIeRkOZvuGJi8xskKjW9jKnT7CYEX/nBSiGwZvw==
   dependencies:
     "@hjvedvik/tasks" "^0.0.8"
     chalk "^2.4.1"
@@ -1501,17 +1501,17 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-vue@^2.0.0-rc.22:
-  version "2.0.0-rc.22"
-  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.0.0-rc.22.tgz#12c5148228c669c7eb28d27f82b6814f2bc37d60"
-  integrity sha512-QA363prZJZ5HFzAPAlj93yy7FLOwPU0P465kaz8l9COa5t5q5az2X+lMgmlp5c1Fe8yBUhc316KM1itbJqzVUg==
+bootstrap-vue@^2.0.0-rc.25:
+  version "2.0.0-rc.25"
+  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.0.0-rc.25.tgz#5d53876a2547a0910d335fa7bb62b3069c62503c"
+  integrity sha512-/spnYUNTpusoSE03urxz8WSbywvg93UMq3zRAjCxA0YgUKDCe4HaEB1ABqj/cC/waycLkBb/Mp06WVQwuwzcOA==
   dependencies:
     "@nuxt/opencollective" "^0.2.2"
     bootstrap "^4.3.1"
     core-js ">=2.6.5 <3.0.0"
     popper.js "^1.15.0"
-    portal-vue "^2.1.4"
-    vue-functional-data-merge "^2.0.7"
+    portal-vue "^2.1.5"
+    vue-functional-data-merge "^3.1.0"
 
 bootstrap@^4.3.1:
   version "4.3.1"
@@ -3912,13 +3912,13 @@ gridsome-plugin-yandex-metrika@^0.1.2:
   dependencies:
     vue-yandex-metrika "^1.7.3"
 
-gridsome@^0.6.4:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.6.4.tgz#5389f9ab0a630b5cd4c49e66958e5d07eac1d6bc"
-  integrity sha512-QmeltD2r/3dRn84v/+alFAdBRcKJpJDWlUIoj5gZrjtCujbIFtn/xzVUcMXP+UK928bmzbjipcH1LY7M005GiQ==
+gridsome@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.6.6.tgz#054ce5b4f4c43624fd4885cbadd116e4b12471e2"
+  integrity sha512-6NSnOhM5wvxxSxIJt9FAOeA5IRZgx6J1V19kyfKyLxdWjlzfDwrhKFUPgROgob3N5zQfapslt3Zi21t8YS8DKg==
   dependencies:
     "@babel/core" "^7.0.0"
-    "@gridsome/cli" "^0.2.0"
+    "@gridsome/cli" "^0.2.1"
     "@sindresorhus/slugify" "^0.8.0"
     "@vue/babel-preset-app" "^3.4.0"
     "@vue/component-compiler-utils" "^2.5.2"
@@ -6244,10 +6244,10 @@ popper.js@^1.15.0:
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
 
-portal-vue@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/portal-vue/-/portal-vue-2.1.4.tgz#1fc679d77e294dc8d026f1eb84aa467de11b392e"
-  integrity sha512-Mr2h+RvoOOGHS7N0E3QPP+UQMt1OhSjQ7eMSGTXqkLiO0AjGEDw2x4kzmHATsZfDqQumiaYSDRzlUP2By3lvsA==
+portal-vue@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/portal-vue/-/portal-vue-2.1.5.tgz#ecd0997cb32958205151cb72f40fd4f38d175e5c"
+  integrity sha512-vZmdMn0mOo7puvxoMQ5zju6S29aFD+9yygJxyWQtPaMXS9xunAeoYdnx6yzfL9J8HD8pMZYgSieEIbioAKhrSQ==
 
 portfinder@^1.0.20:
   version "1.0.20"
@@ -8445,10 +8445,10 @@ vue-eslint-parser@^6.0.4:
     esquery "^1.0.1"
     lodash "^4.17.11"
 
-vue-functional-data-merge@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-2.0.7.tgz#bdee655181eacdcb1f96ce95a4cc14e75313d1da"
-  integrity sha512-pvLc+H+x2prwBj/uSEIITyxjz/7ZUVVK8uYbrYMmhDvMXnzh9OvQvVEwcOSBQjsubd4Eq41/CSJaWzy4hemMNQ==
+vue-functional-data-merge@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz#08a7797583b7f35680587f8a1d51d729aa1dc657"
+  integrity sha512-leT4kdJVQyeZNY1kmnS1xiUlQ9z1B/kdBFCILIjYYQDqZgLqCLa0UhjSSeRX6c3mUe6U5qYeM8LrEqkHJ1B4LA==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
