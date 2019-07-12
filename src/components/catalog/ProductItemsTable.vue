@@ -86,7 +86,7 @@ export default {
 }
 
 .pi-table {
-  margin: 0 auto;
+  margin: 0 auto 0 0;
 
   thead, tr {
     width: 100%;

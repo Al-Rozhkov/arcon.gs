@@ -48,6 +48,6 @@ export default {
 <style lang="scss">
 .services-wrapper {
   border-top: 4px solid $pink;
-  background: lighten($cyan, 40%);
+  // background: lighten($cyan, 40%);
 }
 </style>

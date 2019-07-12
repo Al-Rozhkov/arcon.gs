@@ -1,10 +1,12 @@
 <template>
   <div class="series-header">
-    <header :to="node.path">
+    <header class="col-35">
       <div class="series-header-title">
-        <h2>{{ node.id.toUpperCase() }}</h2>
+        <h1>{{ node.id.toUpperCase() }}</h1>
 
         <svg-plain-icon v-if="node.fusion" icon-id="series-fusion" :width="100" :height="25" />
+
+        <div class="series-desc" v-html="node.body" />
       </div>
 
       <g-image
@@ -15,38 +17,85 @@
       />
     </header>
 
-    <div class="body">
-      <div class="flex-row">
-        <div class="series-material">
-          <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
-        </div>
-        <div class="attr">
-          <svg-icon v-for="icon in seriesFeatures" :key="icon" :icon-id="icon" />
-          <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="index" :cogs="obj" />
-          <svg-icon v-if="node.grooveInclination" icon-id="cogs-angle">
-            <text
-              transform="matrix(1 0 0 1 27 16)"
-              style="font-size:12px;"
-            >{{ node.grooveInclination.angles[0]}}&#xB0;</text>
-            <text
-              v-if="node.grooveInclination.angles[1]"
-              transform="matrix(1 0 0 1 27 28)"
-              style="font-size:12px;"
-            >{{ node.grooveInclination.angles[1]}}&#xB0;</text>
-          </svg-icon>
-        </div>
-      </div>
+    <div class="series-body sheet sheet-beige">
+      <div class="series-features">
+        <div class="series-features-col-40">
+          <h3 class="series-dt">Основное применение</h3>
+          <ul class="series-dd">
+            <li v-for="(m, index) in node.mainUsage" :key="index" class="series-dd-li">
+              <span :class="`mat-chip-sm mat-main mat-${m}`">{{ m }}</span>
+              {{ materialDesc[m] }}
+            </li>
+          </ul>
 
-      <div class="flex-row-nowrap">
-        <div class="desc" v-html="node.body" />
-        <div class="d-print-none print-it">
-          <icon-printer
-            @click.native="printIt"
-            width="30"
-            height="30"
-            v-tooltip="{ content: 'Распечатать'}"
-          />
+          <template v-if="node.possibleUsage && node.possibleUsage.length > 0">
+            <h3 class="series-dt">Возможное применение</h3>
+            <ul class="series-dd">
+              <li v-for="(m, index) in node.possibleUsage" :key="index" class="series-dd-li">
+                <span :class="`mat-chip-sm mat-possible mat-${m}`">{{ m }}</span>
+                {{ materialDesc[m] }}
+              </li>
+            </ul>
+          </template>
         </div>
+
+        <div class="series-features-col-30">
+          <template v-if="node.coating">
+            <h3 class="series-dt">Покрытие</h3>
+            <p class="series-dd">{{ featuresDesc[node.coating] }}</p>
+          </template>
+          <template v-else>
+            <h3 class="series-dt">Без покрытия</h3>
+            <p></p>
+          </template>
+
+          <h3 class="series-dt">Тип хвостовика</h3>
+          <p class="series-dd">{{ featuresDesc[node.tail] }}</p>
+
+          <template v-if="node.endShapes && node.endShapes.length > 0">
+            <h3 class="series-dt">Форма торца</h3>
+            <p class="series-dd">{{ endShapes }}</p>
+          </template>
+
+          <template v-if="node.cuttingShapes && node.cuttingShapes.length > 0">
+            <h3 class="series-dt">Форма режущей части</h3>
+            <ul class="series-dd">
+              <li
+                v-for="(s, index) in node.cuttingShapes"
+                :key="index"
+                class="series-dd-li"
+              >{{ featuresDesc[s] }}</li>
+            </ul>
+          </template>
+        </div>
+
+        <template v-if="node.grooveInclination && node.cogs">
+          <div class="series-features-col-30">
+            <h3 class="series-dt">Зубья</h3>
+            <ul class="series-dd">
+              <li
+                v-for="(c, index) in node.cogs"
+                :key="index"
+                class="series-dd-li"
+              >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
+            </ul>
+
+            <template v-if="node.grooveInclination">
+              <h3 class="series-dt">Угол подъема спиральной канавки</h3>
+              <p class="series-dd">
+                <span class="display-3" v-html="grooveInclination"></span>
+              </p>
+            </template>
+          </div>
+        </template>
+      </div>
+      <div class="series-actions d-print-none">
+        <icon-printer
+          @click.native="printIt"
+          width="30"
+          height="30"
+          v-tooltip="{ content: 'Распечатать страницу'}"
+        />
       </div>
     </div>
   </div>
@@ -58,6 +107,7 @@ import SvgCogsIcon from '~/components/catalog/SvgCogsIcon.vue'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
+import { parse } from 'path'
 
 export default {
   components: {
@@ -75,36 +125,83 @@ export default {
     }
   },
 
+  data() {
+    return {
+      materialDesc: {
+        p: 'углеродистая и легированная сталь',
+        k: 'чугун',
+        m: 'нержавеющая сталь',
+        h: 'закаленная сталь',
+        'h1.1': 'закаленная сталь',
+        'h1.2': 'закаленная сталь',
+        n: 'цветные металлы',
+        n1: 'сплавы на основе алюминия',
+        n3: 'сплавы на основе меди',
+        s: 'суперсплавы и титан (жаропрочные сплавы)'
+      },
+      featuresDesc: {
+        ng: 'nACo-G',
+        tan: 'TiAlN',
+        tin: 'TiN',
+        pp: 'PurePolish. Полировка',
+        cylinder: 'Цилиндрический',
+        weldon: 'Weldon',
+        sharp: 'торец без фаски, наостро',
+        'sharp-r': 'торец с притуплением',
+        'sharp-f': 'торец с фаской chх45˚',
+        radius: 'радиусной торец',
+        sphere: 'сферический торец',
+        conus: 'конус',
+        'inner-radius': 'с внутренним радиусом',
+        t: 'Т-образная режущая часть'
+      },
+      cogsDesc: {
+        variable: 'переменный шаг',
+        permanent: 'постоянный шаг',
+        overlap: 'с перекрытием центра',
+        base: 'без режущего центра'
+      }
+    }
+  },
+
   computed: {
-    seriesFeatures() {
-      return ['coating', 'tail', 'endShapes', 'cuttingShapes', 'cogs'].reduce(
-        (result, f) => {
-          if (this.node[f] && typeof this.node[f] === 'string') {
-            result.push(`${f}-${this.node[f]}`)
-          }
-          if (this.node[f] && f === 'endShapes') {
-            result = result.concat(this.node[f].map(shape => `form-${shape}`))
-          }
-          if (this.node[f] && f === 'cuttingShapes') {
-            result = result.concat(
-              this.node[f].map(shape => `cutting-${shape}`)
-            )
-          }
-          return result
-        },
-        []
-      )
+    endShapes() {
+      if (this.node.endShapes) {
+        return this.node.endShapes.map(i => this.featuresDesc[i]).join('; ')
+      } else {
+        return ''
+      }
     },
 
-    sizesValue() {
-      const min = 9
-      const max = 99
-      const rand = min - 0.5 + Math.random() * (max - min + 1)
-      return Math.round(rand)
+    grooveInclination() {
+      if (this.node.grooveInclination) {
+        return this.node.grooveInclination.angles
+          .map(i => `${i}&#xB0;`)
+          .join('~')
+      } else {
+        return ''
+      }
     }
   },
 
   methods: {
+    getCogsNumberLabel(s) {
+      const number = parseInt(s, 10)
+      if (number === 1) {
+        return '1 зуб'
+      }
+      if (number > 1 && number < 5) {
+        return `${number} зуба`
+      }
+      if (number > 5) {
+        return `${number} зубьев`
+      }
+    },
+
+    getCogsCenterLabel(s) {
+      return s === 'overlap' ? 'с перекрытием центра' : 'без режущего центра'
+    },
+
     printIt() {
       if (window) window.print()
     }
@@ -124,58 +221,117 @@ export default {
 
   width: 100%;
   position: relative;
-  margin-top: -1px;
+  margin-bottom: 2rem;
 
-  header {
-    max-width: 30%;
-    flex: 0 0 30%;
-    display: block;
-    color: $black;
-  }
-
-  .body {
-    max-width: 70%;
-    flex: 0 0 70%;
-
-    @include media-breakpoint-up(md) {
-      padding-left: 40px;
-    }
-
-    .desc {
-      flex-basis: auto;
-    }
-
-    .print-it {
-      flex-basis: 7rem;
-      padding: 0.5rem 1rem;
-      text-align: right;
-    }
+  .print-it {
+    flex-basis: 7rem;
+    padding: 0.5rem 1rem;
+    text-align: right;
   }
 
   .attr {
     margin-left: auto;
     margin-bottom: 1.5rem;
   }
-
-  h2 {
-    margin: 0 0 1rem;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
 }
 
-.series-scheme img {
-  min-width: 360px;
-  height: auto;
+.series-desc {
+  flex-basis: auto;
 }
 
 @include media-breakpoint-up(md) {
   .desc {
     font-size: 1.25rem;
   }
+
+  .col-35 {
+    max-width: 35%;
+    flex: 0 0 35%;
+    padding-right: 3rem;
+  }
+
+  .series-body {
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+
+  .series-features {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -2rem;
+  }
+
+  .series-features-col-30,
+  .series-features-col-40 {
+    padding-right: 2rem;
+  }
+
+  .series-features-col-30 {
+    max-width: 30%;
+    flex: 1 1 30%;
+  }
+
+  .series-features-col-40 {
+    max-width: 40%;
+    flex: 1 1 40%;
+  }
+}
+
+
+// @TODO fix it!
+@media print {
+  .col-35 {
+    max-width: 35%;
+    flex: 0 0 35%;
+    padding-right: 3rem;
+  }
+
+  .series-body {
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+
+  .series-features-col-30,
+  .series-features-col-40 {
+    padding-right: 2rem;
+    max-width: 50%;
+    flex: 1 1 50%;
+  }
+}
+
+.series-actions {
+  position: absolute;
+  top: 1rem;
+  right: -1.5rem;
+  padding: .5rem;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background: $yellow;
+  }
+}
+
+.series-dd {
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+ul.series-dd {
+  list-style-type: none;
+}
+
+.series-dd-li {
+  padding-bottom: 0.3rem;
+}
+
+h3.series-dt {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.series-img {
+  margin-left: -0.75rem;
 }
 </style>

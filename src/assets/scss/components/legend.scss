@@ -10,31 +10,40 @@
     cursor: default;
 }
 
+.mat-chip-sm {
+    display: inline;
+    padding: .05rem .5rem;
+    border-radius: 4px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    margin-right: .1rem;
+}
+
 .mat-main {
     color: $white;
 
     &.mat-p {
-        background: $cyan;
+        background: $mat-p;
     }
   
     &.mat-k {
-        background: $red;
+        background: $mat-k;
     }
   
     &.mat-m {
-        background: $yellow;
+        background: $mat-m;
     }
 
     &.mat-n, &.mat-n1, &.mat-n3 {
-        background: $green;
+        background: $mat-n;
     }
 
     &.mat-h, &.mat-h1-1, &.mat-h1-1 {
-        background: $gray-600;
+        background: $mat-h;
     }
 
     &.mat-s {
-        background: $orange;
+        background: $mat-s;
     }
 }
 
@@ -44,32 +53,32 @@
     border-style: solid;
 
     &.mat-p {
-        border-color: $cyan;
-        color: $cyan;
+        border-color: $mat-p;
+        color: $mat-p;
     }
   
     &.mat-k {
-        border-color: $red;
-        color: $red;
+        border-color: $mat-k;
+        color: $mat-k;
     }
   
     &.mat-m {
-        border-color: $yellow;
+        border-color: $mat-m;
     }
 
     &.mat-n, &.mat-n1, &.mat-n3 {
-        border-color: $green;
-        color: $green;
+        border-color: $mat-n;
+        color: $mat-n;
     }
 
     &.mat-h, &.mat-h1-1, &.mat-h1-2 {
-        border-color: $gray-600;
-        color: $gray-600;
+        border-color: $mat-h;
+        color: $mat-h;
     }
 
     &.mat-s {
-        border-color: $orange;
-        color: $orange;
+        border-color: $mat-s;
+        color: $mat-s;
     }
 }
 

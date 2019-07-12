@@ -1,13 +1,17 @@
-.series-scheme {
-  @extend %grid-row-wrap;
-  padding: 2rem 0;
-  justify-content: space-around;
-  align-items: flex-end;
+.series-scheme img {
+  margin-bottom: 3rem;
+}
 
-  img {
-    display: block;
-    max-width: 460px;
-    height: auto;
-    margin: 1.5rem 1rem;
+@include media-breakpoint-up(md) {
+  .series-scheme {
+    max-width: 35%;
+    flex: 0 0 35%;
+    padding-right: 3rem;
+    padding-top: 3rem;
+  }
+
+  .product-items-table {
+    max-width: 65%;
+    flex: 0 0 65%;
   }
 }

@@ -15,21 +15,23 @@
       </p>
 
       <section class="section-top">
-        <h2 class="block-title">
+        <!-- <h2 class="block-title">
           Контактные телефоны
-        </h2>
+        </h2> -->
 
+        <h4>Отдел сбыта</h4>
         <p>
-          Отдел сбыта<br />
-          Тел.: (8412) 45-89-90; e-mail: sales@cvm-arcon.ru
+          Тел.: (8412) 45-89-90;<br />e-mail: sales@cvm-arcon.ru
         </p>
+
+        <h4>Отдел сбыта режущего инструмента</h4>
         <p>
-          Отдел сбыта режущего инструмента<br />
-          Тел.: (8412) 45-89-90; e-mail: gid@cvm-arcon.ru
+          Тел.: (8412) 45-89-90;<br />e-mail: gid@cvm-arcon.ru
         </p>
+
+        <h4>Бухгалтерия</h4>
         <p>
-          Бухгалтерия<br />
-          e-mail: buh@cvm-arcon.ru
+          e-mail: <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
         </p>
       </section>
     </main>

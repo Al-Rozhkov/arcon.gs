@@ -5,11 +5,11 @@
     "scheme": [
         {
             "name": "a",
-            "scheme": "sphere-conus-r"
+            "scheme": "sphere-conus"
         },
         {
             "name": "b",
-            "scheme": "sphere-r"
+            "scheme": "sphere"
         }
     ],
     "mainUsage": [

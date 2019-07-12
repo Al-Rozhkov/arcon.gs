@@ -46,10 +46,8 @@ export default {
     
     tooltipText() {
       const pitch = (this.cogs.cogsPitch === 'variable') ? 'Переменный шаг зубьев' : 'Постоянный шаг зубьев'
-      const center = {
-        'cogs-base': 'Без режущего центра',
-        'cogs-center-overlap': 'С перекрытием центра'
-      }
+      const center = (this.cogs.cogsCenter === 'overlap') ? 'С перекрытием центра' : 'Без режущего центра'
+      
       return `Зубьев: ${this.cogs.cogsNumber}<br />${pitch}<br />${center[this.iconId]}`
     }
   }
