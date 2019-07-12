@@ -52,7 +52,7 @@ module.exports = function (api) {
       store.getContentType(productTypes[i]).addSchemaField('productImg', () => ({
         type: new GraphQLList(imageType.type),
         args: imageType.args,
-        async resolve (node, args, context, info) {
+        resolve (node, args, context) {
           const getPath = (fileName) => path.join(__dirname, 'static', 'img', 'series', `${fileName}.jpg`)
           
           const fileNames = ('photos' in node && node.photos.length > 0)
