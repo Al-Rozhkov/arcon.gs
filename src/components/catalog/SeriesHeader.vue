@@ -22,7 +22,7 @@
           <h3 class="dt">Основное применение</h3>
           <ul class="dd">
             <li v-for="(m, index) in node.mainUsage" :key="index" class="dd-li">
-              <span :class="`mat-chip-sm mat-main mat-${m}`">{{ m }}</span>
+              <span :class="`mat-chip-sm mat-main mat-${m.charAt(0)}`">{{ m }}</span>
               {{ materialDesc[m] }}
             </li>
           </ul>
@@ -31,7 +31,7 @@
             <h3 class="dt">Возможное применение</h3>
             <ul class="dd">
               <li v-for="(m, index) in node.possibleUsage" :key="index" class="dd-li">
-                <span :class="`mat-chip-sm mat-possible mat-${m}`">{{ m }}</span>
+                <span :class="`mat-chip-sm mat-possible mat-${m.charAt(0)}`">{{ m }}</span>
                 {{ materialDesc[m] }}
               </li>
             </ul>

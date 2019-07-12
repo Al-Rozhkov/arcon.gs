@@ -42,7 +42,7 @@ export default {
     },
     matClass() {
       const usageType = this.matMain ? 'mat-main' : 'mat-possible'
-      return usageType + ' mat-' + this.matId.replace('.', '-')
+      return `mat-chip ${usageType} mat-${this.matId.charAt(0)}`
     }
   }
 }

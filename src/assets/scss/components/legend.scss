@@ -1,10 +1,17 @@
-.mat-main,
-.mat-possible {
+.mat-chip,
+.mat-chip-sm {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    line-height: 1;
+}
+
+.mat-chip {
     display: inline-block;
     padding: .1rem .75rem;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
     margin-right: .5rem;
     margin-bottom: .5rem;
     cursor: default;
@@ -12,10 +19,8 @@
 
 .mat-chip-sm {
     display: inline;
-    padding: .05rem .5rem;
-    border-radius: 4px;
+    padding: 0 .5rem;
     font-size: .75rem;
-    text-transform: uppercase;
     margin-right: .1rem;
 }
 
@@ -23,34 +28,38 @@
     color: $white;
 
     &.mat-p {
+        border-color: $mat-p;
         background: $mat-p;
     }
   
     &.mat-k {
+        border-color: $mat-k;
         background: $mat-k;
     }
   
     &.mat-m {
+        border-color: $mat-m;
         background: $mat-m;
     }
 
-    &.mat-n, &.mat-n1, &.mat-n3 {
+    &.mat-n {
+        border-color: $mat-n;
         background: $mat-n;
     }
 
-    &.mat-h, &.mat-h1-1, &.mat-h1-1 {
+    &.mat-h {
+        border-color: $mat-h;
         background: $mat-h;
     }
 
     &.mat-s {
+        border-color: $mat-s;
         background: $mat-s;
     }
 }
 
 .mat-possible {
-    background: $white;
-    border-width: 2px;
-    border-style: solid;
+    background: $white;    
 
     &.mat-p {
         border-color: $mat-p;
@@ -64,14 +73,15 @@
   
     &.mat-m {
         border-color: $mat-m;
+        color: darken($mat-m, 10%);
     }
 
-    &.mat-n, &.mat-n1, &.mat-n3 {
+    &.mat-n {
         border-color: $mat-n;
         color: $mat-n;
     }
 
-    &.mat-h, &.mat-h1-1, &.mat-h1-2 {
+    &.mat-h {
         border-color: $mat-h;
         color: $mat-h;
     }
@@ -83,11 +93,14 @@
 }
 
 @media print {
-    .mat-main {
+    body .mat-chip-sm.mat-main,
+    body .mat-chip.mat-main {
         color: #ffffff !important;
         background: $gray-600 !important;
+        border-color: $gray-600 !important;
     }
-    .mat-possible {
+    body .mat-chip-sm.mat-possible,
+    body .mat-chip.mat-possible {
         color: $gray-600 !important;
         border: 2px solid $gray-600 !important;
     }

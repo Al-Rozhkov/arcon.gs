@@ -31,7 +31,7 @@
       </div>
 
       <section class="pt">
-        <h2 class="block-title">Новости компании</h2>
+        <h2 class="mb-2">Новости компании</h2>
 
         <front-news />
       </section>
