@@ -1,13 +1,16 @@
 <template>
   <page-layout>
-
     <main class="block">
       <series-header :node="$page.series" />
 
-      <div class="product-items-list">
-        <!-- <div v-for="(scheme, id) in $page.series" :key="id" class="series-scheme">
-          <img :src="'/img/scheme/' + scheme + '.svg'">
-        </div> -->
+      <div class="flex-row">
+        <div class="series-scheme">
+          <img
+            v-for="(scheme, id) in $page.series.scheme"
+            :key="id"
+            :src="'/img/schemes/' + scheme.scheme + '.png'"
+          />
+        </div>
 
         <product-items-table
           :fields-set="$page.series.productSeriesSet.set"
@@ -17,9 +20,8 @@
 
       <!-- <section class="section-top">
         <h2>Похожие инструменты</h2>
-      </section> -->
+      </section>-->
     </main>
-
   </page-layout>
 </template>
 
@@ -76,7 +78,7 @@ export default {
     ProductItemsTable
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: `Резьбовая фреза ${this.$page.series.id}`
     }
@@ -85,5 +87,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>

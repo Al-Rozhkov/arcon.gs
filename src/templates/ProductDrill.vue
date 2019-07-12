@@ -3,7 +3,7 @@
     <main class="block">
       <series-header :node="$page.series" />
 
-      <div class="product-items-list">
+      <div class="flex-row">
         <div class="series-scheme">
           <img
             v-for="(scheme, id) in $page.series.scheme"
@@ -36,6 +36,7 @@
         scheme
       }
       mainUsage
+      possibleUsage
       coating
       tail
       cuttingShapes
