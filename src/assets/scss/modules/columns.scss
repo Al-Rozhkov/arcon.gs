@@ -36,4 +36,13 @@
     .cc-4cols .col {
         @include make-col(6);
     }
+
+    .col-lg-8 {
+        @include make-col(8);
+    }
+
+    .col-lg-16 {
+        @include make-col(16);
+        padding-right: 3rem;
+    }
 }

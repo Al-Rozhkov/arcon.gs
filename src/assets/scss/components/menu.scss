@@ -13,10 +13,6 @@
         }
     }
 
-    /* span {
-        border-bottom: 1px solid rgba($cyan, .2)
-    } */
-
     .active {
         color: $red;
     }
@@ -24,6 +20,7 @@
 
 .submenu {
     margin: 1rem 0;
+    font-size: 1.1rem; //@TODO remove later
   
     li {
         margin-bottom: .75rem;

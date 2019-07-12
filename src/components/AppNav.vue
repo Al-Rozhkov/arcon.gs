@@ -18,7 +18,7 @@
           <g-link class="highlight" to="/catalog">Режущий инструмент</g-link>
         </li>
         <li>
-          <g-link to="/services">Продукция и услуги</g-link>
+          <g-link to="/services">Услуги</g-link>
         </li>
         <li>
           <g-link to="/partners">Партнеры</g-link>
