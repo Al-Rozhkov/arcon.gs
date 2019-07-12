@@ -56,7 +56,10 @@
         set
       }
     }
-    tools: allProductItemEndMill (filter: { series: { eq: $id } }) {
+    tools: allProductItemEndMill (
+        filter: { series: { eq: $id } },
+        sortBy: "id", order: ASC
+      ) {
       edges {
         node {
           id

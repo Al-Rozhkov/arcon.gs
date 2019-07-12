@@ -44,7 +44,10 @@
         set
       }
     }
-    tools: allProductItemThreadMill (filter: { series: { eq: $id } }) {
+    tools: allProductItemThreadMill (
+        filter: { series: { eq: $id } },
+        sortBy: "id", order: ASC
+      ) {
       edges {
         node {
           id

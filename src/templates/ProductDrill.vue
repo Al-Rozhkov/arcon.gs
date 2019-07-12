@@ -54,7 +54,10 @@
         set
       }
     }
-    tools: allProductItemDrill (filter: { series: { eq: $id } }) {
+    tools: allProductItemDrill (
+        filter: { series: { eq: $id } },
+        sortBy: "id", order: ASC
+      ) {
       edges {
         node {
           id
