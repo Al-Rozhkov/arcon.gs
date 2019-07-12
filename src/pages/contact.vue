@@ -1,9 +1,9 @@
 <template>
   <Layout>
-    <main class="block">
+    <main class="cnt">
       <h1>Контактная информация</h1>
 
-      <section class="section-top">
+      <section class="pt">
         <h4>Отдел сбыта</h4>
         <p>
           Тел.: (8412) 45-89-90;
@@ -24,7 +24,7 @@
           <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
         </p>
       </section>
-      <section class="section-top">
+      <section class="pt">
         <p>ООО «Центр высокоточной механообработки «Аркон»</p>
         <p>Россия, г. Пенза, ул. Егорова</p>
         <p>Россия, г. Пенза, ул. Гоголя</p>

@@ -55,11 +55,5 @@ export default {
 </script>
 
 <style lang="scss">
-.icon-attr {
-  position: relative;
-  display: inline-block;
-  margin-right: .5rem;
-
-  cursor: default;
-}
+@import '~/assets/scss/modules/svg-icon.scss';
 </style>

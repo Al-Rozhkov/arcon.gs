@@ -1,7 +1,7 @@
 <template>
   <page-layout>
 
-    <main class="block">
+    <main class="cnt">
       <h1>Резьбовые фрезы Arconit™</h1>
       <!-- <categories-list class="submenu" /> -->
 

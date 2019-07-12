@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="block">
+    <div class="cnt">
       <div class="cc-news-section">
         <main class="body">
           <slot />
@@ -66,7 +66,7 @@ export default {}
   @include make-grid-gutter($col-selector: '.body, .aside');
 
   .body {
-    ul li {
+    li {
       margin-bottom: 0.5rem;
     }
 

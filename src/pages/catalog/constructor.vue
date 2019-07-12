@@ -1,7 +1,7 @@
 <template>
   <Layout>
 
-    <main class="block">
+    <main class="cnt">
       <h1>Конструктор инструмента</h1>
 
       <p class="lead">

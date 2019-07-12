@@ -1,7 +1,7 @@
 <template>
   <page-layout>
         
-    <main class="block">
+    <main class="cnt">
       <h1>Рекомендации по&nbsp;выбору концевых фрез</h1>
       <categories-list class="submenu" />
 

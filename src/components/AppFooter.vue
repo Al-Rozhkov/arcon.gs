@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="block">
+    <div class="cnt">
       <div class="cc-4cols">
         <div class="col">
           © 2015—2019

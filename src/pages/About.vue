@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="block">
+    <main class="cnt">
       <h1>О компании</h1>
 
       <div class="flex-row">
@@ -30,7 +30,7 @@
         </section>
       </div>
 
-      <section class="section-top">
+      <section class="pt">
         <h2 class="block-title">Новости компании</h2>
 
         <front-news />

@@ -1,7 +1,7 @@
 <template>
   <page-layout>
 
-    <main class="block">
+    <main class="cnt">
       <h1>Рекомендации по&nbsp;выбору сверл</h1>
 
       <table class="series-overview sticky-header">

@@ -7,7 +7,7 @@ $section-padding-lg: 40px !default;
 /* ========================================================================
    Component: Container
  ========================================================================== */
-%section {
+%spacing {
   padding-top: $section-padding;
   padding-bottom: $section-padding;
 
@@ -19,7 +19,7 @@ $section-padding-lg: 40px !default;
   @include clearfix();
 }
 
-%section-top {
+%spacing-top {
   padding-top: $section-padding;
 
   @include media-breakpoint-up(lg) {
@@ -29,7 +29,7 @@ $section-padding-lg: 40px !default;
   @include clearfix();
 }
 
-%section-bottom {
+%spacing-bottom {
   padding-bottom: $section-padding;
 
   @include media-breakpoint-up(lg) {

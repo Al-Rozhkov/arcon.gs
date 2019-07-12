@@ -7,7 +7,7 @@ $tooltip-bg: lighten($orange, 15%);
    Component: Tooltip
  ========================================================================== */
 .tooltip {
-    display: block !important;
+    display: block;// !important;
     z-index: 10000;
   
     .tooltip-inner {
@@ -97,5 +97,11 @@ $tooltip-bg: lighten($orange, 15%);
         visibility: visible;
         opacity: 1;
         transition: opacity .15s;
+    }
+}
+
+@media print {
+    .tooltip {
+        display: none;
     }
 }

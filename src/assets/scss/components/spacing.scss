@@ -1,20 +1,20 @@
 /* ========================================================================
-   Component: Section
+   Component: Spacing
  ========================================================================== */
-.block {
-    @extend %section;
+.cnt {
+    @extend %spacing;
     @extend %container-xl;
 }
 
-.section {
-    @extend %section;
+.py {
+    @extend %spacing;
 }
 
-.section-top {
-    @extend %section-top;
+.pt {
+    @extend %spacing-top;
 }
 
-.section-sm {
+.py-sm {
     padding-top: 10px;
     padding-bottom: 20px;
 }

@@ -1,7 +1,7 @@
 <template>
   <Layout>
 
-    <main class="block">
+    <main class="cnt">
       <h1>Партнеры</h1>
 
       <section class="cc-2cols">

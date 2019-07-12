@@ -1,7 +1,7 @@
 <template>
   <Layout>
 
-    <header class="section-top policy-header">
+    <header class="pt policy-header">
       <div class="container-xl">
         <h1>Политика конфиденциальности</h1>
 
@@ -44,7 +44,7 @@
         </ul>
       </div>
     </header>
-    <article class="block">
+    <article class="cnt">
       <h2 id="s-1">
         I.&nbsp;Общие положения
       </h2>
@@ -519,10 +519,6 @@
 
 <script>
 export default {
-  /* components: {
-    AppIllustration
-  }, */
-
   metaInfo: {
     title: 'Политика конфиденциальности'
   }
@@ -531,7 +527,7 @@ export default {
 
 <style lang="scss">
 .policy-header {
-  background: gray("100");
+  background: $gray-100;
   position: relative;
 }
 </style>
