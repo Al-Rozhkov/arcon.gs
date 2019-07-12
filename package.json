@@ -10,8 +10,11 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.26",
+    "fstream": "^1.0.12",
     "gridsome": "^0.6.6",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
+    "js-yaml": "^3.13.1",
+    "lodash.template": "^4.5.0",
     "v-tooltip": "^2.0.2",
     "vue-lazy-hydration": "^1.0.0-beta.9",
     "xlsx": "^0.14.3"

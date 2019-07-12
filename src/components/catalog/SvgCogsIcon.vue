@@ -48,7 +48,7 @@ export default {
       const pitch = (this.cogs.cogsPitch === 'variable') ? 'Переменный шаг зубьев' : 'Постоянный шаг зубьев'
       const center = (this.cogs.cogsCenter === 'overlap') ? 'С перекрытием центра' : 'Без режущего центра'
       
-      return `Зубьев: ${this.cogs.cogsNumber}<br />${pitch}<br />${center[this.iconId]}`
+      return `Зубьев: ${this.cogs.cogsNumber}<br />${pitch}<br />${center}`
     }
   }
 }
