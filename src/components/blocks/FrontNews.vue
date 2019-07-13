@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 @import '~/assets/scss/modules/columns.scss';
 
-.teasers {
+.news-teasers {
   margin-bottom: 40px;
 
   @include media-breakpoint-up(md) {
