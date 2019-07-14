@@ -6,15 +6,15 @@ const filters = {
     list: [
       {
         text: 'прямоугольная',
-        value: ['rect-sharp', 'rect-r', 'rect-f']
+        value: 'rect-sharp', // 'rect-r', 'rect-f'
       },
       {
         text: 'радиусная',
-        value: ['radius']
+        value: 'radius'
       },
       {
         text: 'сферическая',
-        value: ['sphere']
+        value: 'sphere'
       }
     ]
   },

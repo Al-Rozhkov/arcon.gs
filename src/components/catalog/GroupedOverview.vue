@@ -15,7 +15,7 @@
 
       <div class="f-group">
         <!-- <h4 class="f-label">Применение</h4> -->
-        <b-form-select v-model="selected.usage">
+        <b-form-select v-model="selected.mainUsage">
           <option :value="null" disabled>Основное применение</option>
           <option value="p">
             <span class="mat-chip-sm mat-main mat-p"></span>Углеродистая и легированная сталь
@@ -61,7 +61,7 @@
           </tr>
         </thead>
         <tbody>
-          <template v-for="(group, gIndex) in groups">
+          <!-- <template v-for="(group, gIndex) in groups">
             <tr :key="`tr-${gIndex}`">
               <td colspan="6" class="group-label">{{ group.label }}</td>
             </tr>
@@ -70,7 +70,8 @@
               :node="$page.series.edges[item].node"
               :key="`${group.name}-${item}`"
             />
-          </template>
+          </template>-->
+          <series-item v-for="item in output" :node="item.node" :key="item.id" />
         </tbody>
       </table>
     </div>
@@ -103,10 +104,10 @@ export default {
     return {
       filterTrait,
       selected: {
-        endShapes: '',
-        coating: '',
-        usage: null,
-        cuttingPartLength: ''
+        endShapes: null,
+        coating: null,
+        mainUsage: null,
+        cuttingPartLength: null
       }
     }
   },
@@ -121,13 +122,36 @@ export default {
         value: ['rect-sharp', 'rect-r', 'rect-f']
       }
       */
-      const filterCondition = () => {}
+      const filterCondition = seriesItem => {
+        if (!this.filters) return true
 
-      const result = {}
+        const filterKeys = Object.keys(this.selected)
+        for (let f = 0, fl = filterKeys.length; f < fl; f++) {
+          const filterKey = filterKeys[f]
+          const value = this.selected[filterKey]
+
+          // If filter has value
+          if (!!value) {
+            // If value is array try to find item in it
+            if (Array.isArray(seriesItem[filterKey])) {
+              if (seriesItem[filterKey].indexOf(value) === -1) return false
+            } else {
+              if (seriesItem[filterKey] !== value) return false
+            }
+          }
+        }
+        
+        return true
+      }
+
+      const result = []
       for (let i = 0, len = all.length; i < len; i++) {
-        all[i].node.cuttingPartLength.forEach(element => {
+        /* all[i].node.cuttingPartLength.forEach(element => {
           ;(result[element] = result[element] || []).push(i)
-        })
+        }) */
+        if (filterCondition(all[i].node)) {
+          result.push(all[i])
+        }
       }
 
       return result

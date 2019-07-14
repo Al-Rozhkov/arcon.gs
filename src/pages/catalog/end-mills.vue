@@ -20,6 +20,7 @@ query Catalog {
         fusion
         mainUsage
         possibleUsage
+        endShapes
         cuttingPartLength
         cogs {
           cogsPitch
