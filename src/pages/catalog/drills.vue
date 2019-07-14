@@ -20,7 +20,7 @@ query Catalog {
         productImg (width: 260, quality: 75)
         mainUsage
         possibleUsage
-        cuttingPart
+        cuttingPartLength
         cogs {
           cogsPitch
           cogsNumber

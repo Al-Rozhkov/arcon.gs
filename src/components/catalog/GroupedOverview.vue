@@ -9,8 +9,8 @@
       </tr>
     </thead>
     <tbody>
-      <template v-for="group in groups">
-        <tr :key="`tr-${group.name}`">
+      <template v-for="(group, gIndex) in groups">
+        <tr :key="`tr-${gIndex}`">
           <td colspan="6" class="group-label">{{ group.label }}</td>
         </tr>
         <series-item
@@ -42,14 +42,14 @@ export default {
     output() {
       const all = this.$page.series.edges
 
-      const groups = {}
+      const result = {}
       for (let i = 0, len = all.length; i < len; i++) {
-        all[i].node.cuttingPart.forEach(element => {
-          (groups[element] = groups[element] || []).push(i)
+        all[i].node.cuttingPartLength.forEach(element => {
+          (result[element] = result[element] || []).push(i)
         })
       }
 
-      return groups
+      return result
     }
   }
 }
@@ -63,6 +63,6 @@ export default {
 }
 
 td.group-label {
-  padding-top: 1.75rem;
+  padding: 1.8rem 0.5rem 0.5rem;
 }
 </style>

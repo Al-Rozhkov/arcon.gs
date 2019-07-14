@@ -192,7 +192,7 @@ export default {
       if (number > 1 && number < 5) {
         return `${number} зуба`
       }
-      if (number > 5) {
+      if (number >= 5) {
         return `${number} зубьев`
       }
     },
