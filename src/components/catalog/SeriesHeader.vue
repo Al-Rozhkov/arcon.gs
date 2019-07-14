@@ -88,9 +88,8 @@
           </div>
         </template>
       </div>
-      <div class="actions d-print-none">
+      <div class="actions d-print-none" @click.native="printIt">
         <icon-printer
-          @click.native="printIt"
           width="30"
           height="30"
           v-tooltip="{ content: 'Распечатать страницу'}"
@@ -142,8 +141,8 @@ export default {
         ng: 'nACo-G',
         tan: 'TiAlN',
         tin: 'TiN',
-        pp: 'PurePolish. Полировка',
-        cylinder: 'Цилиндрический',
+        pp: 'PurePolish (полировка)',
+        cylinder: 'цилиндрический',
         weldon: 'Weldon',
         sharp: 'торец без фаски, наостро',
         'sharp-r': 'торец с притуплением',
