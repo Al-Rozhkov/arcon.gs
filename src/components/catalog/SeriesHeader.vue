@@ -88,7 +88,7 @@
           </div>
         </template>
       </div>
-      <div class="actions d-print-none" @click.native="printIt">
+      <div class="actions d-print-none" @click="printIt">
         <icon-printer
           width="30"
           height="30"
@@ -105,7 +105,7 @@ import SvgCogsIcon from '~/components/catalog/SvgCogsIcon.vue'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
-import { parse } from 'path'
+import { materials } from '~/utils/fieldsMapping.js'
 
 export default {
   components: {
@@ -125,18 +125,7 @@ export default {
 
   data() {
     return {
-      materialDesc: {
-        p: 'углеродистая и легированная сталь',
-        k: 'чугун',
-        m: 'нержавеющая сталь',
-        h: 'закаленная сталь',
-        'h1.1': 'закаленная сталь',
-        'h1.2': 'закаленная сталь',
-        n: 'цветные металлы',
-        n1: 'сплавы на основе алюминия',
-        n3: 'сплавы на основе меди',
-        s: 'суперсплавы и титан (жаропрочные сплавы)'
-      },
+      materialDesc: materials,
       featuresDesc: {
         ng: 'nACo-G',
         tan: 'TiAlN',

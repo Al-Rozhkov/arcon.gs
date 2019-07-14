@@ -3,7 +3,7 @@
     <main class="cnt">
       <h1>Рекомендации по&nbsp;выбору концевых фрез для металлобработки</h1>
 
-      <grouped-overview :groups="groups" />
+      <grouped-overview :filters="true" :groups="groups" />
     </main>
   </page-layout>
 </template>

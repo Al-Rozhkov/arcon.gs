@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { materials } from '~/utils/fieldsMapping.js'
+
 export default {
   props: {
     matId: {
@@ -21,18 +23,7 @@ export default {
 
   data: () => {
     return {
-      materialDesc: {
-        p: 'Углеродистая и легированная сталь',
-        k: 'Чугун',
-        m: 'Нержавеющая сталь',
-        h: 'Закаленная сталь',
-        'h1.1': 'Закаленная сталь',
-        'h1.2': 'Закаленная сталь',
-        n: 'Цветные металлы',
-        n1: 'Сплавы на основе алюминия',
-        n3: 'Сплавы на основе меди',
-        s: 'Суперсплавы и титан (жаропрочные сплавы)'
-      }
+      materialDesc: materials
     }
   },
 

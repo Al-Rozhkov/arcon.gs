@@ -1,5 +1,5 @@
 <template>
-  <div class="product-items-table">
+  <div class="overflow-x-auto">
     <p class="small">
       Единицы измерения — мм
     </p>
@@ -79,11 +79,8 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~/assets/scss/modules/table.scss';
-.product-items-table {
-  overflow-x: auto;
-}
 
 .pi-table {
   margin: 0 auto 0 0;
@@ -112,7 +109,7 @@ export default {
       }
 
       tr:hover {
-        background: fade-out($yellow, .7);
+        background: $item-hover-color;
 
         .hd {
           visibility: visible;
@@ -128,20 +125,5 @@ export default {
   .hd {
     visibility: hidden;
   }
-
-  /* .serial {
-    max-width: 8rem;
-    flex: 2 1 8rem;
-  }
-
-  .d1, .d2, .d3, .r {
-    max-width: 4rem;
-    flex: 1 1 4rem;
-  }
-
-  .l1, .l2, .ap, .z {
-    max-width: 3rem;
-    flex: 1 1 3rem;
-  } */
 }
 </style>
