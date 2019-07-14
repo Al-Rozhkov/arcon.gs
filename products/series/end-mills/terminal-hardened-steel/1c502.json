@@ -20,8 +20,8 @@
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp",
-        "sharp-r"
+        "rect-sharp",
+        "rect-r"
     ],
     "cogs": [
         {

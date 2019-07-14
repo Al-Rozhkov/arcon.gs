@@ -32,15 +32,28 @@ export default {
   },
 
   props: {
+    filters: {
+      type: Array
+    },
+    
     groups: {
-      type: Array,
-      required: true
+      type: Array
     }
   },
 
   computed: {
     output() {
       const all = this.$page.series.edges
+
+      /*
+      filter: {
+        trait: 'endShapes'
+        value: ['rect-sharp', 'rect-r', 'rect-f']
+      }
+      */
+      const filterCondition = () => {
+
+      }
 
       const result = {}
       for (let i = 0, len = all.length; i < len; i++) {

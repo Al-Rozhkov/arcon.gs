@@ -34,8 +34,8 @@
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-        "sharp",
-        "sharp-f"
+        "rect-sharp",
+        "rect-f"
     ],
     "cogs": [
         {
