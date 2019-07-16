@@ -72,6 +72,12 @@ export default {
 .link-flex {
   @extend %grid-row-wrap;
   color: $black;
+
+  &:hover {
+    h2.h2 {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .td {

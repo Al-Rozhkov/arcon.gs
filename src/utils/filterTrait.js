@@ -6,7 +6,9 @@ const filters = {
     list: [
       {
         text: 'прямоугольная',
-        value: 'rect-sharp', // 'rect-r', 'rect-f'
+        value: {
+          value: ['rect-sharp', 'rect-r', 'rect-f']
+        }
       },
       {
         text: 'радиусная',
@@ -38,10 +40,10 @@ const filters = {
         text: 'TiAlN',
         value: 'tan'
       },
-      {
+      /* {
         text: 'TiN',
         value: 'tin'
-      },
+      }, */
       {
         text: 'PurePolish (полировка)',
         value: 'pp'
