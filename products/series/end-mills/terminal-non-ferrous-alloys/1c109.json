@@ -21,7 +21,7 @@
     "coating": "pp",
     "tail": "cylinder",
     "endShapes": [
-        "sharp"
+        "rect-sharp"
     ],
     "cogs": [
         {
@@ -36,7 +36,7 @@
             30
         ]
     },
-    "cuttingPart": [
+    "cuttingPartLength": [
         "middle",
         "long"
     ],

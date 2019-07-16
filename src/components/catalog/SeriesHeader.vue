@@ -1,12 +1,11 @@
 <template>
-  <div class="series-header">
-    <header class="col-35">
-      <div class="series-header-title">
+  <div class="header">
+    <header class="col-left">
+      <div class="title">
         <h1>{{ node.id.toUpperCase() }}</h1>
-
         <svg-plain-icon v-if="node.fusion" icon-id="series-fusion" :width="100" :height="25" />
 
-        <div class="series-desc" v-html="node.body" />
+        <div class="desc" v-html="node.body" />
       </div>
 
       <g-image
@@ -17,81 +16,80 @@
       />
     </header>
 
-    <div class="series-body sheet sheet-beige">
-      <div class="series-features">
-        <div class="series-features-col-40">
-          <h3 class="series-dt">Основное применение</h3>
-          <ul class="series-dd">
-            <li v-for="(m, index) in node.mainUsage" :key="index" class="series-dd-li">
-              <span :class="`mat-chip-sm mat-main mat-${m}`">{{ m }}</span>
+    <div class="col-right sheet sheet-beige">
+      <div class="features">
+        <div class="col-40">
+          <h3 class="dt">Основное применение</h3>
+          <ul class="dd">
+            <li v-for="(m, index) in node.mainUsage" :key="index" class="dd-li">
+              <span :class="`mat-chip-sm mat-main mat-${m.charAt(0)}`">{{ m }}</span>
               {{ materialDesc[m] }}
             </li>
           </ul>
 
           <template v-if="node.possibleUsage && node.possibleUsage.length > 0">
-            <h3 class="series-dt">Возможное применение</h3>
-            <ul class="series-dd">
-              <li v-for="(m, index) in node.possibleUsage" :key="index" class="series-dd-li">
-                <span :class="`mat-chip-sm mat-possible mat-${m}`">{{ m }}</span>
+            <h3 class="dt">Возможное применение</h3>
+            <ul class="dd">
+              <li v-for="(m, index) in node.possibleUsage" :key="index" class="dd-li">
+                <span :class="`mat-chip-sm mat-possible mat-${m.charAt(0)}`">{{ m }}</span>
                 {{ materialDesc[m] }}
               </li>
             </ul>
           </template>
         </div>
 
-        <div class="series-features-col-30">
+        <div class="col-30">
           <template v-if="node.coating">
-            <h3 class="series-dt">Покрытие</h3>
-            <p class="series-dd">{{ featuresDesc[node.coating] }}</p>
+            <h3 class="dt">Покрытие</h3>
+            <p class="dd">{{ featuresDesc[node.coating] }}</p>
           </template>
           <template v-else>
-            <h3 class="series-dt">Без покрытия</h3>
+            <h3 class="dt">Без покрытия</h3>
             <p></p>
           </template>
 
-          <h3 class="series-dt">Тип хвостовика</h3>
-          <p class="series-dd">{{ featuresDesc[node.tail] }}</p>
+          <h3 class="dt">Тип хвостовика</h3>
+          <p class="dd">{{ featuresDesc[node.tail] }}</p>
 
           <template v-if="node.endShapes && node.endShapes.length > 0">
-            <h3 class="series-dt">Форма торца</h3>
-            <p class="series-dd">{{ endShapes }}</p>
+            <h3 class="dt">Форма торца</h3>
+            <p class="dd">{{ endShapes }}</p>
           </template>
 
           <template v-if="node.cuttingShapes && node.cuttingShapes.length > 0">
-            <h3 class="series-dt">Форма режущей части</h3>
-            <ul class="series-dd">
+            <h3 class="dt">Форма режущей части</h3>
+            <ul class="dd">
               <li
                 v-for="(s, index) in node.cuttingShapes"
                 :key="index"
-                class="series-dd-li"
+                class="dd-li"
               >{{ featuresDesc[s] }}</li>
             </ul>
           </template>
         </div>
 
         <template v-if="node.grooveInclination && node.cogs">
-          <div class="series-features-col-30">
-            <h3 class="series-dt">Зубья</h3>
-            <ul class="series-dd">
+          <div class="col-30">
+            <h3 class="dt">Зубья</h3>
+            <ul class="dd">
               <li
                 v-for="(c, index) in node.cogs"
                 :key="index"
-                class="series-dd-li"
+                class="dd-li"
               >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
             </ul>
 
             <template v-if="node.grooveInclination">
-              <h3 class="series-dt">Угол подъема спиральной канавки</h3>
-              <p class="series-dd">
+              <h3 class="dt">Угол подъема спиральной канавки</h3>
+              <p class="dd">
                 <span class="display-3" v-html="grooveInclination"></span>
               </p>
             </template>
           </div>
         </template>
       </div>
-      <div class="series-actions d-print-none">
+      <div class="actions d-print-none" @click="printIt">
         <icon-printer
-          @click.native="printIt"
           width="30"
           height="30"
           v-tooltip="{ content: 'Распечатать страницу'}"
@@ -107,7 +105,7 @@ import SvgCogsIcon from '~/components/catalog/SvgCogsIcon.vue'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
-import { parse } from 'path'
+import { materials } from '~/utils/fieldsMapping.js'
 
 export default {
   components: {
@@ -127,28 +125,17 @@ export default {
 
   data() {
     return {
-      materialDesc: {
-        p: 'углеродистая и легированная сталь',
-        k: 'чугун',
-        m: 'нержавеющая сталь',
-        h: 'закаленная сталь',
-        'h1.1': 'закаленная сталь',
-        'h1.2': 'закаленная сталь',
-        n: 'цветные металлы',
-        n1: 'сплавы на основе алюминия',
-        n3: 'сплавы на основе меди',
-        s: 'суперсплавы и титан (жаропрочные сплавы)'
-      },
+      materialDesc: materials,
       featuresDesc: {
         ng: 'nACo-G',
         tan: 'TiAlN',
         tin: 'TiN',
-        pp: 'PurePolish. Полировка',
-        cylinder: 'Цилиндрический',
+        pp: 'PurePolish (полировка)',
+        cylinder: 'цилиндрический',
         weldon: 'Weldon',
-        sharp: 'торец без фаски, наостро',
-        'sharp-r': 'торец с притуплением',
-        'sharp-f': 'торец с фаской chх45˚',
+        'rect-sharp': 'торец без фаски, наостро',
+        'rect-r': 'торец с притуплением',
+        'rect-f': 'торец с фаской chх45˚',
         radius: 'радиусной торец',
         sphere: 'сферический торец',
         conus: 'конус',
@@ -193,7 +180,7 @@ export default {
       if (number > 1 && number < 5) {
         return `${number} зуба`
       }
-      if (number > 5) {
+      if (number >= 5) {
         return `${number} зубьев`
       }
     },
@@ -209,14 +196,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.series-header-title {
-  @extend %grid-row-wrap;
-  align-items: baseline;
-  padding-bottom: 0.5rem;
-}
-
-.series-header {
+<style lang="scss" scoped>
+.header {
   @extend %grid-row-wrap;
 
   width: 100%;
@@ -228,15 +209,16 @@ export default {
     padding: 0.5rem 1rem;
     text-align: right;
   }
-
-  .attr {
-    margin-left: auto;
-    margin-bottom: 1.5rem;
-  }
 }
 
-.series-desc {
-  flex-basis: auto;
+.title {
+  @extend %grid-row-wrap;
+  align-items: baseline;
+  padding-bottom: 0.5rem;
+}
+
+.desc {
+  width: 100%;
 }
 
 @include media-breakpoint-up(md) {
@@ -244,34 +226,35 @@ export default {
     font-size: 1.25rem;
   }
 
-  .col-35 {
+  .col-left {
     max-width: 35%;
     flex: 0 0 35%;
     padding-right: 3rem;
   }
 
-  .series-body {
+  .col-right {
     max-width: 65%;
     flex: 0 0 65%;
+
   }
 
-  .series-features {
+  .features {
     display: flex;
     flex-wrap: wrap;
     margin-right: -2rem;
   }
 
-  .series-features-col-30,
-  .series-features-col-40 {
+  .col-30,
+  .col-40 {
     padding-right: 2rem;
   }
 
-  .series-features-col-30 {
+  .col-30 {
     max-width: 30%;
     flex: 1 1 30%;
   }
 
-  .series-features-col-40 {
+  .col-40 {
     max-width: 40%;
     flex: 1 1 40%;
   }
@@ -280,28 +263,28 @@ export default {
 
 // @TODO fix it!
 @media print {
-  .col-35 {
+  .col-left {
     max-width: 35%;
     flex: 0 0 35%;
     padding-right: 3rem;
   }
 
-  .series-body {
+  .col-right {
     max-width: 65%;
     flex: 0 0 65%;
   }
 
-  .series-features-col-30,
-  .series-features-col-40 {
+  .col-30,
+  .col-40 {
     padding-right: 2rem;
     max-width: 50%;
     flex: 1 1 50%;
   }
 }
 
-.series-actions {
+.actions {
   position: absolute;
-  top: 1rem;
+  top: -1.25rem;
   right: -1.5rem;
   padding: .5rem;
   border-radius: 50%;
@@ -313,20 +296,20 @@ export default {
   }
 }
 
-.series-dd {
+.dd {
   padding: 0;
   margin: 0 0 1rem;
 }
 
-ul.series-dd {
+ul.dd {
   list-style-type: none;
 }
 
-.series-dd-li {
+.dd-li {
   padding-bottom: 0.3rem;
 }
 
-h3.series-dt {
+h3.dt {
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }

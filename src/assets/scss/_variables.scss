@@ -92,6 +92,8 @@ $mat-s: $orange;
 $link-color: $cyan;
 $link-hover-color: darken($link-color, 15%);
 
+$item-hover-color: fade-out($yellow, .6);
+
 //
 // Backgrounds
 //
@@ -100,7 +102,7 @@ $global-muted-background: #f0f0f0;
 //
 // Options
 //
-$enable-shadows: true;
+$enable-shadows: false;
 
 //
 // Borders
@@ -117,21 +119,10 @@ $grid-columns: 24;
 $headings-margin-bottom: ($spacer / 2);
 $paragraph-margin-bottom: 1rem;
 
-//
-// Fonts
-//
-// Font, line-height, and color for body text, headings, and more.
-/* $h1-font-size:                $font-size-base * 3 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default; */
 
+// Buttons + Forms
 //
-// Controls
-//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-//
-// Z-index
-//
+$input-btn-padding-y:         .2rem !default;
+$input-btn-padding-x:         .4rem !default;

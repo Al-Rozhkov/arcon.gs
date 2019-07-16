@@ -3,7 +3,7 @@
 
     <techs-list />
     
-    <main class="block">
+    <main class="cnt">
       <h1>Токарная ЧПУ обработка</h1>
 
       <p class="lead">

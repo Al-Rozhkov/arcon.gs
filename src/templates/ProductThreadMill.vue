@@ -1,6 +1,6 @@
 <template>
   <page-layout>
-    <main class="block">
+    <main class="cnt">
       <series-header :node="$page.series" />
 
       <div class="flex-row">
@@ -18,7 +18,7 @@
         />
       </div>
 
-      <!-- <section class="section-top">
+      <!-- <section class="pt">
         <h2>Похожие инструменты</h2>
       </section>-->
     </main>

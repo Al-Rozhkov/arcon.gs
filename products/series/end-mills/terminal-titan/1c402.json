@@ -22,8 +22,8 @@
     "coating": "ng",
     "tail": "cylinder",
     "endShapes": [
-        "sharp",
-        "sharp-r"
+        "rect-sharp",
+        "rect-r"
     ],
     "cogs": [
         {
@@ -43,7 +43,7 @@
             44
         ]
     },
-    "cuttingPart": [
+    "cuttingPartLength": [
         "middle"
     ],
     "productSeriesSet": "set-r"

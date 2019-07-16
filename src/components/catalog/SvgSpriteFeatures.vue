@@ -15,20 +15,20 @@
     </defs>
     
     <!-- form-sharp -->
-    <symbol id="form-sharp" x="0px" y="0px" viewBox="0 0 38 38">
+    <symbol id="form-rect-sharp" x="0px" y="0px" viewBox="0 0 38 38">
       <use width="18.16" height="26.59" transform="translate(9.37 1.6)" xlink:href="#Red_tool"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
     </symbol>
 
     <!-- form-sharp-r -->
-    <symbol id="form-sharp-r" x="0px" y="0px" viewBox="0 0 38 38">
+    <symbol id="form-rect-r" x="0px" y="0px" viewBox="0 0 38 38">
       <text class="svg-txt" transform="translate(26.82 31.57)">R</text>
       <use width="18.16" height="26.59" transform="translate(6.42 0.52)" xlink:href="#Red_tool"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>
     </symbol>
 
     <!-- form-sharp-f -->
-    <symbol id="form-sharp-f" x="0px" y="0px" viewBox="0 0 38 38">
+    <symbol id="form-rect-f" x="0px" y="0px" viewBox="0 0 38 38">
       <text class="svg-txt" transform="translate(26.89 31.68)">F</text>
       <use width="18.16" height="26.59" transform="translate(6.02 0.89)" xlink:href="#Red_tool"/>
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-lila"/>

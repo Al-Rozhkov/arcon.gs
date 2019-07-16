@@ -1,7 +1,7 @@
 <template>
   <Layout>
     
-    <main class="block">
+    <main class="cnt">
       <front-hero />
       <front-news />
       <catalog-block />
@@ -9,7 +9,7 @@
     </main>
 
     <section class="services-wrapper">
-      <div class="block">
+      <div class="cnt">
         <front-services />
       </div>
     </section>

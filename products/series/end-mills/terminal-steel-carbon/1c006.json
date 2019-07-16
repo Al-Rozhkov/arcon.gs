@@ -25,8 +25,8 @@
     "coating": "tan",
     "tail": "cylinder",
     "endShapes": [
-        "sharp",
-        "sharp-f"
+        "rect-sharp",
+        "rect-f"
     ],
     "cogs": [
         {
@@ -41,7 +41,7 @@
             35
         ]
     },
-    "cuttingPart": [
+    "cuttingPartLength": [
         "middle"
     ],
     "productSeriesSet": "set-f45"

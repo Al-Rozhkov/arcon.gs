@@ -34,9 +34,9 @@ export default {
         'coating-tin': 'Покрытие: TiN',
         'coating-pp': 'PurePolish. Полировка',
         'tail-cylinder': 'Цилиндрический хвостовик',
-        'form-sharp': 'Торец без фаски, наостро',
-        'form-sharp-r': 'Торец с притуплением',
-        'form-sharp-f': 'Торец с фаской chх45˚',
+        'form-rect-sharp': 'Торец без фаски, наостро',
+        'form-rect-r': 'Торец с притуплением',
+        'form-rect-f': 'Торец с фаской chх45˚',
         'form-radius': 'Радиусной торец',
         'form-sphere': 'Сферический торец',
         'cutting-conus': 'Режущая часть — конус',
@@ -52,11 +52,5 @@ export default {
 </script>
 
 <style lang="scss">
-.icon-attr {
-  position: relative;
-  display: inline-block;
-  margin-right: 0.5rem;
-
-  cursor: default;
-}
+@import '~/assets/scss/modules/svg-icon.scss';
 </style>

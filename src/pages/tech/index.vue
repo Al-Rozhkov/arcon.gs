@@ -1,7 +1,7 @@
 <template>
   <Layout>
 
-    <main class="block">
+    <main class="cnt">
       <h1>Технологии</h1>
 
       <section class="tile-root">
