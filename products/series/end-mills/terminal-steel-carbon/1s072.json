@@ -40,5 +40,9 @@
             30
         ]
     },
+    "cuttingPartLength": [
+        "short",
+        "middle"
+    ],
     "productSeriesSet": "set-r"
 }

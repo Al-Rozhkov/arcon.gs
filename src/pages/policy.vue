@@ -164,7 +164,6 @@
 
       <p>
         &mdash;&nbsp;имя и&nbsp;фамилию,<br>
-        &mdash;&nbsp;дату рождения;<br>
         &mdash;&nbsp;номер телефона;<br>
         &mdash;&nbsp;адрес электронной почты;
       </p>
