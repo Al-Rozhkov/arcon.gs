@@ -1,23 +1,23 @@
 <template>
-  <section class="cc-4cols news-teasers">
-    <div class="col">
-      <g-link class="link" to="/news/12">
+  <section class="news-teasers">
+    <div class="item">
+      <g-link class="a" to="/news/12">
         <figure class="figure">
           <g-image src="~/assets/news-img/12.jpg" width="255" height="150" />
         </figure>
         <h3 class="h3">Запущены новые серии инструмента универсального применения.</h3>
       </g-link>
     </div>
-    <div class="col">
-      <g-link class="link" to="/news/11">
+    <div class="item">
+      <g-link class="a" to="/news/11">
         <figure class="figure">
           <g-image src="~/assets/news-img/11.jpg" width="255" height="150" />
         </figure>
         <h3 class="h3">Акция: переточка каждой четвертой фрезы бесплатно.</h3>
       </g-link>
     </div>
-    <div class="col">
-      <g-link class="link" to="/news/10">
+    <div class="item">
+      <g-link class="a" to="/news/10">
         <figure class="figure">
           <g-image src="~/assets/news-img/10.jpg" width="255" height="150" />
         </figure>
@@ -26,7 +26,7 @@
         >Запущены в серийное производство центровочные сверла, фасонные фасочные фрезы серий 7V и 7R.</h3>
       </g-link>
     </div>
-    <div class="col">
+    <div class="item">
       <h3 class="h2">Металлообработка 2019</h3>
       <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
       <p>Стенд 24B70 (Павильон №2, зал 4).</p>
@@ -35,17 +35,33 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/scss/modules/columns.scss';
-
 .news-teasers {
+  @extend %grid-row-wrap;
+  @include make-grid-gutter($col-selector: '.item');
   margin-bottom: 40px;
+}
 
-  @include media-breakpoint-up(md) {
+.item {
+  margin-bottom: 2rem;
+}
+
+@include media-breakpoint-up(md) {
+  .news-teasers {
     margin-bottom: 70px;
+  }
+
+  .item {
+    @include make-col(12);
   }
 }
 
-a.link {
+@include media-breakpoint-up(lg) {
+  .item {
+    @include make-col(6);
+  }
+}
+
+a.a {
   display: block;
   cursor: pointer;
 
@@ -62,14 +78,15 @@ a.link {
 
 .h3 {
   font-size: 1rem;
+  font-weight: $font-weight-base;
 }
 
 .h2 {
   font-size: 1.7rem;
+  font-weight: $font-weight-base;
 }
 
-.h3,
-.teaser p {
+.h3, .h2 {
   color: $black;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <section class="block">
-    <article class="body col">
+    <article class="body">
       <header class="header">
         <h2 class="title">Каталог режущего инструмента Arconit™</h2>
       </header>
@@ -9,11 +9,11 @@
         <h3 class="h3">
           <g-link class="u" to="/catalog/end-mills">Концевые фрезы</g-link>
         </h3>
-        <categories-list class="ctlb-menu" />
+        <categories-list class="c-menu submenu" />
       </section>
 
       <section class="segment">
-        <ul class="ctlb-menu menu">
+        <ul class="c-menu menu">
           <li class="li">
             <h3 class="h3">
               <g-link class="u" to="/catalog/drills">Сверла</g-link>
@@ -50,7 +50,7 @@
       </section>
     </article>
 
-    <aside class="aside col">
+    <aside class="aside">
       <g-image class="ill-img" src="~/assets/img/catalog-block-teaser.jpg" />
     </aside>
   </section>
@@ -78,6 +78,7 @@ export default {
 
 .h3 {
   font-weight: $font-weight-base;
+  margin-bottom: 1rem;
 }
 
 a.u {
@@ -100,7 +101,7 @@ img.ill-img {
   height: auto;
 }
 
-.ctlb-menu {
+.c-menu {
   margin: 0 -15px 0.5rem 0;
 
   li.li {

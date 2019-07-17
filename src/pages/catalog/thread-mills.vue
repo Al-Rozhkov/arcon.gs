@@ -3,7 +3,6 @@
 
     <main class="cnt">
       <h1>Резьбовые фрезы Arconit™</h1>
-      <!-- <categories-list class="submenu" /> -->
 
       <div class="catalog-list">
         <series-teaser
@@ -40,13 +39,11 @@ query Catalog {
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 
-import CategoriesList from "~/components/catalog/CategoriesList"
 import SeriesTeaser from '~/components/catalog/SeriesTeaser'
 
 export default {
   components: {
     PageLayout,
-    CategoriesList,
     SeriesTeaser
   },
 

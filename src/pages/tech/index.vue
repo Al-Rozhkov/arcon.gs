@@ -10,7 +10,7 @@
             to="/tech/grinding"
             class="left1"
           >
-            <h2>
+            <h2 class="h2">
               Шлифовальная обработка
             </h2>
             <p>
@@ -23,7 +23,7 @@
             to="/tech/electroerosion"
             class="right1"
           >
-            <h2>
+            <h2 class="h2">
               Электроэрозионная обработка
             </h2>
             <p>
@@ -41,7 +41,7 @@
             to="/tech/milling"
             class="left2"
           >
-            <h2>
+            <h2 class="h2">
               Фрезерная ЧПУ обработка
             </h2>
             <p>
@@ -54,7 +54,7 @@
             to="/tech/lathe"
             class="right2"
           >
-            <h2>
+            <h2 class="h2">
               Токарная ЧПУ обработка
             </h2>
             <p>
@@ -92,7 +92,7 @@ export default {
 .tile-root {
   margin-bottom: 120px;
 
-  h2 {
+  .h2 {
     font-weight: $font-weight-base;
   }
 }
@@ -130,6 +130,7 @@ export default {
       background-size: cover;
       opacity: .25;
       z-index: 10;
+      transition: opacity 0.5s ease-out;
     }
 
     &:hover {
