@@ -1,31 +1,31 @@
 <template>
-  <section class="cc-4cols">
-    <div class="col">
-      <h3>
+  <section class="adv">
+    <div class="col-lg-6 item">
+      <h3 class="h3">
         Обеспечение качества
       </h3>
       <p>
         Применение современного оборудования и измерительных приборов ЧПУ, а также внедрение системы менеджмента качества ГОСТ ISO 9001 позволяет нам выполнять все требования заказчиков.
       </p>
     </div>
-    <div class="col">
-      <h3>
+    <div class="col-lg-6 item">
+      <h3 class="h3">
         Инструментальное производство
       </h3>
       <p>
         Наша производственная база позволяет в короткие сроки изготовить почти любой инструмент и оснастку по чертежам заказчика, а также под конкретное изделие.
       </p>
     </div>
-    <div class="col">
-      <h3>
+    <div class="col-lg-6 item">
+      <h3 class="h3">
         Инновации в&nbsp;технологиях
       </h3>
       <p>
         Применяемое оборудование является результатом последних разработок, что позволяет автоматизировать процесс высокоточной прецизионной обработки.
       </p>
     </div>
-    <div class="col">
-      <h3>
+    <div class="col-lg-6 item">
+      <h3 class="h3">
         Гибкая ценовая политика
       </h3>
       <p>
@@ -35,6 +35,13 @@
   </section>
 </template>
 
-<style lang="scss">
-@import '~/assets/scss/modules/columns.scss';
+<style lang="scss" scoped>
+.adv {
+  @extend %grid-row-wrap;
+  @include make-grid-gutter($col-selector: '.item');
+}
+
+.h3 {
+  font-weight: $font-weight-base;
+}
 </style>

@@ -102,7 +102,7 @@ $global-muted-background: #f0f0f0;
 //
 // Options
 //
-$enable-shadows: false;
+$enable-shadows: true;
 
 //
 // Borders
@@ -123,6 +123,7 @@ $paragraph-margin-bottom: 1rem;
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$btn-box-shadow: none;
 
 $input-btn-padding-y:         .2rem !default;
 $input-btn-padding-x:         .4rem !default;

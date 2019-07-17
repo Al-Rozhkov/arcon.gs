@@ -43,8 +43,6 @@
         </aside>
       </div>
     </div>
-
-    <app-footer />
   </div>
 </template>
 
@@ -85,5 +83,10 @@ export default {}
       @include make-col(8);
     }
   }
+}
+
+.news-title {
+  font-weight: $font-weight-base;
+  color: #000000;
 }
 </style>

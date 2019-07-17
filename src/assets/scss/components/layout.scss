@@ -1,109 +1,66 @@
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .root {
-    border-top: 4px solid $cyan;
-}
-
-.nav-header {
-    border-bottom: 1px solid rgba($cyan, .2);
-
-    @media print {
-        display: none;
-    }
-}
-  
-.nav {
-    @extend %grid-row-wrap;
-    @extend %container-xl;
-
-    align-items: flex-end;
-    padding-top: .5rem;
-
-    .menu {
-        flex: 0 0 100%;
-        margin: 1rem 0 -1px;
-
-        @include media-breakpoint-up(xl) {
-            flex: 0 0 auto;
-        }
-
-        font-size: 1.1rem;
-    
-        li {
-            margin-top: .5rem;
-        }
-    
-        a {
-            padding: 0 0 .5rem;
-            border-bottom: 1px solid transparent;
-    
-            &:hover,
-            &.active--exact {
-                border-bottom: 1px solid $red;
-            }
-        }
-    }
-
-    .highlight {
-        font-weight: $font-weight-bold;
-    }
-}
-
-.logo-link {
-    display: block;
-    padding-bottom: .3rem;
+  border-top: 4px solid $cyan;
 }
 
 .logo {
-    margin-right: 2rem;
-  
-    @include media-breakpoint-up(md) {
-        margin-left: -32px;
-    }
+  margin-right: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-left: -35px;
+  }
 }
-
-.nav-phone {
-    display: block;
-    margin-left: auto;
-    padding: 0 0 .5rem;
-    color: $black;
-
-    @include media-breakpoint-up(xl) {
-        order: 10;
-    }
-}
-
 
 // Columns
 
 .flex-row {
-    @extend %grid-row-wrap;
+  @extend %grid-row-wrap;
 }
 
 .flex-row-nowrap {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .w-100 {
-    width: 100%;
+  width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .col-lg-6 {
+    @include make-col(6);
+  }
+
+  .col-lg-8 {
+    @include make-col(8);
+  }
+
+  .col-lg-12 {
+    @include make-col(12);
+  }
+
+  .col-lg-16 {
+    @include make-col(16);
+    padding-right: 3rem;
+  }
 }
 
 @media print {
-    .nav-header,
-    footer.footer,
-    .d-print-none {
-        display: none;
-    }
+  .nav-header,
+  footer.footer,
+  .d-print-none {
+    display: none;
+  }
 
-    .root {
-        border: 0;
-    }
+  .root {
+    border: 0;
+  }
 }
 
 .overflow-x-auto {
-    overflow-x: auto;
+  overflow-x: auto;
 }

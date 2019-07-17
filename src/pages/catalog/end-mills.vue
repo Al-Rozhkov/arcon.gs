@@ -2,7 +2,6 @@
   <page-layout>
     <main class="cnt">
       <h1>Рекомендации по&nbsp;выбору концевых фрез</h1>
-      <!-- <categories-list class="submenu" /> -->
 
       <grouped-overview :filters="true" :groups="groups" />
     </main>
