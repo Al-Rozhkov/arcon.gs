@@ -2,7 +2,7 @@
   <Layout>
 
     <main class="cnt">
-      <h1>Продукция и услуги</h1>
+      <h1>Услуги</h1>
 
       <p class="lead">
         ...

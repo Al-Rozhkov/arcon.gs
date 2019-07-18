@@ -1,22 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <series-header :node="$page.series" />
-
-      <div class="flex-row">
-        <div class="series-scheme">
-          <img
-            v-for="(scheme, id) in $page.series.scheme"
-            :key="id"
-            :src="'/img/schemes/' + scheme.scheme + '.png'"
-          />
-        </div>
-
-        <product-items-table
-          :fields-set="$page.series.productSeriesSet.set"
-          :tools="$page.tools.edges"
-        />
-      </div>
+      <series-page :node="$page.series" :tools="$page.tools" />
 
       <!-- <section class="pt">
         <h2>Похожие инструменты</h2>
@@ -86,15 +71,12 @@
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-
-import SeriesHeader from '~/components/catalog/SeriesHeader.vue'
-import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
+import SeriesPage from '~/components/catalog/SeriesPage.vue'
 
 export default {
   components: {
     PageLayout,
-    SeriesHeader,
-    ProductItemsTable
+    SeriesPage
   },
 
   metaInfo() {
@@ -104,7 +86,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import '~/assets/scss/modules/series.scss';
-</style>

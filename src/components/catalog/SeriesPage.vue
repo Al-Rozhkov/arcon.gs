@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="page">
     <header class="col-left">
       <div class="title">
         <h1>{{ node.id.toUpperCase() }}</h1>
@@ -96,6 +96,23 @@
         />
       </div>
     </div>
+
+    <div class="tools">
+      <div class="schemes">
+        <img
+          v-for="(scheme, id) in node.scheme"
+          :key="id"
+          :src="'/img/schemes/' + scheme.scheme + '.png'"
+          class="scheme-img"
+        />
+      </div>
+
+      <product-items-table
+        :fields-set="node.productSeriesSet.set"
+        :tools="tools.edges"
+        class="product-items"
+      />
+    </div>
   </div>
 </template>
 
@@ -105,6 +122,7 @@ import SvgCogsIcon from '~/components/catalog/SvgCogsIcon.vue'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
+import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
 import { materials } from '~/utils/fieldsMapping.js'
 
 export default {
@@ -113,11 +131,17 @@ export default {
     SvgCogsIcon,
     SvgIcon,
     MaterialIcon,
-    IconPrinter
+    IconPrinter,
+    ProductItemsTable
   },
 
   props: {
     node: {
+      type: Object,
+      required: true
+    },
+
+    tools: {
       type: Object,
       required: true
     }
@@ -196,8 +220,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.header {
+<style lang="scss">
+.page {
   @extend %grid-row-wrap;
 
   width: 100%;
@@ -317,4 +341,32 @@ h3.dt {
 .series-img {
   margin-left: -0.75rem;
 }
+
+.tools {
+  @extend %grid-row-wrap;
+  width: 100%;
+  position: relative;
+  align-items: flex-start;
+}
+
+.scheme-img {
+  margin-bottom: 3rem;
+}
+
+@include media-breakpoint-up(md) {
+  .schemes {
+    max-width: 35%;
+    flex: 0 0 35%;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    position: sticky;
+    top: 0;
+  }
+
+  .product-items {
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+}
+
 </style>
