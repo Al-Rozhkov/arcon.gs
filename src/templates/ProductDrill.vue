@@ -1,22 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <series-page :node="$page.series" />
-
-      <div class="flex-row">
-        <div class="series-scheme">
-          <img
-            v-for="(scheme, id) in $page.series.scheme"
-            :key="id"
-            :src="'/img/schemes/' + scheme.scheme + '.png'"
-          />
-        </div>
-
-        <product-items-table
-          :fields-set="$page.series.productSeriesSet.set"
-          :tools="$page.tools.edges"
-        />
-      </div>
+      <series-page :node="$page.series" :tools="$page.tools" />
 
       <!-- <section class="pt">
         <h2>Похожие инструменты</h2>
