@@ -1,7 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <series-header :node="$page.series" />
+      <series-page :node="$page.series" />
 
       <div class="flex-row">
         <div class="series-scheme">
@@ -79,15 +79,12 @@
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-
-import SeriesHeader from '~/components/catalog/SeriesHeader.vue'
-import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
+import SeriesPage from '~/components/catalog/SeriesPage.vue'
 
 export default {
   components: {
     PageLayout,
-    SeriesHeader,
-    ProductItemsTable
+    SeriesPage
   },
 
   metaInfo() {
@@ -97,7 +94,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import '~/assets/scss/modules/series.scss';
-</style>

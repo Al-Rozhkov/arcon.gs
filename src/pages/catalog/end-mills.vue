@@ -40,13 +40,11 @@ query Catalog {
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-// import CategoriesList from '~/components/catalog/CategoriesList.vue'
 import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 
 export default {
   components: {
     PageLayout,
-    // CategoriesList,
     GroupedOverview
   },
 

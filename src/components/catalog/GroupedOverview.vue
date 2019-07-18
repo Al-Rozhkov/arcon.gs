@@ -56,14 +56,14 @@
         ></b-form-radio-group>
       </div>
     </div>
-    <div class="overflow-x-auto">
+    <div>
       <table class="output sticky-header">
         <thead>
           <tr>
-            <th>Серия</th>
-            <th>Основное применение</th>
-            <th>Возможное применение</th>
-            <th colspan="3">Покрытие, зубья</th>
+            <th class="sticky-th">Серия</th>
+            <th class="sticky-th">Основное применение</th>
+            <th class="sticky-th">Возможное применение</th>
+            <th class="sticky-th" colspan="3">Покрытие, зубья</th>
           </tr>
         </thead>
         <tbody>
