@@ -116,10 +116,10 @@ export default {
     return {
       filterTrait,
       selected: {
-        endShapes: null,
-        coating: null,
+        endShapes: false,
+        coating: false,
         mainUsage: null,
-        cuttingPartLength: null
+        cuttingPartLength: false
       }
     }
   },
@@ -189,8 +189,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/scss/modules/table.scss';
-
 .output {
   margin: 0 -0.5rem;
 }
@@ -219,8 +217,8 @@ td.td-empty {
 
 .f-label {
   font-weight: $font-weight-base;
-  padding: $btn-padding-y 0.75rem $btn-padding-y 0;
-  margin: 0;
+  padding: $btn-padding-y 0.5rem $btn-padding-y 0;
+  margin: 1px 0;
 }
 
 .f-reset {

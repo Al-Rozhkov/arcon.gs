@@ -1,16 +1,8 @@
 <template>
-  <ul class="menu">
-    <li>
-      <g-link to="/catalog/end-mills">Концевые фрезы</g-link>
-    </li>
-    <li>
-      <g-link to="/catalog/drills">Сверла</g-link>
-    </li>
-    <li>
-      <g-link to="/catalog/thread-mills">Резьбовые фрезы</g-link>
-    </li>
-    <li>
-      <g-link to="/catalog/constructor">Специальный инструмент</g-link>
-    </li>
-  </ul>
+  <app-menu v-once>
+    <app-menu-item to="/catalog/end-mills">Концевые фрезы</app-menu-item>
+    <app-menu-item to="/catalog/drills">Сверла</app-menu-item>
+    <app-menu-item to="/catalog/thread-mills">Резьбовые фрезы</app-menu-item>
+    <app-menu-item to="/catalog/constructor">Специальный инструмент</app-menu-item>
+  </app-menu>
 </template>

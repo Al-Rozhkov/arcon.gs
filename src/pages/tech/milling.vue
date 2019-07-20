@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <techs-list />
+    <template #submenu>
+      <techs-list class="submenu" />
+    </template>
 
     <main class="cnt">
       <h1>Фрезерная ЧПУ обработка</h1>
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-import TechsList from "~/components/TechsList.vue";
+import TechsList from '~/components/TechsList.vue'
 
 export default {
   components: {
@@ -24,7 +26,7 @@ export default {
   },
 
   metaInfo: {
-    title: "Фрезерная ЧПУ обработка"
+    title: 'Фрезерная ЧПУ обработка'
   }
-};
+}
 </script>

@@ -1,37 +1,12 @@
+// Global menu style
+// Use on ul elements to make its items gorizontal aligned
 .menu {
-    @extend %grid-row-wrap;
+  @extend %grid-row-wrap;
 
-    list-style-type: none;
-    padding: 0;
-  
-    li {
-        margin-right: 1.5rem;
-        padding: 0;
-
-        a {
-            display: block;
-        }
-    }
-
-    .active {
-        color: $red;
-    }
+  list-style-type: none;
+  padding: 0;
 }
 
 .submenu {
-    margin: 1rem 0 .5rem;
-  
-    li {
-        margin-bottom: .75rem;
-    }
-  
-    a {
-        @include link-underline($color: darken($cyan, 10%));
-
-        &.active--exact {
-            color: $red;
-            border-bottom: none;
-            cursor: default;
-        }
-    }
+  margin: 1rem 0 0.5rem;
 }

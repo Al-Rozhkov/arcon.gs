@@ -67,8 +67,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import '~/assets/scss/modules/table.scss';
-
 .pi-table {
   margin: 0 auto 0 0;
 

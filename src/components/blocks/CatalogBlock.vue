@@ -1,6 +1,6 @@
 <template>
-  <section class="block">
-    <article class="body">
+  <section class="block with-gutter">
+    <article class="col body">
       <header class="header">
         <h2 class="title">Каталог режущего инструмента Arconit™</h2>
       </header>
@@ -9,11 +9,11 @@
         <h3 class="h3">
           <g-link class="u" to="/catalog/end-mills">Концевые фрезы</g-link>
         </h3>
-        <categories-list class="c-menu submenu" />
+        <categories-list class />
       </section>
 
       <section class="segment">
-        <ul class="c-menu menu">
+        <app-menu>
           <li class="li">
             <h3 class="h3">
               <g-link class="u" to="/catalog/drills">Сверла</g-link>
@@ -24,33 +24,31 @@
               <g-link class="u" to="/catalog/thread-mills">Резьбовые фрезы</g-link>
             </h3>
           </li>
-        </ul>
+        </app-menu>
       </section>
 
-      <section class="segment">
-        <ul class="links">
-          <li class="li-half">
-            <h3 class="h3">
-              <a
-                class="text-red"
-                href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf"
-              >Скачать каталог в&nbsp;PDF&nbsp;</a>
-              <span class="text-muted">(15,6&nbsp;Mb)</span>
-            </h3>
-          </li>
-          <li class="li-half">
-            <h3 class="h3">
-              <g-link
-                class="text-red"
-                to="/constructor"
-              >Онлайн конструктор инструмента по&nbsp;параметрам</g-link>
-            </h3>
-          </li>
-        </ul>
-      </section>
+      <app-menu>
+        <li class="li li-half">
+          <h3 class="h3">
+            <a
+              class="text-red"
+              href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf"
+            >Скачать каталог в&nbsp;PDF&nbsp;</a>
+            <span class="text-muted">(15,6&nbsp;Mb)</span>
+          </h3>
+        </li>
+        <li class="li li-half">
+          <h3 class="h3">
+            <g-link
+              class="text-red"
+              to="/catalog/constructor"
+            >Онлайн конструктор инструмента по&nbsp;параметрам</g-link>
+          </h3>
+        </li>
+      </app-menu>
     </article>
 
-    <aside class="aside">
+    <aside class="col aside">
       <g-image class="ill-img" src="~/assets/img/catalog-block-teaser.jpg" />
     </aside>
   </section>
@@ -69,7 +67,6 @@ export default {
 <style lang="scss" scoped>
 .block {
   @extend %grid-row-wrap;
-  @include make-grid-gutter();
 
   align-items: flex-end;
   margin-bottom: 4rem;
@@ -78,7 +75,7 @@ export default {
 
 .h3 {
   font-weight: $font-weight-base;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 a.u {
@@ -87,9 +84,13 @@ a.u {
 
 .header {
   background: #ffffff;
-  margin: -3rem -15px 0;
-  padding: 1rem;
   max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+.aside,
+.body {
+  padding: 0 15px;
 }
 
 .segment {
@@ -101,30 +102,27 @@ img.ill-img {
   height: auto;
 }
 
-.c-menu {
-  margin: 0 -15px 0.5rem 0;
-
-  li.li {
-    margin-right: 0;
-    padding: 0.3rem 1rem 0.3rem 0;
-  }
+.menu {
+  margin: 0 -15px 0 0;
 }
 
-.links {
-  @extend %grid-row-wrap;
-  list-style-type: none;
-  margin: 1rem -15px 0.5rem 0;
-  padding: 0;
+li.li {
+  padding-right: 1rem;
+}
 
-  li.li-half {
-    flex: 0 0 50%;
-  }
+li.li-half {
+  flex: 0 0 50%;
 }
 
 @include media-breakpoint-up(md) {
   .block {
     border: 1px solid gray('300');
     border-radius: 6px;
+  }
+
+  .header {
+    margin: -3rem -15px 2rem;
+    padding-left: 15px;
   }
 
   .aside {

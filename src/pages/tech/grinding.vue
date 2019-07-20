@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <techs-list />
+    <template #submenu>
+      <techs-list class="submenu" />
+    </template>
 
     <main class="cnt">
       <h1>Шлифовальная обработка</h1>
@@ -19,7 +21,7 @@
 </template>
 
 <script>
-import TechsList from "~/components/TechsList.vue";
+import TechsList from '~/components/TechsList.vue'
 
 export default {
   components: {
@@ -27,7 +29,7 @@ export default {
   },
 
   metaInfo: {
-    title: "Шлифовальная обработка"
+    title: 'Шлифовальная обработка'
   }
-};
+}
 </script>

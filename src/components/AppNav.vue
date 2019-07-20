@@ -1,11 +1,14 @@
-<template>
+<template functional>
   <div class="nav-header">
     <nav class="nav">
-      <g-link class="logo-link" to="/">
+      <g-link class="a logo-link" to="/" exact>
         <app-logo />
       </g-link>
 
-      <a class="nav-phone" href="tel:+78412458990">+7&nbsp;8412&nbsp;<span class="display-4">45-89-90</span></a>
+      <a class="nav-phone" href="tel:+78412458990">
+        +7&nbsp;8412&nbsp;
+        <span class="display-4">45-89-90</span>
+      </a>
 
       <ul class="menu">
         <li class="li">
@@ -50,22 +53,36 @@
 
 .menu {
   flex: 0 0 100%;
-  margin: 1rem 0 -1px;
-
+  margin: 1rem 0 0;
   font-size: 1.1rem;
 }
 
 li.li {
-  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+  margin-top: .5rem;
+  padding: 0;
 }
 
 a.a {
+  display: block;
   padding: 0 0 0.3rem;
+  margin-bottom: -1px;
   border-bottom: 1px solid transparent;
 
-  &:hover,
+  &.a:hover,
+  &.active,
   &.active--exact {
     border-bottom: 1px solid $red;
+  }
+
+  &.active--exact {
+    color: $red;
+    cursor: default;
+  }
+
+  &.logo-link.active--exact,
+  &.logo-link.active--exact:hover {
+    border-bottom: 1px solid transparent;
   }
 }
 
@@ -82,7 +99,7 @@ a.a {
 
 .logo-link {
   display: block;
-  padding-bottom: 0.3rem;
+  margin-right: 1.5rem;
 }
 
 @include media-breakpoint-up(xl) {

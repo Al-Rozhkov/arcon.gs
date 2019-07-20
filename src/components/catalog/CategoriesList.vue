@@ -1,9 +1,9 @@
 <template>
-  <ul class="menu">
-    <li v-for="edge in $static.categories.edges" :key="edge.node.id">
-      <g-link :to="edge.node.path">{{ edge.node.short }}</g-link>
-    </li>
-  </ul>
+  <app-menu v-once>
+    <app-menu-item v-for="edge in $static.categories.edges" :key="edge.node.id" :to="edge.node.path">
+      {{ edge.node.short }}
+    </app-menu-item>
+  </app-menu>
 </template>
 
 <static-query>

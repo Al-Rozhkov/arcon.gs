@@ -1,76 +1,46 @@
 <template>
   <Layout>
-
     <main class="cnt">
       <h1>Технологии</h1>
 
       <section class="tile-root">
         <div class="tile-row">
-          <g-link
-            to="/tech/grinding"
-            class="left1"
-          >
-            <h2 class="h2">
-              Шлифовальная обработка
-            </h2>
-            <p>
-              Шлифование круглое наружное, бесцентровое, плоское, координатное, круглое внутреннее
-            </p>
-            <div class="bg"></div>
+          <g-link to="/tech/grinding" class="col left1">
+            <h2 class="h2">Шлифовальная обработка</h2>
+            <p
+              class="p"
+            >Шлифование круглое наружное, бесцентровое, плоское, координатное, круглое внутреннее</p>
           </g-link>
 
-          <g-link
-            to="/tech/electroerosion"
-            class="right1"
-          >
-            <h2 class="h2">
-              Электроэрозионная обработка
-            </h2>
-            <p>
-              Cтанки проволочно-вырезные, позволяющие обрабатывать контур сложной формы в зонах без возможности захода режущего инструмента, с высокой повторяемостью.
-            </p>
-            <p>
-              Cтанки прошивные для формирования глухих пазов, с минимальными радиусами на всех контактных точках.
-            </p>
-            <div class="bg"></div>
+          <g-link to="/tech/electroerosion" class="col right1">
+            <h2 class="h2">Электроэрозионная обработка</h2>
+            <p
+              class="p"
+            >Cтанки проволочно-вырезные, позволяющие обрабатывать контур сложной формы в&nbsp;зонах без возможности захода режущего инструмента, с&nbsp;высокой повторяемостью.</p>
+            <p
+              class="p"
+            >Cтанки прошивные для формирования глухих пазов, с&nbsp;минимальными радиусами на&nbsp;всех контактных точках.</p>
           </g-link>
         </div>
 
         <div class="tile-row">
-          <g-link
-            to="/tech/milling"
-            class="left2"
-          >
-            <h2 class="h2">
-              Фрезерная ЧПУ обработка
-            </h2>
-            <p>
-              Обработка ведется полным циклом, от создания 3д-моделей, разработки управляющих программ, ведения техпроцесса с промежуточными операциями контроля.
-            </p>
-            <div class="bg"></div>
+          <g-link to="/tech/milling" class="col left2">
+            <h2 class="h2">Фрезерная ЧПУ обработка</h2>
+            <p
+              class="p"
+            >Обработка ведется полным циклом, от&nbsp;создания 3д-моделей, разработки управляющих программ, ведения техпроцесса с&nbsp;промежуточными операциями контроля.</p>
           </g-link>
 
-          <g-link
-            to="/tech/lathe"
-            class="right2"
-          >
-            <h2 class="h2">
-              Токарная ЧПУ обработка
-            </h2>
-            <p>
-              Максимальный обрабатываемый наружный диаметр — 457 мм.
-            </p>
-            <p>
-              Максимальная длина точения — 584 мм.
-            </p>
-            <div class="bg"></div>
+          <g-link to="/tech/lathe" class="col right2">
+            <h2 class="h2">Токарная ЧПУ обработка</h2>
+            <p class="p">Максимальный обрабатываемый наружный диаметр&nbsp;&mdash; 457&nbsp;мм.</p>
+            <p class="p">Максимальная длина точения&nbsp;&mdash; 584&nbsp;мм.</p>
           </g-link>
         </div>
       </section>
 
       <catalog-block />
     </main>
-
   </Layout>
 </template>
 
@@ -88,96 +58,89 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .tile-root {
   margin-bottom: 120px;
-
-  .h2 {
-    font-weight: $font-weight-base;
-  }
 }
 
 .tile-row {
   @extend %grid-row-wrap;
-  @include make-grid-gutter($col-selector: ".left1, .left2, .right1, .right2");
+  @include make-grid-gutter();
+}
 
-  h2, p {
-    position: relative;
-    z-index: 20;
+.h2 {
+  font-weight: $font-weight-base;
+}
+
+.p {
+  max-width: 460px;
+}
+
+.h2,
+.p {
+  position: relative;
+  z-index: 20;
+}
+
+.col {
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background: gray('100');
+  border: 2px solid $white;
+  min-height: 280px;
+  color: $black;
+  cursor: pointer;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.25;
+    z-index: 10;
+    transition: opacity 0.5s ease-out;
   }
 
-  p {
-    max-width: 460px;
+  &:hover::after {
+    opacity: 0.7;
   }
+}
 
-  .left1, .right1,
-  .left2, .right2 {
-    position: relative;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    background: gray("100");
-    border: 2px solid $white;
-    min-height: 280px;
-    color: $black;
-    cursor: pointer;
+.left1::after {
+  background-image: url(/img/tech/shlif.jpg);
+}
 
-    .bg {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-size: cover;
-      opacity: .25;
-      z-index: 10;
-      transition: opacity 0.5s ease-out;
-    }
+.right1::after {
+  background-image: url(/img/tech/electroeroz.jpg);
+}
 
-    &:hover {
-      .bg {
-        opacity: .7;
-      }
-    }
-  }
+.left2::after {
+  background-image: url(/img/tech/frezer.jpg);
+}
 
+.right2::after {
+  background-image: url(/img/tech/tokar.jpg);
+}
+
+@include media-breakpoint-up(lg) {
   .left1 {
-    .bg {
-      background-image: url(/img/tech/shlif.jpg);
-    }
-
-    @include media-breakpoint-up(lg) {
-        @include make-col(9);
-    }
+    @include make-col(9);
   }
 
   .right1 {
-    .bg {
-      background-image: url(/img/tech/electroeroz.jpg);
-    }
-
-    @include media-breakpoint-up(lg) {
-        @include make-col(15);
-    }
+    @include make-col(15);
   }
 
   .left2 {
-    .bg {
-      background-image: url(/img/tech/frezer.jpg);
-    }
-
-    @include media-breakpoint-up(lg) {
-        @include make-col(11);
-    }
+    @include make-col(11);
   }
 
   .right2 {
-    .bg {
-      background-image: url(/img/tech/tokar.jpg);
-    }
-
-    @include media-breakpoint-up(lg) {
-        @include make-col(13);
-    }
+    @include make-col(13);
   }
 }
 </style>

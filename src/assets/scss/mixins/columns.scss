@@ -11,7 +11,7 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
 @mixin make-row-negative-margin(
   $gutter-value-xs: $grid-padding-horizontal-xs,
   $gutter-value-sm: $grid-padding-horizontal-sm,
-  $gutter-value-m: $grid-padding-horizontal-md
+  $gutter-value-md: $grid-padding-horizontal-md
 ) {
   margin-left: -($gutter-value-xs);
 
@@ -20,14 +20,14 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
   }
 
   @include media-breakpoint-up(md) {
-    margin-left: -($gutter-value-m);
+    margin-left: -($gutter-value-md);
   }
 }
 
 @mixin make-col-gutter-padding(
   $gutter-value-xs: $grid-padding-horizontal-xs,
   $gutter-value-sm: $grid-padding-horizontal-sm,
-  $gutter-value-m: $grid-padding-horizontal-md
+  $gutter-value-md: $grid-padding-horizontal-md
 ) {
   padding-left: $gutter-value-xs;
 
@@ -36,7 +36,7 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
   }
 
   @include media-breakpoint-up(md) {
-    padding-left: $gutter-value-m;
+    padding-left: $gutter-value-md;
   }
 }
 
@@ -44,13 +44,13 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
 @mixin make-grid-gutter(
   $gutter-value-xs: $grid-padding-horizontal-xs,
   $gutter-value-sm: $grid-padding-horizontal-sm,
-  $gutter-value-md: $grid-padding-horizontal-md,
-  $col-selector: '.col'
+  $gutter-value-md: $grid-padding-horizontal-md
 ) {
   margin-left: -($gutter-value-xs);
   margin-right: -($gutter-value-xs);
 
-  & #{unquote($col-selector)} {
+  & > .col,
+  & > [class*='col-'] {
     padding-left: $gutter-value-xs;
     padding-right: $gutter-value-xs;
   }
@@ -59,7 +59,8 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
     margin-left: -($gutter-value-sm);
     margin-left: -($gutter-value-sm);
 
-    & #{unquote($col-selector)} {
+    & > .col,
+    & > [class*='col-'] {
       padding-left: $gutter-value-sm;
       padding-right: $gutter-value-sm;
     }
@@ -69,7 +70,8 @@ $grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
     margin-left: -($gutter-value-md);
     margin-right: -($gutter-value-md);
 
-    & #{unquote($col-selector)} {
+    & > .col,
+    & > [class*='col-'] {
       padding-left: $gutter-value-md;
       padding-right: $gutter-value-md;
     }

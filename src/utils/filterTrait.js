@@ -5,6 +5,10 @@ const filters = {
     name: 'Форма торца',
     list: [
       {
+        text: 'любая',
+        value: false
+      },
+      {
         text: 'прямоугольная',
         value: {
           value: ['rect-sharp', 'rect-r', 'rect-f']
@@ -33,6 +37,10 @@ const filters = {
     name: 'Покрытие',
     list: [
       {
+        text: 'любое',
+        value: false
+      },
+      {
         text: 'nACo-G',
         value: 'ng'
       },
@@ -53,6 +61,10 @@ const filters = {
   cuttingPartLength: {
     name: 'Длина режущей части',
     list: [
+      {
+        text: 'любая',
+        value: false
+      },
       {
         text: 'короткая',
         value: 'short'

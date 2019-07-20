@@ -4,6 +4,8 @@
 import '~/assets/scss/global.scss'
 import DefaultLayout from '~/layouts/Default.vue'
 import AppLogo from '~/components/AppLogo.vue'
+import AppMenu from '~/components/AppMenu.vue'
+import AppMenuItem from '~/components/AppMenuItem.vue'
 import AppNav from '~/components/AppNav.vue'
 import AppFooter from '~/components/AppFooter.vue'
 // import AppLoading from '~/components/AppLoading.vue'
@@ -14,6 +16,8 @@ export default function (Vue, { router, appOptions, isClient, head }) {
   // Set global components
   Vue.component('Layout', DefaultLayout)
   Vue.component('AppLogo', AppLogo)
+  Vue.component('AppMenu', AppMenu)
+  Vue.component('AppMenuItem', AppMenuItem)
   Vue.component('AppNav', AppNav)
   Vue.component('AppFooter', AppFooter)
   // Vue.component('AppLoading', AppLoading)

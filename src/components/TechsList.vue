@@ -1,18 +1,8 @@
 <template>
-  <section class="container-xl">
-    <ul class="menu submenu">
-      <li>
-        <g-link to="/tech/grinding">Шлифовальная обработка</g-link>
-      </li>
-      <li>
-        <g-link to="/tech/electroerosion">Электроэрозионная обработка</g-link>
-      </li>
-      <li>
-        <g-link to="/tech/milling">Фрезерная ЧПУ обработка</g-link>
-      </li>
-      <li>
-        <g-link to="/tech/lathe">Токарная ЧПУ обработка</g-link>
-      </li>
-    </ul>
-  </section>
+  <app-menu v-once>
+    <app-menu-item to="/tech/grinding">Шлифовальная обработка</app-menu-item>
+    <app-menu-item to="/tech/electroerosion">Электроэрозионная обработка</app-menu-item>
+    <app-menu-item to="/tech/milling">Фрезерная ЧПУ обработка</app-menu-item>
+    <app-menu-item to="/tech/lathe">Токарная ЧПУ обработка</app-menu-item>
+  </app-menu>
 </template>

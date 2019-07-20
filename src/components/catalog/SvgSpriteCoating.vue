@@ -1,5 +1,5 @@
 <template>
-  <svg>
+  <svg v-once>
     <defs>
       <!-- common stroke for icons -->
       <path

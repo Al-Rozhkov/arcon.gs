@@ -1,6 +1,6 @@
 <template>
-  <section class="news-teasers">
-    <div class="item">
+  <section class="news-teasers" v-once>
+    <div class="col">
       <g-link class="a" to="/news/12">
         <figure class="figure">
           <g-image src="~/assets/news-img/12.jpg" width="255" height="150" />
@@ -8,7 +8,7 @@
         <h3 class="h3">Запущены новые серии инструмента универсального применения.</h3>
       </g-link>
     </div>
-    <div class="item">
+    <div class="col">
       <g-link class="a" to="/news/11">
         <figure class="figure">
           <g-image src="~/assets/news-img/11.jpg" width="255" height="150" />
@@ -16,7 +16,7 @@
         <h3 class="h3">Акция: переточка каждой четвертой фрезы бесплатно.</h3>
       </g-link>
     </div>
-    <div class="item">
+    <div class="col">
       <g-link class="a" to="/news/10">
         <figure class="figure">
           <g-image src="~/assets/news-img/10.jpg" width="255" height="150" />
@@ -26,7 +26,7 @@
         >Запущены в серийное производство центровочные сверла, фасонные фасочные фрезы серий 7V и 7R.</h3>
       </g-link>
     </div>
-    <div class="item">
+    <div class="col">
       <h3 class="h2">Металлообработка 2019</h3>
       <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
       <p>Стенд 24B70 (Павильон №2, зал 4).</p>
@@ -37,11 +37,11 @@
 <style lang="scss" scoped>
 .news-teasers {
   @extend %grid-row-wrap;
-  @include make-grid-gutter($col-selector: '.item');
+  @include make-grid-gutter();
   margin-bottom: 40px;
 }
 
-.item {
+.col {
   margin-bottom: 2rem;
 }
 
@@ -50,13 +50,13 @@
     margin-bottom: 70px;
   }
 
-  .item {
+  .col {
     @include make-col(12);
   }
 }
 
 @include media-breakpoint-up(lg) {
-  .item {
+  .col {
     @include make-col(6);
   }
 }

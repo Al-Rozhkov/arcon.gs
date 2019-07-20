@@ -2,6 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
+    v-once
   >
     <defs>
       <symbol id="Red_tool" data-name="Red tool" viewBox="0 0 18.16 26.59">

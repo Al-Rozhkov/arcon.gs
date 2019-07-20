@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div class="tools">
+    <div class="tools pt">
       <div class="schemes">
         <img
           v-for="(scheme, id) in node.scheme"

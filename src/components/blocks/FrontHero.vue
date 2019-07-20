@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero" v-once>
     <div class="aside">
       <g-image class="img" src="~/assets/img/hero.jpg" />
     </div>

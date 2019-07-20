@@ -1,7 +1,8 @@
 <template>
   <Layout>
-
-    <techs-list />
+    <template #submenu>
+      <techs-list class="submenu" />
+    </template>
     
     <main class="cnt">
       <h1>Токарная ЧПУ обработка</h1>

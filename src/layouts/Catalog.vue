@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <section class="container-xl d-print-none">
+    <div class="container-xl d-print-none">
       <catalog-categories class="submenu" />
-    </section>
+    </div>
 
     <slot />
 
@@ -32,14 +32,3 @@ export default {
   }
 }
 </script>
-
-
-<style lang="scss">
-.catalog-list {
-  margin: 0 -15px;
-
-  @include media-breakpoint-up(lg) {
-    margin: 0 -30px;
-  }
-}
-</style>

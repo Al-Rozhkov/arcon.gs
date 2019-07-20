@@ -7,48 +7,6 @@ img {
   border-top: 4px solid $cyan;
 }
 
-.logo {
-  margin-right: 2rem;
-
-  @include media-breakpoint-up(md) {
-    margin-left: -35px;
-  }
-}
-
-// Columns
-
-.flex-row {
-  @extend %grid-row-wrap;
-}
-
-.flex-row-nowrap {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-@include media-breakpoint-up(lg) {
-  .col-lg-6 {
-    @include make-col(6);
-  }
-
-  .col-lg-8 {
-    @include make-col(8);
-  }
-
-  .col-lg-12 {
-    @include make-col(12);
-  }
-
-  .col-lg-16 {
-    @include make-col(16);
-    padding-right: 3rem;
-  }
-}
-
 @media print {
   .nav-header,
   footer.footer,
