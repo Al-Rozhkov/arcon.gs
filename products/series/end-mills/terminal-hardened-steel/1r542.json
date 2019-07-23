@@ -5,7 +5,7 @@
     "scheme": [
         {
             "name": "b",
-            "scheme": "radius"
+            "scheme": "radius-r"
         }
     ],
     "mainUsage": [

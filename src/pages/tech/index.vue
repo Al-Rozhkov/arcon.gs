@@ -63,11 +63,6 @@ export default {
   margin-bottom: 120px;
 }
 
-.tile-row {
-  @extend %grid-row-wrap;
-  @include make-grid-gutter();
-}
-
 .h2 {
   font-weight: $font-weight-base;
 }

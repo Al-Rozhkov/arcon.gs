@@ -17,8 +17,7 @@
 
         <div class="w-100 col-lg-6">
           <p>
-            (8412)&nbsp;
-            <span class="display-4">45-89-90</span>
+            (8412)&nbsp;<span class="display-4">45-89-90</span>
           </p>
           <p>
             <a href="mailto:sales@cvm-arcon.ru">sales@cvm-arcon.ru</a>

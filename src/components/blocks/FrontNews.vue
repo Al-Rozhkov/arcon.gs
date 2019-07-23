@@ -47,7 +47,7 @@
 
 @include media-breakpoint-up(md) {
   .news-teasers {
-    margin-bottom: 70px;
+    margin-bottom: 4rem;
   }
 
   .col {
@@ -56,6 +56,10 @@
 }
 
 @include media-breakpoint-up(lg) {
+  .news-teasers {
+    margin-bottom: 6rem;
+  }
+
   .col {
     @include make-col(6);
   }

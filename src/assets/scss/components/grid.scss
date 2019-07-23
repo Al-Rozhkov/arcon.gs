@@ -7,11 +7,16 @@
   flex-wrap: nowrap;
 }
 
+.tile-row {
+  @extend %grid-row-wrap;
+}
+
 .w-100 {
   width: 100%;
 }
 
-.with-gutter {
+.with-gutter,
+.tile-row {
   @include make-grid-gutter();
 }
 

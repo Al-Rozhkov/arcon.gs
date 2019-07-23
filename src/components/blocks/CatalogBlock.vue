@@ -69,8 +69,8 @@ export default {
   @extend %grid-row-wrap;
 
   align-items: flex-end;
-  margin-bottom: 4rem;
-  border-bottom: 1px solid gray('300');
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $gray-300;
 }
 
 .h3 {
@@ -91,15 +91,18 @@ a.u {
 .aside,
 .body {
   padding: 0 15px;
+  width: 100%;
 }
 
 .segment {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 img.ill-img {
   max-width: 100%;
   height: auto;
+  margin: auto auto 0;
+  padding-top: 1rem;
 }
 
 .menu {
