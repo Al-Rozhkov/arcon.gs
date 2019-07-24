@@ -26,7 +26,7 @@ export default {
     FrontHero: hydrateWhenIdle(() =>
       import('~/components/blocks/FrontHero.vue')
     ),
-    FrontAdvantages: hydrateSsrOnly(() =>
+    FrontAdvantages: hydrateWhenIdle(() =>
       import('~/components/blocks/FrontAdvantages.vue')
     ),
     FrontServices: hydrateSsrOnly(() =>
@@ -48,8 +48,6 @@ export default {
 
 <style lang="scss">
 .gray-wrapper {
-  // border-top: 4px solid $pink;
-  // border-bottom: 3px solid #ffffff;
   background-color: $gray-100;
 }
 </style>

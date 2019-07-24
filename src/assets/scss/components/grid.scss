@@ -9,15 +9,11 @@
 
 .tile-row {
   @extend %grid-row-wrap;
+  @include make-grid-gutter();
 }
 
 .w-100 {
   width: 100%;
-}
-
-.with-gutter,
-.tile-row {
-  @include make-grid-gutter();
 }
 
 @include media-breakpoint-up(lg) {

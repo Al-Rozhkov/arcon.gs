@@ -1,7 +1,7 @@
 <template>
   <footer class="footer" v-once>
     <div class="cnt">
-      <div class="flex-row with-gutter">
+      <div class="tile-row">
         <div class="fc col-lg-6">
           © 2015—2019
           <br />Группа компаний «Аркон»

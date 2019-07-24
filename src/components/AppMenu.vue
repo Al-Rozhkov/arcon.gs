@@ -1,5 +1,5 @@
 <template functional>
-  <ul class="menu" :class="{ v: props.vertical }">
+  <ul class="menu" :class="[ { v: props.vertical}, data.staticClass ]">
     <slot />
   </ul>
 </template>

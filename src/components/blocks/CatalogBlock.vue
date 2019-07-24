@@ -1,5 +1,5 @@
 <template>
-  <section class="block with-gutter">
+  <section class="block tile-row">
     <article class="col body">
       <header class="header">
         <h2 class="title">Каталог режущего инструмента Arconit™</h2>
@@ -66,8 +66,6 @@ export default {
 
 <style lang="scss" scoped>
 .block {
-  @extend %grid-row-wrap;
-
   align-items: flex-end;
   margin-bottom: 2rem;
   border-bottom: 1px solid $gray-300;

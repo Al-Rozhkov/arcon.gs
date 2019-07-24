@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="cnt">
-      <div class="flex-row with-gutter">
+      <div class="tile-row">
         <main class="col news-page-body">
           <slot />
         </main>
