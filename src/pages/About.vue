@@ -3,7 +3,7 @@
     <main class="cnt">
       <h1>О компании</h1>
 
-      <div class="flex-row">
+      <div class="flex-row text-body">
         <section class="col-lg-16">
           <p>&laquo;Arconit&raquo; является зарегистрированной торговой маркой режущего инструмента и&nbsp;станочной оснастки. Кроме того мы&nbsp;рады предложить вам услуги по&nbsp;восстанолению инструмента с&nbsp;нанесением высокопрочных, износостойких PVD- и&nbsp;DLC-покрытий.</p>
 

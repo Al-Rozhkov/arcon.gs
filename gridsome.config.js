@@ -8,10 +8,8 @@ function addStyleResource (rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-				path.resolve(__dirname, './src/assets/scss/_styleResources.scss'),
-				// you can also use a glob if you'd prefer
-				// path.resolve(__dirname, './src/assets/sass/*.sass'),
-      ],
+				path.resolve(__dirname, './src/assets/scss/_styleResources.scss')
+      ]
     })
 }
 
@@ -21,14 +19,6 @@ module.exports = {
   siteUrl: 'cvm-arcon.ru',
 
   plugins: [
-    /* {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'products/types/*.json',
-        typeName: 'ProductType',
-        route: '/catalog/type/:slug'
-      }
-    }, */
     {
       use: '@gridsome/source-filesystem',
       options: {

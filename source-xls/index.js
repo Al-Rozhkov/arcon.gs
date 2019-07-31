@@ -6,6 +6,7 @@ const createNodes = (contentType, filePath) => {
     const parsedContent = XLSX.utils.sheet_to_json(xls.Sheets[n], {raw: false})
 
     for (let i = 0; i < parsedContent.length; i++) {
+      // Check if row contain required columns
       if ('series' in parsedContent[i] && 'name' in parsedContent[i]) {
         contentType.addNode(parsedContent[i])
       }
@@ -16,21 +17,23 @@ const createNodes = (contentType, filePath) => {
 module.exports = function (api) {
   api.loadSource(async ({ addContentType }) => {
     
-    // Mills
+    // Thread Mills
+    
+    // Product items. Mills
     const ProductItemEndMill = addContentType({
       typeName: 'ProductItemEndMill'
     })
     ProductItemEndMill.addReference('series', 'ProductEndMill')
     createNodes(ProductItemEndMill, 'products/product-items/mills.xls')
 
-    // Drills
+    // Product items. Drills
     const ProductItemDrill = addContentType({
       typeName: 'ProductItemDrill'
     })
     ProductItemDrill.addReference('series', 'ProductDrill')
     createNodes(ProductItemDrill, 'products/product-items/drills.xls')
 
-    // Thread mills
+    // Product items. Thread mills
     const ProductItemThreadMills = addContentType({
       typeName: 'ProductItemThreadMill'
     })

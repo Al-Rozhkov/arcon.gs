@@ -13,7 +13,15 @@
     </section>
 
     <section class="cnt">
-      <front-services />
+      <div class="tile-row">
+        <div class="col-lg-6">
+          <h2 class="h2-blind">Услуги</h2>
+        </div>
+
+        <div class="col-lg-18">
+          <front-services />
+        </div>
+      </div>
     </section>
   </Layout>
 </template>
@@ -49,5 +57,12 @@ export default {
 <style lang="scss">
 .gray-wrapper {
   background-color: $gray-100;
+}
+
+@include media-breakpoint-up(lg) {
+  .h2-blind {
+    font-size: 4rem;
+    color: $gray-200;
+  }
 }
 </style>

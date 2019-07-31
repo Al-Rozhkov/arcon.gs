@@ -5,9 +5,6 @@
 
       <section class="flex-row pt">
         <div class="col-lg-8 item">
-          <!-- <figure>
-            <g-image src="~/assets/news-img/12.jpg" width="255" height="150" />
-          </figure>-->
           <h3>ООО «ЦВМ «Аркон»</h3>
           <p>Россия, г. Пенза</p>
           <p>
@@ -18,9 +15,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <!-- <figure>
-            <g-image src="~/assets/news-img/11.jpg" width="255" height="150" />
-          </figure>-->
           <h3>ООО НПП «Виал»</h3>
           <p>Россия, г. Пенза.</p>
           <p>Тел.: (8412) 45-84-64</p>
@@ -28,9 +22,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <!-- <figure>
-            <g-image src="~/assets/news-img/10.jpg" width="255" height="150" />
-          </figure>-->
           <h3>ООО «Аркон-Урал»</h3>
           <p>Россия, г. Екатеринбург</p>
           <p>
@@ -41,9 +32,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <figure>
-            <!-- <g-image src="~/assets/news-img/10.jpg" width="255" height="150" /> -->
-          </figure>
           <h3>ООО «ТЗТС»</h3>
           <p>Россия, г. Тула</p>
           <p>
@@ -54,9 +42,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <figure>
-            <!-- <g-image src="~/assets/news-img/12.jpg" width="255" height="150" /> -->
-          </figure>
           <h3>ООО «ПРОФИТ-ССК»</h3>
           <p>Россия, г. Москва</p>
           <p>Тел.: (495) 369-43-72</p>
@@ -64,9 +49,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <figure>
-            <!-- <g-image src="~/assets/news-img/11.jpg" width="255" height="150" /> -->
-          </figure>
           <h3>ООО «ПромСнабСервис»</h3>
           <p>Россия, г. Смоленск</p>
           <p>
@@ -77,9 +59,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <figure>
-            <!-- <g-image src="~/assets/news-img/10.jpg" width="255" height="150" /> -->
-          </figure>
           <h3>ООО «ВК-Технологии»</h3>
           <p>Россия, г. Саратов</p>
           <p>Тел.: (8452) 68-15-23</p>
@@ -87,9 +66,6 @@
         </div>
 
         <div class="col-lg-8 item">
-          <figure>
-            <!-- <g-image src="~/assets/news-img/10.jpg" width="255" height="150" /> -->
-          </figure>
           <h3>ООО «ВМ-ТЕХ»</h3>
           <p>Россия, г. Саратов</p>
           <p>Тел.: (8452) 93-32-45</p>

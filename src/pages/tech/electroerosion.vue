@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <template #submenu>
-      <techs-list class="submenu" />
+      <menu-techs class="submenu" />
     </template>
 
     <main class="cnt">
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import TechsList from '~/components/TechsList.vue'
+import MenuTechs from '~/components/MenuTechs.vue'
 
 export default {
   components: {
-    TechsList
+    MenuTechs
   },
 
   metaInfo: {

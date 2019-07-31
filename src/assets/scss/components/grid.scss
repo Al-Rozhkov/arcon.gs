@@ -33,4 +33,8 @@
     @include make-col(16);
     padding-right: 3rem;
   }
+
+  .col-lg-18 {
+    @include make-col(18);
+  }
 }

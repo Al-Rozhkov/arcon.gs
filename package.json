@@ -10,7 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.27",
-    "gridsome": "^0.6.6",
+    "gridsome": "^0.6.7",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "js-yaml": "^3.13.1",
     "v-tooltip": "^2.0.2",

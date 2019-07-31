@@ -74,7 +74,19 @@ export default {
 
   metaInfo() {
     return {
-      title: `Сверло ${this.$page.series.id}`
+      title: `Сверло ${this.$page.series.id}`,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.series.body
+        },
+        {
+          key: 'keywords',
+          name: 'keywords',
+          content: this.$page.tools.edges.map(t => t.node.id).join(', ')
+        }
+      ]
     }
   }
 }
