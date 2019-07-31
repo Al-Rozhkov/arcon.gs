@@ -68,16 +68,18 @@
           </template>
         </div>
 
-        <template v-if="node.grooveInclination && node.cogs">
+        <template v-if="node.grooveInclination || node.cogs">
           <div class="col-30">
-            <h3 class="dt">Зубья</h3>
-            <ul class="dd">
-              <li
-                v-for="(c, index) in node.cogs"
-                :key="index"
-                class="dd-li"
-              >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
-            </ul>
+            <template v-if="node.cogs">
+              <h3 class="dt">Зубья</h3>
+              <ul class="dd">
+                <li
+                  v-for="(c, index) in node.cogs"
+                  :key="index"
+                  class="dd-li"
+                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
+              </ul>
+            </template>
 
             <template v-if="node.grooveInclination">
               <h3 class="dt">Угол подъема спиральной канавки</h3>
