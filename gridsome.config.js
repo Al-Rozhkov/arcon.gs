@@ -24,7 +24,7 @@ module.exports = {
       options: {
         path: 'products/categories/*.json',
         typeName: 'ProductCategory',
-        route: '/catalog/:type/category/:id'
+        // route: '/catalog/:type/category/:id'
       }
     },
     {
@@ -39,7 +39,7 @@ module.exports = {
       options: {
         path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
-        route: '/catalog/end-mills/:id',
+        // route: '/catalog/end-mills/:id',
         refs: {
           productCategory: 'ProductCategory',
           productSeriesSet: 'ProductSeriesSet'
@@ -51,7 +51,7 @@ module.exports = {
       options: {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
-        route: '/catalog/drills/:id',
+        // route: '/catalog/drills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }
@@ -62,7 +62,7 @@ module.exports = {
       options: {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
-        route: '/catalog/thread-mills/:id',
+        // route: '/catalog/thread-mills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }
@@ -73,6 +73,13 @@ module.exports = {
       options: {}
     }
   ],
+
+  templates: {
+    ProductCategory: '/catalog/:type/category/:id',
+    ProductEndMill: '/catalog/end-mills/:id',
+    ProductDrill: '/catalog/drills/:id',
+    ProductThreadMill: '/catalog/thread-mills/:id'
+  },
 
   chainWebpack: config => {
     // Load variables for all vue-files

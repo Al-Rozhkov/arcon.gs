@@ -15,26 +15,26 @@ const createNodes = (contentType, filePath) => {
 }
 
 module.exports = function (api) {
-  api.loadSource(async ({ addContentType }) => {
+  api.loadSource(async ({ addCollection }) => {
     
     // Thread Mills
     
     // Product items. Mills
-    const ProductItemEndMill = addContentType({
+    const ProductItemEndMill = addCollection({
       typeName: 'ProductItemEndMill'
     })
     ProductItemEndMill.addReference('series', 'ProductEndMill')
     createNodes(ProductItemEndMill, 'products/product-items/mills.xls')
 
     // Product items. Drills
-    const ProductItemDrill = addContentType({
+    const ProductItemDrill = addCollection({
       typeName: 'ProductItemDrill'
     })
     ProductItemDrill.addReference('series', 'ProductDrill')
     createNodes(ProductItemDrill, 'products/product-items/drills.xls')
 
     // Product items. Thread mills
-    const ProductItemThreadMills = addContentType({
+    const ProductItemThreadMills = addCollection({
       typeName: 'ProductItemThreadMill'
     })
     ProductItemThreadMills.addReference('series', 'ProductThreadMill')
