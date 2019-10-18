@@ -14,9 +14,9 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'ЦВМ Аркон',
-  siteDescription: 'ЦВМ Аркон. Технологии высокоточной механообработки',
-  siteUrl: 'cvm-arcon.ru',
+  siteName: 'ARCONIT',
+  siteDescription: 'ARCONIT – Режущий инструмент',
+  siteUrl: 'arconit.ru',
 
   plugins: [
     {

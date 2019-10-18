@@ -49,7 +49,8 @@ export default {
   },
 
   metaInfo: {
-    title: 'ЦВМ Аркон. Технологии высокоточной механообработки'
+    title: 'ARCONIT – Режущий инструмент',
+    titleTemplate: null
   }
 }
 </script>

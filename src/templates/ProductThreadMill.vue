@@ -11,46 +11,46 @@
 </template>
 
 <page-query>
-  query Tool ($path: String, $id: String!) {
-    series: productThreadMill (path: $path) {
-      id
-      productImg (width: 800, quality: 75)
-      body
-      scheme {
-        name
-        scheme
-      }
-      mainUsage
-      coating
-      tail
-      cuttingShapes
-      photos,
-      productSeriesSet {
-        set
-      }
+query Tool ($path: String, $id: String!) {
+  series: productThreadMill (path: $path) {
+    id
+    productImg (width: 800, quality: 75)
+    body
+    scheme {
+      name
+      scheme
     }
-    tools: allProductItemThreadMill (
-        filter: { series: { eq: $id } },
-        sortBy: "id", order: ASC
-      ) {
-      edges {
-        node {
+    mainUsage
+    coating
+    tail
+    cuttingShapes
+    photos,
+    productSeriesSet {
+      set
+    }
+  }
+  tools: allProductItemThreadMill (
+      filter: { series: { eq: $id } },
+      sortBy: "id", order: ASC
+    ) {
+    edges {
+      node {
+        id
+        series {
           id
-          series {
-            id
-          }
-          name
-          step
-          thread
-          d1
-          d2
-          l1
-          l2
-          z
         }
+        name
+        step
+        thread
+        d1
+        d2
+        l1
+        l2
+        z
       }
     }
   }
+}
 </page-query>
 
 <script>

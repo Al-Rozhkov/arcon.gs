@@ -12,7 +12,6 @@
             Г. Пенза, ул. Егорова
             <br />Г. Пенза, ул. Гоголя
           </p>
-          <p>Режим работы: с 8:00 до 17:00</p>
         </div>
 
         <div class="w-100 col-lg-6">
@@ -20,7 +19,7 @@
             (8412)&nbsp;<span class="display-4">45-89-90</span>
           </p>
           <p>
-            <a href="mailto:sales@cvm-arcon.ru">sales@cvm-arcon.ru</a>
+            <a href="mailto:gid@cvm-arcon.ru">gid@cvm-arcon.ru</a>
           </p>
         </div>
 

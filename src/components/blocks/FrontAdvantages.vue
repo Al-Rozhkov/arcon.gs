@@ -1,56 +1,56 @@
 <template>
   <section class="tile-row" v-once>
-    <article class="col">
+    <g-link to="/catalog/special" class="col">
       <div class="mt">
-        <g-image width="520" src="@/assets/img/solutions/a01.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a01.jpg" />
       </div>
       <div class="ib">
         <h3 class="h3">Монолитные сверла и&nbsp;развертки</h3>
         <p>Монолитные твердосплавные сверла и&nbsp;развертки любой длины и&nbsp;диаметра.</p>
       </div>
-    </article>
-    
-    <article class="col">
+    </g-link>
+
+    <g-link to="/catalog/end-mills" class="col">
       <h3 class="h3">Концевые и&nbsp;фасонные фрезы</h3>
       <p>Готовые решения из&nbsp;твердого сплава для всех типов обработки всегда в&nbsp;наличии.</p>
       <div class="atb">
-        <g-image width="520" src="@/assets/img/solutions/a02.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a02.jpg" />
       </div>
-    </article>
+    </g-link>
 
-    <article class="col">
+    <g-link to="/catalog/thread-mills" class="col">
       <div class="atr">
-        <g-image width="520" src="@/assets/img/solutions/a03.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a03.jpg" />
       </div>
       <h3 class="h3">Резьбонарезной инструмент</h3>
       <p>Твердосплавные резьбофрезы и&nbsp;метчики для решения самых ответственных задач.</p>
-    </article>
+    </g-link>
 
-    <article class="col">
+    <g-link to="/catalog/special" class="col">
       <div class="mt">
-        <g-image width="520" src="@/assets/img/solutions/a04.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a04.jpg" />
       </div>
       <div class="atb">
         <h3 class="h3">Токарные и&nbsp;долбежные вставки</h3>
         <p>Выберете форму хвостовика, длину и&nbsp;контур обработки в&nbsp;соответствии с&nbsp;вашими требованиями.</p>
       </div>
-    </article>
+    </g-link>
 
-    <article class="col">
+    <g-link to="/services/resharpen" class="col">
       <h3 class="h3">Восстановление инструмента</h3>
       <p>Переточим ваши сверла, фрезы, головки, метчики, развертки и&nbsp;др. без потери качества. Отполируем. Притупим. Нанесем покрытие.</p>
       <div class="atr">
-        <g-image width="520" src="@/assets/img/solutions/a05.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a05.jpg" />
       </div>
-    </article>
+    </g-link>
 
-    <article class="col">
+    <g-link to="/catalog/special" class="col">
       <div class="mt">
-        <g-image width="520" src="@/assets/img/solutions/a06.jpg" />
+        <g-image class="img" width="520" src="@/assets/img/solutions/a06.jpg" />
       </div>
       <h3 class="h3">Специальный инструмент</h3>
       <p>Изготовим инструмент из&nbsp;твердого сплава и&nbsp;быстрорежущей стали по&nbsp;вашим эскизам и&nbsp;чертежам.</p>
-    </article>
+    </g-link>
   </section>
 </template>
 
@@ -62,9 +62,21 @@
 .col {
   position: relative;
   background-color: #ffffff;
+  color: #000000;
   border: 2px solid $gray-100;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  &:hover {
+    .img {
+      transform: scale(1.02, 1.02);
+    }
+  }
+
+  .img {
+    transition: transform .2s ease 0s;
+  }
 }
 
 // Stick to bottom

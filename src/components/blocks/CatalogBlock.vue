@@ -2,7 +2,7 @@
   <section class="block tile-row">
     <article class="col body">
       <header class="header">
-        <h2 class="title">Каталог режущего инструмента Arconit™</h2>
+        <h2 class="title">Онлайн-каталог режущего инструмента Arconit™</h2>
       </header>
 
       <section class="segment">
@@ -41,8 +41,8 @@
           <h3 class="h3">
             <g-link
               class="text-red"
-              to="/catalog/constructor"
-            >Онлайн конструктор инструмента по&nbsp;параметрам</g-link>
+              to="/catalog/special"
+            >Специальный инструмент</g-link>
           </h3>
         </li>
       </app-menu>

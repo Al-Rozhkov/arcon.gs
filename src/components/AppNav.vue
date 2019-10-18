@@ -5,10 +5,13 @@
         <app-logo />
       </g-link>
 
-      <a class="nav-phone" href="tel:+78412458990">
-        +7&nbsp;8412&nbsp;
-        <span class="display-4">45-89-90</span>
-      </a>
+      <div class="nav-contact">
+        <a class="nav-phone" href="tel:+78412458990">
+          <span>+7&nbsp;8412&nbsp;</span>
+          <span class="display-4">45-89-90</span>
+        </a>
+        <span class="nav-mail">gid@cvm-arcon.ru</span>
+      </div>
 
       <ul class="menu">
         <li class="li">
@@ -59,7 +62,7 @@
 
 li.li {
   margin-right: 1.5rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   padding: 0;
 }
 
@@ -90,11 +93,23 @@ a.a {
   font-weight: $font-weight-bold;
 }
 
-.nav-phone {
+.nav-contact {
   display: block;
   margin-left: auto;
   padding: 0 0 0.3rem;
   color: $black;
+}
+
+.nav-phone,
+.nav-mail {
+  display: block;
+  text-align: right;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.nav-mail {
+  font-size: 0.8rem;
 }
 
 .logo-link {
@@ -107,7 +122,7 @@ a.a {
     flex: 0 0 auto;
   }
 
-  .nav-phone {
+  .nav-contact {
     order: 10;
   }
 }

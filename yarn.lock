@@ -669,10 +669,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@gridsome/cli@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.0.tgz#d6fd58561b161c9cda9989712fb909dbb64e06bc"
-  integrity sha512-pH5RJ9PsTTZ0mGsrKcl5Djj+O+Mvf0o7o7SH3GLf+c8sQAIJTuEVTlfpzUDcI7udbZUdMtkFjYocXKudEdKpBw==
+"@gridsome/cli@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.1.tgz#8bdf97facddb3ab5338eb57521bc0bf5808561d2"
+  integrity sha512-DBzX0yWAE98kn1oZ69oT5dPqUNd9Isr+2/YFU/XP7e/+5OHEYsXdVlFrLgHkEwAsJvtfbkm5s5654mQ7UoK+rg==
   dependencies:
     "@hjvedvik/tasks" "^0.0.8"
     chalk "^2.4.1"
@@ -687,10 +687,10 @@
     sort-package-json "^1.15.0"
     update-notifier "^3.0.1"
 
-"@gridsome/source-filesystem@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@gridsome/source-filesystem/-/source-filesystem-0.6.0.tgz#420199ee7a34101bfd8479ca2ac66435575c3b3c"
-  integrity sha512-W6Sf9VDXotbol2ojsbHtlILYw3lIGKqy52ojHwaq0FKZlgJV8U3UahRRiL8A68xQdy1uRUTFtWTSvF3oEwUuyA==
+"@gridsome/source-filesystem@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@gridsome/source-filesystem/-/source-filesystem-0.6.2.tgz#95f65e9fcf03624ba23f8f0bee0779fe8e8b9021"
+  integrity sha512-K1pyXwFYIlABaHq3wqOPyYt4ARzLZuUQ+UZKjDSBT9I0T0qpCbwir5kJMQkR7qY4ONflUrv8fgG6DNSrc1uzbA==
   dependencies:
     chokidar "^2.0.4"
     fs-extra "^7.0.0"
@@ -1593,10 +1593,10 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-vue@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.0.2.tgz#92082574e0fe34a65ce4c07b8777471b7a1402dd"
-  integrity sha512-hbGJjc/om9JfVNUFK76dnh+YutlZdZlKbpWw6OE9gHTkmbwstP/KxxELpZZgK/4SYtdxUPt/6W1CvdaeT1bNvQ==
+bootstrap-vue@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.0.4.tgz#9bf99754a22acece72e02adda3c7965b818ae2bc"
+  integrity sha512-/5WXa3ir5uajcs7ze7jz7QXpYuJGWHjvJ8biMq0+e0IIIxw2jSdh4LsiFKD7C7qtgKre28hhXOfx79RmZX4wcQ==
   dependencies:
     "@nuxt/opencollective" "^0.3.0"
     bootstrap ">=4.3.1 <5.0.0"
@@ -3130,6 +3130,17 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+eslint-loader@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-3.0.2.tgz#5a627316a51d6f41d357b9f6f0554e91506cdd6e"
+  integrity sha512-S5VnD+UpVY1PyYRqeBd/4pgsmkvSokbHqTXAQMpvCyRr3XN2tvSLo9spm2nEpqQqh9dezw3os/0zWihLeOg2Rw==
+  dependencies:
+    fs-extra "^8.1.0"
+    loader-fs-cache "^1.0.2"
+    loader-utils "^1.2.3"
+    object-hash "^1.3.1"
+    schema-utils "^2.2.0"
+
 eslint-plugin-gridsome@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-gridsome/-/eslint-plugin-gridsome-1.3.2.tgz#c7b9a272dd0cd407ff73591031cb6b75a1f9bb86"
@@ -3638,6 +3649,15 @@ find-babel-config@^1.1.0:
     json5 "^0.5.1"
     path-exists "^3.0.0"
 
+find-cache-dir@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-0.1.1.tgz#c8defae57c8a52a8a784f9e31c57c742e993a0b9"
+  integrity sha1-yN765XyKUqinhPnjHFfHQumToLk=
+  dependencies:
+    commondir "^1.0.1"
+    mkdirp "^0.5.1"
+    pkg-dir "^1.0.0"
+
 find-cache-dir@^2.0.0, find-cache-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-2.1.0.tgz#8d0f94cd13fe43c6c7c261a0d86115ca918c05f7"
@@ -3782,6 +3802,15 @@ fs-extra@^7.0.0, fs-extra@^7.0.1:
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
+  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  dependencies:
+    graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
@@ -4057,7 +4086,7 @@ got@^9.6.0:
     to-readable-stream "^1.0.0"
     url-parse-lax "^3.0.0"
 
-graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
+graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
   integrity sha512-IItsdsea19BoLC7ELy13q1iJFNmd7ofZH5+X/pJr90/nRoPEX0DJo1dHDbgtYWOhJhcCgMDTOw84RZ72q6lB+Q==
@@ -4106,14 +4135,14 @@ gridsome-plugin-yandex-metrika@^0.1.2:
   dependencies:
     vue-yandex-metrika "^1.7.3"
 
-gridsome@^0.7.7:
-  version "0.7.7"
-  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.7.7.tgz#3c0e3929ef08004310210030c9eae5e374df4b45"
-  integrity sha512-dkxyPY/z3m0z9qCtsyQfYc81OQ+qVZ8MCMTpu8CDXG2rS36gyDHhpRjPgjjI/op2ZHNGsRtgN81ysB4Y0bsMQw==
+gridsome@^0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.7.8.tgz#21ca3684d00f2e9e44ce8bba2d4ae5d1a7797778"
+  integrity sha512-ksUtNREvpL+2Yn8ctxcNMIjkDOp+vJ8UwM15JtqvqUCAgdiHTZXwtC2sr/aZKDNVjACi2dmg1ThAs5NEftsThQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.0.0"
-    "@gridsome/cli" "^0.3.0"
+    "@gridsome/cli" "^0.3.1"
     "@hapi/joi" "^15.1.1"
     "@sindresorhus/slugify" "^0.8.0"
     "@vue/babel-preset-app" "^3.4.0"
@@ -5230,6 +5259,14 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
+loader-fs-cache@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.2.tgz#54cedf6b727e1779fd8f01205f05f6e88706f086"
+  integrity sha512-70IzT/0/L+M20jUlEqZhZyArTU6VKLRTYRDAYN26g4jfzpJqjipLL3/hgYpySqI9PwsVRHHFja0LfEmsx9X2Cw==
+  dependencies:
+    find-cache-dir "^0.1.1"
+    mkdirp "0.5.1"
+
 loader-runner@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
@@ -5311,11 +5348,6 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.5, lodash@~4.17.10:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
-
-lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -5675,7 +5707,7 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
+mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
@@ -6040,6 +6072,11 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
+
+object-hash@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
+  integrity sha512-OSuu/pU4ENM9kmREg0BdNrUDIl1heYa4mBZacJc+vVWz4GtAwu7jO8s4AIt2aGRUTqxykpWzI3Oqnsm13tTMDA==
 
 object-inspect@^1.6.0:
   version "1.6.0"
@@ -6501,6 +6538,13 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
+
+pkg-dir@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-1.0.0.tgz#7a4b508a8d5bb2d629d447056ff4e9c9314cf3d4"
+  integrity sha1-ektQio1bstYp1EcFb/TpyTFM89Q=
+  dependencies:
+    find-up "^1.0.0"
 
 pkg-dir@^3.0.0:
   version "3.0.0"
@@ -7543,6 +7587,14 @@ schema-utils@^2.1.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.4.1.tgz#e89ade5d056dc8bcaca377574bb4a9c4e1b8be56"
   integrity sha512-RqYLpkPZX5Oc3fw/kHHHyP56fg5Y+XBpIpV8nCg0znIALfq3OH+Ea9Hfeac9BAMwG5IICltiZ0vxFvJQONfA5w==
+  dependencies:
+    ajv "^6.10.2"
+    ajv-keywords "^3.4.1"
+
+schema-utils@^2.2.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.5.0.tgz#8f254f618d402cc80257486213c8970edfd7c22f"
+  integrity sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==
   dependencies:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
