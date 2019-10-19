@@ -5,14 +5,14 @@
 
       <section class="tile-root">
         <div class="tile-row">
-          <a href="#grinding" class="col left1">
+          <g-link to="/tech#grinding" class="col left1">
             <h2 class="h2">Шлифовальная обработка</h2>
             <p
               class="p"
             >Шлифование круглое наружное, бесцентровое, плоское, координатное, круглое внутреннее</p>
-          </a>
+          </g-link>
 
-          <a href="#electroerosion" class="col right1">
+          <g-link to="/tech#electroerosion" class="col right1">
             <h2 class="h2">Электроэрозионная обработка</h2>
             <p
               class="p"
@@ -20,32 +20,32 @@
             <p
               class="p"
             >Cтанки прошивные для формирования глухих пазов, с&nbsp;минимальными радиусами на&nbsp;всех контактных точках.</p>
-          </a>
+          </g-link>
         </div>
 
         <div class="tile-row">
-          <a href="#milling" class="col left2">
+          <g-link to="/tech#milling" class="col left2">
             <h2 class="h2">Фрезерная ЧПУ обработка</h2>
             <p
               class="p"
             >Обработка ведется полным циклом, от&nbsp;создания 3д-моделей, разработки управляющих программ, ведения техпроцесса с&nbsp;промежуточными операциями контроля.</p>
-          </a>
+          </g-link>
 
-          <a href="#lathe" class="col right2">
-            <h2 class="h2">Токарная ЧПУ обработка</h2>
+          <g-link to="/tech#lathe" class="col right2">
+            <h2 class="h2">Токарная&nbsp;ЧПУ обработка</h2>
             <p class="p">Максимальный обрабатываемый наружный диаметр&nbsp;&mdash; 457&nbsp;мм.</p>
             <p class="p">Максимальная длина точения&nbsp;&mdash; 584&nbsp;мм.</p>
-          </a>
+          </g-link>
         </div>
       </section>
 
       <section class="tile-row sticky-sidebar pb">
         <aside class="col-md-6 aside">
           <app-menu vertical>
-            <app-menu-item to="#grinding">Шлифовальная обработка</app-menu-item>
-            <app-menu-item to="#electroerosion">Электроэрозионная обработка</app-menu-item>
-            <app-menu-item to="#milling">Фрезерная ЧПУ обработка</app-menu-item>
-            <app-menu-item to="#lathe">Токарная ЧПУ обработка</app-menu-item>
+            <app-menu-item to="/tech#grinding">Шлифовальная обработка</app-menu-item>
+            <app-menu-item to="/tech#electroerosion">Электроэрозионная обработка</app-menu-item>
+            <app-menu-item to="/tech#milling">Фрезерная&nbsp;ЧПУ обработка</app-menu-item>
+            <app-menu-item to="/tech#lathe">Токарная&nbsp;ЧПУ обработка</app-menu-item>
           </app-menu>
         </aside>
 
@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import CatalogBlock from '~/components/blocks/CatalogBlock'
+import CatalogBlock from '~/components/blocks/CatalogBlock.vue'
 
 export default {
   components: {

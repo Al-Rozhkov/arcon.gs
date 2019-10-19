@@ -1,9 +1,7 @@
 <template>
   <svg
-    id="arconit-logo"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 146.56 30.02"
-    width="140"
     v-once
   >
     <title>arconit</title>
@@ -63,13 +61,5 @@
 
 .r {
   fill: $red;
-}
-
-#arconit-logo {
-  pointer-events: none;
-
-  @include media-breakpoint-up(md) {
-    margin-left: -35px;
-  }
 }
 </style>

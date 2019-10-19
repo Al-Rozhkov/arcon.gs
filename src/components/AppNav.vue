@@ -2,7 +2,7 @@
   <div class="nav-header">
     <nav class="nav">
       <g-link class="a logo-link" to="/" exact>
-        <app-logo />
+        <app-logo id="arconit-logo" width="140" />
       </g-link>
 
       <div class="nav-contact">
@@ -27,7 +27,7 @@
           <g-link class="a" to="/services">Услуги</g-link>
         </li>
         <li class="li">
-          <g-link class="a" to="/partners">Партнеры</g-link>
+          <g-link class="a" to="/partners">Представители</g-link>
         </li>
         <li class="li">
           <g-link class="a" to="/contact">Контакты</g-link>
@@ -52,6 +52,14 @@
 
   align-items: flex-end;
   padding-top: 0.5rem;
+}
+
+#arconit-logo {
+  pointer-events: none;
+
+  @include media-breakpoint-up(md) {
+    margin-left: -35px;
+  }
 }
 
 .menu {

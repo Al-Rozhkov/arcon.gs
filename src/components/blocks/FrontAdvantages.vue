@@ -70,7 +70,7 @@
 
   &:hover {
     .img {
-      transform: scale(1.02, 1.02);
+      transform: scale(1.03, 1.03);
     }
   }
 

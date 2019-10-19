@@ -12,14 +12,16 @@
       </div>
     </section>
 
-    <section class="cnt">
-      <div class="tile-row">
-        <div class="col-lg-6">
-          <h2 class="h2-blind">Услуги</h2>
-        </div>
+    <section class="services-wrapper">
+      <div class="cnt">
+        <div class="tile-row">
+          <div class="col-lg-6">
+            <h2 class="h2-blind">Услуги</h2>
+          </div>
 
-        <div class="col-lg-18">
-          <front-services />
+          <div class="col-lg-18">
+            <front-services />
+          </div>
         </div>
       </div>
     </section>
@@ -55,12 +57,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .gray-wrapper {
   background-color: $gray-100;
 }
 
 @include media-breakpoint-up(lg) {
+  .services-wrapper:hover {
+    .h2-blind {
+      color: $gray-400;
+    }
+  }
+
   .h2-blind {
     font-size: 4rem;
     color: $gray-200;

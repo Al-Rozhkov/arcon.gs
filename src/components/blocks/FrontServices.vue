@@ -1,5 +1,5 @@
 <template>
-  <div class="tile-row" v-once>
+  <div class="tile-row services-teasers" v-once>
     <g-link to="/services/resharpen" class="col s">
       <h3 class="h3">
         <span class="u">Переточка режущего инструмента</span>
@@ -73,7 +73,7 @@
   }
 
   &:hover {
-    background-color: $yellow;
+    background-color: lighten($yellow, 35%) ;
 
     &::after {
       opacity: 0.7;

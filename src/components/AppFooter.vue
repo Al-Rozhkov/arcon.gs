@@ -27,7 +27,7 @@
           <app-menu vertical>
             <app-menu-item to="/policy">Политика конфиденциальности</app-menu-item>
             <app-menu-item to="/disclosure">Раскрытие информации</app-menu-item>
-            <app-menu-item to="/partners">Официальные партнеры</app-menu-item>
+            <app-menu-item to="/partners">Представители</app-menu-item>
             <app-menu-item to="/contact">Контакты</app-menu-item>
           </app-menu>
         </div>

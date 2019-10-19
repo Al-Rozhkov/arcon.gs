@@ -5,13 +5,13 @@
         <h1>Политика конфиденциальности</h1>
 
         <ul class="menu submenu">
-          <app-menu-item to="#s-1">Общие положения</app-menu-item>
-          <app-menu-item to="#s-2">Сбор персональных данных</app-menu-item>
-          <app-menu-item to="#s-3">Хранение и&nbsp;использование персональных данных</app-menu-item>
-          <app-menu-item to="#s-4">Передача персональных данных</app-menu-item>
-          <app-menu-item to="#s-5">Уничтожение персональных данных</app-menu-item>
-          <app-menu-item to="#s-6">Защита персональных данных</app-menu-item>
-          <app-menu-item to="#s-7">Обращения пользователей</app-menu-item>
+          <app-menu-item to="/policy#s-1">Общие положения</app-menu-item>
+          <app-menu-item to="/policy#s-2">Сбор персональных данных</app-menu-item>
+          <app-menu-item to="/policy#s-3">Хранение и&nbsp;использование персональных данных</app-menu-item>
+          <app-menu-item to="/policy#s-4">Передача персональных данных</app-menu-item>
+          <app-menu-item to="/policy#s-5">Уничтожение персональных данных</app-menu-item>
+          <app-menu-item to="/policy#s-6">Защита персональных данных</app-menu-item>
+          <app-menu-item to="/policy#s-7">Обращения пользователей</app-menu-item>
         </ul>
       </div>
     </header>
