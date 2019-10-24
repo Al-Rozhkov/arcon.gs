@@ -69,6 +69,12 @@ module.exports = {
       }
     },
     {
+      use: 'gridsome-plugin-yandex-metrika',
+      options: {
+        id: 48415064
+      }
+    },
+    {
       use: '~/source-xls',
       options: {}
     }

@@ -32,7 +32,7 @@
           <h3 class="h3">
             <a
               class="text-red"
-              href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf"
+              href="/docs/ARCONIT_full.pdf"
             >Скачать каталог в&nbsp;PDF&nbsp;</a>
             <span class="text-muted">(15,6&nbsp;Mb)</span>
           </h3>
