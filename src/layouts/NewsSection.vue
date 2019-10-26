@@ -12,30 +12,16 @@
             <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
             <p>Стенд 24B70 (Павильон №2, зал 4).</p>
           </div>
-          <div class="mb-3">
-            <g-link to="/news/12">
+          <div
+            v-for="(node, index) in $static.news.edges"
+            :key="index"
+            class="mb-3"
+          >
+            <g-link :to="node.node.path">
               <figure>
-                <g-image src="~/assets/news-img/12.jpg" width="255" height="150" />
+                <g-image :src="node.node.image" />
               </figure>
-              <h3 class="news-title">Запущены новые серии инструмента универсального применения.</h3>
-            </g-link>
-          </div>
-          <div class="mb-3">
-            <g-link to="/news/11">
-              <figure>
-                <g-image src="~/assets/news-img/11.jpg" width="255" height="150" />
-              </figure>
-              <h3 class="news-title">Акция: переточка каждой четвертой фрезы бесплатно.</h3>
-            </g-link>
-          </div>
-          <div class="mb-3">
-            <g-link to="/news/10">
-              <figure>
-                <g-image src="~/assets/news-img/10.jpg" width="255" height="150" />
-              </figure>
-              <h3
-                class="news-title"
-              >Запущены в серийное производство центровочные сверла, фасонные фасочные фрезы серий 7V и 7R.</h3>
+              <h3 class="news-title">{{ node.node.title }}</h3>
             </g-link>
           </div>
         </aside>
@@ -45,9 +31,18 @@
 </template>
 
 <static-query>
-query {
-  metadata {
-    siteName
+query RecentNews {
+  news: allNews(limit: 4) {
+    edges{
+      node {
+        id
+        path
+        excerpt
+        content
+        title
+        image(width: 255, height: 150)
+      }
+    }
   }
 }
 </static-query>

@@ -1,31 +1,18 @@
 <template>
   <section class="news-teasers" v-once>
-    <div class="col">
-      <g-link class="a" to="/news/12">
-        <figure class="figure">
-          <g-image src="~/assets/news-img/12.jpg" width="255" height="150" />
+    <div
+      v-for="(node, index) in $static.news.edges"
+      :key="index"
+      class="col"
+    >
+      <g-link class="a" :to="node.node.path">
+        <figure v-if="node.node.image" class="figure">
+          <g-image :src="node.node.image" />
         </figure>
-        <h3 class="h3">Запущены новые серии инструмента универсального применения.</h3>
+        <h3 class="h3">{{ node.node.title }}</h3>
       </g-link>
     </div>
-    <div class="col">
-      <g-link class="a" to="/news/11">
-        <figure class="figure">
-          <g-image src="~/assets/news-img/11.jpg" width="255" height="150" />
-        </figure>
-        <h3 class="h3">Акция: переточка каждой четвертой фрезы бесплатно.</h3>
-      </g-link>
-    </div>
-    <div class="col">
-      <g-link class="a" to="/news/10">
-        <figure class="figure">
-          <g-image src="~/assets/news-img/10.jpg" width="255" height="150" />
-        </figure>
-        <h3
-          class="h3"
-        >Запущены в серийное производство центровочные сверла, фасонные фасочные фрезы серий 7V и 7R.</h3>
-      </g-link>
-    </div>
+
     <div class="col">
       <h3 class="h2">Металлообработка 2019</h3>
       <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
@@ -33,6 +20,23 @@
     </div>
   </section>
 </template>
+
+<static-query>
+query RecentNews {
+  news: allNews(limit: 4) {
+    edges{
+      node {
+        id
+        path
+        excerpt
+        content
+        title
+        image(width: 255, height: 150)
+      }
+    }
+  }
+}
+</static-query>
 
 <style lang="scss" scoped>
 .news-teasers {

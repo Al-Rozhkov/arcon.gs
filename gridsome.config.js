@@ -69,6 +69,16 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'news/**/*.md',
+        typeName: 'News'
+        // remark: {
+          // remark options
+        // }
+      }
+    },
+    {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
         id: 48415064
@@ -84,7 +94,8 @@ module.exports = {
     ProductCategory: '/catalog/:type/category/:id',
     ProductEndMill: '/catalog/end-mills/:id',
     ProductDrill: '/catalog/drills/:id',
-    ProductThreadMill: '/catalog/thread-mills/:id'
+    ProductThreadMill: '/catalog/thread-mills/:id',
+    News: '/news/:id'
   },
 
   chainWebpack: config => {
