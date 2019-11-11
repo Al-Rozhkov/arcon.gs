@@ -2,7 +2,7 @@
   <page-layout>
     <h1>{{ $page.node.title }}</h1>
 
-    <figure>
+    <figure v-if="$page.node.image">
       <g-image :src="$page.node.image" />
     </figure>
     <div class="text-body" v-html="$page.node.content"></div>
@@ -10,8 +10,8 @@
 </template>
 
 <page-query>
-  query News ($path: String) {
-    node: news (path: $path) {
+  query News($path: String) {
+    node: news(path: $path) {
       id
       path
       content
@@ -31,7 +31,7 @@ export default {
 
   metaInfo() {
     return {
-      title: this.$page.title
+      title: this.$page.node.title
     }
   }
 }

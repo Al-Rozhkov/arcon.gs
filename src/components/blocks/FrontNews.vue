@@ -1,92 +1,85 @@
 <template>
   <section class="news-teasers" v-once>
-    <div
-      v-for="(node, index) in $static.news.edges"
-      :key="index"
-      class="col"
-    >
-      <g-link class="a" :to="node.node.path">
-        <figure v-if="node.node.image" class="figure">
-          <g-image :src="node.node.image" />
-        </figure>
-        <h3 class="h3">{{ node.node.title }}</h3>
-      </g-link>
-    </div>
+    <vue-glide type="carousel" bound :breakpoints="breakpoints" :gap="30" :perView="4" :peek="30">
+      <vue-glide-slide v-for="(node, index) in $static.news.edges" :key="index" class="item">
+        <template v-if="!node.node.nopage">
+          <news-teaser :node="node.node" />
+        </template>
 
-    <div class="col">
-      <h3 class="h2">Металлообработка 2019</h3>
-      <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
-      <p>Стенд 24B70 (Павильон №2, зал 4).</p>
-    </div>
+        <template v-else>
+          <h3 class="h2">{{ node.node.title }}</h3>
+          <div v-html="node.node.content" />
+        </template>
+      </vue-glide-slide>
+      <template slot="control">
+        <arrow-prev class="glide__arrow glide__arrow--left" data-glide-dir="<" />
+        <arrow-next class="glide__arrow glide__arrow--right" data-glide-dir=">" />
+      </template>
+    </vue-glide>
   </section>
 </template>
 
 <static-query>
 query RecentNews {
-  news: allNews(limit: 4) {
+  news: allNews(limit: 8, sortBy: "date") {
     edges{
       node {
         id
         path
-        excerpt
         content
         title
-        image(width: 255, height: 150)
+        image(width: 275, height: 160)
+        nopage
       }
     }
   }
 }
 </static-query>
 
+<script>
+import { Glide, GlideSlide } from 'vue-glide-js'
+import ArrowNext from '~/components/ArrowNext.vue'
+import ArrowPrev from '~/components/ArrowPrev.vue'
+import NewsTeaser from '~/components/NewsTeaser.vue'
+
+export default {
+  components: {
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide,
+    ArrowNext,
+    ArrowPrev,
+    NewsTeaser
+  },
+
+  data() {
+    return {
+      breakpoints: {
+        1320: {
+          perView: 4
+        },
+        992: {
+          perView: 3
+        },
+        768: {
+          perView: 2
+        },
+        576: {
+          perView: 1
+        }
+      }
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .news-teasers {
-  @extend %grid-row-wrap;
-  @include make-grid-gutter();
-  margin-bottom: 40px;
+  margin: 0 -15px 3rem;
 }
 
-.col {
+.item {
+  margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-@include media-breakpoint-up(md) {
-  .news-teasers {
-    margin-bottom: 4rem;
-  }
-
-  .col {
-    @include make-col(12);
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .news-teasers {
-    margin-bottom: 6rem;
-  }
-
-  .col {
-    @include make-col(6);
-  }
-}
-
-a.a {
-  display: block;
-  cursor: pointer;
-
-  &:hover {
-    .figure {
-      @include box-shadow(0 0 30px rgba(0, 0, 0, 0.2));
-    }
-
-    .h3 {
-      color: $red;
-    }
-  }
-}
-
-.h3 {
-  font-size: 1rem;
-  font-weight: $font-weight-base;
 }
 
 .h2 {
@@ -94,15 +87,33 @@ a.a {
   font-weight: $font-weight-base;
 }
 
-.h3, .h2 {
-  color: $black;
+.glide__arrow {
+  margin-top: -25px;
 }
 
-.figure {
-  border-radius: 6px;
-  max-width: 255px;
-  position: relative;
-  overflow: hidden;
-  @include box-shadow(0 0 20px rgba(0, 0, 0, 0.15));
+@include media-breakpoint-up(md) {
+  .news-teasers {
+    margin: 0 -15px 4rem;
+  }
+
+  .glide__arrow--left {
+    left: -30px;
+  }
+  .glide__arrow--right {
+    right: -30px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .news-teasers {
+    margin: 0 -15px 6rem;
+  }
+
+  .glide__arrow--left {
+    left: -45px;
+  }
+  .glide__arrow--right {
+    right: -45px;
+  }
 }
 </style>

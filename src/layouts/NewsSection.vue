@@ -7,22 +7,20 @@
         </main>
 
         <aside class="col news-page-aside">
-          <div class="mb-3">
-            <h3>Металлообработка 2019</h3>
-            <p>Приглашаем посетить наш стенд на 20-й международной специализированной выставке в «Экспоцентре» на Краснопресненской набережной.</p>
-            <p>Стенд 24B70 (Павильон №2, зал 4).</p>
-          </div>
-          <div
-            v-for="(node, index) in $static.news.edges"
-            :key="index"
-            class="mb-3"
-          >
-            <g-link :to="node.node.path">
-              <figure>
-                <g-image :src="node.node.image" />
-              </figure>
-              <h3 class="news-title">{{ node.node.title }}</h3>
-            </g-link>
+          <div v-for="(node, index) in $static.news.edges" :key="index" class="mb-3">
+            <template v-if="!node.node.nopage">
+              <g-link :to="node.node.path">
+                <figure v-if="node.node.image">
+                  <g-image :src="node.node.image" />
+                </figure>
+                <h3 class="news-title">{{ node.node.title }}</h3>
+              </g-link>
+            </template>
+
+            <template v-else>
+              <h3>{{ node.node.title }}</h3>
+              <div v-html="node.node.content" />
+            </template>
           </div>
         </aside>
       </div>
@@ -37,7 +35,7 @@ query RecentNews {
       node {
         id
         path
-        excerpt
+        nopage
         content
         title
         image(width: 255, height: 150)

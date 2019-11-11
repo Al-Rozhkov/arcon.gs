@@ -9,13 +9,20 @@
 
       <p>Зарегистрированные торговые марки режущего инструмента.</p>
       <p>
-        Страна происхождения продукции, товаров и услуг Arconit — Российская Федерация <a href="/docs/Arconit-russian_produced.pdf">(Скачать письмо-заявление)</a>.
+        Страна происхождения продукции, товаров и услуг Arconit — Российская Федерация
+        <a href="/docs/Arconit-russian_produced.pdf">(Скачать письмо-заявление)</a>.
       </p>
       <p>Сертификация производства и продукции: ГОСТ ISO 9001 и ГОСТ РВ 0015-002-2012.</p>
-      <!-- 
-        (вставить ссылку на скачку из папки на русском языке; на английском языке) (в папке картинки в формате jpeg – надо сделать 2 файла на рус. И англ. Языке в формате pdf их вайлов ISO9001_RUS_1 и ISO9001_RUS_2; ISO9001_ENG_1 b ISO9001_ENG_2 – второй файл);
-        // Потом будем добавлять документы по сертификации
-      -->
+
+      <p>
+        <a class="sert-link" href="/docs/iso9001_eng.pdf">
+          <g-image src="~/assets/img/docs/ISO9001_ENG_1.jpg" width="120" class="sert" />
+        </a>
+        <a class="sert-link" href="/docs/iso9001_rus.pdf">
+          <g-image src="~/assets/img/docs/ISO9001_RUS_1.jpg" width="120" class="sert" />
+        </a>
+      </p>
+      
       <p>
         <a
           href="/docs/Spec_ocenka_yslovij.pdf"
@@ -42,5 +49,13 @@ export default {
 <style lang="scss" scoped>
 .arconit-logo {
   margin-bottom: 1rem;
+}
+
+.sert-link {
+  margin-right: 0.5rem;
+
+  .sert:hover {
+    opacity: 0.75;
+  }
 }
 </style>

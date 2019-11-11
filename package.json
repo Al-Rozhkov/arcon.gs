@@ -11,10 +11,11 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.4",
-    "gridsome": "^0.7.9",
+    "gridsome": "^0.7.10",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "js-yaml": "^3.13.1",
     "v-tooltip": "^2.0.2",
+    "vue-glide-js": "^1.3.14",
     "vue-icon": "^2.1.1",
     "vue-lazy-hydration": "^1.0.0-beta.9",
     "xlsx": "^0.15.1"
@@ -25,11 +26,11 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "eslint": "^6.6.0",
     "eslint-loader": "^3.0.2",
-    "eslint-plugin-gridsome": "^1.3.2",
+    "eslint-plugin-gridsome": "^1.4.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
-    "style-resources-loader": "^1.2.1",
-    "vue-eslint-parser": "^6.0.4"
+    "style-resources-loader": "^1.3.2",
+    "vue-eslint-parser": "^7.0.0"
   },
   "prettier": {
     "semi": false,
