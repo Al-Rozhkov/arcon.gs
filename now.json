@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "arcon",
-  "alias": "arcon",
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
   ]
