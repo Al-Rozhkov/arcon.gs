@@ -1,8 +1,7 @@
 {
   "version": 2,
   "name": "arcon",
-  "alias": "arconit",
-  "scope": "arconit",
+  "alias": "arcon",
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
   ]
