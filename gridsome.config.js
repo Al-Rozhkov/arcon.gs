@@ -73,9 +73,6 @@ module.exports = {
       options: {
         path: 'news/**/*.md',
         typeName: 'News'
-        // remark: {
-          // remark options
-        // }
       }
     },
     {
