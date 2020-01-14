@@ -76,6 +76,15 @@ module.exports = {
       }
     },
     {
+      use: '~/source-google-docs',
+      options: {
+        foldersIds: ['0B5byfKNIu897c0FoTkVGOUhFZ3M'],
+        clientId: '153895999971-ipl09sl6s1jdp92q1r0k5l934di1s0is.apps.googleusercontent.com',
+        clientSecret: 'Ky-IcErC7kMpMX70iqXNCyKe',
+        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+      },
+    },
+    {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
         id: 48415064
