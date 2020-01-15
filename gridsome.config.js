@@ -3,12 +3,12 @@
 
 const path = require('path')
 
-function addStyleResource (rule) {
+function addStyleResource(rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({
       patterns: [
-				path.resolve(__dirname, './src/assets/scss/_styleResources.scss')
+        path.resolve(__dirname, './src/assets/scss/_styleResources.scss')
       ]
     })
 }
@@ -78,7 +78,11 @@ module.exports = {
     {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
-        id: 48415064
+        id: 48415064,
+        options: {
+          clickmap: true,
+          webvisor: true
+        }
       }
     },
     {
