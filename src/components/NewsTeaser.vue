@@ -1,7 +1,7 @@
 <template>
   <g-link class="a" :to="node.path">
     <figure v-if="node.image" class="figure">
-      <g-image :src="node.image" />
+      <g-image :src="node.image" immediate="false" />
     </figure>
     <h3 class="h3">{{ node.title }}</h3>
   </g-link>
@@ -25,7 +25,7 @@ a.a {
 
   &:hover {
     .figure {
-      @include box-shadow(0 0 30px rgba(0, 0, 0, 0.2));
+      border: 1px solid lighten($red, 10%);
     }
 
     .h3 {
@@ -45,6 +45,6 @@ a.a {
   max-width: 275px;
   position: relative;
   overflow: hidden;
-  @include box-shadow(0 0 20px rgba(0, 0, 0, 0.15));
+  border: 1px solid $gray-300;
 }
 </style>

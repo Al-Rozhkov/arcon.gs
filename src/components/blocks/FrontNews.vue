@@ -1,5 +1,5 @@
 <template>
-  <section class="news-teasers" v-once>
+  <section class="news-teasers">
     <vue-glide type="carousel" bound :breakpoints="breakpoints" :gap="30" :perView="4" :peek="30">
       <vue-glide-slide v-for="(node, index) in $static.news.edges" :key="index" class="item">
         <template v-if="!node.node.nopage">
@@ -77,6 +77,19 @@ export default {
   margin: 0 -15px 3rem;
 }
 
+.news-teasers-header {
+  font-weight: normal;
+  text-align: right;
+  border-bottom: 1px solid $gray-400;
+  position: relative;
+}
+
+.news-all {
+  background: #ffffff;
+  padding: 1rem;
+  margin-top: -2rem;
+}
+
 .item {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -88,7 +101,7 @@ export default {
 }
 
 .glide__arrow {
-  margin-top: -25px;
+  margin-top: -40px;
 }
 
 @include media-breakpoint-up(md) {

@@ -23,8 +23,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'products/categories/*.json',
-        typeName: 'ProductCategory',
-        // route: '/catalog/:type/category/:id'
+        typeName: 'ProductCategory'
       }
     },
     {
@@ -39,7 +38,6 @@ module.exports = {
       options: {
         path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
-        // route: '/catalog/end-mills/:id',
         refs: {
           productCategory: 'ProductCategory',
           productSeriesSet: 'ProductSeriesSet'
@@ -51,7 +49,6 @@ module.exports = {
       options: {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
-        // route: '/catalog/drills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }
@@ -62,7 +59,6 @@ module.exports = {
       options: {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
-        // route: '/catalog/thread-mills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }

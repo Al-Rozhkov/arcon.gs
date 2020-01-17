@@ -2,7 +2,7 @@
   <div class="tile-row services-teasers" v-once>
     <g-link to="/services/resharpen" class="col s">
       <h3 class="h3">
-        <span class="u">Переточка режущего инструмента</span>
+        <span class="u">Восстановление режущего инструмента</span>
       </h3>
       <p>Восстановление всех режущих кромок до&nbsp;первоначального либо близкого к&nbsp;первоначальному состояния.</p>
       <p>Цена переточки составляет от&nbsp;5&nbsp;до&nbsp;30% стоимости нового инструмента.</p>
