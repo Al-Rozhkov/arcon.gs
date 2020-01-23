@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: Al-Rozhkov/arcon.gs
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "series"
+    label: "Серии"
+    folder: "products/series"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - {label: "Идентификатор", name: "id", widget: "string"}

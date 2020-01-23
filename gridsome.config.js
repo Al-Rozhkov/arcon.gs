@@ -111,6 +111,12 @@ module.exports = {
       options: {
         id: 48415064
       }
+    },
+    {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
+      }
     }
   ],
 
