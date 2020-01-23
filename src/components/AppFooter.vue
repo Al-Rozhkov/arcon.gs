@@ -3,7 +3,7 @@
     <div class="cnt">
       <div class="tile-row">
         <div class="fc col-lg-6">
-          © 2015—2019
+          © 2015—2020
           <br />Группа компаний «Аркон»
         </div>
 

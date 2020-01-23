@@ -37,20 +37,16 @@
         angles
       }
       photos,
-      productSeriesSet {
-        set
-      }
+      productSeriesSet { set }
     }
     tools: allProductItemEndMill (
-        filter: { series: { eq: $id } },
-        sortBy: "id", order: ASC
-      ) {
+      filter: { series: { eq: $id } },
+      sortBy: "id", order: ASC
+    ) {
       edges {
         node {
           id
-          series {
-            id
-          }
+          series
           name
           d1
           d2

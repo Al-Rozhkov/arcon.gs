@@ -18,7 +18,7 @@
       <tbody>
         <tr v-for="(row, id) in tools" :key="id" v-tooltip="row.node.tip">
           <td class="tc">
-            <span class="hd">{{ row.node.series.id.toUpperCase() }}</span>
+            <span class="hd">{{ row.node.series.toUpperCase() }}</span>
             <span class="td">{{ row.node.name.toUpperCase() }}</span>
           </td>
           <td v-for="i in fieldsSet" :key="i" class="tc" :class="i">{{ row.node[i] }}</td>

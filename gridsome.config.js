@@ -23,8 +23,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'products/categories/*.json',
-        typeName: 'ProductCategory',
-        // route: '/catalog/:type/category/:id'
+        typeName: 'ProductCategory'
       }
     },
     {
@@ -39,7 +38,6 @@ module.exports = {
       options: {
         path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
-        // route: '/catalog/end-mills/:id',
         refs: {
           productCategory: 'ProductCategory',
           productSeriesSet: 'ProductSeriesSet'
@@ -51,7 +49,6 @@ module.exports = {
       options: {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
-        // route: '/catalog/drills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }
@@ -62,7 +59,6 @@ module.exports = {
       options: {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
-        // route: '/catalog/thread-mills/:id',
         refs: {
           productSeriesSet: 'ProductSeriesSet'
         }
@@ -75,7 +71,7 @@ module.exports = {
         typeName: 'News'
       }
     },
-    {
+    /* {
       use: '~/source-google-docs',
       options: {
         foldersIds: ['0B5byfKNIu897c0FoTkVGOUhFZ3M'],
@@ -83,16 +79,36 @@ module.exports = {
         clientSecret: 'Ky-IcErC7kMpMX70iqXNCyKe',
         apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
       },
+    }, */
+    {
+      use: '~/source-google-sheets',
+      options: {
+        spreadsheetId: '10QZNaQOfYEDS48aYu-9HIO_SO-Tpi1YHcHYqMh0F7v0',
+        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        typeName: 'ProductItemEndMill'
+      }
+    },
+    {
+      use: '~/source-google-sheets',
+      options: {
+        spreadsheetId: '1Ro0mRPX_5oo45aB60O1fnaaE5NlnjM8GAf_MAWBubkU',
+        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        typeName: 'ProductItemDrill'
+      }
+    },
+    {
+      use: '~/source-google-sheets',
+      options: {
+        spreadsheetId: '12jylV2Gd5PQPgSgIsZsI4rlfo9nOTsAmtIxuQ9e8JqQ',
+        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        typeName: 'ProductItemThreadMill'
+      }
     },
     {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
         id: 48415064
       }
-    },
-    {
-      use: '~/source-xls',
-      options: {}
     }
   ],
 

@@ -30,15 +30,13 @@ query Tool ($path: String, $id: String!) {
     }
   }
   tools: allProductItemThreadMill (
-      filter: { series: { eq: $id } },
-      sortBy: "id", order: ASC
-    ) {
+    filter: { series: { eq: $id } },
+    sortBy: "id", order: ASC
+  ) {
     edges {
       node {
         id
-        series {
-          id
-        }
+        series
         name
         step
         thread

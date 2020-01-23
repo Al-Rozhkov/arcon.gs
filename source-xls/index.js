@@ -20,24 +20,21 @@ module.exports = function (api) {
     // Thread Mills
     
     // Product items. Mills
-    const ProductItemEndMill = addCollection({
+    /* const ProductItemEndMill = addCollection({
       typeName: 'ProductItemEndMill'
     })
-    ProductItemEndMill.addReference('series', 'ProductEndMill')
-    createNodes(ProductItemEndMill, 'products/product-items/mills.xls')
+    createNodes(ProductItemEndMill, 'products/product-items/mills.xls') */
 
     // Product items. Drills
-    const ProductItemDrill = addCollection({
+    /* const ProductItemDrill = addCollection({
       typeName: 'ProductItemDrill'
     })
-    ProductItemDrill.addReference('series', 'ProductDrill')
-    createNodes(ProductItemDrill, 'products/product-items/drills.xls')
+    createNodes(ProductItemDrill, 'products/product-items/drills.xls') */
 
     // Product items. Thread mills
     const ProductItemThreadMills = addCollection({
       typeName: 'ProductItemThreadMill'
     })
-    ProductItemThreadMills.addReference('series', 'ProductThreadMill')
     createNodes(ProductItemThreadMills, 'products/product-items/thread-mills.xls')
 
   })

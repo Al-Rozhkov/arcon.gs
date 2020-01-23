@@ -40,15 +40,13 @@
       }
     }
     tools: allProductItemDrill (
-        filter: { series: { eq: $id } },
-        sortBy: "id", order: ASC
-      ) {
+      filter: { series: { eq: $id } },
+      sortBy: "id", order: ASC
+    ) {
       edges {
         node {
           id
-          series {
-            id
-          }
+          series
           name
           a
           d1
