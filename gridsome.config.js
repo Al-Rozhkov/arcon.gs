@@ -2,6 +2,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const path = require('path')
+const GOOGLE_API_KEY = 'AIzaSyAl18vUoRtNKHSJ-f8aPfqeRXBfpVfvjlw'
 
 function addStyleResource (rule) {
   rule.use('style-resource')
@@ -20,9 +21,10 @@ module.exports = {
 
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '~/plugins/source-google-sheets',
       options: {
-        path: 'products/categories/*.json',
+        spreadsheetId: '13GOZ5YNID_fRCsPTy-okHjYutvEGP4beBPH2nwu8ztM',
+        apiKey: GOOGLE_API_KEY,
         typeName: 'ProductCategory'
       }
     },
@@ -81,26 +83,26 @@ module.exports = {
       },
     }, */
     {
-      use: '~/source-google-sheets',
+      use: '~/plugins/source-google-sheets',
       options: {
-        spreadsheetId: '10QZNaQOfYEDS48aYu-9HIO_SO-Tpi1YHcHYqMh0F7v0',
-        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        spreadsheetId: '13M6Antl-Sm50BVeSVSVqDiI3QPMY_GPK9qrrjO3WfLk',
+        apiKey: GOOGLE_API_KEY,
         typeName: 'ProductItemEndMill'
       }
     },
     {
-      use: '~/source-google-sheets',
+      use: '~/plugins/source-google-sheets',
       options: {
-        spreadsheetId: '1Ro0mRPX_5oo45aB60O1fnaaE5NlnjM8GAf_MAWBubkU',
-        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        spreadsheetId: '1JlzrzNqV_qnh28GJkbC5s4l4kHaqP39GdGMhkh3nE4A',
+        apiKey: GOOGLE_API_KEY,
         typeName: 'ProductItemDrill'
       }
     },
     {
-      use: '~/source-google-sheets',
+      use: '~/plugins/source-google-sheets',
       options: {
-        spreadsheetId: '12jylV2Gd5PQPgSgIsZsI4rlfo9nOTsAmtIxuQ9e8JqQ',
-        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
+        spreadsheetId: '1YeOBK9pVCCHtXGoNmhZH8P2ZJL9qGxK6IwmdBfpB9bc',
+        apiKey: GOOGLE_API_KEY,
         typeName: 'ProductItemThreadMill'
       }
     },
