@@ -41,7 +41,8 @@ collections:
         required: false
         multiple: true
         options: *usageOptions
-      - &fieldCoating label: "Покрытие"
+      - &fieldCoating
+        label: "Покрытие"
         name: "coating"
         widget: "select"
         required: false
@@ -50,7 +51,8 @@ collections:
           - {label: "TiAlN", value: "tan"}
           - {label: "TiN", value: "tin"}
           - {label: "PurePolish (полировка)", value: "pp"}
-      - &fieldTail label: "Хвостовик"
+      - &fieldTail
+        label: "Хвостовик"
         name: "tail"
         widget: "select"
         required: false
@@ -69,7 +71,8 @@ collections:
           - { label: "Торец с фаской chх45˚", value: "rect-f" }
           - { label: "Радиусной торец", value: "radius" }
           - { label: "Сферический торец", value: "sphere" }
-      - &fieldCuttingShapes label: "Форма режущей части"
+      - &fieldCuttingShapes
+        label: "Форма режущей части"
         name: "cuttingShapes"
         widget: "select"
         required: false
