@@ -7,9 +7,16 @@ public_folder: "/uploads"
 
 collections:
   - name: "series"
-    label: "Серии"
-    folder: "products/series"
+    label: "Серии фрез"
+    extension: "json"
+    folder: "products/series/end-mills"
+    path: "{{productCategory}}/{{slug}}"
     create: true
     slug: "{{id}}"
     fields:
       - {label: "Идентификатор", name: "id", widget: "string"}
+      - {label: "Описание", name: "body", widget: "text"}
+      - {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - {label: "Покрытие", name: "coating", widget: "select", options: ["ng", "tan", "tin", "pp"]}
+      - {label: "Хвостовик", name: "tail", widget: "select", options: ["cylinder", "weldon"]}
+      
