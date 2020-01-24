@@ -8,7 +8,7 @@ public_folder: "/uploads"
 publish_mode: editorial_workflow
 
 collections:
-  - name: "series"
+  - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
     folder: "products/series/end-mills"
@@ -16,11 +16,10 @@ collections:
     create: true
     slug: "{{id}}"
     identifier_field: id
-    summary: "{{body}}"
     fields:
-      - {label: "Идентификатор", name: "id", widget: "string"}
-      - {label: "Описание", name: "body", widget: "text"}
-      - {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
+      - &fieldBody {label: "Описание", name: "body", widget: "text"}
+      - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
       - label: "Основное применение"
         name: "mainUsage"
         widget: "select"
@@ -42,7 +41,7 @@ collections:
         required: false
         multiple: true
         options: *usageOptions
-      - label: "Покрытие"
+      - &fieldCoating label: "Покрытие"
         name: "coating"
         widget: "select"
         required: false
@@ -51,10 +50,11 @@ collections:
           - {label: "TiAlN", value: "tan"}
           - {label: "TiN", value: "tin"}
           - {label: "PurePolish (полировка)", value: "pp"}
-      - label: "Хвостовик"
+      - &fieldTail label: "Хвостовик"
         name: "tail"
         widget: "select"
         required: false
+        default: "cylinder"
         options:
           - { label: "Цилиндрический", value: "cylinder" }
           - { label: "Weldon", value: "weldon" }
@@ -69,4 +69,83 @@ collections:
           - { label: "Торец с фаской chх45˚", value: "rect-f" }
           - { label: "Радиусной торец", value: "radius" }
           - { label: "Сферический торец", value: "sphere" }
-      
+      - &fieldCuttingShapes label: "Форма режущей части"
+        name: "cuttingShapes"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Конус", value: "conus" }
+          - { label: "С внутренним радиусом", value: "inner-radius" }
+          - { label: "Т-образная режущая часть", value: "t" }
+  - name: "drills"
+    label: "Серии сверл"
+    extension: "json"
+    folder: "products/series/drills"
+    path: "{{productCategory}}/{{slug}}"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    fields:
+      - *fieldId
+      - *fieldBody
+      - *fieldProductCategory
+      - label: "Основное применение"
+        name: "mainUsage"
+        widget: "select"
+        multiple: true
+        options: &usageOptions
+          - {label: "Углеродистая и легированная сталь", value: "p"}
+          - {label: "Чугун", value: "k"}
+          - {label: "Нержавеющая сталь", value: "m"}
+          - {label: "Закаленная сталь", value: "h"}
+          - {label: "Закаленная сталь h1.1", value: "h1.1"}
+          - {label: "Закаленная сталь h1.2", value: "h1.2"}
+          - {label: "Цветные металлы", value: "n"}
+          - {label: "Сплавы на основе алюминия", value: "n1"}
+          - {label: "Сплавы на основе меди", value: "n3"}
+          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+      - label: "Возможное применение"
+        name: "possibleUsage"
+        widget: "select"
+        required: false
+        multiple: true
+        options: *usageOptions
+      - *fieldCoating
+      - *fieldTail
+      - *fieldCuttingShapes
+  - name: "thread-mills"
+    label: "Серии резьбовых фрез"
+    extension: "json"
+    folder: "products/series/thread-mills"
+    path: "{{productCategory}}/{{slug}}"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    fields:
+      - *fieldId
+      - *fieldBody
+      - *fieldProductCategory
+      - label: "Основное применение"
+        name: "mainUsage"
+        widget: "select"
+        multiple: true
+        options: &usageOptions
+          - {label: "Углеродистая и легированная сталь", value: "p"}
+          - {label: "Чугун", value: "k"}
+          - {label: "Нержавеющая сталь", value: "m"}
+          - {label: "Закаленная сталь", value: "h"}
+          - {label: "Закаленная сталь h1.1", value: "h1.1"}
+          - {label: "Закаленная сталь h1.2", value: "h1.2"}
+          - {label: "Цветные металлы", value: "n"}
+          - {label: "Сплавы на основе алюминия", value: "n1"}
+          - {label: "Сплавы на основе меди", value: "n3"}
+          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+      - label: "Возможное применение"
+        name: "possibleUsage"
+        widget: "select"
+        required: false
+        multiple: true
+        options: *usageOptions
+      - *fieldCoating
+      - *fieldTail
+      - *fieldCuttingShapes
