@@ -5,8 +5,8 @@ backend:
   squash_merges: true
 
 site_id: "arconit.netlify.com"
-media_folder: "static"
-public_folder: "/"
+media_folder: "static/uploads"
+public_folder: "/uploads"
 publish_mode: editorial_workflow
 
 collections:
@@ -65,7 +65,7 @@ collections:
           - {label: "Обозначение", name: "name", widget: string, default: "a"}
           - {label: "Схема", name: "scheme", widget: string}
       - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
-      - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false}
+      - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false, required: false}
       - &fieldMainUsage
         label: "Основное применение"
         name: "mainUsage"
