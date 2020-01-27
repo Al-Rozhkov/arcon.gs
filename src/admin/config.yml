@@ -47,18 +47,16 @@ collections:
     create: true
     # slug: "{{id}}"
     identifier_field: id
-    media_folder: '/img'
+    media_folder: ''
     fields:
       - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
       # - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "relation", collection: "categories", valueField: "id", searchFields: ["id", "title"], displayFields: ["title"]}
-      - label: "Фотографии"
+      - &fieldRelativePhotos
+        label: "Фотографии"
         name: "photos"
-        widget: "image"
-        allow_multiple: true
-        media_library:
-          config:
-            multiple: true
+        widget: list
+        field: {label: Изображение, name: image, widget: image}
       - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
       - &fieldMainUsage
         label: "Основное применение"
@@ -127,10 +125,12 @@ collections:
         name: "cuttingPartLength"
         widget: "select"
         required: false
+        multiple: true
         options:
           - { label: "Короткая", value: "short" }
           - { label: "Средняя", value: "middle" }
           - { label: "Длинная", value: "long" }
+      - &fieldProductSeriesSet {label: "Набор параметров", name: "productSeriesSet", widget: "text"}
 
   - name: "drills"
     label: "Серии сверл"
@@ -144,14 +144,7 @@ collections:
     fields:
       - *fieldId
       - *fieldBody
-      - &fieldRelativePhotos
-        label: "Фотографии"
-        name: "photos"
-        widget: "image"
-        allow_multiple: true
-        media_library:
-          config:
-            multiple: true
+      - *fieldRelativePhotos
       - *fieldProductCategory
       - *fieldMainUsage
       - *fieldPossibleUsage
@@ -159,6 +152,7 @@ collections:
       - *fieldTail
       - *fieldCuttingShapes
       - *fieldCuttingPartLength
+      - *fieldProductSeriesSet
 
   - name: "thread-mills"
     label: "Серии резьбовых фрез"
@@ -179,3 +173,4 @@ collections:
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
+      - *fieldProductSeriesSet
