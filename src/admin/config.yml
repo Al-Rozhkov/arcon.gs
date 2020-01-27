@@ -23,6 +23,18 @@ collections:
       - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
       - { label: 'Текст', name: 'body', widget: 'markdown'}
+  - name: "categories"
+    label: "Категории каталога"
+    label_singular: "Категория"
+    extension: "json"
+    folder: "products/categories"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
+      - *fieldTitle
+      - {label: "Короткий заголовок", name: "short", widget: "string"}
+      - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
   - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
@@ -32,9 +44,9 @@ collections:
     slug: "{{id}}"
     identifier_field: id
     fields:
-      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
+      - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
-      - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "relation", collection: "categories", valueField: "id", searchFields: ["id", "title"], displayFields: ["title"]}
       - label: "Основное применение"
         name: "mainUsage"
         widget: "select"
@@ -50,7 +62,8 @@ collections:
           - {label: "Сплавы на основе алюминия", value: "n1"}
           - {label: "Сплавы на основе меди", value: "n3"}
           - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
-      - label: "Возможное применение"
+      - &fieldPossibleUsage
+        label: "Возможное применение"
         name: "possibleUsage"
         widget: "select"
         required: false
@@ -122,12 +135,7 @@ collections:
           - {label: "Сплавы на основе алюминия", value: "n1"}
           - {label: "Сплавы на основе меди", value: "n3"}
           - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
-      - label: "Возможное применение"
-        name: "possibleUsage"
-        widget: "select"
-        required: false
-        multiple: true
-        options: *usageOptions
+      - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
@@ -158,12 +166,7 @@ collections:
           - {label: "Сплавы на основе алюминия", value: "n1"}
           - {label: "Сплавы на основе меди", value: "n3"}
           - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
-      - label: "Возможное применение"
-        name: "possibleUsage"
-        widget: "select"
-        required: false
-        multiple: true
-        options: *usageOptions
+      - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
