@@ -1,41 +1,44 @@
 {
-    "id": "1c212",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
-    "productCategory": "stainless-steel",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "cylinder-r"
-        }
-    ],
-    "mainUsage": [
-        "m",
-        "s"
-    ],
-    "possibleUsage": [
-        "p"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": {
-        "type": "variable",
-        "angles": [
-            42,
-            45
-        ]
-    },
-    "cuttingPartLength": [
-        "middle",
-        "long"
-    ],
-    "productSeriesSet": "simple"
+  "photos": [
+    "1c212.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": {
+    "type": "variable",
+    "angles": [
+      42,
+      45
+    ]
+  },
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-f"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c212",
+  "productSeriesSet": "simple"
 }
