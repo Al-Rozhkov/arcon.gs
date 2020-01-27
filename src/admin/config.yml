@@ -47,7 +47,7 @@ collections:
     create: true
     # slug: "{{id}}"
     identifier_field: id
-    media_folder: 'img'
+    media_folder: '/img'
     fields:
       - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
@@ -55,6 +55,7 @@ collections:
       - label: "Фотографии"
         name: "photos"
         widget: "image"
+        allow_multiple: true
         media_library:
           config:
             multiple: true
@@ -121,6 +122,15 @@ collections:
           - { label: "Конус", value: "conus" }
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
+      - &fieldCuttingPartLength
+        label: "Длина режущей части"
+        name: "cuttingPartLength"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Короткая", value: "short" }
+          - { label: "Средняя", value: "middle" }
+          - { label: "Длинная", value: "long" }
 
   - name: "drills"
     label: "Серии сверл"
@@ -138,6 +148,7 @@ collections:
         label: "Фотографии"
         name: "photos"
         widget: "image"
+        allow_multiple: true
         media_library:
           config:
             multiple: true
@@ -147,6 +158,7 @@ collections:
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
+      - *fieldCuttingPartLength
 
   - name: "thread-mills"
     label: "Серии резьбовых фрез"
