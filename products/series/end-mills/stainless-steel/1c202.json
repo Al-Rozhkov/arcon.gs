@@ -1,47 +1,50 @@
 {
-    "id": "1c202",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
-    "productCategory": "stainless-steel",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-r"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-r"
-        }
-    ],
-    "mainUsage": [
-        "m",
-        "s"
-    ],
-    "possibleUsage": [
-        "p",
-        "k",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-r"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": {
-        "type": "variable",
-        "angles": [
-            42,
-            45
-        ]
+  "photos": [
+    "1c202.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
     },
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "productSeriesSet": "set-r"
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": {
+    "type": "variable",
+    "angles": [
+      42,
+      45
+    ]
+  },
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "k",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c202",
+  "productSeriesSet": "set-r"
 }
