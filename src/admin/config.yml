@@ -8,6 +8,20 @@ public_folder: "/uploads"
 publish_mode: editorial_workflow
 
 collections:
+  - name: "news"
+    label: "Новости"
+    label_singular: "Новость"
+    extension: "md"
+    folder: "news"
+    create: true
+    path: "{{year}}/{{month}}-{{day}}"
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
+      - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
+      - { label: 'Текст', name: 'body', widget: 'markdown'}
   - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
