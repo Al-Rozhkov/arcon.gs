@@ -1,46 +1,49 @@
 {
-    "id": "1s271",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
-    "productCategory": "stainless-steel",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "sphere-conus-lower"
-        },
-        {
-            "name": "b",
-            "scheme": "sphere-lower"
-        }
-    ],
-    "mainUsage": [
-        "m",
-        "p",
-        "s"
-    ],
-    "possibleUsage": [
-        "k",
-        "n3"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "sphere"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": {
-        "type": "permanent",
-        "angles": [
-            45
-        ]
+  "photos": [
+    "1s271.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "sphere-conus-lower"
     },
-    "cuttingPartLength": [
-        "short",
-        "middle"
-    ],
-    "productSeriesSet": "lower-r"
+    {
+      "name": "b",
+      "scheme": "sphere-lower"
+    }
+  ],
+  "grooveInclination": {
+    "type": "permanent",
+    "angles": [
+      45
+    ]
+  },
+  "mainUsage": [
+    "m",
+    "p",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "sphere"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "k",
+    "n3"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1s271",
+  "productSeriesSet": "lower-r"
 }
