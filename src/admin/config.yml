@@ -57,6 +57,13 @@ collections:
         name: "photos"
         widget: list
         field: {label: Изображение, name: image, widget: image}
+      - &fieldScheme
+        label: "Схема"
+        name: "scheme"
+        widget: "list"
+        fields:
+          - {label: "Обозначение", name: "name", widget: string, default: "a"}
+          - {label: "Схема", name: "scheme", widget: string}
       - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
       - &fieldMainUsage
         label: "Основное применение"
@@ -120,6 +127,20 @@ collections:
           - { label: "Конус", value: "conus" }
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
+      - &fieldCogs
+        label: "Зубья"
+        name: "cogs"
+        widget: "list"
+        fields:
+          - label: "Шаг"
+            name: "cogsPitch"
+            widget: "select"
+            default: "variable"
+            options:
+            - { label: "Постоянный", value: "permanent" }
+            - { label: "Переменный", value: "variable" }
+          - {label: "Количество", name: "cogsNumber", widget: "number", valueType: "int", min: 1}
+          - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false}
       - &fieldCuttingPartLength
         label: "Длина режущей части"
         name: "cuttingPartLength"
@@ -130,7 +151,7 @@ collections:
           - { label: "Короткая", value: "short" }
           - { label: "Средняя", value: "middle" }
           - { label: "Длинная", value: "long" }
-      - &fieldProductSeriesSet {label: "Набор параметров", name: "productSeriesSet", widget: "text"}
+      - &fieldProductSeriesSet {label: "Набор параметров", name: "productSeriesSet", widget: "string"}
 
   - name: "drills"
     label: "Серии сверл"
@@ -145,12 +166,14 @@ collections:
       - *fieldId
       - *fieldBody
       - *fieldRelativePhotos
+      - *fieldScheme
       - *fieldProductCategory
       - *fieldMainUsage
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
+      - *fieldCogs
       - *fieldCuttingPartLength
       - *fieldProductSeriesSet
 
@@ -167,6 +190,7 @@ collections:
       - *fieldId
       - *fieldBody
       - *fieldRelativePhotos
+      - *fieldScheme
       - *fieldProductCategory
       - *fieldMainUsage
       - *fieldPossibleUsage
