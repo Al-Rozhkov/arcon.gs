@@ -14,12 +14,13 @@ collections:
     extension: "md"
     folder: "news"
     create: true
-    path: "{{year}}/{{month}}-{{day}}"
+    path: "{{year}}/{{month}}-{{day}}/index"
     media_folder: ''
     public_folder: ''
     fields:
       - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
+      - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
       - { label: 'Текст', name: 'body', widget: 'markdown'}
   - name: "end-mills"
