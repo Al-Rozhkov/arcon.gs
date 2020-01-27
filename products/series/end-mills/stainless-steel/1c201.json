@@ -1,42 +1,45 @@
 {
-    "id": "1c201",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
-    "productCategory": "stainless-steel",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "cylinder-lower-r"
-        }
-    ],
-    "mainUsage": [
-        "m",
-        "s"
-    ],
-    "possibleUsage": [
-        "s",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-r"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": {
-        "type": "variable",
-        "angles": [
-            42,
-            45
-        ]
-    },
-    "cuttingPartLength": [
-        "short"
-    ],
-    "productSeriesSet": "lower-r"
+  "photos": [
+    "1c201.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-lower-r"
+    }
+  ],
+  "grooveInclination": {
+    "type": "variable",
+    "angles": [
+      42,
+      45
+    ]
+  },
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "short"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c201",
+  "productSeriesSet": "lower-r"
 }
