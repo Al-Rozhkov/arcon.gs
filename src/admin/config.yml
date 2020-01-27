@@ -20,6 +20,7 @@ collections:
       - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Короткий заголовок", name: "short", widget: "string"}
       - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
+
   - name: "news"
     label: "Новости"
     label_singular: "Новость"
@@ -35,6 +36,7 @@ collections:
       - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
       - { label: 'Текст', name: 'body', widget: 'markdown'}
+
   - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
@@ -110,6 +112,7 @@ collections:
           - { label: "Конус", value: "conus" }
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
+
   - name: "drills"
     label: "Серии сверл"
     extension: "json"
@@ -127,14 +130,15 @@ collections:
         name: "photos"
         widget: "image"
         media_library:
-        config:
-          multiple: true
+          config:
+            multiple: true
       - *fieldProductCategory
       - *fieldMainUsage
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
+
   - name: "thread-mills"
     label: "Серии резьбовых фрез"
     extension: "json"
