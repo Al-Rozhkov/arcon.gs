@@ -1,6 +1,9 @@
 {
     "id": "1c009",
     "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью.",
+    "photos": [
+        "./1c009.jpg"
+    ],
     "productCategory": "steel-carbon",
     "fusion": true,
     "scheme": [

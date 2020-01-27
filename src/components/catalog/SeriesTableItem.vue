@@ -3,7 +3,6 @@
     <td class="td td-flex">
       <g-link :to="node.path" class="link-flex">
         <h2 class="h2">{{ node.id.toUpperCase() }}</h2>
-        <g-image v-if="node.productImg && node.productImg.length > 0" :src="node.productImg[0]" class="ill" />
         <g-image v-if="node.photos && node.photos.length > 0" :src="node.photos[0]" class="ill" />
       </g-link>
     </td>

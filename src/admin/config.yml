@@ -65,6 +65,7 @@ collections:
           - {label: "Обозначение", name: "name", widget: string, default: "a"}
           - {label: "Схема", name: "scheme", widget: string}
       - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false}
       - &fieldMainUsage
         label: "Основное применение"
         name: "mainUsage"
@@ -132,6 +133,7 @@ collections:
         name: "cogs"
         widget: "list"
         fields:
+          - {label: "Количество", name: "cogsNumber", widget: "number", valueType: "int", min: 1}
           - label: "Шаг"
             name: "cogsPitch"
             widget: "select"
@@ -139,7 +141,6 @@ collections:
             options:
             - { label: "Постоянный", value: "permanent" }
             - { label: "Переменный", value: "variable" }
-          - {label: "Количество", name: "cogsNumber", widget: "number", valueType: "int", min: 1}
           - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false}
       - &fieldCuttingPartLength
         label: "Длина режущей части"

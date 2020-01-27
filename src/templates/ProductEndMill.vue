@@ -15,7 +15,7 @@
     series: productEndMill (path: $path) {
       id
       fusion
-      productImg (width: 800, quality: 75)
+      photos (width: 800, quality: 75)
       body
       scheme {
         name
@@ -36,7 +36,6 @@
         type
         angles
       }
-      photos,
       productSeriesSet { set }
     }
     tools: allProductItemEndMill (

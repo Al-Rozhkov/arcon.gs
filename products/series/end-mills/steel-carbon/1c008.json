@@ -1,6 +1,9 @@
 {
     "id": "1c008",
     "body": "Цельная твердосплавная концевая фреза, 2 зуба, 1C008 со средней режущей частью.",
+    "photos": [
+        "./1c008.jpg"
+    ],
     "productCategory": "steel-carbon",
     "fusion": true,
     "scheme": [
