@@ -8,6 +8,18 @@ public_folder: "/uploads"
 publish_mode: editorial_workflow
 
 collections:
+  - name: "categories"
+    label: "Категории каталога"
+    label_singular: "Категория"
+    extension: "json"
+    folder: "products/categories"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
+      - *fieldTitle
+      - {label: "Короткий заголовок", name: "short", widget: "string"}
+      - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
   - name: "news"
     label: "Новости"
     label_singular: "Новость"
@@ -23,18 +35,6 @@ collections:
       - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
       - { label: 'Текст', name: 'body', widget: 'markdown'}
-  - name: "categories"
-    label: "Категории каталога"
-    label_singular: "Категория"
-    extension: "json"
-    folder: "products/categories"
-    create: true
-    slug: "{{id}}"
-    fields:
-      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
-      - *fieldTitle
-      - {label: "Короткий заголовок", name: "short", widget: "string"}
-      - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
   - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
@@ -46,8 +46,10 @@ collections:
     fields:
       - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
-      - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "relation", collection: "categories", valueField: "id", searchFields: ["id", "title"], displayFields: ["title"]}
-      - label: "Основное применение"
+      # - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "relation", collection: "categories", valueField: "id", searchFields: ["id", "title"], displayFields: ["title"]}
+      - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - &fieldMainUsage
+        label: "Основное применение"
         name: "mainUsage"
         widget: "select"
         multiple: true
@@ -112,29 +114,23 @@ collections:
     label: "Серии сверл"
     extension: "json"
     folder: "products/series/drills"
-    path: "{{productCategory}}/{{slug}}"
     create: true
     slug: "{{id}}"
     identifier_field: id
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldId
       - *fieldBody
+      - &fieldRelativePhotos
+        label: "Фотографии"
+        name: "photos"
+        widget: "image"
+        media_library:
+        config:
+          multiple: true
       - *fieldProductCategory
-      - label: "Основное применение"
-        name: "mainUsage"
-        widget: "select"
-        multiple: true
-        options: &usageOptions
-          - {label: "Углеродистая и легированная сталь", value: "p"}
-          - {label: "Чугун", value: "k"}
-          - {label: "Нержавеющая сталь", value: "m"}
-          - {label: "Закаленная сталь", value: "h"}
-          - {label: "Закаленная сталь h1.1", value: "h1.1"}
-          - {label: "Закаленная сталь h1.2", value: "h1.2"}
-          - {label: "Цветные металлы", value: "n"}
-          - {label: "Сплавы на основе алюминия", value: "n1"}
-          - {label: "Сплавы на основе меди", value: "n3"}
-          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+      - *fieldMainUsage
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
@@ -143,29 +139,17 @@ collections:
     label: "Серии резьбовых фрез"
     extension: "json"
     folder: "products/series/thread-mills"
-    path: "{{productCategory}}/{{slug}}"
     create: true
     slug: "{{id}}"
     identifier_field: id
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldId
       - *fieldBody
+      - *fieldRelativePhotos
       - *fieldProductCategory
-      - label: "Основное применение"
-        name: "mainUsage"
-        widget: "select"
-        multiple: true
-        options: &usageOptions
-          - {label: "Углеродистая и легированная сталь", value: "p"}
-          - {label: "Чугун", value: "k"}
-          - {label: "Нержавеющая сталь", value: "m"}
-          - {label: "Закаленная сталь", value: "h"}
-          - {label: "Закаленная сталь h1.1", value: "h1.1"}
-          - {label: "Закаленная сталь h1.2", value: "h1.2"}
-          - {label: "Цветные металлы", value: "n"}
-          - {label: "Сплавы на основе алюминия", value: "n1"}
-          - {label: "Сплавы на основе меди", value: "n3"}
-          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+      - *fieldMainUsage
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail

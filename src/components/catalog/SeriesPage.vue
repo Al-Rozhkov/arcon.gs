@@ -9,8 +9,14 @@
       </div>
 
       <g-image
-        v-if="node.productImg.length > 0"
+        v-if="node.productImg && node.productImg.length > 0"
         :src="node.productImg[0]"
+        :alt="node.id"
+        class="series-img"
+      />
+      <g-image
+        v-if="node.photos && node.photos.length > 0"
+        :src="node.photos[0]"
         :alt="node.id"
         class="series-img"
       />

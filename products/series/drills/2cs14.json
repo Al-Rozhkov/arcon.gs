@@ -1,6 +1,9 @@
 {
-    "id": "2cs13",
+    "id": "2cs14",
     "body": "Цельное твердосплавное центровочное сверло, 90°, 120° и 142°. 2CS средняя, длинная и сверхдлинная серии.",
+    "photos": [
+        "./2cs.jpg"
+    ],
     "productCategory": "drill-center",
     "scheme": [
         {
@@ -13,9 +16,6 @@
     ],
     "possibleUsage": [
         "p"
-    ],
-    "photos": [
-        "2cs"
     ],
     "tail": "cylinder",
     "cuttingShapes": [

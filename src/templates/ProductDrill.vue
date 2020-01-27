@@ -14,7 +14,7 @@
   query Tool ($path: String, $id: String!) {
     series: productDrill (path: $path) {
       id
-      productImg (width: 800, quality: 75)
+      photos (width: 800, quality: 75)
       body
       scheme {
         name
@@ -34,7 +34,6 @@
         type
         angles
       }
-      photos,
       productSeriesSet {
         set
       }

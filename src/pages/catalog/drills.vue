@@ -17,7 +17,7 @@ query Catalog {
       node {
         id
         path
-        productImg (width: 260, quality: 75)
+        photos (width: 260, quality: 75)
         mainUsage
         possibleUsage
         cuttingPartLength

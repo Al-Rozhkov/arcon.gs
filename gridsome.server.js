@@ -11,7 +11,7 @@ const getPath = (fileName) => path.join(__dirname, 'static', 'img', 'series', `$
 
 module.exports = function (api) {
   api.loadSource(store => {
-    const productTypes = ['ProductEndMill', 'ProductDrill', 'ProductThreadMill']
+    const productTypes = ['ProductEndMill']
     for (let i = 0, len = productTypes.length; i < len; i++) {
       
       store.addSchemaResolvers({
