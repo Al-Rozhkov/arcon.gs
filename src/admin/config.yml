@@ -1,10 +1,12 @@
 backend:
   name: github
   repo: Al-Rozhkov/arcon.gs
+  branch: google-docs
   squash_merges: true
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+site_id: "arconit.netlify.com"
+media_folder: "static"
+public_folder: "/"
 publish_mode: editorial_workflow
 
 collections:
@@ -43,12 +45,19 @@ collections:
     folder: "products/series/end-mills"
     path: "{{productCategory}}/{{slug}}"
     create: true
-    slug: "{{id}}"
+    # slug: "{{id}}"
     identifier_field: id
+    media_folder: 'img'
     fields:
       - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
       # - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "relation", collection: "categories", valueField: "id", searchFields: ["id", "title"], displayFields: ["title"]}
+      - label: "Фотографии"
+        name: "photos"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
       - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
       - &fieldMainUsage
         label: "Основное применение"
