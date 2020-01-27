@@ -31,7 +31,7 @@ collections:
     create: true
     path: "{{year}}/{{month}}-{{day}}/index"
     media_folder: ''
-    public_folder: ''
+    public_folder: './'
     fields:
       - *fieldTitle
       - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
@@ -48,6 +48,7 @@ collections:
     # slug: "{{id}}"
     identifier_field: id
     media_folder: ''
+    public_folder: './'
     fields:
       - *fieldId
       - &fieldBody {label: "Описание", name: "body", widget: "text"}
