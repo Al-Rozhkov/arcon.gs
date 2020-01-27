@@ -141,7 +141,18 @@ collections:
             options:
             - { label: "Постоянный", value: "permanent" }
             - { label: "Переменный", value: "variable" }
-          - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false}
+          - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false, required: false}
+      - &fieldGrooveInclination
+        label: "Угол наклона спиральной канавки"
+        name: "grooveInclination"
+        widget: "object"
+        fields:
+          - {label: "Количество", name: "type", widget: "string"}
+          - label: "Углы"
+            name: "angles"
+            widget: "list"
+            field:
+            - {label: "Угол", name: "angle", widget: "number", valueType: "float"}
       - &fieldCuttingPartLength
         label: "Длина режущей части"
         name: "cuttingPartLength"
@@ -175,6 +186,7 @@ collections:
       - *fieldTail
       - *fieldCuttingShapes
       - *fieldCogs
+      - *fieldGrooveInclination
       - *fieldCuttingPartLength
       - *fieldProductSeriesSet
 
@@ -194,7 +206,6 @@ collections:
       - *fieldScheme
       - *fieldProductCategory
       - *fieldMainUsage
-      - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
       - *fieldCuttingShapes
