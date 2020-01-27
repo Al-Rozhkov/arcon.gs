@@ -17,7 +17,7 @@ collections:
     slug: "{{id}}"
     fields:
       - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
-      - *fieldTitle
+      - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Короткий заголовок", name: "short", widget: "string"}
       - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
   - name: "news"
@@ -30,7 +30,7 @@ collections:
     media_folder: ''
     public_folder: ''
     fields:
-      - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
+      - *fieldTitle
       - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
       - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
