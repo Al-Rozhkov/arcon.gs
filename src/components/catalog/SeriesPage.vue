@@ -83,7 +83,7 @@
                   v-for="(c, index) in node.cogs"
                   :key="index"
                   class="dd-li"
-                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
+                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.noCuttingCenter) }}</li>
               </ul>
             </template>
 
@@ -176,9 +176,7 @@ export default {
       },
       cogsDesc: {
         variable: 'переменный шаг',
-        permanent: 'постоянный шаг',
-        overlap: 'с перекрытием центра',
-        base: 'без режущего центра'
+        permanent: 'постоянный шаг'
       }
     }
   },
@@ -218,7 +216,7 @@ export default {
     },
 
     getCogsCenterLabel(s) {
-      return s === 'overlap' ? 'с перекрытием центра' : 'без режущего центра'
+      return s ? 'без режущего центра' : 'с перекрытием центра'
     },
 
     printIt() {

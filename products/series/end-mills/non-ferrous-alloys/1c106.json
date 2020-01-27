@@ -26,8 +26,7 @@
     "cogs": [
         {
             "cogsPitch": "variable",
-            "cogsNumber": 4,
-            "cogsCenter": "overlap"
+            "cogsNumber": 4
         }
     ],
     "grooveInclination": {

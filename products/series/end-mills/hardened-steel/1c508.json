@@ -20,7 +20,8 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsNumber": 10
+            "cogsNumber": 10,
+            "noCuttingCenter": true
         }
     ],
     "grooveInclination": {

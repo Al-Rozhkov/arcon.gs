@@ -30,8 +30,8 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsCenter": "overlap",
-            "cogsNumber": 2
+            "cogsNumber": 2,
+            "noCuttingCenter": false
         }
     ],
     "grooveInclination": {

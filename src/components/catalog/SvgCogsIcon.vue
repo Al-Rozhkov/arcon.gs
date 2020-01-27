@@ -40,13 +40,12 @@ export default {
 
   computed: {
     iconId() {
-      return !this.cogs.cogsCenter ? 'cogs-base' : 'cogs-center-overlap'
-      // return this.cogs.cogsCenter === 'overlap' ? 'cogs-center-overlap' : 'cogs-center-cut'
+      return this.cogs.noCuttingCenter ? 'cogs-base' : 'cogs-center-overlap'
     },
     
     tooltipText() {
       const pitch = (this.cogs.cogsPitch === 'variable') ? 'Переменный шаг зубьев' : 'Постоянный шаг зубьев'
-      const center = (this.cogs.cogsCenter === 'overlap') ? 'С перекрытием центра' : 'Без режущего центра'
+      const center = this.cogs.noCuttingCenter ? 'Без режущего центра' : 'С перекрытием центра'
       
       return `Зубьев: ${this.cogs.cogsNumber}<br />${pitch}<br />${center}`
     }

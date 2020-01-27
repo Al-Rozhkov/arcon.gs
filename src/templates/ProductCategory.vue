@@ -36,7 +36,7 @@
               cogs {
                 cogsPitch
                 cogsNumber
-                cogsCenter
+                noCuttingCenter
               }
               grooveInclination {
                 type

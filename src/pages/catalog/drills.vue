@@ -24,7 +24,7 @@ query Catalog {
         cogs {
           cogsPitch
           cogsNumber
-          cogsCenter
+          noCuttingCenter
         }
         grooveInclination {
           type

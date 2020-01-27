@@ -30,7 +30,6 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsCenter": "overlap",
             "cogsNumber": 2
         }
     ],

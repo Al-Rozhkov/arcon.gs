@@ -26,17 +26,14 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsNumber": 4,
-            "cogsCenter": "overlap"
+            "cogsNumber": 4
         },
         {
             "cogsPitch": "permanent",
-            "cogsCenter": "overlap",
             "cogsNumber": 6
         },
         {
             "cogsPitch": "permanent",
-            "cogsCenter": "overlap",
             "cogsNumber": 10
         }
     ],
