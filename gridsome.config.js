@@ -21,10 +21,9 @@ module.exports = {
 
   plugins: [
     {
-      use: '~/plugins/source-google-sheets',
+      use: '@gridsome/source-filesystem',
       options: {
-        spreadsheetId: '13GOZ5YNID_fRCsPTy-okHjYutvEGP4beBPH2nwu8ztM',
-        apiKey: GOOGLE_API_KEY,
+        path: 'products/categories/*.json',
         typeName: 'ProductCategory'
       }
     },
