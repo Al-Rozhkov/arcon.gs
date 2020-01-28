@@ -26,10 +26,7 @@ query Catalog {
           cogsNumber
           noCuttingCenter
         }
-        grooveInclination {
-          type
-          angles
-        }
+        grooveInclination
         coating
       }
     }

@@ -36,12 +36,9 @@
             "cogsNumber": 5
         }
     ],
-    "grooveInclination": {
-        "type": "permanent",
-        "angles": [
-            38
-        ]
-    },
+    "grooveInclination": [
+        38
+    ],
     "cuttingPartLength": [
         "middle",
         "long"

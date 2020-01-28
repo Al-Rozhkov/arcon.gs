@@ -153,13 +153,9 @@ collections:
       - &fieldGrooveInclination
         label: "Угол наклона спиральной канавки"
         name: "grooveInclination"
-        widget: "object"
+        hint: "Если значений несколько, укажите их через запятую."
         required: false
-        fields:
-          - {label: "Тип", name: "type", widget: "string"}
-          - label: "Углы"
-            name: "angles"
-            widget: "list"
+        widget: "list"
       - &fieldCuttingPartLength
         label: "Длина режущей части"
         name: "cuttingPartLength"

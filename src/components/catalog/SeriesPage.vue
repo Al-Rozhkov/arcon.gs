@@ -91,11 +91,7 @@
         </template>
       </div>
       <div class="actions d-print-none" @click="printIt">
-        <icon-printer
-          width="30"
-          height="30"
-          v-tooltip="{ content: 'Распечатать страницу'}"
-        />
+        <icon-printer width="30" height="30" v-tooltip="{ content: 'Распечатать страницу'}" />
       </div>
     </div>
 
@@ -185,10 +181,9 @@ export default {
     },
 
     grooveInclination() {
-      if (this.node.grooveInclination) {
-        return this.node.grooveInclination.angles
-          .map(i => `${i}&#xB0;`)
-          .join('~')
+      const angles = this.node.grooveInclination
+      if (angles && angles.length > 0) {
+        return angles.map(i => `${i}&#xB0;`).join('~')
       } else {
         return ''
       }
@@ -259,7 +254,6 @@ export default {
   .col-right {
     max-width: 65%;
     flex: 0 0 65%;
-
   }
 
   .features {
@@ -283,7 +277,6 @@ export default {
     flex: 1 1 40%;
   }
 }
-
 
 // @TODO fix it!
 @media print {
@@ -310,7 +303,7 @@ export default {
   position: absolute;
   top: -1.25rem;
   right: -1.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
@@ -368,5 +361,4 @@ h3.dt {
     flex: 0 0 65%;
   }
 }
-
 </style>

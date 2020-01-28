@@ -14,13 +14,10 @@
       "scheme": "cylinder-r"
     }
   ],
-  "grooveInclination": {
-    "type": "variable",
-    "angles": [
-      42,
-      45
-    ]
-  },
+  "grooveInclination": [
+    42,
+    45
+  ],
   "mainUsage": [
     "m",
     "s"

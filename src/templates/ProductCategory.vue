@@ -38,10 +38,7 @@
                 cogsNumber
                 noCuttingCenter
               }
-              grooveInclination {
-                type
-                angles
-              }
+              grooveInclination
             }
           }
         }

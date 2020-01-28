@@ -31,13 +31,10 @@
             "cogsNumber": 4
         }
     ],
-    "grooveInclination": {
-        "type": "variable",
-        "angles": [
-            43,
-            45
-        ]
-    },
+    "grooveInclination": [
+        43,
+        45
+    ],
     "cuttingPartLength": [
         "short",
         "middle"

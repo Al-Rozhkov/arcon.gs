@@ -27,18 +27,21 @@
     <td class="td">
       <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="index" :cogs="obj" />
     </td>
-    
+
     <td class="td">
-      <svg-icon v-if="node.grooveInclination" icon-id="cogs-angle">
+      <svg-icon
+        v-if="node.grooveInclination && node.grooveInclination.length > 0"
+        icon-id="cogs-angle"
+      >
         <text
           transform="matrix(1 0 0 1 27 16)"
           style="font-size:12px;"
-        >{{ node.grooveInclination.angles[0]}}&#xB0;</text>
+        >{{ node.grooveInclination[0]}}&#xB0;</text>
         <text
-          v-if="node.grooveInclination.angles[1]"
+          v-if="node.grooveInclination[1]"
           transform="matrix(1 0 0 1 27 28)"
           style="font-size:12px;"
-        >{{ node.grooveInclination.angles[1]}}&#xB0;</text>
+        >{{ node.grooveInclination[1]}}&#xB0;</text>
       </svg-icon>
     </td>
   </tr>

@@ -33,11 +33,8 @@
             "cogsNumber": 2
         }
     ],
-    "grooveInclination": {
-        "type": "permanent",
-        "angles": [
-            30
-        ]
-    },
+    "grooveInclination": [
+        30
+    ],
     "productSeriesSet": "simple"
 }

@@ -32,10 +32,7 @@
         cogsNumber
         noCuttingCenter
       }
-      grooveInclination {
-        type
-        angles
-      }
+      grooveInclination
       productSeriesSet { set }
     }
     tools: allProductItemEndMill (

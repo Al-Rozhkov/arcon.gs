@@ -14,12 +14,9 @@
       "scheme": "sphere-lower"
     }
   ],
-  "grooveInclination": {
-    "type": "permanent",
-    "angles": [
-      45
-    ]
-  },
+  "grooveInclination": [
+    45
+  ],
   "mainUsage": [
     "m",
     "p",
