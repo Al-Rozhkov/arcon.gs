@@ -72,7 +72,7 @@ collections:
         collection: "categories"
         valueField: "id"
         searchFields: ["id", "title"]
-        displayFields: ["title"]}
+        displayFields: ["title"]
       - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false, required: false}
       - &fieldMainUsage
         label: "Основное применение"
