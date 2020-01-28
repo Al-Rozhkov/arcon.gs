@@ -3,8 +3,5 @@
   "name": "arcon",
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
-  ],
-  "github": {
-    "enabled": false
-  }
+  ]
 }
