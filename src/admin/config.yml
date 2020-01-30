@@ -1,0 +1,217 @@
+backend:
+  name: github
+  repo: Al-Rozhkov/arcon.gs
+  branch: google-docs
+  squash_merges: true
+  base_url: https://arconit.ru
+  auth_endpoint: /api/cms/auth
+
+site_id: "arconit.netlify.com"
+media_folder: "static/uploads"
+public_folder: "/uploads"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "categories"
+    label: "Категории каталога"
+    label_singular: "Категория"
+    extension: "json"
+    folder: "products/categories"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
+      - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Короткий заголовок", name: "short", widget: "string"}
+      - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
+
+  - name: "news"
+    label: "Новости"
+    label_singular: "Новость"
+    extension: "md"
+    folder: "news"
+    create: true
+    path: "{{year}}/{{month}}-{{day}}/index"
+    media_folder: ''
+    public_folder: './'
+    fields:
+      - *fieldTitle
+      - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
+      - {label: "Изображение", name: "image", widget: "image"}
+      - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
+      - { label: 'Текст', name: 'body', widget: 'markdown'}
+
+  - name: "end-mills"
+    label: "Серии фрез"
+    extension: "json"
+    folder: "products/series/end-mills"
+    path: "{{productCategory}}/{{slug}}"
+    create: true
+    # slug: "{{id}}"
+    identifier_field: id
+    media_folder: ''
+    public_folder: './'
+    fields:
+      - *fieldId
+      - &fieldBody {label: "Описание", name: "body", widget: "text"}
+      - &fieldRelativePhotos
+        label: "Фотографии"
+        name: "photos"
+        widget: list
+        field: {label: Изображение, name: image, widget: image}
+      - &fieldScheme
+        label: "Схема"
+        name: "scheme"
+        widget: "list"
+        fields:
+          - {label: "Обозначение", name: "name", widget: string, default: "a"}
+          - {label: "Схема", name: "scheme", widget: string}
+      # - &fieldProductCategory {label: "Раздел каталога", name: "productCategory", widget: "string"}
+      - &fieldProductCategory
+        label: "Раздел каталога"
+        name: "productCategory"
+        widget: "relation"
+        collection: "categories"
+        valueField: "id"
+        searchFields: ["id", "title"]
+        displayFields: ["title"]
+      - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false, required: false}
+      - &fieldMainUsage
+        label: "Основное применение"
+        name: "mainUsage"
+        widget: "select"
+        multiple: true
+        options: &usageOptions
+          - {label: "Углеродистая и легированная сталь", value: "p"}
+          - {label: "Чугун", value: "k"}
+          - {label: "Нержавеющая сталь", value: "m"}
+          - {label: "Закаленная сталь", value: "h"}
+          - {label: "Закаленная сталь h1.1", value: "h1.1"}
+          - {label: "Закаленная сталь h1.2", value: "h1.2"}
+          - {label: "Цветные металлы", value: "n"}
+          - {label: "Сплавы на основе алюминия", value: "n1"}
+          - {label: "Сплавы на основе меди", value: "n3"}
+          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+      - &fieldPossibleUsage
+        label: "Возможное применение"
+        name: "possibleUsage"
+        widget: "select"
+        required: false
+        multiple: true
+        options: *usageOptions
+      - &fieldCoating
+        label: "Покрытие"
+        name: "coating"
+        widget: "select"
+        required: false
+        options:
+          - {label: "nACo-G", value: "ng"}
+          - {label: "TiAlN", value: "tan"}
+          - {label: "TiN", value: "tin"}
+          - {label: "PurePolish (полировка)", value: "pp"}
+      - &fieldTail
+        label: "Хвостовик"
+        name: "tail"
+        widget: "select"
+        required: false
+        default: "cylinder"
+        options:
+          - { label: "Цилиндрический", value: "cylinder" }
+          - { label: "Weldon", value: "weldon" }
+      - label: "Форма торца"
+        name: "endShapes"
+        widget: "select"
+        required: false
+        multiple: true
+        options:
+          - { label: "Торец без фаски, наостро", value: "rect-sharp" }
+          - { label: "Торец с притуплением", value: "rect-r" }
+          - { label: "Торец с фаской chх45˚", value: "rect-f" }
+          - { label: "Радиусной торец", value: "radius" }
+          - { label: "Сферический торец", value: "sphere" }
+      - &fieldCuttingShapes
+        label: "Форма режущей части"
+        name: "cuttingShapes"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Конус", value: "conus" }
+          - { label: "С внутренним радиусом", value: "inner-radius" }
+          - { label: "Т-образная режущая часть", value: "t" }
+      - &fieldCogs
+        label: "Зубья"
+        name: "cogs"
+        widget: "list"
+        fields:
+          - {label: "Количество", name: "cogsNumber", widget: "number", valueType: "int", min: 1}
+          - label: "Шаг"
+            name: "cogsPitch"
+            widget: "select"
+            default: "variable"
+            options:
+            - { label: "Постоянный", value: "permanent" }
+            - { label: "Переменный", value: "variable" }
+          - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false, required: false}
+      - &fieldGrooveInclination
+        label: "Угол наклона спиральной канавки"
+        name: "grooveInclination"
+        hint: "Если значений несколько, укажите их через запятую."
+        required: false
+        widget: "list"
+      - &fieldCuttingPartLength
+        label: "Длина режущей части"
+        name: "cuttingPartLength"
+        widget: "select"
+        required: false
+        multiple: true
+        options:
+          - { label: "Короткая", value: "short" }
+          - { label: "Средняя", value: "middle" }
+          - { label: "Длинная", value: "long" }
+      - &fieldProductSeriesSet {label: "Набор параметров", name: "productSeriesSet", widget: "string"}
+
+  - name: "drills"
+    label: "Серии сверл"
+    extension: "json"
+    folder: "products/series/drills"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - *fieldId
+      - *fieldBody
+      - *fieldRelativePhotos
+      - *fieldScheme
+      - *fieldProductCategory
+      - *fieldMainUsage
+      - *fieldPossibleUsage
+      - *fieldCoating
+      - *fieldTail
+      - *fieldCuttingShapes
+      - *fieldCogs
+      - *fieldGrooveInclination
+      - *fieldCuttingPartLength
+      - *fieldProductSeriesSet
+
+  - name: "thread-mills"
+    label: "Серии резьбовых фрез"
+    extension: "json"
+    folder: "products/series/thread-mills"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - *fieldId
+      - *fieldBody
+      - *fieldRelativePhotos
+      - *fieldScheme
+      - *fieldProductCategory
+      - *fieldMainUsage
+      - *fieldCoating
+      - *fieldTail
+      - *fieldCuttingShapes
+      - *fieldProductSeriesSet

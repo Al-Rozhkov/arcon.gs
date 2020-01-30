@@ -1,0 +1,43 @@
+{
+    "id": "1c008",
+    "body": "Цельная твердосплавная концевая фреза, 2 зуба, 1C008 со средней режущей частью.",
+    "photos": [
+        "./1c008.jpg"
+    ],
+    "productCategory": "steel-carbon",
+    "fusion": true,
+    "scheme": [
+        {
+            "name": "b",
+            "scheme": "cylinder-f"
+        }
+    ],
+    "mainUsage": [
+        "p",
+        "k",
+        "m"
+    ],
+    "possibleUsage": [
+        "n1",
+        "s"
+    ],
+    "coating": "tan",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp",
+        "rect-f"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": [
+        35
+    ],
+    "cuttingPartLength": [
+        "middle"
+    ],
+    "productSeriesSet": "set-f45"
+}

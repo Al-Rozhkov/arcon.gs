@@ -23,7 +23,7 @@ query Catalog {
       node {
         id
         path
-        productImg (width: 300, quality: 75)
+        photos (width: 300, quality: 75)
         body
         mainUsage
         coating

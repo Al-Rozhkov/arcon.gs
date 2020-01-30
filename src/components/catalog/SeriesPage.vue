@@ -9,8 +9,8 @@
       </div>
 
       <g-image
-        v-if="node.productImg.length > 0"
-        :src="node.productImg[0]"
+        v-if="node.photos && node.photos.length > 0"
+        :src="node.photos[0]"
         :alt="node.id"
         class="series-img"
       />
@@ -77,7 +77,7 @@
                   v-for="(c, index) in node.cogs"
                   :key="index"
                   class="dd-li"
-                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.cogsCenter) }}</li>
+                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.noCuttingCenter) }}</li>
               </ul>
             </template>
 
@@ -91,11 +91,7 @@
         </template>
       </div>
       <div class="actions d-print-none" @click="printIt">
-        <icon-printer
-          width="30"
-          height="30"
-          v-tooltip="{ content: 'Распечатать страницу'}"
-        />
+        <icon-printer width="30" height="30" v-tooltip="{ content: 'Распечатать страницу'}" />
       </div>
     </div>
 
@@ -170,9 +166,7 @@ export default {
       },
       cogsDesc: {
         variable: 'переменный шаг',
-        permanent: 'постоянный шаг',
-        overlap: 'с перекрытием центра',
-        base: 'без режущего центра'
+        permanent: 'постоянный шаг'
       }
     }
   },
@@ -187,10 +181,9 @@ export default {
     },
 
     grooveInclination() {
-      if (this.node.grooveInclination) {
-        return this.node.grooveInclination.angles
-          .map(i => `${i}&#xB0;`)
-          .join('~')
+      const angles = this.node.grooveInclination
+      if (angles && angles.length > 0) {
+        return angles.map(i => `${i}&#xB0;`).join('~')
       } else {
         return ''
       }
@@ -212,7 +205,7 @@ export default {
     },
 
     getCogsCenterLabel(s) {
-      return s === 'overlap' ? 'с перекрытием центра' : 'без режущего центра'
+      return s ? 'без режущего центра' : 'с перекрытием центра'
     },
 
     printIt() {
@@ -261,7 +254,6 @@ export default {
   .col-right {
     max-width: 65%;
     flex: 0 0 65%;
-
   }
 
   .features {
@@ -285,7 +277,6 @@ export default {
     flex: 1 1 40%;
   }
 }
-
 
 // @TODO fix it!
 @media print {
@@ -312,7 +303,7 @@ export default {
   position: absolute;
   top: -1.25rem;
   right: -1.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
@@ -370,5 +361,4 @@ h3.dt {
     flex: 0 0 65%;
   }
 }
-
 </style>

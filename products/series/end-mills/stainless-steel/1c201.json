@@ -1,0 +1,42 @@
+{
+  "photos": [
+    "./1c201.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-lower-r"
+    }
+  ],
+  "grooveInclination": [
+    42,
+    45
+  ],
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "short"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c201",
+  "productSeriesSet": "lower-r"
+}

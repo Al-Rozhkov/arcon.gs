@@ -1,6 +1,9 @@
 {
     "id": "7mf12",
     "body": "Цельный твердосплавный многофункциональный инструмент, угол в торце 40°, 60°, 90°, 100° и 120°, 2 зуба, средней длины.",
+    "photos": [
+        "./7mf12.jpg"
+    ],
     "productCategory": "multifunctional",
     "scheme": [
         {
@@ -21,15 +24,11 @@
     "cogs": [
         {
             "cogsPitch": "permanent",
-            "cogsNumber": 2,
-            "cogsCenter": "overlap"
+            "cogsNumber": 2
         }
     ],
-    "grooveInclination": {
-        "type": "permanent",
-        "angles": [
-            30
-        ]
-    },
+    "grooveInclination": [
+        30
+    ],
     "productSeriesSet": "simple"
 }

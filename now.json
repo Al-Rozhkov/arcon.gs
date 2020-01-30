@@ -1,7 +1,9 @@
 {
   "version": 2,
   "name": "arcon",
-  "builds": [
-    { "src": "package.json", "use": "@now/static-build" }
-  ]
+  "alias": "arconit",
+  "env": {
+    "ORG_ORIGIN": "arconit.ru",
+    "REDIRECT_URL": "http://localhost:3000/api/cms/callback"
+  }
 }

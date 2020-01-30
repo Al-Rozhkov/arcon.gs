@@ -1,0 +1,47 @@
+{
+  "photos": [
+    "./1c203.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, 1C203 с длинной режущей частью.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": [
+    42,
+    45
+  ],
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "long"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "k",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c203",
+  "productSeriesSet": "set-r"
+}

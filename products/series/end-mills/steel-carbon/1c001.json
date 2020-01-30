@@ -1,0 +1,44 @@
+{
+    "id": "1c001",
+    "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
+    "photos": [
+        "./1c001.jpg"
+    ],
+    "productCategory": "steel-carbon",
+    "fusion": false,
+    "scheme": [
+        {
+            "name": "b",
+            "scheme": "cylinder-lower-r"
+        }
+    ],
+    "mainUsage": [
+        "p",
+        "k",
+        "m"
+    ],
+    "possibleUsage": [
+        "s",
+        "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp",
+        "rect-r"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "variable",
+            "cogsNumber": 4
+        }
+    ],
+    "grooveInclination": [
+        43,
+        45
+    ],
+    "cuttingPartLength": [
+        "short"
+    ],
+    "productSeriesSet": "lower-r"
+}

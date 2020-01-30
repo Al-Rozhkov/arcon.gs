@@ -15,7 +15,7 @@
     series: productEndMill (path: $path) {
       id
       fusion
-      productImg (width: 800, quality: 75)
+      photos (width: 800, quality: 75)
       body
       scheme {
         name
@@ -30,27 +30,19 @@
       cogs {
         cogsPitch
         cogsNumber
-        cogsCenter
+        noCuttingCenter
       }
-      grooveInclination {
-        type
-        angles
-      }
-      photos,
-      productSeriesSet {
-        set
-      }
+      grooveInclination
+      productSeriesSet { set }
     }
     tools: allProductItemEndMill (
-        filter: { series: { eq: $id } },
-        sortBy: "id", order: ASC
-      ) {
+      filter: { series: { eq: $id } },
+      sortBy: "id", order: ASC
+    ) {
       edges {
         node {
           id
-          series {
-            id
-          }
+          series
           name
           d1
           d2

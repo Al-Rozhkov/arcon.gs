@@ -1,0 +1,50 @@
+{
+    "id": "1c005",
+    "body": "Цельная твердосплавная концевая фреза, 6—8 зубьев, со средней режущей частью.",
+    "photos": [
+        "./1c005.jpg"
+    ],
+    "productCategory": "steel-carbon",
+    "scheme": [
+        {
+            "name": "a",
+            "scheme": "cylinder-conus-f"
+        },
+        {
+            "name": "b",
+            "scheme": "cylinder-f"
+        }
+    ],
+    "mainUsage": [
+        "p",
+        "k",
+        "m"
+    ],
+    "possibleUsage": [
+        "s",
+        "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp",
+        "rect-f"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 6
+        },
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 8
+        }
+    ],
+    "grooveInclination": [
+        45
+    ],
+    "cuttingPartLength": [
+        "middle"
+    ],
+    "productSeriesSet": "set-f45"
+}

@@ -1,0 +1,54 @@
+{
+    "id": "1c102",
+    "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
+    "fusion": true,
+    "productCategory": "non-ferrous-alloys",
+    "scheme": [
+        {
+            "name": "a",
+            "scheme": "cylinder-conus-f"
+        },
+        {
+            "name": "b",
+            "scheme": "cylinder-f"
+        },
+        {
+            "name": "c",
+            "scheme": "cylinder-conus-lower-f"
+        },
+        {
+            "name": "d",
+            "scheme": "cylinder-lower-f"
+        }
+    ],
+    "photos": [
+        "./1c102-m.jpg",
+        "./1c102-l.jpg"
+    ],
+    "mainUsage": [
+        "n1"
+    ],
+    "possibleUsage": [
+        "n3"
+    ],
+    "coating": "pp",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp",
+        "rect-f"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": [
+        37.5
+    ],
+    "cuttingPartLength": [
+        "middle",
+        "long"
+    ],
+    "productSeriesSet": "lower-f45"
+}

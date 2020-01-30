@@ -1,0 +1,43 @@
+{
+    "id": "1r141",
+    "body": "Цельная твердосплавная концевая фреза, 3 зуба, с короткой режущей частью, с заниженной шейкой.",
+    "photos": [
+        "./1r141.jpg"
+    ],
+    "productCategory": "non-ferrous-alloys",
+    "scheme": [
+        {
+            "name": "a",
+            "scheme": "radius-conus-lower-r"
+        },
+        {
+            "name": "b",
+            "scheme": "radius-lower-r"
+        }
+    ],
+    "mainUsage": [
+        "n1"
+    ],
+    "possibleUsage": [
+        "n3"
+    ],
+    "coating": "pp",
+    "tail": "cylinder",
+    "endShapes": [
+        "radius"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 3
+        }
+    ],
+    "grooveInclination": [
+        37.5
+    ],
+    "cuttingPartLength": [
+        "short",
+        "middle"
+    ],
+    "productSeriesSet": "lower-r"
+}

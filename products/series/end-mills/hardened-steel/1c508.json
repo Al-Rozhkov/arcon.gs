@@ -1,0 +1,37 @@
+{
+    "id": "1c508",
+    "body": "Цельная твердосплавная концевая фреза, 6—16 зубьев, со средней режущей частью.",
+    "photos": [
+        "./1c508.jpg"
+    ],
+    "productCategory": "hardened-steel",
+    "scheme": [
+        {
+            "name": "b",
+            "scheme": "cylinder"
+        }
+    ],
+    "mainUsage": [
+        "h"
+    ],
+    "possibleUsage": [],
+    "coating": "ng",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 10,
+            "noCuttingCenter": true
+        }
+    ],
+    "grooveInclination": [
+        30
+    ],
+    "cuttingPartLength": [
+        "middle"
+    ],
+    "productSeriesSet": "simple"
+}

@@ -1,0 +1,41 @@
+{
+  "photos": [
+    "./1c212.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": [
+    42,
+    45
+  ],
+  "mainUsage": [
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-f"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p"
+  ],
+  "cogs": [
+    {
+      "cogsNumber": 4,
+      "cogsPitch": "variable"
+    }
+  ],
+  "id": "1c212",
+  "productSeriesSet": "simple"
+}

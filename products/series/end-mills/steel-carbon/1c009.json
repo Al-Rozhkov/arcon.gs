@@ -1,0 +1,47 @@
+{
+    "id": "1c009",
+    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью.",
+    "photos": [
+        "./1c009.jpg"
+    ],
+    "productCategory": "steel-carbon",
+    "fusion": true,
+    "scheme": [
+        {
+            "name": "a",
+            "scheme": "cylinder-conus-f"
+        },
+        {
+            "name": "b",
+            "scheme": "cylinder-f"
+        }
+    ],
+    "mainUsage": [
+        "p",
+        "k",
+        "m"
+    ],
+    "possibleUsage": [
+        "n1",
+        "s"
+    ],
+    "coating": "tan",
+    "tail": "cylinder",
+    "endShapes": [
+        "rect-sharp",
+        "rect-f"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 3
+        }
+    ],
+    "grooveInclination": [
+        35
+    ],
+    "cuttingPartLength": [
+        "middle"
+    ],
+    "productSeriesSet": "set-f45"
+}

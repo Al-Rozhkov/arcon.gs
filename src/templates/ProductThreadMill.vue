@@ -14,7 +14,7 @@
 query Tool ($path: String, $id: String!) {
   series: productThreadMill (path: $path) {
     id
-    productImg (width: 800, quality: 75)
+    photos (width: 800, quality: 75)
     body
     scheme {
       name
@@ -24,21 +24,18 @@ query Tool ($path: String, $id: String!) {
     coating
     tail
     cuttingShapes
-    photos,
     productSeriesSet {
       set
     }
   }
   tools: allProductItemThreadMill (
-      filter: { series: { eq: $id } },
-      sortBy: "id", order: ASC
-    ) {
+    filter: { series: { eq: $id } },
+    sortBy: "id", order: ASC
+  ) {
     edges {
       node {
         id
-        series {
-          id
-        }
+        series
         name
         step
         thread
