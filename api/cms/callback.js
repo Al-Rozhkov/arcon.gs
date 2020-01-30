@@ -2,6 +2,7 @@ const simpleOauthModule = require('simple-oauth2')
 const oauthProvider = 'github'
 
 function getScript(mess, content) {
+  console.log('getScript is called', mess, content)
   return `<!doctype html><html><body><script>
   (function() {
     function receiveMessage(e) {
@@ -55,7 +56,7 @@ module.exports = (req, res) => {
 
     res.send(getScript('success', {
       token: token.token.access_token,
-      provider: oauth_provider
+      provider: 'github'
     }))
   }).catch((error) => {
     console.error('Access Token Error', error.message)
