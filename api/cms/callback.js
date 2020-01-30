@@ -1,8 +1,6 @@
 const simpleOauthModule = require('simple-oauth2')
-const oauthProvider = 'github'
 
 function getScript(mess, content) {
-  console.log('getScript is called', mess, content)
   return `<!doctype html><html><body><script>
   (function() {
     function receiveMessage(e) {
