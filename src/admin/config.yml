@@ -23,13 +23,13 @@ collections:
       - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
       - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Короткий заголовок", name: "short", widget: "string"}
-      - {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
+      - &fieldWeight {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
 
   - name: "news"
     label: "Новости"
     label_singular: "Новость"
     extension: "md"
-    folder: "news"
+    folder: "content/news"
     create: true
     path: "{{year}}/{{month}}-{{day}}/index"
     media_folder: ''
@@ -39,7 +39,23 @@ collections:
       - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
       - {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
-      - { label: 'Текст', name: 'body', widget: 'markdown'}
+      - &fieldMarkdown { label: "Текст", name: "markdown", widget: "markdown"}
+
+  - name: "services"
+    label: "Услуги"
+    label_singular: "услуга"
+    extension: "md"
+    folder: "content/services"
+    path: "{{slug}}"
+    create: true
+    media_folder: ''
+    public_folder: './'
+    fields:
+      - *fieldTitle
+      - {label: "Мета-тег description", name: "description", hint: "Используется поисковыми системами.", widget: "text"}
+      - {label: "Анонс", name: "teaser", hint: "Отображается как короткое описание в списках.", widget: "text"}
+      - *fieldWeight
+      - *fieldMarkdown
 
   - name: "end-mills"
     label: "Серии фрез"

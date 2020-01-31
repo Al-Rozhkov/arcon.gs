@@ -1,49 +1,33 @@
 <template>
   <div class="tile-row services-teasers" v-once>
-    <g-link to="/services/resharpen" class="col s">
+    <g-link
+      v-for="{ node } in $static.services.edges"
+      :key="node.id"
+      :to="node.path"
+      class="col s"
+    >
       <h3 class="h3">
-        <span class="u">Восстановление режущего инструмента</span>
+        <span class="u">{{ node.title }}</span>
       </h3>
-      <p>Восстановление всех режущих кромок до&nbsp;первоначального либо близкого к&nbsp;первоначальному состояния.</p>
-      <p>Цена переточки составляет от&nbsp;5&nbsp;до&nbsp;30% стоимости нового инструмента.</p>
-    </g-link>
-
-    <g-link to="/services/polish" class="col s">
-      <h3 class="h3">
-        <span class="u">Полировка режущего инструмента</span>
-      </h3>
-      <p>Притупление режущих кромок напрямую влияет на&nbsp;стойкость и&nbsp;характер их&nbsp;износа, а&nbsp;значение шероховатости поверхностей отражается на&nbsp;сливе стружки.</p>
-    </g-link>
-
-    <g-link to="/services/pwd" class="col s">
-      <h3 class="h3">
-        <span class="u">Нанесение PVD покрытий</span>
-      </h3>
-      <p>Мы&nbsp;предоставляем услуги по&nbsp;нанесению износостойких и&nbsp;защитных тонкопленочных покрытий с&nbsp;высокой адгезией.</p>
-    </g-link>
-
-    <g-link to="/services/laser-engraving" class="col s">
-      <h3 class="h3">
-        <span class="u">Лазерная гравировка</span>
-      </h3>
-      <p>В&nbsp;процессе гравировки луч лазера испаряет слой материала, прожигая его на&nbsp;заданную глубину, поэтому гравировка не&nbsp;сотрется и&nbsp;не&nbsp;смоется.</p>
-    </g-link>
-
-    <g-link to="/services/packing" class="col s">
-      <h3 class="h3">
-        <span class="u">Упаковка режущего инструмента</span>
-      </h3>
-      <p>Поставляем упаковку для режущего инструмента, режущих токарных пластин, пеналов и&nbsp;другого назначения.</p>
-    </g-link>
-
-    <g-link to="/services/guhring" class="col s">
-      <h3 class="h3">
-        <span class="u">Поставка твердого сплава G&uuml;hring</span>
-      </h3>
-      <p>Мы&nbsp;предлагаем Вам поставку заготовок из&nbsp;твердого сплава G&uuml;hring напрямую с&nbsp;нашего склада в&nbsp;городе Пенза.</p>
+      <p v-html="node.teaser"></p>
     </g-link>
   </div>
 </template>
+
+<static-query>
+query Services {
+  services: allService(sortBy: "weight", order: ASC) {
+    edges{
+      node {
+        id
+        path
+        title
+        teaser
+      }
+    }
+  }
+}
+</static-query>
 
 <style lang="scss" scoped>
 .h3 {

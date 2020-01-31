@@ -68,8 +68,15 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'news/**/*.md',
+        path: 'content/news/**/*.md',
         typeName: 'News'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/services/**/*.md',
+        typeName: 'Service'
       }
     },
     /* {
@@ -124,7 +131,8 @@ module.exports = {
     ProductEndMill: '/catalog/end-mills/:id',
     ProductDrill: '/catalog/drills/:id',
     ProductThreadMill: '/catalog/thread-mills/:id',
-    News: '/news/:id'
+    News: '/news/:year/:title',
+    Service: '/services/:title'
   },
 
   chainWebpack: config => {
