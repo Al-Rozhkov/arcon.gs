@@ -6,6 +6,7 @@ backend:
   base_url: https://arconit.ru
   auth_endpoint: /api/cms/auth
 
+locale: 'ru'
 media_folder: "static/uploads"
 public_folder: "/uploads"
 publish_mode: editorial_workflow
