@@ -37,9 +37,9 @@ collections:
     fields:
       - *fieldTitle
       - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
-      - {label: "Изображение", name: "image", widget: "image"}
+      - &fieldImage {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
-      - &fieldMarkdown { label: "Текст", name: "markdown", widget: "markdown"}
+      - &fieldMarkdown { label: "Текст", name: "body", widget: "markdown"}
 
   - name: "services"
     label: "Услуги"
@@ -68,6 +68,7 @@ collections:
     fields:
       - *fieldTitle
       - *fieldWeight
+      - *fieldImage
       - *fieldMarkdown
 
   - name: "end-mills"
@@ -204,7 +205,7 @@ collections:
     extension: "json"
     folder: "products/series/drills"
     create: true
-    slug: "{{id}}"
+    # slug: "{{id}}"
     identifier_field: id
     media_folder: ''
     public_folder: ''
@@ -229,7 +230,7 @@ collections:
     extension: "json"
     folder: "products/series/thread-mills"
     create: true
-    slug: "{{id}}"
+    # slug: "{{id}}"
     identifier_field: id
     media_folder: ''
     public_folder: ''

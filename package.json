@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "bootstrap-vue": "^2.3.0",
+    "bootstrap-vue": "^2.4.0",
     "gridsome": "^0.7.12",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
-    "netlify-cms": "^2.10.14",
+    "netlify-cms": "^2.10.16",
     "randomstring": "^1.1.5",
     "simple-oauth2": "^3.3.0",
     "v-tooltip": "^2.0.3",
