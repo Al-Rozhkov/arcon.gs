@@ -75,19 +75,17 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/services/**/*.md',
+        path: 'content/services/*.md',
         typeName: 'Service'
       }
     },
-    /* {
-      use: '~/source-google-docs',
+    {
+      use: '@gridsome/source-filesystem',
       options: {
-        foldersIds: ['0B5byfKNIu897c0FoTkVGOUhFZ3M'],
-        clientId: '153895999971-ipl09sl6s1jdp92q1r0k5l934di1s0is.apps.googleusercontent.com',
-        clientSecret: 'Ky-IcErC7kMpMX70iqXNCyKe',
-        apiKey: 'AIzaSyBVZLmP7wd4Oit6A-dbdBBi2i6ZznwJDws',
-      },
-    }, */
+        path: 'content/tech/*.md',
+        typeName: 'Tech'
+      }
+    },
     {
       use: '~/plugins/source-google-sheets',
       options: {
@@ -132,7 +130,8 @@ module.exports = {
     ProductDrill: '/catalog/drills/:id',
     ProductThreadMill: '/catalog/thread-mills/:id',
     News: '/news/:year/:title',
-    Service: '/services/:title'
+    Service: '/services/:title',
+    Tech: '/tech#:title'
   },
 
   chainWebpack: config => {

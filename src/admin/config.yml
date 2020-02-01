@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Al-Rozhkov/arcon.gs
-  branch: google-docs
+  branch: master
   squash_merges: true
   base_url: https://arconit.ru
   auth_endpoint: /api/cms/auth
@@ -43,10 +43,10 @@ collections:
 
   - name: "services"
     label: "Услуги"
-    label_singular: "услуга"
+    label_singular: "Услуга"
     extension: "md"
     folder: "content/services"
-    path: "{{slug}}"
+    slug: "{{id}}"
     create: true
     media_folder: ''
     public_folder: './'
@@ -54,6 +54,19 @@ collections:
       - *fieldTitle
       - {label: "Мета-тег description", name: "description", hint: "Используется поисковыми системами.", widget: "text"}
       - {label: "Анонс", name: "teaser", hint: "Отображается как короткое описание в списках.", widget: "text"}
+      - *fieldWeight
+      - *fieldMarkdown
+
+  - name: "techs"
+    label: "Технологии"
+    label_singular: "Технология"
+    extension: "md"
+    folder: "content/tech"
+    create: true
+    media_folder: ''
+    public_folder: './'
+    fields:
+      - *fieldTitle
       - *fieldWeight
       - *fieldMarkdown
 
