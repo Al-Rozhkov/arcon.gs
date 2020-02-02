@@ -15,22 +15,22 @@
 
       <ul class="menu">
         <li class="li">
-          <g-link class="a" to="/about">О компании</g-link>
+          <g-link class="a" to="/about/">О компании</g-link>
         </li>
         <li class="li">
-          <g-link class="a" to="/tech">Технологии</g-link>
+          <g-link class="a" to="/tech/">Технологии</g-link>
         </li>
         <li class="li">
-          <g-link class="a highlight" to="/catalog">Режущий инструмент</g-link>
+          <g-link class="a highlight" to="/catalog/">Режущий инструмент</g-link>
         </li>
         <li class="li">
-          <g-link class="a" to="/services">Услуги</g-link>
+          <g-link class="a" to="/services/">Услуги</g-link>
         </li>
         <li class="li">
-          <g-link class="a" to="/partners">Представители</g-link>
+          <g-link class="a" to="/partners/">Представители</g-link>
         </li>
         <li class="li">
-          <g-link class="a" to="/contact">Контакты</g-link>
+          <g-link class="a" to="/contact/">Контакты</g-link>
         </li>
       </ul>
     </nav>

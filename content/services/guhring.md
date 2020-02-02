@@ -14,3 +14,5 @@ weight: 6
 Мы&nbsp;предлагаем Вам поставку заготовок из&nbsp;твердого сплава G&uuml;hring напрямую с&nbsp;нашего склада в&nbsp;городе Пенза.
 
 При производстве наших изделий мы&nbsp;применяем марки DK460UF (универсального применения), DK255F и&nbsp;DK500UF.
+
+![Gühring](./GuehringCarbides01.jpg) ![Gühring](./GuehringCarbides02.jpg) ![Gühring](./GuehringCarbides03.jpg)

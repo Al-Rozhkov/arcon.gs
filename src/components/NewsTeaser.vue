@@ -42,9 +42,9 @@ a.a {
 
 .figure {
   border-radius: 6px;
+  border: 1px solid $gray-300;
   max-width: 275px;
   position: relative;
   overflow: hidden;
-  border: 1px solid $gray-300;
 }
 </style>

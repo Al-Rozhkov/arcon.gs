@@ -7,7 +7,7 @@
 
       <section class="segment">
         <h3 class="h3">
-          <g-link class="u" to="/catalog/end-mills">Концевые фрезы</g-link>
+          <g-link class="u" to="/catalog/end-mills/">Концевые фрезы</g-link>
         </h3>
         <categories-list class />
       </section>
@@ -16,12 +16,12 @@
         <app-menu>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills">Сверла</g-link>
+              <g-link class="u" to="/catalog/drills/">Сверла</g-link>
             </h3>
           </li>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/thread-mills">Резьбовые фрезы</g-link>
+              <g-link class="u" to="/catalog/thread-mills/">Резьбовые фрезы</g-link>
             </h3>
           </li>
         </app-menu>
@@ -41,7 +41,7 @@
           <h3 class="h3">
             <g-link
               class="text-red"
-              to="/catalog/special"
+              to="/catalog/special/"
             >Специальный инструмент</g-link>
           </h3>
         </li>

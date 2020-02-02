@@ -21,7 +21,7 @@ date: '2019-01-01'
 - концевые фрезы для деревообработки.
 
 <p>
-  <a class="text-red" href="http://cvm-arcon.ru/uploaded/img/catalog/ARCONIT_full.pdf">
+  <a class="text-red" href="/uploads/ARCONIT_full.pdf">
     Скачать каталог в&nbsp;PDF
   </a> <span class="text-muted">(15,6&nbsp;Mb)</span>
 </p>

@@ -9,12 +9,7 @@
         <aside class="col news-page-aside">
           <div v-for="(node, index) in $static.news.edges" :key="index" class="mb-3">
             <template v-if="!node.node.nopage">
-              <g-link :to="node.node.path">
-                <figure v-if="node.node.image">
-                  <g-image :src="node.node.image" />
-                </figure>
-                <h3 class="news-title">{{ node.node.title }}</h3>
-              </g-link>
+              <news-teaser :node="node.node" />
             </template>
 
             <template v-else>
@@ -38,12 +33,22 @@ query RecentNews {
         nopage
         content
         title
-        image(width: 255, height: 150)
+        image(width: 275, height: 160)
       }
     }
   }
 }
 </static-query>
+
+<script>
+import NewsTeaser from '~/components/NewsTeaser.vue'
+
+export default {
+  components: {
+    NewsTeaser
+  }
+}
+</script>script
 
 <style lang="scss">
 .news-page-body {

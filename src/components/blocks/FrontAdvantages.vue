@@ -1,6 +1,6 @@
 <template>
   <section class="tile-row" v-once>
-    <g-link to="/catalog/special" class="col">
+    <g-link to="/catalog/special/" class="col">
       <div class="mt">
         <g-image class="img" width="520" src="@/assets/img/solutions/a01.jpg" />
       </div>
@@ -10,7 +10,7 @@
       </div>
     </g-link>
 
-    <g-link to="/catalog/end-mills" class="col">
+    <g-link to="/catalog/end-mills/" class="col">
       <h3 class="h3">Концевые и&nbsp;фасонные фрезы</h3>
       <p>Готовые решения из&nbsp;твердого сплава для всех типов обработки всегда в&nbsp;наличии.</p>
       <div class="atb">
@@ -18,7 +18,7 @@
       </div>
     </g-link>
 
-    <g-link to="/catalog/thread-mills" class="col">
+    <g-link to="/catalog/thread-mills/" class="col">
       <div class="atr">
         <g-image class="img" width="520" src="@/assets/img/solutions/a03.jpg" />
       </div>
@@ -26,7 +26,7 @@
       <p>Твердосплавные резьбофрезы и&nbsp;метчики для решения самых ответственных задач.</p>
     </g-link>
 
-    <g-link to="/catalog/special" class="col">
+    <g-link to="/catalog/special/" class="col">
       <div class="mt">
         <g-image class="img" width="520" src="@/assets/img/solutions/a04.jpg" />
       </div>
@@ -36,7 +36,7 @@
       </div>
     </g-link>
 
-    <g-link to="/services/resharpen" class="col">
+    <g-link to="/services/resharpen/" class="col">
       <h3 class="h3">Восстановление инструмента</h3>
       <p>Переточим ваши сверла, фрезы, головки, метчики, развертки и&nbsp;др. без потери качества. Отполируем. Притупим. Нанесем покрытие.</p>
       <div class="atr">
@@ -44,7 +44,7 @@
       </div>
     </g-link>
 
-    <g-link to="/catalog/special" class="col">
+    <g-link to="/catalog/special/" class="col">
       <div class="mt">
         <g-image class="img" width="520" src="@/assets/img/solutions/a06.jpg" />
       </div>

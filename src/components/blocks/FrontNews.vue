@@ -119,7 +119,7 @@ export default {
 
 @include media-breakpoint-up(lg) {
   .news-teasers {
-    margin: 0 -15px 6rem;
+    margin: 0 -30px 6rem;
   }
 
   .glide__arrow--left {

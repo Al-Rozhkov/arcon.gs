@@ -1,5 +1,6 @@
 <template>
   <page-layout>
+    <p><g-link to="/news/">← Новости</g-link></p>
     <h1>{{ $page.node.title }}</h1>
 
     <figure v-if="$page.node.image">
