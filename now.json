@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "arcon",
+  "alias": "arconit",
   "env": {
     "ORG_ORIGIN": "arconit.ru",
     "REDIRECT_URL": "https://arconit.ru/api/cms/callback"

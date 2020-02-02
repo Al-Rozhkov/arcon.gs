@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Al-Rozhkov/arcon.gs
+  repo: cvm-arcon/arconit-website
   branch: master
   squash_merges: true
   base_url: https://arconit.ru
