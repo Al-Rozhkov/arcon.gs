@@ -30,19 +30,13 @@
       <app-menu>
         <li class="li li-half">
           <h3 class="h3">
-            <a
-              class="text-red"
-              href="/uploads/ARCONIT_full.pdf"
-            >Скачать каталог в&nbsp;PDF&nbsp;</a>
+            <a class="text-red" href="/uploads/ARCONIT_full.pdf">Скачать каталог в&nbsp;PDF&nbsp;</a>
             <span class="text-muted">(15,6&nbsp;Mb)</span>
           </h3>
         </li>
         <li class="li li-half">
           <h3 class="h3">
-            <g-link
-              class="text-red"
-              to="/catalog/special/"
-            >Специальный инструмент</g-link>
+            <g-link class="text-red" to="/catalog/special/">Специальный инструмент</g-link>
           </h3>
         </li>
       </app-menu>
@@ -111,10 +105,6 @@ li.li {
   padding-right: 1rem;
 }
 
-li.li-half {
-  flex: 0 0 50%;
-}
-
 @include media-breakpoint-up(md) {
   .block {
     border: 1px solid gray('300');
@@ -134,6 +124,9 @@ li.li-half {
   .body {
     @include make-col(15);
     order: 1;
+  }
+  li.li-half {
+    flex: 0 0 50%;
   }
 }
 
