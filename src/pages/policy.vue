@@ -25,7 +25,7 @@
         обработки и&nbsp;защиты информации о&nbsp;физических лицах
         (далее&nbsp;&mdash; Пользователи), пользующихся сервисами, информацией
         и&nbsp;услугами на&nbsp;доменном имени
-        <strong>www.cvm-arcon.ru</strong> (далее&nbsp;&mdash; Сайт).
+        <strong>www.cvm-arcon.ru и www.arconit</strong> (далее&nbsp;&mdash; Сайт).
       </p>
 
       <p>

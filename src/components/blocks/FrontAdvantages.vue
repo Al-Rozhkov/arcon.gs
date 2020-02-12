@@ -36,7 +36,7 @@
       </div>
     </g-link>
 
-    <g-link to="/services/resharpen/" class="col">
+    <g-link to="/services/vosstanovlenie-rezhushhego-instrumenta/" class="col">
       <h3 class="h3">Восстановление инструмента</h3>
       <p>Переточим ваши сверла, фрезы, головки, метчики, развертки и&nbsp;др. без потери качества. Отполируем. Притупим. Нанесем покрытие.</p>
       <div class="atr">
