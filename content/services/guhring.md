@@ -15,4 +15,4 @@ weight: 6
 
 При производстве наших изделий мы применяем марки DK460UF (универсального применения), DK255F и DK500UF.
 
-![Gühring](./GuehringCarbides01.jpg) ![Gühring](./GuehringCarbides02.jpg) ![Gühring](./GuehringCarbides03.jpg)
+<a class="link" target="_blank" href="/uploads/guehring_carbides.pdf">![Gühring](./GuehringCarbides01.jpg)</a> <a class="link" target="_blank" href="/uploads/guehring_carbides.pdf">![Gühring](./GuehringCarbides02.jpg)</a> <a class="link" target="_blank" href="/uploads/guehring_carbides.pdf">![Gühring](./GuehringCarbides03.jpg)</a>

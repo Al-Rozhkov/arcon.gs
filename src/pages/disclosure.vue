@@ -9,8 +9,8 @@
           <arconit-logo-ru height="42" class="arconit-logo" />
         </section>
 
-        <section class="col-lg-6">
-          <p>Зарегистрированные торговые марки режущего инструмента.</p>
+        <section class="col-lg-6" style="display: flex">
+          <p style="align-self: center">Зарегистрированные торговые марки режущего инструмента.</p>
         </section>
       </div>
 
