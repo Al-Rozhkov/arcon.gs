@@ -138,5 +138,11 @@ module.exports = {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
+  },
+
+  transformers: {
+    remark: {
+      externalLinksTarget: false
+    }
   }
 }
