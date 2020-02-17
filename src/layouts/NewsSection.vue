@@ -33,7 +33,7 @@ query RecentNews {
         nopage
         content
         title
-        image(width: 275, height: 160)
+        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
       }
     }
   }

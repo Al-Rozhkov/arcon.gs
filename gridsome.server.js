@@ -5,8 +5,35 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-module.exports = function (api) {
+const path = require('path')
+
+module.exports = function(api) {
   // api.loadSource(store => {
-    
+
   // })
+
+  // typeName: fieldName
+  const collectionsNetlify = {
+    ProductEndMill: 'photos',
+    ProductDrill: 'photos',
+    ProductThreadMill: 'photos',
+    News: 'image',
+    Tech: 'image'
+  }
+
+  // We should fix image paths broken by netlifyCMS
+  // If image path match 'fileName.jpg' without leading './'
+  // then change it to path relative to content markdown file.
+  api.onCreateNode(options => {
+    const fieldName = collectionsNetlify[options.internal.typeName]
+    if (fieldName && options[fieldName] && typeof options[fieldName] === 'string') {
+      const imagePath = options[fieldName]
+      // If image path match 'fileName.jpg' without leading './'
+      if (/^\w/.test(imagePath) && !/^[a-z][a-z0-9+.-]*:/i.test(imagePath)) {
+        console.warn(`Broken image on ${options.internal.typeName}/{${fieldName}}:: `, out)
+        out = path.join(path.dirname(origin), imagePath)
+      }
+      return options
+    }
+  })
 }

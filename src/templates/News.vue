@@ -17,7 +17,7 @@
       path
       content
       title
-      image(width: 660)
+      image(width: 660, quality: 100)
     }
   }
 </page-query>

@@ -1,6 +1,6 @@
 <template>
   <section class="news-teasers">
-    <vue-glide type="carousel" bound :breakpoints="breakpoints" :gap="30" :perView="4" :peek="30">
+    <vue-glide type="carousel" bound :breakpoints="breakpoints" :gap="32" :perView="4" :peek="30">
       <vue-glide-slide v-for="(node, index) in $static.news.edges" :key="index" class="item">
         <template v-if="!node.node.nopage">
           <news-teaser :node="node.node" />
@@ -28,7 +28,7 @@ query RecentNews {
         path
         content
         title
-        image(width: 275, height: 160)
+        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
         nopage
       }
     }
@@ -75,6 +75,7 @@ export default {
 <style lang="scss" scoped>
 .news-teasers {
   margin: 0 -15px 3rem;
+  backface-visibility: unset !important;
 }
 
 .news-teasers-header {

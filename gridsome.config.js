@@ -113,7 +113,11 @@ module.exports = {
     {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
-        id: 48415064
+        id: 48415064,
+        options: {
+          clickmap: true,
+          webvisor: true
+        }
       }
     },
     {

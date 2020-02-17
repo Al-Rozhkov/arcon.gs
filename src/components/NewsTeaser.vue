@@ -38,6 +38,7 @@ a.a {
   font-size: 1rem;
   font-weight: $font-weight-base;
   color: $black;
+  text-rendering: optimizeLegibility;
 }
 
 .figure {

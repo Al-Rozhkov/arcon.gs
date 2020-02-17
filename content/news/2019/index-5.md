@@ -1,7 +1,7 @@
 ---
 title: '⌀7, ⌀9, ⌀11, ⌀13 - нестандартные размеры?'
 nopage: false
-image: './ban_news8.png'
+image: ./ban_news8.png
 date: '2019-08-01'
 ---
 <p class="lead">

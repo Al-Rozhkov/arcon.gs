@@ -13,14 +13,14 @@
 
 <page-query>
 query RecentNews {
-  news: allNews(filter: { nopage: { ne: true }}, limit: 24, sortBy: "date") {
+  news: allNews(filter: { nopage: { ne: true }}, limit: 36, sortBy: "date") {
     edges{
       node {
         id
         path
         content
         title
-        image(width: 275, height: 160)
+        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
       }
     }
   }
