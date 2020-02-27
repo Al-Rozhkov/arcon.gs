@@ -3,6 +3,7 @@
     <figure v-if="node.image" class="figure">
       <g-image :src="node.image" immediate="false" />
     </figure>
+    <small class="date">{{ node.date }}</small>
     <h3 class="h3">{{ node.title }}</h3>
   </g-link>
 </template>
@@ -47,5 +48,11 @@ a.a {
   max-width: 275px;
   position: relative;
   overflow: hidden;
+}
+
+.date {
+  display: block;
+  color: $gray-600;
+  margin-bottom: .5rem;
 }
 </style>

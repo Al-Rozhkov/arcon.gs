@@ -28,6 +28,7 @@ query RecentNews {
         path
         content
         title
+        date(format: "D MMMM YYYY", locale: "RU")
         image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
         nopage
       }
