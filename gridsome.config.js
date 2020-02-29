@@ -17,7 +17,7 @@ function addStyleResource(rule) {
 module.exports = {
   siteName: 'ARCONIT',
   siteDescription: 'ARCONIT – Режущий инструмент',
-  siteUrl: 'arconit.ru',
+  siteUrl: 'https://arconit.ru',
 
   plugins: [
     {
