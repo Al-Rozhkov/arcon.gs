@@ -111,6 +111,9 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/plugin-sitemap'
+    },
+    {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
         id: 48415064,
