@@ -30,8 +30,9 @@ module.exports = function(api) {
       const imagePath = options[fieldName]
       // If image path match 'fileName.jpg' without leading './'
       if (/^\w/.test(imagePath) && !/^[a-z][a-z0-9+.-]*:/i.test(imagePath)) {
+        const out = path.join(path.dirname(options.internal.origin), imagePath)
         console.warn(`Broken image on ${options.internal.typeName}/{${fieldName}}:: `, out)
-        out = path.join(path.dirname(origin), imagePath)
+        options[fieldName] = out
       }
       return options
     }
