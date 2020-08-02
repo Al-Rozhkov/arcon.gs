@@ -1,203 +1,305 @@
 <template>
   <div class="grouped-overview">
-    <div v-if="filters" class="filters py-sm">
-      <div
-        v-if="filterEnabled"
-        @click="resetFilters"
-        class="f-reset"
-      >Сбросить фильтры</div>
-      
-      <div class="f-group">
+    <div class="filters">
+      <h4 class="f-label">Тип инструмента</h4>
+      <div>
+        <filter-types-list v-model="selected.type" @input="resetFilters" />
+      </div>
+    </div>
+
+    <div v-if="filters && typesWithFilters.includes(selected.type)" class="filters">
+      <div v-if="filters.endShapes" class="f-group">
         <h4 class="f-label">Форма торца</h4>
         <b-form-radio-group
           id="radios-end-shapes"
           v-model="selected.endShapes"
-          :options="filterTrait.endShapes.list"
+          :options="filters.endShapes.list"
           buttons
           button-variant="outline-secondary"
           name="radios-end-shapes"
         ></b-form-radio-group>
       </div>
 
-      <div class="f-group">
+      <div v-if="filters.toolLength" class="f-group">
+        <h4 class="f-label">Длина</h4>
+        <b-form-radio-group
+          id="radios-tool-length"
+          v-model="selected.toolLength"
+          :options="filters.toolLength.list"
+          buttons
+          button-variant="outline-secondary"
+          name="radios-tool-length"
+        ></b-form-radio-group>
+      </div>
+
+      <div v-if="filters.mainUsage" class="f-group">
         <!-- <h4 class="f-label">Применение</h4> -->
         <b-form-select v-model="selected.mainUsage">
-          <option :value="null" disabled>Основное применение</option>
-          <option value="p">
+          <b-form-select-option :value="null" disabled>— Основное применение —</b-form-select-option>
+          <b-form-select-option value="p">
             <span class="mat-chip-sm mat-main mat-p"></span>Углеродистая и легированная сталь
-          </option>
-          <option value="k">Чугун</option>
-          <option value="m">Нержавеющая сталь</option>
-          <option :value="{ value: ['h', 'h1.1', 'h1.2']}">Закаленная сталь</option>
-          <option :value="{ value: ['n', 'n1', 'n3']}">Цветные металлы</option>
-          <option value="s">Суперсплавы и титан (жаропрочные сплавы)</option>
+          </b-form-select-option>
+          <b-form-select-option value="k">Чугун</b-form-select-option>
+          <b-form-select-option value="m">Нержавеющая сталь</b-form-select-option>
+          <b-form-select-option :value="['h', 'h1.1', 'h1.2']">Закаленная сталь</b-form-select-option>
+          <b-form-select-option :value="['n', 'n1', 'n3']">Цветные металлы</b-form-select-option>
+          <b-form-select-option value="s">Суперсплавы и титан (жаропрочные сплавы)</b-form-select-option>
         </b-form-select>
       </div>
-      <div class="f-group">
+
+      <div class="breaker"></div>
+
+      <div v-if="filters.cuttingPartLength" class="f-group">
         <h4 class="f-label">Длина режущей части</h4>
         <b-form-radio-group
           id="radios-coating"
           v-model="selected.cuttingPartLength"
-          :options="filterTrait.cuttingPartLength.list"
+          :options="filters.cuttingPartLength.list"
           buttons
           button-variant="outline-secondary"
           name="radios-coating"
         ></b-form-radio-group>
       </div>
-      <div class="f-group">
+
+      <div v-if="filters.cuttingFluid" class="f-group">
+        <h4 class="f-label">Подвод СОЖ</h4>
+        <b-form-radio-group
+          id="radios-cutting-fluid"
+          v-model="selected.cuttingFluid"
+          :options="filters.cuttingFluid.list"
+          buttons
+          button-variant="outline-secondary"
+          name="radios-cutting-fluid"
+        ></b-form-radio-group>
+      </div>
+
+      <div v-if="filters.coating" class="f-group">
         <h4 class="f-label">Покрытие</h4>
         <b-form-radio-group
           id="radios-coating"
           v-model="selected.coating"
-          :options="filterTrait.coating.list"
+          :options="filters.coating.list"
           buttons
           button-variant="outline-secondary"
           name="radios-coating"
         ></b-form-radio-group>
       </div>
-    </div>
-    <div>
-      <table class="output sticky-header">
-        <thead>
-          <tr>
-            <th class="sticky-th">Серия</th>
-            <th class="sticky-th">Основное применение</th>
-            <th class="sticky-th">Возможное применение</th>
-            <th class="sticky-th" colspan="3">Покрытие, зубья</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- <template v-for="(group, gIndex) in groups">
-            <tr :key="`tr-${gIndex}`">
-              <td colspan="6" class="group-label">{{ group.label }}</td>
-            </tr>
-            <series-item
-              v-for="item in output[group.name]"
-              :node="$page.series.edges[item].node"
-              :key="`${group.name}-${item}`"
-            />
-          </template>-->
-          <series-item v-for="item in output" :node="item.node" :key="item.id" />
 
-          <tr v-if="output.length === 0">
-            <td class="td-empty" colspan="6">
-              Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел <g-link to="/catalog/special/">специального инструмента</g-link>.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div v-show="filterEnabled" @click="resetFilters" class="f-reset">Сбросить фильтры</div>
+    </div>
+
+    <div class="output">
+      <div class="thead" v-if="seriesComponent === 'SeriesItem'">
+        <div class="flex-row-nowrap">
+          <div class="sticky-th" style="flex: 1 1 34%">Серия</div>
+          <div class="sticky-th" style="flex: 1 1 15%">Основное применение</div>
+          <div class="sticky-th" style="flex: 1 1 15%">Возможное применение</div>
+          <div class="sticky-th" style="flex: 1 1 36%">Покрытие, зубья и пр.</div>
+        </div>
+      </div>
+      <div class="tbody">
+        <div v-for="(group, gIndex) in output" :key="gIndex">
+          <h4 v-if="group.title" class="group-label">{{ group.title }}</h4>
+          <component :is="seriesComponent" v-for="node in group.nodes" :node="node" :key="node.id" />
+        </div>
+
+        <!-- <series-item v-for="item in output" :node="item.node" :key="item.id" /> -->
+
+        <div v-if="output.length === 0" class="td-empty">
+          Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
+          <g-link to="/catalog/special/">специального инструмента</g-link>.
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+<static-query>
+query ProductFilters {
+  types: allProductType(sortBy: "weight", order: ASC) {
+    edges {
+      node {
+        id
+        title
+        type
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import SeriesItem from '~/components/catalog/SeriesTableItem.vue'
-import { BFormRadioGroup, BFormSelect } from 'bootstrap-vue'
-import filterTrait from '~/utils/filterTrait.js'
+import SeriesCard from '~/components/catalog/SeriesCard.vue'
+import FilterTypesList from '~/components/catalog/FilterTypesList.vue'
+import { BFormRadioGroup, BFormSelect, BFormSelectOption } from 'bootstrap-vue'
 
 export default {
   components: {
     SeriesItem,
+    SeriesCard,
+    FilterTypesList,
     BFormRadioGroup,
-    BFormSelect
+    BFormSelect,
+    BFormSelectOption,
   },
 
   props: {
-    filters: {
-      type: Boolean,
-      default: false
+    nodes: {
+      type: Array,
+      required: true,
     },
-    groups: {
-      type: Array
-    }
+
+    filters: {
+      type: Object | Boolean,
+      default: false,
+    },
+
+    groupBy: {
+      type: String,
+      default: null,
+    },
   },
 
   data() {
     return {
-      filterTrait,
+      typesWithFilters: [null, 'end-mills', 'drills-spiral'],
       selected: {
-        endShapes: false,
-        coating: false,
+        type: this.$route.query.type || null,
+        endShapes: null,
+        toolLength: null,
+        coating: null,
         mainUsage: null,
-        cuttingPartLength: false
-      }
+        cuttingPartLength: null,
+        cuttingFluid: null,
+      },
     }
   },
 
   computed: {
     filterEnabled() {
-      return !!(this.selected.endShapes || this.selected.coating || this.selected.mainUsage || this.selected.cuttingPartLength)
+      return Object.keys(this.selected).some(
+        (key) => this.selected[key] !== null
+      )
     },
-    
-    output() {
-      const all = this.$page.series.edges
 
-      const filterCondition = seriesItem => {
-        if (!this.filters) return true
+    outputFiltered() {
+      // Use filters with selected values only
+      const filterKeys = this.filters
+        ? Object.keys(this.selected).filter((filter) => this.selected[filter])
+        : []
 
-        const filterKeys = Object.keys(this.selected)
-        for (let f = 0, fl = filterKeys.length; f < fl; f++) {
-          const filterKey = filterKeys[f]
-          const filterValue = this.selected[filterKey]
-
-          // If filter has value
-          if (!!filterValue) {
-            // Convert selected value to array
-            // console.log(filterKey, filterValue, seriesItem[filterKey])
-            
-            // If series value is array try to find item in it
-            if (Array.isArray(seriesItem[filterKey])) {
-              const value = (typeof filterValue === 'object')
-              ? this.selected[filterKey].value
+      return this.nodes.filter(({ node }) => {
+        for (const filterKey of filterKeys) {
+          // If series value is array try to find item in it
+          if (Array.isArray(node[filterKey])) {
+            // If field is array filter can hold multiple variants too
+            // we should convert value to array
+            const value = Array.isArray(this.selected[filterKey])
+              ? this.selected[filterKey]
               : [this.selected[filterKey]]
-              
-              if (!value.some(r => seriesItem[filterKey].indexOf(r) >= 0)) return false
-            } else {
-              if (seriesItem[filterKey].indexOf(filterValue) === -1) return false
+
+            if (
+              !value.some(
+                (selectedVariant) =>
+                  node[filterKey].indexOf(selectedVariant) >= 0
+              )
+            )
+              return false
+          } else {
+            if (node[filterKey] !== this.selected[filterKey]) {
+              return false
             }
           }
+          // If the node meets the criteria then we should check for the rest of conditions.
         }
-        
+
         return true
-      }
+      })
+    },
 
-      const result = []
-      for (let i = 0, len = all.length; i < len; i++) {
-        /* all[i].node.cuttingPartLength.forEach(element => {
-          ;(result[element] = result[element] || []).push(i)
-        }) */
-        if (filterCondition(all[i].node)) {
-          result.push(all[i])
+    seriesComponent() {
+      return this.outputFiltered.length > 6 ? 'SeriesItem' : 'SeriesCard'
+    },
+
+    output() {
+      // Group nodes by given value
+      return this.outputFiltered.reduce((acc, item) => {
+        const groupByValue = this.groupBy ? item.node[this.groupBy] : null
+
+        if (!acc[groupByValue]) {
+          const groupTitle = this.groupBy
+            ? this.$static.types.edges.find(
+                ({ node }) => node.id === groupByValue
+              )
+            : undefined
+
+          acc[groupByValue] = {
+            title: groupTitle ? groupTitle.node.title : null,
+            nodes: [],
+          }
         }
-      }
+        acc[groupByValue].nodes.push(item.node)
 
-      return result
-    }
+        return acc
+      }, {})
+    },
   },
 
   methods: {
     resetFilters() {
       this.selected = {
+        type: this.$route.query.type || null,
         endShapes: null,
+        toolLength: null,
         coating: null,
         mainUsage: null,
-        cuttingPartLength: null
+        cuttingPartLength: null,
+        cuttingFluid: null,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .output {
   margin: 0 -0.5rem;
+  position: relative;
+  overflow-x: auto;
 }
 
-td.group-label {
-  padding: 1.8rem 0.5rem 0.5rem;
+.group-label {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-top: 1.75rem;
 }
 
-td.td-empty {
+.sticky-th {
+  padding: 0.5rem 0.5rem;
+}
+
+.thead,
+.tbody {
+  width: 100%;
+}
+
+.thead {
+  position: sticky;
+  top: -1px;
+  font-weight: 700;
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none; // Hide it on moblie, but display on desktop
+  box-shadow: 0 20px 20px -12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 0.75rem;
+}
+
+.td-empty {
+  width: 100%;
   padding: 2rem 0.5rem;
   font-size: 1.25rem;
 }
@@ -206,13 +308,20 @@ td.td-empty {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  padding: 0.5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.breaker {
+  width: 100%;
+  height: 0;
 }
 
 .f-group {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0.8rem;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
 }
 
 .f-label {
@@ -223,10 +332,19 @@ td.td-empty {
 
 .f-reset {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
+  left: 0;
+  bottom: 1rem;
   color: $blue;
   cursor: pointer;
+}
+
+@include media-breakpoint-up(sm) {
+  .output {
+    overflow-x: visible;
+  }
+
+  .thead {
+    display: block;
+  }
 }
 </style>

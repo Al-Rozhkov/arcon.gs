@@ -6,7 +6,7 @@
         <tr>
           <th class="tc sticky-th">Обозначение</th>
           <th
-            v-for="col in fieldsSet"
+            v-for="col in fields"
             :key="col"
             class="tc sticky-th"
             :class="col"
@@ -16,12 +16,18 @@
       </thead>
 
       <tbody>
-        <tr v-for="(row, id) in tools" :key="id" v-tooltip="row.node.tip">
+        <tr
+          v-for="({ node }, id) in tools"
+          :key="id"
+          v-tooltip="node.tip"
+          @mouseover="$emit('highlight', node.form)"
+          @mouseleave="$emit('highlight', null)"
+        >
           <td class="tc">
-            <span class="hd">{{ row.node.series.toUpperCase() }}</span>
-            <span class="td">{{ row.node.name.toUpperCase() }}</span>
+            <span class="hd">{{ node.series.toUpperCase() }}</span>
+            <span class="td">{{ node.name.toUpperCase() }}</span>
           </td>
-          <td v-for="i in fieldsSet" :key="i" class="tc" :class="i">{{ row.node[i] }}</td>
+          <td v-for="i in fields" :key="i" class="tc" :class="i">{{ node[i] }}</td>
         </tr>
       </tbody>
     </table>
@@ -30,16 +36,32 @@
 
 <script>
 export default {
+  name: 'ProductItemsTable',
+
   props: {
     fieldsSet: {
       type: Array,
-      required: true
+      default: () => [
+        'a',
+        'd1',
+        'd2',
+        'd3',
+        'r',
+        'f45',
+        'l1',
+        'l2',
+        'ap',
+        'z',
+        'form',
+        'step',
+        'thread',
+      ],
     },
 
     tools: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
@@ -58,10 +80,24 @@ export default {
         a: 'α°',
         form: 'Форма',
         step: 'Шаг',
-        thread: 'Резьба'
-      }
+        thread: 'Резьба',
+      },
     }
-  }
+  },
+
+  computed: {
+    // Skip empty columns
+    fields() {
+      return this.fieldsSet.filter((col) => {
+        for (const { node } of this.tools) {
+          if (node[col]) {
+            return true
+          }
+        }
+        return false
+      })
+    },
+  },
 }
 </script>
 

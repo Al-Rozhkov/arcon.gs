@@ -1,21 +1,23 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <h1>Рекомендации по&nbsp;выбору концевых фрез</h1>
+      <h1>Концевые и специальные фрезы</h1>
 
-      <grouped-overview :filters="true" :groups="groups" />
+      <grouped-overview :nodes="$page.series.edges" :filters="filters" groupBy="type" />
     </main>
   </page-layout>
 </template>
 
 <page-query>
 query Catalog {
-  series: allProductEndMill(sortBy: "id", order: ASC, perPage: 125) {
+  series: allProductEndMill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
         id
         path
-        photos (width: 260, quality: 75)
+        type
+        body
+        photos (width: 260, quality: 80)
         fusion
         mainUsage
         possibleUsage
@@ -42,31 +44,82 @@ import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 export default {
   components: {
     PageLayout,
-    GroupedOverview
+    GroupedOverview,
   },
 
   data() {
     return {
-      filters: [],
-      groups: [
-        {
-          name: 'short',
-          label: 'Короткая режущая часть'
+      filters: {
+        endShapes: {
+          name: 'Форма торца',
+          list: [
+            {
+              text: 'любая',
+              value: null,
+            },
+            {
+              text: 'прямоугольная',
+              value: ['rect-sharp', 'rect-r', 'rect-f'],
+            },
+            {
+              text: 'радиусная',
+              value: 'radius',
+            },
+            {
+              text: 'сферическая',
+              value: 'sphere',
+            },
+          ],
         },
-        {
-          name: 'middle',
-          label: 'Средняя режущая часть'
+        mainUsage: true,
+        coating: {
+          name: 'Покрытие',
+          list: [
+            {
+              text: 'любое',
+              value: null,
+            },
+            {
+              text: 'nACo-G',
+              value: 'ng',
+            },
+            {
+              text: 'TiAlN',
+              value: 'tan',
+            },
+            {
+              text: 'PurePolish (полировка)',
+              value: 'pp',
+            },
+          ],
         },
-        {
-          name: 'long',
-          label: 'Длинная режущая часть'
-        }
-      ]
+        cuttingPartLength: {
+          name: 'Длина режущей части',
+          list: [
+            {
+              text: 'любая',
+              value: null,
+            },
+            {
+              text: 'короткая',
+              value: 'short',
+            },
+            {
+              text: 'средняя',
+              value: 'middle',
+            },
+            {
+              text: 'длинная',
+              value: 'long',
+            },
+          ],
+        },
+      },
     }
   },
 
   metaInfo: {
-    title: 'Рекомендации по выбору концевых фрез для металлобработки'
-  }
+    title: 'Концевые и специальные фрезы для металлобработки',
+  },
 }
 </script>

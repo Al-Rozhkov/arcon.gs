@@ -5,7 +5,7 @@
       <categories-list class="submenu" />
 
       <div class="catalog-list">
-        <series-teaser
+        <series-card
           v-for="edge in $page.category.belongsTo.edges"
           :key="edge.node.id"
           :node="edge.node"
@@ -51,13 +51,13 @@
 import PageLayout from '~/layouts/Catalog.vue'
 
 import CategoriesList from '~/components/catalog/CategoriesList'
-import SeriesTeaser from '~/components/catalog/SeriesTeaser'
+import SeriesCard from '~/components/catalog/SeriesCard'
 
 export default {
   components: {
     PageLayout,
     CategoriesList,
-    SeriesTeaser
+    SeriesCard
   },
 
   metaInfo() {

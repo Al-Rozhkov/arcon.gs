@@ -1,6 +1,7 @@
 {
     "id": "1s572",
     "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+    "type": "end-mills",
     "photos": [
         "./1s572.jpg"
     ],
@@ -41,5 +42,6 @@
         "short",
         "middle"
     ],
+    "allowanceCuttingDiameter": "h8",
     "productSeriesSet": "set-r"
 }

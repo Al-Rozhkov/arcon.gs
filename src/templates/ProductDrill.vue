@@ -11,7 +11,7 @@
 </template>
 
 <page-query>
-  query Tool ($path: String, $id: String!) {
+  query Drill ($path: String, $id: String!) {
     series: productDrill (path: $path) {
       id
       photos (width: 800, quality: 75)
@@ -24,7 +24,9 @@
       possibleUsage
       coating
       tail
-      cuttingShapes
+      sharpeningAngle
+      allowanceCuttingDiameter
+      cuttingFluid
       cogs {
         cogsPitch
         cogsNumber
@@ -48,6 +50,7 @@
           d1
           d2
           l1
+          l2
           ap
           form
         }
@@ -63,7 +66,7 @@ import SeriesPage from '~/components/catalog/SeriesPage.vue'
 export default {
   components: {
     PageLayout,
-    SeriesPage
+    SeriesPage,
   },
 
   metaInfo() {
@@ -73,15 +76,15 @@ export default {
         {
           key: 'description',
           name: 'description',
-          content: this.$page.series.body
+          content: this.$page.series.body,
         },
         {
           key: 'keywords',
           name: 'keywords',
-          content: this.$page.tools.edges.map(t => t.node.id).join(', ')
-        }
-      ]
+          content: this.$page.tools.edges.map((t) => t.node.id).join(', '),
+        },
+      ],
     }
-  }
+  },
 }
 </script>

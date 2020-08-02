@@ -165,6 +165,7 @@ collections:
         required: false
         options:
           - { label: "Конус", value: "conus" }
+          - { label: "Конус и цилиндр", value: "conus-cylinder" }
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
       - &fieldCogs
@@ -218,7 +219,11 @@ collections:
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
-      - *fieldCuttingShapes
+      - label: "Угол заточки"
+        name: "sharpeningAngle"
+        hint: "Если значений несколько, укажите их через запятую."
+        required: false
+        widget: "list"
       - *fieldCogs
       - *fieldGrooveInclination
       - *fieldCuttingPartLength

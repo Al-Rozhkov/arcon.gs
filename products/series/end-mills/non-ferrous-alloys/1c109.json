@@ -1,6 +1,7 @@
 {
     "id": "1c109",
     "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
+    "type": "end-mills",
     "photos": [
         "./1c109.jpg"
     ],
@@ -39,5 +40,5 @@
         "middle",
         "long"
     ],
-    "productSeriesSet": "simple"
+    "allowanceCuttingDiameter": "h8"
 }

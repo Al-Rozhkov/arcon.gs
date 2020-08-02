@@ -8,11 +8,6 @@
 const path = require('path')
 
 module.exports = function(api) {
-  // api.loadSource(store => {
-
-  // })
-
-  // typeName: fieldName
   const collectionsNetlify = {
     ProductEndMill: 'photos',
     ProductDrill: 'photos',
@@ -21,10 +16,10 @@ module.exports = function(api) {
     Tech: 'image'
   }
 
-  // We should fix image paths broken by netlifyCMS
-  // If image path match 'fileName.jpg' without leading './'
-  // then change it to path relative to content markdown file.
   api.onCreateNode(options => {
+    // We should fix image paths broken by netlifyCMS
+    // If image path match 'fileName.jpg' without leading './'
+    // then change it to path relative to content markdown file.
     const fieldName = collectionsNetlify[options.internal.typeName]
     if (fieldName && options[fieldName] && typeof options[fieldName] === 'string') {
       const imagePath = options[fieldName]
@@ -36,5 +31,11 @@ module.exports = function(api) {
       }
       return options
     }
+
+    /* if (['ProductEndMill', 'ProductDrill', 'ProductThreadMill'].includes(options.internal.typeName)) {
+      
+      
+      return options
+    } */
   })
 }

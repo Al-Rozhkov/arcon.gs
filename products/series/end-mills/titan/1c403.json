@@ -1,6 +1,7 @@
 {
     "id": "1c403",
     "body": "Цельная твердосплавная концевая фреза, 2-4 зуба, с длинной режущей частью.",
+    "type": "end-mills",
     "photos": [
         "./1c403.jpg"
     ],
@@ -44,5 +45,6 @@
     "cuttingPartLength": [
         "long"
     ],
+    "allowanceCuttingDiameter": "h8",
     "productSeriesSet": "set-r"
 }

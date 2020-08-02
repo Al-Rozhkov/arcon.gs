@@ -1,6 +1,31 @@
 // import { materials } from '~/utils/fieldsMapping.js'
 
 const filters = {
+  type: {
+    name: 'Тип инструмента',
+    list: [
+      {
+        text: "Фрезы концевые",
+        value: "end-mills"
+      },
+      {
+        text: "Сверла центровочные",
+        value: "drills-center"
+      },
+      {
+        text: "Фрезы фасон. фасочные (зенковки)",
+        value: "shaped-mills"
+      },
+      {
+        text: "Многофункциональный инструмент",
+        value: "multifunctional"
+      },
+      {
+        text: "Резьбовые фрезы",
+        value: "thread-mills"
+      }
+    ]
+  },
   endShapes: {
     name: 'Форма торца',
     list: [
@@ -10,9 +35,7 @@ const filters = {
       },
       {
         text: 'прямоугольная',
-        value: {
-          value: ['rect-sharp', 'rect-r', 'rect-f']
-        }
+        value: ['rect-sharp', 'rect-r', 'rect-f']
       },
       {
         text: 'радиусная',

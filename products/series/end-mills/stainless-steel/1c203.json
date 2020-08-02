@@ -3,6 +3,7 @@
     "./1c203.jpg"
   ],
   "body": "Цельная твердосплавная концевая фреза, 4 зуба, 1C203 с длинной режущей частью.",
+  "type": "end-mills",
   "coating": "ng",
   "scheme": [
     {
@@ -43,5 +44,6 @@
     }
   ],
   "id": "1c203",
+  "allowanceCuttingDiameter": "h8",
   "productSeriesSet": "set-r"
 }

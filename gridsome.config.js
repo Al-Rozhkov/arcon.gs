@@ -21,10 +21,41 @@ module.exports = {
 
   plugins: [
     {
+      use: '~/plugins/source-google-sheets',
+      options: {
+        spreadsheetId: '13M6Antl-Sm50BVeSVSVqDiI3QPMY_GPK9qrrjO3WfLk',
+        apiKey: GOOGLE_API_KEY,
+        typeName: 'ProductItemEndMill'
+      }
+    },
+    {
+      use: '~/plugins/source-google-sheets',
+      options: {
+        spreadsheetId: '1JlzrzNqV_qnh28GJkbC5s4l4kHaqP39GdGMhkh3nE4A',
+        apiKey: GOOGLE_API_KEY,
+        typeName: 'ProductItemDrill'
+      }
+    },
+    {
+      use: '~/plugins/source-google-sheets',
+      options: {
+        spreadsheetId: '1YeOBK9pVCCHtXGoNmhZH8P2ZJL9qGxK6IwmdBfpB9bc',
+        apiKey: GOOGLE_API_KEY,
+        typeName: 'ProductItemThreadMill'
+      }
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'products/categories/*.json',
         typeName: 'ProductCategory'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'products/types/*.json',
+        typeName: 'ProductType'
       }
     },
     {
@@ -84,30 +115,6 @@ module.exports = {
       options: {
         path: 'content/tech/*.md',
         typeName: 'Tech'
-      }
-    },
-    {
-      use: '~/plugins/source-google-sheets',
-      options: {
-        spreadsheetId: '13M6Antl-Sm50BVeSVSVqDiI3QPMY_GPK9qrrjO3WfLk',
-        apiKey: GOOGLE_API_KEY,
-        typeName: 'ProductItemEndMill'
-      }
-    },
-    {
-      use: '~/plugins/source-google-sheets',
-      options: {
-        spreadsheetId: '1JlzrzNqV_qnh28GJkbC5s4l4kHaqP39GdGMhkh3nE4A',
-        apiKey: GOOGLE_API_KEY,
-        typeName: 'ProductItemDrill'
-      }
-    },
-    {
-      use: '~/plugins/source-google-sheets',
-      options: {
-        spreadsheetId: '1YeOBK9pVCCHtXGoNmhZH8P2ZJL9qGxK6IwmdBfpB9bc',
-        apiKey: GOOGLE_API_KEY,
-        typeName: 'ProductItemThreadMill'
       }
     },
     {

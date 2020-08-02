@@ -1,6 +1,7 @@
 {
     "id": "1c101",
     "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней и удлиненной режущей частью. С усиленной режущей кромкой.",
+    "type": "end-mills",
     "productCategory": "non-ferrous-alloys",
     "scheme": [
         {
@@ -49,5 +50,5 @@
         "middle",
         "long"
     ],
-    "productSeriesSet": "lower-f45"
+    "allowanceCuttingDiameter": "h8"
 }

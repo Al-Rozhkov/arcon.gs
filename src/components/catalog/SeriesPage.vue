@@ -2,7 +2,7 @@
   <div class="page">
     <header class="col-left">
       <div class="title">
-        <h1>{{ node.id.toUpperCase() }}</h1>
+        <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
         <svg-plain-icon v-if="node.fusion" icon-id="series-fusion" :width="100" :height="25" />
 
         <div class="desc" v-html="node.body" />
@@ -23,7 +23,7 @@
           <ul class="dd">
             <li v-for="(m, index) in node.mainUsage" :key="index" class="dd-li">
               <span :class="`mat-chip-sm mat-main mat-${m.charAt(0)}`">{{ m }}</span>
-              {{ materialDesc[m] }}
+              {{ legendMaterials[m] }}
             </li>
           </ul>
 
@@ -32,7 +32,7 @@
             <ul class="dd">
               <li v-for="(m, index) in node.possibleUsage" :key="index" class="dd-li">
                 <span :class="`mat-chip-sm mat-possible mat-${m.charAt(0)}`">{{ m }}</span>
-                {{ materialDesc[m] }}
+                {{ legendMaterials[m] }}
               </li>
             </ul>
           </template>
@@ -41,7 +41,7 @@
         <div class="col-30">
           <template v-if="node.coating">
             <h3 class="dt">Покрытие</h3>
-            <p class="dd">{{ featuresDesc[node.coating] }}</p>
+            <p class="dd">{{ coatingDesc[node.coating] }}</p>
           </template>
           <template v-else>
             <h3 class="dt">Без покрытия</h3>
@@ -63,8 +63,28 @@
                 v-for="(s, index) in node.cuttingShapes"
                 :key="index"
                 class="dd-li"
-              >{{ featuresDesc[s] }}</li>
+              >{{ legendCuttingShapes[s] }}</li>
             </ul>
+          </template>
+
+          <template v-if="node.sharpeningAngle && node.sharpeningAngle.length > 0">
+            <h3 class="dt">Угол заточки</h3>
+            <p class="dd">{{ node.sharpeningAngle.map(i => `${i}&#xB0;`).join(', ') }}</p>
+          </template>
+
+          <template v-if="node.allowanceRadius">
+            <h3 class="dt">Допуск на радиус</h3>
+            <p class="dd">{{ node.allowanceRadius }}</p>
+          </template>
+
+          <template v-if="node.allowanceCuttingDiameter">
+            <h3 class="dt">Допуск на диаметр режущей части</h3>
+            <p class="dd">{{ node.allowanceCuttingDiameter }}</p>
+          </template>
+
+          <template v-if="node.cuttingFluid">
+            <h3 class="dt">Подвод СОЖ</h3>
+            <p class="dd">{{ cuttingFluidDesc[node.cuttingFluid] }}</p>
           </template>
         </div>
 
@@ -90,25 +110,28 @@
           </div>
         </template>
       </div>
+
       <div class="actions d-print-none" @click="printIt">
         <icon-printer width="30" height="30" v-tooltip="{ content: 'Распечатать страницу'}" />
       </div>
     </div>
 
     <div class="tools pt">
-      <div class="schemes">
+      <div class="schemes" :class="{ highlight: highlightedScheme !== null }">
         <img
           v-for="(scheme, id) in node.scheme"
           :key="id"
           :src="'/img/schemes/' + scheme.scheme + '.png'"
           class="scheme-img"
+          :class="{ highlighted: highlightedScheme && scheme.name.toUpperCase() === highlightedScheme }"
         />
       </div>
 
       <product-items-table
-        :fields-set="node.productSeriesSet.set"
+        :fields-set="node.productSeriesSet ? node.productSeriesSet.set : undefined"
         :tools="tools.edges"
         class="product-items"
+        @highlight="onRowHighlight"
       />
     </div>
   </div>
@@ -121,7 +144,7 @@ import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
 import ProductItemsTable from '~/components/catalog/ProductItemsTable.vue'
-import { materials } from '~/utils/fieldsMapping.js'
+import { materials, cuttingShapes } from '~/utils/fieldsMapping.js'
 
 export default {
   components: {
@@ -130,29 +153,32 @@ export default {
     SvgIcon,
     MaterialIcon,
     IconPrinter,
-    ProductItemsTable
+    ProductItemsTable,
   },
 
   props: {
     node: {
       type: Object,
-      required: true
+      required: true,
     },
 
     tools: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
     return {
-      materialDesc: materials,
-      featuresDesc: {
+      legendMaterials: materials,
+      legendCuttingShapes: cuttingShapes,
+      coatingDesc: {
         ng: 'nACo-G',
         tan: 'TiAlN',
         tin: 'TiN',
         pp: 'PurePolish (полировка)',
+      },
+      featuresDesc: {
         cylinder: 'цилиндрический',
         weldon: 'Weldon',
         'rect-sharp': 'торец без фаски, наостро',
@@ -160,21 +186,24 @@ export default {
         'rect-f': 'торец с фаской chх45˚',
         radius: 'радиусной торец',
         sphere: 'сферический торец',
-        conus: 'конус',
-        'inner-radius': 'с внутренним радиусом',
-        t: 'Т-образная режущая часть'
       },
       cogsDesc: {
         variable: 'переменный шаг',
-        permanent: 'постоянный шаг'
-      }
+        permanent: 'постоянный шаг',
+      },
+      cuttingFluidDesc: {
+        in: 'Внутренний',
+        out: 'Внешний',
+        none: 'Без подвода СОЖ'
+      },
+      highlightedScheme: null,
     }
   },
 
   computed: {
     endShapes() {
       if (this.node.endShapes) {
-        return this.node.endShapes.map(i => this.featuresDesc[i]).join('; ')
+        return this.node.endShapes.map((i) => this.featuresDesc[i]).join('; ')
       } else {
         return ''
       }
@@ -183,11 +212,11 @@ export default {
     grooveInclination() {
       const angles = this.node.grooveInclination
       if (angles && angles.length > 0) {
-        return angles.map(i => `${i}&#xB0;`).join('~')
+        return angles.map((i) => `${i}&#xB0;`).join('~')
       } else {
         return ''
       }
-    }
+    },
   },
 
   methods: {
@@ -208,10 +237,16 @@ export default {
       return s ? 'без режущего центра' : 'с перекрытием центра'
     },
 
+    onRowHighlight(event) {
+      if (this.node.scheme.length > 1) {
+        this.highlightedScheme = event
+      }
+    },
+
     printIt() {
       if (window) window.print()
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -240,63 +275,14 @@ export default {
   width: 100%;
 }
 
-@include media-breakpoint-up(md) {
-  .desc {
-    font-size: 1.25rem;
-  }
-
-  .col-left {
-    max-width: 35%;
-    flex: 0 0 35%;
-    padding-right: 3rem;
-  }
-
-  .col-right {
-    max-width: 65%;
-    flex: 0 0 65%;
-  }
-
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -2rem;
-  }
-
-  .col-30,
-  .col-40 {
-    padding-right: 2rem;
-  }
-
-  .col-30 {
-    max-width: 30%;
-    flex: 1 1 30%;
-  }
-
-  .col-40 {
-    max-width: 40%;
-    flex: 1 1 40%;
-  }
+.sheet {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
 }
 
-// @TODO fix it!
-@media print {
-  .col-left {
-    max-width: 35%;
-    flex: 0 0 35%;
-    padding-right: 3rem;
-  }
-
-  .col-right {
-    max-width: 65%;
-    flex: 0 0 65%;
-  }
-
-  .col-30,
-  .col-40 {
-    padding-right: 2rem;
-    max-width: 50%;
-    flex: 1 1 50%;
-  }
+.sheet-beige {
+  background: lighten($orange, 25%);
 }
 
 .actions {
@@ -311,6 +297,12 @@ export default {
   &:hover {
     background: $yellow;
   }
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -2rem;
 }
 
 .dd {
@@ -346,19 +338,107 @@ h3.dt {
   margin-bottom: 3rem;
 }
 
+/*
+ * Media breakpoint MD
+ */
 @include media-breakpoint-up(md) {
+  .desc {
+    font-size: 1.25rem;
+  }
+
+  .col-left,
   .schemes {
     max-width: 35%;
     flex: 0 0 35%;
     padding-right: 3rem;
+  }
+
+  .col-right {
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+
+  .col-30,
+  .col-40 {
+    padding-right: 2rem;
+  }
+
+  .col-30 {
+    max-width: 30%;
+    flex: 1 1 30%;
+  }
+
+  .col-40 {
+    max-width: 40%;
+    flex: 1 1 40%;
+  }
+
+  .schemes {
     padding-top: 3rem;
     position: sticky;
     top: 0;
+
+    &.highlight img {
+      opacity: 0.3;
+    }
+
+    &.highlight img.highlighted {
+      opacity: 1;
+    }
   }
 
   .product-items {
     max-width: 65%;
     flex: 0 0 65%;
+  }
+}
+
+/*
+ * Print styles
+ */
+@media print {
+  .page {
+    font-size: 0.8rem;
+  }
+
+  .h1 {
+    font-size: 2rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .col-left,
+  .schemes {
+    max-width: 35%;
+    flex: 0 0 35%;
+    padding-right: 2rem;
+  }
+
+  .col-right {
+    max-width: 65%;
+    flex: 0 0 65%;
+  }
+
+  .col-30 {
+    max-width: 30%;
+    flex: 1 1 30%;
+  }
+
+  .col-40 {
+    max-width: 40%;
+    flex: 1 1 40%;
+  }
+
+  .col-30,
+  .col-40 {
+    padding-right: 1.5rem;
+  }
+
+  .schemes {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>

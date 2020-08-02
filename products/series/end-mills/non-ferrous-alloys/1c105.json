@@ -1,6 +1,7 @@
 {
     "id": "1c105",
     "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью и обниженным хвостовиком. С усиленной режущей кромкой, для глубокой обработки.",
+    "type": "end-mills",
     "photos": [
         "./1c105.jpg"
     ],
@@ -35,5 +36,6 @@
     "cuttingPartLength": [
         "middle"
     ],
+    "allowanceCuttingDiameter": "h8",
     "productSeriesSet": "set-f45"
 }

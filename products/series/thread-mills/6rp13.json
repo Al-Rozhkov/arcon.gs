@@ -1,6 +1,7 @@
 {
     "id": "6rp13",
     "body": "Цельная твердосплавная резьбовая фреза неполного профиля, для внутренних и внешних резьб M (ISO) и UN, угол профиля 60°. Рекомендуется применять с патронами повышенной точности. С каналом для подачи СОЖ.",
+    "type": "thread-mills",
     "photos": [
         "./6rp12.jpg"
     ],
@@ -8,7 +9,7 @@
     "scheme": [
         {
             "name": "a",
-            "scheme": "cylinder-conus-r"
+            "scheme": "thread"
         }
     ],
     "mainUsage": [
@@ -23,5 +24,6 @@
     "cuttingShapes": [
         "t"
     ],
+    "cuttingFluid": "in",
     "productSeriesSet": "thread-mills"
 }

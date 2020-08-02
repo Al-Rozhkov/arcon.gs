@@ -1,0 +1,47 @@
+{
+    "id": "2ss005",
+    "body": "Цельное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7.",
+    "type": "drills-spiral",
+    "photos": [
+        "./2ss003.jpg"
+    ],
+    "productCategory": "drills-spiral",
+    "scheme": [
+        {
+            "name": "b",
+            "scheme": "2cs"
+        }
+    ],
+    "toolLength": "5xD",
+    "mainUsage": [
+        "p",
+        "k",
+        "m",
+        "n",
+        "s"
+    ],
+    "possibleUsage": [
+        "h1.1"
+    ],
+    "coating": "ng",
+    "tail": "cylinder",
+    "sharpeningAngle": [
+        "140"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 2,
+            "noCuttingCenter": false
+        }
+    ],
+    "grooveInclination": [
+        30
+    ],
+    "cuttingPartLength": [
+        "middle"
+    ],
+    "allowanceCuttingDiameter": "h7",
+    "cuttingFluid": "out",
+    "productSeriesSet": "drills"
+}

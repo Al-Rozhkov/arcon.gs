@@ -25,7 +25,7 @@
       </div>
 
       <div class="group-section">
-        <p>Сертификация производства и продукции: ГОСТ ISO 9001 и ГОСТ РВ 0015-002-2012.</p>
+        <p>Сертификация производства: ГОСТ ISO 9001 и ГОСТ РВ 0015-002-2012.</p>
 
         <p>
           <a class="sert-link" href="/uploads/iso9001_eng.pdf" target="_blank">
@@ -33,6 +33,23 @@
           </a>
           <a class="sert-link" href="/uploads/iso9001_rus.pdf" target="_blank">
             <g-image src="~/assets/img/docs/ISO9001_RUS_1.jpg" width="120" class="sert" />
+          </a>
+        </p>
+      </div>
+
+      <div class="group-section">
+        <p>Сертификация продукции.</p>
+
+        <p>
+          <a class="sert-link" href="/uploads/tu_list_registratsii.pdf" target="_blank">
+            <g-image src="~/assets/img/docs/tu_list_registratsii.png" width="120" class="sert" />
+          </a>
+          <a class="sert-link" href="/uploads/deklaratsia_o_sootvetstvii_TR_TS.pdf" target="_blank">
+            <g-image
+              src="~/assets/img/docs/deklaratsia_o_sootvetstvii_TR_TS.png"
+              width="120"
+              class="sert"
+            />
           </a>
         </p>
       </div>
@@ -71,6 +88,7 @@ export default {
 }
 
 .sert-link {
+  display: inline-block;
   margin-right: 0.5rem;
 
   .sert:hover {

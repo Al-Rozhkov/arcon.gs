@@ -11,7 +11,7 @@
 </template>
 
 <page-query>
-query Tool ($path: String, $id: String!) {
+query TreadMill ($path: String, $id: String!) {
   series: productThreadMill (path: $path) {
     id
     photos (width: 800, quality: 75)
@@ -24,6 +24,7 @@ query Tool ($path: String, $id: String!) {
     coating
     tail
     cuttingShapes
+    cuttingFluid
     productSeriesSet {
       set
     }

@@ -12,18 +12,18 @@ export default {
   props: {
     iconId: {
       type: String,
-      required: true
+      required: true,
     },
 
     width: {
       type: Number,
-      default: 50
+      default: 50,
     },
 
     height: {
       type: Number,
-      default: 50
-    }
+      default: 50,
+    },
   },
 
   computed: {
@@ -42,12 +42,16 @@ export default {
         'cutting-conus': 'Режущая часть — конус',
         'cutting-inner-radius': 'Режущая часть с внутренним радиусом',
         'cutting-t': 'Т-образная режущая часть',
-        'cogs-angle': 'Угол подъема спиральной канавки'
+        'cogs-angle': 'Угол подъема спиральной канавки',
+        'cutting-fluid-in': 'Внутренний подвод СОЖ',
+        'cutting-fluid-out': 'Внешний подвод СОЖ',
+        'allowance-cutting-diameter': 'Допуск на диаметр режущей части',
+        'tool-length': 'Длина',
       }
 
       return featuresDesc[this.iconId]
-    }
-  }
+    },
+  },
 }
 </script>
 

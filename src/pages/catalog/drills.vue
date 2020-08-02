@@ -1,23 +1,24 @@
 <template>
   <page-layout>
-
     <main class="cnt">
-      <h1>Рекомендации по&nbsp;выбору сверл</h1>
+      <h1>Спиральные и центровочные сверла</h1>
 
-      <grouped-overview :groups="groups" />
+      <grouped-overview :nodes="$page.series.edges" :filters="filters" />
     </main>
-
   </page-layout>
 </template>
 
 <page-query>
 query Catalog {
-  series: allProductDrill(sortBy: "id", order: ASC, perPage: 125) {
+  series: allProductDrill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
         id
         path
-        photos (width: 260, quality: 75)
+        type
+        body
+        photos (width: 260, quality: 80)
+        toolLength
         mainUsage
         possibleUsage
         cuttingPartLength
@@ -27,6 +28,7 @@ query Catalog {
           noCuttingCenter
         }
         grooveInclination
+        allowanceCuttingDiameter
         coating
       }
     }
@@ -42,27 +44,82 @@ import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 export default {
   components: {
     PageLayout,
-    GroupedOverview
+    GroupedOverview,
   },
 
   data() {
     return {
-      filters: [],
-      groups: [
-        {
-          name: 'middle',
-          label: 'Средняя серия'
+      filters: {
+        toolLength: {
+          name: 'Длина',
+          list: [
+            {
+              text: 'любая',
+              value: null,
+            },
+            {
+              text: '3xD',
+              value: '3xD',
+            },
+            {
+              text: '5xD',
+              value: '5xD',
+            },
+            {
+              text: '8xD',
+              value: '8xD',
+            },
+          ],
         },
-        {
-          name: 'long',
-          label: 'Длинная серия'
-        }
-      ]
+        mainUsage: true,
+        coating: {
+          name: 'Покрытие',
+          list: [
+            {
+              text: 'любое',
+              value: null,
+            },
+            {
+              text: 'nACo-G',
+              value: 'ng',
+            },
+            {
+              text: 'TiAlN',
+              value: 'tan',
+            },
+            {
+              text: 'PurePolish (полировка)',
+              value: 'pp',
+            },
+          ],
+        },
+        cuttingFluid: {
+          name: 'Подвод СОЖ',
+          list: [
+            {
+              text: 'не важно',
+              value: null,
+            },
+            {
+              text: 'внутренний',
+              value: 'in',
+            },
+            {
+              text: 'внешний',
+              value: 'out',
+            },
+            // {
+            //   text: 'без СОЖ',
+            //   value: 'none',
+            // },
+          ],
+        },
+      },
     }
   },
 
   metaInfo: {
-    title: 'Рекомендации по выбору сверл'
-  }
+    title: 'Спиральные и центровочные сверла',
+  },
 }
 </script>

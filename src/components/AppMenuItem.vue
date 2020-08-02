@@ -1,7 +1,7 @@
 <template functional>
   <li class="li">
     <g-link :to="props.to" class="a">
-      <span class="u">
+      <span class="u" v-bind:class="{bold: props.bold}">
         <slot />
       </span>
     </g-link>
@@ -14,6 +14,11 @@ export default {
     to: {
       type: String,
       required: true
+    },
+
+    bold: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -51,5 +56,9 @@ a.active--exact:hover {
     color: $red;
     border: 0;
   }
+}
+
+.bold {
+  font-weight: 700;
 }
 </style>

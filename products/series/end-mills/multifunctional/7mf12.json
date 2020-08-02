@@ -1,6 +1,7 @@
 {
     "id": "7mf12",
     "body": "Цельный твердосплавный многофункциональный инструмент, угол в торце 40°, 60°, 90°, 100° и 120°, 2 зуба, средней длины.",
+    "type": "multifunctional",
     "photos": [
         "./7mf12.jpg"
     ],
@@ -19,7 +20,7 @@
     ],
     "tail": "cylinder",
     "cuttingShapes": [
-        "conus"
+        "conus-cylinder"
     ],
     "cogs": [
         {
@@ -30,5 +31,5 @@
     "grooveInclination": [
         30
     ],
-    "productSeriesSet": "simple"
+    "allowanceCuttingDiameter": "h8"
 }

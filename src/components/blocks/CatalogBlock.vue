@@ -16,7 +16,12 @@
         <app-menu>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills/">Сверла</g-link>
+              <g-link class="u" to="/catalog/drills?type=drills-center">Сверла центровочные</g-link>
+            </h3>
+          </li>
+          <li class="li">
+            <h3 class="h3">
+              <g-link class="u" to="/catalog/drills?type=drills-spiral">Сверла спиральные</g-link>
             </h3>
           </li>
           <li class="li">
@@ -34,7 +39,7 @@
             <span class="text-muted">(15,6&nbsp;Mb)</span>
           </h3>
         </li>
-        <li class="li li-half">
+        <li v-if="$route.path !== '/catalog/special/'" class="li li-half">
           <h3 class="h3">
             <g-link class="text-red" to="/catalog/special/">Специальный инструмент</g-link>
           </h3>

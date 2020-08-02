@@ -1,6 +1,7 @@
 {
     "id": "1c402",
     "body": "Цельная твердосплавная концевая фреза, 2-4 зуба, со средней режущей частью.",
+    "type": "end-mills",
     "photos": [
         "./1c402.jpg"
     ],
@@ -44,5 +45,6 @@
     "cuttingPartLength": [
         "middle"
     ],
+    "allowanceCuttingDiameter": "h8",
     "productSeriesSet": "set-r"
 }

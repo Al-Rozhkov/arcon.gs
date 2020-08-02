@@ -1,6 +1,7 @@
 {
     "id": "1s172",
     "body": "Цельная твердосплавная сферическая концевая фреза, 2 зуба, со средней режущей частью, с заниженной шейкой.",
+    "type": "end-mills",
     "photos": [
         "./1s172.jpg"
     ],
@@ -39,5 +40,5 @@
         "short",
         "middle"
     ],
-    "productSeriesSet": "lower-r"
+    "allowanceCuttingDiameter": "h8"
 }

@@ -10,3 +10,10 @@ export const materials = {
   n3: 'Сплавы на основе меди',
   s: 'Суперсплавы и титан (жаропрочные сплавы)'
 }
+
+export const cuttingShapes = {
+  conus: 'конус',
+  'conus-cylinder': 'конус и цилиндр',
+  'inner-radius': 'с внутренним радиусом',
+  t: 'Т-образная режущая часть'
+}

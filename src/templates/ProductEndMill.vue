@@ -11,7 +11,7 @@
 </template>
 
 <page-query>
-  query Tool ($path: String, $id: String!) {
+  query EndMill ($path: String, $id: String!) {
     series: productEndMill (path: $path) {
       id
       fusion
@@ -33,6 +33,8 @@
         noCuttingCenter
       }
       grooveInclination
+      allowanceRadius
+      allowanceCuttingDiameter
       productSeriesSet { set }
     }
     tools: allProductItemEndMill (

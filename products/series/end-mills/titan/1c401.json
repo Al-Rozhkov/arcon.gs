@@ -1,6 +1,7 @@
 {
     "id": "1c401",
     "body": "Цельная твердосплавная концевая фреза, 2—4 зуба, с короткой режущей частью, с заниженной шейкой.",
+    "type": "end-mills",
     "photos": [
         "./1c401.jpg"
     ],
@@ -40,5 +41,5 @@
     "cuttingPartLength": [
         "short"
     ],
-    "productSeriesSet": "lower-r"
+    "allowanceCuttingDiameter": "h8"
 }

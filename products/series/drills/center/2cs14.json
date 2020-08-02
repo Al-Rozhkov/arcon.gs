@@ -1,0 +1,39 @@
+{
+    "id": "2cs14",
+    "body": "Цельное твердосплавное центровочное сверло, 90°, 120° и 142°. 2CS средняя, длинная и сверхдлинная серии.",
+    "type": "drills-center",
+    "photos": [
+        "./2cs.jpg"
+    ],
+    "productCategory": "drill-center",
+    "scheme": [
+        {
+            "name": "b",
+            "scheme": "2cs"
+        }
+    ],
+    "mainUsage": [
+        "n"
+    ],
+    "possibleUsage": [
+        "p"
+    ],
+    "tail": "cylinder",
+    "sharpeningAngle": [
+        "90", "120", "142"
+    ],
+    "cogs": [
+        {
+            "cogsPitch": "permanent",
+            "cogsNumber": 2
+        }
+    ],
+    "grooveInclination": [
+        30
+    ],
+    "cuttingPartLength": [
+        "long"
+    ],
+    "allowanceCuttingDiameter": "h7",
+    "productSeriesSet": "drills"
+}

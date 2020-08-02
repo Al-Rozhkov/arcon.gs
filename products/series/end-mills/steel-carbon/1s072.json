@@ -1,6 +1,7 @@
 {
     "id": "1s072",
     "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью.",
+    "type": "end-mills",
     "photos": [
         "./1s072.jpg"
     ],
@@ -43,5 +44,6 @@
         "short",
         "middle"
     ],
+    "allowanceCuttingDiameter": "h8",
     "productSeriesSet": "set-r"
 }

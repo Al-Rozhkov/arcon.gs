@@ -1,34 +1,29 @@
 <template>
   <page-layout>
-
     <main class="cnt">
       <h1>Резьбовые фрезы Arconit™</h1>
 
-      <div class="catalog-list">
-        <series-teaser
-          v-for="edge in $page.series.edges"
-          :key="edge.node.id"
-          :node="edge.node"
-        />
-      </div>
+      <grouped-overview :nodes="$page.series.edges" />
     </main>
-
   </page-layout>
 </template>
 
 <page-query>
 query Catalog {
-  series: allProductThreadMill(sortBy: "id", order: ASC, perPage: 125) {
+  series: allProductThreadMill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
         id
         path
-        photos (width: 300, quality: 75)
+        type
+        body
+        photos (width: 260, quality: 80)
         body
         mainUsage
         coating
         tail
         cuttingShapes
+        cuttingFluid
       }
     }
   }
@@ -38,28 +33,12 @@ query Catalog {
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-
-import SeriesTeaser from '~/components/catalog/SeriesTeaser'
+import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 
 export default {
   components: {
     PageLayout,
-    SeriesTeaser
-  },
-
-  data() {
-    return {
-      filters: []
-    }
-  },
-
-  computed: {
-    filteredNodes() {
-      const result = this.$page.series.edges
-      return result.filter(node => {
-
-      })
-    }
+    GroupedOverview
   },
 
   metaInfo: {
