@@ -204,6 +204,7 @@ collections:
     label: "Серии сверл"
     extension: "json"
     folder: "products/series/drills"
+    path: "{{productCategory}}/{{slug}}"
     create: true
     # slug: "{{id}}"
     identifier_field: id

@@ -3,11 +3,12 @@
     <div class="filters">
       <h4 class="f-label">Тип инструмента</h4>
       <div>
-        <filter-types-list v-model="selected.type" @input="resetFilters" />
+        <b-form-select v-model="filterTypeValue" :options="filterTypeOptions" />
+        <!-- <filter-types-list v-model="selected.type" @input="resetFilters" /> -->
       </div>
     </div>
 
-    <div v-if="filters && typesWithFilters.includes(selected.type)" class="filters">
+    <div v-if="filters && typesWithFilters.includes($route.query.type)" class="filters">
       <div v-if="filters.endShapes" class="f-group">
         <h4 class="f-label">Форма торца</h4>
         <b-form-radio-group
@@ -131,14 +132,12 @@ query ProductFilters {
 <script>
 import SeriesItem from '~/components/catalog/SeriesTableItem.vue'
 import SeriesCard from '~/components/catalog/SeriesCard.vue'
-import FilterTypesList from '~/components/catalog/FilterTypesList.vue'
 import { BFormRadioGroup, BFormSelect, BFormSelectOption } from 'bootstrap-vue'
 
 export default {
   components: {
     SeriesItem,
     SeriesCard,
-    FilterTypesList,
     BFormRadioGroup,
     BFormSelect,
     BFormSelectOption,
@@ -163,9 +162,8 @@ export default {
 
   data() {
     return {
-      typesWithFilters: [null, 'end-mills', 'drills-spiral'],
+      typesWithFilters: [undefined, 'end-mills', 'drills-spiral'],
       selected: {
-        type: this.$route.query.type || null,
         endShapes: null,
         toolLength: null,
         coating: null,
@@ -177,6 +175,30 @@ export default {
   },
 
   computed: {
+    filterTypeOptions() {
+      return [
+        {
+          text: '— Все инструменты —',
+          value: '/catalog',
+        },
+        ...this.$static.types.edges.map(({ node }) => ({
+          text: node.title,
+          value: `/catalog/${node.type}/?type=${node.id}`,
+        })),
+      ]
+    },
+
+    filterTypeValue: {
+      get() {
+        return this.$route.fullPath
+      },
+      set(value) {
+        this.$router.push(value)
+        // Reset filters on type change
+        this.resetFilters()
+      },
+    },
+
     filterEnabled() {
       return Object.keys(this.selected).some(
         (key) => this.selected[key] !== null
@@ -190,6 +212,12 @@ export default {
         : []
 
       return this.nodes.filter(({ node }) => {
+        // By series type
+        if (this.$route.query.type && this.$route.query.type !== node.type) {
+          return false
+        }
+
+        // By selected filters
         for (const filterKey of filterKeys) {
           // If series value is array try to find item in it
           if (Array.isArray(node[filterKey])) {
@@ -248,15 +276,7 @@ export default {
 
   methods: {
     resetFilters() {
-      this.selected = {
-        type: this.$route.query.type || null,
-        endShapes: null,
-        toolLength: null,
-        coating: null,
-        mainUsage: null,
-        cuttingPartLength: null,
-        cuttingFluid: null,
-      }
+      Object.keys(this.selected).forEach((key) => (this.selected[key] = null))
     },
   },
 }

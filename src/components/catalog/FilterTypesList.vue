@@ -48,7 +48,6 @@ export default {
 
   methods: {
     goTo(id) {
-      this.$emit('input', id)
       const typeObject = this.$static.types.edges.find(n => n.node.id === id)
       if (typeObject) {
         this.$router.push({
@@ -60,6 +59,7 @@ export default {
       } else {
         this.$router.push('/catalog')
       }
+      this.$emit('input', id)
     }
   }
 }

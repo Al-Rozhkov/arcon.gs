@@ -16,12 +16,12 @@
         <app-menu>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills?type=drills-center">Сверла центровочные</g-link>
+              <g-link class="u" to="/catalog/drills/?type=drills-center">Сверла центровочные</g-link>
             </h3>
           </li>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills?type=drills-spiral">Сверла спиральные</g-link>
+              <g-link class="u" to="/catalog/drills/?type=drills-spiral">Сверла спиральные</g-link>
             </h3>
           </li>
           <li class="li">

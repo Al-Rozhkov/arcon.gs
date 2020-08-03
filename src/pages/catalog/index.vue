@@ -85,26 +85,6 @@ export default {
     GroupedOverview,
   },
 
-  data() {
-    return {
-      filters: [],
-      groups: [
-        {
-          name: 'short',
-          label: 'Короткая режущая часть',
-        },
-        {
-          name: 'middle',
-          label: 'Средняя режущая часть',
-        },
-        {
-          name: 'long',
-          label: 'Длинная режущая часть',
-        },
-      ],
-    }
-  },
-
   computed: {
     series() {
       return [
