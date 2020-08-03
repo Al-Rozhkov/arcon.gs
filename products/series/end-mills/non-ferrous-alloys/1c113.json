@@ -1,40 +1,39 @@
 {
-    "id": "1c113",
-    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
-    "type": "end-mills",
-    "photos": [
-        "./1c113.jpg"
-    ],
-    "productCategory": "non-ferrous-alloys",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "n1"
-    ],
-    "possibleUsage": [
-        "n3"
-    ],
-    "coating": "pp",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 3
-        }
-    ],
-    "grooveInclination": [
-        50
-    ],
-    "cuttingPartLength": [
-        "middle",
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./1c113.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    50
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingPartLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 3
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c113",
+  "productSeriesSet": "simple"
 }
