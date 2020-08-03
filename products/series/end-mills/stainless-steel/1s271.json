@@ -21,6 +21,7 @@
   "mainUsage": [
     "m",
     "p",
+    "k",
     "s"
   ],
   "cuttingPartLength": [
@@ -33,8 +34,7 @@
   "productCategory": "stainless-steel",
   "tail": "cylinder",
   "possibleUsage": [
-    "k",
-    "n3"
+    "n"
   ],
   "cogs": [
     {
