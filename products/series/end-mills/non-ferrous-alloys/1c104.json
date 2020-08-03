@@ -1,54 +1,53 @@
 {
-    "id": "1c104",
-    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
-    "type": "end-mills",
-    "productCategory": "non-ferrous-alloys",
-    "fusion": true,
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-f"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        },
-        {
-            "name": "c",
-            "scheme": "cylinder-conus-lower-f"
-        },
-        {
-            "name": "d",
-            "scheme": "cylinder-lower-f"
-        }
-    ],
-    "photos": [
-        "./1c104-m.jpg",
-        "./1c104-l.jpg"
-    ],
-    "mainUsage": [
-        "n1"
-    ],
-    "possibleUsage": [
-        "n3"
-    ],
-    "coating": "pp",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 3
-        }
-    ],
-    "grooveInclination": [
-        37.5
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./1c104-m.jpg",
+    "./1c104-l.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
+  "coating": "pp",
+  "fusion": true,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    },
+    {
+      "name": "c",
+      "scheme": "cylinder-conus-lower-f"
+    },
+    {
+      "name": "d",
+      "scheme": "cylinder-lower-f"
+    }
+  ],
+  "grooveInclination": [
+    37.5
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 3
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c104",
+  "productSeriesSet": "lower F"
 }
