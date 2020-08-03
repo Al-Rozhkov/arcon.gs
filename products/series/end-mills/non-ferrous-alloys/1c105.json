@@ -1,41 +1,39 @@
 {
-    "id": "1c105",
-    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью и обниженным хвостовиком. С усиленной режущей кромкой, для глубокой обработки.",
-    "type": "end-mills",
-    "photos": [
-        "./1c105.jpg"
-    ],
-    "productCategory": "non-ferrous-alloys",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "n1"
-    ],
-    "possibleUsage": [
-        "n3"
-    ],
-    "coating": "pp",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 3
-        }
-    ],
-    "grooveInclination": [
-        37.5
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-f45"
+  "photos": [
+    "./1c105.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью и обниженным хвостовиком. С усиленной режущей кромкой, для глубокой обработки.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    37.5
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 3
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c105",
+  "productSeriesSet": "set-f45"
 }
