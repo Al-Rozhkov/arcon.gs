@@ -12,17 +12,23 @@ public_folder: "/uploads"
 publish_mode: editorial_workflow
 
 collections:
-  - name: "categories"
-    label: "Категории каталога"
-    label_singular: "Категория"
+  - name: "types"
+    label: "Типы инструмента"
+    label_singular: "Тип"
     extension: "json"
-    folder: "products/categories"
+    folder: "products/types"
     create: true
     slug: "{{id}}"
     fields:
       - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
       - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Короткий заголовок", name: "short", widget: "string"}
+      - label: "Группа"
+        name: "type"
+        widget: "select"
+        options:
+          - {label: "Сверла", value: "drills"}
+          - {label: "Концевые фрезы", value: "end-mills"}
+          - {label: "Резьбовые фрезы", value: "thread-mills"}
       - &fieldWeight {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
 
   - name: "news"
@@ -97,7 +103,7 @@ collections:
           - {label: "Обозначение", name: "name", widget: string, default: "a"}
           - {label: "Схема", name: "scheme", widget: string}
       - &fieldProductCategory
-        label: "Раздел каталога"
+        label: "Тип инструмента"
         name: "productCategory"
         widget: "relation"
         collection: "categories"

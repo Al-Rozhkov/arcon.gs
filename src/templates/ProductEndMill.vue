@@ -75,7 +75,7 @@ export default {
 
   metaInfo() {
     return {
-      title: `Концевая фреза ${this.$page.series.id}`,
+      title: `Концевая фреза ${this.$page.series.id.toUpperCase()}`,
       meta: [
         {
           key: 'description',

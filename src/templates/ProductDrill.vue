@@ -71,7 +71,7 @@ export default {
 
   metaInfo() {
     return {
-      title: `Сверло ${this.$page.series.id}`,
+      title: `Сверло ${this.$page.series.id.toUpperCase()}`,
       meta: [
         {
           key: 'description',
