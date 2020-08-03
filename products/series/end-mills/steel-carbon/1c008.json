@@ -1,45 +1,50 @@
 {
-    "id": "1c008",
-    "body": "Цельная твердосплавная концевая фреза, 2 зуба, 1C008 со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c008.jpg"
-    ],
-    "productCategory": "steel-carbon",
-    "fusion": true,
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m"
-    ],
-    "possibleUsage": [
-        "n1",
-        "s"
-    ],
-    "coating": "tan",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 2
-        }
-    ],
-    "grooveInclination": [
-        35
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-f45"
+  "photos": [
+    "./1c008.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью.",
+  "coating": "tan",
+  "fusion": true,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    35
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "productType": "end-mills",
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "steel-carbon",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n1",
+    "s"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 2
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c008",
+  "productSeriesSet": "set-f45"
 }
