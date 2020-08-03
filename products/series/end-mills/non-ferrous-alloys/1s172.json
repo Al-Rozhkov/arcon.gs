@@ -2,17 +2,17 @@
   "photos": [
     "./1s172.jpg"
   ],
-  "body": "Цельная твердосплавная сферическая концевая фреза, 2 зуба, со средней режущей частью, с заниженной шейкой.",
+  "body": "Сферическая цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью, с заниженной шейкой.",
   "coating": "pp",
   "allowanceCuttingDiameter": "h8",
   "scheme": [
     {
       "name": "a",
-      "scheme": "sphere-conus-lower-r"
+      "scheme": "sphere-conus-lower"
     },
     {
       "name": "b",
-      "scheme": "sphere-lower-r"
+      "scheme": "sphere-lower"
     }
   ],
   "grooveInclination": [
