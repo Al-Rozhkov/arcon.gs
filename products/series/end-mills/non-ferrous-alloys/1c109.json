@@ -1,44 +1,43 @@
 {
-    "id": "1c109",
-    "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c109.jpg"
-    ],
-    "productCategory": "non-ferrous-alloys",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder"
-        }
-    ],
-    "mainUsage": [
-        "n1"
-    ],
-    "possibleUsage": [
-        "n3"
-    ],
-    "coating": "pp",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 1
-        }
-    ],
-    "grooveInclination": [
-        30
-    ],
-    "cuttingPartLength": [
-        "middle",
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./1c109.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingPartLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-sharp"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 1
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c109",
+  "productSeriesSet": "simple"
 }
