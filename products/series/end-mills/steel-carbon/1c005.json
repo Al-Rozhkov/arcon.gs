@@ -1,52 +1,49 @@
 {
-    "id": "1c005",
-    "body": "Цельная твердосплавная концевая фреза, 6—8 зубьев, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c005.jpg"
-    ],
-    "productCategory": "steel-carbon",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-f"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m"
-    ],
-    "possibleUsage": [
-        "s",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 6
-        },
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 8
-        }
-    ],
-    "grooveInclination": [
-        45
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-f45"
+  "photos": [
+    "./1c005.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 6—8 зубьев, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "productType": "end-mills",
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "steel-carbon",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 6
+    },
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 8
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c005",
+  "productSeriesSet": "set-f45"
 }
