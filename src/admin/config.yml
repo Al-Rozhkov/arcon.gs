@@ -81,7 +81,7 @@ collections:
     label: "Серии фрез"
     extension: "json"
     folder: "products/series/end-mills"
-    path: "{{productCategory}}/{{slug}}"
+    path: "{{product}}/{{slug}}"
     create: true
     # slug: "{{id}}"
     identifier_field: id
@@ -102,11 +102,11 @@ collections:
         fields:
           - {label: "Обозначение", name: "name", widget: string, default: "a"}
           - {label: "Схема", name: "scheme", widget: string}
-      - &fieldProductCategory
+      - &fieldProductType
         label: "Тип инструмента"
-        name: "productCategory"
+        name: "productType"
         widget: "relation"
-        collection: "categories"
+        collection: "types"
         valueField: "id"
         searchFields: ["id", "title"]
         displayFields: ["title"]
@@ -221,7 +221,7 @@ collections:
       - *fieldBody
       - *fieldRelativePhotos
       - *fieldScheme
-      - *fieldProductCategory
+      - *fieldProductType
       - *fieldMainUsage
       - *fieldPossibleUsage
       - *fieldCoating
@@ -250,7 +250,7 @@ collections:
       - *fieldBody
       - *fieldRelativePhotos
       - *fieldScheme
-      - *fieldProductCategory
+      - *fieldProductType
       - *fieldMainUsage
       - *fieldCoating
       - *fieldTail
