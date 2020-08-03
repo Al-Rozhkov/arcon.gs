@@ -1,49 +1,50 @@
 {
-    "id": "1c009",
-    "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c009.jpg"
-    ],
-    "productCategory": "steel-carbon",
-    "fusion": true,
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-f"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m"
-    ],
-    "possibleUsage": [
-        "n1",
-        "s"
-    ],
-    "coating": "tan",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 3
-        }
-    ],
-    "grooveInclination": [
-        35
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-f45"
+  "photos": [
+    "./1c009.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью.",
+  "coating": "tan",
+  "fusion": true,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    35
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "steel-carbon",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n1",
+    "s",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 3
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c009",
+  "productSeriesSet": "set-f45"
 }
