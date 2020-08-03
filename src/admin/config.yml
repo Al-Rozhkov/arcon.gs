@@ -104,7 +104,7 @@ collections:
           - {label: "Схема", name: "scheme", widget: string}
       - &fieldProductType
         label: "Тип инструмента"
-        name: "productType"
+        name: "type"
         widget: "relation"
         collection: "types"
         valueField: "id"
