@@ -2,9 +2,9 @@
   "photos": [
     "./1s271.jpg"
   ],
-  "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
-  "type": "end-mills",
+  "body": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
   "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
   "scheme": [
     {
       "name": "a",
@@ -42,6 +42,7 @@
       "cogsPitch": "variable"
     }
   ],
+  "type": "end-mills",
   "id": "1s271",
-  "allowanceCuttingDiameter": "h8"
+  "productSeriesSet": "lower R"
 }
