@@ -1,55 +1,54 @@
 {
-    "id": "1c102",
-    "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
-    "type": "end-mills",
-    "fusion": true,
-    "productCategory": "non-ferrous-alloys",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-f"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        },
-        {
-            "name": "c",
-            "scheme": "cylinder-conus-lower-f"
-        },
-        {
-            "name": "d",
-            "scheme": "cylinder-lower-f"
-        }
-    ],
-    "photos": [
-        "./1c102-m.jpg",
-        "./1c102-l.jpg"
-    ],
-    "mainUsage": [
-        "n1"
-    ],
-    "possibleUsage": [
-        "n3"
-    ],
-    "coating": "pp",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 2
-        }
-    ],
-    "grooveInclination": [
-        37.5
-    ],
-    "cuttingPartLength": [
-        "middle",
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./1c102-m.jpg",
+    "./1c102-l.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 2 зуба, со средней и удлиненной режущей частью. Универсальная геометрия.",
+  "coating": "pp",
+  "fusion": true,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    },
+    {
+      "name": "c",
+      "scheme": "cylinder-conus-lower-f"
+    },
+    {
+      "name": "d",
+      "scheme": "cylinder-lower-f"
+    }
+  ],
+  "grooveInclination": [
+    37.5
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingPartLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 2
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c102",
+  "productSeriesSet": "lower F"
 }
