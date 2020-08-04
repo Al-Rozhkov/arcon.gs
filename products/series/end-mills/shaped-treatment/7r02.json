@@ -2,7 +2,7 @@
   "photos": [
     "./7r02.jpg"
   ],
-  "cuttingShapes": null,
+  "cuttingShapes": "inner-radius",
   "body": "Фасонная фасочная фреза со внутренним радиусом, для обработки галтелей.",
   "coating": "ng",
   "scheme": [
