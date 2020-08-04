@@ -1,47 +1,47 @@
 {
-    "id": "1s572",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1s572.jpg"
-    ],
-    "productCategory": "hardened-steel",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "sphere-conus"
-        },
-        {
-            "name": "b",
-            "scheme": "sphere"
-        }
-    ],
-    "mainUsage": [
-        "h",
-        "p"
-    ],
-    "possibleUsage": [
-        "m",
-        "s"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "sphere"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": [
-        30
-    ],
-    "cuttingPartLength": [
-        "short",
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-r"
+  "photos": [
+    "./1s572.jpg"
+  ],
+  "body": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "sphere-conus"
+    },
+    {
+      "name": "b",
+      "scheme": "sphere"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "cuttingPartLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "sphere"
+  ],
+  "productCategory": "hardened-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "m",
+    "s"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 4
+    }
+  ],
+  "type": "end-mills",
+  "id": "1s572",
+  "productSeriesSet": "set-r"
 }
