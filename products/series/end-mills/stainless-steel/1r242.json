@@ -2,9 +2,9 @@
   "photos": [
     "./1r242.jpg"
   ],
-  "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
-  "type": "end-mills",
+  "body": "Радиусная цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
   "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
   "scheme": [
     {
       "name": "b",
@@ -39,7 +39,7 @@
       "cogsPitch": "variable"
     }
   ],
+  "type": "end-mills",
   "id": "1r242",
-  "allowanceCuttingDiameter": "h8",
   "productSeriesSet": "set-r"
 }
