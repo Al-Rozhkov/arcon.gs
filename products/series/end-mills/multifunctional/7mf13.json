@@ -1,35 +1,36 @@
 {
-    "id": "7mf13",
-    "body": "Цельный твердосплавный многофункциональный инструмент, угол в торце 40°, 60°, 90°, 100° и 120°, 2 зуба, удлиненная серия.",
-    "type": "multifunctional",
-    "photos": [
-        "./7mf13.jpg"
-    ],
-    "productCategory": "multifunctional",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "mf"
-        }
-    ],
-    "mainUsage": [
-        "n"
-    ],
-    "possibleUsage": [
-        "p"
-    ],
-    "tail": "cylinder",
-    "cuttingShapes": [
-        "conus-cylinder"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 2
-        }
-    ],
-    "grooveInclination": [
-        30
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./7mf13.jpg"
+  ],
+  "cuttingShapes": [
+    "conus-cylinder"
+  ],
+  "body": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°.",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "mf"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "productCategory": "multifunctional",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 2
+    }
+  ],
+  "type": "multifunctional",
+  "id": "7mf13",
+  "productSeriesSet": "simple"
 }
