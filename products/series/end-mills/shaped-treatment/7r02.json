@@ -1,46 +1,47 @@
 {
-    "id": "7r02",
-    "body": "Цельная твердосплавная фасочная фреза со внутренним радиусом, для обработки галтелей, 4—8 зубьев.",
-    "type": "shaped-mills",
-    "photos": [
-        "./7r02.jpg"
-    ],
-    "productCategory": "shaped-treatment",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "7r01"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m",
-        "n",
-        "s"
-    ],
-    "possibleUsage": [
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "cuttingShapes": [
-        "inner-radius"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 4
-        },
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 6
-        },
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 10
-        }
-    ],
-    "productSeriesSet": "profile-r",
-    "allowanceRadius": "±0,01"
+  "photos": [
+    "./7r02.jpg"
+  ],
+  "cuttingShapes": "inner-radius",
+  "body": "Фасонная фасочная фреза со внутренним радиусом, для обработки галтелей.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "7r01"
+    }
+  ],
+  "grooveInclination": [
+    "0"
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "n",
+    "s"
+  ],
+  "allowanceRadius": "±0,01",
+  "productCategory": "shaped-treatment",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 4
+    },
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 6
+    },
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 10
+    }
+  ],
+  "type": "shaped-mills",
+  "id": "7r02",
+  "productSeriesSet": "profile-r"
 }
