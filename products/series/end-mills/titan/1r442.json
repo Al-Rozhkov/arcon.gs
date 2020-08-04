@@ -1,42 +1,42 @@
 {
-    "id": "1r442",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1r442.jpg"
-    ],
-    "productCategory": "titan",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "radius-r"
-        }
-    ],
-    "mainUsage": [
-        "s"
-    ],
-    "possibleUsage": [
-        "p",
-        "m"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "radius"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "grooveInclination": [
-        44
-    ],
-    "cuttingPartLength": [
-        "short",
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-r"
+  "photos": [
+    "./1r442.jpg"
+  ],
+  "body": "Радиусная цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "radius-r"
+    }
+  ],
+  "grooveInclination": [
+    44
+  ],
+  "mainUsage": [
+    "s"
+  ],
+  "cuttingPartLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "radius"
+  ],
+  "productCategory": "titan",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "m"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "variable",
+      "cogsNumber": 4
+    }
+  ],
+  "type": "end-mills",
+  "id": "1r442",
+  "productSeriesSet": "set-r"
 }
