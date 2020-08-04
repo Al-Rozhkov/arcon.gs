@@ -1,42 +1,45 @@
 {
-    "id": "7v52",
-    "body": "Цельная твердосплавная фасонная фасочная фреза, 60°, 90° и 120°, 6—8 зубьев. Без возможности засверливания.",
-    "type": "shaped-mills",
-    "photos": [
-        "./7v02.jpg"
-    ],
-    "productCategory": "shaped-treatment",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "7v"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "m",
-        "h1.1"
-    ],
-    "possibleUsage": [
-        "k",
-        "n1",
-        "s",
-        "h1.2"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "cuttingShapes": [
-        "conus"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 6
-        },
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 10
-        }
-    ],
-    "productSeriesSet": "profile"
+  "photos": [
+    "./7v02.jpg"
+  ],
+  "cuttingShapes": [
+    "conus"
+  ],
+  "body": "Фасонная фасочная фреза, 60°, 90° и 120°, 6—8 зубьев. Без возможности засверливания.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "7v"
+    }
+  ],
+  "grooveInclination": [
+    "0"
+  ],
+  "mainUsage": [
+    "p",
+    "m",
+    "h1.1"
+  ],
+  "productCategory": "shaped-treatment",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "k",
+    "n1",
+    "s",
+    "h1.2"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 6
+    },
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 10
+    }
+  ],
+  "type": "shaped-mills",
+  "id": "7v52",
+  "productSeriesSet": "profile"
 }
