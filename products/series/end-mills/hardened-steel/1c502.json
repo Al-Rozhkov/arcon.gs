@@ -2,7 +2,7 @@
   "photos": [
     "./1c502.jpg"
   ],
-  "body": "Цельная твердосплавная концевая фреза, 4—6 зубьев, со средней режущей частью.",
+  "body": "Цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью.",
   "coating": "ng",
   "allowanceCuttingDiameter": "h8",
   "scheme": [
@@ -34,10 +34,6 @@
     "p"
   ],
   "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 4
-    },
     {
       "cogsPitch": "permanent",
       "cogsNumber": 6
