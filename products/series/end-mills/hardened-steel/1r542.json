@@ -1,42 +1,42 @@
 {
-    "id": "1r542",
-    "body": "Цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1r542.jpg"
-    ],
-    "productCategory": "hardened-steel",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "radius-r"
-        }
-    ],
-    "mainUsage": [
-        "h",
-        "p"
-    ],
-    "possibleUsage": [
-        "k"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "radius"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 6
-        }
-    ],
-    "grooveInclination": [
-        45
-    ],
-    "cuttingPartLength": [
-        "short",
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-r"
+  "photos": [
+    "./1r542.jpg"
+  ],
+  "body": "Радиусная цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "radius-r"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "cuttingPartLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "radius"
+  ],
+  "productCategory": "hardened-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "k"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 6
+    }
+  ],
+  "type": "end-mills",
+  "id": "1r542",
+  "productSeriesSet": "set-r"
 }
