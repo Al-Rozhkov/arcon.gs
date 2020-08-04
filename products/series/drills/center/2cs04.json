@@ -31,8 +31,7 @@
   "productCategory": "drill-center",
   "tail": "cylinder",
   "possibleUsage": [
-    "n1",
-    "n3",
+    "n",
     "h1.1"
   ],
   "cogs": [
