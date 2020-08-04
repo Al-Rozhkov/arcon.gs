@@ -1,48 +1,49 @@
 {
-    "id": "1c502",
-    "body": "Цельная твердосплавная концевая фреза, 4—6 зубьев, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c502.jpg"
-    ],
-    "productCategory": "hardened-steel",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-r"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-r"
-        }
-    ],
-    "mainUsage": [
-        "h",
-        "p"
-    ],
-    "possibleUsage": [],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-r"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 4
-        },
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 6
-        }
-    ],
-    "grooveInclination": [
-        45
-    ],
-    "cuttingPartLength": [
-        "middle"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-r"
+  "photos": [
+    "./1c502.jpg"
+  ],
+  "body": "Цельная твердосплавная концевая фреза, 4—6 зубьев, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "hardened-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 4
+    },
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 6
+    }
+  ],
+  "type": "end-mills",
+  "id": "1c502",
+  "productSeriesSet": "set-r"
 }
