@@ -1,41 +1,41 @@
 {
-    "id": "7mf02",
-    "body": "Цельный твердосплавный многофункциональный инструмент, угол в торце 40°, 60°, 90°, 100° и 120°, 2 зуба, средней длины.",
-    "type": "multifunctional",
-    "photos": [
-        "./7mf02.jpg"
-    ],
-    "productCategory": "multifunctional",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "mf"
-        }
-    ],
-    "fusion": false,
-    "mainUsage": [
-        "p",
-        "k",
-        "m",
-        "s"
-    ],
-    "possibleUsage": [
-        "n1",
-        "n3"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "cuttingShapes": [
-        "conus-cylinder"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 2
-        }
-    ],
-    "grooveInclination": [
-        30
-    ],
-    "allowanceCuttingDiameter": "h8"
+  "photos": [
+    "./7mf02.jpg"
+  ],
+  "cuttingShapes": [
+    "conus-cylinder"
+  ],
+  "body": "Многофункциональный инструмент, средней длины. Угол в торце 40°, 60°, 90°, 100° и 120°.",
+  "coating": "ng",
+  "fusion": false,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "mf"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "s"
+  ],
+  "productCategory": "multifunctional",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 2
+    }
+  ],
+  "type": "multifunctional",
+  "id": "7mf02",
+  "productSeriesSet": "simple"
 }
