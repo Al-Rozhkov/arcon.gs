@@ -1,45 +1,47 @@
 {
-    "id": "2cs04",
-    "body": "Цельное твердосплавное центровочное сверло, 90°, 120° и 142°. средняя, длинная и сверхдлинная серии.",
-    "type": "drills-center",
-    "photos": [
-        "./2cs-ng.jpg"
-    ],
-    "productCategory": "drill-center",
-    "scheme": [
-        {
-            "name": "b",
-            "scheme": "2cs"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m",
-        "s"
-    ],
-    "possibleUsage": [
-        "n1",
-        "n3",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "sharpeningAngle": [
-        "90", "120", "142"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "permanent",
-            "cogsNumber": 2
-        }
-    ],
-    "grooveInclination": [
-        30
-    ],
-    "cuttingPartLength": [
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h7",
-    "productSeriesSet": "drills"
+  "photos": [
+    "./2cs-ng.jpg"
+  ],
+  "body": "Центровочное сверло, сверхдлинная серия, 90°, 120° и 142°.",
+  "coating": "ng",
+  "sharpeningAngle": [
+    "90",
+    "120",
+    "142"
+  ],
+  "allowanceCuttingDiameter": "h7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2cs"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "long"
+  ],
+  "productCategory": "drill-center",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n1",
+    "n3",
+    "h1.1"
+  ],
+  "cogs": [
+    {
+      "cogsPitch": "permanent",
+      "cogsNumber": 2
+    }
+  ],
+  "type": "drills-center",
+  "id": "2cs04",
+  "productSeriesSet": "drills"
 }
