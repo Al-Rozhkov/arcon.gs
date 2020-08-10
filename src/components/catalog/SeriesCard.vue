@@ -14,11 +14,14 @@
     <div class="series-body">
       <div class="flex-row">
         <div class="series-material">
-          <div v-if="node.mainUsage.length > 0" class="series-material-row">
+          <div v-if="node.mainUsage && node.mainUsage.length > 0" class="series-material-row">
             <span class="label">Основное применение:</span>
             <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
           </div>
-          <div v-if="node.possibleUsage.length > 0" class="series-material-row">
+          <div
+            v-if="node.possibleUsage && node.possibleUsage.length > 0"
+            class="series-material-row"
+          >
             <span class="label">Возможное применение:</span>
             <material-icon
               v-for="(m, index) in node.possibleUsage"
