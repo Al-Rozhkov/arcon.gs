@@ -21,6 +21,7 @@ query Catalog {
         toolLength
         mainUsage
         possibleUsage
+        tail
         cuttingPartLength
         cogs {
           cogsPitch
@@ -30,6 +31,7 @@ query Catalog {
         grooveInclination
         allowanceCuttingDiameter
         coating
+        cuttingFluid
       }
     }
   }

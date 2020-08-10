@@ -21,6 +21,7 @@ query TreadMill ($path: String, $id: String!) {
       scheme
     }
     mainUsage
+    possibleUsage
     coating
     tail
     cuttingShapes
@@ -28,6 +29,8 @@ query TreadMill ($path: String, $id: String!) {
     productSeriesSet {
       set
     }
+    toolProfile
+    toolForming
   }
   tools: allProductItemThreadMill (
     filter: { series: { eq: $id } },

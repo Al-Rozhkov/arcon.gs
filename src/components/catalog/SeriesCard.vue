@@ -14,11 +14,23 @@
     <div class="series-body">
       <div class="flex-row">
         <div class="series-material">
-          <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
+          <div v-if="node.mainUsage.length > 0" class="series-material-row">
+            <span class="label">Основное применение:</span>
+            <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
+          </div>
+          <div v-if="node.possibleUsage.length > 0" class="series-material-row">
+            <span class="label">Возможное применение:</span>
+            <material-icon
+              v-for="(m, index) in node.possibleUsage"
+              :key="index"
+              :mat-id="m"
+              :mat-main="false"
+            />
+          </div>
         </div>
         <div class="series-attr">
-          <svg-icon v-for="icon in seriesFeatures" :key="icon" :icon-id="icon" />
-          <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="index" :cogs="obj" />
+          <svg-icon v-for="(icon, index) in seriesFeatures" :key="`f${index}`" :icon-id="icon" />
+          <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="`c${index}`" :cogs="obj" />
           <svg-icon
             v-if="node.grooveInclination && node.grooveInclination.length > 0"
             icon-id="cogs-angle"
@@ -159,6 +171,16 @@ export default {
 .series-attr {
   margin-left: auto;
   margin-bottom: 0.75rem;
+}
+
+.series-material {
+  margin-bottom: 0.75rem;
+
+  .label {
+    color: $gray-700;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+  }
 }
 
 @include media-breakpoint-up(md) {

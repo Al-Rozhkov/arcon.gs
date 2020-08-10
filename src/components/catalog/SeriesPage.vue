@@ -88,27 +88,35 @@
           </template>
         </div>
 
-        <template v-if="node.grooveInclination || node.cogs">
-          <div class="col-30">
-            <template v-if="node.cogs">
-              <h3 class="dt">Зубья</h3>
-              <ul class="dd">
-                <li
-                  v-for="(c, index) in node.cogs"
-                  :key="index"
-                  class="dd-li"
-                >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.noCuttingCenter) }}</li>
-              </ul>
-            </template>
+        <div class="col-30">
+          <template v-if="node.cogs">
+            <h3 class="dt">Зубья</h3>
+            <ul class="dd">
+              <li
+                v-for="(c, index) in node.cogs"
+                :key="index"
+                class="dd-li"
+              >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.noCuttingCenter) }}</li>
+            </ul>
+          </template>
 
-            <template v-if="node.grooveInclination">
-              <h3 class="dt">Угол подъема спиральной канавки</h3>
-              <p class="dd">
-                <span class="display-3" v-html="grooveInclination"></span>
-              </p>
-            </template>
-          </div>
-        </template>
+          <template v-if="node.grooveInclination">
+            <h3 class="dt">Угол подъема спиральной канавки</h3>
+            <p class="dd">
+              <span class="display-3" v-html="grooveInclination"></span>
+            </p>
+          </template>
+
+          <template v-if="node.toolForming">
+            <h3 class="dt">Для формирования резьбы</h3>
+            <p class="dd">{{ node.toolForming }}</p>
+          </template>
+
+          <template v-if="node.toolProfile">
+            <h3 class="dt">Профиль</h3>
+            <p class="dd">{{ node.toolProfile }}</p>
+          </template>
+        </div>
       </div>
 
       <div class="actions d-print-none" @click="printIt">
@@ -194,7 +202,7 @@ export default {
       cuttingFluidDesc: {
         in: 'Внутренний',
         out: 'Внешний',
-        none: 'Без подвода СОЖ'
+        none: 'Без подвода СОЖ',
       },
       highlightedScheme: null,
     }

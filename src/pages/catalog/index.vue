@@ -65,9 +65,11 @@ query Catalog {
         photos (width: 300, quality: 75)
         body
         mainUsage
+        possibleUsage
         coating
         tail
         cuttingShapes
+        cuttingFluid
       }
     }
   }

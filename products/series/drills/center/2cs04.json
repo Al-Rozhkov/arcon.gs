@@ -41,6 +41,8 @@
     }
   ],
   "type": "drills-center",
+  "cuttingFluid": "out",
   "id": "2cs04",
-  "productSeriesSet": "drills"
+  "productSeriesSet": "drills",
+  "toolLength": "8xD"
 }

@@ -22,7 +22,9 @@ query Catalog {
         mainUsage
         possibleUsage
         endShapes
+        tail
         cuttingPartLength
+        cuttingShapes
         cogs {
           cogsPitch
           cogsNumber

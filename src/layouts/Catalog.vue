@@ -15,7 +15,7 @@
     <svg-sprite-features class="d-none" />
 
     <div class="container-xl">
-      <p>
+      <p class="lead">
         Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
         <g-link to="/catalog/special">специального инструмента.</g-link>
       </p>

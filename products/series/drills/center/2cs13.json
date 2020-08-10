@@ -37,5 +37,7 @@
   ],
   "type": "drills-center",
   "id": "2cs13",
-  "productSeriesSet": "drills"
+  "cuttingFluid": "out",
+  "productSeriesSet": "drills",
+  "toolLength": "5xD"
 }

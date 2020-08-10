@@ -150,4 +150,13 @@ export default {
 .hd {
   visibility: hidden;
 }
+
+/*
+ * Print styles
+ */
+@media print {
+  .hd {
+    visibility: visible;
+  }
+}
 </style>

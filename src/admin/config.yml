@@ -134,6 +134,10 @@ collections:
         required: false
         multiple: true
         options: *usageOptions
+      - label: "Допуск на радиус"
+        name: "allowanceRadius"
+        required: false
+        widget: "text"
       - &fieldCoating
         label: "Покрытие"
         name: "coating"
@@ -169,6 +173,7 @@ collections:
         name: "cuttingShapes"
         widget: "select"
         required: false
+        multiple: true
         options:
           - { label: "Конус", value: "conus" }
           - { label: "Конус и цилиндр", value: "conus-cylinder" }
@@ -234,6 +239,10 @@ collections:
       - *fieldCogs
       - *fieldGrooveInclination
       - *fieldCuttingPartLength
+      - label: "Длина"
+        name: "toolLength"
+        required: false
+        widget: "text"
       - *fieldProductSeriesSet
 
   - name: "thread-mills"
@@ -256,3 +265,11 @@ collections:
       - *fieldTail
       - *fieldCuttingShapes
       - *fieldProductSeriesSet
+      - label: "Профиль"
+        name: "toolProfile"
+        required: false
+        widget: "text"
+      - label: "Для формирования резьбы"
+        name: "toolForming"
+        required: false
+        widget: "text"

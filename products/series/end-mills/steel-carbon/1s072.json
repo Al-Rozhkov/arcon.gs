@@ -18,10 +18,6 @@
   "grooveInclination": [
     30
   ],
-  "mainUsage": [
-    "p",
-    "h1.1"
-  ],
   "cuttingPartLength": [
     "short",
     "middle"
@@ -31,12 +27,17 @@
   ],
   "productCategory": "steel-carbon",
   "tail": "cylinder",
+  "mainUsage": [
+    "p",
+    "h1.1"
+  ],
   "possibleUsage": [
     "k",
     "m",
     "n",
     "s"
   ],
+  "allowanceRadius": "±0,01",
   "cogs": [
     {
       "cogsPitch": "permanent",

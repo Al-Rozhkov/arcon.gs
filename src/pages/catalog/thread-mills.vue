@@ -20,6 +20,7 @@ query Catalog {
         photos (width: 260, quality: 80)
         body
         mainUsage
+        possibleUsage
         coating
         tail
         cuttingShapes

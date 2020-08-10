@@ -21,6 +21,8 @@
   "mainUsage": [
     "n"
   ],
+  "possibleUsage": [],
+  "allowanceRadius": "±0,01",
   "cuttingPartLength": [
     "short",
     "middle"
@@ -30,7 +32,6 @@
   ],
   "productCategory": "non-ferrous-alloys",
   "tail": "cylinder",
-  "possibleUsage": null,
   "cogs": [
     {
       "cogsPitch": "permanent",

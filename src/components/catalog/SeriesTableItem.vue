@@ -31,15 +31,16 @@
 
     <div class="td td-double">
       <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="index" :cogs="obj" />
+      <svg-icon v-for="icon in endShapes" :key="icon" :icon-id="`form-${icon}`" />
+      <template v-if="node.cuttingShapes">
+        <svg-icon v-for="(icon, index) in node.cuttingShapes" :key="`cs${index}`" :icon-id="`cutting-${icon}`" />
+      </template>
       <svg-icon
         v-if="node.cuttingFluid && node.cuttingFluid !== 'none'"
         :icon-id="'cutting-fluid-' + node.cuttingFluid"
       />
       <svg-icon v-if="node.toolLength" icon-id="tool-length">
-        <text
-          transform="matrix(1 0 0 1 8 34)"
-          class="tool-length-text"
-        >{{ node.toolLength }}</text>
+        <text transform="matrix(1 0 0 1 8 34)" class="tool-length-text">{{ node.toolLength }}</text>
       </svg-icon>
       <svg-icon v-if="node.allowanceCuttingDiameter" icon-id="allowance-cutting-diameter">
         <text
@@ -84,6 +85,16 @@ export default {
     node: {
       type: Object,
       required: true,
+    },
+  },
+
+  computed: {
+    endShapes() {
+      return this.node.endShapes
+        ? this.node.endShapes.filter(
+            (item) => item === 'radius' || item === 'sphere'
+          )
+        : []
     },
   },
 }

@@ -107,8 +107,10 @@
         <!-- <series-item v-for="item in output" :node="item.node" :key="item.id" /> -->
 
         <div v-if="output.length === 0" class="td-empty">
-          Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
-          <g-link to="/catalog/special/">специального инструмента</g-link>.
+          <p class="lead">
+            Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
+            <g-link to="/catalog/special/">специального инструмента</g-link>.
+          </p>
         </div>
       </div>
     </div>

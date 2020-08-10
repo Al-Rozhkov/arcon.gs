@@ -25,5 +25,7 @@
   "type": "thread-mills",
   "cuttingFluid": "in",
   "id": "6rp13",
-  "productSeriesSet": "thread-mills"
+  "productSeriesSet": "thread-mills",
+  "toolProfile": "Неполный",
+  "toolForming": "M (ISO) и UN, угол профиля 60°, внутренняя и внешняя"
 }

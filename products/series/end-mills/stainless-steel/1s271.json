@@ -36,6 +36,7 @@
   "possibleUsage": [
     "n"
   ],
+  "allowanceRadius": "±0,01",
   "cogs": [
     {
       "cogsNumber": 4,

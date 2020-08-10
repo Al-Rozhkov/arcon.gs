@@ -4,14 +4,11 @@
   ],
   "body": "Спиральное твердосплавное сверло 3хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7.",
   "coating": "ng",
-  "sharpeningAngle": [
-    "140"
-  ],
   "allowanceCuttingDiameter": "h7",
   "scheme": [
     {
       "name": "b",
-      "scheme": "2cs"
+      "scheme": "2ss"
     }
   ],
   "grooveInclination": [
