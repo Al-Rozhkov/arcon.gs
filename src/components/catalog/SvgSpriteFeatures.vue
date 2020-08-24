@@ -230,6 +230,28 @@
       <use width="38" height="38" xlink:href="#icon_stroke_panel" class="svg-fill-green" />
     </symbol>
 
+    <!-- cutting-arrow -->
+    <symbol id="cutting-arrow" x="0px" y="0px" viewBox="0 0 38 38">
+      <polygon
+        class="svg-fill-teal svg-stroke"
+        points="18.95 30.71 27.03 20.02 27.03 1.99 10.87 1.99 10.87 20.02 18.95 30.71"
+      />
+      <rect class="svg-fill-teal svg-stroke" x="10.87" y="1.94" width="16.17" height="8.08" />
+      <polygon
+        class="svg-fill-teal svg-stroke"
+        points="20.11 10.02 13.64 23.68 15.12 25.65 22.52 10.02 20.11 10.02"
+      />
+      <polygon
+        class="svg-fill-teal svg-stroke"
+        points="27.03 10.02 26.21 10.02 17.39 28.65 18.88 30.61 27.03 13.39 27.03 10.02"
+      />
+      <polygon
+        class="svg-fill-teal svg-stroke"
+        points="14 10.02 10.87 16.64 10.87 20.02 11.37 20.69 16.42 10.02 14 10.02"
+      />
+      <use width="38" height="38" xlink:href="#icon_stroke_panel" style="fill:#2FAC66" />
+    </symbol>
+
     <!-- cutting-t -->
     <symbol id="cutting-t" x="0px" y="0px" viewBox="0 0 38 38">
       <rect class="svg-fill-teal svg-stroke" x="15.38" y="1.93" width="7.11" height="15.92" />
@@ -304,7 +326,7 @@
 
     <!-- cutting-fluid-in -->
     <symbol id="cutting-fluid-in" x="0px" y="0px" viewBox="0 0 38 38">
-      <polygon
+      <!-- <polygon
         class="svg-fill-fusion"
         points="18.05 25.16 17.14 25.15 13.35 36.17 17.27 36.17 18.05 25.16"
       />
@@ -315,6 +337,14 @@
       <polygon
         class="svg-fill-fusion"
         points="22.48 36.17 18.25 36.17 18.19 25.16 19.83 25.26 22.48 36.17"
+      />-->
+      <polygon
+        class="svg-fill-fusion"
+        points="16.47 25.16 14.55 25.15 8.8 36.17 14.73 36.17 16.47 25.16"
+      />
+      <polygon
+        class="svg-fill-fusion"
+        points="22.26 25.16 24.18 25.15 29.93 36.17 24 36.17 22.26 25.16"
       />
       <use
         width="18.16"
@@ -330,15 +360,11 @@
     <symbol id="cutting-fluid-out" x="0px" y="0px" viewBox="0 0 38 38">
       <polygon
         class="svg-fill-fusion"
-        points="18.05 25.16 17.14 25.15 13.35 36.17 17.27 36.17 18.05 25.16"
+        points="21.24 6.47 22.16 6.46 26.8 36.17 25.13 36.17 21.24 6.47"
       />
       <polygon
         class="svg-fill-fusion"
-        points="19.96 25.2 23.74 36.17 26.05 36.17 20.72 25.2 19.96 25.2"
-      />
-      <polygon
-        class="svg-fill-fusion"
-        points="22.48 36.17 18.25 36.17 18.19 25.16 19.83 25.26 22.48 36.17"
+        points="27.16 6.46 10.76 6.46 1.65 36.17 36.27 36.17 27.16 6.46"
       />
       <use
         width="18.16"

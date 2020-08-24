@@ -27,11 +27,6 @@ $container-padding-horizontal-m:         $grid-gutter-width * 2 !default;
     padding-left: $container-padding-horizontal-m;
     padding-right: $container-padding-horizontal-m;
   }
-
-  @media print {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 %container-md {

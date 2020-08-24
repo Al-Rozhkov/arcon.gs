@@ -40,6 +40,7 @@ export default {
         'form-radius': 'Радиусной торец',
         'form-sphere': 'Сферический торец',
         'cutting-conus': 'Режущая часть — конус',
+        'cutting-arrow': 'Режущая часть — конус',
         'cutting-inner-radius': 'Режущая часть с внутренним радиусом',
         'cutting-t': 'Т-образная режущая часть',
         'cogs-angle': 'Угол подъема спиральной канавки',

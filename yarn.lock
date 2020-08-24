@@ -1036,10 +1036,10 @@
   resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.4.1.tgz#8ad21f3169076e32bbfd75ed0753807662c25e90"
   integrity sha512-C34AEcK1HjSyxilRToUL54I6KAoodojUbeRlXoruobZuG0eGm8xfDL+3kgkWj7AJK4EZtunSOYfoqMp70eDtwg==
 
-"@gridsome/cli@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.3.tgz#f6a315de2939b1b2f75c6ab21bbcfbc8287de564"
-  integrity sha512-V4rWk4ahUelfQHiSdKWK/ABrZwbGYo9PENI2I9Xv3JTXNYfgYIlhJrKVQyPjx+qDyrkejzrmVcMzIVzgraKFEw==
+"@gridsome/cli@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.4.tgz#42fa7a4368a80bd04ec497c93cae5a66b041fe22"
+  integrity sha512-KkfnDs3aDRdNapxS5QwCUDUzNJgc+uRExw5IRUrVn38zOdmJc0d8hFqHZ7GpcHEX1W0BVyUsa4sQ3LNyjlttsg==
   dependencies:
     "@hjvedvik/tasks" "^0.0.8"
     chalk "^2.4.1"
@@ -5310,10 +5310,10 @@ googleapis-common@^4.4.0:
     url-template "^2.0.8"
     uuid "^8.0.0"
 
-googleapis@^58.0.0:
-  version "58.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-58.0.0.tgz#03d5d1f40a12ca60adc139ef4624636024afaeac"
-  integrity sha512-gfpv+8Fr8TCO6yMCTrQUySZe2IJDM/6lulUAh3RuYYPlUBdd3g1B2zMkd7Ot59P6CyGYt4ZMzTLpyHVoLxM85w==
+googleapis@^59.0.0:
+  version "59.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-59.0.0.tgz#aec5c6f5b0b347c9c6996d45fa8ad8176e585fae"
+  integrity sha512-GV/E4KRN89a4GxSk7D7cwUfRYgcJHR05sOgm/WGdwc/u8dxNXG5lWmz9gF5ZwFGk2yKtVxL4VZNn4zBuZ6rmGg==
   dependencies:
     google-auth-library "^6.0.0"
     googleapis-common "^4.4.0"
@@ -5462,14 +5462,14 @@ gridsome-plugin-yandex-metrika@^0.1.2:
   dependencies:
     vue-yandex-metrika "^1.7.3"
 
-gridsome@^0.7.19:
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.7.19.tgz#3d67fb66c80b53101c750e870b076b3694152ec9"
-  integrity sha512-KjvkcIyooaDyjIx11LvK7TLRIqCjTXV3D1C3MgmX0eEO0VnucAynX88b/IWlHmB3ytt1cUkbFaqqpTbO4a/z0Q==
+gridsome@^0.7.20:
+  version "0.7.20"
+  resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.7.20.tgz#6b45135468db1185e5aea4b3e699d2c2d1e3557d"
+  integrity sha512-htk50W1dHLpoZ3iWQUZtBWki+STJDqzXxnrb/WBpDaGD9nW3gQK7HgPVVTVntqjTiJKoB1PT7q/g5mflJkgWuw==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.0.0"
-    "@gridsome/cli" "^0.3.3"
+    "@gridsome/cli" "^0.3.4"
     "@hapi/joi" "^15.1.1"
     "@sindresorhus/slugify" "^0.8.0"
     "@vue/babel-preset-app" "^4.2.2"

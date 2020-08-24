@@ -45,6 +45,7 @@ query Catalog {
         mainUsage
         possibleUsage
         endShapes
+        cuttingShapes
         cuttingPartLength
         cogs {
           cogsPitch

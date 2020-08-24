@@ -8,7 +8,7 @@
   "scheme": [
     {
       "name": "a",
-      "scheme": "cylinder-f"
+      "scheme": "cylinder-f-small"
     }
   ],
   "grooveInclination": [

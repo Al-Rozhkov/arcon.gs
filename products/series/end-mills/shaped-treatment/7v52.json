@@ -32,11 +32,13 @@
   "cogs": [
     {
       "cogsPitch": "permanent",
-      "cogsNumber": 6
+      "cogsNumber": 6,
+      "noCuttingCenter": true
     },
     {
       "cogsPitch": "permanent",
-      "cogsNumber": 10
+      "cogsNumber": 10,
+      "noCuttingCenter": true
     }
   ],
   "type": "shaped-mills",

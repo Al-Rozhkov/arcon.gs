@@ -3,7 +3,7 @@
     "./7mf13.jpg"
   ],
   "cuttingShapes": [
-    "conus-cylinder"
+    "arrow"
   ],
   "body": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°.",
   "allowanceCuttingDiameter": "h8",
