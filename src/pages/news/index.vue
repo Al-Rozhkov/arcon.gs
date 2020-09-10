@@ -13,7 +13,7 @@
 
 <page-query>
 query RecentNews {
-  news: allNews(filter: { nopage: { ne: true }}, limit: 36, sortBy: "date") {
+  news: allNews(filter: { nopage: { ne: true }}, limit: 36, sortBy: "date", order: DESC) {
     edges{
       node {
         id
