@@ -40,5 +40,8 @@
   "cuttingFluid": "out",
   "id": "2ss005",
   "productSeriesSet": "drills",
-  "toolLength": "5xD"
+  "toolLength": "5xD",
+  "sharpeningAngle": [
+    "140"
+  ]
 }

@@ -15,5 +15,6 @@ export const cuttingShapes = {
   conus: 'конус',
   'conus-cylinder': 'конус и цилиндр',
   'inner-radius': 'с внутренним радиусом',
+  arrow: 'конус',
   t: 'Т-образная режущая часть'
 }
