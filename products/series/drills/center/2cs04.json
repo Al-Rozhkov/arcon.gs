@@ -34,11 +34,9 @@
     "n",
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
   ],
   "type": "drills-center",
   "cuttingFluid": "out",

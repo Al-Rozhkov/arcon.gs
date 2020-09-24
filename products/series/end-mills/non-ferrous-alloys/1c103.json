@@ -43,6 +43,10 @@
             "cogsNumber": 3
         }
     ],
+    "cogsPitch": "permanent",
+    "cogsNumber": [
+        3
+    ],
     "grooveInclination": [
         50
     ],

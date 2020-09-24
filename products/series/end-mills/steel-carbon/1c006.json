@@ -45,6 +45,10 @@
       "cogsNumber": 4
     }
   ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    4
+  ],
   "type": "end-mills",
   "id": "1c006",
   "productSeriesSet": "set-f45"

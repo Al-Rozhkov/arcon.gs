@@ -33,11 +33,9 @@
               tail
               endShapes
               cuttingShapes
-              cogs {
-                cogsPitch
-                cogsNumber
-                noCuttingCenter
-              }
+              cogsPitch
+              cogsNumber
+              cogsCuttingCenter
               grooveInclination
             }
           }
@@ -57,13 +55,13 @@ export default {
   components: {
     PageLayout,
     CategoriesList,
-    SeriesCard
+    SeriesCard,
   },
 
   metaInfo() {
     return {
-      title: this.$page.category.title
+      title: this.$page.category.title,
     }
-  }
+  },
 }
 </script>

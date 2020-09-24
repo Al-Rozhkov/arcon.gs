@@ -179,20 +179,27 @@ collections:
           - { label: "Конус и цилиндр", value: "conus-cylinder" }
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
-      - &fieldCogs
-        label: "Зубья"
-        name: "cogs"
-        widget: "list"
-        fields:
-          - {label: "Количество", name: "cogsNumber", widget: "number", valueType: "int", min: 1}
-          - label: "Шаг"
-            name: "cogsPitch"
-            widget: "select"
-            default: "variable"
-            options:
-            - { label: "Постоянный", value: "permanent" }
-            - { label: "Переменный", value: "variable" }
-          - {label: "Без режущего центра", name: "noCuttingCenter", widget: "boolean", default: false, required: false}
+      - &fieldCogsNumber
+        label: "Количество зубьев",
+        name: "cogsNumber",
+        widget: "list",
+        valueType: "int",
+        hint: "Если значений несколько, укажите их через запятую."
+        min: 1
+      - &fieldCogsPitch
+        label: "Шаг зубьев"
+        name: "cogsPitch"
+        widget: "select"
+        default: "variable"
+        options:
+        - { label: "Постоянный", value: "permanent" }
+        - { label: "Переменный", value: "variable" }
+      - &fieldCogsCuttingCenter
+        label: "Без режущего центра"
+        name: "noCuttingCenter"
+        widget: "boolean"
+        default: false
+        required: false
       - &fieldGrooveInclination
         label: "Угол наклона спиральной канавки"
         name: "grooveInclination"
@@ -236,7 +243,9 @@ collections:
         hint: "Если значений несколько, укажите их через запятую."
         required: false
         widget: "list"
-      - *fieldCogs
+      - *fieldCogsNumber
+      - *fieldCogsPitch
+      - *fieldCogsCuttingCenter
       - *fieldGrooveInclination
       - *fieldCuttingPartLength
       - label: "Длина"

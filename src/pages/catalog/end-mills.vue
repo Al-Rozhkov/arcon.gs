@@ -25,11 +25,9 @@ query Catalog {
         tail
         cuttingPartLength
         cuttingShapes
-        cogs {
-          cogsPitch
-          cogsNumber
-          noCuttingCenter
-        }
+        cogsPitch
+        cogsNumber
+        cogsCuttingCenter
         grooveInclination
         coating
       }

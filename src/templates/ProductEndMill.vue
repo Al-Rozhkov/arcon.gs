@@ -27,11 +27,9 @@
       tail
       endShapes
       cuttingShapes
-      cogs {
-        cogsPitch
-        cogsNumber
-        noCuttingCenter
-      }
+      cogsPitch
+      cogsNumber
+      cogsCuttingCenter
       grooveInclination
       allowanceRadius
       allowanceCuttingDiameter
@@ -70,7 +68,7 @@ import SeriesPage from '~/components/catalog/SeriesPage.vue'
 export default {
   components: {
     PageLayout,
-    SeriesPage
+    SeriesPage,
   },
 
   metaInfo() {
@@ -80,15 +78,15 @@ export default {
         {
           key: 'description',
           name: 'description',
-          content: this.$page.series.body
+          content: this.$page.series.body,
         },
         {
           key: 'keywords',
           name: 'keywords',
-          content: this.$page.tools.edges.map(t => t.node.id).join(', ')
-        }
-      ]
+          content: this.$page.tools.edges.map((t) => t.node.id).join(', '),
+        },
+      ],
     }
-  }
+  },
 }
 </script>

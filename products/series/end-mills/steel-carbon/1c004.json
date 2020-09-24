@@ -37,6 +37,10 @@
             "cogsNumber": 5
         }
     ],
+    "cogsPitch": "variable",
+    "cogsNumber": [
+        5
+    ],
     "grooveInclination": [
         38
     ],

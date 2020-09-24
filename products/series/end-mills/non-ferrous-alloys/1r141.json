@@ -37,6 +37,10 @@
       "cogsNumber": 3
     }
   ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3
+  ],
   "type": "end-mills",
   "id": "1r141",
   "productSeriesSet": "lower R"

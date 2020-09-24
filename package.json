@@ -27,7 +27,7 @@
     "eslint": "^7.9.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-gridsome": "^1.5.0",
-    "googleapis": "^59.0.0",
+    "googleapis": "^60.0.1",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "node-sass": "^4.14.1",

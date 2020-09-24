@@ -44,6 +44,10 @@
       "cogsPitch": "variable"
     }
   ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
   "allowanceCuttingDiameter": "h8",
   "productSeriesSet": "set-r"
 }

@@ -1,4 +1,5 @@
 {
+  "id": "7mf02",
   "photos": [
     "./7mf02.jpg"
   ],
@@ -35,7 +36,10 @@
       "cogsNumber": 2
     }
   ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
   "type": "multifunctional",
-  "id": "7mf02",
   "productSeriesSet": "simple"
 }

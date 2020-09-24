@@ -29,11 +29,9 @@
   "possibleUsage": [
     "p"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
   ],
   "type": "drills-center",
   "cuttingFluid": "out",

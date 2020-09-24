@@ -27,11 +27,9 @@
       sharpeningAngle
       allowanceCuttingDiameter
       cuttingFluid
-      cogs {
-        cogsPitch
-        cogsNumber
-        noCuttingCenter
-      }
+      cogsPitch
+      cogsNumber
+      cogsCuttingCenter
       grooveInclination
       productSeriesSet {
         set

@@ -29,12 +29,9 @@
   "possibleUsage": [
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2,
-      "noCuttingCenter": false
-    }
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
   ],
   "type": "drills-spiral",
   "cuttingFluid": "out",

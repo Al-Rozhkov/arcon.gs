@@ -21,11 +21,9 @@ query Catalog {
         mainUsage
         possibleUsage
         cuttingPartLength
-        cogs {
-          cogsPitch
-          cogsNumber
-          noCuttingCenter
-        }
+        cogsPitch
+        cogsNumber
+        cogsCuttingCenter
         grooveInclination
         coating
         toolLength
@@ -47,11 +45,9 @@ query Catalog {
         endShapes
         cuttingShapes
         cuttingPartLength
-        cogs {
-          cogsPitch
-          cogsNumber
-          noCuttingCenter
-        }
+        cogsPitch
+        cogsNumber
+        cogsCuttingCenter
         grooveInclination
         coating
       }

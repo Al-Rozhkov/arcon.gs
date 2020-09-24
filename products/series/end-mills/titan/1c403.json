@@ -40,6 +40,10 @@
       "cogsNumber": 4
     }
   ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
   "type": "end-mills",
   "id": "1c403",
   "productSeriesSet": "set-r"

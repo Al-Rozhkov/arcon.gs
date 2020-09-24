@@ -45,6 +45,13 @@
       "noCuttingCenter": true
     }
   ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3,
+    4,
+    6
+  ],
+  "cogsCuttingCenter": true,
   "type": "shaped-mills",
   "id": "7v02",
   "productSeriesSet": "profile"

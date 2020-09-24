@@ -38,6 +38,10 @@
       "cogsNumber": 4
     }
   ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    3
+  ],
   "type": "end-mills",
   "id": "1c106",
   "productSeriesSet": "lower F"

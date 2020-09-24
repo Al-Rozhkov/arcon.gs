@@ -37,6 +37,10 @@
       "cogsNumber": 1
     }
   ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    1
+  ],
   "type": "end-mills",
   "id": "1c109",
   "productSeriesSet": "simple"

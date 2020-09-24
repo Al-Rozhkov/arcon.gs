@@ -30,10 +30,19 @@
     </div>
 
     <div class="td td-double">
-      <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="index" :cogs="obj" />
+      <svg-cogs-icon
+        v-if="node.cogsNumber && node.cogsPitch"
+        :number="node.cogsNumber"
+        :pitch="node.cogsPitch"
+        :center="node.cogsCuttingCenter"
+      />
       <svg-icon v-for="icon in endShapes" :key="icon" :icon-id="`form-${icon}`" />
       <template v-if="node.cuttingShapes">
-        <svg-icon v-for="(icon, index) in node.cuttingShapes" :key="`cs${index}`" :icon-id="`cutting-${icon}`" />
+        <svg-icon
+          v-for="(icon, index) in node.cuttingShapes"
+          :key="`cs${index}`"
+          :icon-id="`cutting-${icon}`"
+        />
       </template>
       <svg-icon
         v-if="node.cuttingFluid && node.cuttingFluid !== 'none'"

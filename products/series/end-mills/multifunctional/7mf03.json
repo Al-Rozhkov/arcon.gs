@@ -34,6 +34,10 @@
       "cogsNumber": 2
     }
   ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
   "type": "multifunctional",
   "id": "7mf03",
   "productSeriesSet": "simple"

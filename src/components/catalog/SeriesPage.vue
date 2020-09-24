@@ -89,14 +89,15 @@
         </div>
 
         <div class="col-30">
-          <template v-if="node.cogs">
+          <template v-if="node.cogsNumber && node.cogsPitch">
             <h3 class="dt">Зубья</h3>
             <ul class="dd">
               <li
-                v-for="(c, index) in node.cogs"
+                v-for="(c, index) in node.cogsNumber"
                 :key="index"
                 class="dd-li"
-              >{{ getCogsNumberLabel(c.cogsNumber) }}, {{ cogsDesc[c.cogsPitch] }}, {{ getCogsCenterLabel(c.noCuttingCenter) }}</li>
+              >{{ getCogsNumberLabel(c) }},</li>
+              <li>{{ cogsDesc[node.cogsPitch] }}, {{ getCogsCenterLabel(node.cogsCuttingCenter) }}</li>
             </ul>
           </template>
 
@@ -147,7 +148,6 @@
 
 <script>
 import SvgPlainIcon from '~/components/catalog/SvgPlainIcon.vue'
-import SvgCogsIcon from '~/components/catalog/SvgCogsIcon.vue'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon.vue'
 import MaterialIcon from '~/components/catalog/MaterialIcon.vue'
 import IconPrinter from '~/components/IconPrinter.vue'
@@ -157,7 +157,6 @@ import { materials, cuttingShapes } from '~/utils/fieldsMapping.js'
 export default {
   components: {
     SvgPlainIcon,
-    SvgCogsIcon,
     SvgIcon,
     MaterialIcon,
     IconPrinter,

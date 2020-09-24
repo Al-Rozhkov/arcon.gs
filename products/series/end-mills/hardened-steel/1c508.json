@@ -28,6 +28,11 @@
             "noCuttingCenter": true
         }
     ],
+    "cogsPitch": "permanent",
+    "cogsNumber": [
+        10
+    ],
+    "cogsCuttingCenter": true,
     "grooveInclination": [
         30
     ],

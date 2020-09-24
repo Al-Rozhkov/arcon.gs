@@ -34,13 +34,11 @@
     "n",
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2,
-      "noCuttingCenter": false
-    }
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
   ],
+  "cogsCuttingCenter": false,
   "type": "drills-center",
   "cuttingFluid": "out",
   "id": "2cs02",
