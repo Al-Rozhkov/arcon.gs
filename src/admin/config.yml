@@ -180,10 +180,10 @@ collections:
           - { label: "С внутренним радиусом", value: "inner-radius" }
           - { label: "Т-образная режущая часть", value: "t" }
       - &fieldCogsNumber
-        label: "Количество зубьев",
-        name: "cogsNumber",
-        widget: "list",
-        valueType: "int",
+        label: "Количество зубьев"
+        name: "cogsNumber"
+        widget: "list"
+        valueType: "int"
         hint: "Если значений несколько, укажите их через запятую."
         min: 1
       - &fieldCogsPitch
