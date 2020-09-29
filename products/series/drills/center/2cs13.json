@@ -21,14 +21,15 @@
   "mainUsage": [
     "n"
   ],
+  "possibleUsage": [
+    "p"
+  ],
+  "coating": "pp",
   "cuttingPartLength": [
     "long"
   ],
   "productCategory": "drill-center",
   "tail": "cylinder",
-  "possibleUsage": [
-    "p"
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     2
