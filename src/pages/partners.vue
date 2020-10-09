@@ -48,7 +48,7 @@
           <p>ural@cvm-arcon.ru</p>
         </div>
 
-        <div class="col-lg-8 item">
+        <!-- <div class="col-lg-8 item">
           <header class="item-head">
             <h3 class="h3">ООО &laquo;ТЗТС&raquo;</h3>
             <p>
@@ -61,9 +61,9 @@
             <span class="text-nowrap">+7&nbsp;903 844-55-45</span>
           </p>
           <p>tz-ts-tula@mail.ru</p>
-        </div>
+        </div> -->
 
-        <div class="col-lg-8 item">
+        <!-- <div class="col-lg-8 item">
           <header class="item-head">
             <h3 class="h3">ООО &laquo;ПРОФИТ-ССК&raquo;</h3>
             <p>
@@ -73,7 +73,7 @@
           <p>Россия, г. Москва</p>
           <p>Тел.: (495) 369-43-72</p>
           <p>profit-ssk@mail.ru</p>
-        </div>
+        </div> -->
 
         <div class="col-lg-8 item">
           <header class="item-head">
