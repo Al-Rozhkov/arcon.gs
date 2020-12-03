@@ -1,7 +1,7 @@
 <template>
   <g-link class="a" :to="node.path">
     <figure v-if="node.image" class="figure">
-      <g-image :src="node.image" immediate="false" />
+      <g-image :src="node.image" :immediate="false" />
     </figure>
     <small class="date">{{ node.date }}</small>
     <h3 class="h3">{{ node.title }}</h3>
