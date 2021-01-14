@@ -41,15 +41,14 @@ if (('').match(originPattern)) {
 }
 
 module.exports = (req, res) => {
-  // console.log(req.query)
   const options = {
     code: req.query.code,
     redirect_uri: process.env.REDIRECT_URL,
     scope: 'repo,user',
   }
 
-  oauth2.getToken(options).then((token) => {
-    // const token = oauth2.accessToken.create(result)
+  oauth2.getToken(options).then((accessToken) => {
+    const token = oauth2.createToken(accessToken)
     console.log(token)
 
     res.send(getScript('success', {
