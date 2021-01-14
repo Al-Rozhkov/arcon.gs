@@ -48,12 +48,8 @@ module.exports = (req, res) => {
   }
 
   oauth2.getToken(options).then((accessToken) => {
-    const token = oauth2.createToken(accessToken)
-    console.log(accessToken)
-    console.log(token)
-
     res.send(getScript('success', {
-      token: token,
+      token: accessToken.token.access_token,
       provider: 'github'
     }))
   }).catch((error) => {
