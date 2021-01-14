@@ -1,4 +1,4 @@
-const simpleOauthModule = require('simple-oauth2')
+const { AuthorizationCode } = require('simple-oauth2')
 
 function getScript(mess, content) {
   return `<!doctype html><html><body><script>
@@ -18,7 +18,7 @@ function getScript(mess, content) {
   </script></body></html>`;
 }
 
-const oauth2 = simpleOauthModule.create({
+const oauth2 = new AuthorizationCode({
   client: {
     id: '296798bfc38173997392',
     secret: '1ae8b32678751439c23967682300f2547d1237ba'
@@ -41,19 +41,19 @@ if (('').match(originPattern)) {
 }
 
 module.exports = (req, res) => {
-  console.log(req.query)
-  const code = req.query.code
+  // console.log(req.query)
   const options = {
-    code: code,
+    code: req.query.code,
     redirect_uri: process.env.REDIRECT_URL,
     scope: 'repo,user',
   }
 
-  oauth2.authorizationCode.getToken(options).then((result) => {
-    const token = oauth2.accessToken.create(result)
+  oauth2.getToken(options).then((token) => {
+    // const token = oauth2.accessToken.create(result)
+    console.log(token)
 
     res.send(getScript('success', {
-      token: token.token.access_token,
+      token: token,
       provider: 'github'
     }))
   }).catch((error) => {
