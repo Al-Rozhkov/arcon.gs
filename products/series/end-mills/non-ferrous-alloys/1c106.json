@@ -32,15 +32,9 @@
   "productCategory": "non-ferrous-alloys",
   "tail": "cylinder",
   "possibleUsage": [],
-  "cogs": [
-    {
-      "cogsPitch": "variable",
-      "cogsNumber": 4
-    }
-  ],
   "cogsPitch": "variable",
   "cogsNumber": [
-    3
+    4
   ],
   "type": "end-mills",
   "id": "1c106",

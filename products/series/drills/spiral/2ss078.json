@@ -1,0 +1,44 @@
+{
+  "photos": [
+    "./2ss003.jpg"
+  ],
+  "body": "Спиральное твердосплавное сверло 8хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — m7.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "m7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2ss"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "n",
+    "s"
+  ],
+  "cuttingPartLength": [
+    "middle"
+  ],
+  "productCategory": "drills-spiral",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "h1.1"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-spiral",
+  "cuttingFluid": "out",
+  "id": "2ss078",
+  "productSeriesSet": "drills",
+  "toolLength": "8xD",
+  "sharpeningAngle": [
+    "140"
+  ]
+}

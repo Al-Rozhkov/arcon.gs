@@ -99,6 +99,13 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        path: 'products/special/*.md',
+        typeName: 'ProductSpecial'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
         path: 'content/news/**/*.md',
         typeName: 'News'
       }

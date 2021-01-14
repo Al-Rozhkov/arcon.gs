@@ -40,28 +40,11 @@ query Services {
   padding-top: 1.5rem;
   padding-bottom: 0.75rem;
   background-color: #ffffff;
-  border: 2px solid transparent;
   color: $black;
   cursor: pointer;
 
-  &::after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-size: cover;
-    opacity: 0.25;
-    z-index: 10;
-  }
-
   &:hover {
     background-color: lighten($yellow, 35%) ;
-
-    &::after {
-      opacity: 0.7;
-    }
 
     .u {
       color: #000000;
@@ -71,8 +54,7 @@ query Services {
 }
 
 .u {
-  color: $cyan;
-  border-bottom: 1px solid rgba($cyan, 0.2);
+  @include link-underline();
 }
 
 @include media-breakpoint-up(lg) {

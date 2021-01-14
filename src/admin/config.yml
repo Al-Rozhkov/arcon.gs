@@ -77,6 +77,21 @@ collections:
       - *fieldImage
       - *fieldMarkdown
 
+  - name: "specials"
+    label: "Спец инструмент"
+    extension: "md"
+    folder: "products/special"
+    slug: "{{id}}"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - *fieldTitle
+      - {label: "Файл", name: "file", widget: "file"}
+      - {label: "Группа", name: "group", widget: string, default: "Сверло"}
+      - *fieldWeight
+      - *fieldMarkdown
+
   - name: "end-mills"
     label: "Серии фрез"
     extension: "json"
@@ -120,9 +135,9 @@ collections:
           - {label: "Углеродистая и легированная сталь", value: "p"}
           - {label: "Чугун", value: "k"}
           - {label: "Нержавеющая сталь", value: "m"}
-          - {label: "Закаленная сталь", value: "h"}
-          - {label: "Закаленная сталь h1.1", value: "h1.1"}
-          - {label: "Закаленная сталь h1.2", value: "h1.2"}
+          - {label: "Закаленная сталь до 70HR", value: "h"}
+          - {label: "Закаленная сталь до 55HRC", value: "h1.1"}
+          - {label: "Закаленная сталь свыше 55HRC", value: "h1.2"}
           - {label: "Цветные металлы", value: "n"}
           - {label: "Сплавы на основе алюминия", value: "n1"}
           - {label: "Сплавы на основе меди", value: "n3"}

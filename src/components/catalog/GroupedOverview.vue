@@ -213,7 +213,7 @@ export default {
         ? Object.keys(this.selected).filter((filter) => this.selected[filter])
         : []
 
-      return this.nodes.filter(({ node }) => {
+      const result = this.nodes.filter(({ node }) => {
         // By series type
         if (this.$route.query.type && this.$route.query.type !== node.type) {
           return false
@@ -246,6 +246,11 @@ export default {
 
         return true
       })
+
+      // If main usage selected, then return sorted by main usage result
+      return this.selected.mainUsage ? result.sort((a, b) => {
+        return a.node.mainUsage.indexOf(this.selected.mainUsage) - b.node.mainUsage.indexOf(this.selected.mainUsage)
+      }) : result
     },
 
     seriesComponent() {
