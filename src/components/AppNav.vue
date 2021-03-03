@@ -8,7 +8,7 @@
       <div class="nav-contact">
         <a class="nav-phone" href="tel:+78412458990">
           <span>+7&nbsp;8412&nbsp;</span>
-          <span class="display-4">45-89-90</span>
+          <span class="display-4">250-550</span>
         </a>
         <span class="nav-mail">gid@cvm-arcon.ru</span>
       </div>

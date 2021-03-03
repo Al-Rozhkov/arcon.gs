@@ -15,10 +15,9 @@
           </header>
           <p>Россия, г. Пенза</p>
           <p>
-            Тел.: (8412) 45-89-90,
-            <span class="text-nowrap">+7&nbsp;927 361-22-87</span>
+            Тел.: (8412) 250-550
           </p>
-          <p>www.cvm-arcon.ru gid@cvm-arcon.ru</p>
+          <p>www.arconit.ru gid@cvm-arcon.ru</p>
         </div>
 
         <!-- <div class="col-lg-8 item">

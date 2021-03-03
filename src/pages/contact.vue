@@ -9,16 +9,26 @@
             <section>
               <h3>Отдел сбыта режущего инструмента</h3>
               <p>
-                Тел.: (8412)&nbsp;45-89-90;
+                Тел.: (8412)&nbsp;250-550
                 <br />e-mail:
                 <a href="mailto:gid@cvm-arcon.ru">gid@cvm-arcon.ru</a>
               </p>
             </section>
 
             <section class="pt-sm">
+              <h3>Диспетчерский отдел</h3>
+              <p>
+                Тел.: (8412)&nbsp;45-89-90 доб. 1
+                <br />e-mail:
+                <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
+              </p>
+            </section>
+
+            <section class="pt-sm">
               <h3>Бухгалтерия</h3>
               <p>
-                e-mail:
+                Тел.: (8412)&nbsp;45-89-90 доб. 2
+                <br />e-mail:
                 <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
               </p>
             </section>
@@ -29,14 +39,19 @@
                 E-mail:
                 <a href="mailto:sales@cvm-arcon.ru">sales@cvm-arcon.ru</a>
               </p>
-              <p>Все предложения по&nbsp;поставкам и&nbsp;оснащению принимаются только путем электронной корреспонденции.</p>
+              <p>
+                Все предложения по&nbsp;поставкам и&nbsp;оснащению принимаются
+                только путем электронной корреспонденции.
+              </p>
             </section>
           </div>
           <div class="col-lg-12 sym-wrapper">
-            <p class="lead">ООО &laquo;Центр высокоточной механообработки &laquo;Аркон&raquo;</p>
+            <p class="lead">
+              ООО &laquo;Центр высокоточной механообработки &laquo;Аркон&raquo;
+            </p>
             <p>
-              Россия, г. Пенза, ул. Егорова
-              <br />Россия, г. Пенза, ул. Гоголя
+              Россия, 440052, Пензенская обл., г.&nbsp;Пенза, ул.&nbsp;Гоголя,
+              д.&nbsp;51/53
             </p>
           </div>
         </section>
@@ -52,13 +67,13 @@ import ArconitSymbol from '@/components/ArconitSymbol.vue'
 
 export default {
   components: {
-    ArconitSymbol
+    ArconitSymbol,
   },
 
   metaInfo: {
     title: 'Контактная информация. ЦВМ «Аркон»',
-    titleTemplate: null
-  }
+    titleTemplate: null,
+  },
 }
 </script>
 

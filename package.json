@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "gridsome": "^0.7.23",
     "netlify-cms": "^2.10.82",
@@ -24,16 +24,16 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-json": "^0.2.1",
     "@gridsome/transformer-remark": "^0.6.4",
-    "eslint": "^7.18.0",
+    "eslint": "^7.21.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-gridsome": "^1.6.1",
-    "googleapis": "^67.0.0",
+    "googleapis": "^67.1.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
-    "vue-eslint-parser": "^7.3.0"
+    "vue-eslint-parser": "^7.6.0"
   },
   "prettier": {
     "semi": false,
