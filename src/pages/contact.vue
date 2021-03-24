@@ -9,7 +9,7 @@
             <section>
               <h3>Отдел сбыта режущего инструмента</h3>
               <p>
-                Тел.: (8412)&nbsp;250-550
+                Тел.: (8412)&nbsp;500-117
                 <br />e-mail:
                 <a href="mailto:gid@cvm-arcon.ru">gid@cvm-arcon.ru</a>
               </p>

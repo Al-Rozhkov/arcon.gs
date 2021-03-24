@@ -15,7 +15,7 @@
           </header>
           <p>Россия, г. Пенза</p>
           <p>
-            Тел.: (8412) 250-550
+            Тел.: (8412) 500-117
           </p>
           <p>www.arconit.ru gid@cvm-arcon.ru</p>
         </div>
