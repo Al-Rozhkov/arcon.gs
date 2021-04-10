@@ -20,7 +20,7 @@
               <p>
                 Тел.: (8412)&nbsp;45-89-90 доб. 1
                 <br />e-mail:
-                <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
+                <a href="mailto:gid@cvm-arcon.ru">gid@cvm-arcon.ru</a>
               </p>
             </section>
 
