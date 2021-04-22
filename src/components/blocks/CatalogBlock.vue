@@ -36,7 +36,7 @@
         <li class="li li-half">
           <h3 class="h3">
             <a class="text-red" href="/uploads/ARCONIT_full.pdf">Скачать каталог в&nbsp;PDF&nbsp;</a>
-            <span class="text-muted">(15,6&nbsp;Mb)</span>
+            <span class="text-muted">(9,7&nbsp;Mb)</span>
           </h3>
         </li>
         <li v-if="$route.path !== '/catalog/special/'" class="li li-half">
