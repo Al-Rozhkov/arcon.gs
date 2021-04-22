@@ -35,7 +35,7 @@
       <app-menu>
         <li class="li li-half">
           <h3 class="h3">
-            <a class="text-red" href="/uploads/ARCONIT_full.pdf">Скачать каталог в&nbsp;PDF&nbsp;</a>
+            <a class="text-red" href="/uploads/arconit_full.pdf">Скачать каталог в&nbsp;PDF&nbsp;</a>
             <span class="text-muted">(9,7&nbsp;Mb)</span>
           </h3>
         </li>
