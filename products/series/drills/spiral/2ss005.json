@@ -18,7 +18,6 @@
     "p",
     "k",
     "m",
-    "n",
     "s"
   ],
   "cuttingPartLength": [
@@ -27,7 +26,9 @@
   "productCategory": "drills-spiral",
   "tail": "cylinder",
   "possibleUsage": [
-    "h1.1"
+    "n",
+    "h1.1",
+    "h1.2"
   ],
   "cogsPitch": "permanent",
   "cogsNumber": [

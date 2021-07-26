@@ -49,8 +49,7 @@
   "cogsPitch": "permanent",
   "cogsNumber": [
     4,
-    6,
-    10
+    8
   ],
   "cogsCuttingCenter": true,
   "type": "shaped-mills",
