@@ -5,6 +5,7 @@
   "cuttingShapes": [
     "arrow"
   ],
+  "coating": "pp",
   "body": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°.",
   "allowanceCuttingDiameter": "h8",
   "scheme": [

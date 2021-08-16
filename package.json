@@ -11,7 +11,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "gridsome": "^0.7.23",
-    "netlify-cms": "^2.10.150",
+    "netlify-cms": "^2.10.156",
     "randomstring": "^1.2.1",
     "simple-oauth2": "^4.2.0",
     "v-tooltip": "^2.1.2",
@@ -33,7 +33,7 @@
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
-    "vue-eslint-parser": "^7.9.0"
+    "vue-eslint-parser": "^7.10.0"
   },
   "prettier": {
     "semi": false,
