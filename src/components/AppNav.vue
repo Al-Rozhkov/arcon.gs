@@ -26,9 +26,9 @@
         <li class="li">
           <g-link class="a" to="/services/">Услуги</g-link>
         </li>
-        <li class="li">
+        <!-- <li class="li">
           <g-link class="a" to="/partners/">Представители</g-link>
-        </li>
+        </li> -->
         <li class="li">
           <g-link class="a" to="/contact/">Контакты</g-link>
         </li>

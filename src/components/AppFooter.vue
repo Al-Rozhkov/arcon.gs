@@ -27,7 +27,7 @@
               >Политика конфиденциальности</app-menu-item
             >
             <app-menu-item to="/disclosure">Раскрытие информации</app-menu-item>
-            <app-menu-item to="/partners">Представители</app-menu-item>
+            <!-- <app-menu-item to="/partners">Представители</app-menu-item> -->
             <app-menu-item to="/contact">Контакты</app-menu-item>
           </app-menu>
         </div>
