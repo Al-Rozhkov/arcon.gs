@@ -10,7 +10,7 @@
         </section>
 
         <section class="col-lg-6" style="display: flex">
-          <p style="align-self: center">Зарегистрированные торговые марки режущего инструмента.</p>
+          <p style="align-self: center">Зарегистрированные торговые марки режущего инструмента</p>
         </section>
       </div>
 
@@ -59,7 +59,7 @@
           <a
             href="/uploads/Spec_ocenka_yslovij.pdf"
             target="_blank"
-          >Результаты проведения специальной оценки условий труда</a>.
+          >Результаты проведения специальной оценки условий труда</a>
         </p>
       </div>
     </main>
