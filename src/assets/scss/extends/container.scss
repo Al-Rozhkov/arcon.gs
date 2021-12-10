@@ -1,7 +1,7 @@
 // Variables
 // ========================================================================
 
-$container-padding-horizontal:           $grid-gutter-width / 2;
+$container-padding-horizontal:           $grid-gutter-width * 0.5;
 $container-padding-horizontal-s:         $grid-gutter-width !default;
 $container-padding-horizontal-m:         $grid-gutter-width * 2 !default;
 

@@ -7,7 +7,16 @@
 
 const path = require('path')
 
+const envLocale = process.env.LOCALE
+console.log(envLocale)
+
 module.exports = function(api) {
+  // Set locale custom client context.
+  api._app.pages.hooks.pageContext.tap('siteLocale', (context) => {
+    context.locale = envLocale
+    return context
+  })
+
   const collectionsNetlify = {
     ProductEndMill: 'photos',
     ProductDrill: 'photos',

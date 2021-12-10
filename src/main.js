@@ -8,7 +8,7 @@ import AppMenu from '~/components/AppMenu.vue'
 import AppMenuItem from '~/components/AppMenuItem.vue'
 import AppNav from '~/components/AppNav.vue'
 import AppFooter from '~/components/AppFooter.vue'
-// import AppLoading from '~/components/AppLoading.vue'
+import AppLanguage from '~/components/AppLanguage.vue'
 
 import VTooltip from 'v-tooltip'
 
@@ -20,13 +20,12 @@ export default function(Vue, { appOptions, head }) {
   Vue.component('AppMenuItem', AppMenuItem)
   Vue.component('AppNav', AppNav)
   Vue.component('AppFooter', AppFooter)
-  // Vue.component('AppLoading', AppLoading)
+  Vue.component('AppLanguage', AppLanguage)
 
   Vue.use(VTooltip)
 
   appOptions.render = h => {
     return h('div', { class: 'root', attrs: { id: 'app' } }, [
-      // h('app-loading', { ref: 'loading' }),
       h('app-nav'),
       h('router-view'),
       h('app-footer')

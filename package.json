@@ -11,7 +11,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "gridsome": "^0.7.23",
-    "netlify-cms": "^2.10.169",
+    "netlify-cms": "^2.10.172",
     "randomstring": "^1.2.1",
     "simple-oauth2": "^4.2.0",
     "v-tooltip": "^2.1.2",
@@ -27,13 +27,13 @@
     "eslint": "^7.22.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-gridsome": "^1.6.1",
-    "googleapis": "^67.1.0",
+    "googleapis": "^92.0.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
-    "node-sass": "^5.0.0",
+    "sass": "^1.44.0",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
-    "vue-eslint-parser": "^7.11.0"
+    "vue-eslint-parser": "^8.0.1"
   },
   "prettier": {
     "semi": false,
