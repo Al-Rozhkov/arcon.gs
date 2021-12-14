@@ -41,7 +41,7 @@
           <g-link class="a" to="/tech/">Технологии</g-link>
         </li>
         <li class="li">
-          <g-link class="a highlight" to="/catalog/">Режущий инструмент</g-link>
+          <g-link class="a bold" to="/catalog/">Режущий инструмент</g-link>
         </li>
         <li class="li">
           <g-link class="a" to="/services/">Услуги</g-link>
