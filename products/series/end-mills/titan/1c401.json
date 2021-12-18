@@ -17,7 +17,7 @@
   "mainUsage": [
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short"
   ],
   "endShapes": [
@@ -30,17 +30,19 @@
     "p",
     "m"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "variable",
-      "cogsNumber": 4
-    }
-  ],
   "cogsPitch": "variable",
   "cogsNumber": [
     4
   ],
   "type": "end-mills",
   "id": "1c401",
-  "productSeriesSet": "lower R"
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 4 teeth, short cutter section, undersized neck."
+    }
+  }
 }

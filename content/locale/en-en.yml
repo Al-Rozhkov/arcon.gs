@@ -1,0 +1,260 @@
+- id: site.slogan
+  value: "Designing, producing and customizing cutting tools"
+
+- id: site.slogan.tagline
+  value: "Our production meets all international quality standards and complies with the requirements of the State Defense Procurement and Acquisition"
+
+- id: meta.front.title
+  value: "ARCONIT – Cutting tools"
+
+- id: footer.copyright
+  value: "© 2015—2021<br />&quot;CVM &quot;Arcon&quot; Group of Companies"
+
+- id: footer.address
+  value: "<p>LLP &quot;CVM &quot;Arkon&quot;<br />IDNN 5834118947, OGRN 1175835013364</p><p>Russia, 440052, Penza Region, Penza, 51/53 Gogolya St."
+
+#
+# Headlines
+#
+- id: headline.services
+  value: Services
+
+- id: headline.news
+  value: Company News
+
+- id: headline.news-back
+  value: News
+
+- id: headline.catalog
+  value: "Online catalogue of Arconit™ cutting tools"
+
+- id: headline.catalog.title
+  value: "Online catalogue of cutting tools"
+
+- id: headline.catalog.drills
+  value: "Twist and center drills"
+
+- id: headline.catalog.end-mills
+  value: "End mills and custom mills"
+
+- id: headline.catalog.thread-mills
+  value: "Arconit™ thread mills"
+
+#
+# Catalog
+#
+- id: catalog.end-mills
+  value: End mills
+
+- id: catalog.end-mill
+  value: End mill
+
+- id: catalog.center-drills
+  value: Center drills
+
+- id: catalog.drill
+  value: Drill
+
+- id: catalog.twist-drills
+  value: Twist drills
+
+- id: catalog.thread-mills
+  value: Thread mills
+
+- id: catalog.thread-mill
+  value: Thread cutter
+
+- id: catalog.download
+  value: Download PDF catalogue
+
+- id: catalog.custom-tools
+  value: Custom tools
+
+- id: catalog.all-tools
+  value: "- All tools -"
+
+#
+# Catalog filters
+#
+- id: catalog.filters.reset
+  value: Reset filters
+
+- id: catalog.filters.any-nn
+  value: any
+  
+- id: catalog.filters.any-n
+  value: any
+
+- id: catalog.filters.any-f
+  value: any
+
+- id: catalog.filters.tool-type
+  value: Tool type
+
+- id: catalog.filters.end-shape
+  value: End shape
+
+- id: catalog.filters.length
+  value: Length
+
+- id: catalog.filters.cutting-length
+  value: Cutting edge length
+
+- id: catalog.filters.coating
+  value: Coating
+
+- id: catalog.filters.no-coating
+  value: Uncoated
+
+- id: catalog.filters.coolant-supply
+  value: Coolant supply
+  
+- id: catalog.filters.mat-placeholder
+  value: "— Material group —"
+
+- id: catalog.filters.mat-steel
+  value: Carbon and high-hardness steel
+
+- id: catalog.filters.mat-cast-iron
+  value: Cast iron
+
+- id: catalog.filters.mat-stainless-steel
+  value: Stainless steel
+
+- id: catalog.filters.mat-hardened-steel
+  value: Hardened steel
+
+- id: catalog.filters.mat-non-ferrous-metals
+  value: Non-ferrous metals
+
+- id: catalog.filters.mat-titan
+  value: Superalloys and titanium (heat resistant alloys)
+
+#
+# Catalog overview
+#
+- id: catalog.overview.series
+  value: Series
+
+- id: catalog.overview.main-use
+  value: Main application
+
+- id: catalog.overview.possible-use
+  value: Additional application
+
+- id: catalog.overview.other-parameters
+  value: Coating, cogs and more
+
+- id: catalog.overview.msg-custom-tools
+  value: We can manufacture tools with individual parameters. Go to the
+
+- id: catalog.overview.msg-custom-tools-link-text
+  value: custom tools section
+
+- id: catalog.cogs.num
+  value: Number of cogs
+
+- id: catalog.cogs.pitch-variable
+  value: Variable cogs pitch
+
+- id: catalog.cogs.pitch-permanent
+  value: Constant cogs pitch
+
+- id: catalog.cogs.cutting-center
+  value: With an overlap of the center
+
+- id: catalog.cogs.no-cutting-center
+  value: Without a cutting center
+
+#
+# Products
+#
+- id: catalog.page.shank-type
+  value: Shank type
+
+- id: catalog.page.face-type
+  value: Face type
+
+- id: catalog.page.cutting-part-shape
+  value: Cutting part shape
+
+- id: catalog.page.feed-angle
+  value: Feed angle
+
+- id: catalog.page.radius-tolerance
+  value: Radius tolerance
+
+- id: catalog.page.cutter-diameter-tolerance
+  value: Cutter diameter tolerance
+
+- id: catalog.page.shank-cylindrical
+  value: cylindrical
+
+- id: catalog.page.shank-weldon
+  value: Weldon
+
+- id: catalog.page.teeth
+  value: Teeth
+
+- id: catalog.page.tooth-1
+  value: tooth
+
+- id: catalog.page.teeth-4
+  value: teeth
+
+- id: catalog.page.teeth-n
+  value: teeth
+
+- id: catalog.page.constant-spacing
+  value: constant spacing
+
+- id: catalog.page.differential-spacing
+  value: differential spacing
+
+- id: catalog.page.flute-angle
+  value: Flute angle
+
+- id: catalog.page.to-form-thread
+  value: To form thread
+
+- id: catalog.page.profile
+  value: Profile
+
+- id: catalog.page.print-page
+  value: Print page
+
+- id: catalog.page.units-measure
+  value: Units of measure - mm
+
+- id: catalog.page.designation
+  value: Designation
+
+- id: catalog.page.form
+  value: Form
+
+- id: catalog.page.step
+  value: Step
+
+- id: catalog.page.thread
+  value: Thread
+
+#
+# Disclosure page
+#
+- id: disclosure.tm
+  value: Registered trademarks of cutting tools
+
+- id: disclosure.made-in
+  value: The country of origin of Arconit products, goods and services is the Russian Federation
+
+- id: disclosure.download-letter
+  value: Download the application letter
+
+- id: disclosure.sert-prod
+  value: "Production certification: GOST ISO 9001 and GOST RV 0015-002-2012."
+
+- id: disclosure.sert-goods
+  value: Product certification.
+
+- id: disclosure.working-conditions
+  value: Results of the special assessment of working conditions

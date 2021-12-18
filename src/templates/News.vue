@@ -1,6 +1,6 @@
 <template>
   <page-layout>
-    <p><g-link to="/news/">← Новости</g-link></p>
+    <p><g-link to="/news/">← {{ $page.cNews.value }}</g-link></p>
     <h1>{{ $page.node.title }}</h1>
 
     <figure v-if="$page.node.image">
@@ -16,8 +16,12 @@
       id
       path
       content
+      excerpt
       title
       image(width: 660, quality: 100)
+    }
+    cNews: t(id: "headline.news-back") {
+      value
     }
   }
 </page-query>
@@ -32,7 +36,19 @@ export default {
 
   metaInfo() {
     return {
-      title: this.$page.node.title
+      title: this.$page.node.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.node.excerpt,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.node.title,
+        },
+      ],
     }
   }
 }

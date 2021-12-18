@@ -2,10 +2,6 @@
   <page-layout>
     <main class="cnt">
       <series-page :node="$page.series" :tools="$page.tools" />
-
-      <!-- <section class="pt">
-        <h2>Похожие инструменты</h2>
-      </section>-->
     </main>
   </page-layout>
 </template>
@@ -20,13 +16,19 @@
         name
         scheme
       }
-      mainUsage
-      possibleUsage
-      coating
+      mainUsage {
+        id
+        text
+      }
+      possibleUsage {
+        id
+        text
+      }
+      coating { text }
       tail
       sharpeningAngle
       allowanceCuttingDiameter
-      cuttingFluid
+      coolantSupply { id text }
       cogsPitch
       cogsNumber
       cogsCuttingCenter
@@ -54,6 +56,9 @@
         }
       }
     }
+    cTool: t(id: "catalog.drill") {
+      value
+    }
   }
 </page-query>
 
@@ -68,8 +73,10 @@ export default {
   },
 
   metaInfo() {
+    const title = `${this.$page.cTool.value} ${this.$page.series.id.toUpperCase()}`
+
     return {
-      title: `Сверло ${this.$page.series.id.toUpperCase()}`,
+      title,
       meta: [
         {
           key: 'description',
@@ -80,6 +87,11 @@ export default {
           key: 'keywords',
           name: 'keywords',
           content: this.$page.tools.edges.map((t) => t.node.id).join(', '),
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
         },
       ],
     }

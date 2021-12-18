@@ -21,7 +21,7 @@
   "mainUsage": [
     "n"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "middle",
     "long"
   ],
@@ -31,17 +31,19 @@
   "productCategory": "non-ferrous-alloys",
   "tail": "cylinder",
   "possibleUsage": null,
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 1
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     1
   ],
   "type": "end-mills",
   "id": "1c109",
-  "productSeriesSet": "simple"
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 1 зуб, со средней и длинной режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 1 tooth, with medium and long cutting edge."
+    }
+  }
 }

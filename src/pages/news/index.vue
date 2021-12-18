@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="cnt">
-      <h1>Новости компании</h1>
+      <h1>{{ $page.newsTitle.value }}</h1>
       <div class="news-page">
         <div v-for="(node, index) in $page.news.edges" :key="index" class="col">
           <news-teaser :node="node.node" />
@@ -20,10 +20,13 @@ query RecentNews {
         path
         content
         title
-        date(format: "D MMMM YYYY", locale: "RU")
+        localeDate
         image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
       }
     }
+  }
+  newsTitle: t(id: "headline.news") {
+    value
   }
 }
 </page-query>
@@ -33,12 +36,14 @@ import NewsTeaser from '~/components/NewsTeaser.vue'
 
 export default {
   components: {
-    NewsTeaser
+    NewsTeaser,
   },
 
-  metaInfo: {
-    title: 'Новости компании'
-  }
+  metaInfo() {
+    return {
+      title: this.$page.newsTitle.value,
+    }
+  },
 }
 </script>
 

@@ -23,7 +23,7 @@
   ],
   "possibleUsage": [],
   "allowanceRadius": "±0,01",
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short",
     "middle"
   ],
@@ -32,17 +32,19 @@
   ],
   "productCategory": "non-ferrous-alloys",
   "tail": "cylinder",
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     2
   ],
   "type": "end-mills",
   "id": "1s172",
-  "productSeriesSet": "lower R"
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "body": "Сферическая цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "body": "Spherical solid carbide end mill, 2 tooth, medium cutter, undersized neck."
+    }
+  }
 }

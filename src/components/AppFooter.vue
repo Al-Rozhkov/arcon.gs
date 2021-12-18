@@ -2,17 +2,9 @@
   <footer class="footer" v-once>
     <div class="cnt">
       <div class="tile-row">
-        <div class="fc col-lg-6">
-          © 2015—2021
-          <br />Группа компаний «Аркон»
-        </div>
+        <div class="fc col-lg-6" v-html="$static.copyright.value"></div>
 
-        <div class="w-100 col-lg-6">
-          <p>
-            ООО "ЦВМ&nbsp;"Аркон", ИНН&nbsp;5834118947, ОГРН&nbsp;1175835013364
-          </p>
-          <p>Россия, 440052, Пензенская обл., г.&nbsp;Пенза, ул.&nbsp;Гоголя, д.&nbsp;51/53</p>
-        </div>
+        <div class="w-100 col-lg-6" v-html="$static.address.value"></div>
 
         <div class="w-100 col-lg-6">
           <p>(8412)&nbsp;<span class="display-4">500-117</span></p>
@@ -23,12 +15,12 @@
 
         <div class="w-100 col-lg-6">
           <app-menu vertical>
-            <app-menu-item to="/policy"
-              >Политика конфиденциальности</app-menu-item
+            <app-menu-item
+              v-for="{ node } in $static.menu.edges"
+              :key="node.id"
+              :to="node.path"
+              >{{ node.label }}</app-menu-item
             >
-            <app-menu-item to="/disclosure">Раскрытие информации</app-menu-item>
-            <!-- <app-menu-item to="/partners">Представители</app-menu-item> -->
-            <app-menu-item to="/contact">Контакты</app-menu-item>
           </app-menu>
         </div>
       </div>
@@ -36,7 +28,27 @@
   </footer>
 </template>
 
-<style lang="scss">
+<static-query>
+query {
+  copyright: t(id: "footer.copyright") {
+    value
+  }
+  address: t(id: "footer.address") {
+    value
+  }
+  menu: allMenuFooter(sortBy: "weight", order: ASC) {
+    edges {
+      node {
+        id
+        path
+        label
+      }
+    }
+  }
+}
+</static-query>
+
+<style lang="scss" scoped>
 .footer {
   @extend %spacing-top;
 

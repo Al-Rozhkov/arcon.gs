@@ -1,0 +1,29 @@
+- id: p
+  text: 'Carbon and high-hardness steel'
+
+- id: k
+  text: 'Cast iron'
+
+- id: m
+  text: 'Stainless steel'
+
+- id: h
+  text: 'Tempered steel up to 70HRC'
+
+- id: h1.1
+  text: 'Tempered steel up to 55HRC'
+
+- id: h1.2
+  text: 'Tempered steel over 55HRC'
+
+- id: n
+  text: 'Non-ferrous metals'
+
+- id: n1
+  text: 'Aluminum-base alloys'
+
+- id: n3
+  text: 'Copper-base alloys'
+
+- id: s
+  text: 'Superalloys and titanium (heat-resistant alloys)'

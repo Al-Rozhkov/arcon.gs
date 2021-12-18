@@ -1,0 +1,19 @@
+- id: sphere
+  text: сферическая
+  group: сферическая
+
+- id: radius
+  text: радиусная
+  group: радиусная
+  
+- id: rect-sharp
+  text: торец без фаски, наостро
+  group: прямоугольная
+
+- id: rect-r
+  text: торец с притуплением
+  group: прямоугольная
+
+- id: rect-f
+  text: торец с фаской chх45˚
+  group: прямоугольная

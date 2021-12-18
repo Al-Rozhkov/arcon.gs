@@ -52,12 +52,4 @@ export default function(Vue, { appOptions, head }) {
     }
   )
   head.htmlAttrs.lang = 'ru'
-
-  /* router.beforeEach((to, from, next) => {
-    AppLoading.methods.start()
-    next()
-  })
-  router.afterEach(() => {
-    AppLoading.methods.finish()
-  }) */
 }

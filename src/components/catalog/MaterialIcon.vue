@@ -1,40 +1,49 @@
 <template>
-  <span v-tooltip="matDesc" :class="matClass">{{ matId }}</span>
+  <span v-tooltip="tooltipText" :class="matClass">{{ matId }}</span>
 </template>
 
-<script>
-import { materials } from '~/utils/fieldsMapping.js'
+<static-query>
+query {
+  options: allParamMatGroup {
+    edges {
+      node {
+        id
+        text
+      }
+    }
+  }
+}
+</static-query>
 
+<script>
 export default {
   props: {
     matId: {
       type: String,
-      required: true
+      required: true,
     },
     matMain: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showTooltip: {
       type: Boolean,
-      default: true
-    }
-  },
-
-  data: () => {
-    return {
-      materialDesc: materials
-    }
+      default: true,
+    },
   },
 
   computed: {
-    matDesc() {
-      return this.showTooltip ? this.materialDesc[this.matId] : false
+    tooltipText() {
+      if (!this.showTooltip) return false
+      const { node } = this.$static.options.edges.find(
+        ({ node }) => node.id === this.matId
+      )
+      return node ? node.text : false
     },
     matClass() {
       const usageType = this.matMain ? 'mat-main' : 'mat-possible'
       return `mat-chip ${usageType} mat-${this.matId.charAt(0)}`
-    }
-  }
+    },
+  },
 }
 </script>

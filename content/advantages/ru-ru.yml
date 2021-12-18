@@ -1,0 +1,33 @@
+- title: "Монолитные сверла и&nbsp;развертки"
+  text: "Монолитные твердосплавные сверла и&nbsp;развертки любой длины и&nbsp;диаметра."
+  link: /catalog/special/
+  image: ./a01.jpg
+  class: align-to-top
+
+- title: "Концевые и&nbsp;фасонные фрезы"
+  text: "Готовые решения из&nbsp;твердого сплава для всех типов обработки всегда в&nbsp;наличии."
+  link: /catalog/end-mills/
+  image: ./a02.jpg
+  class: align-to-bottom
+
+- title: "Резьбонарезной инструмент"
+  text: "Твердосплавные резьбофрезы и&nbsp;метчики для решения самых ответственных задач."
+  link: /catalog/thread-mills/
+  image: ./a03.jpg
+  class: align-to-top
+
+- title: "Токарные и&nbsp;долбежные вставки"
+  text: "Выберете форму хвостовика, длину и&nbsp;контур обработки в&nbsp;соответствии с&nbsp;вашими требованиями."
+  link: /catalog/special/
+  image: ./a04.jpg
+
+- title: "Восстановление инструмента"
+  text: "Переточим ваши сверла, фрезы, головки, метчики, развертки и&nbsp;др. без потери качества. Отполируем. Притупим. Нанесем покрытие."
+  link: /services/vosstanovlenie-rezhushhego-instrumenta/
+  image: ./a05.jpg
+  class: align-to-right
+
+- title: "Специальный инструмент"
+  text: "Изготовим инструмент из&nbsp;твердого сплава и&nbsp;быстрорежущей стали по&nbsp;вашим эскизам и&nbsp;чертежам."
+  link: /catalog/special/
+  image: ./a06.jpg

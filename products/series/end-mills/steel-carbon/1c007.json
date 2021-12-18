@@ -24,7 +24,7 @@
     "k",
     "m"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "long"
   ],
   "endShapes": [
@@ -38,17 +38,19 @@
     "s",
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 4
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     4
   ],
   "type": "end-mills",
   "id": "1c007",
-  "productSeriesSet": "set-f45"
+  "productSeriesSet": "set-f45",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 4 зуба, с&nbsp;длинной режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 4 teeth, long cutter."
+    }
+  }
 }

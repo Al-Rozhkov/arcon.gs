@@ -1,7 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <h1>Онлайн-каталог режущего инструмента</h1>
+      <h1>{{ $page.title.value }}</h1>
 
       <grouped-overview :nodes="series" groupBy="type" />
     </main>
@@ -10,6 +10,9 @@
 
 <page-query>
 query Catalog {
+  title: t(id: "headline.catalog.title") {
+    value
+  }
   drills: allProductDrill(sortBy: "id", order: ASC, perPage: 125) {
     edges {
       node {
@@ -18,16 +21,17 @@ query Catalog {
         type
         photos (width: 260, quality: 75)
         body
-        mainUsage
-        possibleUsage
-        cuttingPartLength
+        mainUsage { id text }
+        possibleUsage { id text }
+        cuttingEdgeLength
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating
+        coating { id text }
         toolLength
         allowanceCuttingDiameter
+        coolantSupply { id }
       }
     }
   }
@@ -40,16 +44,16 @@ query Catalog {
         photos (width: 260, quality: 75)
         body
         fusion
-        mainUsage
-        possibleUsage
-        endShapes
-        cuttingShapes
-        cuttingPartLength
+        mainUsage { id text }
+        possibleUsage { id text }
+        endShapes { id }
+        cuttingShapes { id }
+        cuttingEdgeLength
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating
+        coating { id text }
       }
     }
   }
@@ -61,12 +65,12 @@ query Catalog {
         type
         photos (width: 300, quality: 75)
         body
-        mainUsage
-        possibleUsage
-        coating
+        mainUsage { id text }
+        possibleUsage { id text }
+        coating { id text }
         tail
-        cuttingShapes
-        cuttingFluid
+        cuttingShapes { id }
+        coolantSupply { id }
       }
     }
   }
@@ -94,8 +98,10 @@ export default {
     },
   },
 
-  metaInfo: {
-    title: 'Онлайн-каталог режущего инструмента',
+  metaInfo() {
+    return {
+      title: this.$page.title.value,
+    }
   },
 }
 </script>

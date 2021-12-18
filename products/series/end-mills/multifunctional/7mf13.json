@@ -25,17 +25,19 @@
   "possibleUsage": [
     "p"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     2
   ],
   "type": "multifunctional",
   "id": "7mf13",
-  "productSeriesSet": "simple"
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "body": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°."
+    },
+    "en-en": {
+      "body": "Multifunction tool, extra long series. End angle 40°, 60°, 90°, 100° and 120°."
+    }
+  }
 }

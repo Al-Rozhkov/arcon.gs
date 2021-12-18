@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a.a {
+.a {
   display: block;
   cursor: pointer;
 

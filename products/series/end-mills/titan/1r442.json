@@ -17,7 +17,7 @@
   "mainUsage": [
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short",
     "middle"
   ],
@@ -30,17 +30,19 @@
     "p",
     "m"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "variable",
-      "cogsNumber": 4
-    }
-  ],
   "cogsPitch": "variable",
   "cogsNumber": [
     4
   ],
   "type": "end-mills",
   "id": "1r442",
-  "productSeriesSet": "set-r"
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "body": "Радиусная цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "body": "Radius solid carbide end mill, 4 tooth, medium cutter."
+    }
+  }
 }

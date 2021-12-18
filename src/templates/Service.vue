@@ -3,7 +3,7 @@
     <template #submenu>
       <menu-services class="submenu" />
     </template>
-    
+
     <main class="cnt">
       <h1>{{ $page.node.title }}</h1>
 
@@ -15,7 +15,6 @@
 <page-query>
   query Service($path: String) {
     node: service(path: $path) {
-      id
       path
       content
       title
@@ -29,20 +28,25 @@ import MenuServices from '~/components/MenuServices.vue'
 
 export default {
   components: {
-    MenuServices
+    MenuServices,
   },
-  
+
   metaInfo() {
     return {
       title: this.$page.node.title,
       meta: [
-      {
-        key: 'description',
-        name: 'description',
-        content: this.$page.node.description
-      }
-    ]
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.node.description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.node.title,
+        },
+      ],
     }
-  }
+  },
 }
 </script>

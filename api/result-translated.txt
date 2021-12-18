@@ -1,0 +1,129 @@
+2cs02 | Center carbide drill bit, medium series, 90°, 120° and 142°.
+
+2cs03 | Center carbide drill bit, long series, 90°, 120° and 142°.
+
+2cs04 | Center carbide drill bit, extra long series, 90°, 120° and 142°.
+
+2cs12 | Center carbide drill bit, medium series, 90°, 120° and 142°.
+
+2cs13 | Center carbide drill bit, long series, 90°, 120° and 142°.
+
+2cs14 | Center carbide drill bit, extra long series, 90°, 120° and 142°.
+
+2ss003 | Spiral carbide drill bit 3xD, 140°. External coolant supply. The tolerance of drill bit diameter is h7.
+
+2ss005 | Spiral carbide drill bit 5xD, 140°. External coolant supply. Cutter diameter tolerance h7.
+
+2ss008 | Spiral carbide drill bit 8xD, 140°. External coolant supply. Cutter diameter tolerance h7.
+
+2ss073 | Spiral carbide drill bit 3xD, 140°. External coolant supply. Tolerance of drill bit diameter - m7.
+
+2ss075 | Spiral carbide drill bit 2xD, 140°. External coolant supply. Cutter diameter tolerance m7.
+
+2ss078 | Spiral carbide drill bit 8xD, 140°. External coolant supply. Cutter diameter tolerance m7.
+
+2ss103 | Spiral carbide drill bit 3xD, 140°. External coolant supply. Cutter diameter tolerance h7.
+
+2ss105 | Spiral carbide drill bit 5xD, 140°. External coolant supply. Cutter diameter tolerance h7.
+
+2ss108 | Spiral carbide drill bit 8xD, 140°. External coolant supply. Cutter diameter tolerance h7.
+
+1c501 | Solid carbide end mill, 6 teeth, short cutter, undersized neck.
+
+1c502 | Solid carbide end mill, 6 teeth, medium cutter section.
+
+1c503 | Solid carbide end mill, 6 teeth, with long cutting edge.
+
+1c508 | Solid carbide end mill, 6 to 16 teeth, medium cutter section.
+
+1r542 | Radius solid carbide end mill, 6 tooth, medium cutter section.
+
+1s572 | Spherical solid carbide end mill, 4 teeth, medium cutter section.
+
+7mf02 | Multifunction tool, medium length. End angle 40°, 60°, 90°, 100° and 120°.
+
+7mf03 | Multifunction tool, extra long. End angle 40°, 60°, 90°, 100° and 120°.
+
+7mf12 | Multifunction tool, medium length. End angle 40°, 60°, 90°, 100° and 120°.
+
+7mf13 | Multifunction tool, extra long series. End angle 40°, 60°, 90°, 100° and 120°.
+
+1c101 | Solid carbide end mill, 2 teeth, with middle and extended cutting part. With reinforced cutting edge.
+
+1c102 | Solid carbide end mill, 2 teeth, with medium and long cutting edge. Universal geometry.
+
+1c103 | Solid carbide end mill, 3 teeth, with medium and long cutting edge. With reinforced cutting edge.
+
+1c104 | Solid carbide end mill, 3 tooth, with medium and long cutting edge. Universal geometry.
+
+1c105 | Solid carbide end mill, 3 tooth, medium cutter with flattened shank. Reinforced cutting edge for deep cuts.
+
+1c106 | Solid carbide end mill, 4 teeth, medium cutter and shank. Reinforced cutting edge.
+
+1c109 | Solid carbide end mill, 1 tooth, with medium and long cutting edge.
+
+1c113 | Solid carbide end mill, 3 teeth, medium-long cutter, roughing profile. With a protective chamfer to prevent shearing.
+
+1r141 | Radius solid carbide end mill, 3 tooth, short cutter, undersized neck.
+
+1s172 | Spherical solid carbide end mill, 2 tooth, medium cutter, undersized neck.
+
+7r02 | Shaped chamfered solid carbide end mill with inside radius, for fillet machining.
+
+7v01 | Carbide Carbide Tapering Cutter, 60° and 90°, 3-4 teeth. No drilling required.
+
+7v02 | Carbide chamfering cutter, 60°, 90° and 120°, 3 to 6 teeth. No drilling required.
+
+7v52 | Carbide chamfering cutter, 60°, 90° and 120°, 6-8 teeth. No boring option.
+
+1c201 | Solid carbide end mill, 4 teeth, short cutter, undersized neck.
+
+1c202 | Solid carbide end mill, 4 tooth, medium cutter.
+
+1c203 | Solid carbide end mill, 4 teeth, long cutter section.
+
+1c212 | Solid carbide end mill, 4 teeth, medium cutter, roughing profile. With a protective chamfer to prevent shearing.
+
+1r242 | Radius solid carbide end mill, 4 tooth, medium cutter.
+
+1s271 | Spherical solid carbide end mill, 4 tooth, short cutter.
+
+1c001 | Solid carbide end mill, 4 tooth, short cutter section, undersized neck.
+
+1c002 | Solid carbide end mill, 4 teeth, medium cutter section.
+
+1c003 | Solid carbide end mill, 4 teeth, long cutter section.
+
+1c004 | Solid carbide end mill, 5 teeth, medium cutter section.
+
+1c005 | Solid carbide end mill, 6-8 teeth, medium cutter section.
+
+1c006 | Solid carbide end mill, 4 teeth, medium cutter section.
+
+1c007 | Solid carbide end mill, 4 teeth, long cutter.
+
+1c008 | Solid carbide end mill, 2 teeth, medium cutter.
+
+1c009 | Solid carbide end mill, 3 teeth, medium cutter.
+
+1c012 | Solid carbide end mill, 4 teeth, medium to long cutter, roughing section. With chamfered edge to prevent shearing.
+
+1r042 | Radius solid carbide end mill, 4 tooth, medium cutter.
+
+1s072 | Spherical solid carbide end mill, 2 teeth, medium cutter.
+
+1c401 | Solid carbide end mill, 4 teeth, short cutter section, undersized neck.
+
+1c402 | Solid carbide end mill, 4 teeth, medium cutter section.
+
+1c403 | Solid carbide end mill, 4 teeth, long cutter section.
+
+1r442 | Radius solid carbide end mill, 4 tooth, medium cutter.
+
+6rp02 | Partial thread carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°.
+
+6rp03 | Partial tungsten carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°. With coolant channel.
+
+6rp12 | Partial tungsten carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°.
+
+6rp13 | Partial tungsten carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°. With coolant channel.

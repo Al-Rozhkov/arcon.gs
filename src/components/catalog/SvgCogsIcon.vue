@@ -7,10 +7,30 @@
         text-anchor="middle"
         class="svg-text-center cogs-number"
       >{{ cogsNumberValue }}</text>
-      <use :xlink:href="'#' + iconId" />
+      <use :xlink:href="iconId" />
     </svg>
   </div>
 </template>
+
+<static-query>
+query {
+  tCogsNum: t(id: "catalog.cogs.num") {
+    value
+  }
+  tPitchVariable: t(id: "catalog.cogs.pitch-variable") {
+    value
+  }
+  tPitchPermanent: t(id: "catalog.cogs.pitch-permanent") {
+    value
+  }
+  tCuttingCenter: t(id: "catalog.cogs.cutting-center") {
+    value
+  }
+  tNoCuttingCenter: t(id: "catalog.cogs.no-cutting-center") {
+    value
+  }
+}
+</static-query>
 
 <script>
 export default {
@@ -49,19 +69,19 @@ export default {
     },
 
     iconId() {
-      return this.center ? 'cogs-base' : 'cogs-center-overlap'
+      return this.center ? '#cogs-base' : '#cogs-center-overlap'
     },
 
     tooltipText() {
       const pitch =
         this.pitch === 'variable'
-          ? 'Переменный шаг зубьев'
-          : 'Постоянный шаг зубьев'
+          ? this.$static.tPitchVariable.value
+          : this.$static.tPitchPermanent.value
       const center = this.center
-        ? 'Без режущего центра'
-        : 'С перекрытием центра'
+        ? this.$static.tNoCuttingCenter.value
+        : this.$static.tCuttingCenter.value
 
-      return `Зубьев: ${this.cogsNumberValue}<br />${pitch}<br />${center}`
+      return `${this.$static.tCogsNum.value}: ${this.cogsNumberValue}<br />${pitch}<br />${center}`
     },
   },
 }

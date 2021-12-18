@@ -1,0 +1,260 @@
+- id: site.slogan
+  value: "Разрабатываем, изготавливаем и адаптируем режущий инструмент"
+
+- id: site.slogan.tagline
+  value: "Наше производство соответствует международным стандартам качества и&nbsp;обеспечивает требования гособоронзаказа"
+
+- id: meta.front.title
+  value: "ARCONIT – Режущий инструмент"
+
+- id: footer.copyright
+  value: "© 2015—2021<br />Группа компаний «Аркон»"
+
+- id: footer.address
+  value: "<p>ООО &quot;ЦВМ&nbsp;&quot;Аркон&quot;, ИНН&nbsp;5834118947, ОГРН&nbsp;1175835013364</p><p>Россия, 440052, Пензенская обл., г.&nbsp;Пенза, ул.&nbsp;Гоголя, д.&nbsp;51/53</p>"
+
+#
+# Headlines
+#
+- id: headline.services
+  value: Услуги
+
+- id: headline.news
+  value: Новости компании
+
+- id: headline.news-back
+  value: Новости
+
+- id: headline.catalog
+  value: "Онлайн-каталог режущего инструмента Arconit™"
+
+- id: headline.catalog.title
+  value: "Онлайн-каталог режущего инструмента"
+
+- id: headline.catalog.drills
+  value: "Спиральные и центровочные сверла"
+
+- id: headline.catalog.end-mills
+  value: "Концевые и специальные фрезы"
+
+- id: headline.catalog.thread-mills
+  value: "Резьбовые фрезы Arconit™"
+
+#
+# Catalog
+#
+- id: catalog.end-mills
+  value: Концевые фрезы
+
+- id: catalog.end-mill
+  value: Концевая фреза
+
+- id: catalog.center-drills
+  value: Сверла центровочные
+
+- id: catalog.drill
+  value: Сверло
+
+- id: catalog.twist-drills
+  value: Сверла спиральные
+
+- id: catalog.thread-mills
+  value: Резьбовые фрезы
+
+- id: catalog.thread-mill
+  value: Резьбовая фреза
+
+- id: catalog.download
+  value: Скачать каталог в PDF
+
+- id: catalog.custom-tools
+  value: Специальный инструмент
+
+- id: catalog.all-tools
+  value: "- Все инструменты -"
+
+#
+# Catalog filters
+#
+- id: catalog.filters.reset
+  value: Сбросить фильтры
+
+- id: catalog.filters.any-nn
+  value: не важно
+
+- id: catalog.filters.any-n
+  value: любое
+
+- id: catalog.filters.any-f
+  value: любая
+
+- id: catalog.filters.tool-type
+  value: Тип инструмента
+
+- id: catalog.filters.end-shape
+  value: Форма торца
+
+- id: catalog.filters.length
+  value: Длина
+
+- id: catalog.filters.cutting-length
+  value: Длина режущей части
+
+- id: catalog.filters.coating
+  value: Покрытие
+
+- id: catalog.filters.no-coating
+  value: Без покрытия
+
+- id: catalog.filters.coolant-supply
+  value: Подвод СОЖ
+
+- id: catalog.filters.mat-placeholder
+  value: "— Основное применение —"
+
+- id: catalog.filters.mat-steel
+  value: "Углеродистая и легированная сталь"
+
+- id: catalog.filters.mat-cast-iron
+  value: Чугун
+
+- id: catalog.filters.mat-stainless-steel
+  value: "Нержавеющая сталь"
+
+- id: catalog.filters.mat-hardened-steel
+  value: "Закаленная сталь"
+
+- id: catalog.filters.mat-non-ferrous-metals
+  value: "Цветные металлы"
+
+- id: catalog.filters.mat-titan
+  value: "Суперсплавы и титан (жаропрочные сплавы)"
+
+#
+# Catalog overview
+#
+- id: catalog.overview.series
+  value: Серия
+
+- id: catalog.overview.main-use
+  value: Основное применение
+
+- id: catalog.overview.possible-use
+  value: Возможное применение
+
+- id: catalog.overview.other-parameters
+  value: Покрытие, зубья и пр.
+
+- id: catalog.overview.msg-custom-tools
+  value: Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
+
+- id: catalog.overview.msg-custom-tools-link-text
+  value: специального инструмента
+
+- id: catalog.cogs.num
+  value: Зубьев
+
+- id: catalog.cogs.pitch-variable
+  value: Переменный шаг зубьев
+
+- id: catalog.cogs.pitch-permanent
+  value: Постоянный шаг зубьев
+
+- id: catalog.cogs.cutting-center
+  value: С перекрытием центра
+
+- id: catalog.cogs.no-cutting-center
+  value: Без режущего центра
+
+#
+# Products
+#
+- id: catalog.page.shank-type
+  value: Тип хвостовика
+
+- id: catalog.page.face-type
+  value: Форма торца
+
+- id: catalog.page.cutting-part-shape
+  value: Форма режущей части
+
+- id: catalog.page.feed-angle
+  value: Угол заточки
+
+- id: catalog.page.radius-tolerance
+  value: Допуск на радиус
+
+- id: catalog.page.cutter-diameter-tolerance
+  value: Допуск на диаметр режущей части
+
+- id: catalog.page.shank-cylindrical
+  value: цилиндрический
+
+- id: catalog.page.shank-weldon
+  value: Weldon
+
+- id: catalog.page.teeth
+  value: Зубья
+
+- id: catalog.page.tooth-1
+  value: зуб
+
+- id: catalog.page.teeth-4
+  value: зуба
+
+- id: catalog.page.teeth-n
+  value: зубьев
+
+- id: catalog.page.constant-spacing
+  value: постоянный шаг
+
+- id: catalog.page.differential-spacing
+  value: переменный шаг
+
+- id: catalog.page.flute-angle
+  value: Угол подъема спиральной канавки
+
+- id: catalog.page.to-form-thread
+  value: Для формирования резьбы
+
+- id: catalog.page.profile
+  value: Профиль
+
+- id: catalog.page.print-page
+  value: Распечатать страницу
+
+- id: catalog.page.units-measure
+  value: Единицы измерения — мм
+
+- id: catalog.page.designation
+  value: Обозначение
+
+- id: catalog.page.form
+  value: Форма
+
+- id: catalog.page.step
+  value: Шаг
+
+- id: catalog.page.thread
+  value: Резьба
+
+#
+# Disclosure page
+#
+- id: disclosure.tm
+  value: Зарегистрированные торговые марки режущего инструмента
+
+- id: disclosure.made-in
+  value: Страна происхождения продукции, товаров и услуг Arconit — Российская Федерация
+
+- id: disclosure.download-letter
+  value: (Скачать письмо-заявление)
+
+- id: disclosure.sert-prod
+  value: "Сертификация производства: ГОСТ ISO 9001 и ГОСТ РВ 0015-002-2012."
+
+- id: disclosure.sert-goods
+  value: Сертификация продукции.
+
+- id: disclosure.working-conditions
+  value: Результаты проведения специальной оценки условий труда

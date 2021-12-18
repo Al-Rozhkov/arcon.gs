@@ -1,0 +1,8 @@
+- value: long
+  text: длинная
+
+- value: middle
+  text: средняя
+
+- value: short
+  text: короткая

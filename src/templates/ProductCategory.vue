@@ -28,11 +28,14 @@
               fusion
               photos (width: 300, quality: 75)
               body
-              mainUsage
-              coating
+              mainUsage {
+                id
+                text
+              }
+              coating { text }
               tail
-              endShapes
-              cuttingShapes
+              endShapes { id text }
+              cuttingShapes { id text }
               cogsPitch
               cogsNumber
               cogsCuttingCenter
@@ -61,6 +64,13 @@ export default {
   metaInfo() {
     return {
       title: this.$page.category.title,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.category.title,
+        },
+      ],
     }
   },
 }

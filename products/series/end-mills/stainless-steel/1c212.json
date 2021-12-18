@@ -19,7 +19,7 @@
     "m",
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "middle",
     "long"
   ],
@@ -31,17 +31,19 @@
   "possibleUsage": [
     "p"
   ],
-  "cogs": [
-    {
-      "cogsNumber": 4,
-      "cogsPitch": "variable"
-    }
-  ],
   "cogsPitch": "variable",
   "cogsNumber": [
     4
   ],
   "type": "end-mills",
   "id": "1c212",
-  "productSeriesSet": "simple"
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 4 teeth, medium cutter, roughing profile. With a protective chamfer to prevent shearing."
+    }
+  }
 }

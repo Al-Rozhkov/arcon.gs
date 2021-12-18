@@ -29,18 +29,6 @@
     "n3",
     "s"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 3,
-      "noCuttingCenter": true
-    },
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 4,
-      "noCuttingCenter": true
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     3,
@@ -49,5 +37,13 @@
   "cogsCuttingCenter": true,
   "type": "shaped-mills",
   "id": "7v01",
-  "productSeriesSet": "profile"
+  "productSeriesSet": "profile",
+  "i18n": {
+    "ru-ru": {
+      "body": "Фасонная фасочная твердосплавная фреза, 60° и 90°, 3—4 зуба. Без возможности засверливания."
+    },
+    "en-en": {
+      "body": "Carbide Carbide Tapering Cutter, 60° and 90°, 3-4 teeth. No drilling required."
+    }
+  }
 }

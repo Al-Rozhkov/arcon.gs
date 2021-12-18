@@ -2,45 +2,9 @@
   <Layout>
     <main class="cnt">
       <section class="mb-3">
-        <h1>Специальный инструмент</h1>
+        <h1>{{ $page.page.title }}</h1>
 
-        <div class="text-body">
-          <p>Сухие цифры о наших производственных возможностях:</p>
-
-          <ul>
-            <li>
-              Специальный инструмент составляет более 40% всех выпускаемых
-              изделий;
-            </li>
-            <li>Количество специальных изделий – более 30 000 шт. в год;</li>
-            <li>Минимальный размер заказа – 1 шт;</li>
-            <li>
-              Средний срок изготовления спец. инструмента без покрытия – 7 дней.
-              С покрытием – 14 дней;
-            </li>
-            <li>
-              Минимальный срок изготовления – 3 дня, максимальный – 3 недели
-              (для особо сложных изделий).
-            </li>
-          </ul>
-
-          <p>Все, что нужно сделать для расчета специального инструмента:</p>
-
-          <ul>
-            <li>выбрать эскиз и скачать его;</li>
-            <li>
-              заполнить эскиз (всплывающие подсказки помогут Вам) и переслать
-              нам по электронной почте.
-            </li>
-          </ul>
-
-          <p>
-            Наилучшую совместимость эскизов обеспечивает
-            <a href="https://acrobat.adobe.com/ru/ru/acrobat/pdf-reader.html"
-              >Adobe Acrobat Reader</a
-            >.
-          </p>
-        </div>
+        <div class="text-body" v-html="$page.page.content"></div>
 
         <div
           v-for="(group, index) in output"
@@ -72,6 +36,12 @@
 
 <page-query>
 query ProductSpecial {
+  page: mdPage(id: "custom-tools") {
+    id
+    title
+    description
+    content
+  }
   products: allProductSpecial(sortBy: "weight", order: ASC) {
     edges{
       node {
@@ -110,8 +80,22 @@ export default {
     },
   },
 
-  metaInfo: {
-    title: 'Специальный инструмент',
+  metaInfo() {
+    return {
+      title: this.$page.page.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.page.excerpt,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.page.title,
+        },
+      ],
+    }
   },
 }
 </script>

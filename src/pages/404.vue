@@ -1,28 +1,39 @@
 <template>
   <Layout>
     <main class="cnt">
-      <h1>Страница не найдена</h1>
+      <h1>{{ $page.page.title }}</h1>
 
       <div class="flex-row text-body">
-        <div class="col-lg-16">
-          <p>Возвращайтесь на <g-link to="/">главную страницу</g-link>.</p>
-        </div>
+        <div class="col-lg-16" v-html="$page.page.content"></div>
       </div>
     </main>
   </Layout>
 </template>
 
+<page-query>
+query Page {
+  page: mdPage(id: "404") {
+    id
+    title
+    description
+    content
+  }
+}
+</page-query>
+
 <script>
 export default {
-  metaInfo: {
-    title: 'Ошибка 404. Страница не найдена',
-    meta: [
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'Ошибка 404. Страница не найдена',
-      },
-    ],
+  metaInfo() {
+    return {
+      title: this.$page.page.title,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.page.title,
+        },
+      ],
+    }
   },
 }
 </script>

@@ -20,7 +20,7 @@
     "m",
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "middle"
   ],
   "productCategory": "drills-spiral",
@@ -35,11 +35,19 @@
     2
   ],
   "type": "drills-spiral",
-  "cuttingFluid": "out",
+  "coolantSupply": "out",
   "id": "2ss008",
   "productSeriesSet": "drills",
   "toolLength": "8xD",
   "sharpeningAngle": [
     "140"
-  ]
+  ],
+  "i18n": {
+    "ru-ru": {
+      "body": "Спиральное твердосплавное сверло 8хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7."
+    },
+    "en-en": {
+      "body": "Twist carbide drill bit 8xD, 140°. External coolant supply. Cutter diameter tolerance h7."
+    }
+  }
 }

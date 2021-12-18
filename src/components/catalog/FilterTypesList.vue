@@ -13,6 +13,9 @@ query ProductFilters {
       }
     }
   }
+  allTools: t(id: "catalog.all-tools") {
+    value
+  }
 }
 </static-query>
 
@@ -35,7 +38,7 @@ export default {
     options() {
       return [
         {
-          text: '— Все инструменты —',
+          text: this.$static.allTools.value,
           value: null
         },
         ...this.$static.types.edges.map(({ node }) => ({

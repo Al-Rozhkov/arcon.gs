@@ -2,12 +2,12 @@
   <section class="block tile-row">
     <article class="col body">
       <header class="header">
-        <h2 class="title">Онлайн-каталог режущего инструмента Arconit™</h2>
+        <h2 class="title">{{ $static.title.value }}</h2>
       </header>
 
       <section class="segment">
         <h3 class="h3">
-          <g-link class="u" to="/catalog/end-mills/">Концевые фрезы</g-link>
+          <g-link class="u" to="/catalog/end-mills/">{{ $static.cEndMills.value }}</g-link>
         </h3>
         <categories-list class />
       </section>
@@ -16,17 +16,17 @@
         <app-menu>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills/?type=drills-center">Сверла центровочные</g-link>
+              <g-link class="u" to="/catalog/drills/?type=drills-center">{{ $static.cCenterDrills.value }}</g-link>
             </h3>
           </li>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/drills/?type=drills-spiral">Сверла спиральные</g-link>
+              <g-link class="u" to="/catalog/drills/?type=drills-spiral">{{ $static.cTwistDrills.value }}</g-link>
             </h3>
           </li>
           <li class="li">
             <h3 class="h3">
-              <g-link class="u" to="/catalog/thread-mills/">Резьбовые фрезы</g-link>
+              <g-link class="u" to="/catalog/thread-mills/">{{ $static.cThreadMills.value }}</g-link>
             </h3>
           </li>
         </app-menu>
@@ -35,13 +35,13 @@
       <app-menu>
         <li class="li li-half">
           <h3 class="h3">
-            <a class="text-red" href="/uploads/arconit_full.pdf">Скачать каталог в&nbsp;PDF&nbsp;</a>
+            <a class="text-red" href="/uploads/arconit_full.pdf">{{ $static.cDownload.value }}&nbsp;</a>
             <span class="text-muted">(9,7&nbsp;Mb)</span>
           </h3>
         </li>
         <li v-if="$route.path !== '/catalog/special/'" class="li li-half">
           <h3 class="h3">
-            <g-link class="text-red" to="/catalog/special/">Специальный инструмент</g-link>
+            <g-link class="text-red" to="/catalog/special/">{{ $static.cCustomTools.value }}</g-link>
           </h3>
         </li>
       </app-menu>
@@ -52,6 +52,32 @@
     </aside>
   </section>
 </template>
+
+<static-query>
+query {
+  title: t(id: "headline.catalog") {
+    value
+  }
+  cEndMills: t(id: "catalog.end-mills") {
+    value
+  }
+  cCenterDrills: t(id: "catalog.center-drills") {
+    value
+  }
+  cTwistDrills: t(id: "catalog.twist-drills") {
+    value
+  }
+  cThreadMills: t(id: "catalog.thread-mills") {
+    value
+  }
+  cDownload: t(id: "catalog.download") {
+    value
+  }
+  cCustomTools: t(id: "catalog.custom-tools") {
+    value
+  }
+}
+</static-query>
 
 <script>
 import CategoriesList from '~/components/catalog/CategoriesList'

@@ -28,7 +28,7 @@ query RecentNews {
         path
         content
         title
-        date(format: "D MMMM YYYY", locale: "RU")
+        date: localeDate
         image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
         nopage
       }
@@ -93,7 +93,7 @@ export default {
 }
 
 .item {
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
@@ -103,7 +103,7 @@ export default {
 }
 
 .glide__arrow {
-  margin-top: -40px;
+  margin-top: -4rem;
 }
 
 @include media-breakpoint-up(md) {

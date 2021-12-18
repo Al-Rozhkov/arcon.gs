@@ -1,7 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <h1>Резьбовые фрезы Arconit™</h1>
+      <h1>{{ $page.title.value }}</h1>
 
       <grouped-overview :nodes="$page.series.edges" />
     </main>
@@ -10,6 +10,9 @@
 
 <page-query>
 query Catalog {
+  title: t(id: "headline.catalog.thread-mills") {
+    value
+  }
   series: allProductThreadMill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
@@ -19,12 +22,12 @@ query Catalog {
         body
         photos (width: 260, quality: 80)
         body
-        mainUsage
-        possibleUsage
-        coating
+        mainUsage { id text }
+        possibleUsage { id text }
+        coating { id text }
         tail
-        cuttingShapes
-        cuttingFluid
+        cuttingShapes { id text }
+        coolantSupply { id }
       }
     }
   }
@@ -39,11 +42,13 @@ import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 export default {
   components: {
     PageLayout,
-    GroupedOverview
+    GroupedOverview,
   },
 
-  metaInfo: {
-    title: 'Резьбовые фрезы Arconit (Арконит)'
-  }
+  metaInfo() {
+    return {
+      title: this.$page.title.value,
+    }
+  },
 }
 </script>

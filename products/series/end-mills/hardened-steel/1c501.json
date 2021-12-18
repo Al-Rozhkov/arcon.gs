@@ -17,7 +17,7 @@
   "mainUsage": [
     "h"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short"
   ],
   "endShapes": [
@@ -29,17 +29,19 @@
   "possibleUsage": [
     "p"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 6
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     6
   ],
   "type": "end-mills",
   "id": "1c501",
-  "productSeriesSet": "lower R"
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 6 зубьев, с короткой режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 6 teeth, short cutter, undersized neck."
+    }
+  }
 }

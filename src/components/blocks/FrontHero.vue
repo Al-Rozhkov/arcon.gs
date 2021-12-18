@@ -5,14 +5,25 @@
     </div>
 
     <div class="body">
-      <h1>Разрабатываем, изготавливаем и&nbsp;адаптируем режущий инструмент</h1>
+      <h1>{{ $static.slogan.value }}</h1>
       <h3 class="h3">ISO 9001, ГОСТ РВ 0015-002-2012</h3>
       <p
         class="narrow"
-      >Наше производство соответствует международным стандартам качества и&nbsp;обеспечивает требования гособоронзаказа</p>
+      >{{ $static.tagline.value }}</p>
     </div>
   </section>
 </template>
+
+<static-query>
+query {
+  slogan: t(id: "site.slogan") {
+    value
+  }
+  tagline: t(id: "site.slogan.tagline") {
+    value
+  }
+}
+</static-query>
 
 <style lang="scss" scoped>
 .hero {

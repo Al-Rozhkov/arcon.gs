@@ -4,6 +4,8 @@
 const path = require('path')
 const GOOGLE_API_KEY = 'AIzaSyAl18vUoRtNKHSJ-f8aPfqeRXBfpVfvjlw'
 
+const envLocale = process.env.LOCALE
+
 function addStyleResource(rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
@@ -20,6 +22,9 @@ module.exports = {
   siteUrl: 'https://arconit.ru',
 
   plugins: [
+    //
+    // Products
+    //
     {
       use: '~/plugins/source-google-sheets',
       options: {
@@ -44,17 +49,18 @@ module.exports = {
         typeName: 'ProductItemThreadMill'
       }
     },
+
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/categories/*.json',
+        path: `products/categories/${envLocale}/*.json`,
         typeName: 'ProductCategory'
       }
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/types/*.json',
+        path: `products/types/${envLocale}/*.json`,
         typeName: 'ProductType'
       }
     },
@@ -71,8 +77,13 @@ module.exports = {
         path: 'products/series/end-mills/**/*.json',
         typeName: 'ProductEndMill',
         refs: {
+          endShapes: 'ParamEndShape',
           productCategory: 'ProductCategory',
-          productSeriesSet: 'ProductSeriesSet'
+          productSeriesSet: 'ProductSeriesSet',
+          mainUsage: 'ParamMatGroup',
+          possibleUsage: 'ParamMatGroup',
+          coating: 'ParamCoating',
+          cuttingShapes: 'ParamCuttingShape'
         }
       }
     },
@@ -82,7 +93,11 @@ module.exports = {
         path: 'products/series/drills/**/*.json',
         typeName: 'ProductDrill',
         refs: {
-          productSeriesSet: 'ProductSeriesSet'
+          productSeriesSet: 'ProductSeriesSet',
+          mainUsage: 'ParamMatGroup',
+          possibleUsage: 'ParamMatGroup',
+          coating: 'ParamCoating',
+          coolantSupply: 'ParamCoolantSupply'
         }
       }
     },
@@ -92,38 +107,52 @@ module.exports = {
         path: 'products/series/thread-mills/**/*.json',
         typeName: 'ProductThreadMill',
         refs: {
-          productSeriesSet: 'ProductSeriesSet'
+          productSeriesSet: 'ProductSeriesSet',
+          mainUsage: 'ParamMatGroup',
+          possibleUsage: 'ParamMatGroup',
+          coating: 'ParamCoating',
+          cuttingShapes: 'ParamCuttingShape',
+          coolantSupply: 'ParamCoolantSupply'
         }
       }
     },
+
+    //
+    // Content
+    //
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'products/special/*.md',
-        typeName: 'ProductSpecial'
+        path: `content/pages/${envLocale}/*.md`,
+        typeName: 'MdPage'
       }
     },
+
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/news/**/*.md',
+        path: `content/news/${envLocale}/**/*.md`,
         typeName: 'News'
       }
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/services/*.md',
+        path: `content/services/${envLocale}/*.md`,
         typeName: 'Service'
       }
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/tech/*.md',
+        path: `content/tech/${envLocale}/*.md`,
         typeName: 'Tech'
       }
     },
+
+    //
+    // Settings
+    //
     {
       use: '@gridsome/plugin-sitemap'
     },
@@ -142,7 +171,7 @@ module.exports = {
       options: {
         publicPath: `/admin`
       }
-    }
+    },
   ],
 
   templates: {
@@ -152,7 +181,7 @@ module.exports = {
     ProductThreadMill: '/catalog/thread-mills/:id',
     News: '/news/:year/:title',
     Service: '/services/:title',
-    Tech: '/tech#:title'
+    Tech: '/tech#:title',
   },
 
   chainWebpack: config => {

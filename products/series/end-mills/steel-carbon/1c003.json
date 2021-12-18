@@ -1,53 +1,55 @@
 {
-    "id": "1c003",
-    "body": "Цельная твердосплавная концевая фреза, 4 зуба, с длинной режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c003.jpg"
-    ],
-    "productCategory": "steel-carbon",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-r"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-r"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m"
-    ],
-    "possibleUsage": [
-        "s",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-r"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 4
-        }
-    ],
-    "cogsPitch": "variable",
-    "cogsNumber": [
-        4
-    ],
-    "grooveInclination": [
-        43,
-        45
-    ],
-    "cuttingPartLength": [
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-r"
+  "id": "1c003",
+  "body": "Цельная твердосплавная концевая фреза, 4 зуба, с длинной режущей частью.",
+  "type": "end-mills",
+  "photos": [
+    "./1c003.jpg"
+  ],
+  "productCategory": "steel-carbon",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "grooveInclination": [
+    43,
+    45
+  ],
+  "cuttingEdgeLength": [
+    "long"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 4 зуба, с длинной режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 4 teeth, long cutter section."
+    }
+  }
 }

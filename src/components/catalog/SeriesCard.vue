@@ -2,7 +2,12 @@
   <g-link :to="node.path" class="series-card">
     <header class="header">
       <h3 class="h3">{{ node.id.toUpperCase() }}</h3>
-      <svg-plain-icon v-if="node.fusion" icon-id="series-fusion" :width="100" :height="25" />
+      <svg-plain-icon
+        v-if="node.fusion"
+        icon-id="series-fusion"
+        :width="100"
+        :height="25"
+      />
       <g-image
         v-if="node.photos && node.photos.length > 0"
         :src="node.photos[0]"
@@ -14,52 +19,71 @@
     <div class="series-body">
       <div class="flex-row">
         <div class="series-material">
-          <div v-if="node.mainUsage && node.mainUsage.length > 0" class="series-material-row">
-            <span class="label">Основное применение:</span>
-            <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
+          <div
+            v-if="node.mainUsage && node.mainUsage.length > 0"
+            class="series-material-row"
+          >
+            <span class="label">{{ $static.cMainUse.value }}:</span>
+            <material-icon
+              v-for="(m, index) in node.mainUsage"
+              :key="index"
+              :mat-id="m.id"
+            />
           </div>
           <div
             v-if="node.possibleUsage && node.possibleUsage.length > 0"
             class="series-material-row"
           >
-            <span class="label">Возможное применение:</span>
+            <span class="label">{{ $static.cPossibleUse.value }}:</span>
             <material-icon
               v-for="(m, index) in node.possibleUsage"
               :key="index"
-              :mat-id="m"
+              :mat-id="m.id"
               :mat-main="false"
             />
           </div>
         </div>
         <div class="series-attr">
-          <svg-icon v-for="(icon, index) in seriesFeatures" :key="`f${index}`" :icon-id="icon" />
-          <svg-cogs-icon v-for="(obj, index) in node.cogs" :key="`c${index}`" :cogs="obj" />
+          <svg-icon
+            v-for="(icon, index) in seriesFeatures"
+            :key="`f${index}`"
+            :icon-id="icon"
+          />
+          <svg-cogs-icon
+            v-for="(obj, index) in node.cogs"
+            :key="`c${index}`"
+            :cogs="obj"
+          />
           <svg-icon
             v-if="node.grooveInclination && node.grooveInclination.length > 0"
             icon-id="cogs-angle"
           >
-            <text
-              transform="matrix(1 0 0 1 27 16)"
-              style="font-size:12px;"
-            >{{ node.grooveInclination[0]}}&#xB0;</text>
+            <text transform="matrix(1 0 0 1 27 16)" style="font-size: 12px"
+              >{{ node.grooveInclination[0] }}&#xB0;</text
+            >
             <text
               v-if="node.grooveInclination[1]"
               transform="matrix(1 0 0 1 27 28)"
-              style="font-size:12px;"
-            >{{ node.grooveInclination[1]}}&#xB0;</text>
+              style="font-size: 12px"
+              >{{ node.grooveInclination[1] }}&#xB0;</text
+            >
           </svg-icon>
           <svg-icon
-            v-if="node.cuttingFluid && node.cuttingFluid !== 'none'"
-            :icon-id="'cutting-fluid-' + node.cuttingFluid"
+            v-if="node.coolantSupply && node.coolantSupply.id !== 'none'"
+            :icon-id="'cutting-fluid-' + node.coolantSupply.id"
           />
           <svg-icon v-if="node.toolLength" icon-id="tool-length">
-            <text transform="matrix(1 0 0 1 8 34)" class="tool-length-text">{{ node.toolLength }}</text>
+            <text transform="matrix(1 0 0 1 8 34)" class="tool-length-text">{{
+              node.toolLength
+            }}</text>
           </svg-icon>
-          <svg-icon v-if="node.allowanceCuttingDiameter" icon-id="allowance-cutting-diameter">
-            <text
-              transform="matrix(1 0 0 1 12 34)"
-              class="allowance-text"
-            >{{ node.allowanceCuttingDiameter }}</text>
+          <svg-icon
+            v-if="node.allowanceCuttingDiameter"
+            icon-id="allowance-cutting-diameter"
+          >
+            <text transform="matrix(1 0 0 1 12 34)" class="allowance-text">{{
+              node.allowanceCuttingDiameter
+            }}</text>
           </svg-icon>
         </div>
       </div>
@@ -67,6 +91,17 @@
     </div>
   </g-link>
 </template>
+
+<static-query>
+query {
+  cMainUse: t(id: "catalog.overview.main-use") {
+    value
+  }
+  cPossibleUse: t(id: "catalog.overview.possible-use") {
+    value
+  }
+}
+</static-query>
 
 <script>
 import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
@@ -91,23 +126,26 @@ export default {
 
   computed: {
     seriesFeatures() {
-      return ['coating', 'tail', 'endShapes', 'cuttingShapes'].reduce(
-        (result, f) => {
-          if (this.node[f] && typeof this.node[f] === 'string') {
-            result.push(`${f}-${this.node[f]}`)
-          }
-          if (this.node[f] && f === 'endShapes') {
-            result = result.concat(this.node[f].map((shape) => `form-${shape}`))
-          }
-          if (this.node[f] && f === 'cuttingShapes') {
-            result = result.concat(
-              this.node[f].map((shape) => `cutting-${shape}`)
-            )
-          }
-          return result
-        },
-        []
-      )
+      const result = []
+      
+      if (this.node.coating) {
+        result.push(`coating-${this.node.coating.id}`)
+      }
+      if (this.node.tail) {
+        result.push(`tail-${this.node.tail}`)
+      }
+      if (this.node.endShapes) {
+        for (const shape of this.node.endShapes) {
+          result.push(`form-${shape.id}`)
+        }
+      }
+      if (this.node.cuttingShapes) {
+        for (const shape of this.node.cuttingShapes) {
+          result.push(`cutting-${shape.id}`)
+        }
+      }
+
+      return result
     },
 
     sizesValue() {
@@ -204,14 +242,14 @@ export default {
 
 .tool-length-text {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $lila;
   fill: $lila;
 }
 
 .allowance-text {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $indigo;
   fill: $indigo;
 }

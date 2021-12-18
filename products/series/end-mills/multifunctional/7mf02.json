@@ -30,16 +30,18 @@
   "possibleUsage": [
     "n"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     2
   ],
   "type": "multifunctional",
-  "productSeriesSet": "simple"
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "body": "Многофункциональный инструмент, средней длины. Угол в торце 40°, 60°, 90°, 100° и 120°."
+    },
+    "en-en": {
+      "body": "Multifunction tool, medium length. End angle 40°, 60°, 90°, 100° and 120°."
+    }
+  }
 }

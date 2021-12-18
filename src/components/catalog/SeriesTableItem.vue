@@ -13,20 +13,20 @@
     </div>
 
     <div class="td td-usage">
-      <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m" />
+      <material-icon v-for="(m, index) in node.mainUsage" :key="index" :mat-id="m.id" />
     </div>
 
     <div class="td td-usage">
       <material-icon
         v-for="(m, index) in node.possibleUsage"
         :key="index"
-        :mat-id="m"
+        :mat-id="m.id"
         :mat-main="false"
       />
     </div>
 
     <div class="td td-single">
-      <svg-icon :icon-id="'coating-' + node.coating" :size="30" />
+      <svg-icon :icon-id="'coating-' + node.coating.id" :size="30" />
     </div>
 
     <div class="td td-double">
@@ -36,17 +36,17 @@
         :pitch="node.cogsPitch"
         :center="node.cogsCuttingCenter"
       />
-      <svg-icon v-for="icon in endShapes" :key="icon" :icon-id="`form-${icon}`" />
+      <svg-icon v-for="icon in endShapes" :key="icon.id" :icon-id="`form-${icon.id}`" />
       <template v-if="node.cuttingShapes">
         <svg-icon
           v-for="(icon, index) in node.cuttingShapes"
           :key="`cs${index}`"
-          :icon-id="`cutting-${icon}`"
+          :icon-id="`cutting-${icon.id}`"
         />
       </template>
       <svg-icon
-        v-if="node.cuttingFluid && node.cuttingFluid !== 'none'"
-        :icon-id="'cutting-fluid-' + node.cuttingFluid"
+        v-if="node.coolantSupply && node.coolantSupply.id !== 'none'"
+        :icon-id="'cutting-fluid-' + node.coolantSupply.id"
       />
       <svg-icon v-if="node.toolLength" icon-id="tool-length">
         <text transform="matrix(1 0 0 1 8 34)" class="tool-length-text">{{ node.toolLength }}</text>
@@ -101,7 +101,7 @@ export default {
     endShapes() {
       return this.node.endShapes
         ? this.node.endShapes.filter(
-            (item) => item === 'radius' || item === 'sphere'
+            (item) => item.id === 'radius' || item.id === 'sphere'
           )
         : []
     },
@@ -168,14 +168,14 @@ export default {
 
 .allowance-text {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: darken($indigo, 10%);
   fill: darken($indigo, 10%);
 }
 
 .tool-length-text {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   color: $lila;
   fill: $lila;
 }

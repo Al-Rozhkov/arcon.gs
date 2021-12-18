@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p class="small">Единицы измерения — мм</p>
-    <table class="pi-table sticky-header">
+    <p class="small">{{ $static.tUnitsMeasure.value }}</p>
+    <table class="table sticky-header">
       <thead>
         <tr>
-          <th class="tc sticky-th">Обозначение</th>
+          <th class="tc sticky-th">{{ $static.tDesignation.value }}</th>
           <th
             v-for="col in fields"
             :key="col"
@@ -27,12 +27,34 @@
             <span class="hd">{{ node.series.toUpperCase() }}</span>
             <span class="td">{{ node.name.toUpperCase() }}</span>
           </td>
-          <td v-for="i in fields" :key="i" class="tc" :class="i">{{ node[i] }}</td>
+          <td v-for="i in fields" :key="i" class="tc" :class="i">
+            {{ node[i] }}
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
+<static-query>
+query {
+  tUnitsMeasure: t(id: "catalog.page.units-measure") {
+    value
+  }
+  tDesignation: t(id: "catalog.page.designation") {
+    value
+  }
+  tForm: t(id: "catalog.page.form") {
+    value
+  }
+  tStep: t(id: "catalog.page.step") {
+    value
+  }
+  tThread: t(id: "catalog.page.thread") {
+    value
+  }
+}
+</static-query>
 
 <script>
 export default {
@@ -64,10 +86,10 @@ export default {
     },
   },
 
-  data() {
-    return {
-      setNames: {
-        name: 'Обозначение',
+  computed: {
+    setNames() {
+      return {
+        name: this.$static.tDesignation.value,
         d1: 'D<sub>1</sub>',
         d2: 'D<sub>2</sub>',
         d3: 'D<sub>3</sub>',
@@ -78,14 +100,12 @@ export default {
         ap: 'a<sub>p</sub>',
         z: 'Z',
         a: 'α°',
-        form: 'Форма',
-        step: 'Шаг',
-        thread: 'Резьба',
-      },
-    }
-  },
+        form: this.$static.tForm.value,
+        step: this.$static.tStep.value,
+        thread: this.$static.tThread.value,
+      }
+    },
 
-  computed: {
     // Skip empty columns
     fields() {
       return this.fieldsSet.filter((col) => {
@@ -103,8 +123,30 @@ export default {
 
 
 <style lang="scss" scoped>
-.pi-table {
+.sticky-header {
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+@include media-breakpoint-up(sm) {
+  th.sticky-th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    border-bottom: 1px solid $black;
+    padding: 0.75rem 0.5rem 0.5rem;
+  }
+}
+
+.table {
   margin: 0 auto 0 0;
+
+  thead {
+    font-weight: $font-weight-bold;
+    border-bottom: 1px solid $gray-300;
+  }
 
   thead,
   tr {

@@ -6,7 +6,7 @@
       <catalog-block />
     </main>
 
-    <section class="gray-wrapper">
+    <section class="bg-gray-100">
       <div class="cnt">
         <front-advantages />
       </div>
@@ -16,7 +16,7 @@
       <div class="cnt">
         <div class="tile-row">
           <div class="col-lg-6">
-            <h2 class="h2-blind">Услуги</h2>
+            <h2 class="h2-blind">{{ $page.services.value }}</h2>
           </div>
 
           <div class="col-lg-18">
@@ -27,6 +27,20 @@
     </section>
   </Layout>
 </template>
+
+<page-query>
+query {
+  title: t(id: "meta.front.title") {
+    value
+  }
+  slogan: t(id: "site.slogan") {
+    value
+  }
+  services: t(id: "headline.services") {
+    value
+  }
+}
+</page-query>
 
 <script>
 import { hydrateSsrOnly, hydrateWhenIdle } from 'vue-lazy-hydration'
@@ -50,18 +64,28 @@ export default {
     )
   },
 
-  metaInfo: {
-    title: 'ARCONIT – Режущий инструмент',
-    titleTemplate: null
+  metaInfo() {
+    return {
+      title: this.$page.title.value,
+      titleTemplate: null,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.slogan.value,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.title.value,
+        },
+      ],
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.gray-wrapper {
-  background-color: $gray-100;
-}
-
 @include media-breakpoint-up(lg) {
   .services-wrapper:hover {
     .h2-blind {

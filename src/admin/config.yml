@@ -221,9 +221,9 @@ collections:
         hint: "Если значений несколько, укажите их через запятую."
         required: false
         widget: "list"
-      - &fieldCuttingPartLength
+      - &fieldcuttingEdgeLength
         label: "Длина режущей части"
-        name: "cuttingPartLength"
+        name: "cuttingEdgeLength"
         widget: "select"
         required: false
         multiple: true
@@ -262,7 +262,7 @@ collections:
       - *fieldCogsPitch
       - *fieldCogsCuttingCenter
       - *fieldGrooveInclination
-      - *fieldCuttingPartLength
+      - *fieldcuttingEdgeLength
       - label: "Длина"
         name: "toolLength"
         required: false

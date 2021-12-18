@@ -24,7 +24,7 @@
     "k",
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short",
     "middle"
   ],
@@ -37,17 +37,19 @@
     "n"
   ],
   "allowanceRadius": "±0,01",
-  "cogs": [
-    {
-      "cogsNumber": 4,
-      "cogsPitch": "variable"
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     4
   ],
   "type": "end-mills",
   "id": "1s271",
-  "productSeriesSet": "lower R"
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "body": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью."
+    },
+    "en-en": {
+      "body": "Spherical solid carbide end mill, 4 tooth, short cutter."
+    }
+  }
 }

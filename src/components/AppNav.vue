@@ -34,28 +34,30 @@
       </div>
 
       <ul class="menu">
-        <li class="li">
-          <g-link class="a" to="/about/">О компании</g-link>
-        </li>
-        <li class="li">
-          <g-link class="a" to="/tech/">Технологии</g-link>
-        </li>
-        <li class="li">
-          <g-link class="a bold" to="/catalog/">Режущий инструмент</g-link>
-        </li>
-        <li class="li">
-          <g-link class="a" to="/services/">Услуги</g-link>
-        </li>
-        <!-- <li class="li">
-          <g-link class="a" to="/partners/">Представители</g-link>
-        </li> -->
-        <li class="li">
-          <g-link class="a" to="/contact/">Контакты</g-link>
+        <li v-for="{ node } in $static.menu.edges" :key="node.id" class="li">
+          <g-link class="a" :class="{ bold: node.bold }" :to="node.path">{{
+            node.label
+          }}</g-link>
         </li>
       </ul>
     </nav>
   </div>
 </template>
+
+<static-query>
+query Menu {
+  menu: allMenu(filter: { parent: { eq: null } }, sortBy: "weight", order: ASC) {
+    edges {
+      node {
+        id
+        path
+        label
+        bold
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 export default {
@@ -65,7 +67,10 @@ export default {
     },
 
     langUrl() {
-      const base = 'https://en.arconit.ru'
+      const base =
+        this.$context.locale === 'ru-ru'
+          ? 'https://en.arconit.ru'
+          : 'https://arconit.ru'
 
       if (this.$route.fullPath.startsWith('/news/')) {
         return base + '/news/'

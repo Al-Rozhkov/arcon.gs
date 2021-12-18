@@ -2,10 +2,6 @@
   <page-layout>
     <main class="cnt">
       <series-page :node="$page.series" :tools="$page.tools" />
-
-      <!-- <section class="pt">
-        <h2>Похожие инструменты</h2>
-      </section>-->
     </main>
   </page-layout>
 </template>
@@ -20,12 +16,18 @@ query TreadMill ($path: String, $id: String!) {
       name
       scheme
     }
-    mainUsage
-    possibleUsage
-    coating
+    mainUsage {
+      id
+      text
+    }
+    possibleUsage {
+      id
+      text
+    }
+    coating { text }
     tail
-    cuttingShapes
-    cuttingFluid
+    cuttingShapes { id text }
+    coolantSupply { id text }
     productSeriesSet {
       set
     }
@@ -51,6 +53,9 @@ query TreadMill ($path: String, $id: String!) {
       }
     }
   }
+  cTool: t(id: "catalog.thread-mill") {
+    value
+  }
 }
 </page-query>
 
@@ -61,25 +66,32 @@ import SeriesPage from '~/components/catalog/SeriesPage.vue'
 export default {
   components: {
     PageLayout,
-    SeriesPage
+    SeriesPage,
   },
 
   metaInfo() {
+    const title = `${this.$page.cTool.value} ${this.$page.series.id.toUpperCase()}`
+    
     return {
-      title: `Резьбовая фреза ${this.$page.series.id.toUpperCase()}`,
+      title,
       meta: [
         {
           key: 'description',
           name: 'description',
-          content: this.$page.series.body
+          content: this.$page.series.body,
         },
         {
           key: 'keywords',
           name: 'keywords',
-          content: this.$page.tools.edges.map(t => t.node.id).join(', ')
-        }
-      ]
+          content: this.$page.tools.edges.map((t) => t.node.id).join(', '),
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title,
+        },
+      ],
     }
-  }
+  },
 }
 </script>

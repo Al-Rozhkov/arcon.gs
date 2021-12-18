@@ -28,8 +28,16 @@
   ],
   "type": "thread-mills",
   "id": "6rp02",
-  "cuttingFluid": "out",
+  "coolantSupply": "out",
   "productSeriesSet": "thread-mills",
   "toolProfile": "Неполный",
-  "toolForming": "M (ISO) и UN, угол профиля 60°, внутренняя и внешняя"
+  "toolForming": "M (ISO) и UN, угол профиля 60°, внутренняя и внешняя",
+  "i18n": {
+    "ru-ru": {
+      "body": "Резьбовая твердосплавная фреза неполного профиля, для внутренних и внешних резьб M (ISO) и UN, угол профиля 60°."
+    },
+    "en-en": {
+      "body": "Partial thread carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°."
+    }
+  }
 }

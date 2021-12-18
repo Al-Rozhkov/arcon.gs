@@ -1,0 +1,25 @@
+- path: /about/
+  label: About
+
+- path: /tech/
+  label: Technologies
+
+- path: /catalog/
+  label: Cutting tool
+  bold: true
+  children:
+  - path: /catalog/drills/
+    label: Drills
+  - path: /catalog/end-mills/
+    label: End mills
+  - path: /catalog/thread-mills/
+    label: Thread cutters
+  - path: /catalog/special/
+    label: Custom tools (by drawing)
+    bold: true
+
+- path: /services/
+  label: Services
+
+- path: /contact/
+  label: Contact Us

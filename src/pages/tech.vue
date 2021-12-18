@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="cnt">
-      <h1>Технологии</h1>
+      <h1>{{ $page.page.title }}</h1>
 
       <section class="tile-root">
         <div class="tile-row">
@@ -25,7 +25,8 @@
               v-for="({ node }, index) in $page.tech.edges"
               :key="node.id"
               :to="`/tech#article-${index}`"
-            >{{ node.title }}</app-menu-item>
+              >{{ node.title }}</app-menu-item
+            >
           </app-menu>
         </aside>
 
@@ -48,6 +49,10 @@
 
 <page-query>
 query Tech {
+  page: mdPage(id: "tech") {
+    title
+    description
+  }
   tech: allTech(sortBy: "weight", order: ASC) {
     edges{
       node {
@@ -64,9 +69,23 @@ query Tech {
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Технологии'
-  }
+  metaInfo() {
+    return {
+      title: this.$page.page.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.page.description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$page.page.title,
+        },
+      ],
+    }
+  },
 }
 </script>
 

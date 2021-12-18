@@ -1,0 +1,25 @@
+- path: /about/
+  label: О компании
+
+- path: /tech/
+  label: Технологии
+
+- path: /catalog/
+  label: Режущий инструмент
+  bold: true
+  children:
+  - path: /catalog/drills/
+    label: Сверла
+  - path: /catalog/end-mills/
+    label: Концевые фрезы
+  - path: /catalog/thread-mills/
+    label: Резьбовые фрезы
+  - path: /catalog/special/
+    label: Специальный инструмент (по чертежу)
+    bold: true
+
+- path: /services/
+  label: Услуги
+
+- path: /contact/
+  label: Контакты

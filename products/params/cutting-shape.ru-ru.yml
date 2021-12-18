@@ -1,0 +1,14 @@
+- id: conus
+  text: конус
+
+- id: conus-cylinder
+  text: конус и цилиндр
+
+- id: inner-radius
+  text: с внутренним радиусом
+
+- id: arrow
+  text: конус и цилиндр
+
+- id: t
+  text: Т-образная режущая часть

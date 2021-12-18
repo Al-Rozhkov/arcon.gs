@@ -1,0 +1,14 @@
+- id: conus
+  text: Conus
+
+- id: conus-cylinder
+  text: Conus and cylinder
+
+- id: inner-radius
+  text: With an inner radius
+
+- id: arrow
+  text: Conus and cylinder
+
+- id: t
+  text: T-shaped cutting part

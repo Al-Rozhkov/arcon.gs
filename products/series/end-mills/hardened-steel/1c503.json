@@ -21,7 +21,7 @@
   "mainUsage": [
     "h"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "long"
   ],
   "endShapes": [
@@ -33,17 +33,19 @@
   "possibleUsage": [
     "p"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 6
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     6
   ],
   "type": "end-mills",
   "id": "1c503",
-  "productSeriesSet": "set-r"
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 6 зубьев, с длинной режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 6 teeth, with long cutting edge."
+    }
+  }
 }

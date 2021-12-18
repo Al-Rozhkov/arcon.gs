@@ -1,15 +1,22 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <h1>Концевые и специальные фрезы</h1>
+      <h1>{{ $page.title.value }}</h1>
 
-      <grouped-overview :nodes="$page.series.edges" :filters="filters" groupBy="type" />
+      <grouped-overview
+        :nodes="$page.series.edges"
+        :filters="filters"
+        groupBy="type"
+      />
     </main>
   </page-layout>
 </template>
 
 <page-query>
 query Catalog {
+  title: t(id: "headline.catalog.end-mills") {
+    value
+  }
   series: allProductEndMill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
@@ -19,23 +26,22 @@ query Catalog {
         body
         photos (width: 260, quality: 80)
         fusion
-        mainUsage
-        possibleUsage
-        endShapes
+        mainUsage { id text }
+        possibleUsage { id text }
+        endShapes { id }
         tail
-        cuttingPartLength
-        cuttingShapes
+        cuttingEdgeLength
+        cuttingShapes { id text }
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating
+        coating { id text }
       }
     }
   }
 }
 </page-query>
-
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
@@ -47,79 +53,21 @@ export default {
     GroupedOverview,
   },
 
-  data() {
-    return {
-      filters: {
-        endShapes: {
-          name: 'Форма торца',
-          list: [
-            {
-              text: 'любая',
-              value: null,
-            },
-            {
-              text: 'прямоугольная',
-              value: ['rect-sharp', 'rect-r', 'rect-f'],
-            },
-            {
-              text: 'радиусная',
-              value: 'radius',
-            },
-            {
-              text: 'сферическая',
-              value: 'sphere',
-            },
-          ],
-        },
+  computed: {
+    filters() {
+      return {
+        endShapes: true,
         mainUsage: true,
-        coating: {
-          name: 'Покрытие',
-          list: [
-            {
-              text: 'любое',
-              value: null,
-            },
-            {
-              text: 'nACo-G',
-              value: 'ng',
-            },
-            {
-              text: 'TiAlN',
-              value: 'tan',
-            },
-            {
-              text: 'PurePolish (полировка)',
-              value: 'pp',
-            },
-          ],
-        },
-        cuttingPartLength: {
-          name: 'Длина режущей части',
-          list: [
-            {
-              text: 'любая',
-              value: null,
-            },
-            {
-              text: 'короткая',
-              value: 'short',
-            },
-            {
-              text: 'средняя',
-              value: 'middle',
-            },
-            {
-              text: 'длинная',
-              value: 'long',
-            },
-          ],
-        },
-      },
-    }
+        coating: true,
+        cuttingEdgeLength: true,
+      }
+    },
   },
 
-  metaInfo: {
-    title: 'Концевые и специальные фрезы для металлобработки',
+  metaInfo() {
+    return {
+      title: this.$page.title.value,
+    }
   },
 }
 </script>

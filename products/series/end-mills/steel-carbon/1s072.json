@@ -18,7 +18,7 @@
   "grooveInclination": [
     30
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "short",
     "middle"
   ],
@@ -38,17 +38,19 @@
     "s"
   ],
   "allowanceRadius": "±0,01",
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 2
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     2
   ],
   "type": "end-mills",
   "id": "1s072",
-  "productSeriesSet": "set-r"
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "body": "Сферическая цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "body": "Spherical solid carbide end mill, 2 teeth, medium cutter."
+    }
+  }
 }

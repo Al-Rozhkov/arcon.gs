@@ -1,7 +1,7 @@
 <template>
   <page-layout>
     <main class="cnt">
-      <h1>Спиральные и центровочные сверла</h1>
+      <h1>{{ $page.title.value }}</h1>
 
       <grouped-overview :nodes="$page.series.edges" :filters="filters" />
     </main>
@@ -10,6 +10,9 @@
 
 <page-query>
 query Catalog {
+  title: t(id: "headline.catalog.drills") {
+    value
+  }
   series: allProductDrill(sortBy: "id", order: ASC, perPage: 200) {
     edges {
       node {
@@ -19,23 +22,22 @@ query Catalog {
         body
         photos (width: 260, quality: 80)
         toolLength
-        mainUsage
-        possibleUsage
+        mainUsage { id text }
+        possibleUsage { id text }
         tail
-        cuttingPartLength
+        cuttingEdgeLength
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
         allowanceCuttingDiameter
-        coating
-        cuttingFluid
+        coating { id text }
+        coolantSupply { id }
       }
     }
   }
 }
 </page-query>
-
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
@@ -47,79 +49,21 @@ export default {
     GroupedOverview,
   },
 
-  data() {
-    return {
-      filters: {
-        toolLength: {
-          name: 'Длина',
-          list: [
-            {
-              text: 'любая',
-              value: null,
-            },
-            {
-              text: '3xD',
-              value: '3xD',
-            },
-            {
-              text: '5xD',
-              value: '5xD',
-            },
-            {
-              text: '8xD',
-              value: '8xD',
-            },
-          ],
-        },
+  computed: {
+    filters() {
+      return {
+        toolLength: true,
         mainUsage: true,
-        coating: {
-          name: 'Покрытие',
-          list: [
-            {
-              text: 'любое',
-              value: null,
-            },
-            {
-              text: 'nACo-G',
-              value: 'ng',
-            },
-            {
-              text: 'TiAlN',
-              value: 'tan',
-            },
-            {
-              text: 'PurePolish (полировка)',
-              value: 'pp',
-            },
-          ],
-        },
-        cuttingFluid: {
-          name: 'Подвод СОЖ',
-          list: [
-            {
-              text: 'не важно',
-              value: null,
-            },
-            {
-              text: 'внутренний',
-              value: 'in',
-            },
-            {
-              text: 'внешний',
-              value: 'out',
-            },
-            // {
-            //   text: 'без СОЖ',
-            //   value: 'none',
-            // },
-          ],
-        },
-      },
-    }
+        coating: true,
+        coolantSupply: true,
+      }
+    },
   },
 
-  metaInfo: {
-    title: 'Спиральные и центровочные сверла',
+  metaInfo() {
+    return {
+      title: this.$page.title.value,
+    }
   },
 }
 </script>

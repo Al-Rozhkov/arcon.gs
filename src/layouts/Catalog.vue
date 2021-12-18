@@ -2,10 +2,13 @@
   <div class="layout">
     <div class="container-xl d-print-none">
       <app-menu class="submenu">
-        <app-menu-item to="/catalog/drills/">Сверла</app-menu-item>
-        <app-menu-item to="/catalog/end-mills/">Концевые фрезы</app-menu-item>
-        <app-menu-item to="/catalog/thread-mills/">Резьбовые фрезы</app-menu-item>
-        <app-menu-item to="/catalog/special/" bold>Специальный инструмент (по чертежу)</app-menu-item>
+        <app-menu-item
+          v-for="{ node } in $static.menu.edges"
+          :key="node.id"
+          :to="node.path"
+          :bold="node.bold"
+          >{{ node.label }}</app-menu-item
+        >
       </app-menu>
     </div>
 
@@ -14,19 +17,22 @@
     <svg-sprite-coating class="d-none" />
     <svg-sprite-features class="d-none" />
 
-    <div class="container-xl">
-      <p class="lead">
-        Мы можем изготовить инструмент с индивидуальными параметрами. Перейдите в раздел
-        <g-link to="/catalog/special">специального инструмента.</g-link>
-      </p>
-    </div>
+    <custom-tools-msg class="container-xl" />
   </div>
 </template>
 
 <static-query>
 query {
-  metadata {
-    siteName
+  menu: allMenu(filter: { parent: { eq: "/catalog/" } }, sortBy: "weight", order: ASC) {
+    edges {
+      node {
+        path
+        label
+        bold
+        weight
+        parent
+      }
+    }
   }
 }
 </static-query>
@@ -34,11 +40,13 @@ query {
 <script>
 import SvgSpriteCoating from '~/components/catalog/SvgSpriteCoating'
 import SvgSpriteFeatures from '~/components/catalog/SvgSpriteFeatures'
+import CustomToolsMsg from '~/components/catalog/CustomToolsMsg'
 
 export default {
   components: {
     SvgSpriteCoating,
-    SvgSpriteFeatures
-  }
+    SvgSpriteFeatures,
+    CustomToolsMsg
+  },
 }
 </script>

@@ -59,6 +59,6 @@ a.active--exact:hover {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
 }
 </style>

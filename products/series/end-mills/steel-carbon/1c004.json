@@ -1,53 +1,55 @@
 {
-    "id": "1c004",
-    "body": "Цельная твердосплавная концевая фреза, 5 зубьев, со средней режущей частью.",
-    "type": "end-mills",
-    "photos": [
-        "./1c004.jpg"
-    ],
-    "productCategory": "steel-carbon",
-    "scheme": [
-        {
-            "name": "a",
-            "scheme": "cylinder-conus-f"
-        },
-        {
-            "name": "b",
-            "scheme": "cylinder-f"
-        }
-    ],
-    "mainUsage": [
-        "p",
-        "k",
-        "m"
-    ],
-    "possibleUsage": [
-        "s",
-        "h1.1"
-    ],
-    "coating": "ng",
-    "tail": "cylinder",
-    "endShapes": [
-        "rect-sharp",
-        "rect-f"
-    ],
-    "cogs": [
-        {
-            "cogsPitch": "variable",
-            "cogsNumber": 5
-        }
-    ],
-    "cogsPitch": "variable",
-    "cogsNumber": [
-        5
-    ],
-    "grooveInclination": [
-        38
-    ],
-    "cuttingPartLength": [
-        "middle",
-        "long"
-    ],
-    "allowanceCuttingDiameter": "h8",
-    "productSeriesSet": "set-f45"
+  "id": "1c004",
+  "body": "Цельная твердосплавная концевая фреза, 5 зубьев, со средней режущей частью.",
+  "type": "end-mills",
+  "photos": [
+    "./1c004.jpg"
+  ],
+  "productCategory": "steel-carbon",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    5
+  ],
+  "grooveInclination": [
+    38
+  ],
+  "cuttingEdgeLength": [
+    "middle",
+    "long"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "productSeriesSet": "set-f45",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 5 зубьев, со средней режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 5 teeth, medium cutter section."
+    }
+  }
 }

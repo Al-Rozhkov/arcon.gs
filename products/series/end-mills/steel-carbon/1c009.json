@@ -24,7 +24,7 @@
     "k",
     "m"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "middle"
   ],
   "endShapes": [
@@ -38,17 +38,19 @@
     "s",
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 3
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     3
   ],
   "type": "end-mills",
   "id": "1c009",
-  "productSeriesSet": "set-f45"
+  "productSeriesSet": "set-f45",
+  "i18n": {
+    "ru-ru": {
+      "body": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "body": "Solid carbide end mill, 3 teeth, medium cutter."
+    }
+  }
 }

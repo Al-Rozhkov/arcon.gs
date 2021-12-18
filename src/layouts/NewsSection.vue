@@ -7,14 +7,14 @@
         </main>
 
         <aside class="col news-page-aside">
-          <div v-for="(node, index) in $static.news.edges" :key="index" class="mb-3">
-            <template v-if="!node.node.nopage">
-              <news-teaser :node="node.node" />
+          <div v-for="({ node }, index) in $static.news.edges" :key="index" class="mb-3">
+            <template v-if="!node.nopage">
+              <news-teaser :node="node" />
             </template>
 
             <template v-else>
-              <h3>{{ node.node.title }}</h3>
-              <div v-html="node.node.content" />
+              <h3>{{ node.title }}</h3>
+              <div v-html="node.content" />
             </template>
           </div>
         </aside>
@@ -33,7 +33,7 @@ query RecentNews {
         nopage
         content
         title
-        date(format: "D MMMM YYYY", locale: "RU")
+        date: localeDate
         image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
       }
     }
@@ -49,7 +49,7 @@ export default {
     NewsTeaser
   }
 }
-</script>script
+</script>
 
 <style lang="scss">
 .news-page-body {

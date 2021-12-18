@@ -29,23 +29,6 @@
   "possibleUsage": [
     "h1.1"
   ],
-  "cogs": [
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 4,
-      "noCuttingCenter": true
-    },
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 6,
-      "noCuttingCenter": true
-    },
-    {
-      "cogsPitch": "permanent",
-      "cogsNumber": 10,
-      "noCuttingCenter": true
-    }
-  ],
   "cogsPitch": "permanent",
   "cogsNumber": [
     4,
@@ -54,5 +37,13 @@
   "cogsCuttingCenter": true,
   "type": "shaped-mills",
   "id": "7r02",
-  "productSeriesSet": "profile-r"
+  "productSeriesSet": "profile-r",
+  "i18n": {
+    "ru-ru": {
+      "body": "Фасонная фасочная твердосплавная фреза с внутренним радиусом, для обработки галтелей."
+    },
+    "en-en": {
+      "body": "Shaped chamfered solid carbide end mill with inside radius, for fillet machining."
+    }
+  }
 }

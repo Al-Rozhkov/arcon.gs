@@ -25,7 +25,7 @@
     "m",
     "s"
   ],
-  "cuttingPartLength": [
+  "cuttingEdgeLength": [
     "long"
   ],
   "productCategory": "drill-center",
@@ -41,7 +41,15 @@
   ],
   "type": "drills-center",
   "id": "2cs03",
-  "cuttingFluid": "out",
+  "coolantSupply": "out",
   "productSeriesSet": "drills",
-  "toolLength": "5xD"
+  "toolLength": "5xD",
+  "i18n": {
+    "ru-ru": {
+      "body": "Центровочное твердосплавное сверло, удлиненная серия, 90°, 120° и 142°."
+    },
+    "en-en": {
+      "body": "Center carbide drill bit, long series, 90°, 120° and 142°."
+    }
+  }
 }
