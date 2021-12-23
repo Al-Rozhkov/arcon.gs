@@ -241,7 +241,7 @@ export default {
         }
 
         // Iterate over selected filters.
-        // We should check node againt all enabled conditions. 
+        // We should check node againt all enabled conditions.
         // That's why we return false in case of fail and only return true at the end.
         for (const filterKey of filterKeys) {
           // If series value is array try to find item in it
@@ -253,9 +253,14 @@ export default {
               : [this.selected[filterKey]]
 
             // Flatten node values because single value could be an object.
-            const nodeValue = node[filterKey].map((value) =>
-              typeof value === 'object' ? value.id : value
-            )
+            const nodeValue =
+              filterKey === 'mainUsage'
+                ? [...node.mainUsage, ...node.possibleUsage].map(
+                    (value) => value.id
+                  )
+                : node[filterKey].map((value) =>
+                    typeof value === 'object' ? value.id : value
+                  )
 
             if (
               !filterValue.some(
@@ -276,15 +281,6 @@ export default {
               }
             }
           }
-
-          if (this.selected.mainUsage) {
-            console.log(
-              node.id,
-              node.mainUsage.findIndex(
-                (usage) => this.selected.mainUsage === usage.id
-              )
-            )
-          }
         }
 
         return true
@@ -297,16 +293,38 @@ export default {
     // If main usage selected, then return the list sorted by main usage result.
     //
     outputSorted() {
-      const findCallback = (usage) => this.selected.mainUsage === usage.id
+      // Don't sort, just return filtered result.
+      if (!this.selected.mainUsage) {
+        return this.outputFiltered
+      }
 
-      return this.selected.mainUsage
-        ? this.outputFiltered.sort((a, b) => {
-            return (
-              a.node.mainUsage.findIndex(findCallback) -
-              b.node.mainUsage.findIndex(findCallback)
-            )
-          })
-        : this.outputFiltered
+      const findCallback = (usageNode) => {
+        // If selected.mainUsage is an array then iterate over each item.
+        if (Array.isArray(this.selected.mainUsage)) {
+          for (const filterValue of this.selected.mainUsage) {
+            if (filterValue === usageNode.id) return true
+          }
+        } else {
+          return usageNode.id === this.selected.mainUsage
+        }
+        return false
+      }
+
+      return this.outputFiltered.sort((a, b) => {
+        const aMainIndex = a.node.mainUsage.findIndex(findCallback)
+        const bMainIndex = b.node.mainUsage.findIndex(findCallback)
+
+        const aScore =
+          aMainIndex < 0
+            ? a.node.possibleUsage.findIndex(findCallback) + 100
+            : aMainIndex
+        const bScore =
+          bMainIndex < 0
+            ? b.node.possibleUsage.findIndex(findCallback) + 100
+            : bMainIndex
+
+        return aScore - bScore
+      })
     },
 
     //

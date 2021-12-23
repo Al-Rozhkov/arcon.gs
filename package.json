@@ -12,7 +12,6 @@
     "bootstrap-vue": "^2.21.2",
     "gridsome": "^0.7.23",
     "gridsome-plugin-flexsearch": "^2.0.2",
-    "gridsome-plugin-i18n": "^1.6.0",
     "netlify-cms": "^2.10.172",
     "randomstring": "^1.2.1",
     "simple-oauth2": "^4.3.0",

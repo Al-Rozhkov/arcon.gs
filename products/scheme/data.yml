@@ -1,0 +1,16 @@
+- id: 2cs
+  image: ./2cs.png
+  set: [a,d1,d2,l1,l2,ap,form]
+
+- id: 2ss
+  image: ./2ss.png
+  set: [a,d1,d2,l1,l2,ap,form]
+
+- id: thread
+  image: ./thread.png
+  set: [step,thread,d1,d2,l1,l2,z]
+
+- id: 7r
+  image: ./7r.png
+  set: ["r","d1","d2","l1","ap","z","form"]
+
