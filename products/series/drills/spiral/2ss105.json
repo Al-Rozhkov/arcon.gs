@@ -1,0 +1,45 @@
+{
+  "photos": [
+    "./2ss103.jpg"
+  ],
+  "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2ss"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "productCategory": "drills-spiral",
+  "tail": "cylinder",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-spiral",
+  "coolantSupply": "out",
+  "id": "2ss105",
+  "productSeriesSet": "drills",
+  "toolLength": "5xD",
+  "sharpeningAngle": [
+    "140"
+  ],
+  "i18n": {
+    "ru-ru": {
+      "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7."
+    },
+    "en-en": {
+      "content": "Twist carbide drill bit 5xD, 140°. External coolant supply. Cutter diameter tolerance h7."
+    }
+  }
+}

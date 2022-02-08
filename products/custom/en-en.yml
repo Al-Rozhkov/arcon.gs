@@ -1,0 +1,89 @@
+- title: Twist drill
+  file: './drill_spiral_2SS.pdf'
+  group: Drills
+  weight: 1
+
+- title: Twist drill bit with short cutting part and neck
+  file: './drill_spiral_shejka_2SS.pdf'
+  group: Drills
+  weight: 2
+
+- title: Twist combination drill bit (with countersink)
+  file: './drill_spiral_faska.pdf'
+  group: Drills
+  weight: 3
+
+- title: Step drill (2 steps)
+  file: './drill_stupen_2.pdf'
+  group: Drills
+  weight: 4
+
+- title: Step drill (3 steps)
+  file: './drill_stupen_3.pdf'
+  group: Drills
+  weight: 5
+
+- title: Center drill
+  file: './drill_centr_2CS.pdf'
+  group: Drills
+  weight: 6
+
+- title: Cylindrical end mill
+  file: './end_mill.pdf'
+  group: End mills
+  weight: 7
+
+- title: Straight tapered end mill
+  file: './end_mill_conus.pdf'
+  group: End mills
+  weight: 8
+
+- title: Dovetail reverse tapered end mill
+  file: './end_mill_conus_obrat.pdf'
+  group: End mills
+  weight: 9
+
+- title: 'T-cutter'
+  file: './mill_t_form.pdf'
+  group: T-cutters
+  weight: 10
+
+- title: T-cutter (trapezoidal)
+  file: './mill_t_form_trap.pdf'
+  group: T-cutters
+  weight: 11
+
+- title: Chamfering cutter (countersinking, standard)
+  file: './mill_fasoch_7v.pdf'
+  group: Chamfering cutters
+  weight: 12
+
+- title: Shaped bevel cutter (countersinking with neck, straight, double-sided and reverse)
+  file: './mill_fasoch_obratn_7v.pdf'
+  group: Chamfering cutters
+  weight: 13
+
+- title: Chamfer cutter (concave radius, standard)
+  file: './mill_fasoch_galtel_7r.pdf'
+  group: Chamfering cutters
+  weight: 15
+
+- title: Chamfer cutter (with concave radius and neck, straight, double-sided and reverse)
+  file: './mill_fasoch_obratn_7r.pdf'
+  group: Chamfering cutters
+  weight: 16
+
+- title: Cylindrical reamer
+  file: './razvert_cilindr.pdf'
+  group: Reamers
+  weight: 17
+
+- title: Conical reamer
+  file: './razvert_conus.pdf'
+  group: Reamers
+  weight: 18
+
+- title: Cutter with a partial profile
+  file: './mill_rezb_6RP.pdf'
+  group: Thread mill
+  weight: 19

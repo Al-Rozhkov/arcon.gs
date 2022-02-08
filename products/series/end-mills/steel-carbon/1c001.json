@@ -1,0 +1,52 @@
+{
+  "id": "1c001",
+  "content": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой.",
+  "type": "end-mills",
+  "photos": [
+    "./1c001.jpg"
+  ],
+  "productCategory": "steel-carbon",
+  "fusion": false,
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-lower-r"
+    }
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "grooveInclination": [
+    43,
+    45
+  ],
+  "cuttingEdgeLength": [
+    "short"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "productSeriesSet": "lower-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 4 tooth, short cutter section, undersized neck."
+    }
+  }
+}

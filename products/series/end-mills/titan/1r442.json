@@ -1,0 +1,48 @@
+{
+  "photos": [
+    "./1r442.jpg"
+  ],
+  "content": "Радиусная цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "radius-r"
+    }
+  ],
+  "grooveInclination": [
+    44
+  ],
+  "mainUsage": [
+    "s"
+  ],
+  "cuttingEdgeLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "radius"
+  ],
+  "productCategory": "titan",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "m"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "type": "end-mills",
+  "id": "1r442",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Радиусная цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Radius solid carbide end mill, 4 tooth, medium cutter."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "photos": [
+    "./6rp12.jpg"
+  ],
+  "cuttingShapes": [
+    "t"
+  ],
+  "content": "Резьбовая твердосплавная фреза неполного профиля, для внутренних и внешних резьб M (ISO) и UN, угол профиля 60°. С каналом для подачи СОЖ.",
+  "coating": "pp",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "thread"
+    }
+  ],
+  "mainUsage": [
+    "n1",
+    "n3"
+  ],
+  "productCategory": "thread-mills",
+  "tail": "cylinder",
+  "type": "thread-mills",
+  "coolantSupply": "in",
+  "id": "6rp13",
+  "productSeriesSet": "thread-mills",
+  "toolProfile": "Неполный",
+  "toolForming": "M (ISO) и UN, угол профиля 60°, внутренняя и внешняя",
+  "i18n": {
+    "ru-ru": {
+      "content": "Резьбовая твердосплавная фреза неполного профиля, для внутренних и внешних резьб M (ISO) и UN, угол профиля 60°. С каналом для подачи СОЖ."
+    },
+    "en-en": {
+      "content": "Partial tungsten carbide cutter, for M (ISO) and UN internal and external threads, profile angle 60°. With coolant channel."
+    }
+  }
+}

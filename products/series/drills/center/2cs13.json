@@ -1,0 +1,47 @@
+{
+  "photos": [
+    "./2cs.jpg"
+  ],
+  "content": "Центровочное твердосплавное сверло, удлиненная серия, 90°, 120° и 142°.",
+  "sharpeningAngle": [
+    "90",
+    "120",
+    "142"
+  ],
+  "allowanceCuttingDiameter": "h7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2cs"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "coating": "pp",
+  "cuttingEdgeLength": [
+    "long"
+  ],
+  "productCategory": "drill-center",
+  "tail": "cylinder",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-center",
+  "id": "2cs13",
+  "coolantSupply": "out",
+  "productSeriesSet": "drills",
+  "toolLength": "5xD",
+  "i18n": {
+    "ru-ru": {
+      "content": "Центровочное твердосплавное сверло, удлиненная серия, 90°, 120° и 142°."
+    },
+    "en-en": {
+      "content": "Center carbide drill bit, long series, 90°, 120° and 142°."
+    }
+  }
+}

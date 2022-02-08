@@ -1,0 +1,55 @@
+{
+  "id": "1c002",
+  "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+  "type": "end-mills",
+  "photos": [
+    "./1c002.jpg"
+  ],
+  "productCategory": "steel-carbon",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "possibleUsage": [
+    "s",
+    "h1.1"
+  ],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "grooveInclination": [
+    43,
+    45
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 4 teeth, medium cutter section."
+    }
+  }
+}

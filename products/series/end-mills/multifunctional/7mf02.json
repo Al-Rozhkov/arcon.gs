@@ -1,0 +1,47 @@
+{
+  "id": "7mf02",
+  "photos": [
+    "./7mf02.jpg"
+  ],
+  "cuttingShapes": [
+    "arrow"
+  ],
+  "content": "Многофункциональный инструмент, средней длины. Угол в торце 40°, 60°, 90°, 100° и 120°.",
+  "coating": "ng",
+  "fusion": false,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "mf"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "s"
+  ],
+  "productCategory": "multifunctional",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "multifunctional",
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "content": "Многофункциональный инструмент, средней длины. Угол в торце 40°, 60°, 90°, 100° и 120°."
+    },
+    "en-en": {
+      "content": "Multifunction tool, medium length. End angle 40°, 60°, 90°, 100° and 120°."
+    }
+  }
+}

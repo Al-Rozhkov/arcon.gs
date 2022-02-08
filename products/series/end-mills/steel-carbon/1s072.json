@@ -1,0 +1,56 @@
+{
+  "photos": [
+    "./1s072.jpg"
+  ],
+  "content": "Сферическая цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "sphere-conus"
+    },
+    {
+      "name": "b",
+      "scheme": "sphere"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "cuttingEdgeLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "sphere"
+  ],
+  "productCategory": "steel-carbon",
+  "tail": "cylinder",
+  "mainUsage": [
+    "p",
+    "h1.1"
+  ],
+  "possibleUsage": [
+    "k",
+    "m",
+    "n",
+    "s"
+  ],
+  "allowanceRadius": "±0,01",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "end-mills",
+  "id": "1s072",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Сферическая цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Spherical solid carbide end mill, 2 teeth, medium cutter."
+    }
+  }
+}

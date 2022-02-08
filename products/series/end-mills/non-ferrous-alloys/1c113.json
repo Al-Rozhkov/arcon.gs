@@ -1,0 +1,45 @@
+{
+  "photos": [
+    "./1c113.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    50
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "middle",
+    "long"
+  ],
+  "endShapes": [
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3
+  ],
+  "type": "end-mills",
+  "id": "1c113",
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 3 teeth, medium-long cutter, roughing profile. With a protective chamfer to prevent shearing."
+    }
+  }
+}

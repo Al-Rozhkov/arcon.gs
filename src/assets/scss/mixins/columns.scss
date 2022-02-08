@@ -1,0 +1,79 @@
+// Variables
+// ========================================================================
+
+$grid-padding-horizontal-xs: 15px !default;
+$grid-padding-horizontal-sm: $grid-gutter-width !default; // 30px;
+$grid-padding-horizontal-md: $grid-gutter-width !default; // 60px;
+
+/* ========================================================================
+   Mixins: Columns
+ ========================================================================== */
+@mixin make-row-negative-margin(
+  $gutter-value-xs: $grid-padding-horizontal-xs,
+  $gutter-value-sm: $grid-padding-horizontal-sm,
+  $gutter-value-md: $grid-padding-horizontal-md
+) {
+  margin-left: -($gutter-value-xs);
+
+  @include media-breakpoint-up(sm) {
+    margin-left: -($gutter-value-sm);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: -($gutter-value-md);
+  }
+}
+
+@mixin make-col-gutter-padding(
+  $gutter-value-xs: $grid-padding-horizontal-xs,
+  $gutter-value-sm: $grid-padding-horizontal-sm,
+  $gutter-value-md: $grid-padding-horizontal-md
+) {
+  padding-left: $gutter-value-xs;
+
+  @include media-breakpoint-up(sm) {
+    padding-left: $gutter-value-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-left: $gutter-value-md;
+  }
+}
+
+// Combined mixin to reduce media queries
+@mixin make-grid-gutter(
+  $gutter-value-xs: $grid-padding-horizontal-xs,
+  $gutter-value-sm: $grid-padding-horizontal-sm,
+  $gutter-value-md: $grid-padding-horizontal-md
+) {
+  margin-left: -($gutter-value-xs);
+  margin-right: -($gutter-value-xs);
+
+  & > .col,
+  & > [class*='col-'] {
+    padding-left: $gutter-value-xs;
+    padding-right: $gutter-value-xs;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-left: -($gutter-value-sm);
+    margin-left: -($gutter-value-sm);
+
+    & > .col,
+    & > [class*='col-'] {
+      padding-left: $gutter-value-sm;
+      padding-right: $gutter-value-sm;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: -($gutter-value-md);
+    margin-right: -($gutter-value-md);
+
+    & > .col,
+    & > [class*='col-'] {
+      padding-left: $gutter-value-md;
+      padding-right: $gutter-value-md;
+    }
+  }
+}

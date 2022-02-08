@@ -1,0 +1,47 @@
+{
+  "photos": [
+    "./1c501.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 6 зубьев, с короткой режущей частью, с заниженной шейкой.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-lower-r"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "cuttingEdgeLength": [
+    "short"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "hardened-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    6
+  ],
+  "type": "end-mills",
+  "id": "1c501",
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 6 зубьев, с короткой режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 6 teeth, short cutter, undersized neck."
+    }
+  }
+}

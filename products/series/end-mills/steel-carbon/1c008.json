@@ -1,0 +1,57 @@
+{
+  "photos": [
+    "./1c008.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью.",
+  "coating": "tan",
+  "fusion": true,
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "grooveInclination": [
+    35
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m"
+  ],
+  "productType": "end-mills",
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "steel-carbon",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n1",
+    "s",
+    "h1.1"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "end-mills",
+  "id": "1c008",
+  "productSeriesSet": "set-f45",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 2 зуба, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 2 teeth, medium cutter."
+    }
+  }
+}

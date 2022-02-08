@@ -1,0 +1,49 @@
+{
+  "photos": [
+    "./7v01.jpg"
+  ],
+  "cuttingShapes": [
+    "conus"
+  ],
+  "content": "Фасонная фасочная твердосплавная фреза, 60° и 90°, 3—4 зуба. Без возможности засверливания.",
+  "coating": "tan",
+  "fusion": true,
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "7v"
+    }
+  ],
+  "grooveInclination": [
+    "0"
+  ],
+  "mainUsage": [
+    "p",
+    "m",
+    "n1"
+  ],
+  "productCategory": "shaped-treatment",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "k",
+    "n3",
+    "s"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3,
+    4
+  ],
+  "cogsCuttingCenter": true,
+  "type": "shaped-mills",
+  "id": "7v01",
+  "productSeriesSet": "profile",
+  "i18n": {
+    "ru-ru": {
+      "content": "Фасонная фасочная твердосплавная фреза, 60° и 90°, 3—4 зуба. Без возможности засверливания."
+    },
+    "en-en": {
+      "content": "Carbide Carbide Tapering Cutter, 60° and 90°, 3-4 teeth. No drilling required."
+    }
+  }
+}

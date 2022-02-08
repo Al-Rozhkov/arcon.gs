@@ -1,0 +1,8 @@
+- path: /policy/
+  label: Privacy policy
+
+- path: /disclosure/
+  label: Disclosure
+
+- path: /contact/
+  label: Contact us

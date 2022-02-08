@@ -1,0 +1,23 @@
+- id: 2cs
+  image: ./2cs.png
+  set: [a,d1,d2,l1,l2,ap,form]
+
+- id: 2ss
+  image: ./2ss.png
+  set: [a,d1,d2,l1,l2,ap,form]
+
+- id: thread
+  image: ./thread.png
+  set: [step,thread,d1,d2,l1,l2,z]
+
+- id: 7r
+  image: ./7r.png
+  set: [r,d1,d2,l1,ap,z,form]
+
+- id: profile
+  image: ./profile.png
+  set: [a,d1,d2,d3,l1,ap,z,form]
+
+- id: profile-r
+  image: ./profile-r.png
+  set: [r,d1,d2,l1,ap,z,form]

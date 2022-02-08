@@ -1,0 +1,46 @@
+{
+  "photos": [
+    "./7mf03.jpg"
+  ],
+  "cuttingShapes": [
+    "arrow"
+  ],
+  "content": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "mf"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "s"
+  ],
+  "productCategory": "multifunctional",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "multifunctional",
+  "id": "7mf03",
+  "productSeriesSet": "simple",
+  "i18n": {
+    "ru-ru": {
+      "content": "Многофункциональный инструмент, удлиненная серия. Угол в торце 40°, 60°, 90°, 100° и 120°."
+    },
+    "en-en": {
+      "content": "Multifunction tool, extra long. End angle 40°, 60°, 90°, 100° and 120°."
+    }
+  }
+}

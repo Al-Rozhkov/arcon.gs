@@ -1,0 +1,7 @@
+{
+  "vetur.grammar.customBlocks": {
+    "page-query": "graphql",
+    "static-query": "graphql"
+  },
+  "editor.wordWrap": "on"
+}

@@ -1,0 +1,89 @@
+- title: 'Сверло спиральное'
+  file: './drill_spiral_2SS.pdf'
+  group: 'Сверла'
+  weight: 1
+
+- title: 'Сверло спиральное с короткой режущей частью и&nbsp;шейкой'
+  file: './drill_spiral_shejka_2SS.pdf'
+  group: 'Сверла'
+  weight: 2
+
+- title: 'Сверло спиральное комбинированное (с&nbsp;зенковкой)'
+  file: './drill_spiral_faska.pdf'
+  group: 'Сверла'
+  weight: 3
+
+- title: 'Сверло ступенчатое (2 ступени)'
+  file: './drill_stupen_2.pdf'
+  group: 'Сверла'
+  weight: 4
+
+- title: 'Сверло ступенчатое (3&nbsp;ступени)'
+  file: './drill_stupen_3.pdf'
+  group: 'Сверла'
+  weight: 5
+
+- title: 'Сверло центровочное'
+  file: './drill_centr_2CS.pdf'
+  group: 'Сверла'
+  weight: 6
+
+- title: 'Фреза концевая цилиндрическая'
+  file: './end_mill.pdf'
+  group: 'Фрезы концевые'
+  weight: 7
+
+- title: 'Фреза концевая коническая прямая'
+  file: './end_mill_conus.pdf'
+  group: 'Фрезы концевые'
+  weight: 8
+
+- title: 'Фреза концевая коническая обратная «Ласточкин хвост»'
+  file: './end_mill_conus_obrat.pdf'
+  group: 'Фрезы концевые'
+  weight: 9
+
+- title: 'Фреза Т-образная'
+  file: './mill_t_form.pdf'
+  group: 'Фрезы Т-образные'
+  weight: 10
+
+- title: 'Фреза Т-образная (трапецеидальная)'
+  file: './mill_t_form_trap.pdf'
+  group: 'Фрезы Т-образные'
+  weight: 11
+
+- title: 'Фреза фасонная фасочная (зенковка, стандартная)'
+  file: './mill_fasoch_7v.pdf'
+  group: 'Фрезы фасонные фасочные'
+  weight: 12
+
+- title: 'Фреза фасонная фасочная (зенковка с шейкой, прямая, двухсторонняя и обратная)'
+  file: './mill_fasoch_obratn_7v.pdf'
+  group: 'Фрезы фасонные фасочные'
+  weight: 13
+
+- title: 'Фреза фасонная фасочная (с вогнутым радиусом, стандартная)'
+  file: './mill_fasoch_galtel_7r.pdf'
+  group: 'Фрезы фасонные фасочные'
+  weight: 15
+
+- title: 'Фреза фасонная фасочная (с вогнутым радиусом и шейкой, прямая, двухсторонняя и обратная)'
+  file: './mill_fasoch_obratn_7r.pdf'
+  group: 'Фрезы фасонные фасочные'
+  weight: 16
+
+- title: 'Развертка цилиндрическая'
+  file: './razvert_cilindr.pdf'
+  group: 'Развертки'
+  weight: 17
+
+- title: 'Развертка коническая'
+  file: './razvert_conus.pdf'
+  group: 'Развертки'
+  weight: 18
+
+- title: 'Резьбофреза с неполным профилем'
+  file: './mill_rezb_6RP.pdf'
+  group: 'Резьбофреза'
+  weight: 19

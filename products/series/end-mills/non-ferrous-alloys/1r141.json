@@ -1,0 +1,49 @@
+{
+  "photos": [
+    "./1r141.jpg"
+  ],
+  "content": "Радиусная цельная твердосплавная концевая фреза, 3 зуба, с короткой режущей частью, с заниженной шейкой.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "radius-conus-lower-r"
+    },
+    {
+      "name": "b",
+      "scheme": "radius-lower-r"
+    }
+  ],
+  "grooveInclination": [
+    37.5
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "radius"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3
+  ],
+  "type": "end-mills",
+  "id": "1r141",
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "content": "Радиусная цельная твердосплавная концевая фреза, 3 зуба, с короткой режущей частью, с заниженной шейкой."
+    },
+    "en-en": {
+      "content": "Radius solid carbide end mill, 3 tooth, short cutter, undersized neck."
+    }
+  }
+}

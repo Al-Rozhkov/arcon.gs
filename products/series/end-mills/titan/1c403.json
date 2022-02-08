@@ -1,0 +1,52 @@
+{
+  "photos": [
+    "./1c403.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 4 зуба, с длинной режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-r"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-r"
+    }
+  ],
+  "grooveInclination": [
+    44
+  ],
+  "mainUsage": [
+    "s"
+  ],
+  "cuttingEdgeLength": [
+    "long"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-r"
+  ],
+  "productCategory": "titan",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "m"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "type": "end-mills",
+  "id": "1c403",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 4 зуба, с длинной режущей частью."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 4 teeth, long cutter section."
+    }
+  }
+}

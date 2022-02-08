@@ -1,0 +1,8 @@
+- path: /policy/
+  label: Политика конфиденциальности
+
+- path: /disclosure/
+  label: Раскрытие информации
+
+- path: /contact/
+  label: Контакты

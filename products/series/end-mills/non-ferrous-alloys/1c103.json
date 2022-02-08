@@ -1,0 +1,60 @@
+{
+  "id": "1c103",
+  "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. С усиленной режущей кромкой.",
+  "type": "end-mills",
+  "productCategory": "non-ferrous-alloys",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    },
+    {
+      "name": "c",
+      "scheme": "cylinder-conus-lower-f"
+    },
+    {
+      "name": "d",
+      "scheme": "cylinder-lower-f"
+    }
+  ],
+  "photos": [
+    "./1c103-m.jpg",
+    "./1c103-l.jpg"
+  ],
+  "mainUsage": [
+    "n1"
+  ],
+  "possibleUsage": [
+    "n3"
+  ],
+  "coating": "pp",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3
+  ],
+  "grooveInclination": [
+    50
+  ],
+  "cuttingEdgeLength": [
+    "middle",
+    "long"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней и удлиненной режущей частью. С усиленной режущей кромкой."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 3 teeth, with medium and long cutting edge. With reinforced cutting edge."
+    }
+  }
+}

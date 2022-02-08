@@ -1,0 +1,31 @@
+body {
+  overflow-y: scroll;
+  // Font kerning disabled because of bug in chrome 79.
+  // Can be enabled after fix.
+  font-kerning: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.root {
+  border-top: 4px solid $cyan;
+}
+
+@media print {
+  .nav-header,
+  footer.footer,
+  .d-print-none {
+    display: none;
+  }
+
+  .root {
+    border: 0;
+  }
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}

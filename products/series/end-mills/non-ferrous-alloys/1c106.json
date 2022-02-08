@@ -1,0 +1,50 @@
+{
+  "photos": [
+    "./1c106.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью и шейкой. С усиленной режущей кромкой.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-conus-lower-f"
+    },
+    {
+      "name": "b",
+      "scheme": "cylinder-lower-f"
+    }
+  ],
+  "grooveInclination": [
+    40,
+    42
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": [],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "type": "end-mills",
+  "id": "1c106",
+  "productSeriesSet": "lower F",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью и шейкой. С усиленной режущей кромкой."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 4 teeth, medium cutter and shank. Reinforced cutting edge."
+    }
+  }
+}

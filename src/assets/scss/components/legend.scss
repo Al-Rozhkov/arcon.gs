@@ -1,0 +1,107 @@
+.mat-chip,
+.mat-chip-sm {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.mat-chip {
+    display: inline-block;
+    padding: 0.1rem 0.4rem 0;
+    margin-right: 0.25rem;
+    margin-bottom: 0.5rem;
+    cursor: default;
+}
+
+.mat-chip-sm {
+    display: inline;
+    padding: 0 0.4rem;
+    font-size: 0.75rem;
+    margin-right: 0.1rem;
+}
+
+.mat-main {
+    color: $white;
+
+    &.mat-p {
+        border-color: $mat-p;
+        background: $mat-p;
+    }
+
+    &.mat-k {
+        border-color: $mat-k;
+        background: $mat-k;
+    }
+
+    &.mat-m {
+        border-color: $mat-m;
+        background: $mat-m;
+    }
+
+    &.mat-n {
+        border-color: $mat-n;
+        background: $mat-n;
+    }
+
+    &.mat-h {
+        border-color: $mat-h;
+        background: $mat-h;
+    }
+
+    &.mat-s {
+        border-color: $mat-s;
+        background: $mat-s;
+    }
+}
+
+.mat-possible {
+    background: $white;
+
+    &.mat-p {
+        border-color: $mat-p;
+        color: $mat-p;
+    }
+
+    &.mat-k {
+        border-color: $mat-k;
+        color: $mat-k;
+    }
+
+    &.mat-m {
+        border-color: darken($mat-m, 4%);
+        color: darken($mat-m, 5%);
+    }
+
+    &.mat-n {
+        border-color: $mat-n;
+        color: $mat-n;
+    }
+
+    &.mat-h {
+        border-color: $mat-h;
+        color: $mat-h;
+    }
+
+    &.mat-s {
+        border-color: $mat-s;
+        color: $mat-s;
+    }
+}
+
+@media print {
+    body .mat-chip-sm.mat-main,
+    body .mat-chip.mat-main {
+        color: #ffffff !important;
+        background: $gray-600 !important;
+        border-color: $gray-600 !important;
+    }
+    body .mat-chip-sm.mat-possible,
+    body .mat-chip.mat-possible {
+        color: $gray-600 !important;
+        border: 2px solid $gray-600 !important;
+    }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "1c508",
+  "content": "Цельная твердосплавная концевая фреза, 6—16 зубьев, со средней режущей частью.",
+  "type": "end-mills",
+  "photos": [
+    "./1c508.jpg"
+  ],
+  "productCategory": "hardened-steel",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder"
+    }
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "possibleUsage": [],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-sharp"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    10
+  ],
+  "cogsCuttingCenter": true,
+  "grooveInclination": [
+    30
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 6—16 зубьев, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 6 to 16 teeth, medium cutter section."
+    }
+  }
+}

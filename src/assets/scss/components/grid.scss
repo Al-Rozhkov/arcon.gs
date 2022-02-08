@@ -1,0 +1,40 @@
+.flex-row {
+  @extend %grid-row-wrap;
+}
+
+.flex-row-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.tile-row {
+  @extend %grid-row-wrap;
+  @include make-grid-gutter();
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .col-lg-6 {
+    @include make-col(6);
+  }
+
+  .col-lg-8 {
+    @include make-col(8);
+  }
+
+  .col-lg-12 {
+    @include make-col(12);
+  }
+
+  .col-lg-16 {
+    @include make-col(16);
+    padding-right: 3rem;
+  }
+
+  .col-lg-18 {
+    @include make-col(18);
+  }
+}

@@ -1,0 +1,19 @@
+- id: sphere
+  text: Spherical
+  group: Spherical
+
+- id: radius
+  text: Radius
+  group: Radius
+  
+- id: rect-sharp
+  text: No chamfer, sharpened
+  group: Rectangular
+
+- id: rect-r
+  text: Blunted
+  group: Rectangular
+
+- id: rect-f
+  text: Chamfer chх45˚
+  group: Rectangular

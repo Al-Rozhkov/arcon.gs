@@ -1,0 +1,53 @@
+{
+  "photos": [
+    "./2ss003.jpg"
+  ],
+  "content": "Спиральное твердосплавное сверло 3хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — m7.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "m7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2ss"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "s"
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "productCategory": "drills-spiral",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n",
+    "h1.1",
+    "h1.2"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-spiral",
+  "coolantSupply": "out",
+  "id": "2ss073",
+  "productSeriesSet": "drills",
+  "toolLength": "3xD",
+  "sharpeningAngle": [
+    "140"
+  ],
+  "i18n": {
+    "ru-ru": {
+      "content": "Спиральное твердосплавное сверло 3хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — m7."
+    },
+    "en-en": {
+      "content": "Twist carbide drill bit 3xD, 140°. External coolant supply. Tolerance of drill bit diameter - m7."
+    }
+  }
+}

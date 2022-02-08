@@ -1,0 +1,47 @@
+{
+  "id": "2cs14",
+  "photos": [
+    "./2cs.jpg"
+  ],
+  "content": "Центровочное твердосплавная сверло, сверхдлинная серия, 90°, 120° и 142°.",
+  "sharpeningAngle": [
+    "90",
+    "120",
+    "142"
+  ],
+  "allowanceCuttingDiameter": "h7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2cs"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "coating": "pp",
+  "cuttingEdgeLength": [
+    "long"
+  ],
+  "productCategory": "drill-center",
+  "tail": "cylinder",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-center",
+  "coolantSupply": "out",
+  "productSeriesSet": "drills",
+  "toolLength": "8xD",
+  "i18n": {
+    "ru-ru": {
+      "content": "Центровочное твердосплавная сверло, сверхдлинная серия, 90°, 120° и 142°."
+    },
+    "en-en": {
+      "content": "Center carbide drill bit, extra long series, 90°, 120° and 142°."
+    }
+  }
+}

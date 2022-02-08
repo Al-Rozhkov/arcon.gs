@@ -1,0 +1,55 @@
+{
+  "photos": [
+    "./1s271.jpg"
+  ],
+  "content": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "sphere-conus-lower"
+    },
+    {
+      "name": "b",
+      "scheme": "sphere-lower"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "m",
+    "p",
+    "k",
+    "s"
+  ],
+  "cuttingEdgeLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "sphere"
+  ],
+  "productCategory": "stainless-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "n"
+  ],
+  "allowanceRadius": "±0,01",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    4
+  ],
+  "type": "end-mills",
+  "id": "1s271",
+  "productSeriesSet": "lower R",
+  "i18n": {
+    "ru-ru": {
+      "content": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, с короткой режущей частью."
+    },
+    "en-en": {
+      "content": "Spherical solid carbide end mill, 4 tooth, short cutter."
+    }
+  }
+}

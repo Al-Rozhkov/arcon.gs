@@ -1,0 +1,33 @@
+- title: "Solid drills and reamers"
+  text: "Solid carbide drills and reamers of any length and diameter."
+  link: /catalog/custom/
+  image: ./a01.jpg
+  class: align-to-top
+
+- title: "Shank mills and formed mills"
+  text: "Ready-made carbide mills for any scope of work are always available."
+  link: /catalog/end-mills/
+  image: ./a02.jpg
+  class: align-to-bottom
+
+- title: "Tap and die"
+  text: "Carbide thread mills and taps for ultimately challenging tasks."
+  link: /catalog/thread-mills/
+  image: ./a03.jpg
+  class: align-to-top
+
+- title: "Turning and grooving inserts"
+  text: "Choose a shank shape, length and cutting pattern according to your requirements."
+  link: /catalog/custom/
+  image: ./a04.jpg
+
+- title: "Tool reconditioning"
+  text: "We will recondition your drills, mills, heads, taps, reamers etc. with no loss in quality. We will grind, truncate and coat them as well upon your request."
+  link: /services/cutting-tool-reconditioning/
+  image: ./a05.jpg
+  class: align-to-right
+
+- title: "Custom tools"
+  text: "We will produce carbide tools in full compliance with your drawings and layouts."
+  link: /catalog/custom/
+  image: ./a06.jpg

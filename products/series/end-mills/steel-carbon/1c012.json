@@ -1,0 +1,48 @@
+{
+  "id": "1c012",
+  "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания.",
+  "type": "end-mills",
+  "photos": [
+    "./1c012.jpg"
+  ],
+  "productCategory": "steel-carbon",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "cylinder-f"
+    }
+  ],
+  "mainUsage": [
+    "p",
+    "m"
+  ],
+  "possibleUsage": [
+    "s"
+  ],
+  "coating": "ng",
+  "tail": "cylinder",
+  "endShapes": [
+    "rect-f"
+  ],
+  "cogsPitch": "variable",
+  "cogsNumber": [
+    4
+  ],
+  "grooveInclination": [
+    43,
+    45
+  ],
+  "cuttingEdgeLength": [
+    "middle",
+    "long"
+  ],
+  "allowanceCuttingDiameter": "h8",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 4 зуба, со средней и длинной режущей частью, черновой профиль. С защитной фаской для предотвращения скалывания."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 4 teeth, medium to long cutter, roughing section. With chamfered edge to prevent shearing."
+    }
+  }
+}

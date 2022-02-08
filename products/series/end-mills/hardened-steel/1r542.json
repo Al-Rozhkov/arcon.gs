@@ -1,0 +1,48 @@
+{
+  "photos": [
+    "./1r542.jpg"
+  ],
+  "content": "Радиусная цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью.",
+  "coating": "ng",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "radius-r"
+    }
+  ],
+  "grooveInclination": [
+    45
+  ],
+  "mainUsage": [
+    "h"
+  ],
+  "cuttingEdgeLength": [
+    "short",
+    "middle"
+  ],
+  "endShapes": [
+    "radius"
+  ],
+  "productCategory": "hardened-steel",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "p",
+    "k"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    6
+  ],
+  "type": "end-mills",
+  "id": "1r542",
+  "productSeriesSet": "set-r",
+  "i18n": {
+    "ru-ru": {
+      "content": "Радиусная цельная твердосплавная концевая фреза, 6 зубьев, со средней режущей частью."
+    },
+    "en-en": {
+      "content": "Radius solid carbide end mill, 6 tooth, medium cutter section."
+    }
+  }
+}

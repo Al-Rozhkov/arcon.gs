@@ -1,0 +1,49 @@
+{
+  "photos": [
+    "./7v02.jpg"
+  ],
+  "cuttingShapes": [
+    "conus"
+  ],
+  "content": "Фасонная фасочная твердосплавная фреза, 60°, 90° и 120°, 3—6 зубьев. Без возможности засверливания.",
+  "coating": "ng",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "7v"
+    }
+  ],
+  "grooveInclination": [
+    "0"
+  ],
+  "mainUsage": [
+    "p",
+    "k",
+    "m",
+    "n",
+    "s"
+  ],
+  "productCategory": "shaped-treatment",
+  "tail": "cylinder",
+  "possibleUsage": [
+    "h1.1"
+  ],
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3,
+    4,
+    6
+  ],
+  "cogsCuttingCenter": true,
+  "type": "shaped-mills",
+  "id": "7v02",
+  "productSeriesSet": "profile",
+  "i18n": {
+    "ru-ru": {
+      "content": "Фасонная фасочная твердосплавная фреза, 60°, 90° и 120°, 3—6 зубьев. Без возможности засверливания."
+    },
+    "en-en": {
+      "content": "Carbide chamfering cutter, 60°, 90° and 120°, 3 to 6 teeth. No drilling required."
+    }
+  }
+}

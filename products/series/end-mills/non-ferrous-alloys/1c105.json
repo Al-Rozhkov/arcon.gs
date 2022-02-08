@@ -1,0 +1,45 @@
+{
+  "photos": [
+    "./1c105.jpg"
+  ],
+  "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью и обниженным хвостовиком. С усиленной режущей кромкой, для глубокой обработки.",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "h8",
+  "scheme": [
+    {
+      "name": "a",
+      "scheme": "cylinder-f-small"
+    }
+  ],
+  "grooveInclination": [
+    37.5
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "endShapes": [
+    "rect-sharp",
+    "rect-f"
+  ],
+  "productCategory": "non-ferrous-alloys",
+  "tail": "cylinder",
+  "possibleUsage": null,
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    3
+  ],
+  "type": "end-mills",
+  "id": "1c105",
+  "productSeriesSet": "set-f45",
+  "i18n": {
+    "ru-ru": {
+      "content": "Цельная твердосплавная концевая фреза, 3 зуба, со средней режущей частью и обниженным хвостовиком. С усиленной режущей кромкой, для глубокой обработки."
+    },
+    "en-en": {
+      "content": "Solid carbide end mill, 3 tooth, medium cutter with flattened shank. Reinforced cutting edge for deep cuts."
+    }
+  }
+}

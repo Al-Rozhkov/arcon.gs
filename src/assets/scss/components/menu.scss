@@ -1,0 +1,13 @@
+// Global menu style
+// Use on ul elements to make its items gorizontal aligned
+.menu {
+  @extend %grid-row-wrap;
+
+  list-style-type: none;
+  padding: 0;
+}
+
+.submenu {
+  margin: 1rem 0 0.5rem;
+  max-width: 1024px;
+}

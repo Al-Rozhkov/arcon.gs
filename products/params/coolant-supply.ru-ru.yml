@@ -1,0 +1,8 @@
+- id: out
+  text: внешний
+
+- id: in
+  text: внутренний
+
+- id: none
+  text: Без подвода СОЖ

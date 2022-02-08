@@ -1,0 +1,8 @@
+- id: out
+  text: External
+
+- id: in
+  text: Internal
+
+- id: none
+  text: No coolant supply

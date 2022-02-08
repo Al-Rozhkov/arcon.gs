@@ -1,0 +1,9 @@
+@import '~/assets/scss/_variables.scss';
+
+// Import Bootstrap Reboot with all bootstrap functions and mixins
+@import '~@/../node_modules/bootstrap/scss/functions';
+@import '~@/../node_modules/bootstrap/scss/variables';
+@import '~@/../node_modules/bootstrap/scss/mixins';
+
+@import '~/assets/scss/mixins/_import.scss';
+@import '~/assets/scss/extends/_import.scss';
