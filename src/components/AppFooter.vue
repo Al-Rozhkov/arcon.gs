@@ -50,8 +50,6 @@ query {
 
 <style lang="scss" scoped>
 .footer {
-  @extend %spacing-top;
-
   background: $gray-100;
   position: relative;
 }
