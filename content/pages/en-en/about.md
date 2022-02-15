@@ -21,6 +21,7 @@ We utilize comprehensive cutting-edge technologies to make an excellent cutting 
 The ultimate level of the tool supply is ensured by the warehouse system operation whereas our reconditioning services provided for any brand of rotary cutting tools boost your cost efficiency. 
 
 To order custom or modified serial tools we suggest trying our [Build your custom tool](/catalog/custom/) or sending us your drawing of both a tool and a workpiece.
+</section>
 
 <section class="col-lg-8">
 Our products are manufactured in compliance with the standard specifications and the quality of suppled tools is confirmed by the Customs Union compliance certificates.  
