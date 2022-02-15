@@ -1,192 +1,3 @@
-<template>
-  <div class="page">
-    <header class="series-header">
-      <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
-      <svg-plain-icon
-        v-if="node.fusion"
-        icon-id="series-fusion"
-        :width="100"
-        :height="25"
-      />
-
-      <div class="series-header__content" v-html="node.content" />
-
-      <g-image
-        v-if="node.photos && node.photos.length"
-        :src="node.photos[0]"
-        :alt="node.id"
-        class="series-img"
-      />
-    </header>
-
-    <div class="series-features">
-      <div class="series-features__grid">
-        <!-- Column 40% width -->
-        <div>
-          <h3 class="dt">{{ $static.tMainUse.value }}</h3>
-          <ul class="dd">
-            <li v-for="(m, index) in node.mainUsage" :key="index" class="dd-li">
-              <span :class="`mat-chip-sm mat-main mat-${m.id.charAt(0)}`">{{
-                m.id
-              }}</span>
-              {{ m.text }}
-            </li>
-          </ul>
-
-          <template v-if="node.possibleUsage && node.possibleUsage.length">
-            <h3 class="dt">{{ $static.tPossibleUse.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(m, index) in node.possibleUsage"
-                :key="index"
-                class="dd-li"
-              >
-                <span
-                  :class="`mat-chip-sm mat-possible mat-${m.id.charAt(0)}`"
-                  >{{ m.id }}</span
-                >
-                {{ m.text }}
-              </li>
-            </ul>
-          </template>
-        </div>
-
-        <!-- Column 30% width -->
-        <div>
-          <template v-if="node.coating">
-            <h3 class="dt">{{ $static.tCoating.value }}</h3>
-            <p class="dd">{{ node.coating.text }}</p>
-          </template>
-          <template v-else>
-            <h3 class="dt">{{ $static.tNoCoating.value }}</h3>
-            <p></p>
-          </template>
-
-          <h3 class="dt">{{ $static.tShankType.value }}</h3>
-          <p class="dd">{{ getShankLabel }}</p>
-
-          <template v-if="node.endShapes && node.endShapes.length">
-            <h3 class="dt">{{ $static.tFaceType.value }}</h3>
-            <p class="dd">{{ node.endShapes.map((e) => e.text).join('; ') }}</p>
-          </template>
-
-          <template v-if="node.cuttingShapes && node.cuttingShapes.length">
-            <h3 class="dt">{{ $static.tCuttingPartShape.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(s, index) in node.cuttingShapes"
-                :key="index"
-                class="dd-li"
-              >
-                {{ s.text }}
-              </li>
-            </ul>
-          </template>
-
-          <template v-if="node.sharpeningAngle && node.sharpeningAngle.length">
-            <h3 class="dt">{{ $static.tFeedAngle.value }}</h3>
-            <p class="dd">
-              {{ node.sharpeningAngle.map((i) => `${i}&#xB0;`).join(', ') }}
-            </p>
-          </template>
-
-          <template v-if="node.allowanceRadius">
-            <h3 class="dt">{{ $static.tRadiusTolerance.value }}</h3>
-            <p class="dd">{{ node.allowanceRadius }}</p>
-          </template>
-
-          <template v-if="node.allowanceCuttingDiameter">
-            <h3 class="dt">{{ $static.tCutterDiameterTolerance.value }}</h3>
-            <p class="dd">{{ node.allowanceCuttingDiameter }}</p>
-          </template>
-
-          <template v-if="node.coolantSupply">
-            <h3 class="dt">{{ $static.tCoolantSupply.value }}</h3>
-            <p class="dd">{{ node.coolantSupply.text }}</p>
-          </template>
-        </div>
-
-        <!-- Column 30% width -->
-        <div>
-          <template v-if="node.cogsNumber && node.cogsPitch">
-            <h3 class="dt">{{ $static.tTeeth.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(c, index) in node.cogsNumber"
-                :key="index"
-                class="dd-li"
-              >
-                {{ getCogsNumberLabel(c) }},
-              </li>
-              <li>
-                {{ getCogsSpacingLabel }},
-                {{ getCogsCenterLabel }}
-              </li>
-            </ul>
-          </template>
-
-          <template v-if="node.grooveInclination">
-            <h3 class="dt">{{ $static.tFluteAngle.value }}</h3>
-            <p class="dd">
-              <span
-                class="display-3"
-                :v-html="
-                  node.grooveInclination.map((i) => `${i}&#xB0;`).join('~')
-                "
-              ></span>
-            </p>
-          </template>
-
-          <template v-if="node.toolForming">
-            <h3 class="dt">{{ $static.tToFormThread.value }}</h3>
-            <p class="dd">{{ node.toolForming }}</p>
-          </template>
-
-          <template v-if="node.toolProfile">
-            <h3 class="dt">{{ $static.tProfile.value }}</h3>
-            <p class="dd">{{ node.toolProfile }}</p>
-          </template>
-        </div>
-      </div>
-
-      <div class="actions d-print-none" @click="printIt">
-        <icon-printer
-          width="30"
-          height="30"
-          v-tooltip="{ content: $static.tPrintPage.value }"
-        />
-      </div>
-    </div>
-
-    <div class="tools pt">
-      <div class="schemes">
-        <Component
-          v-for="(scheme, i) in schemes"
-          :key="i"
-          :is="scheme"
-          class="svg-scheme"
-          :tool="highlightedTool"
-        >
-        </Component>
-      </div>
-
-      <!-- Product items table (default view) -->
-      <product-items-table
-        :fields-set="
-          node.productSeriesSet ? node.productSeriesSet.set : undefined
-        "
-        :tools="tools.edges"
-        @highlight="onRowHighlight"
-        class="product-items"
-      />
-
-      <!-- Selected product item view -->
-
-      <!-- Cutting modes view -->
-    </div>
-  </div>
-</template>
-
 <script>
 import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
@@ -281,8 +92,210 @@ export default {
 }
 </script>
 
+<template>
+  <div class="page">
+    <div class="page-header">
+      <header class="series-header">
+        <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
+        <svg-plain-icon
+          v-if="node.fusion"
+          icon-id="series-fusion"
+          :width="100"
+          :height="25"
+        />
+
+        <div class="series-header__content" v-html="node.content" />
+
+        <g-image
+          v-if="node.photos && node.photos.length"
+          :src="node.photos[0]"
+          :alt="node.id"
+          class="series-img"
+        />
+      </header>
+
+      <div class="series-features">
+        <div class="series-features__grid">
+          <!-- Column 40% width -->
+          <div>
+            <h3 class="dt">{{ $static.tMainUse.value }}</h3>
+            <ul class="dd">
+              <li
+                v-for="(m, index) in node.mainUsage"
+                :key="index"
+                class="dd-li"
+              >
+                <span :class="`mat-chip-sm mat-main mat-${m.id.charAt(0)}`">{{
+                  m.id
+                }}</span>
+                {{ m.text }}
+              </li>
+            </ul>
+
+            <template v-if="node.possibleUsage && node.possibleUsage.length">
+              <h3 class="dt">{{ $static.tPossibleUse.value }}</h3>
+              <ul class="dd">
+                <li
+                  v-for="(m, index) in node.possibleUsage"
+                  :key="index"
+                  class="dd-li"
+                >
+                  <span
+                    :class="`mat-chip-sm mat-possible mat-${m.id.charAt(0)}`"
+                    >{{ m.id }}</span
+                  >
+                  {{ m.text }}
+                </li>
+              </ul>
+            </template>
+          </div>
+
+          <!-- Column 30% width -->
+          <div>
+            <template v-if="node.coating">
+              <h3 class="dt">{{ $static.tCoating.value }}</h3>
+              <p class="dd">{{ node.coating.text }}</p>
+            </template>
+            <template v-else>
+              <h3 class="dt">{{ $static.tNoCoating.value }}</h3>
+              <p></p>
+            </template>
+
+            <h3 class="dt">{{ $static.tShankType.value }}</h3>
+            <p class="dd">{{ getShankLabel }}</p>
+
+            <template v-if="node.endShapes && node.endShapes.length">
+              <h3 class="dt">{{ $static.tFaceType.value }}</h3>
+              <p class="dd">
+                {{ node.endShapes.map((e) => e.text).join('; ') }}
+              </p>
+            </template>
+
+            <template v-if="node.cuttingShapes && node.cuttingShapes.length">
+              <h3 class="dt">{{ $static.tCuttingPartShape.value }}</h3>
+              <ul class="dd">
+                <li
+                  v-for="(s, index) in node.cuttingShapes"
+                  :key="index"
+                  class="dd-li"
+                >
+                  {{ s.text }}
+                </li>
+              </ul>
+            </template>
+
+            <template
+              v-if="node.sharpeningAngle && node.sharpeningAngle.length"
+            >
+              <h3 class="dt">{{ $static.tFeedAngle.value }}</h3>
+              <p class="dd">
+                {{ node.sharpeningAngle.map((i) => `${i}&#xB0;`).join(', ') }}
+              </p>
+            </template>
+
+            <template v-if="node.allowanceRadius">
+              <h3 class="dt">{{ $static.tRadiusTolerance.value }}</h3>
+              <p class="dd">{{ node.allowanceRadius }}</p>
+            </template>
+
+            <template v-if="node.allowanceCuttingDiameter">
+              <h3 class="dt">{{ $static.tCutterDiameterTolerance.value }}</h3>
+              <p class="dd">{{ node.allowanceCuttingDiameter }}</p>
+            </template>
+
+            <template v-if="node.coolantSupply">
+              <h3 class="dt">{{ $static.tCoolantSupply.value }}</h3>
+              <p class="dd">{{ node.coolantSupply.text }}</p>
+            </template>
+          </div>
+
+          <!-- Column 30% width -->
+          <div>
+            <template v-if="node.cogsNumber && node.cogsPitch">
+              <h3 class="dt">{{ $static.tTeeth.value }}</h3>
+              <ul class="dd">
+                <li
+                  v-for="(c, index) in node.cogsNumber"
+                  :key="index"
+                  class="dd-li"
+                >
+                  {{ getCogsNumberLabel(c) }},
+                </li>
+                <li>
+                  {{ getCogsSpacingLabel }},
+                  {{ getCogsCenterLabel }}
+                </li>
+              </ul>
+            </template>
+
+            <template v-if="node.grooveInclination">
+              <h3 class="dt">{{ $static.tFluteAngle.value }}</h3>
+              <p class="dd">
+                <span
+                  class="display-3"
+                  :v-html="
+                    node.grooveInclination.map((i) => `${i}&#xB0;`).join('~')
+                  "
+                ></span>
+              </p>
+            </template>
+
+            <template v-if="node.toolForming">
+              <h3 class="dt">{{ $static.tToFormThread.value }}</h3>
+              <p class="dd">{{ node.toolForming }}</p>
+            </template>
+
+            <template v-if="node.toolProfile">
+              <h3 class="dt">{{ $static.tProfile.value }}</h3>
+              <p class="dd">{{ node.toolProfile }}</p>
+            </template>
+          </div>
+        </div>
+
+        <div class="actions d-print-none" @click="printIt">
+          <icon-printer
+            width="30"
+            height="30"
+            v-tooltip="{ content: $static.tPrintPage.value }"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- End of Page Header -->
+
+    <div class="page-body">
+      <div class="tools">
+        <div class="schemes">
+          <Component
+            v-for="(scheme, i) in schemes"
+            :key="i"
+            :is="scheme"
+            class="svg-scheme"
+            :tool="highlightedTool"
+          >
+          </Component>
+        </div>
+
+        <!-- Product items table (default view) -->
+        <product-items-table
+          :fields-set="
+            node.productSeriesSet ? node.productSeriesSet.set : undefined
+          "
+          :tools="tools.edges"
+          @highlight="onRowHighlight"
+          class="product-items"
+        />
+
+        <!-- Selected product item view -->
+
+        <!-- Cutting modes view -->
+      </div>
+    </div>
+  </div>
+</template>
+
 <style lang="scss">
-.page {
+.page-header {
   @extend %grid-row-wrap;
 
   width: 100%;
@@ -347,11 +360,6 @@ h3.dt {
   width: 100%;
   position: relative;
   align-items: flex-start;
-  padding-top: 1.5rem;
-
-  @include media-breakpoint-up(lg) {
-    padding-top: 3rem;
-  }
 }
 
 .svg-scheme {
@@ -412,7 +420,7 @@ h3.dt {
  * Print styles
  */
 @media print {
-  .page {
+  .page-header {
     font-size: 0.8rem;
   }
 
