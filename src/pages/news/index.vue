@@ -49,7 +49,8 @@ export default {
 
 <style lang="scss" scoped>
 .news-page {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   @include make-grid-gutter();
   margin-bottom: 40px;
 }

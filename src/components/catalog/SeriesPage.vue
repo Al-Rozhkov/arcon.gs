@@ -296,8 +296,8 @@ export default {
 
 <style lang="scss">
 .page-header {
-  @extend %grid-row-wrap;
-
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
   margin-bottom: 2rem;
@@ -356,7 +356,8 @@ h3.dt {
 }
 
 .tools {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
   align-items: flex-start;

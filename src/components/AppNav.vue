@@ -95,7 +95,8 @@ export default {
 }
 
 .nav {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   @extend %container-xl;
 
   align-items: flex-end;
@@ -201,6 +202,7 @@ export default {
     margin-left: auto;
   }
 }
+
 @include media-breakpoint-up(xl) {
   .menu {
     flex: auto;

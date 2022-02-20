@@ -17,7 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
 
   list-style-type: none;
   padding: 0;

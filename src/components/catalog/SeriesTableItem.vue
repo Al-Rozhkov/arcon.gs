@@ -115,7 +115,8 @@ export default {
 }
 
 .link-flex {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   color: $black;
 
   &:hover {
