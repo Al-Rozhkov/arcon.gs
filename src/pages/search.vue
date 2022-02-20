@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <h1>Поиск по сайту</h1>
 
       <b-form-input

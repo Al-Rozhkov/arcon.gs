@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="contact-page">
-      <main class="cnt">
+      <main class="container">
         <h1>{{ $page.page.title }}</h1>
 
         <div class="text-body" v-html="$page.page.content"></div>

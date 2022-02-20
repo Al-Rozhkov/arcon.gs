@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <div class="tile-row">
         <div class="col-lg-6">
           <h1>{{ $page.page.title }}</h1>

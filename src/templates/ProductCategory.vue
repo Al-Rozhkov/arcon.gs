@@ -1,6 +1,6 @@
 <template>
   <page-layout>
-    <main class="cnt">
+    <main class="container">
       <h1>{{ $page.category.title }}</h1>
       <categories-list class="submenu" />
 

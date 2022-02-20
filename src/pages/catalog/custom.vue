@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <section class="mb-3">
         <h1>{{ $page.page.title }}</h1>
 

@@ -1,6 +1,6 @@
 <template>
   <footer class="footer" v-once>
-    <div class="cnt">
+    <div class="container">
       <div class="tile-row">
         <div class="fc col-lg-6" v-html="$static.copyright.value"></div>
 

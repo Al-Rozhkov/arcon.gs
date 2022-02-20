@@ -14,7 +14,7 @@
       </div>
     </header>
 
-    <article class="cnt" v-html="$page.page.content"></article>
+    <article class="container" v-html="$page.page.content"></article>
   </Layout>
 </template>
 

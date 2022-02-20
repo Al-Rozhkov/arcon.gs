@@ -1,6 +1,6 @@
 <template>
   <page-layout>
-    <main class="cnt">
+    <main class="container">
       <series-page :node="$page.series" :tools="$page.tools" />
     </main>
   </page-layout>

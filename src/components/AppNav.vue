@@ -1,6 +1,6 @@
 <template>
   <div class="nav-header">
-    <nav class="nav">
+    <nav class="nav container-xl">
       <g-link class="a logo-link" to="/" exact>
         <app-logo id="arconit-logo" width="140" />
       </g-link>
@@ -97,8 +97,6 @@ export default {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  @extend %container-xl;
-
   align-items: flex-end;
   padding-top: 0.5rem;
 }

@@ -1,19 +1,19 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <front-hero />
       <front-news />
       <catalog-block />
     </main>
 
     <section class="bg-gray-100">
-      <div class="cnt">
+      <div class="container">
         <front-advantages />
       </div>
     </section>
 
     <section class="services-wrapper">
-      <div class="cnt">
+      <div class="container">
         <div class="tile-row">
           <div class="col-lg-6">
             <h2 class="h2-blind">{{ $page.services.value }}</h2>

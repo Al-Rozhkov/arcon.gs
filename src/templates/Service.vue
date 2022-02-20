@@ -4,7 +4,7 @@
       <menu-services class="submenu" />
     </template>
 
-    <main class="cnt">
+    <main class="container">
       <h1>{{ $page.node.title }}</h1>
 
       <div class="text-body" v-html="$page.node.content"></div>

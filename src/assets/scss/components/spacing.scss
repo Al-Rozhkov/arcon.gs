@@ -1,14 +1,6 @@
 /* ========================================================================
    Component: Spacing
  ========================================================================== */
-.cnt {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-
-  @include clearfix();
-  @extend %container-xl;
-}
-
 .pt {
   padding-top: 1.5rem;
 }
@@ -35,11 +27,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-  .cnt {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
   .pt {
     padding-top: 3rem;
   }

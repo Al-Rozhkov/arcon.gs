@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <h1>{{ $page.newsTitle.value }}</h1>
       <div class="news-page">
         <div v-for="(node, index) in $page.news.edges" :key="index" class="col">

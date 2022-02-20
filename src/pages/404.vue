@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <h1>{{ $page.page.title }}</h1>
 
       <div class="flex-row text-body">
