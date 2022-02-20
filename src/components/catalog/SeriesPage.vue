@@ -398,9 +398,12 @@ h3.dt {
   }
 
   .schemes {
-    padding-top: 3rem;
-    position: sticky;
-    top: 0;
+    padding-top: 1rem;
+    @supports (position: sticky) {
+      position: sticky;
+      top: 0;
+      z-index: $zindex-sticky;
+    }
 
     &.highlight img {
       opacity: 0.3;

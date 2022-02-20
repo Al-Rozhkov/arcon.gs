@@ -144,8 +144,11 @@ export default {
 
 @include media-breakpoint-up(md) {
   .aside {
-    position: sticky;
-    top: 2rem;
+    @supports (position: sticky) {
+      position: sticky;
+      top: 2rem;
+      z-index: $zindex-sticky;
+    }
   }
 
   .col-md-6 {

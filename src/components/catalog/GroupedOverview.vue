@@ -395,16 +395,7 @@ export default {
 }
 
 .thead {
-  position: sticky;
-  top: -1px;
-  font-weight: $font-weight-bold;
-  background: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 10;
   display: none; // Hide it on moblie, but display on desktop
-  box-shadow: 0 20px 20px -12px rgba(0, 0, 0, 0.06);
-  margin-bottom: 0.75rem;
 }
 
 .td-empty {
@@ -453,6 +444,17 @@ export default {
 
   .thead {
     display: block;
+    @supports (position: sticky) {
+      position: sticky;
+      top: -1px;
+      z-index: $zindex-sticky;
+    }
+    font-weight: $font-weight-bold;
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px -12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 0.75rem;
   }
 }
 </style>
