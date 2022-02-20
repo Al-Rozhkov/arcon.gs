@@ -48,25 +48,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  margin-bottom: 3rem;
+}
+
 .news-page {
-  display: flex;
-  flex-wrap: wrap;
-  @include make-grid-gutter();
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 15px;
   margin-bottom: 40px;
 }
 
 .col {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 @include media-breakpoint-up(md) {
+  .news-page {
+    gap: 30px;
+  }
+
   .col {
-    @include make-col(12);
+    grid-column: span 6;
   }
 }
 @include media-breakpoint-up(lg) {
   .col {
-    @include make-col(6);
+    grid-column: span 3;
   }
 }
 </style>
