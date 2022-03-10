@@ -46,7 +46,11 @@
 
 <static-query>
 query Menu {
-  menu: allMenu(filter: { parent: { eq: null } }, sortBy: "weight", order: ASC) {
+  menu: allMenu(
+    filter: { parent: { eq: null } }
+    sortBy: "weight"
+    order: ASC
+  ) {
     edges {
       node {
         id

@@ -23,7 +23,11 @@
 
 <static-query>
 query {
-  menu: allMenu(filter: { parent: { eq: "/catalog/" } }, sortBy: "weight", order: ASC) {
+  menu: allMenu(
+    filter: { parent: { eq: "/catalog/" } }
+    sortBy: "weight"
+    order: ASC
+  ) {
     edges {
       node {
         path

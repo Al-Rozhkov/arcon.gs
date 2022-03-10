@@ -19,19 +19,30 @@ query Catalog {
         id
         path
         type
-        photos (width: 260, quality: 75)
+        photos(width: 260, quality: 75)
         content
-        mainUsage { id text }
-        possibleUsage { id text }
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
         cuttingEdgeLength
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating { id text }
+        coating {
+          id
+          text
+        }
         toolLength
         allowanceCuttingDiameter
-        coolantSupply { id }
+        coolantSupply {
+          id
+        }
       }
     }
   }
@@ -41,19 +52,32 @@ query Catalog {
         id
         path
         type
-        photos (width: 260, quality: 75)
+        photos(width: 260, quality: 75)
         content
         fusion
-        mainUsage { id text }
-        possibleUsage { id text }
-        endShapes { id }
-        cuttingShapes { id }
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
+        endShapes {
+          id
+        }
+        cuttingShapes {
+          id
+        }
         cuttingEdgeLength
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating { id text }
+        coating {
+          id
+          text
+        }
       }
     }
   }
@@ -63,14 +87,27 @@ query Catalog {
         id
         path
         type
-        photos (width: 300, quality: 75)
+        photos(width: 300, quality: 75)
         content
-        mainUsage { id text }
-        possibleUsage { id text }
-        coating { id text }
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
+        coating {
+          id
+          text
+        }
         tail
-        cuttingShapes { id }
-        coolantSupply { id }
+        cuttingShapes {
+          id
+        }
+        coolantSupply {
+          id
+        }
       }
     }
   }

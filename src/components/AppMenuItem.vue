@@ -34,12 +34,12 @@ export default {
   display: block;
 }
 
-.a:hover span.u {
+.a:hover .u {
   color: $link-hover-color;
   border-bottom: 1px solid $red;
 }
 
-span.u {
+.u {
   border-bottom: 1px solid rgba($cyan, 0.25);
 }
 
@@ -52,7 +52,7 @@ a.active--exact:hover {
   color: $red;
   cursor: default;
 
-  span.u {
+  .u {
     color: $red;
     border: 0;
   }

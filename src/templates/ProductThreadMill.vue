@@ -7,12 +7,12 @@
 </template>
 
 <page-query>
-query TreadMill ($path: String, $id: String!) {
-  series: productThreadMill (path: $path) {
+query TreadMill($path: String, $id: String!) {
+  series: productThreadMill(path: $path) {
     title
     keywords
     id
-    photos (width: 800, quality: 75)
+    photos(width: 800, quality: 75)
     content
     scheme {
       name
@@ -26,19 +26,28 @@ query TreadMill ($path: String, $id: String!) {
       id
       text
     }
-    coating { text }
+    coating {
+      text
+    }
     tail
-    cuttingShapes { id text }
-    coolantSupply { id text }
+    cuttingShapes {
+      id
+      text
+    }
+    coolantSupply {
+      id
+      text
+    }
     productSeriesSet {
       set
     }
     toolProfile
     toolForming
   }
-  tools: allProductItemThreadMill (
-    filter: { series: { eq: $id } },
-    sortBy: "id", order: ASC
+  tools: allProductItemThreadMill(
+    filter: { series: { eq: $id } }
+    sortBy: "id"
+    order: ASC
   ) {
     edges {
       node {

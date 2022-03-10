@@ -43,7 +43,7 @@ query ProductCustom {
     content
   }
   products: allProductCustom(sortBy: "weight", order: ASC) {
-    edges{
+    edges {
       node {
         id
         title

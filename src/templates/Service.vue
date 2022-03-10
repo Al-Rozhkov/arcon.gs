@@ -13,14 +13,14 @@
 </template>
 
 <page-query>
-  query Service($path: String) {
-    node: service(path: $path) {
-      path
-      content
-      title
-      description
-    }
+query Service($path: String) {
+  node: service(path: $path) {
+    path
+    content
+    title
+    description
   }
+}
 </page-query>
 
 <script>

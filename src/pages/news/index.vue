@@ -13,15 +13,26 @@
 
 <page-query>
 query RecentNews {
-  news: allNews(filter: { nopage: { ne: true }}, limit: 36, sortBy: "date", order: DESC) {
-    edges{
+  news: allNews(
+    filter: { nopage: { ne: true } }
+    limit: 36
+    sortBy: "date"
+    order: DESC
+  ) {
+    edges {
       node {
         id
         path
         content
         title
         localeDate
-        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
+        image(
+          width: 275
+          height: 160
+          fit: contain
+          background: "#ffffff"
+          quality: 100
+        )
       }
     }
   }

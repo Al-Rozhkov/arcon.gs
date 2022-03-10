@@ -26,7 +26,7 @@
 <static-query>
 query RecentNews {
   news: allNews(limit: 4) {
-    edges{
+    edges {
       node {
         id
         path
@@ -34,7 +34,13 @@ query RecentNews {
         content
         title
         date: localeDate
-        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
+        image(
+          width: 275
+          height: 160
+          fit: contain
+          background: "#ffffff"
+          quality: 100
+        )
       }
     }
   }

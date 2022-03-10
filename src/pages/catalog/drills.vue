@@ -20,10 +20,16 @@ query Catalog {
         path
         type
         content
-        photos (width: 260, quality: 80)
+        photos(width: 260, quality: 80)
         toolLength
-        mainUsage { id text }
-        possibleUsage { id text }
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
         tail
         cuttingEdgeLength
         cogsPitch
@@ -31,8 +37,13 @@ query Catalog {
         cogsCuttingCenter
         grooveInclination
         allowanceCuttingDiameter
-        coating { id text }
-        coolantSupply { id }
+        coating {
+          id
+          text
+        }
+        coolantSupply {
+          id
+        }
       }
     }
   }

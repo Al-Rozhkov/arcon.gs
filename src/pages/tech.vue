@@ -54,7 +54,7 @@ query Tech {
     description
   }
   tech: allTech(sortBy: "weight", order: ASC) {
-    edges{
+    edges {
       node {
         id
         title

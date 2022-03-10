@@ -20,13 +20,27 @@ query Catalog {
         path
         type
         content
-        photos (width: 260, quality: 80)
-        mainUsage { id text }
-        possibleUsage { id text }
-        coating { id text }
+        photos(width: 260, quality: 80)
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
+        coating {
+          id
+          text
+        }
         tail
-        cuttingShapes { id text }
-        coolantSupply { id }
+        cuttingShapes {
+          id
+          text
+        }
+        coolantSupply {
+          id
+        }
       }
     }
   }

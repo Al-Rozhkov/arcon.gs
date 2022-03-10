@@ -11,19 +11,19 @@
 </template>
 
 <page-query>
-  query News($path: String) {
-    node: news(path: $path) {
-      id
-      path
-      content
-      excerpt
-      title
-      image(width: 660, quality: 100)
-    }
-    cNews: t(id: "headline.news-back") {
-      value
-    }
+query News($path: String) {
+  node: news(path: $path) {
+    id
+    path
+    content
+    excerpt
+    title
+    image(width: 660, quality: 100)
   }
+  cNews: t(id: "headline.news-back") {
+    value
+  }
+}
 </page-query>
 
 <script>

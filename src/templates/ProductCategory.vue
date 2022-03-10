@@ -16,36 +16,44 @@
 </template>
 
 <page-query>
-  query Category ($path: String) {
-    category: productCategory (path: $path) {
-      title,
-      belongsTo (sortBy: "id", order: ASC) {
-        edges {
-          node {
-            ...on ProductEndMill {
+query Category($path: String) {
+  category: productCategory(path: $path) {
+    title
+    belongsTo(sortBy: "id", order: ASC) {
+      edges {
+        node {
+          ... on ProductEndMill {
+            id
+            path
+            fusion
+            photos(width: 300, quality: 75)
+            content
+            mainUsage {
               id
-              path
-              fusion
-              photos (width: 300, quality: 75)
-              content
-              mainUsage {
-                id
-                text
-              }
-              coating { text }
-              tail
-              endShapes { id text }
-              cuttingShapes { id text }
-              cogsPitch
-              cogsNumber
-              cogsCuttingCenter
-              grooveInclination
+              text
             }
+            coating {
+              text
+            }
+            tail
+            endShapes {
+              id
+              text
+            }
+            cuttingShapes {
+              id
+              text
+            }
+            cogsPitch
+            cogsNumber
+            cogsCuttingCenter
+            grooveInclination
           }
         }
       }
     }
   }
+}
 </page-query>
 
 <script>

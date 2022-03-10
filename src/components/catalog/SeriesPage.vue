@@ -65,6 +65,24 @@ export default {
         ? this.$static.tNoCuttingCenter.value.toLowerCase()
         : this.$static.tCuttingCenter.value.toLowerCase()
     },
+
+    pageSelectedTool() {
+      const tool = this.$route.query.tool
+      return tool &&
+        this.tools.edges.findIndex(
+          ({ node }) => node.id == this.$route.query.tool
+        ) !== -1
+        ? tool
+        : false
+    },
+
+    pageMode() {
+      return this.$route.query.cutting_modes
+        ? 'cutting-modes'
+        : this.pageSelectedTool
+        ? 'tool'
+        : 'tools-list'
+    },
   },
 
   methods: {
@@ -264,6 +282,19 @@ export default {
     <!-- End of Page Header -->
 
     <div class="page-body">
+      <app-menu class="page-switch">
+        <app-menu-item :to="{ query: {} }"
+          >Список</app-menu-item
+        >
+        <app-menu-item :to="{ query: { tool: '101_2cs12d030x50v90' } }"
+          >Произвольный инструмент</app-menu-item
+        >
+        <app-menu-item
+          :to="{ query: { cutting_modes: true } }"
+          >Режимы резания</app-menu-item
+        >
+      </app-menu>
+
       <div class="tools">
         <div class="schemes">
           <Component
@@ -278,6 +309,7 @@ export default {
 
         <!-- Product items table (default view) -->
         <product-items-table
+          v-if="pageMode === 'tools-list'"
           :fields-set="
             node.productSeriesSet ? node.productSeriesSet.set : undefined
           "
@@ -287,8 +319,14 @@ export default {
         />
 
         <!-- Selected product item view -->
+        <div v-if="pageMode === 'cutting-modes'">
+          <h2>Режимы резания</h2>
+        </div>
 
         <!-- Cutting modes view -->
+        <div v-if="pageMode === 'tool'">
+          <h2>Страница инструмента {{ pageSelectedTool }}</h2>
+        </div>
       </div>
     </div>
   </div>
