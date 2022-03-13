@@ -14,8 +14,8 @@
 
     <slot />
 
-    <svg-sprite-coating class="d-none" />
-    <svg-sprite-features class="d-none" />
+    <svg-sprite-coating v-if="svgSprites" class="d-none" />
+    <svg-sprite-features v-if="svgSprites" class="d-none" />
 
     <custom-tools-msg class="container-xl" />
   </div>
@@ -52,5 +52,12 @@ export default {
     SvgSpriteFeatures,
     CustomToolsMsg
   },
+
+  props: {
+    svgSprites: {
+      type: Boolean,
+      default: false,
+    }
+  }
 }
 </script>

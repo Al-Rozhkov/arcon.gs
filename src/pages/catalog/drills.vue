@@ -1,5 +1,5 @@
 <template>
-  <page-layout>
+  <page-layout svg-sprites>
     <main class="container">
       <h1>{{ $page.title.value }}</h1>
 

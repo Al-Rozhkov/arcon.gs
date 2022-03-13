@@ -134,13 +134,9 @@ export default {
     <LazyHydrate when-idle>
       <div class="page-header">
         <header class="series-header">
-          <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
-          <svg-plain-icon
-            v-if="node.fusion"
-            icon-id="series-fusion"
-            :width="100"
-            :height="25"
-          />
+          <h1 class="h1" :class="{ 'series-fusion-icon': node.fusion }">
+            {{ node.id.toUpperCase() }}
+          </h1>
 
           <div class="series-header__content" v-html="node.content" />
 

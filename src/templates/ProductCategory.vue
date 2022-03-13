@@ -1,5 +1,5 @@
 <template>
-  <page-layout>
+  <page-layout svg-sprites>
     <main class="container">
       <h1>{{ $page.category.title }}</h1>
       <categories-list class="submenu" />
