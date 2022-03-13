@@ -43,7 +43,7 @@ query {
 </page-query>
 
 <script>
-import { hydrateSsrOnly, hydrateWhenIdle } from 'vue-lazy-hydration'
+import { hydrateNever, hydrateWhenIdle } from 'vue-lazy-hydration'
 
 export default {
   components: {
@@ -53,7 +53,7 @@ export default {
     FrontAdvantages: hydrateWhenIdle(() =>
       import('~/components/blocks/FrontAdvantages.vue')
     ),
-    FrontServices: hydrateSsrOnly(() =>
+    FrontServices: hydrateNever(() =>
       import('~/components/blocks/FrontServices.vue')
     ),
     FrontNews: hydrateWhenIdle(() =>

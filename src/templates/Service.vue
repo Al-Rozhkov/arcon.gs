@@ -4,11 +4,13 @@
       <menu-services class="submenu" />
     </template>
 
-    <main class="container">
-      <h1>{{ $page.node.title }}</h1>
+    <LazyHydrate never>
+      <main class="container">
+        <h1>{{ $page.node.title }}</h1>
 
-      <div class="text-body" v-html="$page.node.content"></div>
-    </main>
+        <div class="text-body" v-html="$page.node.content"></div>
+      </main>
+    </LazyHydrate>
   </Layout>
 </template>
 
@@ -24,10 +26,12 @@ query Service($path: String) {
 </page-query>
 
 <script>
+import LazyHydrate from 'vue-lazy-hydration'
 import MenuServices from '~/components/MenuServices.vue'
 
 export default {
   components: {
+    LazyHydrate,
     MenuServices,
   },
 

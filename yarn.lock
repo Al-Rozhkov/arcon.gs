@@ -14393,10 +14393,10 @@ vue-icon@^2.2.0:
   resolved "https://registry.yarnpkg.com/vue-icon/-/vue-icon-2.2.0.tgz#733e3810c61dda487fb606824409f02dbd16088c"
   integrity sha512-OAJ4fD4KyiFAuPrUYN4/URAw9ifVpqIdfunUvY8q9SBdvZGs/+X5GxAtfvdmiH0JHrFiO9FsHHAPmhsTsF7aog==
 
-vue-lazy-hydration@^1.0.0-beta.14:
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/vue-lazy-hydration/-/vue-lazy-hydration-1.0.0-beta.14.tgz#50b08003c2317afd15bf33871c4bbd0b952ca808"
-  integrity sha512-Xm6e1SL9WBlmMWIDThteOUGyiBNGyPTG4S5KZLMlbJZEvTzRpqAAiFhg4BQyohwufyvpj+WTdr63fhNxK43RQA==
+vue-lazy-hydration@^2.0.0-beta.4:
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/vue-lazy-hydration/-/vue-lazy-hydration-2.0.0-beta.4.tgz#11e7021a9bac003ea6ed74f132dcd0d025fafc1f"
+  integrity sha512-bhr7AxzrSEPed4cOawIeCxJmR8pglberR78x1zs0886xR+47/EXE9s0Ezss90CPINo8ApzUfA/r+SbNffn+t9w==
 
 vue-loader@^15.7.1:
   version "15.9.8"

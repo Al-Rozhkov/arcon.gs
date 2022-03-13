@@ -26,11 +26,11 @@ query Page {
 </page-query>
 
 <script>
-import { hydrateSsrOnly } from 'vue-lazy-hydration'
+import { hydrateNever } from 'vue-lazy-hydration'
 
 export default {
   components: {
-    FrontServices: hydrateSsrOnly(() =>
+    FrontServices: hydrateNever(() =>
       import('~/components/blocks/FrontServices.vue')
     ),
   },

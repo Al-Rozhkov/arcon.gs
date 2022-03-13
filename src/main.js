@@ -28,18 +28,12 @@ export default function (Vue, { appOptions, head, router }) {
 
     if (from && from.path === to.path) return {}
 
-    // scroll to anchor by returning the selector
+    // Scroll to anchor by returning the selector
     if (to.hash) {
-      let position = { selector: to.hash }
-
-      // specify offset of the element
-      // if (to.hash === '#anchor2') {
-      //   position.offset = { y: 100 }
-      // }
-      return position
+      return { selector: to.hash }
     }
 
-    // scroll to top by default
+    // Scroll to top by default
     return { x: 0, y: 0 }
   }
 
