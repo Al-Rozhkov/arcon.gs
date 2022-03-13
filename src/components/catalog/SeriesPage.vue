@@ -353,11 +353,6 @@ export default {
   margin-bottom: 2rem;
 }
 
-.series-header__content {
-  width: 100%;
-  margin-bottom: 0.75rem;
-}
-
 .series-img {
   margin: 0 0 1.5rem -0.75rem;
 }
@@ -367,6 +362,11 @@ export default {
   padding: 1rem;
   position: relative;
   background: lighten($orange, 25%);
+}
+
+.series-header__content {
+  width: 100%;
+  margin-bottom: 0.75rem;
 }
 
 .series-header__actions {

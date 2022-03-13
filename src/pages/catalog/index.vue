@@ -116,13 +116,13 @@ query Catalog {
 
 
 <script>
+import { hydrateWhenIdle } from 'vue-lazy-hydration'
 import PageLayout from '~/layouts/Catalog.vue'
-import GroupedOverview from '~/components/catalog/GroupedOverview.vue'
 
 export default {
   components: {
     PageLayout,
-    GroupedOverview,
+    GroupedOverview: hydrateWhenIdle(() => import('~/components/catalog/GroupedOverview.vue')),
   },
 
   computed: {
