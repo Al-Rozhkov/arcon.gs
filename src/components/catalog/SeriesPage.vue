@@ -131,7 +131,7 @@ export default {
 
 <template>
   <div class="page">
-    <LazyHydrate never>
+    <LazyHydrate when-idle>
       <div class="page-header">
         <header class="series-header">
           <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
@@ -290,7 +290,7 @@ export default {
             </div>
           </div>
 
-          <div class="actions d-print-none" @click="printIt">
+          <div class="series-header__actions d-print-none" @click="printIt">
             <icon-printer
               width="30"
               height="30"
@@ -302,7 +302,7 @@ export default {
     </LazyHydrate>
     <!-- End of Page Header -->
 
-    <LazyHydrate when-idle>
+    <ClientOnly>
       <div class="page-body">
         <ul class="page-switch menu">
           <li @click="switchPage({})">Список</li>
@@ -344,7 +344,7 @@ export default {
           </div>
         </div>
       </div>
-    </LazyHydrate>
+    </ClientOnly>
   </div>
 </template>
 
@@ -373,7 +373,7 @@ export default {
   background: lighten($orange, 25%);
 }
 
-.actions {
+.series-header__actions {
   position: absolute;
   top: -1.25rem;
   right: -1.5rem;
