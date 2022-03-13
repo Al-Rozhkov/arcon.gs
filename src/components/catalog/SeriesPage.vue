@@ -302,47 +302,49 @@ export default {
     </LazyHydrate>
     <!-- End of Page Header -->
 
-    <div class="page-body">
-      <ul class="page-switch menu">
-        <li @click="switchPage({})">Список</li>
-        <li @click="switchPage()">Произвольный инструмент</li>
-        <li @click="switchPage({ cutting_modes: true })">Режимы резания</li>
-      </ul>
+    <LazyHydrate when-idle>
+      <div class="page-body">
+        <ul class="page-switch menu">
+          <li @click="switchPage({})">Список</li>
+          <li @click="switchPage()">Произвольный инструмент</li>
+          <li @click="switchPage({ cutting_modes: true })">Режимы резания</li>
+        </ul>
 
-      <div class="tools">
-        <div class="schemes">
-          <Component
-            v-for="(scheme, i) in schemes"
-            :key="i"
-            :is="scheme"
-            class="svg-scheme"
-            :tool="highlightedTool"
-          >
-          </Component>
-        </div>
+        <div class="tools">
+          <div class="schemes">
+            <Component
+              v-for="(scheme, i) in schemes"
+              :key="i"
+              :is="scheme"
+              class="svg-scheme"
+              :tool="highlightedTool"
+            >
+            </Component>
+          </div>
 
-        <!-- Product items table (default view) -->
-        <product-items-table
-          v-if="pageMode === 'tools-list'"
-          :fields-set="
-            node.productSeriesSet ? node.productSeriesSet.set : undefined
-          "
-          :tools="tools.edges"
-          @highlight="onRowHighlight"
-          class="product-items"
-        />
+          <!-- Product items table (default view) -->
+          <product-items-table
+            v-if="pageMode === 'tools-list'"
+            :fields-set="
+              node.productSeriesSet ? node.productSeriesSet.set : undefined
+            "
+            :tools="tools.edges"
+            @highlight="onRowHighlight"
+            class="product-items"
+          />
 
-        <!-- Selected product item view -->
-        <div v-if="pageMode === 'cutting-modes'">
-          <h2>Режимы резания</h2>
-        </div>
+          <!-- Selected product item view -->
+          <div v-if="pageMode === 'cutting-modes'">
+            <h2>Режимы резания</h2>
+          </div>
 
-        <!-- Cutting modes view -->
-        <div v-if="pageMode === 'tool'">
-          <h2>Страница инструмента {{ pageSelectedTool }}</h2>
+          <!-- Cutting modes view -->
+          <div v-if="pageMode === 'tool'">
+            <h2>Страница инструмента {{ pageSelectedTool }}</h2>
+          </div>
         </div>
       </div>
-    </div>
+    </LazyHydrate>
   </div>
 </template>
 
