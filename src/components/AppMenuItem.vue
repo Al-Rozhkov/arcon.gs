@@ -1,5 +1,5 @@
 <template functional>
-  <li class="li">
+  <li>
     <g-link :to="props.to" class="a">
       <span class="u" v-bind:class="{bold: props.bold}">
         <slot />
@@ -26,10 +26,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.li {
-  padding: 0.3rem 1rem 0.3rem 0;
-}
-
 .a {
   display: block;
 }

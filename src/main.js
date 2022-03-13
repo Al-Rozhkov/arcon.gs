@@ -12,7 +12,7 @@ import AppLanguage from '~/components/AppLanguage.vue'
 
 import VTooltip from 'v-tooltip'
 
-export default function(Vue, { appOptions, head }) {
+export default function (Vue, { appOptions, head, router }) {
   // Set global components
   Vue.component('Layout', DefaultLayout)
   Vue.component('AppLogo', AppLogo)
@@ -21,6 +21,27 @@ export default function(Vue, { appOptions, head }) {
   Vue.component('AppNav', AppNav)
   Vue.component('AppFooter', AppFooter)
   Vue.component('AppLanguage', AppLanguage)
+
+  router.options.scrollBehavior = function (to, from, savedPosition) {
+    // savedPosition is only available for popstate navigations.
+    if (savedPosition) return savedPosition
+
+    if (from && from.path === to.path) return {}
+
+    // scroll to anchor by returning the selector
+    if (to.hash) {
+      let position = { selector: to.hash }
+
+      // specify offset of the element
+      // if (to.hash === '#anchor2') {
+      //   position.offset = { y: 100 }
+      // }
+      return position
+    }
+
+    // scroll to top by default
+    return { x: 0, y: 0 }
+  }
 
   Vue.use(VTooltip)
 

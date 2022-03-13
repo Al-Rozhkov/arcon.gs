@@ -120,7 +120,6 @@ export default {
 }
 
 .li {
-  margin-right: 1.5rem;
   margin-top: 0.5rem;
   padding: 0;
 }

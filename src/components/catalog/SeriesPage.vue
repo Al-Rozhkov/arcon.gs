@@ -106,6 +106,22 @@ export default {
     printIt() {
       if (window) window.print()
     },
+
+    switchPage(query) {
+      if (!query) {
+        const item =
+          this.tools.edges[Math.floor(Math.random() * this.tools.edges.length)]
+        query = { tool: item.node.id }
+      }
+      this.$router.push({
+        path: this.$route.path,
+        query
+      })
+    },
+  },
+
+  mounted() {
+    // console.log(this.$route)
   },
 }
 </script>
@@ -282,18 +298,11 @@ export default {
     <!-- End of Page Header -->
 
     <div class="page-body">
-      <app-menu class="page-switch">
-        <app-menu-item :to="{ query: {} }"
-          >Список</app-menu-item
-        >
-        <app-menu-item :to="{ query: { tool: '101_2cs12d030x50v90' } }"
-          >Произвольный инструмент</app-menu-item
-        >
-        <app-menu-item
-          :to="{ query: { cutting_modes: true } }"
-          >Режимы резания</app-menu-item
-        >
-      </app-menu>
+      <ul class="page-switch menu">
+        <li @click="switchPage({})">Список</li>
+        <li @click="switchPage()">Произвольный инструмент</li>
+        <li @click="switchPage({ cutting_modes: true })">Режимы резания</li>
+      </ul>
 
       <div class="tools">
         <div class="schemes">
