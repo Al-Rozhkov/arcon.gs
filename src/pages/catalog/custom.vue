@@ -4,7 +4,7 @@
       <section class="mb-3">
         <h1>{{ $page.page.title }}</h1>
 
-        <div class="text-body" v-html="$page.page.content"></div>
+        <div class="page-content" v-html="$page.page.content"></div>
 
         <div
           v-for="(group, index) in output"
@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.text-body {
+.page-content {
   max-width: 860px;
   margin-bottom: 3.5rem;
 }

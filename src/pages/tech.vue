@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="container">
-      <h1>{{ $page.page.title }}</h1>
+      <h1 class="page-title">{{ $page.page.title }}</h1>
 
       <section class="tile-root">
         <div class="tile-row">
@@ -30,7 +30,7 @@
           </app-menu>
         </aside>
 
-        <div class="col-md-18 text-body pb">
+        <div class="col-md-18 page-content pb">
           <section
             v-for="({ node }, index) in $page.tech.edges"
             :key="node.id"

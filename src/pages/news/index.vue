@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="container">
-      <h1>{{ $page.newsTitle.value }}</h1>
+      <h1 class="page-title">{{ $page.newsTitle.value }}</h1>
       <div class="news-page">
         <div v-for="(node, index) in $page.news.edges" :key="index" class="col">
           <news-teaser :node="node.node" />

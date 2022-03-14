@@ -1,14 +1,14 @@
 <template>
   <Layout>
     <template #submenu>
-      <menu-services class="submenu" />
+      <menu-services class="menu--submenu" />
     </template>
 
     <LazyHydrate never>
       <main class="container">
         <h1>{{ $page.node.title }}</h1>
 
-        <div class="text-body" v-html="$page.node.content"></div>
+        <div class="page-content" v-html="$page.node.content"></div>
       </main>
     </LazyHydrate>
   </Layout>

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="container-xl d-print-none">
-      <app-menu class="submenu">
+      <app-menu class="menu--submenu">
         <app-menu-item
           v-for="{ node } in $static.menu.edges"
           :key="node.id"

@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <main class="container">
-      <h1>{{ $page.page.title }}</h1>
+      <h1 class="page-title">{{ $page.page.title }}</h1>
 
-      <div class="text-body" v-html="$page.page.content"></div>
+      <div class="page-content" v-html="$page.page.content"></div>
 
       <section class="pt">
         <h2 class="mb-2">

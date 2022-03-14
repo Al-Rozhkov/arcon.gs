@@ -4,7 +4,7 @@
       <div class="container-xl">
         <h1>{{ $page.page.title }}</h1>
 
-        <ul class="menu submenu">
+        <ul class="menu menu--submenu">
           <app-menu-item
             v-for="item in $page.page.headings.filter(h => h.depth == 2)"
             :key="item.anchor"

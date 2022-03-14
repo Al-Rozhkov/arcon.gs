@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <main class="container text-body">
-      <h1>{{ $page.page.title }}</h1>
+    <main class="container page-content">
+      <h1 class="page-title">{{ $page.page.title }}</h1>
 
       <div class="flex-row group-section">
         <section class="col-lg-6">

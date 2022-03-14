@@ -47,10 +47,3 @@ query {
   }
 }
 </static-query>
-
-<style lang="scss" scoped>
-.footer {
-  background: $gray-100;
-  position: relative;
-}
-</style>

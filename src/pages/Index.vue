@@ -87,15 +87,16 @@ export default {
 
 <style lang="scss" scoped>
 @include media-breakpoint-up(lg) {
+  .h2-blind {
+    font-size: 4rem;
+    color: $gray-200;
+    padding-top: 1rem;
+  }
+
   .services-wrapper:hover {
     .h2-blind {
       color: $gray-400;
     }
-  }
-
-  .h2-blind {
-    font-size: 4rem;
-    color: $gray-200;
   }
 }
 </style>

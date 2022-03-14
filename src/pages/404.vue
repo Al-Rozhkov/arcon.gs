@@ -3,7 +3,7 @@
     <main class="container">
       <h1>{{ $page.page.title }}</h1>
 
-      <div class="flex-row text-body">
+      <div class="flex-row page-content">
         <div class="col-lg-16" v-html="$page.page.content"></div>
       </div>
     </main>

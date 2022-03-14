@@ -300,10 +300,16 @@ export default {
 
     <ClientOnly>
       <div class="page-body">
-        <ul class="page-switch menu">
-          <li @click="switchPage({})">Список</li>
-          <li @click="switchPage()">Произвольный инструмент</li>
-          <li @click="switchPage({ cutting_modes: true })">Режимы резания</li>
+        <ul class="menu">
+          <li class="menu-link" @click="switchPage({})">
+            <span class="menu-link__dashed">Все инструменты серии</span>
+          </li>
+          <li class="menu-link" @click="switchPage({ cutting_modes: true })">
+            <span class="menu-link__dashed">Режимы резания</span>
+          </li>
+          <li class="menu-link" @click="switchPage()">
+            <span class="menu-link__dashed">Произвольный инструмент</span>
+          </li>
         </ul>
 
         <div class="tools">

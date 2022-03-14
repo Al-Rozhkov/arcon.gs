@@ -6,7 +6,7 @@
     <figure v-if="$page.node.image">
       <g-image :src="$page.node.image" />
     </figure>
-    <div class="text-body" v-html="$page.node.content"></div>
+    <div class="page-content" v-html="$page.node.content"></div>
   </page-layout>
 </template>
 

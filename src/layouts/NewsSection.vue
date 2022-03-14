@@ -59,6 +59,8 @@ export default {
 
 <style lang="scss">
 .news-page-body {
+  padding-top: 1rem;
+
   li {
     margin-bottom: 0.5rem;
   }

@@ -1,5 +1,5 @@
 <template functional>
-  <ul class="menu" :class="[ { v: props.vertical}, data.staticClass ]">
+  <ul class="menu" :class="[ { 'menu--vertical': props.vertical}, data.staticClass ]">
     <slot />
   </ul>
 </template>
@@ -14,17 +14,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-
-  list-style-type: none;
-  padding: 0;
-}
-
-.v {
-  flex-direction: column;
-}
-</style>

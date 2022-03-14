@@ -2,7 +2,7 @@
   <page-layout svg-sprites>
     <main class="container">
       <h1>{{ $page.category.title }}</h1>
-      <categories-list class="submenu" />
+      <categories-list class="menu--submenu" />
 
       <div class="catalog-list">
         <series-card
