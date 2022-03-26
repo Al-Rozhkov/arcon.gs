@@ -36,7 +36,7 @@
     "eslint": "^7.22.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-gridsome": "^1.6.1",
-    "googleapis": "^92.0.0",
+    "googleapis": "^96.0.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "jest": "^27.5.1",

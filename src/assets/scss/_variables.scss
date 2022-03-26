@@ -92,7 +92,7 @@ $mat-s: $orange;
 $link-color: $cyan;
 $link-hover-color: darken($link-color, 15%);
 
-$item-hover-color: fade-out($yellow, .6);
+$item-hover-color: mix($yellow, $white, 50%);
 
 //
 // Backgrounds

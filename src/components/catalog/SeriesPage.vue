@@ -6,6 +6,7 @@ import SvgIcon from '~/components/catalog/SvgFeatureIcon'
 import MaterialIcon from '~/components/catalog/MaterialIcon'
 import IconPrinter from '~/components/IconPrinter'
 import ProductItemsTable from '~/components/catalog/ProductItemsTable'
+import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
 
 export default {
   components: {
@@ -15,6 +16,7 @@ export default {
     MaterialIcon,
     IconPrinter,
     ProductItemsTable,
+    SeriesCuttingModes,
   },
 
   props: {
@@ -307,12 +309,13 @@ export default {
           <li class="menu-link" @click="switchPage({ cutting_modes: true })">
             <span class="menu-link__dashed">Режимы резания</span>
           </li>
-          <li class="menu-link" @click="switchPage()">
+          <!-- <li class="menu-link" @click="switchPage()">
             <span class="menu-link__dashed">Произвольный инструмент</span>
-          </li>
+          </li> -->
         </ul>
 
-        <div class="tools">
+        <!-- Product items table (default view) -->
+        <div v-if="pageMode === 'tools-list'" class="tools">
           <div class="schemes">
             <Component
               v-for="(scheme, i) in schemes"
@@ -324,9 +327,7 @@ export default {
             </Component>
           </div>
 
-          <!-- Product items table (default view) -->
           <product-items-table
-            v-if="pageMode === 'tools-list'"
             :fields-set="
               node.productSeriesSet ? node.productSeriesSet.set : undefined
             "
@@ -334,16 +335,19 @@ export default {
             @highlight="onRowHighlight"
             class="product-items"
           />
+        </div>
 
-          <!-- Selected product item view -->
-          <div v-if="pageMode === 'cutting-modes'">
-            <h2>Режимы резания</h2>
-          </div>
+        <!-- Selected product item view -->
+        <div v-if="pageMode === 'cutting-modes'" class="cutting-modes">
+          <h2>Режимы обработки уступа</h2>
+          <series-cutting-modes />
+          <h2>Режимы обработки паза</h2>
+          <series-cutting-modes :ledges="false" />
+        </div>
 
-          <!-- Cutting modes view -->
-          <div v-if="pageMode === 'tool'">
-            <h2>Страница инструмента {{ pageSelectedTool }}</h2>
-          </div>
+        <!-- Cutting modes view -->
+        <div v-if="pageMode === 'tool'">
+          <h2>Страница инструмента {{ pageSelectedTool }}</h2>
         </div>
       </div>
     </ClientOnly>
