@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "bootstrap-vue": "^2.21.2",
+    "bootstrap-vue": "^2.22.0",
     "compressed-json": "^1.0.16",
     "flexsearch": "^0.7.21",
     "gridsome": "^0.7.23",
@@ -23,8 +23,8 @@
     "vue-lazy-hydration": "^1.0.0-beta.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.0",
-    "@babel/preset-env": "^7.16.7",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-json": "^0.2.1",
@@ -36,16 +36,16 @@
     "eslint": "^7.22.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-gridsome": "^1.6.1",
-    "googleapis": "^92.0.0",
+    "googleapis": "^100.0.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-yandex-metrika": "^0.1.2",
     "jest": "^27.5.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
-    "sass": "^1.49.0",
+    "sass": "^1.51.0",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
-    "typograf": "^6.14.0",
+    "typograf": "^6.14.1",
     "vue-eslint-parser": "^8.2.0"
   },
   "prettier": {

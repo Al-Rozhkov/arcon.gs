@@ -16,7 +16,7 @@ collections:
     label: "Типы инструмента"
     label_singular: "Тип"
     extension: "json"
-    folder: "products/types"
+    folder: "products/types/ru-ru"
     create: true
     slug: "{{id}}"
     fields:
@@ -31,35 +31,51 @@ collections:
           - {label: "Резьбовые фрезы", value: "thread-mills"}
       - &fieldWeight {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
 
-  - name: "news"
-    label: "Новости"
-    label_singular: "Новость"
+  - name: "news_ru"
+    label: "Новости (РУС)"
+    label_singular: "Новость (РУС)"
     extension: "md"
-    folder: "content/news"
+    folder: "content/news/ru-ru"
     create: true
     path: "{{year}}/{{month}}"
     media_folder: ""
     public_folder: ""
     fields:
       - *fieldTitle
-      - {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
+      - &fieldNoPage {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
       - &fieldImage {label: "Изображение", name: "image", widget: "image"}
       - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
       - &fieldMarkdown {label: "Текст", name: "body", widget: "markdown"}
+
+  - name: "news_en"
+    label: "Новости (ENG)"
+    label_singular: "Новость (ENG)"
+    extension: "md"
+    folder: "content/news/en-en"
+    create: true
+    path: "{{year}}/{{month}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - *fieldTitle
+      - *fieldNoPage
+      - *fieldImage
+      - *fieldDate
+      - *fieldMarkdown
 
   - name: "services"
     label: "Услуги"
     label_singular: "Услуга"
     extension: "md"
-    folder: "content/services"
+    folder: "content/services/ru-ru"
     slug: "{{id}}"
     create: true
     media_folder: ""
     public_folder: ""
     fields:
       - *fieldTitle
-      - {label: "Мета-тег description", name: "description", hint: "Используется поисковыми системами.", widget: "text"}
-      - {label: "Анонс", name: "teaser", hint: "Отображается как короткое описание в списках.", widget: "text"}
+      - &fieldDescription {label: "Мета-тег description", name: "description", hint: "Используется поисковыми системами.", widget: "text"}
+      - &fieldTeaser {label: "Анонс", name: "teaser", hint: "Отображается как короткое описание в списках.", widget: "text"}
       - *fieldWeight
       - *fieldMarkdown
 
@@ -67,7 +83,7 @@ collections:
     label: "Технологии"
     label_singular: "Технология"
     extension: "md"
-    folder: "content/tech"
+    folder: "content/tech/ru-ru"
     create: true
     media_folder: ""
     public_folder: ""
@@ -77,20 +93,20 @@ collections:
       - *fieldImage
       - *fieldMarkdown
 
-  - name: "custom"
-    label: "Спец инструмент"
-    extension: "md"
-    folder: "products/custom"
-    slug: "{{id}}"
-    create: true
-    media_folder: ""
-    public_folder: ""
-    fields:
-      - *fieldTitle
-      - {label: "Файл", name: "file", widget: "file"}
-      - {label: "Группа", name: "group", widget: string, default: "Сверло"}
-      - *fieldWeight
-      - *fieldMarkdown
+  # - name: "custom"
+  #   label: "Спец инструмент"
+  #   extension: "yml"
+  #   folder: "products/custom"
+  #   slug: "{{id}}"
+  #   create: true
+  #   media_folder: ""
+  #   public_folder: ""
+  #   fields:
+  #     - *fieldTitle
+  #     - {label: "Файл", name: "file", widget: "file"}
+  #     - {label: "Группа", name: "group", widget: string, default: "Сверло"}
+  #     - *fieldWeight
+  #     - *fieldMarkdown
 
   - name: "end-mills"
     label: "Серии фрез"
