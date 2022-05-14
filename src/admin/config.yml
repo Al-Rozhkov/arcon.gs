@@ -18,6 +18,7 @@ collections:
     extension: 'json'
     folder: 'products/types'
     create: true
+    identifier_field: id
     slug: '{{id}}'
     fields:
       - &fieldId { label: 'Идентификатор', name: 'id', widget: 'string' }
@@ -50,6 +51,7 @@ collections:
           - label: 'English'
             name: 'en-en'
             widget: object
+            collapsed: true
             summary: '{{fields.title}}'
             fields:
               - *fieldTitle
@@ -140,8 +142,7 @@ collections:
     extension: 'md'
     folder: 'content/tech/ru-ru'
     create: true
-    media_folder: ''
-    public_folder: ''
+    media_folder: '/content/tech'
     fields:
       - *fieldTitle
       - *fieldWeight
@@ -154,8 +155,7 @@ collections:
     extension: 'md'
     folder: 'content/tech/en-en'
     create: true
-    media_folder: ''
-    public_folder: ''
+    media_folder: '/content/tech'
     fields:
       - *fieldTitle
       - *fieldWeight
@@ -189,7 +189,8 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - label: 'Языковые версии'
+      - &fieldSeriesContent
+        label: 'Языковые версии'
         name: 'i18n'
         widget: object
         fields:
@@ -205,6 +206,7 @@ collections:
           - label: 'English'
             name: 'en-en'
             widget: object
+            collapsed: true
             fields:
               - *fieldContent
       - &fieldRelativePhotos
@@ -355,7 +357,7 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - *fieldContent
+      - *fieldSeriesContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
@@ -390,7 +392,7 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - *fieldContent
+      - *fieldSeriesContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
