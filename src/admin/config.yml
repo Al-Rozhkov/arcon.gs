@@ -61,8 +61,7 @@ collections:
     folder: 'content/news/ru-ru'
     create: true
     path: '{{year}}/{{month}}'
-    media_folder: ''
-    public_folder: '../.'
+    media_folder: '/content/news/img'
     fields:
       - *fieldTitle
       - &fieldImage { label: 'Изображение', name: 'image', widget: 'image' }
@@ -87,8 +86,7 @@ collections:
     folder: 'content/news/en-en'
     create: true
     path: '{{year}}/{{month}}'
-    media_folder: ''
-    public_folder: '..'
+    media_folder: '/content/news/img'
     fields:
       - *fieldTitle
       - *fieldImage
