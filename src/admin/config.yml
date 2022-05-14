@@ -60,26 +60,24 @@ collections:
     folder: 'content/news/ru-ru'
     create: true
     path: '{{year}}/{{month}}'
-    media_folder: '../.'
-    public_folder: ''
+    media_folder: ''
+    public_folder: '../.'
     fields:
       - *fieldTitle
-      - &fieldNoPage {
-          label: 'Без отдельной страницы',
-          name: 'nopage',
-          widget: 'boolean',
-          default: false,
-        }
       - &fieldImage { label: 'Изображение', name: 'image', widget: 'image' }
-      - &fieldDate {
-          label: 'Дата',
-          name: 'date',
-          widget: 'datetime',
-          format: 'YYYY-MM-DD',
-          date_format: 'DD.MM.YYYY',
-          time_format: false,
-        }
+      - &fieldDate
+        label: 'Дата'
+        name: 'date'
+        widget: 'datetime'
+        format: 'YYYY-MM-DD'
+        date_format: 'DD.MM.YYYY'
+        time_format: false
       - &fieldMarkdown { label: 'Текст', name: 'body', widget: 'markdown' }
+      - &fieldNoPage
+        label: 'Без отдельной страницы'
+        name: 'nopage'
+        widget: 'boolean'
+        default: false
 
   - name: 'news_en'
     label: 'Новости (ENG)'
@@ -88,17 +86,17 @@ collections:
     folder: 'content/news/en-en'
     create: true
     path: '{{year}}/{{month}}'
-    media_folder: '..'
-    public_folder: ''
+    media_folder: ''
+    public_folder: '..'
     fields:
       - *fieldTitle
-      - *fieldNoPage
       - *fieldImage
       - *fieldDate
       - *fieldMarkdown
+      - *fieldNoPage
 
-  - name: 'services'
-    label: 'Услуги'
+  - name: 'services_ru'
+    label: 'Услуги (РУС)'
     label_singular: 'Услуга'
     extension: 'md'
     folder: 'content/services/ru-ru'
@@ -108,26 +106,54 @@ collections:
     public_folder: ''
     fields:
       - *fieldTitle
-      - &fieldDescription {
-          label: 'Мета-тег description',
-          name: 'description',
-          hint: 'Используется поисковыми системами.',
-          widget: 'text',
-        }
-      - &fieldTeaser {
-          label: 'Анонс',
-          name: 'teaser',
-          hint: 'Отображается как короткое описание в списках.',
-          widget: 'text',
-        }
+      - &fieldDescription
+        label: 'Мета-тег description'
+        name: 'description'
+        hint: 'Используется поисковыми системами.'
+        widget: 'text'
+      - &fieldTeaser
+        label: 'Анонс'
+        name: 'teaser'
+        hint: 'Отображается как короткое описание в списках.'
+        widget: 'text'
       - *fieldWeight
       - *fieldMarkdown
 
-  - name: 'techs'
-    label: 'Технологии'
+  - name: 'services_en'
+    label: 'Услуги (EN)'
+    label_singular: 'Услуга'
+    extension: 'md'
+    folder: 'content/services/en-en'
+    slug: '{{id}}'
+    create: true
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - *fieldTitle
+      - *fieldDescription
+      - *fieldTeaser
+      - *fieldWeight
+      - *fieldMarkdown
+
+  - name: 'techs_ru'
+    label: 'Технологии (РУС)'
     label_singular: 'Технология'
     extension: 'md'
     folder: 'content/tech/ru-ru'
+    create: true
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - *fieldTitle
+      - *fieldWeight
+      - *fieldImage
+      - *fieldMarkdown
+
+  - name: 'techs_en'
+    label: 'Технологии (EN)'
+    label_singular: 'Технология'
+    extension: 'md'
+    folder: 'content/tech/en-en'
     create: true
     media_folder: ''
     public_folder: ''
