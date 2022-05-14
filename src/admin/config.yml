@@ -182,16 +182,14 @@ collections:
         name: 'type'
         widget: 'relation'
         collection: 'types'
-        valueField: 'id'
+        value_field: 'id'
         search_fields: ['id', 'title']
         display_fields: ['title']
-      - {
-          label: 'Серия Fusion',
-          name: 'fusion',
-          widget: 'boolean',
-          default: false,
-          required: false,
-        }
+      - label: 'Серия Fusion'
+        name: 'fusion'
+        widget: 'boolean'
+        default: false
+        required: false
       - &fieldMainUsage
         label: 'Основное применение'
         name: 'mainUsage'
