@@ -1,0 +1,14 @@
+{
+  "id": "thread-mills",
+  "title": "Резьбовые фрезы",
+  "type": "thread-mills",
+  "weight": 6,
+  "i18n": {
+    "ru-ru": {
+      "title": "Резьбовые фрезы"
+    },
+    "en-en": {
+      "title": "Thread mills"
+    }
+  }
+}

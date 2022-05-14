@@ -1,0 +1,14 @@
+{
+  "id": "shaped-mills",
+  "title": "Фрезы фасон. фасочные (зенковки)",
+  "type": "end-mills",
+  "weight": 4,
+  "i18n": {
+    "ru-ru": {
+      "title": "Фрезы фасон. фасочные (зенковки)"
+    },
+    "en-en": {
+      "title": "Countersinks"
+    }
+  }
+}

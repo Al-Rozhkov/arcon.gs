@@ -1,0 +1,14 @@
+{
+  "id": "drills-spiral",
+  "title": "Сверла спиральные",
+  "type": "drills",
+  "weight": 2,
+  "i18n": {
+    "ru-ru": {
+      "title": "Сверла спиральные"
+    },
+    "en-en": {
+      "title": "Twist drills"
+    }
+  }
+}

@@ -46,7 +46,7 @@
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
     "typograf": "^6.14.1",
-    "vue-eslint-parser": "^8.2.0"
+    "vue-eslint-parser": "^9.0.1"
   },
   "prettier": {
     "semi": false,
