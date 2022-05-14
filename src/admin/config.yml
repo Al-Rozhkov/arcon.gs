@@ -34,7 +34,7 @@ collections:
           name: 'weight',
           hint: 'Влияет на порядок отображения элемента в списках.',
           widget: 'number',
-          valueType: 'int',
+          value_type: 'int',
           min: 1,
         }
       - label: 'Языковые версии'
@@ -76,8 +76,8 @@ collections:
           name: 'date',
           widget: 'datetime',
           format: 'YYYY-MM-DD',
-          dateFormat: 'DD.MM.YYYY',
-          timeFormat: false,
+          date_format: 'DD.MM.YYYY',
+          time_format: false,
         }
       - &fieldMarkdown { label: 'Текст', name: 'body', widget: 'markdown' }
 
@@ -183,8 +183,8 @@ collections:
         widget: 'relation'
         collection: 'types'
         valueField: 'id'
-        searchFields: ['id', 'title']
-        displayFields: ['title']
+        search_fields: ['id', 'title']
+        display_fields: ['title']
       - {
           label: 'Серия Fusion',
           name: 'fusion',
@@ -264,7 +264,7 @@ collections:
         label: 'Количество зубьев'
         name: 'cogsNumber'
         widget: 'list'
-        valueType: 'int'
+        value_type: 'int'
         hint: 'Если значений несколько, укажите их через запятую.'
         min: 1
       - &fieldCogsPitch
