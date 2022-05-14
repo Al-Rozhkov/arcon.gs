@@ -40,18 +40,19 @@ collections:
       - label: 'Языковые версии'
         name: 'i18n'
         widget: object
-        summary: '{{fields.title}}'
         fields:
           - label: 'Русский'
             name: 'ru-ru'
             widget: object
+            summary: '{{fields.title}}'
             fields:
-            - *fieldTitle
+              - *fieldTitle
           - label: 'English'
             name: 'en-en'
             widget: object
+            summary: '{{fields.title}}'
             fields:
-            - *fieldTitle
+              - *fieldTitle
 
   - name: 'news_ru'
     label: 'Новости (РУС)'
@@ -190,7 +191,24 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - &fieldBody { label: 'Описание', name: 'body', widget: 'text' }
+      - label: 'Языковые версии'
+        name: 'i18n'
+        widget: object
+        fields:
+          - label: 'Русский'
+            name: 'ru-ru'
+            widget: object
+            fields:
+              - &fieldContent {
+                  label: 'Описание',
+                  name: 'content',
+                  widget: 'text',
+                }
+          - label: 'English'
+            name: 'en-en'
+            widget: object
+            fields:
+              - *fieldContent
       - &fieldRelativePhotos
         label: 'Фотографии'
         name: 'photos'
@@ -339,7 +357,7 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - *fieldBody
+      - *fieldContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
@@ -374,7 +392,7 @@ collections:
     public_folder: ''
     fields:
       - *fieldId
-      - *fieldBody
+      - *fieldContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
