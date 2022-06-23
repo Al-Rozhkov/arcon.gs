@@ -17,6 +17,8 @@
   - path: /catalog/custom/
     label: Custom tools (by drawing)
     bold: true
+  - path: /catalog/extra/
+    label: Additional catalog pages
 
 - path: /services/
   label: Services

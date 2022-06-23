@@ -124,6 +124,13 @@ module.exports = {
         typeName: 'ProductCustom',
       },
     },
+    {
+      use: '~/plugins/yaml-array',
+      options: {
+        path: `products/extra/${envLocale}.yml`,
+        typeName: 'ProductExtra',
+      },
+    },
 
     //
     // Product parameters

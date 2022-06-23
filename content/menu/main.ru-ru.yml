@@ -17,6 +17,8 @@
   - path: /catalog/custom/
     label: Специальный инструмент (по чертежу)
     bold: true
+  - path: /catalog/extra/
+    label: Дополнительные страницы каталога
 
 - path: /services/
   label: Услуги
