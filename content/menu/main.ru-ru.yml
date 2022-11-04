@@ -23,5 +23,8 @@
 - path: /services/
   label: Услуги
 
+- path: /agents/
+  label: Представители
+
 - path: /contact/
   label: Контакты
