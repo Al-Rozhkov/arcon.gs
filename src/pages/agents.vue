@@ -8,7 +8,7 @@
           <div class="mb-3">
             <b-form-radio-group
               id="radios-agents-country"
-              :checked="countryFilter"
+              v-model="countryFilter"
               :options="countryOptions"
               buttons
               button-variant="outline-secondary"
@@ -24,9 +24,17 @@
             >
               <h3 class="agent-title">{{ agent.name }}</h3>
               <p>{{ agent.countryText }}</p>
-              <p>{{ agent.email }}</p>
+              <p>
+                E-mail:
+                <a :href="`mailto:${agent.mail}`" class="u">{{
+                  agent.email
+                }}</a>
+              </p>
+              <p>Тел: +7 900 {{ agent.phone }}</p>
               <div class="agent-card-more">
-                <p>{{ agent.more }}</p>
+                <div class="agent-card-more-content">
+                  <p>Области: {{ agent.more }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -101,29 +109,34 @@ export default {
         'Представитель по Казахстану',
       ]
 
-      return [...Array(12).keys()].map((i) => {
+      return [...Array(20).keys()].map((i) => {
         const name = randomstring.generate({
           length: getRandomInt(5, 20),
           charset: 'alphabetic',
         })
+        const getRandomPad = function (width) {
+          const number = getRandomInt(0, Math.pow(10, width) - 1)
+          return new Array(+width + 1 - (number + '').length).join('0') + number
+        }
         const countryIndex = getRandomInt(0, 2)
 
-        const more = Array(getRandomInt(2, 7)).fill('').reduce((acc) => {
-          const word = randomstring.generate({
-            length: getRandomInt(2, 12),
-            charset: 'alphabetic',
-          })
-          console.log(word)
-          return acc + ' ' + word
-        }, '')
-  debugger
+        const more = Array(getRandomInt(3, 12))
+          .fill('')
+          .map(() =>
+            randomstring.generate({
+              length: getRandomInt(2, 12),
+              charset: 'alphabetic',
+            })
+          )
+          .join(' ')
 
         return {
           name,
           country: countryIndex,
           countryText: agentsCountry[countryIndex],
           email: name.toLowerCase() + '@arconit.ru',
-          more: '',
+          phone: `${getRandomPad(3)}-${getRandomPad(4)}`,
+          more,
         }
       })
     },
@@ -159,6 +172,7 @@ export default {
 <style lang="scss" scoped>
 .agents-page {
   position: relative;
+  padding-bottom: 6rem;
   overflow: hidden;
 }
 
@@ -174,7 +188,7 @@ export default {
 
 .agent-card {
   position: relative;
-  padding: 1.5rem 1.5rem 0.75rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   margin: -1.5rem -1.5rem -0.75rem;
   background-color: transparent;
   color: $black;
@@ -183,14 +197,39 @@ export default {
 
   &:hover {
     background-color: lighten($yellow, 35%);
+    z-index: 20;
+    box-shadow: $box-shadow-lg;
+
+    .agent-card-more {
+      display: block;
+    }
+  }
+
+  &-more {
+    display: none;
+    position: relative;
+    overflow: visible;
+
+    &-content {
+      position: absolute;
+      padding: 0 1.5rem 0.75rem;
+      left: -1.5rem;
+      right: -1.5rem;
+      top: 0;
+      background-color: lighten($yellow, 35%);
+    }
+  }
+
+  .u {
+    @include link-underline();
   }
 }
 
 .arconit-symbol {
   position: absolute;
-  width: 65%;
-  top: 10%;
-  left: 45%;
-  opacity: 0.1;
+  width: 60%;
+  top: -5rem;
+  right: -15%;
+  opacity: 0.07;
 }
 </style>
