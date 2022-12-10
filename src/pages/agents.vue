@@ -18,22 +18,23 @@
 
           <div class="agents-list">
             <div
-              v-for="(agent, index) in agentsFiltered"
-              :key="index"
+              v-for="{ node } in agentsFiltered"
+              :key="node.id"
               class="agent-card"
             >
-              <h3 class="agent-title">{{ agent.name }}</h3>
-              <p>{{ agent.countryText }}</p>
-              <p>
+              <h3 class="agent-title">{{ node.title }}</h3>
+              <p v-if="node.city">{{ node.country }}</p>
+              <p v-else>{{ node.text }}</p>
+              <p v-if="node.email">
                 E-mail:
-                <a :href="`mailto:${agent.mail}`" class="u">{{
-                  agent.email
+                <a :href="`mailto:${node.email}`" class="u">{{
+                  node.email
                 }}</a>
               </p>
-              <p>Тел: +7 900 {{ agent.phone }}</p>
+              <p v-if="node.phone">Тел: +7 900 {{ node.phone }}</p>
               <div class="agent-card-more">
                 <div class="agent-card-more-content">
-                  <p>Области: {{ agent.more }}</p>
+                  <p>{{ node.text }}</p>
                 </div>
               </div>
             </div>
@@ -54,13 +55,25 @@ query Page {
     description
     content
   }
+  nodes: allAgent(order: ASC) {
+    edges {
+      node {
+        id
+        title
+        text
+        email
+        phone
+        city
+        country
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
 import ArconitSymbol from '@/components/ArconitSymbol.vue'
 import { BFormRadioGroup } from 'bootstrap-vue'
-import randomstring from 'randomstring'
 
 export default {
   components: {
@@ -81,70 +94,23 @@ export default {
         },
         {
           text: 'Россия',
-          value: 0,
+          value: 'Россия',
         },
         {
           text: 'Беларусь',
-          value: 1,
+          value: 'Беларусь',
         },
         {
           text: 'Казахстан',
-          value: 2,
+          value: 'Казахстан',
         },
       ]
-    },
-
-    /**
-     * Список представителей
-     */
-    agentsList() {
-      const getRandomInt = (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-        return Math.floor(Math.random() * (max - min + 1)) + min
-      }
-      const agentsCountry = [
-        'Представитель по России',
-        'Представитель по Беларуси',
-        'Представитель по Казахстану',
-      ]
-
-      return [...Array(20).keys()].map((i) => {
-        const name = randomstring.generate({
-          length: getRandomInt(5, 20),
-          charset: 'alphabetic',
-        })
-        const getRandomPad = function (width) {
-          const number = getRandomInt(0, Math.pow(10, width) - 1)
-          return new Array(+width + 1 - (number + '').length).join('0') + number
-        }
-        const countryIndex = getRandomInt(0, 2)
-
-        const more = Array(getRandomInt(3, 12))
-          .fill('')
-          .map(() =>
-            randomstring.generate({
-              length: getRandomInt(2, 12),
-              charset: 'alphabetic',
-            })
-          )
-          .join(' ')
-
-        return {
-          name,
-          country: countryIndex,
-          countryText: agentsCountry[countryIndex],
-          email: name.toLowerCase() + '@arconit.ru',
-          phone: `${getRandomPad(3)}-${getRandomPad(4)}`,
-          more,
-        }
-      })
     },
 
     agentsFiltered() {
       return this.countryFilter !== null
-        ? this.agentsList.filter((a) => a.country === this.countryFilter)
-        : this.agentsList
+        ? this.$page.nodes.edges.filter(({ node }) => node.country === this.countryFilter)
+        : this.$page.nodes.edges
     },
   },
 

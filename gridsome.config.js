@@ -245,6 +245,13 @@ module.exports = {
     {
       use: '~/plugins/yaml-array',
       options: {
+        path: `content/agents/${envLocale}.yml`,
+        typeName: 'Agent',
+      },
+    },
+    {
+      use: '~/plugins/yaml-array',
+      options: {
         path: `content/locale/${envLocale}.yml`,
         typeName: 'T',
       },
