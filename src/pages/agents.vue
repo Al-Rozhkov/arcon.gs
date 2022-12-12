@@ -31,7 +31,7 @@
                   node.email
                 }}</a>
               </p>
-              <p v-if="node.phone">Тел: +7 900 {{ node.phone }}</p>
+              <p v-if="node.phone">Тел: {{ node.phone }}</p>
               <div class="agent-card-more">
                 <div class="agent-card-more-content">
                   <p>{{ node.text }}</p>
