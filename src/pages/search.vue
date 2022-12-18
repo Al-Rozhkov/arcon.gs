@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="cnt">
-      <h1>Поиск по сайту</h1>
+      <h1>{{ $page.page.title }}</h1>
 
       <b-form-input
         id="search"
@@ -15,6 +15,17 @@
     </main>
   </Layout>
 </template>
+
+<page-query>
+query Page {
+  page: mdPage(id: "search") {
+    id
+    title
+    description
+    content
+  }
+}
+</page-query>
 
 <script>
 import { BFormInput } from 'bootstrap-vue'
@@ -84,12 +95,17 @@ export default {
 
   metaInfo() {
     return {
-      title: 'Поиск по сайту',
+      title: this.$page.page.title,
       meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.page.excerpt,
+        },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'Поиск по сайту',
+          content: this.$page.page.title,
         },
       ],
     }
