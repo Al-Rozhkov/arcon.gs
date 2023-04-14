@@ -23,8 +23,8 @@
     "vue-lazy-hydration": "^1.0.0-beta.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.6",
-    "@babel/preset-env": "^7.19.4",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-json": "^0.2.1",
@@ -42,7 +42,7 @@
     "jest": "^27.5.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
-    "sass": "^1.56.0",
+    "sass": "^1.62.0",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
     "typograf": "^6.15.1",
