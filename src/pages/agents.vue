@@ -23,7 +23,8 @@
               class="agent-card"
             >
               <h3 class="agent-title">{{ node.title }}</h3>
-              <p v-if="node.city">{{ node.country }}</p>
+              <p>{{ node.text }}</p>
+              <p v-if="node.city">{{ node.city }}</p>
               <p v-else>{{ node.text }}</p>
               <p v-if="node.email">
                 E-mail:
@@ -32,11 +33,6 @@
                 }}</a>
               </p>
               <p v-if="node.phone">Тел: {{ node.phone }}</p>
-              <div class="agent-card-more">
-                <div class="agent-card-more-content">
-                  <p>{{ node.text }}</p>
-                </div>
-              </div>
             </div>
           </div>
         </ClientOnly>
@@ -109,7 +105,7 @@ export default {
 
     agentsFiltered() {
       return this.countryFilter !== null
-        ? this.$page.nodes.edges.filter(({ node }) => node.country === this.countryFilter)
+        ? this.$page.nodes.edges.filter(({ node }) => node.country.includes(this.countryFilter))
         : this.$page.nodes.edges
     },
   },
