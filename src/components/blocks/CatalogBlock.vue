@@ -118,7 +118,7 @@ a.u {
 }
 
 .segment {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 img.ill-img {
@@ -132,7 +132,7 @@ img.ill-img {
   margin: 0 -15px 0 0;
 }
 
-li.li {
+.li {
   padding-right: 1rem;
 }
 
@@ -156,8 +156,9 @@ li.li {
     @include make-col(15);
     order: 1;
   }
-  li.li-half {
-    flex: 0 0 50%;
+
+  .li-half {
+    flex: 0 0 45%;
   }
 }
 

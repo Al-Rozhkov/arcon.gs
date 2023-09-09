@@ -2,7 +2,10 @@
   <footer class="footer" v-once>
     <div class="container">
       <div class="tile-row">
-        <div class="fc col-lg-6" v-html="$static.copyright.value"></div>
+        <div class="fc col-lg-6">
+          © 2015—{{ currentYear }}<br />
+          {{ $static.copyright.value }}
+        </div>
 
         <div class="w-100 col-lg-6" v-html="$static.address.value"></div>
 
@@ -27,6 +30,16 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    }
+  }
+}
+</script>
 
 <static-query>
 query {
