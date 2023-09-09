@@ -1,0 +1,14 @@
+{
+  "id": "multifunctional",
+  "title": "Многофункциональный инструмент",
+  "type": "end-mills",
+  "weight": 5,
+  "i18n": {
+    "ru-ru": {
+      "title": "Многофункциональный инструмент"
+    },
+    "en-en": {
+      "title": "Multipurpose tool"
+    }
+  }
+}

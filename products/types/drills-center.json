@@ -1,0 +1,14 @@
+{
+  "id": "drills-center",
+  "title": "Сверла центровочные",
+  "type": "drills",
+  "weight": 1,
+  "i18n": {
+    "ru-ru": {
+      "title": "Сверла центровочные"
+    },
+    "en-en": {
+      "title": "Center drills"
+    }
+  }
+}

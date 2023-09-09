@@ -7,8 +7,8 @@ backend:
   auth_endpoint: /api/cms/auth
 
 locale: 'ru'
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: 'static/uploads'
+public_folder: '/uploads'
 publish_mode: editorial_workflow
 
 collections:
@@ -18,28 +18,52 @@ collections:
     extension: "json"
     folder: "products/types/ru-ru"
     create: true
-    slug: "{{id}}"
+    identifier_field: id
+    slug: '{{id}}'
     fields:
-      - &fieldId {label: "Идентификатор", name: "id", widget: "string"}
-      - &fieldTitle {label: "Заголовок", name: "title", widget: "string"}
-      - label: "Группа"
-        name: "type"
-        widget: "select"
+      - &fieldId { label: 'Идентификатор', name: 'id', widget: 'string' }
+      - &fieldTitle { label: 'Заголовок', name: 'title', widget: 'string' }
+      - label: 'Группа'
+        name: 'type'
+        widget: 'select'
         options:
-          - {label: "Сверла", value: "drills"}
-          - {label: "Концевые фрезы", value: "end-mills"}
-          - {label: "Резьбовые фрезы", value: "thread-mills"}
-      - &fieldWeight {label: "Порядковый номер", name: "weight", hint: "Влияет на порядок отображения элемента в списках.", widget: "number", valueType: "int", min: 1}
+          - { label: 'Сверла', value: 'drills' }
+          - { label: 'Концевые фрезы', value: 'end-mills' }
+          - { label: 'Резьбовые фрезы', value: 'thread-mills' }
+      - &fieldWeight {
+          label: 'Порядковый номер',
+          name: 'weight',
+          hint: 'Влияет на порядок отображения элемента в списках.',
+          widget: 'number',
+          value_type: 'int',
+          min: 1,
+        }
+      - label: 'Языковые версии'
+        name: 'i18n'
+        widget: object
+        fields:
+          - label: 'Русский'
+            name: 'ru-ru'
+            widget: object
+            summary: '{{fields.title}}'
+            fields:
+              - *fieldTitle
+          - label: 'English'
+            name: 'en-en'
+            widget: object
+            collapsed: true
+            summary: '{{fields.title}}'
+            fields:
+              - *fieldTitle
 
-  - name: "news_ru"
-    label: "Новости (РУС)"
-    label_singular: "Новость (РУС)"
-    extension: "md"
-    folder: "content/news/ru-ru"
+  - name: 'news_ru'
+    label: 'Новости (РУС)'
+    label_singular: 'Новость (РУС)'
+    extension: 'md'
+    folder: 'content/news/ru-ru'
     create: true
-    path: "{{year}}/{{month}}"
-    media_folder: ""
-    public_folder: ""
+    path: '{{year}}/{{month}}'
+    media_folder: '/content/news/img'
     fields:
       - *fieldTitle
       - &fieldNoPage {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
@@ -63,30 +87,66 @@ collections:
       - *fieldDate
       - *fieldMarkdown
 
-  - name: "services"
-    label: "Услуги"
-    label_singular: "Услуга"
-    extension: "md"
-    folder: "content/services/ru-ru"
-    slug: "{{id}}"
+  - name: 'services_ru'
+    label: 'Услуги (РУС)'
+    label_singular: 'Услуга'
+    extension: 'md'
+    folder: 'content/services/ru-ru'
+    slug: '{{id}}'
     create: true
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldTitle
-      - &fieldDescription {label: "Мета-тег description", name: "description", hint: "Используется поисковыми системами.", widget: "text"}
-      - &fieldTeaser {label: "Анонс", name: "teaser", hint: "Отображается как короткое описание в списках.", widget: "text"}
+      - &fieldDescription
+        label: 'Мета-тег description'
+        name: 'description'
+        hint: 'Используется поисковыми системами.'
+        widget: 'text'
+      - &fieldTeaser
+        label: 'Анонс'
+        name: 'teaser'
+        hint: 'Отображается как короткое описание в списках.'
+        widget: 'text'
       - *fieldWeight
       - *fieldMarkdown
 
-  - name: "techs"
-    label: "Технологии"
-    label_singular: "Технология"
-    extension: "md"
-    folder: "content/tech/ru-ru"
+  - name: 'services_en'
+    label: 'Услуги (EN)'
+    label_singular: 'Услуга'
+    extension: 'md'
+    folder: 'content/services/en-en'
+    slug: '{{id}}'
     create: true
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - *fieldTitle
+      - *fieldDescription
+      - *fieldTeaser
+      - *fieldWeight
+      - *fieldMarkdown
+
+  - name: 'techs_ru'
+    label: 'Технологии (РУС)'
+    label_singular: 'Технология'
+    extension: 'md'
+    folder: 'content/tech/ru-ru'
+    create: true
+    media_folder: '/content/tech'
+    fields:
+      - *fieldTitle
+      - *fieldWeight
+      - *fieldImage
+      - *fieldMarkdown
+
+  - name: 'techs_en'
+    label: 'Технологии (EN)'
+    label_singular: 'Технология'
+    extension: 'md'
+    folder: 'content/tech/en-en'
+    create: true
+    media_folder: '/content/tech'
     fields:
       - *fieldTitle
       - *fieldWeight
@@ -108,160 +168,187 @@ collections:
   #     - *fieldWeight
   #     - *fieldMarkdown
 
-  - name: "end-mills"
-    label: "Серии фрез"
-    extension: "json"
-    folder: "products/series/end-mills"
-    path: "{{product}}/{{slug}}"
+  - name: 'end-mills'
+    label: 'Серии фрез'
+    extension: 'json'
+    folder: 'products/series/end-mills'
+    path: '{{product}}/{{slug}}'
     create: true
     # slug: "{{id}}"
     identifier_field: id
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldId
-      - &fieldBody {label: "Описание", name: "body", widget: "text"}
-      - &fieldRelativePhotos
-        label: "Фотографии"
-        name: "photos"
-        widget: list
-        field: {label: Изображение, name: image, widget: image}
-      - &fieldScheme
-        label: "Схема"
-        name: "scheme"
-        widget: "list"
+      - &fieldSeriesContent
+        label: 'Языковые версии'
+        name: 'i18n'
+        widget: object
         fields:
-          - {label: "Обозначение", name: "name", widget: string, default: "a"}
-          - {label: "Схема", name: "scheme", widget: string}
+          - label: 'Русский'
+            name: 'ru-ru'
+            widget: object
+            fields:
+              - &fieldContent {
+                  label: 'Описание',
+                  name: 'content',
+                  widget: 'text',
+                }
+          - label: 'English'
+            name: 'en-en'
+            widget: object
+            collapsed: true
+            fields:
+              - *fieldContent
+      - &fieldRelativePhotos
+        label: 'Фотографии'
+        name: 'photos'
+        widget: list
+        field: { label: Изображение, name: image, widget: image }
+      - &fieldScheme
+        label: 'Схема'
+        name: 'scheme'
+        widget: 'list'
+        fields:
+          - { label: 'Обозначение', name: 'name', widget: string, default: 'a' }
+          - { label: 'Схема', name: 'scheme', widget: string }
       - &fieldProductType
-        label: "Тип инструмента"
-        name: "type"
-        widget: "relation"
-        collection: "types"
-        valueField: "id"
-        searchFields: ["id", "title"]
-        displayFields: ["title"]
-      - {label: "Серия Fusion", name: "fusion", widget: "boolean", default: false, required: false}
+        label: 'Тип инструмента'
+        name: 'type'
+        widget: 'relation'
+        collection: 'types'
+        value_field: 'id'
+        search_fields: ['id', 'title']
+        display_fields: ['title']
+      - label: 'Серия Fusion'
+        name: 'fusion'
+        widget: 'boolean'
+        default: false
+        required: false
       - &fieldMainUsage
-        label: "Основное применение"
-        name: "mainUsage"
-        widget: "select"
+        label: 'Основное применение'
+        name: 'mainUsage'
+        widget: 'select'
         multiple: true
         options: &usageOptions
-          - {label: "Углеродистая и легированная сталь", value: "p"}
-          - {label: "Чугун", value: "k"}
-          - {label: "Нержавеющая сталь", value: "m"}
-          - {label: "Закаленная сталь до 70HR", value: "h"}
-          - {label: "Закаленная сталь до 55HRC", value: "h1.1"}
-          - {label: "Закаленная сталь свыше 55HRC", value: "h1.2"}
-          - {label: "Цветные металлы", value: "n"}
-          - {label: "Сплавы на основе алюминия", value: "n1"}
-          - {label: "Сплавы на основе меди", value: "n3"}
-          - {label: "Суперсплавы и титан (жаропрочные сплавы)", value: "s"}
+          - { label: 'Углеродистая и легированная сталь', value: 'p' }
+          - { label: 'Чугун', value: 'k' }
+          - { label: 'Нержавеющая сталь', value: 'm' }
+          - { label: 'Закаленная сталь до 70HR', value: 'h' }
+          - { label: 'Закаленная сталь до 55HRC', value: 'h1.1' }
+          - { label: 'Закаленная сталь свыше 55HRC', value: 'h1.2' }
+          - { label: 'Цветные металлы', value: 'n' }
+          - { label: 'Сплавы на основе алюминия', value: 'n1' }
+          - { label: 'Сплавы на основе меди', value: 'n3' }
+          - { label: 'Суперсплавы и титан (жаропрочные сплавы)', value: 's' }
       - &fieldPossibleUsage
-        label: "Возможное применение"
-        name: "possibleUsage"
-        widget: "select"
+        label: 'Возможное применение'
+        name: 'possibleUsage'
+        widget: 'select'
         required: false
         multiple: true
         options: *usageOptions
-      - label: "Допуск на радиус"
-        name: "allowanceRadius"
+      - label: 'Допуск на радиус'
+        name: 'allowanceRadius'
         required: false
-        widget: "text"
+        widget: 'text'
       - &fieldCoating
-        label: "Покрытие"
-        name: "coating"
-        widget: "select"
+        label: 'Покрытие'
+        name: 'coating'
+        widget: 'select'
         required: false
         options:
-          - {label: "nACo-G", value: "ng"}
-          - {label: "TiAlN", value: "tan"}
-          - {label: "TiN", value: "tin"}
-          - {label: "PurePolish (полировка)", value: "pp"}
+          - { label: 'nACo-G', value: 'ng' }
+          - { label: 'TiAlN', value: 'tan' }
+          - { label: 'TiN', value: 'tin' }
+          - { label: 'PurePolish (полировка)', value: 'pp' }
       - &fieldTail
-        label: "Хвостовик"
-        name: "tail"
-        widget: "select"
+        label: 'Хвостовик'
+        name: 'tail'
+        widget: 'select'
         required: false
-        default: "cylinder"
+        default: 'cylinder'
         options:
-          - { label: "Цилиндрический", value: "cylinder" }
-          - { label: "Weldon", value: "weldon" }
-      - label: "Форма торца"
-        name: "endShapes"
-        widget: "select"
+          - { label: 'Цилиндрический', value: 'cylinder' }
+          - { label: 'Weldon', value: 'weldon' }
+      - label: 'Форма торца'
+        name: 'endShapes'
+        widget: 'select'
         required: false
         multiple: true
         options:
-          - { label: "Торец без фаски, наостро", value: "rect-sharp" }
-          - { label: "Торец с притуплением", value: "rect-r" }
-          - { label: "Торец с фаской chх45˚", value: "rect-f" }
-          - { label: "Радиусной торец", value: "radius" }
-          - { label: "Сферический торец", value: "sphere" }
+          - { label: 'Торец без фаски, наостро', value: 'rect-sharp' }
+          - { label: 'Торец с притуплением', value: 'rect-r' }
+          - { label: 'Торец с фаской chх45˚', value: 'rect-f' }
+          - { label: 'Радиусной торец', value: 'radius' }
+          - { label: 'Сферический торец', value: 'sphere' }
       - &fieldCuttingShapes
-        label: "Форма режущей части"
-        name: "cuttingShapes"
-        widget: "select"
+        label: 'Форма режущей части'
+        name: 'cuttingShapes'
+        widget: 'select'
         required: false
         multiple: true
         options:
-          - { label: "Конус", value: "conus" }
-          - { label: "Конус и цилиндр", value: "conus-cylinder" }
-          - { label: "С внутренним радиусом", value: "inner-radius" }
-          - { label: "Т-образная режущая часть", value: "t" }
+          - { label: 'Конус', value: 'conus' }
+          - { label: 'Конус и цилиндр', value: 'conus-cylinder' }
+          - { label: 'С внутренним радиусом', value: 'inner-radius' }
+          - { label: 'Т-образная режущая часть', value: 't' }
       - &fieldCogsNumber
-        label: "Количество зубьев"
-        name: "cogsNumber"
-        widget: "list"
-        valueType: "int"
-        hint: "Если значений несколько, укажите их через запятую."
+        label: 'Количество зубьев'
+        name: 'cogsNumber'
+        widget: 'list'
+        value_type: 'int'
+        hint: 'Если значений несколько, укажите их через запятую.'
         min: 1
       - &fieldCogsPitch
-        label: "Шаг зубьев"
-        name: "cogsPitch"
-        widget: "select"
-        default: "variable"
+        label: 'Шаг зубьев'
+        name: 'cogsPitch'
+        widget: 'select'
+        default: 'variable'
         options:
-        - { label: "Постоянный", value: "permanent" }
-        - { label: "Переменный", value: "variable" }
+          - { label: 'Постоянный', value: 'permanent' }
+          - { label: 'Переменный', value: 'variable' }
       - &fieldCogsCuttingCenter
-        label: "Без режущего центра"
-        name: "noCuttingCenter"
-        widget: "boolean"
+        label: 'Без режущего центра'
+        name: 'noCuttingCenter'
+        widget: 'boolean'
         default: false
         required: false
       - &fieldGrooveInclination
-        label: "Угол наклона спиральной канавки"
-        name: "grooveInclination"
-        hint: "Если значений несколько, укажите их через запятую."
+        label: 'Угол наклона спиральной канавки'
+        name: 'grooveInclination'
+        hint: 'Если значений несколько, укажите их через запятую.'
         required: false
-        widget: "list"
+        widget: 'list'
       - &fieldcuttingEdgeLength
-        label: "Длина режущей части"
-        name: "cuttingEdgeLength"
-        widget: "select"
+        label: 'Длина режущей части'
+        name: 'cuttingEdgeLength'
+        widget: 'select'
         required: false
         multiple: true
         options:
-          - { label: "Короткая", value: "short" }
-          - { label: "Средняя", value: "middle" }
-          - { label: "Длинная", value: "long" }
-      - &fieldProductSeriesSet {label: "Набор параметров", name: "productSeriesSet", widget: "string"}
+          - { label: 'Короткая', value: 'short' }
+          - { label: 'Средняя', value: 'middle' }
+          - { label: 'Длинная', value: 'long' }
+      - &fieldProductSeriesSet {
+          label: 'Набор параметров',
+          name: 'productSeriesSet',
+          widget: 'string',
+        }
 
-  - name: "drills"
-    label: "Серии сверл"
-    extension: "json"
-    folder: "products/series/drills"
-    path: "{{productCategory}}/{{slug}}"
+  - name: 'drills'
+    label: 'Серии сверл'
+    extension: 'json'
+    folder: 'products/series/drills'
+    path: '{{productCategory}}/{{slug}}'
     create: true
     # slug: "{{id}}"
     identifier_field: id
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldId
-      - *fieldBody
+      - *fieldSeriesContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
@@ -269,34 +356,34 @@ collections:
       - *fieldPossibleUsage
       - *fieldCoating
       - *fieldTail
-      - label: "Угол заточки"
-        name: "sharpeningAngle"
-        hint: "Если значений несколько, укажите их через запятую."
+      - label: 'Угол заточки'
+        name: 'sharpeningAngle'
+        hint: 'Если значений несколько, укажите их через запятую.'
         required: false
-        widget: "list"
+        widget: 'list'
       - *fieldCogsNumber
       - *fieldCogsPitch
       - *fieldCogsCuttingCenter
       - *fieldGrooveInclination
       - *fieldcuttingEdgeLength
-      - label: "Длина"
-        name: "toolLength"
+      - label: 'Длина'
+        name: 'toolLength'
         required: false
-        widget: "text"
+        widget: 'text'
       - *fieldProductSeriesSet
 
-  - name: "thread-mills"
-    label: "Серии резьбовых фрез"
-    extension: "json"
-    folder: "products/series/thread-mills"
+  - name: 'thread-mills'
+    label: 'Серии резьбовых фрез'
+    extension: 'json'
+    folder: 'products/series/thread-mills'
     create: true
     # slug: "{{id}}"
     identifier_field: id
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     fields:
       - *fieldId
-      - *fieldBody
+      - *fieldSeriesContent
       - *fieldRelativePhotos
       - *fieldScheme
       - *fieldProductType
@@ -305,11 +392,11 @@ collections:
       - *fieldTail
       - *fieldCuttingShapes
       - *fieldProductSeriesSet
-      - label: "Профиль"
-        name: "toolProfile"
+      - label: 'Профиль'
+        name: 'toolProfile'
         required: false
-        widget: "text"
-      - label: "Для формирования резьбы"
-        name: "toolForming"
+        widget: 'text'
+      - label: 'Для формирования резьбы'
+        name: 'toolForming'
         required: false
-        widget: "text"
+        widget: 'text'

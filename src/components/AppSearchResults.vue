@@ -45,8 +45,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/../node_modules/bootstrap/scss/list-group';
-
 .badge {
   display: inline-block;
   padding: $badge-padding-y $badge-pill-padding-x;

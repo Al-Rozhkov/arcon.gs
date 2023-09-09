@@ -1,0 +1,14 @@
+{
+  "id": "end-mills",
+  "title": "Фрезы концевые",
+  "type": "end-mills",
+  "weight": 3,
+  "i18n": {
+    "ru-ru": {
+      "title": "Фрезы концевые"
+    },
+    "en-en": {
+      "title": "End mills"
+    }
+  }
+}
