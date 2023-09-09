@@ -4,14 +4,20 @@
       <series-page-header :node="$page.series" />
       
       <series-page-tabs :id="$page.series.id" />
-      
-      <series-page-tools :node="$page.series" :tools="$page.tools" />
+
+      <div>
+        <h2>Режимы обработки уступа</h2>
+        <series-cutting-modes />
+
+        <h2>Режимы обработки паза</h2>
+        <series-cutting-modes :ledges="false" />
+      </div>
     </main>
   </page-layout>
 </template>
 
 <page-query>
-query EndMill($path: String, $id: String!) {
+query EndMill($path: String) {
   series: productEndMill(path: $path) {
     title
     keywords
@@ -53,31 +59,6 @@ query EndMill($path: String, $id: String!) {
       set
     }
   }
-  tools: allProductItemEndMill(
-    filter: { series: { eq: $id } }
-    sortBy: "id"
-    order: ASC
-  ) {
-    edges {
-      node {
-        id
-        series
-        name
-        d1
-        d2
-        d3
-        r
-        f45
-        l1
-        l2
-        ap
-        z
-        form
-        tip
-        range
-      }
-    }
-  }
 }
 </page-query>
 
@@ -85,19 +66,19 @@ query EndMill($path: String, $id: String!) {
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
 import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
-import SeriesPageTools from '~/components/catalog/SeriesPageTools.vue'
+import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
 
 export default {
   components: {
     PageLayout,
     SeriesPageHeader,
     SeriesPageTabs,
-    SeriesPageTools,
+    SeriesCuttingModes,
   },
 
   metaInfo() {
     const title = this.$page.series.title
-    
+
     return {
       title,
       meta: [

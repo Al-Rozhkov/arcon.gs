@@ -1,136 +1,3 @@
-<script>
-import LazyHydrate from 'vue-lazy-hydration'
-
-import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
-import SvgIcon from '~/components/catalog/SvgFeatureIcon'
-import MaterialIcon from '~/components/catalog/MaterialIcon'
-import IconPrinter from '~/components/IconPrinter'
-import ProductItemsTable from '~/components/catalog/ProductItemsTable'
-import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
-
-export default {
-  components: {
-    LazyHydrate,
-    SvgPlainIcon,
-    SvgIcon,
-    MaterialIcon,
-    IconPrinter,
-    ProductItemsTable,
-    SeriesCuttingModes,
-  },
-
-  props: {
-    node: {
-      type: Object,
-      required: true,
-    },
-
-    tools: {
-      type: Object,
-      required: true,
-    },
-  },
-
-  data() {
-    return {
-      highlightedTool: null,
-    }
-  },
-
-  computed: {
-    schemes() {
-      if (this.highlightedTool) {
-        const schemeItem = this.node.scheme.find(
-          (n) => n.name.toUpperCase() === this.highlightedTool.form
-        )
-        if (schemeItem)
-          return [() => import(`@/components/scheme/${schemeItem.scheme}`)]
-      }
-      return this.node.scheme.map((node) => {
-        return () => import(`@/components/scheme/${node.scheme}`)
-      })
-    },
-
-    getShankLabel() {
-      return {
-        cylinder: this.$static.tShankCylindrical.value.toLowerCase(),
-        weldon: this.$static.tShankWeldon.value.toLowerCase(),
-      }[this.node.tail]
-    },
-
-    getCogsSpacingLabel() {
-      return {
-        permanent: this.$static.tConstantSpacing.value.toLowerCase(),
-        variable: this.$static.tDifferentialSpacing.value.toLowerCase(),
-      }[this.node.cogsPitch]
-    },
-
-    getCogsCenterLabel() {
-      return this.node.cogsCuttingCenter
-        ? this.$static.tNoCuttingCenter.value.toLowerCase()
-        : this.$static.tCuttingCenter.value.toLowerCase()
-    },
-
-    pageSelectedTool() {
-      const tool = this.$route.query.tool
-      return tool &&
-        this.tools.edges.findIndex(
-          ({ node }) => node.id == this.$route.query.tool
-        ) !== -1
-        ? tool
-        : false
-    },
-
-    pageMode() {
-      return this.$route.query.cutting_modes
-        ? 'cutting-modes'
-        : this.pageSelectedTool
-        ? 'tool'
-        : 'tools-list'
-    },
-  },
-
-  methods: {
-    getCogsNumberLabel(s) {
-      const number = parseInt(s, 10)
-      if (number === 1) {
-        return `1 ${this.$static.tTooth1.value}`
-      }
-      if (number > 1 && number < 5) {
-        return `${number} ${this.$static.tTeeth4.value}`
-      }
-      if (number >= 5) {
-        return `${number} ${this.$static.tTeethN.value}`
-      }
-    },
-
-    onRowHighlight(payload) {
-      this.highlightedTool = payload
-    },
-
-    printIt() {
-      if (window) window.print()
-    },
-
-    switchPage(query) {
-      if (!query) {
-        const item =
-          this.tools.edges[Math.floor(Math.random() * this.tools.edges.length)]
-        query = { tool: item.node.id }
-      }
-      this.$router.push({
-        path: this.$route.path,
-        query,
-      })
-    },
-  },
-
-  mounted() {
-    // console.log(this.$route)
-  },
-}
-</script>
-
 <template>
   <div class="page">
     <LazyHydrate when-idle>
@@ -300,59 +167,127 @@ export default {
     </LazyHydrate>
     <!-- End of Page Header -->
 
-    <ClientOnly>
-      <div class="page-body">
-        <ul class="menu">
-          <li class="menu-link" @click="switchPage({})">
-            <span class="menu-link__dashed">Все инструменты серии</span>
-          </li>
-          <li class="menu-link" @click="switchPage({ cutting_modes: true })">
-            <span class="menu-link__dashed">Режимы резания</span>
-          </li>
-          <!-- <li class="menu-link" @click="switchPage()">
-            <span class="menu-link__dashed">Произвольный инструмент</span>
-          </li> -->
-        </ul>
-
-        <!-- Product items table (default view) -->
-        <div v-if="pageMode === 'tools-list'" class="tools">
-          <div class="schemes">
-            <Component
-              v-for="(scheme, i) in schemes"
-              :key="i"
-              :is="scheme"
-              class="svg-scheme"
-              :tool="highlightedTool"
-            >
-            </Component>
-          </div>
-
-          <product-items-table
-            :fields-set="
-              node.productSeriesSet ? node.productSeriesSet.set : undefined
-            "
-            :tools="tools.edges"
-            @highlight="onRowHighlight"
-            class="product-items"
-          />
-        </div>
-
-        <!-- Selected product item view -->
-        <div v-if="pageMode === 'cutting-modes'" class="cutting-modes">
-          <h2>Режимы обработки уступа</h2>
-          <series-cutting-modes />
-          <h2>Режимы обработки паза</h2>
-          <series-cutting-modes :ledges="false" />
-        </div>
-
-        <!-- Cutting modes view -->
-        <div v-if="pageMode === 'tool'">
-          <h2>Страница инструмента {{ pageSelectedTool }}</h2>
-        </div>
+    <!-- Product items table (default view) -->
+    <div class="tools">
+      <div class="schemes">
+        <Component
+          v-for="(scheme, i) in schemes"
+          :key="i"
+          :is="scheme"
+          class="svg-scheme"
+          :tool="highlightedTool"
+        >
+        </Component>
       </div>
-    </ClientOnly>
+
+      <product-items-table
+        :fields-set="
+          node.productSeriesSet ? node.productSeriesSet.set : undefined
+        "
+        :tools="tools.edges"
+        @highlight="onRowHighlight"
+        class="product-items"
+      />
+    </div>
   </div>
 </template>
+
+<script>
+import LazyHydrate from 'vue-lazy-hydration'
+
+import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
+import SvgIcon from '~/components/catalog/SvgFeatureIcon'
+import MaterialIcon from '~/components/catalog/MaterialIcon'
+import IconPrinter from '~/components/IconPrinter'
+import ProductItemsTable from '~/components/catalog/ProductItemsTable'
+
+export default {
+  components: {
+    LazyHydrate,
+    SvgPlainIcon,
+    SvgIcon,
+    MaterialIcon,
+    IconPrinter,
+    ProductItemsTable,
+  },
+
+  props: {
+    node: {
+      type: Object,
+      required: true,
+    },
+
+    tools: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      highlightedTool: null,
+    }
+  },
+
+  computed: {
+    schemes() {
+      if (this.highlightedTool) {
+        const schemeItem = this.node.scheme.find(
+          (n) => n.name.toUpperCase() === this.highlightedTool.form
+        )
+        if (schemeItem)
+          return [() => import(`@/components/scheme/${schemeItem.scheme}`)]
+      }
+      return this.node.scheme.map((node) => {
+        return () => import(`@/components/scheme/${node.scheme}`)
+      })
+    },
+
+    getShankLabel() {
+      return {
+        cylinder: this.$static.tShankCylindrical.value.toLowerCase(),
+        weldon: this.$static.tShankWeldon.value.toLowerCase(),
+      }[this.node.tail]
+    },
+
+    getCogsSpacingLabel() {
+      return {
+        permanent: this.$static.tConstantSpacing.value.toLowerCase(),
+        variable: this.$static.tDifferentialSpacing.value.toLowerCase(),
+      }[this.node.cogsPitch]
+    },
+
+    getCogsCenterLabel() {
+      return this.node.cogsCuttingCenter
+        ? this.$static.tNoCuttingCenter.value.toLowerCase()
+        : this.$static.tCuttingCenter.value.toLowerCase()
+    },
+  },
+
+  methods: {
+    getCogsNumberLabel(s) {
+      const number = parseInt(s, 10)
+      if (number === 1) {
+        return `1 ${this.$static.tTooth1.value}`
+      }
+      if (number > 1 && number < 5) {
+        return `${number} ${this.$static.tTeeth4.value}`
+      }
+      if (number >= 5) {
+        return `${number} ${this.$static.tTeethN.value}`
+      }
+    },
+
+    onRowHighlight(payload) {
+      this.highlightedTool = payload
+    },
+
+    printIt() {
+      if (window) window.print()
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .page-header {

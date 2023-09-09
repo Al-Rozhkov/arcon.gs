@@ -318,7 +318,17 @@ module.exports = {
   //
   templates: {
     ProductCategory: '/catalog/:type/category/:id',
-    ProductEndMill: '/catalog/end-mills/:id',
+    ProductEndMill: [
+      {
+        path: '/catalog/end-mills/:id',
+        component: './src/templates/ProductEndMill.vue'
+      },
+      {
+        name: 'cuttingModes',
+        path: '/catalog/end-mills/:id/modes',
+        component: './src/templates/ProductEndMill-CuttingModes.vue'
+      }
+    ],
     ProductDrill: '/catalog/drills/:id',
     ProductThreadMill: '/catalog/thread-mills/:id',
     News: '/news/:year/:title',
