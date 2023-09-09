@@ -1,7 +1,9 @@
 <template>
   <page-layout>
     <main class="container">
-      <series-page :node="$page.series" :tools="$page.tools" />
+      <series-page-header :node="$page.series" />
+      
+      <series-page-tools :node="$page.series" :tools="$page.tools" />
     </main>
   </page-layout>
 </template>
@@ -70,12 +72,14 @@ query TreadMill($path: String, $id: String!) {
 
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
-import SeriesPage from '~/components/catalog/SeriesPage.vue'
+import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
+import SeriesPageTools from '~/components/catalog/SeriesPageTools.vue'
 
 export default {
   components: {
     PageLayout,
-    SeriesPage,
+    SeriesPageHeader,
+    SeriesPageTools
   },
 
   metaInfo() {
