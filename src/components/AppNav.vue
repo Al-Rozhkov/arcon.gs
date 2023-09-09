@@ -1,6 +1,6 @@
 <template>
   <div class="nav-header">
-    <nav class="nav">
+    <nav class="nav container-xl">
       <g-link class="a logo-link" to="/" exact>
         <app-logo id="arconit-logo" width="140" />
       </g-link>
@@ -46,7 +46,11 @@
 
 <static-query>
 query Menu {
-  menu: allMenu(filter: { parent: { eq: null } }, sortBy: "weight", order: ASC) {
+  menu: allMenu(
+    filter: { parent: { eq: null } }
+    sortBy: "weight"
+    order: ASC
+  ) {
     edges {
       node {
         id
@@ -95,9 +99,8 @@ export default {
 }
 
 .nav {
-  @extend %grid-row-wrap;
-  @extend %container-xl;
-
+  display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   padding-top: 0.5rem;
 }
@@ -117,7 +120,6 @@ export default {
 }
 
 .li {
-  margin-right: 1.5rem;
   margin-top: 0.5rem;
   padding: 0;
 }
@@ -201,6 +203,7 @@ export default {
     margin-left: auto;
   }
 }
+
 @include media-breakpoint-up(xl) {
   .menu {
     flex: auto;

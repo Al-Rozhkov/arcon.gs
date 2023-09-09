@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <div class="contact-page">
-      <main class="cnt">
-        <h1>{{ $page.page.title }}</h1>
+      <main class="container">
+        <h1 class="page-title">{{ $page.page.title }}</h1>
 
-        <div class="text-body" v-html="$page.page.content"></div>
+        <div class="page-content" v-html="$page.page.content"></div>
       </main>
 
       <arconit-symbol class="arconit-symbol" />

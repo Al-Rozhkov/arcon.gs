@@ -1,19 +1,19 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <front-hero />
       <front-news />
       <catalog-block />
     </main>
 
     <section class="bg-gray-100">
-      <div class="cnt">
+      <div class="container">
         <front-advantages />
       </div>
     </section>
 
     <section class="services-wrapper">
-      <div class="cnt">
+      <div class="container">
         <div class="tile-row">
           <div class="col-lg-6">
             <h2 class="h2-blind">{{ $page.services.value }}</h2>
@@ -43,7 +43,7 @@ query {
 </page-query>
 
 <script>
-import { hydrateSsrOnly, hydrateWhenIdle } from 'vue-lazy-hydration'
+import { hydrateNever, hydrateWhenIdle } from 'vue-lazy-hydration'
 
 export default {
   components: {
@@ -53,7 +53,7 @@ export default {
     FrontAdvantages: hydrateWhenIdle(() =>
       import('~/components/blocks/FrontAdvantages.vue')
     ),
-    FrontServices: hydrateSsrOnly(() =>
+    FrontServices: hydrateNever(() =>
       import('~/components/blocks/FrontServices.vue')
     ),
     FrontNews: hydrateWhenIdle(() =>
@@ -87,15 +87,16 @@ export default {
 
 <style lang="scss" scoped>
 @include media-breakpoint-up(lg) {
+  .h2-blind {
+    font-size: 4rem;
+    color: $gray-200;
+    padding-top: 1rem;
+  }
+
   .services-wrapper:hover {
     .h2-blind {
       color: $gray-400;
     }
-  }
-
-  .h2-blind {
-    font-size: 4rem;
-    color: $gray-200;
   }
 }
 </style>

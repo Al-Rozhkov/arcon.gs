@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <main class="cnt">
-      <h1>{{ $page.newsTitle.value }}</h1>
+    <main class="container">
+      <h1 class="page-title">{{ $page.newsTitle.value }}</h1>
       <div class="news-page">
         <div v-for="(node, index) in $page.news.edges" :key="index" class="col">
           <news-teaser :node="node.node" />
@@ -13,15 +13,26 @@
 
 <page-query>
 query RecentNews {
-  news: allNews(filter: { nopage: { ne: true }}, limit: 36, sortBy: "date", order: DESC) {
-    edges{
+  news: allNews(
+    filter: { nopage: { ne: true } }
+    limit: 36
+    sortBy: "date"
+    order: DESC
+  ) {
+    edges {
       node {
         id
         path
         content
         title
         localeDate
-        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
+        image(
+          width: 275
+          height: 160
+          fit: contain
+          background: "#ffffff"
+          quality: 100
+        )
       }
     }
   }
@@ -48,24 +59,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  margin-bottom: 3rem;
+}
+
 .news-page {
-  @extend %grid-row-wrap;
-  @include make-grid-gutter();
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 15px;
   margin-bottom: 40px;
 }
 
 .col {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 @include media-breakpoint-up(md) {
+  .news-page {
+    gap: 30px;
+  }
+
   .col {
-    @include make-col(12);
+    grid-column: span 6;
   }
 }
 @include media-breakpoint-up(lg) {
   .col {
-    @include make-col(6);
+    grid-column: span 3;
   }
 }
 </style>

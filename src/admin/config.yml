@@ -12,11 +12,11 @@ public_folder: '/uploads'
 publish_mode: editorial_workflow
 
 collections:
-  - name: 'types'
-    label: 'Типы инструмента'
-    label_singular: 'Тип'
-    extension: 'json'
-    folder: 'products/types'
+  - name: "types"
+    label: "Типы инструмента"
+    label_singular: "Тип"
+    extension: "json"
+    folder: "products/types/ru-ru"
     create: true
     identifier_field: id
     slug: '{{id}}'
@@ -66,35 +66,26 @@ collections:
     media_folder: '/content/news/img'
     fields:
       - *fieldTitle
-      - &fieldImage { label: 'Изображение', name: 'image', widget: 'image' }
-      - &fieldDate
-        label: 'Дата'
-        name: 'date'
-        widget: 'datetime'
-        format: 'YYYY-MM-DD'
-        date_format: 'DD.MM.YYYY'
-        time_format: false
-      - &fieldMarkdown { label: 'Текст', name: 'body', widget: 'markdown' }
-      - &fieldNoPage
-        label: 'Без отдельной страницы'
-        name: 'nopage'
-        widget: 'boolean'
-        default: false
+      - &fieldNoPage {label: "Без отдельной страницы", name: "nopage", widget: "boolean", default: false}
+      - &fieldImage {label: "Изображение", name: "image", widget: "image"}
+      - &fieldDate {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "DD.MM.YYYY", timeFormat: false}
+      - &fieldMarkdown {label: "Текст", name: "body", widget: "markdown"}
 
-  - name: 'news_en'
-    label: 'Новости (ENG)'
-    label_singular: 'Новость (ENG)'
-    extension: 'md'
-    folder: 'content/news/en-en'
+  - name: "news_en"
+    label: "Новости (ENG)"
+    label_singular: "Новость (ENG)"
+    extension: "md"
+    folder: "content/news/en-en"
     create: true
-    path: '{{year}}/{{month}}'
-    media_folder: '/content/news/img'
+    path: "{{year}}/{{month}}"
+    media_folder: ""
+    public_folder: ""
     fields:
       - *fieldTitle
+      - *fieldNoPage
       - *fieldImage
       - *fieldDate
       - *fieldMarkdown
-      - *fieldNoPage
 
   - name: 'services_ru'
     label: 'Услуги (РУС)'

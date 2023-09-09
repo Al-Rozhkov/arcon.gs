@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <main class="cnt">
-      <h1>{{ $page.page.title }}</h1>
+    <main class="container">
+      <h1 class="page-title">{{ $page.page.title }}</h1>
 
       <section class="tile-root">
         <div class="tile-row">
@@ -30,7 +30,7 @@
           </app-menu>
         </aside>
 
-        <div class="col-md-18 text-body pb">
+        <div class="col-md-18 page-content pb">
           <section
             v-for="({ node }, index) in $page.tech.edges"
             :key="node.id"
@@ -54,7 +54,7 @@ query Tech {
     description
   }
   tech: allTech(sortBy: "weight", order: ASC) {
-    edges{
+    edges {
       node {
         id
         title
@@ -144,8 +144,11 @@ export default {
 
 @include media-breakpoint-up(md) {
   .aside {
-    position: sticky;
-    top: 2rem;
+    @supports (position: sticky) {
+      position: sticky;
+      top: 2rem;
+      z-index: $zindex-sticky;
+    }
   }
 
   .col-md-6 {

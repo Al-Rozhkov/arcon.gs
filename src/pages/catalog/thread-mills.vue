@@ -1,6 +1,6 @@
 <template>
-  <page-layout>
-    <main class="cnt">
+  <page-layout svg-sprites>
+    <main class="container">
       <h1>{{ $page.title.value }}</h1>
 
       <grouped-overview :nodes="$page.series.edges" />
@@ -20,13 +20,27 @@ query Catalog {
         path
         type
         content
-        photos (width: 260, quality: 80)
-        mainUsage { id text }
-        possibleUsage { id text }
-        coating { id text }
+        photos(width: 260, quality: 80)
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
+        coating {
+          id
+          text
+        }
         tail
-        cuttingShapes { id text }
-        coolantSupply { id }
+        cuttingShapes {
+          id
+          text
+        }
+        coolantSupply {
+          id
+        }
       }
     }
   }

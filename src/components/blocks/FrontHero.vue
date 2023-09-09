@@ -27,8 +27,8 @@ query {
 
 <style lang="scss" scoped>
 .hero {
-  @extend %grid-row-wrap;
-
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 40px;
 }

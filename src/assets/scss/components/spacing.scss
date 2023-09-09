@@ -1,21 +1,12 @@
 /* ========================================================================
    Component: Spacing
  ========================================================================== */
-.cnt {
-  @extend %spacing;
-  @extend %container-xl;
-}
-
-.py {
-  @extend %spacing;
-}
-
 .pt {
-  @extend %spacing-top;
+  padding-top: 1.5rem;
 }
 
 .pb {
-  @extend %spacing-bottom;
+  padding-bottom: 1.5rem;
 }
 
 .py-sm {
@@ -24,7 +15,7 @@
 }
 
 .pt-sm {
-  padding-top: 20px;
+  padding-top: 1.5rem;
 }
 
 .mb-2 {
@@ -33,4 +24,14 @@
 
 .mb-3 {
   margin-bottom: 3.5rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .pt {
+    padding-top: 3rem;
+  }
+
+  .pb {
+    padding-bottom: 3rem;
+  }
 }

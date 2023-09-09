@@ -11,7 +11,7 @@
 <static-query>
 query Services {
   services: allService(sortBy: "weight", order: ASC) {
-    edges{
+    edges {
       node {
         path
         title

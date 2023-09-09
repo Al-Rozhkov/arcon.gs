@@ -1,293 +1,22 @@
-<template>
-  <div class="page">
-    <header class="col-left">
-      <div class="title">
-        <h1 class="h1">{{ node.id.toUpperCase() }}</h1>
-        <svg-plain-icon
-          v-if="node.fusion"
-          icon-id="series-fusion"
-          :width="100"
-          :height="25"
-        />
-
-        <div class="desc" v-html="node.content" />
-      </div>
-
-      <g-image
-        v-if="node.photos && node.photos.length > 0"
-        :src="node.photos[0]"
-        :alt="node.id"
-        class="series-img"
-      />
-    </header>
-
-    <div class="col-right sheet sheet-beige">
-      <div class="features">
-        <div class="col-40">
-          <h3 class="dt">{{ $static.tMainUse.value }}</h3>
-          <ul class="dd">
-            <li v-for="(m, index) in node.mainUsage" :key="index" class="dd-li">
-              <span :class="`mat-chip-sm mat-main mat-${m.id.charAt(0)}`">{{
-                m.id
-              }}</span>
-              {{ m.text }}
-            </li>
-          </ul>
-
-          <template v-if="node.possibleUsage && node.possibleUsage.length > 0">
-            <h3 class="dt">{{ $static.tPossibleUse.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(m, index) in node.possibleUsage"
-                :key="index"
-                class="dd-li"
-              >
-                <span
-                  :class="`mat-chip-sm mat-possible mat-${m.id.charAt(0)}`"
-                  >{{ m.id }}</span
-                >
-                {{ m.text }}
-              </li>
-            </ul>
-          </template>
-        </div>
-
-        <div class="col-30">
-          <template v-if="node.coating">
-            <h3 class="dt">{{ $static.tCoating.value }}</h3>
-            <p class="dd">{{ node.coating.text }}</p>
-          </template>
-          <template v-else>
-            <h3 class="dt">{{ $static.tNoCoating.value }}</h3>
-            <p></p>
-          </template>
-
-          <h3 class="dt">{{ $static.tShankType.value }}</h3>
-          <p class="dd">{{ getShankLabel(node.tail) }}</p>
-
-          <template v-if="node.endShapes && node.endShapes.length > 0">
-            <h3 class="dt">{{ $static.tFaceType.value }}</h3>
-            <p class="dd">{{ node.endShapes.map((e) => e.text).join('; ') }}</p>
-          </template>
-
-          <template v-if="node.cuttingShapes && node.cuttingShapes.length > 0">
-            <h3 class="dt">{{ $static.tCuttingPartShape.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(s, index) in node.cuttingShapes"
-                :key="index"
-                class="dd-li"
-              >
-                {{ s.text }}
-              </li>
-            </ul>
-          </template>
-
-          <template
-            v-if="node.sharpeningAngle && node.sharpeningAngle.length > 0"
-          >
-            <h3 class="dt">{{ $static.tFeedAngle.value }}</h3>
-            <p class="dd">
-              {{ node.sharpeningAngle.map((i) => `${i}&#xB0;`).join(', ') }}
-            </p>
-          </template>
-
-          <template v-if="node.allowanceRadius">
-            <h3 class="dt">{{ $static.tRadiusTolerance.value }}</h3>
-            <p class="dd">{{ node.allowanceRadius }}</p>
-          </template>
-
-          <template v-if="node.allowanceCuttingDiameter">
-            <h3 class="dt">{{ $static.tCutterDiameterTolerance.value }}</h3>
-            <p class="dd">{{ node.allowanceCuttingDiameter }}</p>
-          </template>
-
-          <template v-if="node.coolantSupply">
-            <h3 class="dt">{{ $static.tCoolantSupply.value }}</h3>
-            <p class="dd">{{ node.coolantSupply.text }}</p>
-          </template>
-        </div>
-
-        <div class="col-30">
-          <template v-if="node.cogsNumber && node.cogsPitch">
-            <h3 class="dt">{{ $static.tTeeth.value }}</h3>
-            <ul class="dd">
-              <li
-                v-for="(c, index) in node.cogsNumber"
-                :key="index"
-                class="dd-li"
-              >
-                {{ getCogsNumberLabel(c) }},
-              </li>
-              <li>
-                {{ getCogsSpacingLabel(node.cogsPitch) }},
-                {{ getCogsCenterLabel(node.cogsCuttingCenter) }}
-              </li>
-            </ul>
-          </template>
-
-          <template v-if="node.grooveInclination">
-            <h3 class="dt">{{ $static.tFluteAngle.value }}</h3>
-            <p class="dd">
-              <span class="display-3" v-html="grooveInclination"></span>
-            </p>
-          </template>
-
-          <template v-if="node.toolForming">
-            <h3 class="dt">{{ $static.tToFormThread.value }}</h3>
-            <p class="dd">{{ node.toolForming }}</p>
-          </template>
-
-          <template v-if="node.toolProfile">
-            <h3 class="dt">{{ $static.tProfile.value }}</h3>
-            <p class="dd">{{ node.toolProfile }}</p>
-          </template>
-        </div>
-      </div>
-
-      <div class="actions d-print-none" @click="printIt">
-        <icon-printer
-          width="30"
-          height="30"
-          v-tooltip="{ content: $static.tPrintPage.value }"
-        />
-      </div>
-    </div>
-
-    <div class="tools pt">
-      <!-- <div class="schemes" :class="{ highlight: highlightedTool !== null }">
-        <img
-          v-for="(scheme, id) in node.scheme"
-          :key="id"
-          :src="'/img/schemes/' + scheme.scheme + '.png'"
-          class="svg-scheme"
-          :class="{
-            highlighted:
-              highlightedTool &&
-              scheme.name.toUpperCase() === highlightedTool.form,
-          }"
-        />
-      </div> -->
-      <div class="schemes">
-        <Component
-          v-for="(scheme, i) in schemes"
-          :key="i"
-          :is="scheme"
-          class="svg-scheme"
-          :tool="highlightedTool"
-        >
-        </Component>
-      </div>
-
-      <product-items-table
-        :fields-set="
-          node.productSeriesSet ? node.productSeriesSet.set : undefined
-        "
-        :tools="tools.edges"
-        class="product-items"
-        @highlight="onRowHighlight"
-      />
-    </div>
-  </div>
-</template>
-
-<static-query>
-query {
-  tMainUse: t(id: "catalog.overview.main-use") {
-    value
-  }
-  tPossibleUse: t(id: "catalog.overview.possible-use") {
-    value
-  }
-  tCoating: t(id: "catalog.filters.coating") {
-    value
-  }
-  tNoCoating: t(id: "catalog.filters.no-coating") {
-    value
-  }
-  tShankType: t(id: "catalog.page.shank-type") {
-    value
-  }
-  tFaceType: t(id: "catalog.page.face-type") {
-    value
-  }
-  tCuttingPartShape: t(id: "catalog.page.cutting-part-shape") {
-    value
-  }
-  tCuttingPartLength: t(id: "catalog.filters.cutting-length") {
-    value
-  }
-  tFeedAngle: t(id: "catalog.page.feed-angle") {
-    value
-  }
-  tRadiusTolerance: t(id: "catalog.page.radius-tolerance") {
-    value
-  }
-  tCutterDiameterTolerance: t(id: "catalog.page.cutter-diameter-tolerance") {
-    value
-  }
-  tCoolantSupply: t(id: "catalog.filters.coolant-supply") {
-    value
-  }
-  tTeeth: t(id: "catalog.page.teeth") {
-    value
-  }
-  tFluteAngle: t(id: "catalog.page.flute-angle") {
-    value
-  }
-  tToFormThread: t(id: "catalog.page.to-form-thread") {
-    value
-  }
-  tProfile: t(id: "catalog.page.profile") {
-    value
-  }
-  tPrintPage: t(id: "catalog.page.print-page") {
-    value
-  }
-  tCuttingCenter: t(id: "catalog.cogs.cutting-center") {
-    value
-  }
-  tNoCuttingCenter: t(id: "catalog.cogs.no-cutting-center") {
-    value
-  }
-  tShankCylindrical: t(id: "catalog.page.shank-cylindrical") {
-    value
-  }
-  tShankWeldon: t(id: "catalog.page.shank-weldon") {
-    value
-  }
-  tConstantSpacing: t(id: "catalog.page.constant-spacing") {
-    value
-  }
-  tDifferentialSpacing: t(id: "catalog.page.differential-spacing") {
-    value
-  }
-  tTooth1: t(id: "catalog.page.tooth-1") {
-    value
-  }
-  tTeeth4: t(id: "catalog.page.teeth-4") {
-    value
-  }
-  tTeethN: t(id: "catalog.page.teeth-n") {
-    value
-  }
-}
-</static-query>
-
 <script>
+import LazyHydrate from 'vue-lazy-hydration'
+
 import SvgPlainIcon from '~/components/catalog/SvgPlainIcon'
 import SvgIcon from '~/components/catalog/SvgFeatureIcon'
 import MaterialIcon from '~/components/catalog/MaterialIcon'
 import IconPrinter from '~/components/IconPrinter'
 import ProductItemsTable from '~/components/catalog/ProductItemsTable'
+import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
 
 export default {
   components: {
+    LazyHydrate,
     SvgPlainIcon,
     SvgIcon,
     MaterialIcon,
     IconPrinter,
     ProductItemsTable,
+    SeriesCuttingModes,
   },
 
   props: {
@@ -309,15 +38,6 @@ export default {
   },
 
   computed: {
-    grooveInclination() {
-      const angles = this.node.grooveInclination
-      if (angles && angles.length > 0) {
-        return angles.map((i) => `${i}&#xB0;`).join('~')
-      } else {
-        return ''
-      }
-    },
-
     schemes() {
       if (this.highlightedTool) {
         const schemeItem = this.node.scheme.find(
@@ -329,6 +49,44 @@ export default {
       return this.node.scheme.map((node) => {
         return () => import(`@/components/scheme/${node.scheme}`)
       })
+    },
+
+    getShankLabel() {
+      return {
+        cylinder: this.$static.tShankCylindrical.value.toLowerCase(),
+        weldon: this.$static.tShankWeldon.value.toLowerCase(),
+      }[this.node.tail]
+    },
+
+    getCogsSpacingLabel() {
+      return {
+        permanent: this.$static.tConstantSpacing.value.toLowerCase(),
+        variable: this.$static.tDifferentialSpacing.value.toLowerCase(),
+      }[this.node.cogsPitch]
+    },
+
+    getCogsCenterLabel() {
+      return this.node.cogsCuttingCenter
+        ? this.$static.tNoCuttingCenter.value.toLowerCase()
+        : this.$static.tCuttingCenter.value.toLowerCase()
+    },
+
+    pageSelectedTool() {
+      const tool = this.$route.query.tool
+      return tool &&
+        this.tools.edges.findIndex(
+          ({ node }) => node.id == this.$route.query.tool
+        ) !== -1
+        ? tool
+        : false
+    },
+
+    pageMode() {
+      return this.$route.query.cutting_modes
+        ? 'cutting-modes'
+        : this.pageSelectedTool
+        ? 'tool'
+        : 'tools-list'
     },
   },
 
@@ -346,28 +104,6 @@ export default {
       }
     },
 
-    getShankLabel(id) {
-      const map = {
-        cylinder: this.$static.tShankCylindrical.value.toLowerCase(),
-        weldon: this.$static.tShankWeldon.value.toLowerCase(),
-      }
-      return map[id]
-    },
-
-    getCogsSpacingLabel(id) {
-      const map = {
-        permanent: this.$static.tConstantSpacing.value.toLowerCase(),
-        variable: this.$static.tDifferentialSpacing.value.toLowerCase(),
-      }
-      return map[id]
-    },
-
-    getCogsCenterLabel(value) {
-      return value
-        ? this.$static.tNoCuttingCenter.value.toLowerCase()
-        : this.$static.tCuttingCenter.value.toLowerCase()
-    },
-
     onRowHighlight(payload) {
       this.highlightedTool = payload
     },
@@ -375,46 +111,275 @@ export default {
     printIt() {
       if (window) window.print()
     },
+
+    switchPage(query) {
+      if (!query) {
+        const item =
+          this.tools.edges[Math.floor(Math.random() * this.tools.edges.length)]
+        query = { tool: item.node.id }
+      }
+      this.$router.push({
+        path: this.$route.path,
+        query,
+      })
+    },
+  },
+
+  mounted() {
+    // console.log(this.$route)
   },
 }
 </script>
 
-<style lang="scss">
-.page {
-  @extend %grid-row-wrap;
+<template>
+  <div class="page">
+    <LazyHydrate when-idle>
+      <div class="page-header">
+        <header class="series-header">
+          <h1 class="h1" :class="{ 'series-fusion-icon': node.fusion }">
+            {{ node.id.toUpperCase() }}
+          </h1>
 
+          <div class="series-header__content" v-html="node.content" />
+
+          <g-image
+            v-if="node.photos && node.photos.length"
+            :src="node.photos[0]"
+            :alt="node.id"
+            class="series-img"
+          />
+        </header>
+
+        <div class="series-features">
+          <div class="series-features__grid">
+            <!-- Column 40% width -->
+            <div>
+              <h3 class="dt">{{ $static.tMainUse.value }}</h3>
+              <ul class="dd">
+                <li
+                  v-for="(m, index) in node.mainUsage"
+                  :key="index"
+                  class="dd-li"
+                >
+                  <span :class="`mat-chip-sm mat-main mat-${m.id.charAt(0)}`">{{
+                    m.id
+                  }}</span>
+                  {{ m.text }}
+                </li>
+              </ul>
+
+              <template v-if="node.possibleUsage && node.possibleUsage.length">
+                <h3 class="dt">{{ $static.tPossibleUse.value }}</h3>
+                <ul class="dd">
+                  <li
+                    v-for="(m, index) in node.possibleUsage"
+                    :key="index"
+                    class="dd-li"
+                  >
+                    <span
+                      :class="`mat-chip-sm mat-possible mat-${m.id.charAt(0)}`"
+                      >{{ m.id }}</span
+                    >
+                    {{ m.text }}
+                  </li>
+                </ul>
+              </template>
+            </div>
+
+            <!-- Column 30% width -->
+            <div>
+              <template v-if="node.coating">
+                <h3 class="dt">{{ $static.tCoating.value }}</h3>
+                <p class="dd">{{ node.coating.text }}</p>
+              </template>
+              <template v-else>
+                <h3 class="dt">{{ $static.tNoCoating.value }}</h3>
+                <p></p>
+              </template>
+
+              <h3 class="dt">{{ $static.tShankType.value }}</h3>
+              <p class="dd">{{ getShankLabel }}</p>
+
+              <template v-if="node.endShapes && node.endShapes.length">
+                <h3 class="dt">{{ $static.tFaceType.value }}</h3>
+                <p class="dd">
+                  {{ node.endShapes.map((e) => e.text).join('; ') }}
+                </p>
+              </template>
+
+              <template v-if="node.cuttingShapes && node.cuttingShapes.length">
+                <h3 class="dt">{{ $static.tCuttingPartShape.value }}</h3>
+                <ul class="dd">
+                  <li
+                    v-for="(s, index) in node.cuttingShapes"
+                    :key="index"
+                    class="dd-li"
+                  >
+                    {{ s.text }}
+                  </li>
+                </ul>
+              </template>
+
+              <template
+                v-if="node.sharpeningAngle && node.sharpeningAngle.length"
+              >
+                <h3 class="dt">{{ $static.tFeedAngle.value }}</h3>
+                <p class="dd">
+                  {{ node.sharpeningAngle.map((i) => `${i}&#xB0;`).join(', ') }}
+                </p>
+              </template>
+
+              <template v-if="node.allowanceRadius">
+                <h3 class="dt">{{ $static.tRadiusTolerance.value }}</h3>
+                <p class="dd">{{ node.allowanceRadius }}</p>
+              </template>
+
+              <template v-if="node.allowanceCuttingDiameter">
+                <h3 class="dt">{{ $static.tCutterDiameterTolerance.value }}</h3>
+                <p class="dd">{{ node.allowanceCuttingDiameter }}</p>
+              </template>
+
+              <template v-if="node.coolantSupply">
+                <h3 class="dt">{{ $static.tCoolantSupply.value }}</h3>
+                <p class="dd">{{ node.coolantSupply.text }}</p>
+              </template>
+            </div>
+
+            <!-- Column 30% width -->
+            <div>
+              <template v-if="node.cogsNumber && node.cogsPitch">
+                <h3 class="dt">{{ $static.tTeeth.value }}</h3>
+                <ul class="dd">
+                  <li
+                    v-for="(c, index) in node.cogsNumber"
+                    :key="index"
+                    class="dd-li"
+                  >
+                    {{ getCogsNumberLabel(c) }},
+                  </li>
+                  <li>
+                    {{ getCogsSpacingLabel }},
+                    {{ getCogsCenterLabel }}
+                  </li>
+                </ul>
+              </template>
+
+              <template v-if="node.grooveInclination">
+                <h3 class="dt">{{ $static.tFluteAngle.value }}</h3>
+                <p class="dd">
+                  <span
+                    class="display-3"
+                    :v-html="
+                      node.grooveInclination.map((i) => `${i}&#xB0;`).join('~')
+                    "
+                  ></span>
+                </p>
+              </template>
+
+              <template v-if="node.toolForming">
+                <h3 class="dt">{{ $static.tToFormThread.value }}</h3>
+                <p class="dd">{{ node.toolForming }}</p>
+              </template>
+
+              <template v-if="node.toolProfile">
+                <h3 class="dt">{{ $static.tProfile.value }}</h3>
+                <p class="dd">{{ node.toolProfile }}</p>
+              </template>
+            </div>
+          </div>
+
+          <div class="series-header__actions d-print-none" @click="printIt">
+            <icon-printer
+              width="30"
+              height="30"
+              v-tooltip="{ content: $static.tPrintPage.value }"
+            />
+          </div>
+        </div>
+      </div>
+    </LazyHydrate>
+    <!-- End of Page Header -->
+
+    <ClientOnly>
+      <div class="page-body">
+        <ul class="menu">
+          <li class="menu-link" @click="switchPage({})">
+            <span class="menu-link__dashed">Все инструменты серии</span>
+          </li>
+          <li class="menu-link" @click="switchPage({ cutting_modes: true })">
+            <span class="menu-link__dashed">Режимы резания</span>
+          </li>
+          <!-- <li class="menu-link" @click="switchPage()">
+            <span class="menu-link__dashed">Произвольный инструмент</span>
+          </li> -->
+        </ul>
+
+        <!-- Product items table (default view) -->
+        <div v-if="pageMode === 'tools-list'" class="tools">
+          <div class="schemes">
+            <Component
+              v-for="(scheme, i) in schemes"
+              :key="i"
+              :is="scheme"
+              class="svg-scheme"
+              :tool="highlightedTool"
+            >
+            </Component>
+          </div>
+
+          <product-items-table
+            :fields-set="
+              node.productSeriesSet ? node.productSeriesSet.set : undefined
+            "
+            :tools="tools.edges"
+            @highlight="onRowHighlight"
+            class="product-items"
+          />
+        </div>
+
+        <!-- Selected product item view -->
+        <div v-if="pageMode === 'cutting-modes'" class="cutting-modes">
+          <h2>Режимы обработки уступа</h2>
+          <series-cutting-modes />
+          <h2>Режимы обработки паза</h2>
+          <series-cutting-modes :ledges="false" />
+        </div>
+
+        <!-- Cutting modes view -->
+        <div v-if="pageMode === 'tool'">
+          <h2>Страница инструмента {{ pageSelectedTool }}</h2>
+        </div>
+      </div>
+    </ClientOnly>
+  </div>
+</template>
+
+<style lang="scss">
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
   margin-bottom: 2rem;
-
-  .print-it {
-    flex-basis: 7rem;
-    padding: 0.5rem 1rem;
-    text-align: right;
-  }
 }
 
-.title {
-  @extend %grid-row-wrap;
-  align-items: baseline;
-  padding-bottom: 0.5rem;
+.series-img {
+  margin: 0 0 1.5rem -0.75rem;
 }
 
-.desc {
-  width: 100%;
-}
-
-.sheet {
+.series-features {
   border-radius: 0.5rem;
   padding: 1rem;
   position: relative;
-}
-
-.sheet-beige {
   background: lighten($orange, 25%);
 }
 
-.actions {
+.series-header__content {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.series-header__actions {
   position: absolute;
   top: -1.25rem;
   right: -1.5rem;
@@ -426,12 +391,6 @@ export default {
   &:hover {
     background: $yellow;
   }
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -2rem;
 }
 
 .dd {
@@ -452,12 +411,13 @@ h3.dt {
   margin-bottom: 0.3rem;
 }
 
-.series-img {
-  margin-left: -0.75rem;
+.schemes {
+  width: 100%;
 }
 
 .tools {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
   align-items: flex-start;
@@ -467,45 +427,43 @@ h3.dt {
   margin-bottom: 3rem;
 }
 
+.product-items {
+  overflow-x: scroll;
+}
+
 /*
  * Media breakpoint MD
  */
 @include media-breakpoint-up(md) {
-  .desc {
+  .series-header__content {
     font-size: 1.25rem;
   }
 
-  .col-left,
+  .series-header,
   .schemes {
     max-width: 35%;
     flex: 0 0 35%;
     padding-right: 3rem;
   }
 
-  .col-right {
+  .series-features {
     max-width: 65%;
     flex: 0 0 65%;
   }
 
-  .col-30,
-  .col-40 {
-    padding-right: 2rem;
-  }
-
-  .col-30 {
-    max-width: 30%;
-    flex: 1 1 30%;
-  }
-
-  .col-40 {
-    max-width: 40%;
-    flex: 1 1 40%;
+  .series-features__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 4fr 3fr 3fr;
   }
 
   .schemes {
-    padding-top: 3rem;
-    position: sticky;
-    top: 0;
+    padding-top: 1rem;
+    @supports (position: sticky) {
+      position: sticky;
+      top: 0;
+      z-index: $zindex-sticky;
+    }
 
     &.highlight img {
       opacity: 0.3;
@@ -526,7 +484,7 @@ h3.dt {
  * Print styles
  */
 @media print {
-  .page {
+  .page-header {
     font-size: 0.8rem;
   }
 
@@ -534,40 +492,58 @@ h3.dt {
     font-size: 2rem;
   }
 
-  .desc {
+  .series-header__content {
     font-size: 1rem;
   }
 
-  .col-left,
-  .schemes {
-    max-width: 35%;
-    flex: 0 0 35%;
+  .series-header {
+    max-width: 50%;
+    flex: 0 0 50%;
     padding-right: 2rem;
   }
 
-  .col-right {
-    max-width: 65%;
-    flex: 0 0 65%;
+  .series-features {
+    flex: 1 0 100%;
   }
 
-  .col-30 {
-    max-width: 30%;
-    flex: 1 1 30%;
+  .series-features__grid {
+    grid-template-columns: 4fr 3fr 3fr;
+    gap: 1.5rem;
   }
 
-  .col-40 {
-    max-width: 40%;
-    flex: 1 1 40%;
-  }
-
-  .col-30,
-  .col-40 {
-    padding-right: 1.5rem;
-  }
-
-  .schemes {
-    display: flex;
-    flex-wrap: wrap;
+  .schemes svg {
+    width: 50%;
   }
 }
 </style>
+
+<static-query>
+query {
+  tMainUse: t(id: "catalog.overview.main-use") { value }
+  tPossibleUse: t(id: "catalog.overview.possible-use") { value }
+  tCoating: t(id: "catalog.filters.coating") { value }
+  tNoCoating: t(id: "catalog.filters.no-coating") { value }
+  tShankType: t(id: "catalog.page.shank-type") { value }
+  tFaceType: t(id: "catalog.page.face-type") { value }
+  tCuttingPartShape: t(id: "catalog.page.cutting-part-shape") { value }
+  tCuttingPartLength: t(id: "catalog.filters.cutting-length") { value }
+  tFeedAngle: t(id: "catalog.page.feed-angle") { value }
+  tRadiusTolerance: t(id: "catalog.page.radius-tolerance") { value }
+  tCutterDiameterTolerance: t(id: "catalog.page.cutter-diameter-tolerance") { value }
+  tCoolantSupply: t(id: "catalog.filters.coolant-supply") { value }
+  tTeeth: t(id: "catalog.page.teeth") { value }
+  tFluteAngle: t(id: "catalog.page.flute-angle") { value }
+  tToFormThread: t(id: "catalog.page.to-form-thread") { value }
+  tProfile: t(id: "catalog.page.profile") { value }
+  tPrintPage: t(id: "catalog.page.print-page") { value }
+  tCuttingCenter: t(id: "catalog.cogs.cutting-center") { value }
+  tNoCuttingCenter: t(id: "catalog.cogs.no-cutting-center") { value }
+  tShankCylindrical: t(id: "catalog.page.shank-cylindrical") { value }
+  tShankWeldon: t(id: "catalog.page.shank-weldon") { value }
+  tConstantSpacing: t(id: "catalog.page.constant-spacing") { value }
+  tDifferentialSpacing: t(id: "catalog.page.differential-spacing") { value }
+  tTooth1: t(id: "catalog.page.tooth-1") { value }
+  tTeeth4: t(id: "catalog.page.teeth-4") { value }
+  tTeethN: t(id: "catalog.page.teeth-n") { value }
+}
+</static-query>

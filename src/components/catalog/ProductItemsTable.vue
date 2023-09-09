@@ -144,7 +144,7 @@ export default {
   th.sticky-th {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: $zindex-sticky;
     background: #ffffff;
     border-bottom: 1px solid $black;
     padding: 0.75rem 0.5rem 0.5rem;

@@ -1,6 +1,6 @@
 <template>
-  <page-layout>
-    <main class="cnt">
+  <page-layout svg-sprites>
+    <main class="container">
       <h1>{{ $page.title.value }}</h1>
 
       <grouped-overview
@@ -24,19 +24,33 @@ query Catalog {
         path
         type
         content
-        photos (width: 260, quality: 80)
+        photos(width: 260, quality: 80)
         fusion
-        mainUsage { id text }
-        possibleUsage { id text }
-        endShapes { id }
+        mainUsage {
+          id
+          text
+        }
+        possibleUsage {
+          id
+          text
+        }
+        endShapes {
+          id
+        }
         tail
         cuttingEdgeLength
-        cuttingShapes { id text }
+        cuttingShapes {
+          id
+          text
+        }
         cogsPitch
         cogsNumber
         cogsCuttingCenter
         grooveInclination
-        coating { id text }
+        coating {
+          id
+          text
+        }
       }
     }
   }

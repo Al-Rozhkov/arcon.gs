@@ -110,7 +110,7 @@
   value: Подвод СОЖ
 
 - id: catalog.filters.mat-placeholder
-  value: "— Основное применение —"
+  value: "— Применение по материалу —"
 
 - id: catalog.filters.mat-steel
   value: "Углеродистая и легированная сталь"

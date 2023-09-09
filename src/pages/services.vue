@@ -1,9 +1,9 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container">
       <div class="tile-row">
         <div class="col-lg-6">
-          <h1>{{ $page.page.title }}</h1>
+          <h1 class="page-title">{{ $page.page.title }}</h1>
         </div>
 
         <div class="col-lg-18">
@@ -26,11 +26,11 @@ query Page {
 </page-query>
 
 <script>
-import { hydrateSsrOnly } from 'vue-lazy-hydration'
+import { hydrateNever } from 'vue-lazy-hydration'
 
 export default {
   components: {
-    FrontServices: hydrateSsrOnly(() =>
+    FrontServices: hydrateNever(() =>
       import('~/components/blocks/FrontServices.vue')
     ),
   },

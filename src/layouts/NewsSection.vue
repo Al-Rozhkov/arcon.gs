@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="cnt">
+    <div class="container">
       <div class="tile-row">
         <main class="col news-page-body">
           <slot />
@@ -26,7 +26,7 @@
 <static-query>
 query RecentNews {
   news: allNews(limit: 4) {
-    edges{
+    edges {
       node {
         id
         path
@@ -34,7 +34,13 @@ query RecentNews {
         content
         title
         date: localeDate
-        image(width: 275, height: 160, fit: contain, background: "#ffffff", quality: 100)
+        image(
+          width: 275
+          height: 160
+          fit: contain
+          background: "#ffffff"
+          quality: 100
+        )
       }
     }
   }
@@ -53,6 +59,8 @@ export default {
 
 <style lang="scss">
 .news-page-body {
+  padding-top: 1rem;
+
   li {
     margin-bottom: 0.5rem;
   }

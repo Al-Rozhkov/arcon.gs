@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="container-xl d-print-none">
-      <app-menu class="submenu">
+      <app-menu class="menu--submenu">
         <app-menu-item
           v-for="{ node } in $static.menu.edges"
           :key="node.id"
@@ -14,8 +14,8 @@
 
     <slot />
 
-    <svg-sprite-coating class="d-none" />
-    <svg-sprite-features class="d-none" />
+    <svg-sprite-coating v-if="svgSprites" class="d-none" />
+    <svg-sprite-features v-if="svgSprites" class="d-none" />
 
     <custom-tools-msg class="container-xl" />
   </div>
@@ -23,7 +23,11 @@
 
 <static-query>
 query {
-  menu: allMenu(filter: { parent: { eq: "/catalog/" } }, sortBy: "weight", order: ASC) {
+  menu: allMenu(
+    filter: { parent: { eq: "/catalog/" } }
+    sortBy: "weight"
+    order: ASC
+  ) {
     edges {
       node {
         path
@@ -48,5 +52,12 @@ export default {
     SvgSpriteFeatures,
     CustomToolsMsg
   },
+
+  props: {
+    svgSprites: {
+      type: Boolean,
+      default: false,
+    }
+  }
 }
 </script>

@@ -160,8 +160,8 @@ export default {
 
 <style lang="scss" scoped>
 .series-card {
-  @extend %grid-row-wrap;
-
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
 
   position: relative;

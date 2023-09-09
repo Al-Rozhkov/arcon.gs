@@ -1,5 +1,6 @@
 .flex-row {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-row-nowrap {
@@ -8,7 +9,8 @@
 }
 
 .tile-row {
-  @extend %grid-row-wrap;
+  display: flex;
+  flex-wrap: wrap;
   @include make-grid-gutter();
 }
 

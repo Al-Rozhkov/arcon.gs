@@ -6,24 +6,24 @@
     <figure v-if="$page.node.image">
       <g-image :src="$page.node.image" />
     </figure>
-    <div class="text-body" v-html="$page.node.content"></div>
+    <div class="page-content" v-html="$page.node.content"></div>
   </page-layout>
 </template>
 
 <page-query>
-  query News($path: String) {
-    node: news(path: $path) {
-      id
-      path
-      content
-      excerpt
-      title
-      image(width: 660, quality: 100)
-    }
-    cNews: t(id: "headline.news-back") {
-      value
-    }
+query News($path: String) {
+  node: news(path: $path) {
+    id
+    path
+    content
+    excerpt
+    title
+    image(width: 660, quality: 100)
   }
+  cNews: t(id: "headline.news-back") {
+    value
+  }
+}
 </page-query>
 
 <script>
