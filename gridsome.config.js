@@ -51,6 +51,16 @@ module.exports = {
       },
     },
 
+    // Cutting modes
+    {
+      use: '~/plugins/source-google-sheets',
+      options: {
+        spreadsheetId: '1YKFACSE_TEnzZRQu4x7f5HYpndUMMH2E0vx1qlJb4TA',
+        apiKey: GOOGLE_API_KEY,
+        typeName: 'ModeEndMill',
+      },
+    },
+
     {
       use: '@gridsome/source-filesystem',
       options: {

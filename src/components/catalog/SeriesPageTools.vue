@@ -88,7 +88,7 @@ export default {
   }
 
   .product-items {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 }
 

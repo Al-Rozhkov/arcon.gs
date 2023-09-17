@@ -7,17 +7,17 @@
 
       <div>
         <h2>Режимы обработки уступа</h2>
-        <series-cutting-modes />
+        <series-cutting-modes :items="$page.modes.edges" />
 
         <h2>Режимы обработки паза</h2>
-        <series-cutting-modes :ledges="false" />
+        <series-cutting-modes :items="$page.modes.edges" :ledges="false" />
       </div>
     </main>
   </page-layout>
 </template>
 
 <page-query>
-query EndMill($path: String) {
+query EndMill($path: String, $id: String!) {
   series: productEndMill(path: $path) {
     title
     keywords
@@ -57,6 +57,25 @@ query EndMill($path: String) {
     allowanceCuttingDiameter
     productSeriesSet {
       set
+    }
+  }
+  modes: allModeEndMill(
+    filter: { series: { eq: $id } }
+    sortBy: "d"
+    order: ASC
+  ) {
+    edges {
+      node {
+        id
+        series
+        material
+        d
+        n
+        fv
+        fn
+        ap
+        ae
+      }
     }
   }
 }
