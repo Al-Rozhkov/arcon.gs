@@ -10,6 +10,11 @@
         <span class="menu-link__dashed">Режимы резания</span>
       </g-link>
     </li>
+    <li>
+      <g-link :to="toCalculator" class="menu-link">
+        <span class="menu-link__dashed">Калькулятор режимов резания</span>
+      </g-link>
+    </li>
     <!-- <li class="menu-link" @click="switchPage()">
         <span class="menu-link__dashed">Произвольный инструмент</span>
       </li> -->
@@ -26,7 +31,7 @@ export default {
   },
   data() {
     return {
-      navId: 'page-tabs',
+      navId: 'js-page-tabs',
     }
   },
   computed: {
@@ -36,6 +41,10 @@ export default {
 
     toModes() {
       return `/catalog/end-mills/${this.id}/modes/#${this.navId}`
+    },
+
+    toCalculator() {
+      return `/catalog/end-mills/${this.id}/calculator/#${this.navId}`
     },
   },
 }

@@ -55,7 +55,7 @@ module.exports = {
     {
       use: '~/plugins/source-google-sheets',
       options: {
-        spreadsheetId: '1YKFACSE_TEnzZRQu4x7f5HYpndUMMH2E0vx1qlJb4TA',
+        spreadsheetId: '1cH4sQibid4YHh8Ipe0XNXtL-PdiabYF6vvP9o5MqTw4',
         apiKey: GOOGLE_API_KEY,
         typeName: 'ModeEndMill',
       },
@@ -337,6 +337,11 @@ module.exports = {
         name: 'cuttingModes',
         path: '/catalog/end-mills/:id/modes',
         component: './src/templates/ProductEndMill-CuttingModes.vue'
+      },
+      {
+        name: 'calculator',
+        path: '/catalog/end-mills/:id/calculator',
+        component: './src/templates/ProductEndMill-Calculator.vue'
       }
     ],
     ProductDrill: '/catalog/drills/:id',
