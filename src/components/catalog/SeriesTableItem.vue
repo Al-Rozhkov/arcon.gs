@@ -157,6 +157,9 @@ export default {
 .td-usage {
   flex: 1 1 15%;
   min-width: 120px;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
 }
 
 .td-single {

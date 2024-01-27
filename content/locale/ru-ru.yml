@@ -8,7 +8,7 @@
   value: "ARCONIT – Режущий инструмент"
 
 - id: footer.copyright
-  value: "© 2015—2024<br />Группа компаний «Аркон»"
+  value: "Группа компаний «Аркон»"
 
 - id: footer.address
   value: "<p>ООО &quot;ЦВМ&nbsp;&quot;Аркон&quot;, ИНН&nbsp;5834118947, ОГРН&nbsp;1175835013364</p><p>Россия, 440052, Пензенская обл., г.&nbsp;Пенза, ул.&nbsp;Гоголя, д.&nbsp;51/53</p>"
@@ -108,6 +108,9 @@
 
 - id: catalog.filters.coolant-supply
   value: Подвод СОЖ
+
+- id: catalog.filters.mat-usage
+  value: "Применение по материалу"
 
 - id: catalog.filters.mat-placeholder
   value: "— Применение по материалу —"

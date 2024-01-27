@@ -216,12 +216,21 @@ export default {
 
 .series-material {
   margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 
   .label {
     color: $gray-700;
     font-size: 0.8rem;
     margin-right: 0.5rem;
   }
+}
+
+.series-material-row {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
 }
 
 @include media-breakpoint-up(md) {
