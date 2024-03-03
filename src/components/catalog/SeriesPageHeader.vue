@@ -135,7 +135,7 @@
               <p class="dd">
                 <span
                   class="display-3"
-                  :v-html="
+                  v-html="
                     node.grooveInclination.map((i) => `${i}&#xB0;`).join('~')
                   "
                 ></span>
