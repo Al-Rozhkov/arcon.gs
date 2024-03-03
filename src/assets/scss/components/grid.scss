@@ -18,6 +18,12 @@
   width: 100%;
 }
 
+@include media-breakpoint-up(md) {
+  .col-md-12 {
+    @include make-col(12);
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .col-lg-6 {
     @include make-col(6);
@@ -25,6 +31,10 @@
 
   .col-lg-8 {
     @include make-col(8);
+  }
+
+  .col-lg-10 {
+    @include make-col(10);
   }
 
   .col-lg-12 {

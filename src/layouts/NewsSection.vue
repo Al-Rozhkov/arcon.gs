@@ -7,7 +7,7 @@
         </main>
 
         <aside class="col news-page-aside">
-          <div v-for="({ node }, index) in $static.news.edges" :key="index" class="mb-3">
+          <div v-for="({ node }, index) in $static.news.edges" :key="index" class="mb-4">
             <template v-if="!node.nopage">
               <news-teaser :node="node" />
             </template>

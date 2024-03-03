@@ -5,7 +5,7 @@
 
       <b-form-input
         id="search"
-        class="mb-3"
+        class="mb-4"
         v-model="searchTerm"
         type="text"
         placeholder="Что вы ищете?"

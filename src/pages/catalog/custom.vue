@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main class="container">
-      <section class="mb-3">
+      <section class="mb-4">
         <h1>{{ $page.page.title }}</h1>
 
         <div class="page-content" v-html="$page.page.content"></div>

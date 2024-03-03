@@ -5,7 +5,7 @@
         <h1>{{ $page.page.title }}</h1>
 
         <ClientOnly>
-          <div class="mb-3">
+          <div class="mb-4">
             <b-form-radio-group
               id="radios-agents-country"
               v-model="countryFilter"
