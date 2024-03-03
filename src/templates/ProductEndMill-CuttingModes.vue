@@ -16,6 +16,8 @@
           <series-cutting-modes :items="modes.groove" :ledges="false" />
         </template>
 
+        <div v-if="$page.series.modesComment" class="alert alert-warning mb-4">{{ $page.series.modesComment }}</div>
+
         <h2 class="mb-2">Калькулятор режимов резания</h2>
         <series-page-modes-calculator :series="$page.series" />
       </div>
@@ -69,6 +71,7 @@ query EndMill($path: String, $id: String!) {
     productSeriesSet {
       set
     }
+    modesComment
   }
   modes: allModeEndMill(
     filter: { series: { eq: $id } }

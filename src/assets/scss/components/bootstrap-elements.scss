@@ -70,3 +70,7 @@
   padding-left: $custom-select-padding-x-lg;
   @include font-size($custom-select-font-size-lg);
 }
+
+.alert {
+  max-width: 920px;
+}
