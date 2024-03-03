@@ -1,16 +1,9 @@
 <template>
   <ul class="mode-container">
-    <li
-      v-for="(material, matIndex) in modes"
-      :key="matIndex"
-      class="mode-material"
-    >
+    <li v-for="(material, matIndex) in modes" :key="matIndex" class="mode-material">
       <h3 class="mode-header">{{ material.material }}</h3>
 
-      <div
-        class="mode-material__table"
-        :class="ledges ? 'mode-material__table--5' : 'mode-material__table--4'"
-      >
+      <div class="mode-material__table" :class="ledges ? 'mode-material__table--5' : 'mode-material__table--4'">
         <div class="mode-material__header">
           <div class="mode-value-header mode-diameter">
             <h4>Диам.</h4>
@@ -36,17 +29,16 @@
             <p>мм</p>
           </div>
         </div>
-        <div
-          v-for="node in material.nodes"
-          :key="node.d"
-          class="mode-material__node"
-        >
-          <div class="mode-diameter">{{ node.d }}</div>
+
+        <div v-for="node in material.nodes" :key="node.d" class="mode-material__node">
+          <div class="mode-diameter" :class="{ highlighted: highlightedDiameter === node.d }">{{ node.d }}</div>
           <div
-            v-for="value in ledges ? ['n', 'fv', 'fn', 'ap', 'ae'] : ['n', 'fv', 'fn', 'ap']"
+            v-for="value in columns"
             :key="value"
             class="mode-value"
             :class="`mode-value--${value}`"
+            @mouseover="onMouseOver(node)"
+            @mouseleave="highlightedDiameter = null"
           >
             {{ node[value] }}
           </div>
@@ -62,10 +54,18 @@ export default {
     items: {
       type: Array,
       required: true,
-    }
+    },
+    ledges: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
+      highlightedDiameter: null,
+      /**
+       * Hardcoded FIXME:
+       */
       modes: [
         {
           material: 'Углеродистая сталь, Чугун, Легированная сталь (— 30HRC)',
@@ -129,12 +129,18 @@ export default {
       ],
     }
   },
-  props: {
-    ledges: {
-      type: Boolean,
-      default: true,
-    },
+  computed: {
+    columns() {
+      return this.ledges ? ['n', 'fv', 'fn', 'ap', 'ae'] : ['n', 'fv', 'fn', 'ap']
+    }
   },
+  methods: {
+    onMouseOver(node) {
+      if (node?.d) {
+        this.highlightedDiameter = node.d
+      }
+    }
+  }
 }
 </script>
 
@@ -185,6 +191,7 @@ $diameter-width: 4rem;
 }
 
 .mode-material__table--5 {
+
   .mode-material__header,
   .mode-material__node {
     grid-template-columns: $diameter-width minmax(5rem, 10fr) repeat(2, minmax(3.5rem, 7fr)) repeat(2, minmax(3rem, 6fr));
@@ -192,6 +199,7 @@ $diameter-width: 4rem;
 }
 
 .mode-material__table--4 {
+
   .mode-material__header,
   .mode-material__node {
     grid-template-columns: $diameter-width minmax(6rem, 12fr) repeat(3, minmax(4rem, 8fr));
@@ -220,6 +228,7 @@ $diameter-width: 4rem;
     font-weight: $font-weight-bold;
     margin-bottom: 0.2rem;
   }
+
   p {
     font-size: $font-size-sm;
     color: $text-muted;
@@ -230,5 +239,9 @@ $diameter-width: 4rem;
 .mode-diameter {
   position: relative;
   z-index: -1;
+
+  &.highlighted {
+    background: $item-hover-color;
+  }
 }
 </style>
