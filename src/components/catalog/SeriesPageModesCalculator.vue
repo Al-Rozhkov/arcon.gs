@@ -3,18 +3,7 @@
         <div class="mb-3">
             <!-- Применение -->
             <b-form-group :label="$static.tMatUsage.value" label-cols="auto" label-for="js-form-usage">
-                <b-form-select id="js-form-usage" v-model="formUsage">
-                    <b-form-select-option-group label="Основное применение">
-                        <b-form-select-option v-for="item in $page.series.mainUsage" :key="item.id" :value="item.id">
-                            {{ item.text }}
-                        </b-form-select-option>
-                    </b-form-select-option-group>
-                    <b-form-select-option-group label="Возможное применение">
-                        <b-form-select-option v-for="item in $page.series.possibleUsage" :key="item.id"
-                            :value="item.id">
-                            {{ item.text }}
-                        </b-form-select-option>
-                    </b-form-select-option-group>
+                <b-form-select id="js-form-usage" v-model="formUsage" :options="formUsageOptions">
                 </b-form-select>
             </b-form-group>
 
@@ -41,6 +30,8 @@
                 </b-input-group>
             </b-form-group>
         </div>
+
+        <div v-if="currentDiameter" class="alert alert-info"><strong>Найдено по d:</strong> {{ currentDiameter }}</div>
 
         <div class="tile-row">
             <div class="col-md-12 col-lg-10">
@@ -128,7 +119,6 @@
     }
 </static-query>
 
-
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
@@ -144,6 +134,19 @@ import {
     BFormInput,
     BInputGroup,
 } from 'bootstrap-vue'
+
+function closestDiameter(num, arr) {
+    let currentRow = arr[0];
+    let diff = Math.abs(num - currentRow.d);
+    for (let val = 0; val < arr.length; val++) {
+        const newdiff = Math.abs(num - arr[val].d);
+        if (newdiff < diff) {
+            diff = newdiff;
+            currentRow = arr[val];
+        }
+    }
+    return currentRow;
+}
 
 export default {
     components: {
@@ -165,6 +168,10 @@ export default {
         series: {
             type: Object,
             require: true,
+        },
+        modes: {
+            type: Array,
+            require: true,
         }
     },
 
@@ -180,7 +187,6 @@ export default {
             formPitchPerTurn: null,
             formPitchPerCog: null,
             formCuttingDepth: null,
-            formCuttingSpeed: null,
             formCuttingWidth: null,
             formProcessingLength: null,
         }
@@ -189,6 +195,48 @@ export default {
     computed: {
         formProcessingTime() {
             return null
+        },
+        formUsageOptions() {
+            const optionsSet = new Set()
+
+            for (const mode of this.modes) {
+                optionsSet.add(mode.node.material)
+            }
+
+            return Array.from(optionsSet)
+        },
+        currentDiameter() {
+            if (!this.formDiameter || !this.formUsage || !this.formProcessingType) {
+                return null
+            }
+
+            // Отсекаем по типу обработки и материалу
+            const modeRecord = this.modes.find(({ node }) => node.material === this.formUsage && node.type === this.formProcessingType)
+            if (!modeRecord) {
+                return null
+            }
+
+            const tools = modeRecord.node.nodes.map(tool => ({
+                ...tool,
+                d: String(tool.d).replace(',', '.')
+            }))
+            const exactEqual = tools.find((tool) => tool.d == this.formDiameter)
+            if (exactEqual) return exactEqual
+
+            const roundEqual = tools.find((tool) => tool.d == Math.round(this.formDiameter))
+            if (roundEqual) return roundEqual
+
+            const formValueNumber = parseFloat(this.formDiameter)
+            const dLess = Math.round(formValueNumber - 0.5)
+            const dLessFound = tools.find((tool) => tool.d == dLess)
+            if (dLessFound) return dLessFound
+
+            const dMore = Math.round(formValueNumber + 0.5)
+            const dMoreFound = tools.find((tool) => tool.d == dMore)
+            if (dMoreFound) return dMoreFound
+
+            const closest = closestDiameter(formValueNumber, tools)
+            return closest
         }
     },
 

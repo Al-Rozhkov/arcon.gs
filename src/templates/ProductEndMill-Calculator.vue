@@ -8,7 +8,7 @@
       <div>
         <h2 class="mb-2">Калькулятор режимов резания</h2>
 
-        <series-page-modes-calculator :series="$page.series" />
+        <series-page-modes-calculator :series="$page.series" :modes="$page.modes.edges" />
       </div>
     </main>
   </page-layout>
