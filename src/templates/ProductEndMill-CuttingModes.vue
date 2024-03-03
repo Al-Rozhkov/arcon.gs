@@ -15,6 +15,9 @@
           <h2 class="mb-2">Режимы обработки паза</h2>
           <series-cutting-modes :items="modes.groove" :ledges="false" />
         </template>
+
+        <h2 class="mb-2">Калькулятор режимов резания</h2>
+        <series-page-modes-calculator :series="$page.series" />
       </div>
 
       <div v-else class="mb-4">
@@ -97,6 +100,7 @@ import PageLayout from '~/layouts/Catalog.vue'
 import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
 import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
 import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
+import SeriesPageModesCalculator from '~/components/catalog/SeriesPageModesCalculator.vue'
 
 export default {
   components: {
@@ -104,6 +108,7 @@ export default {
     SeriesPageHeader,
     SeriesPageTabs,
     SeriesCuttingModes,
+    SeriesPageModesCalculator,
   },
 
   computed: {
