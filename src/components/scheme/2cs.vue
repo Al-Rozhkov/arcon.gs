@@ -4,7 +4,6 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     version="1.1"
     viewBox="0 0 806 292"
-    class="svg-scheme"
   >
     <image href="/img/schemes/2cs.png" height="276" width="806" y="8" x="0" />
 

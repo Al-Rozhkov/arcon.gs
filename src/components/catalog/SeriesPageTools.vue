@@ -1,24 +1,14 @@
 <template>
   <div class="series-page-tools">
     <div class="schemes">
-      <Component
-        v-for="(scheme, i) in schemes"
-        :key="i"
-        :is="scheme"
-        class="svg-scheme"
-        :tool="highlightedTool"
-      >
-      </Component>
+      <div v-for="scheme in schemes" :key="scheme.name" class="scheme">
+        <span class="scheme-name">{{ scheme.name }}</span>
+        <Component :is="scheme.component" :tool="highlightedTool" class="svg-scheme" />
+      </div>
     </div>
 
-    <product-items-table
-      :fields-set="
-        node.productSeriesSet ? node.productSeriesSet.set : undefined
-      "
-      :tools="tools.edges"
-      @highlight="onRowHighlight"
-      class="product-items"
-    />
+    <product-items-table :fields-set="node.productSeriesSet ? node.productSeriesSet.set : undefined
+        " :tools="tools.edges" @highlight="onRowHighlight" class="product-items" />
   </div>
 </template>
 
@@ -49,16 +39,30 @@ export default {
   },
 
   computed: {
+    schemeComponents() {
+      return this.node.scheme.reduce((acc, node) => {
+        acc[node.scheme] = () => import(`@/components/scheme/${node.scheme}`)
+        return acc;
+      }, {})
+    },
     schemes() {
       if (this.highlightedTool) {
         const schemeItem = this.node.scheme.find(
           (n) => n.name.toUpperCase() === this.highlightedTool.form
         )
-        if (schemeItem)
-          return [() => import(`@/components/scheme/${schemeItem.scheme}`)]
+        if (schemeItem) {
+          return [{
+            name: schemeItem.name.toUpperCase(),
+            component: this.schemeComponents[schemeItem.scheme],
+          }]
+        }
       }
+
       return this.node.scheme.map((node) => {
-        return () => import(`@/components/scheme/${node.scheme}`)
+        return {
+          name: node.name.toUpperCase(),
+          component: this.schemeComponents[node.scheme],
+        }
       })
     },
   },
@@ -81,10 +85,21 @@ export default {
 
   .schemes {
     width: 100%;
-  }
 
-  .svg-scheme {
-    margin-bottom: 3rem;
+    .scheme {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .scheme-name {
+      position: absolute;
+      top: 50%;
+      left: -1.75rem;
+      margin-top: -1.5rem;
+      font-weight: $font-weight-bold;
+      font-size: 1.25rem;
+      // color: $gray-600;
+    }
   }
 
   .product-items {
