@@ -1,6 +1,6 @@
 <template>
   <ul class="mode-container">
-    <li v-for="(material, matIndex) in modes" :key="matIndex" class="mode-material">
+    <li v-for="(material, matIndex) in items" :key="matIndex" class="mode-material">
       <h3 class="mode-header">{{ material.material }}</h3>
 
       <div class="mode-material__table" :class="ledges ? 'mode-material__table--5' : 'mode-material__table--4'">
@@ -63,70 +63,6 @@ export default {
   data() {
     return {
       highlightedDiameter: null,
-      /**
-       * Hardcoded FIXME:
-       */
-      modes: [
-        {
-          material: 'Углеродистая сталь, Чугун, Легированная сталь (— 30HRC)',
-          hardness: 'до 850',
-          vc: '100',
-          nodes: [
-            { d: 2, n: 15924, fv: 478, fn: 0.03, ap: 3, ae: 0.4 },
-            { d: 3, n: 10616, fv: 425, fn: 0.03, ap: 5, ae: 0.6 },
-            { d: 4, n: 980, fv: 402, fn: 0.03, ap: 8, ae: 0.8 },
-            { d: 5, n: 864, fv: 378, fn: 0.03, ap: 12, ae: 1 },
-            { d: 6, n: 756, fv: 348, fn: 0.03, ap: 14, ae: 1.4 },
-            { d: 18, n: 1769, fv: 88, fn: 0.03, ap: 88, ae: 3.6 },
-            { d: 20, n: 1592, fv: 96, fn: 0.03, ap: 96, ae: 4 },
-          ],
-        },
-        {
-          material:
-            'Легированная сталь, Инструментальная сталь, Предварительно закаленная сталь (— 45HRC)',
-          hardness: 'до 850',
-          vc: '100',
-          nodes: [
-            { d: 2, n: 15924, fv: 478, fn: 0.03, ap: 3, ae: 0.4 },
-            { d: 3, n: 10616, fv: 425, fn: 0.03, ap: 5, ae: 0.6 },
-            { d: 4, n: 980, fv: 402, fn: 0.03, ap: 8, ae: 0.8 },
-            { d: 5, n: 864, fv: 378, fn: 0.03, ap: 12, ae: 1 },
-            { d: 6, n: 756, fv: 348, fn: 0.03, ap: 14, ae: 1.4 },
-            { d: 18, n: 1769, fv: 88, fn: 0.03, ap: 88, ae: 3.6 },
-            { d: 20, n: 1592, fv: 96, fn: 0.03, ap: 96, ae: 4 },
-          ],
-        },
-        {
-          material:
-            'Нержавеющая сталь, Инструментальная сталь, Предварительно закаленная сталь (— 1100N/мм)',
-          hardness: 'до 850',
-          vc: '100',
-          nodes: [
-            { d: 2, n: 15924, fv: 478, fn: 0.03, ap: 3, ae: 0.4 },
-            { d: 3, n: 10616, fv: 425, fn: 0.03, ap: 5, ae: 0.6 },
-            { d: 4, n: 980, fv: 402, fn: 0.03, ap: 8, ae: 0.8 },
-            { d: 5, n: 864, fv: 378, fn: 0.03, ap: 12, ae: 1 },
-            { d: 6, n: 756, fv: 348, fn: 0.03, ap: 14, ae: 1.4 },
-            { d: 18, n: 1769, fv: 88, fn: 0.03, ap: 88, ae: 3.6 },
-            { d: 20, n: 1592, fv: 96, fn: 0.03, ap: 96, ae: 4 },
-          ],
-        },
-        {
-          material:
-            'Нержавеющая сталь, Инструментальная сталь, Предварительно закаленная сталь (— 1100N/мм)',
-          hardness: 'до 850',
-          vc: '100',
-          nodes: [
-            { d: 2, n: 15924, fv: 478, fn: 0.03, ap: 3, ae: 0.4 },
-            { d: 3, n: 10616, fv: 425, fn: 0.03, ap: 5, ae: 0.6 },
-            { d: 4, n: 980, fv: 402, fn: 0.03, ap: 8, ae: 0.8 },
-            { d: 5, n: 864, fv: 378, fn: 0.03, ap: 12, ae: 1 },
-            { d: 6, n: 756, fv: 348, fn: 0.03, ap: 14, ae: 1.4 },
-            { d: 18, n: 1769, fv: 88, fn: 0.03, ap: 88, ae: 3.6 },
-            { d: 20, n: 1592, fv: 96, fn: 0.03, ap: 96, ae: 4 },
-          ],
-        },
-      ],
     }
   },
   computed: {
@@ -152,7 +88,7 @@ $diameter-width: 4rem;
   margin: 0 0 2rem;
   padding: 0 0 0 $diameter-width;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .mode-material {

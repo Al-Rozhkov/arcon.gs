@@ -5,12 +5,20 @@
       
       <series-page-tabs :id="$page.series.id" />
 
-      <div>
-        <h2>Режимы обработки уступа</h2>
-        <series-cutting-modes :items="$page.modes.edges" />
+      <div v-if="isAvailable">
+        <template v-if="modes.ledge.length">
+          <h2 class="mb-2">Режимы обработки уступа</h2>
+          <series-cutting-modes :items="modes.ledge" />
+        </template>
 
-        <h2>Режимы обработки паза</h2>
-        <series-cutting-modes :items="$page.modes.edges" :ledges="false" />
+        <template v-if="modes.groove.length">
+          <h2 class="mb-2">Режимы обработки паза</h2>
+          <series-cutting-modes :items="modes.groove" :ledges="false" />
+        </template>
+      </div>
+
+      <div v-else class="mb-4">
+        Данные по режимам для этой серии еще не опубликованы.
       </div>
     </main>
   </page-layout>
@@ -61,20 +69,23 @@ query EndMill($path: String, $id: String!) {
   }
   modes: allModeEndMill(
     filter: { series: { eq: $id } }
-    sortBy: "d"
-    order: ASC
   ) {
     edges {
       node {
         id
         series
+        type
         material
-        d
-        n
-        fv
-        fn
-        ap
-        ae
+        kap
+        kae
+        nodes {
+          d
+          n
+          fv
+          fn
+          ap
+          ae
+        }
       }
     }
   }
@@ -93,6 +104,27 @@ export default {
     SeriesPageHeader,
     SeriesPageTabs,
     SeriesCuttingModes,
+  },
+
+  computed: {
+    isAvailable() {
+      return this.modes.groove.length || this.modes.groove.length
+    },
+    modes() {
+      const ledge = []
+      const groove = []
+
+      for (const { node } of this.$page.modes.edges) {
+        if (node.type === 'ledge') {
+          ledge.push(node)
+        }
+        if (node.type === 'groove') {
+          groove.push(node)
+        }
+      }
+
+      return { ledge, groove }
+    }
   },
 
   metaInfo() {

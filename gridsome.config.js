@@ -58,6 +58,7 @@ module.exports = {
         spreadsheetId: '1cH4sQibid4YHh8Ipe0XNXtL-PdiabYF6vvP9o5MqTw4',
         apiKey: GOOGLE_API_KEY,
         typeName: 'ModeEndMill',
+        mergeToNodes: ['d', 'n', 'fv', 'fn', 'ap', 'ae']
       },
     },
 

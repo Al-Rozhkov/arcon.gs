@@ -174,20 +174,23 @@ query EndMill($path: String, $id: String!) {
   }
   modes: allModeEndMill(
     filter: { series: { eq: $id } }
-    sortBy: "d"
-    order: ASC
   ) {
     edges {
       node {
         id
         series
+        type
         material
-        d
-        n
-        fv
-        fn
-        ap
-        ae
+        kap
+        kae
+        nodes {
+          d
+          n
+          fv
+          fn
+          ap
+          ae
+        }
       }
     }
   }
