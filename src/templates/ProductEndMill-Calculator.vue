@@ -8,7 +8,11 @@
       <div>
         <h2 class="mb-2">Калькулятор режимов резания</h2>
 
-        <series-page-modes-calculator :series="$page.series" :modes="$page.modes.edges" />
+        <series-page-modes-calculator
+          :series="$page.series"
+          :tools="$page.tools.edges"
+          :modes="$page.modes.edges"
+        />
       </div>
     </main>
   </page-layout>
@@ -55,6 +59,31 @@ query EndMill($path: String, $id: String!) {
     allowanceCuttingDiameter
     productSeriesSet {
       set
+    }
+  }
+  tools: allProductItemEndMill(
+    filter: { series: { eq: $id } }
+    sortBy: "id"
+    order: ASC
+  ) {
+    edges {
+      node {
+        id
+        series
+        name
+        d1
+        d2
+        d3
+        r
+        f45
+        l1
+        l2
+        ap
+        z
+        form
+        tip
+        range
+      }
     }
   }
   modes: allModeEndMill(

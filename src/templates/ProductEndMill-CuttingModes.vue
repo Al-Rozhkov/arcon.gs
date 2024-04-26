@@ -19,7 +19,11 @@
         <div v-if="$page.series.modesComment" class="alert alert-warning mb-4">{{ $page.series.modesComment }}</div>
 
         <h2 class="mb-2">Калькулятор режимов резания</h2>
-        <series-page-modes-calculator :series="$page.series" :modes="$page.modes.edges" />
+        <series-page-modes-calculator
+          :series="$page.series"
+          :tools="$page.tools.edges"
+          :modes="$page.modes.edges"
+        />
       </div>
 
       <div v-else class="mb-4">
@@ -72,6 +76,31 @@ query EndMill($path: String, $id: String!) {
       set
     }
     modesComment
+  }
+  tools: allProductItemEndMill(
+    filter: { series: { eq: $id } }
+    sortBy: "id"
+    order: ASC
+  ) {
+    edges {
+      node {
+        id
+        series
+        name
+        d1
+        d2
+        d3
+        r
+        f45
+        l1
+        l2
+        ap
+        z
+        form
+        tip
+        range
+      }
+    }
   }
   modes: allModeEndMill(
     filter: { series: { eq: $id } }
