@@ -157,6 +157,9 @@ function closestDiameter(num, arr, prop = 'd') {
 }
 
 function strToFloat(value) {
+    if (typeof value === 'number') {
+        return value
+    }
     return parseFloat(value.replace(/,/, '.'))
 }
 
@@ -211,7 +214,12 @@ export default {
 
     computed: {
         formProcessingTime() {
-            return null
+            const l = this.formProcessingLength
+            const fv = this.formMinutePitch
+            if (!l || !fv) {
+                return ''
+            }
+            return (l / fv).toFixed(2)
         },
         formUsageOptions() {
             const optionsSet = new Set()
@@ -313,7 +321,7 @@ export default {
                 return;
             }
             const n = Number(this.currentDiameter.n)
-            const fn = parseFloat(fnString.replace(/,/, '.'))
+            const fn = strToFloat(fnString)
             const result = n * fn
 
             if (result) {
@@ -361,15 +369,13 @@ export default {
             this.formCuttingWidth = ae ? ae.toFixed(2) : ''
             const ap = strToFloat(value.ap) * kap
             this.formCuttingDepth = ap ? ap.toFixed(2) : ''
-
-            // debugger
-        }
+        },
     },
 
     methods: {
         switchDebugMode() {
             this.debugMode = !this.debugMode
-        }
+        },
     },
 
     created() {
