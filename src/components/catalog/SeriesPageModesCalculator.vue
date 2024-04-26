@@ -32,11 +32,7 @@
         </div>
 
         <div class="debug-mode">
-            <div v-if="currentModeRecord" class="alert alert-info">
-                <strong>Запись режима:</strong> kap: {{ currentModeRecord.kap }}, kae: {{ currentModeRecord.kae }}
-            </div>
             <div v-if="currentDiameter" class="alert alert-info"><strong>Запись диаметра:</strong> {{ currentDiameter }}</div>
-            <div v-if="currentTool" class="alert alert-info"><strong>Запись инструмента:</strong> {{ currentTool }}</div>
         </div>
 
         <div class="tile-row">
@@ -92,8 +88,14 @@
                 <!-- Ширина резания -->
                 <b-form-group label="Ширина резания (ae)" label-cols="auto" label-for="js-form-cutting-width">
                     <b-input-group append="мм.">
-                        <b-form-input v-model="formCuttingWidth" name="js-form-cutting-width" type="number" min="0.01"
-                            step="0.01" />
+                        <b-form-input
+                            v-model="formCuttingWidth"
+                            name="js-form-cutting-width"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            :disabled="formProcessingType === 'groove'"
+                        />
                     </b-input-group>
                 </b-form-group>
 
@@ -152,6 +154,10 @@ function closestDiameter(num, arr, prop = 'd') {
         }
     }
     return currentRow;
+}
+
+function strToFloat(value) {
+    return parseFloat(value.replace(/,/, '.'))
 }
 
 export default {
@@ -294,38 +300,69 @@ export default {
     },
 
     watch: {
+        currentTool(tool) {
+            if (tool && !this.formCogsNumber) {
+                this.formCogsNumber = this.currentTool.z
+            }
+        },
         /**
          * Watch fn to set fv
          */
-        formPitchPerTurn(value) {
-            if (!value || !this.currentDiameter) {
+        formPitchPerTurn(fnString) {
+            if (!fnString || !this.currentDiameter) {
                 return;
             }
             const n = Number(this.currentDiameter.n)
-            const fn = parseFloat(value.replace(/,/, '.'))
+            const fn = parseFloat(fnString.replace(/,/, '.'))
             const result = n * fn
 
             if (result) {
                 this.formMinutePitch = result
             }
         },
+        formPitchPerCog(fz) {
+            if (!this.formPitchPerTurn && fz && this.formCogsNumber) {
+                this.formPitchPerTurn = fz * Number(this.formCogsNumber)
+            }
+        },
+        /**
+         * Watch z to set fz
+         */
+        formCogsNumber(z) {
+            if (!this.currentDiameter) {
+                return;
+            }
+            const fnString = this.currentDiameter.fn.replace(/,/, '.')
+            const result = parseFloat(fnString) / Number(z)
+            if (result) {
+                this.formPitchPerCog = result
+            }
+        },
+        formRotationalSpeed(n) {
+            if (!this.currentDiameter?.d || !n) {
+                return
+            }
+            const result = Math.round(n * this.currentDiameter.d * Math.PI / 1000)
+            this.formCuttingSpeed = result || ''
+        },
         currentDiameter(value) {
             if (!value || !this.currentModeRecord) {
                 return;
             }
-            const { kap, kae } = this.currentModeRecord
+            const { kap: kapString, kae: kaeString } = this.currentModeRecord
+            const kap = strToFloat(kapString)
+            const kae = strToFloat(kaeString)
             const fnString = value.fn.replace(/,/, '.')
 
-            this.formCuttingSpeed = value.n * value.d * Math.PI / 1000
             this.formRotationalSpeed = value.n
             this.formPitchPerTurn = fnString
-            this.formCuttingDepth = value.ap * kap
-            if (kae) {
-                this.formCuttingWidth = value.ae * kae
-            }
-            if (this.currentTool?.z) {
-                this.formPitchPerCog = parseFloat(fnString) / this.currentTool.z
-            }
+
+            const ae = strToFloat(value.ae) * kae
+            this.formCuttingWidth = ae ? ae.toFixed(2) : ''
+            const ap = strToFloat(value.ap) * kap
+            this.formCuttingDepth = ap ? ap.toFixed(2) : ''
+
+            // debugger
         }
     },
 
