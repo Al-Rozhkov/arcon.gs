@@ -35,8 +35,8 @@
       <app-menu>
         <li class="li li-half">
           <h3 class="h3">
-            <a class="text-red" href="/uploads/arconit_full.pdf">{{ $static.cDownload.value }}&nbsp;</a>
-            <span class="text-muted">(9,7&nbsp;Mb)</span>
+            <a class="text-red" href="/uploads/arconit_full_2024.pdf">{{ $static.cDownload.value }}&nbsp;</a>
+            <span class="text-muted">(15&nbsp;Mb)</span>
           </h3>
         </li>
         <li v-if="$route.path !== '/catalog/custom/'" class="li li-half">
