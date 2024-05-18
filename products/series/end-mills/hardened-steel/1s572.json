@@ -45,10 +45,12 @@
   "productSeriesSet": "set-r",
   "i18n": {
     "ru-ru": {
-      "content": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью."
+      "content": "Сферическая цельная твердосплавная концевая фреза, 4 зуба, со средней режущей частью.",
+      "modesComment": "<ul><li>При выборе максимального значения одного из параметров режимов резания следует уменьшить значения других параметров. Пример: не рекомендуется при максимальной подаче на оборот использовать максимальное значение припуска на сторону (ae);</li><li>При увеличении вылета инструмента свыше 5D и ухудшении качества обработки следует пропорционально уменьшить подачу на оборот и обороты в минуту в связи со снижением жесткости СПИД.</li></ul>"
     },
     "en-en": {
-      "content": "Spherical solid carbide end mill, 4 teeth, medium cutter section."
+      "content": "Spherical solid carbide end mill, 4 teeth, medium cutter section.",
+      "modesComment": "<ul><li>If the maximum value of one of the cutting parameters is selected, the values of the other parameters must be reduced. Example: It is not recommended to use the maximum side allowance (ae) at maximum feed rate per revolution;</li><li>If the tool reach exceeds 5D and the machining quality deteriorates, feed rate per revolution and rpm should be reduced proportionally due to the reduction in the stiffness of the SPID.</li></ul>"
     }
   }
 }

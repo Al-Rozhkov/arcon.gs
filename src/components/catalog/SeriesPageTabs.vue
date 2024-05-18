@@ -10,11 +10,11 @@
         <span class="menu-link__dashed">Режимы резания</span>
       </g-link>
     </li>
-    <li>
+    <!-- <li>
       <g-link :to="toCalculator" class="menu-link">
         <span class="menu-link__dashed">Калькулятор режимов резания</span>
       </g-link>
-    </li>
+    </li> -->
     <!-- <li class="menu-link" @click="switchPage()">
         <span class="menu-link__dashed">Произвольный инструмент</span>
       </li> -->

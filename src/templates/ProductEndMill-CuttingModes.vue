@@ -16,18 +16,18 @@
           <series-cutting-modes :items="modes.groove" :ledges="false" />
         </template>
 
-        <div v-if="$page.series.modesComment" class="alert alert-warning mb-4">{{ $page.series.modesComment }}</div>
+        <div v-if="$page.series.modesComment" class="alert alert-warning mb-4" v-html="$page.series.modesComment"></div>
 
-        <h2 class="mb-2">Калькулятор режимов резания</h2>
+        <!-- <h2 class="mb-2">Калькулятор режимов резания</h2>
         <series-page-modes-calculator
           :series="$page.series"
           :tools="$page.tools.edges"
           :modes="$page.modes.edges"
-        />
+        /> -->
       </div>
 
       <div v-else class="mb-4">
-        Данные по режимам для этой серии еще не опубликованы.
+        Для получения режимов резания этого инструмента свяжитесь с нашими представителями.
       </div>
     </main>
   </page-layout>

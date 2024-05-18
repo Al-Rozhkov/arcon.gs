@@ -194,12 +194,18 @@ collections:
                   name: 'content',
                   widget: 'text',
                 }
+              - &fieldModesComment {
+                  label: 'Комментарий к режимам резания',
+                  name: 'modesComment',
+                  widget: 'text',
+                }
           - label: 'English'
             name: 'en-en'
             widget: object
             collapsed: true
             fields:
               - *fieldContent
+              - *fieldModesComment
       - &fieldRelativePhotos
         label: 'Фотографии'
         name: 'photos'
