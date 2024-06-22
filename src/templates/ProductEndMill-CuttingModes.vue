@@ -3,16 +3,27 @@
     <main class="container">
       <series-page-header :node="$page.series" />
       
-      <series-page-tabs :id="$page.series.id" />
+      <series-page-tabs :id="$page.series.id" class="mb-2" />
 
       <div v-if="isAvailable">
+        <template v-if="modes.none.length">
+          <h2 class="mb-2">Режимы обработки</h2>
+          <series-cutting-modes :items="modes.none" />
+        </template>
+
         <template v-if="modes.ledge.length">
-          <h2 class="mb-2">Режимы обработки уступа</h2>
+          <div class="flex-row-nowrap gap-2 mb-2">
+            <IconModeLedge class="cutting-modes-icon" />
+            <h2 class="mb-0">Режимы обработки уступа</h2>
+          </div>
           <series-cutting-modes :items="modes.ledge" />
         </template>
 
         <template v-if="modes.groove.length">
-          <h2 class="mb-2">Режимы обработки паза</h2>
+          <div class="flex-row-nowrap gap-2 mb-2">
+            <IconModeGroove class="cutting-modes-icon" />
+            <h2 class="mb-0">Режимы обработки паза</h2>
+          </div>
           <series-cutting-modes :items="modes.groove" :ledges="false" />
         </template>
 
@@ -135,6 +146,8 @@ import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
 import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
 import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
 import SeriesPageModesCalculator from '~/components/catalog/SeriesPageModesCalculator.vue'
+import IconModeLedge from '~/components/icons/IconModeLedge.vue'
+import IconModeGroove from '~/components/icons/IconModeGroove.vue'
 
 export default {
   components: {
@@ -143,26 +156,36 @@ export default {
     SeriesPageTabs,
     SeriesCuttingModes,
     SeriesPageModesCalculator,
+    IconModeLedge,
+    IconModeGroove
   },
 
   computed: {
     isAvailable() {
-      return this.modes.groove.length || this.modes.groove.length
+      return this.modes.groove.length || this.modes.groove.length || this.modes.none.length
     },
     modes() {
       const ledge = []
       const groove = []
+      const result = {
+        'none': [],
+        'ledge': [],
+        'groove': []
+      }
 
       for (const { node } of this.$page.modes.edges) {
+        if (!node.type) {
+          result.none.push(node)
+        }
         if (node.type === 'ledge') {
-          ledge.push(node)
+          result.ledge.push(node)
         }
         if (node.type === 'groove') {
-          groove.push(node)
+          result.groove.push(node)
         }
       }
 
-      return { ledge, groove }
+      return result
     }
   },
 
@@ -192,3 +215,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.cutting-modes-icon {
+  max-width: 80px;
+  margin-top: -0.5rem;
+}
+</style>
