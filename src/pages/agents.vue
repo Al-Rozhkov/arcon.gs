@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="agents-page">
-      <main class="cnt">
+      <main class="container-xl pt">
         <h1>{{ $page.page.title }}</h1>
 
         <ClientOnly>

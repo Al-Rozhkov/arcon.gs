@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="cnt">
+    <main class="container-xl pt">
       <h1>{{ $page.page.title }}</h1>
 
       <b-form-input
