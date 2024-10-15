@@ -2,7 +2,7 @@
   text: "Центральный федеральный округ"
   city: "Россия, Москва"
   phone: "8(906)050-96-21"
-  email: cfo2@arconit.ru
+  email: skrylev.s@arconit.ru
   country:
     - Россия
     
@@ -10,7 +10,7 @@
   text: "Центральный федеральный округ"
   city: "Россия, Москва"
   phone: "8(903)719-25-01"
-  email: cfo@arconit.ru
+  email: svirina.e@arconit.ru
   country:
     - Россия
 
@@ -18,7 +18,7 @@
   text: "Центральный федеральный округ"
   city: "Россия, Москва"
   phone: "8(967)246-43-01"
-  email: cfo3@arconit.ru
+  email: zubairova.a@arconit.ru
   country:
     - Россия
 
@@ -26,7 +26,7 @@
   text: "Северо-Западный федеральный округ"
   city: "Россия, Санкт-Петербург"
   phone: "8(969)210-62-50"
-  email: szfo2@arconit.ru
+  email: vezhnovets.e@arconit.ru
   country:
     - Россия
 
@@ -34,7 +34,7 @@
   text: "Уральский федеральный округ"
   city: "Россия, Нижний Тагил"
   phone: "8(905)537-11-52"
-  email: ufo@arconit.ru
+  email: erushin.e@arconit.ru
   country:
     - Россия
 
@@ -42,7 +42,7 @@
   text: "Приволжский федеральный округ (Нижегородская, Пензенская, Самарская, Саратовская, Ульяновская области, Республика Мордовия)"
   city: "Россия, Пенза"
   phone: "8(903)719-20-58"
-  email: pfo@arconit.ru
+  email: kornaukhov.a@arconit.ru
   country:
     - Россия
 
@@ -50,7 +50,7 @@
   text: "Приволжский федеральный округ (Оренбургская область, Пермский край, Республика Башкортостан, Удмуртская Республика)"
   city: "Россия, Уфа"
   phone: "8(905)537-12-35"
-  email: pfo2@arconit.ru
+  email: golovchenko.a@arconit.ru
   country:
     - Россия
 
@@ -58,7 +58,7 @@
   text: "Приволжский федеральный округ (Республика Марий Эл, Республика Татарстан, Чувашская Республика)"
   city: "Россия, Уфа"
   phone: "8(909)317-89-04"
-  email: evd@arconit.ru
+  email: evdokimov.v@arconit.ru
   country:
     - Россия
 
@@ -66,7 +66,7 @@
   text: "Удаленные продажи (Россия, Республика Беларусь, Республика Казахстан, страны СНГ, страны ТС)"
   city: "Россия, Пенза"
   phone: "8(960)984-59-85"
-  email: gid@arconit.ru
+  email: karpukhina.e@arconit.ru
   country:
     - Россия
     - Беларусь
@@ -76,17 +76,17 @@
   text: "Удаленные продажи (Россия, Республика Беларусь, Республика Казахстан, страны СНГ, страны ТС)"
   city: "Россия, Пенза"
   phone: "8(909)317-89-12"
-  email: gid@arconit.ru
+  email: davydova.e@arconit.ru
   country:
     - Россия
     - Беларусь
     - Казахстан
 
 - title: "Яковлева Ирина Игоревна"
-  text: "Удаленные продажи по России"
+  text: "Удаленные продажи (Россия, Республика Беларусь, Республика Казахстан, страны СНГ, страны ТС)"
   city: "Россия, Пенза"
   phone: "8(903)719-24-70"
-  email: gid@arconit.ru
+  email: yakovleva.i@arconit.ru
   country:
     - Россия
 
