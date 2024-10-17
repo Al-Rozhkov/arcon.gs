@@ -6,22 +6,12 @@
 
         <ClientOnly>
           <div class="mb-4">
-            <b-form-radio-group
-              id="radios-agents-country"
-              v-model="countryFilter"
-              :options="countryOptions"
-              buttons
-              button-variant="outline-secondary"
-              name="radios-agents-country"
-            ></b-form-radio-group>
+            <b-form-radio-group id="radios-agents-country" v-model="countryFilter" :options="countryOptions" buttons
+              button-variant="outline-secondary" name="radios-agents-country"></b-form-radio-group>
           </div>
 
           <div class="agents-list">
-            <div
-              v-for="{ node } in agentsFiltered"
-              :key="node.id"
-              class="agent-card"
-            >
+            <div v-for="{ node } in agentsFiltered" :key="node.id" class="agent-card">
               <h3 class="agent-title">{{ node.title }}</h3>
               <p>{{ node.text }}</p>
               <p v-if="node.city">{{ node.city }}</p>
@@ -141,7 +131,6 @@ export default {
 .agents-list {
   display: grid;
   gap: 2.5rem 2rem;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .agent-title {
@@ -193,5 +182,17 @@ export default {
   top: -5rem;
   right: -15%;
   opacity: 0.07;
+}
+
+@include media-breakpoint-up(md) {
+  .agents-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .agents-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>
