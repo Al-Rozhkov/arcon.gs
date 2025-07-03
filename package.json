@@ -23,8 +23,8 @@
     "vue-lazy-hydration": "^2.0.0-beta.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-json": "^0.2.1",
@@ -46,7 +46,7 @@
     "sass": "^1.74.1",
     "sass-loader": "^10.1.1",
     "style-resources-loader": "^1.4.1",
-    "typograf": "^7.4.2",
+    "typograf": "^7.4.4",
     "vue-eslint-parser": "^9.3.1"
   },
   "prettier": {

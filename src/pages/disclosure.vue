@@ -28,10 +28,10 @@
         <p>{{ $page.tSertProd.value }}</p>
 
         <p>
-          <a class="sert-link" href="/uploads/iso9001_eng.pdf" target="_blank">
+          <a class="sert-link" href="/uploads/iso9001_eng_2025.pdf" target="_blank">
             <g-image src="~/assets/img/docs/ISO9001_ENG_1.jpg" width="120" class="sert" />
           </a>
-          <a class="sert-link" href="/uploads/iso9001_rus.pdf" target="_blank">
+          <a class="sert-link" href="/uploads/iso9001_rus_2025.pdf" target="_blank">
             <g-image src="~/assets/img/docs/ISO9001_RUS_1.jpg" width="120" class="sert" />
           </a>
         </p>
