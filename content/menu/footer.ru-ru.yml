@@ -1,6 +1,3 @@
-- path: /policy/
-  label: Политика конфиденциальности
-
 - path: /disclosure/
   label: Раскрытие информации
 

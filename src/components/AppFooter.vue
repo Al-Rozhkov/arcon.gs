@@ -18,6 +18,11 @@
 
         <div class="w-100 col-lg-6">
           <app-menu vertical>
+            <li>
+              <a href="/uploads/policy.pdf" class="menu-link">
+                <span class="menu-link__u">Политика конфиденциальности</span>
+              </a>
+            </li>
             <app-menu-item
               v-for="{ node } in $static.menu.edges"
               :key="node.id"
