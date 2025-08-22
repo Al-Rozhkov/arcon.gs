@@ -41,7 +41,7 @@ description: >-
     </section>
   </div>
   <div class="col-lg-12 sym-wrapper">
-    <p class="lead">High-precision machining center "Arkon" LLC</p>
-    <p>Russia, 440052, Penza region, Penza, Gogolya str, 51/53</p>
+    <p class="lead">High-precision machining center "Arcon" LLC</p>
+    <p>Russia, 440034, Penza region, Penza city, Penza, Kalinina St., p. 128A</p>
   </div>
 </section>
