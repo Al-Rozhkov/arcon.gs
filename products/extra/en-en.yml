@@ -1,4 +1,80 @@
-- title: 'Micro cutters for Escomatic automatic lathes'
-  text: 'T1.0 cutter and feed-through cutter designed for clamping in the specialized tooling of Escomatic machines. Series-produced under the above codenames'
+- title: 'Micro-cutting tools for Escomatic automatic lathes'
+  text: 'Parting-off T1.0 and turning tools designed for clamping in specialized tooling for Escomatic machines. Mass-produced under the specified part numbers.'
   file: './Mikroreztsy_dlya_tokarnykh_avtomatov_Escomatic.pdf'
   weight: 1
+- title: 'Additional sizes for series 1C002'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1C002-extra-sizes.pdf'
+  weight: 2
+- title: 'Additional sizes for series 1C006'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1C006-extra-sizes.pdf'
+  weight: 3
+- title: 'Additional sizes for series 1C008'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1C008-extra-sizes.pdf'
+  weight: 4
+- title: 'Additional sizes for series 1C101'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1C101-extra-sizes.pdf'
+  weight: 5
+- title: 'Additional sizes for series 1C103'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1C103-extra-sizes.pdf'
+  weight: 6
+- title: 'Additional sizes for series 1R042'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1R042-extra-sizes.pdf'
+  weight: 7
+- title: 'Additional sizes for series 1R141'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1R141-extra-sizes.pdf'
+  weight: 8
+- title: 'Additional sizes for series 1S172'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1S172-extra-sizes.pdf'
+  weight: 9
+- title: 'Additional sizes for series 1S271'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1S271-extra-sizes.pdf'
+  weight: 10
+- title: 'Additional sizes for series 2CS'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './2CS-extra-sizes.pdf'
+  weight: 11
+- title: 'Additional sizes for series 2SS'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './2SS-extra-sizes.pdf'
+  weight: 12
+- title: 'Additional sizes for series 6R'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './6R-extra-sizes.pdf'
+  weight: 13
+- title: 'Additional sizes for series 7MF'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './7MF-extra-sizes.pdf'
+  weight: 14
+- title: 'Additional sizes for series 7R'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './7R-extra-sizes.pdf'
+  weight: 15
+- title: 'Additional sizes for series 7V'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './7V-extra-sizes.pdf'
+  weight: 16
+- title: 'Series XD and X'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './series-XD-X.pdf'
+  weight: 17
+- title: 'Series 1ELC ARCONIT End Mill'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './1ELC-endmill.pdf'
+  weight: 18
+- title: 'Series 2SS ARCONIT Twist Drill'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './2SS-drill.pdf'
+  weight: 19
+- title: 'Series 6GR ARCONIT Engraving Mill'
+  text: 'At customers’ request, the range of series and sizes has been expanded. Items are mass-produced under the specified part numbers.'
+  file: './6GR-mill.pdf'
+  weight: 20
