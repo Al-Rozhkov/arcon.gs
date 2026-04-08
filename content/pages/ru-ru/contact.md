@@ -24,14 +24,6 @@ description: >-
       </p>
     </section>
     <section class="pt-sm">
-      <h3>Бухгалтерия</h3>
-      <p>
-        Тел.: (8412)&nbsp;45-89-90 доб. 2
-        <br />e-mail:
-        <a href="mailto:buh@cvm-arcon.ru">buh@cvm-arcon.ru</a>
-      </p>
-    </section>
-    <section class="pt-sm">
       <h3>По общим вопросам и&nbsp;закупкам</h3>
       <p>
         E-mail:

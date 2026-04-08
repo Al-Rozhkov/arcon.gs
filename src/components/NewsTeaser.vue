@@ -53,6 +53,6 @@ export default {
 .date {
   display: block;
   color: $gray-600;
-  margin-bottom: .5rem;
+  margin-bottom: .25rem;
 }
 </style>
