@@ -74,12 +74,12 @@
   weight: 16
 
 - title: 'Развертка цилиндрическая'
-  file: './razvert_cilindr.pdf'
+  file: './razvert_cilindr_v2.pdf'
   group: 'Развертки'
   weight: 17
 
 - title: 'Развертка коническая'
-  file: './razvert_conus.pdf'
+  file: './razvert_conus_v2.pdf'
   group: 'Развертки'
   weight: 18
 

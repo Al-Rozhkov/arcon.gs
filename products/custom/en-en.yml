@@ -74,12 +74,12 @@
   weight: 16
 
 - title: Cylindrical reamer
-  file: './razvert_cilindr.pdf'
+  file: './razvert_cilindr_v2.pdf'
   group: Reamers
   weight: 17
 
 - title: Conical reamer
-  file: './razvert_conus.pdf'
+  file: './razvert_conus_v2.pdf'
   group: Reamers
   weight: 18
 
