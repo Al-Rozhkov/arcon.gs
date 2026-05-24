@@ -1,8 +1,8 @@
 - id: site.slogan
-  value: "Designing, producing and customizing cutting tools"
+  value: "Design, manufacture and adapt cutting tools"
 
 - id: site.slogan.tagline
-  value: "Our production meets all international quality standards and complies with the requirements of the State Defense Procurement and Acquisition"
+  value: "Our production meets all international quality standards and complies with the requirements of the State Defense Procurement"
 
 - id: meta.front.title
   value: "ARCONIT – Cutting tools"
@@ -32,7 +32,7 @@
   value: "Online catalogue of cutting tools"
 
 - id: headline.catalog.drills
-  value: "Twist and center drills"
+  value: "Spiral and center drills"
 
 - id: headline.catalog.end-mills
   value: "End mills and custom mills"
@@ -62,13 +62,13 @@
   value: Thread mills
 
 - id: catalog.thread-mill
-  value: Thread cutter
+  value: Thread mill
 
 - id: catalog.download
   value: Download PDF catalogue
 
 - id: catalog.custom-tools
-  value: Custom tools
+  value: Special tools
 
 - id: catalog.all-tools
   value: "- All tools -"
@@ -98,7 +98,7 @@
   value: Length
 
 - id: catalog.filters.cutting-length
-  value: Cutting edge length
+  value: Cutting part length
 
 - id: catalog.filters.coating
   value: Coating
@@ -143,13 +143,13 @@
   value: Additional application
 
 - id: catalog.overview.other-parameters
-  value: Coating, cogs and more
+  value: Coating, teeth and more
 
 - id: catalog.overview.msg-custom-tools
   value: We can manufacture tools with individual parameters. Go to the
 
 - id: catalog.overview.msg-custom-tools-link-text
-  value: custom tools section
+  value: special tools section
 
 - id: catalog.cogs.num
   value: Number of cogs

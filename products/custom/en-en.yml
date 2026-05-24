@@ -1,24 +1,24 @@
-- title: Twist drill
+- title: 'Spiral drill'
   file: './drill_spiral_2SS.pdf'
   group: Drills
   weight: 1
 
-- title: Twist drill bit with short cutting part and neck
+- title: 'Spiral drill with short cutting part and neck'
   file: './drill_spiral_shejka_2SS.pdf'
   group: Drills
   weight: 2
 
-- title: Twist combination drill bit (with countersink)
+- title: 'Combined spiral drill (with countersink)'
   file: './drill_spiral_faska.pdf'
   group: Drills
   weight: 3
 
-- title: Step drill (2 steps)
+- title: 'Step drill (2 steps)'
   file: './drill_stupen_2.pdf'
   group: Drills
   weight: 4
 
-- title: Step drill (3 steps)
+- title: 'Step drill (3 steps)'
   file: './drill_stupen_3.pdf'
   group: Drills
   weight: 5
@@ -28,62 +28,62 @@
   group: Drills
   weight: 6
 
-- title: Cylindrical end mill
+- title: 'Cylindrical end mill'
   file: './end_mill.pdf'
-  group: End mills
+  group: 'End mills'
   weight: 7
 
-- title: Straight tapered end mill
+- title: 'Straight tapered end mill'
   file: './end_mill_conus.pdf'
-  group: End mills
+  group: 'End mills'
   weight: 8
 
-- title: Dovetail reverse tapered end mill
+- title: 'Dovetail reverse tapered end mill'
   file: './end_mill_conus_obrat.pdf'
-  group: End mills
+  group: 'End mills'
   weight: 9
 
-- title: 'T-cutter'
+- title: 'T-mill'
   file: './mill_t_form.pdf'
-  group: T-cutters
+  group: 'T-mills'
   weight: 10
 
-- title: T-cutter (trapezoidal)
+- title: 'T-mill (trapezoidal)'
   file: './mill_t_form_trap.pdf'
-  group: T-cutters
+  group: 'T-mills'
   weight: 11
 
-- title: Chamfering cutter (countersinking, standard)
+- title: 'Profile chamfering mill (countersink, standard)'
   file: './mill_fasoch_7v.pdf'
-  group: Chamfering cutters
+  group: 'Profile chamfering mills'
   weight: 12
 
-- title: Shaped bevel cutter (countersinking with neck, straight, double-sided and reverse)
+- title: 'Profile chamfering mill (countersink with neck, straight, double-sided and reverse)'
   file: './mill_fasoch_obratn_7v.pdf'
-  group: Chamfering cutters
+  group: 'Profile chamfering mills'
   weight: 13
 
-- title: Chamfer cutter (concave radius, standard)
+- title: 'Profile chamfering mill (with concave radius, standard)'
   file: './mill_fasoch_galtel_7r.pdf'
-  group: Chamfering cutters
+  group: 'Profile chamfering mills'
   weight: 15
 
-- title: Chamfer cutter (with concave radius and neck, straight, double-sided and reverse)
+- title: 'Profile chamfering mill (with concave radius and neck, straight, double-sided and reverse)'
   file: './mill_fasoch_obratn_7r.pdf'
-  group: Chamfering cutters
+  group: 'Profile chamfering mills'
   weight: 16
 
-- title: Cylindrical reamer
+- title: 'Cylindrical reamer'
   file: './razvert_cilindr_v2.pdf'
   group: Reamers
   weight: 17
 
-- title: Conical reamer
+- title: 'Conical reamer'
   file: './razvert_conus_v2.pdf'
   group: Reamers
   weight: 18
 
-- title: Cutter with a partial profile
+- title: 'Thread mill with partial profile'
   file: './mill_rezb_6RP.pdf'
-  group: Thread mill
+  group: 'Thread mills'
   weight: 19

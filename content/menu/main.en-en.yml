@@ -1,21 +1,21 @@
 - path: /about/
-  label: About
+  label: About the company
 
 - path: /tech/
   label: Technologies
 
 - path: /catalog/
-  label: Cutting tool
+  label: Cutting tools
   bold: true
   children:
   - path: /catalog/drills/
-    label: Drills
+    label: Spiral drills
   - path: /catalog/end-mills/
     label: End mills
   - path: /catalog/thread-mills/
-    label: Thread cutters
+    label: Thread mills
   - path: /catalog/custom/
-    label: Custom tools (by drawing)
+    label: Special tools (by drawing)
     bold: true
   - path: /catalog/extra/
     label: Additional catalog pages
@@ -24,4 +24,4 @@
   label: Services
 
 - path: /contact/
-  label: Contact Us
+  label: Contacts
