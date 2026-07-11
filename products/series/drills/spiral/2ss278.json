@@ -2,7 +2,7 @@
   "photos": [
     "./2ss003.jpg"
   ],
-  "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — m7. Силовая заточка",
+  "content": "Спиральное твердосплавное сверло 8хD, 135°. Внешняя подача СОЖ. Допуск диаметра сверла — m7. Острая заточка",
   "coating": "ng",
   "allowanceCuttingDiameter": "m7",
   "scheme": [
@@ -27,8 +27,7 @@
   "tail": "cylinder",
   "possibleUsage": [
     "n",
-    "h1.1",
-    "h1.2"
+    "h1.1"
   ],
   "cogsPitch": "permanent",
   "cogsNumber": [
@@ -36,18 +35,18 @@
   ],
   "type": "drills-spiral",
   "coolantSupply": "out",
-  "id": "2ss075",
+  "id": "2ss278",
   "productSeriesSet": "drills",
-  "toolLength": "5xD",
+  "toolLength": "8xD",
   "sharpeningAngle": [
-    "140"
+    "135"
   ],
   "i18n": {
     "ru-ru": {
-      "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — m7. Силовая заточка"
+      "content": "Спиральное твердосплавное сверло 8хD, 135°. Внешняя подача СОЖ. Допуск диаметра сверла — m7. Острая заточка"
     },
     "en-en": {
-      "content": "Twist carbide drill bit 2xD, 140°. External coolant supply. Cutter diameter tolerance m7. Power sharpening"
+      "content": "Twist carbide drill bit 8xD, 135°. External coolant supply. The tolerance of drill bit diameter is m7. Sharp point sharpening"
     }
   }
 }

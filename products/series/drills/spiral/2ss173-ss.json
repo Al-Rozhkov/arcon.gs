@@ -1,0 +1,45 @@
+{
+  "photos": [
+    "./2ss103.jpg"
+  ],
+  "content": "Спиральное твердосплавное сверло 3хD, 140°. Внутренний подвод СОЖ. Допуск диаметра сверла — m7. Силовая заточка",
+  "coating": "pp",
+  "allowanceCuttingDiameter": "m7",
+  "scheme": [
+    {
+      "name": "b",
+      "scheme": "2ss"
+    }
+  ],
+  "grooveInclination": [
+    30
+  ],
+  "mainUsage": [
+    "n"
+  ],
+  "cuttingEdgeLength": [
+    "middle"
+  ],
+  "productCategory": "drills-spiral",
+  "tail": "cylinder",
+  "cogsPitch": "permanent",
+  "cogsNumber": [
+    2
+  ],
+  "type": "drills-spiral",
+  "coolantSupply": "in",
+  "id": "2ss173-ss",
+  "productSeriesSet": "drills",
+  "toolLength": "3xD",
+  "sharpeningAngle": [
+    "140"
+  ],
+  "i18n": {
+    "ru-ru": {
+      "content": "Спиральное твердосплавное сверло 3хD, 140°. Внутренний подвод СОЖ. Допуск диаметра сверла — m7. Силовая заточка"
+    },
+    "en-en": {
+      "content": "Twist carbide drill bit 3xD, 140°. Internal coolant supply. The tolerance of drill bit diameter is m7. Power sharpening"
+    }
+  }
+}

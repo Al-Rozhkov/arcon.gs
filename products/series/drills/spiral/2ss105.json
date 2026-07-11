@@ -2,7 +2,7 @@
   "photos": [
     "./2ss103.jpg"
   ],
-  "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7.",
+  "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7. Силовая заточка",
   "coating": "pp",
   "allowanceCuttingDiameter": "h7",
   "scheme": [
@@ -36,10 +36,10 @@
   ],
   "i18n": {
     "ru-ru": {
-      "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7."
+      "content": "Спиральное твердосплавное сверло 5хD, 140°. Внешняя подача СОЖ. Допуск диаметра сверла — h7. Силовая заточка"
     },
     "en-en": {
-      "content": "Twist carbide drill bit 5xD, 140°. External coolant supply. Cutter diameter tolerance h7."
+      "content": "Twist carbide drill bit 5xD, 140°. External coolant supply. Cutter diameter tolerance h7. Power sharpening"
     }
   }
 }
