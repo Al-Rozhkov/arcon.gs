@@ -57,7 +57,7 @@
       <div class="group-section">
         <p>
           <a
-            href="/uploads/Spec_ocenka_yslovij.pdf"
+            href="/uploads/sout.pdf"
             target="_blank"
           >{{ $page.tWorkingConditions.value }}</a>
         </p>

@@ -112,6 +112,9 @@
 - id: catalog.filters.mat-placeholder
   value: "— Material group —"
 
+- id: catalog.filters.mat-usage
+  value: "Material apply"
+
 - id: catalog.filters.mat-steel
   value: Carbon and high-hardness steel
 
