@@ -25,8 +25,8 @@
           @mouseleave="$emit('highlight', null)"
         >
           <td class="tc">
-            <span class="hd">{{ node.series.toUpperCase() }}</span>
-            <span class="td">{{ node.name.toUpperCase() }}</span>
+            <span class="hd">{{ node.seriesValue }}</span>
+            <span class="td">{{ node.nameValue }}</span>
           </td>
           <td v-for="i in fields" :key="i" class="tc" :class="i">
             {{ node[i] }}
@@ -124,7 +124,17 @@ export default {
         if (!acc[node.range]) {
           acc[node.range] = []
         }
-        acc[node.range].push(node)
+        // Dirty hack
+        // Перезаписываем значения исключительно для серий с суффиксом -ss
+        const isSS = node.series.endsWith('-ss')
+
+        const seriesValue = isSS ? node.series.slice(0, -3).toUpperCase() : node.series.toUpperCase()
+        const nameValue = isSS ? `${node.name.toUpperCase()}-SS` : node.name.toUpperCase()
+        acc[node.range].push({
+          ...node,
+          seriesValue,
+          nameValue,
+        })
         return acc
       }, {})
     },

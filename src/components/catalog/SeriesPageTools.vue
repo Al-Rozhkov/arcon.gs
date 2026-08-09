@@ -72,6 +72,10 @@ export default {
       this.highlightedTool = payload
     },
   },
+
+  mounted() {
+    console.log(this.tools)
+  }
 }
 </script>
 
