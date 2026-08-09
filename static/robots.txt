@@ -1,0 +1,2 @@
+User-agent: Yandex
+Clean-param: etext

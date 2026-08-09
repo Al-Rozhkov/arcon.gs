@@ -64,7 +64,23 @@ export default function (Vue, { appOptions, head, router }) {
       href: '/fonts/arcon-bold.woff2',
       as: 'font',
       crossorigin: 'anonymous'
-    }
+    },
   )
   head.htmlAttrs.lang = 'ru'
+
+  const siteUrl = process.env.GRIDSOME_SITE_URL
+  
+  // Add a global mixin to inject metaInfo across all pages
+  Vue.mixin({
+    metaInfo() {
+      return {
+        link: [
+          {
+            rel: 'canonical',
+            href: `${siteUrl}${this.$route.path}`
+          }
+        ]
+      }
+    }
+  });
 }
