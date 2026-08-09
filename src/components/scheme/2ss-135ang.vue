@@ -6,7 +6,7 @@
     viewBox="0 0 800 250"
   >
     <image href="/img/schemes/2ss.png" width="800" height="240" y="10" x="0" />
-    <text transform="rotate(-90 86 54)" x="30" y="4" class="svg-scheme--2ss-text-md">140&deg;</text>
+    <text transform="rotate(-90 86 54)" x="30" y="4" class="svg-scheme--2ss-135ang--text-md">135&deg;</text>
 
     <template v-if="!tool">
       <text x="670" y="226">L<tspan dy="6">1</tspan></text>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-text.svg-scheme--2ss-text-md {
+text.svg-scheme--2ss-135ang--text-md {
   font-size: 1.85rem;
 }
 </style>
