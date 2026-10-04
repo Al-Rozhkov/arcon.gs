@@ -29,12 +29,12 @@
 
         <div v-if="$page.series.modesComment" class="alert alert-warning mb-4" v-html="$page.series.modesComment"></div>
 
-        <!-- <h2 class="mb-2">Калькулятор режимов резания</h2>
+        <h2 class="mb-2">Калькулятор режимов резания</h2>
         <series-page-modes-calculator
           :series="$page.series"
           :tools="$page.tools.edges"
           :modes="$page.modes.edges"
-        /> -->
+        />
       </div>
 
       <div v-else class="mb-4">
@@ -162,11 +162,9 @@ export default {
 
   computed: {
     isAvailable() {
-      return this.modes.groove.length || this.modes.groove.length || this.modes.none.length
+      return this.modes.groove.length || this.modes.ledge.length || this.modes.none.length
     },
     modes() {
-      const ledge = []
-      const groove = []
       const result = {
         'none': [],
         'ledge': [],

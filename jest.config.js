@@ -2,6 +2,7 @@ module.exports = {
   verbose: true,
   testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'vue'],
+  testPathIgnorePatterns: ['/node_modules/', '/\\.kilo/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },

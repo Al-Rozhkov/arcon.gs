@@ -5,7 +5,7 @@
 
       <series-page-tabs :id="$page.series.id" />
 
-      <div>
+      <div v-if="isAvailable">
         <h2 class="mb-2">Калькулятор режимов резания</h2>
 
         <series-page-modes-calculator
@@ -13,6 +13,10 @@
           :tools="$page.tools.edges"
           :modes="$page.modes.edges"
         />
+      </div>
+
+      <div v-else class="mb-4">
+        Для получения режимов резания этого инструмента свяжитесь с нашими представителями.
       </div>
     </main>
   </page-layout>
@@ -88,6 +92,8 @@ query EndMill($path: String, $id: String!) {
   }
   modes: allModeEndMill(
     filter: { series: { eq: $id } }
+    sortBy: "id"
+    order: ASC
   ) {
     edges {
       node {
@@ -115,16 +121,41 @@ query EndMill($path: String, $id: String!) {
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
 import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
-import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
-import SeriesPageModesCalculator from '../components/catalog/SeriesPageModesCalculator.vue'
+import SeriesPageModesCalculator from '~/components/catalog/SeriesPageModesCalculator.vue'
 
 export default {
   components: {
     PageLayout,
     SeriesPageHeader,
     SeriesPageTabs,
-    SeriesCuttingModes,
     SeriesPageModesCalculator,
+  },
+
+  computed: {
+    isAvailable() {
+      return this.modes.groove.length || this.modes.ledge.length || this.modes.none.length
+    },
+    modes() {
+      const result = {
+        'none': [],
+        'ledge': [],
+        'groove': [],
+      }
+
+      for (const { node } of this.$page.modes.edges) {
+        if (!node.type) {
+          result.none.push(node)
+        }
+        if (node.type === 'ledge') {
+          result.ledge.push(node)
+        }
+        if (node.type === 'groove') {
+          result.groove.push(node)
+        }
+      }
+
+      return result
+    },
   },
 
   metaInfo() {

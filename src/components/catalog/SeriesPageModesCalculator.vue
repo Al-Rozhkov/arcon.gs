@@ -1,387 +1,283 @@
 <template>
-    <div>
-        <div class="mb-3">
-            <!-- Применение -->
-            <b-form-group :label="$static.tMatUsage.value" label-cols="auto" label-for="js-form-usage">
-                <b-form-select id="js-form-usage" v-model="formUsage" :options="formUsageOptions">
-                </b-form-select>
-            </b-form-group>
+    <div class="cutting-calculator">
+        <b-form-group label="Применение" label-cols="auto" label-for="js-calc-usage">
+            <b-form-select
+                id="js-calc-usage"
+                :value="form.usage"
+                :options="usageOptions"
+                @change="onUsageChange"
+            />
+        </b-form-group>
 
-            <!-- Тип обработки -->
-            <b-form-group label="Тип обработки" label-cols="auto" label-for="js-form-processing-type">
-                <b-form-radio-group id="js-form-usage" v-model="formProcessingType" buttons
-                    button-variant="outline-secondary" name="js-form-processing-type">
-                    <b-form-radio value="groove">В паз</b-form-radio>
-                    <b-form-radio value="ledge">В уступ</b-form-radio>
-                </b-form-radio-group>
-            </b-form-group>
+        <b-form-group label="Тип обработки" label-cols="auto" label-for="js-calc-processing-type">
+            <b-form-select
+                id="js-calc-processing-type"
+                :value="selectedProcessingType"
+                @change="onProcessingTypeChange"
+            >
+                <b-form-select-option :value="NOT_SELECTED">— Не выбрано —</b-form-select-option>
+                <b-form-select-option
+                    v-for="option in processingTypeOptions"
+                    :key="option.value"
+                    :value="option.value"
+                >
+                    {{ option.label }}
+                </b-form-select-option>
+            </b-form-select>
+        </b-form-group>
 
-            <!-- Диаметр инструмента -->
-            <b-form-group label="Диаметр инструмента (D)" label-cols="auto" label-for="js-form-diameter">
-                <b-input-group append="мм.">
-                    <b-form-input v-model="formDiameter" name="js-form-diameter" type="number" min="0.01" step="0.01" />
-                </b-input-group>
-            </b-form-group>
-
-            <!-- Количество зубьев -->
-            <b-form-group label="Количество зубьев (Z)" label-cols="auto" label-for="js-cogs-number">
-                <b-input-group append="шт.">
-                    <b-form-input v-model="formCogsNumber" name="js-cogs-number" type="number" min="1" step="1" />
-                </b-input-group>
-            </b-form-group>
-        </div>
-
-        <div class="debug-mode">
-            <div v-if="currentDiameter" class="alert alert-info"><strong>Запись диаметра:</strong> {{ currentDiameter }}</div>
-        </div>
-
-        <div class="tile-row">
-            <div class="col-md-12 col-lg-10">
-                <!-- Скорость резания -->
-                <b-form-group label="Скорость резания (Vc)" label-cols="auto" label-for="js-cutting-speed">
-                    <b-input-group append="м/мин">
-                        <b-form-input v-model="formCuttingSpeed" name="js-cutting-speed" type="number" min="1"
-                            step="1" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Частота вращения -->
-                <b-form-group label="Частота вращения (n)" label-cols="auto" label-for="js-rotational-speed">
-                    <b-input-group append="об/мин">
-                        <b-form-input v-model="formRotationalSpeed" name="js-rotational-speed" type="number" min="1"
-                            step="1" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Минутная подача -->
-                <b-form-group label="Минутная подача (fv)" label-cols="auto" label-for="js-minute-pitch">
-                    <b-input-group append="мм/мин">
-                        <b-form-input v-model="formMinutePitch" name="js-minute-pitch" type="number" min="1" step="1" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Подача на оборот -->
-                <b-form-group label="Подача на оборот (fn)" label-cols="auto" label-for="js-pitch-per-turn">
-                    <b-input-group append="мм/об">
-                        <b-form-input v-model="formPitchPerTurn" name="js-minute-pitch" type="number" min="0.001"
-                            step="0.001" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Подача на зуб -->
-                <b-form-group label="Подача на зуб (fz)" label-cols="auto" label-for="js-pitch-per-cog">
-                    <b-input-group append="мм/зуб">
-                        <b-form-input v-model="formPitchPerCog" name="js-minute-cog" type="number" min="0.001"
-                            step="0.001" />
-                    </b-input-group>
-                </b-form-group>
-            </div>
-            <div class="col-md-12 col-lg-10">
-                <!-- Глубина резания -->
-                <b-form-group label="Глубина резания (ap)" label-cols="auto" label-for="js-form-cutting-depth">
-                    <b-input-group append="мм.">
-                        <b-form-input v-model="formCuttingDepth" name="js-form-cutting-depth" type="number" min="0.01"
-                            step="0.01" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Ширина резания -->
-                <b-form-group label="Ширина резания (ae)" label-cols="auto" label-for="js-form-cutting-width">
-                    <b-input-group append="мм.">
-                        <b-form-input
-                            v-model="formCuttingWidth"
-                            name="js-form-cutting-width"
-                            type="number"
-                            min="0.01"
-                            step="0.01"
-                            :disabled="formProcessingType === 'groove'"
-                        />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Длина обработки -->
-                <b-form-group label="Длина обработки (l)" label-cols="auto" label-for="js-form-processing-length">
-                    <b-input-group append="мм.">
-                        <b-form-input v-model="formProcessingLength" name="js-form-processing-length" type="number"
-                            min="0.01" step="0.01" />
-                    </b-input-group>
-                </b-form-group>
-
-                <!-- Время обработки -->
-                <b-form-group label="Время обработки (t)" label-cols="auto" label-for="js-form-processing-time">
-                    <b-input-group append="мин.">
-                        <b-form-input :value="formProcessingTime" name="js-form-processing-time" type="number"
-                            disabled />
-                    </b-input-group>
-                </b-form-group>
-            </div>
-        </div>
+        <b-form-group
+            v-for="field in numericFields"
+            :key="field.key"
+            :label="fieldLabel(field)"
+            label-cols="auto"
+            :label-for="`js-calc-${field.key}`"
+        >
+            <b-input-group :append="field.unit || null">
+                <!--
+                    Обычный input, а не b-form-input: у того своё внутреннее
+                    значение, которое рассинхронизируется с нашим откатом значения.
+                -->
+                <input
+                    :id="`js-calc-${field.key}`"
+                    class="form-control"
+                    type="text"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    maxlength="12"
+                    :value="form[field.key]"
+                    :disabled="field.readonly"
+                    @input="onNumericInput(field.key, $event)"
+                    @change="onNumericBlur(field.key, $event)"
+                />
+            </b-input-group>
+            <b-button
+                v-if="field.key === 'cogs'"
+                variant="outline-secondary"
+                size="sm"
+                class="mt-1"
+                :disabled="!parseNum(form.diameter)"
+                @click="onPickCogs"
+            >
+                Подобрать по каталогу
+            </b-button>
+        </b-form-group>
     </div>
 </template>
 
-<static-query>
-    {
-      tMatUsage: t(id: "catalog.filters.mat-usage") {
-        value
-      }
-    }
-</static-query>
-
 <script>
-import PageLayout from '~/layouts/Catalog.vue'
-import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
-import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
-import SeriesCuttingModes from '~/components/catalog/SeriesCuttingModes'
 import {
+    BButton,
     BFormGroup,
     BFormSelect,
     BFormSelectOption,
-    BFormSelectOptionGroup,
-    BFormRadioGroup,
-    BFormRadio,
-    BFormInput,
     BInputGroup,
+    BInputGroupAppend,
 } from 'bootstrap-vue'
+import {
+    CALCULATOR_FIELDS,
+    applyFieldReaction,
+    createEmptyForm,
+    fieldLabel,
+    firstDiameter,
+    formatNum,
+    getField,
+    parseNum,
+    pickCogs,
+    resolveModeGroup,
+    resolveProcessingTypeOptions,
+    sanitiseNumericInput,
+    usageOptions,
+} from '@/lib/calculator.js'
 
-function closestDiameter(num, arr, prop = 'd') {
-    let currentRow = arr[0];
-    let diff = Math.abs(num - currentRow[prop]);
-    for (let val = 0; val < arr.length; val++) {
-        const newdiff = Math.abs(num - arr[val][prop]);
-        if (newdiff < diff) {
-            diff = newdiff;
-            currentRow = arr[val];
-        }
-    }
-    return currentRow;
-}
-
-function strToFloat(value) {
-    if (typeof value === 'number') {
-        return value
-    }
-    return parseFloat(value.replace(/,/, '.'))
-}
+/**
+ * Значение «тип обработки не выбран» в выпадающем списке. Отдельная строка нужна
+ * потому, что пустой `type` каталога — это самостоятельный вариант
+ * «Общие режимы резания», его нельзя смешивать с «ничего не выбрано».
+ */
+const NOT_SELECTED = '__not_selected__'
 
 export default {
     components: {
-        PageLayout,
-        SeriesPageHeader,
-        SeriesPageTabs,
-        SeriesCuttingModes,
+        BButton,
         BFormGroup,
         BFormSelect,
         BFormSelectOption,
-        BFormSelectOptionGroup,
-        BFormRadioGroup,
-        BFormRadio,
-        BFormInput,
         BInputGroup,
+        BInputGroupAppend,
     },
 
     props: {
         series: {
             type: Object,
-            require: true,
+            required: true,
         },
         tools: {
             type: Array,
-            require: true,
+            required: true,
         },
         modes: {
             type: Array,
-            require: true,
-        }
+            required: true,
+        },
     },
 
     data() {
+        const form = createEmptyForm()
+
         return {
-            formUsage: null,
-            formProcessingType: 'groove',
-            formDiameter: null,
-            formCogsNumber: null,
-            formCuttingSpeed: null,
-            formRotationalSpeed: null,
-            formMinutePitch: null,
-            formPitchPerTurn: null,
-            formPitchPerCog: null,
-            formCuttingDepth: null,
-            formCuttingWidth: null,
-            formProcessingLength: null,
-            debugMode: true,
+            NOT_SELECTED,
+            form,
+            // Последнее принятое значение каждого поля: к нему откатываемся,
+            // если потеря фокуса оставило поле пустым или нулевым.
+            accepted: Object.assign({}, form),
         }
     },
 
     computed: {
-        formProcessingTime() {
-            const l = this.formProcessingLength
-            const fv = this.formMinutePitch
-            if (!l || !fv) {
-                return ''
-            }
-            return (l / fv).toFixed(2)
+        /** Группы режимов серии без обёртки `edges`. */
+        modeGroups() {
+            return this.modes.map(({ node }) => node)
         },
-        formUsageOptions() {
-            const optionsSet = new Set()
 
-            for (const mode of this.modes) {
-                optionsSet.add(mode.node.material)
-            }
-
-            return Array.from(optionsSet)
+        /** Инструменты серии без обёртки `edges`. */
+        toolNodes() {
+            return this.tools.map(({ node }) => node)
         },
+
+        usageOptions() {
+            return usageOptions(this.modeGroups)
+        },
+
+        processingTypeOptions() {
+            return resolveProcessingTypeOptions(this.modeGroups)
+        },
+
         /**
-         * Запись группы режимов
+         * Пустой `type` каталога — полноценный вариант «Общие режимы резания», а
+         * «ничего не выбрано» — это `null`. Для `<select>` это разные значения,
+         * поэтому невыбранное состояние отдаём отдельной строкой списка.
          */
-        currentModeRecord() {
-            if (!this.formUsage || !this.formProcessingType) {
-                return null
-            }
-
-            // Отсекаем по типу обработки и материалу
-            const record =  this.modes.find(
-                ({ node }) => node.material === this.formUsage && node.type === this.formProcessingType
-            )
-            return record ? record.node : null
+        selectedProcessingType() {
+            return this.form.processingType === null ? NOT_SELECTED : this.form.processingType
         },
-        /**
-         * Запись о диаметре
-         */
-        currentDiameter() {
-            if (!this.currentModeRecord || !this.formDiameter) {
-                return null;
-            }
 
-            const tools = this.currentModeRecord.nodes.map(tool => ({
-                ...tool,
-                d: String(tool.d).replace(',', '.')
-            }))
-            const exactEqual = tools.find((tool) => tool.d == this.formDiameter)
-            if (exactEqual) return exactEqual
-
-            const roundEqual = tools.find((tool) => tool.d == Math.round(this.formDiameter))
-            if (roundEqual) return roundEqual
-
-            const formValueNumber = parseFloat(this.formDiameter)
-            const dLess = Math.round(formValueNumber - 0.5)
-            const dLessFound = tools.find((tool) => tool.d == dLess)
-            if (dLessFound) return dLessFound
-
-            const dMore = Math.round(formValueNumber + 0.5)
-            const dMoreFound = tools.find((tool) => tool.d == dMore)
-            if (dMoreFound) return dMoreFound
-
-            const closest = closestDiameter(formValueNumber, tools)
-            return closest
-        },
-        /**
-         * Запись инструмента
-         */
-        currentTool() {
-            if (!this.formDiameter) {
-                return null;
-            }
-
-            const tools = this.tools.map(({ node }) => ({
-                ...node,
-                d: String(node.d1).replace(',', '.')
-            }))
-
-            const exactEqual = tools.find((tool) => tool.d == this.formDiameter)
-            if (exactEqual) return exactEqual
-
-            const roundEqual = tools.find((tool) => tool.d == Math.round(this.formDiameter))
-            if (roundEqual) return roundEqual
-
-            const formValueNumber = parseFloat(this.formDiameter)
-            const dLess = Math.round(formValueNumber - 0.5)
-            const dLessFound = tools.find((tool) => tool.d == dLess)
-            if (dLessFound) return dLessFound
-
-            const dMore = Math.round(formValueNumber + 0.5)
-            const dMoreFound = tools.find((tool) => tool.d == dMore)
-            if (dMoreFound) return dMoreFound
-
-            const closest = closestDiameter(formValueNumber, tools)
-            return closest
-        }
-    },
-
-    watch: {
-        currentTool(tool) {
-            if (tool && !this.formCogsNumber) {
-                this.formCogsNumber = this.currentTool.z
-            }
-        },
-        /**
-         * Watch fn to set fv
-         */
-        formPitchPerTurn(fnString) {
-            if (!fnString || !this.currentDiameter) {
-                return;
-            }
-            const n = Number(this.currentDiameter.n)
-            const fn = strToFloat(fnString)
-            const result = n * fn
-
-            if (result) {
-                this.formMinutePitch = result
-            }
-        },
-        formPitchPerCog(fz) {
-            if (!this.formPitchPerTurn && fz && this.formCogsNumber) {
-                this.formPitchPerTurn = fz * Number(this.formCogsNumber)
-            }
-        },
-        /**
-         * Watch z to set fz
-         */
-        formCogsNumber(z) {
-            if (!this.currentDiameter) {
-                return;
-            }
-            const fnString = this.currentDiameter.fn.replace(/,/, '.')
-            const result = parseFloat(fnString) / Number(z)
-            if (result) {
-                this.formPitchPerCog = result
-            }
-        },
-        formRotationalSpeed(n) {
-            if (!this.currentDiameter?.d || !n) {
-                return
-            }
-            const result = Math.round(n * this.currentDiameter.d * Math.PI / 1000)
-            this.formCuttingSpeed = result || ''
-        },
-        currentDiameter(value) {
-            if (!value || !this.currentModeRecord) {
-                return;
-            }
-            const { kap: kapString, kae: kaeString } = this.currentModeRecord
-            const kap = strToFloat(kapString)
-            const kae = strToFloat(kaeString)
-            const fnString = value.fn.replace(/,/, '.')
-
-            this.formRotationalSpeed = value.n
-            this.formPitchPerTurn = fnString
-
-            const ae = strToFloat(value.ae) * kae
-            this.formCuttingWidth = ae ? ae.toFixed(2) : ''
-            const ap = strToFloat(value.ap) * kap
-            this.formCuttingDepth = ap ? ap.toFixed(2) : ''
-        },
-    },
-
-    methods: {
-        switchDebugMode() {
-            this.debugMode = !this.debugMode
+        /** Поля 3…13: всё, что вводится цифрами. */
+        numericFields() {
+            return CALCULATOR_FIELDS.filter((field) => field.decimals !== undefined)
         },
     },
 
     created() {
-        if (this.$page.series.mainUsage.length) {
-            this.formUsage = this.$page.series.mainUsage[0].id;
+        // «Изначально заполнено первым значением применения в таблице режимов»
+        this.form.usage = this.usageOptions[0] || ''
+
+        // «Если в серии 1 вариант, то в списке остается его»
+        this.form.processingType =
+            this.processingTypeOptions.length ? this.processingTypeOptions[0].value : null
+
+        // Начальное значение поля 3 — первый диаметр серии. `accepted` синхронизируем
+        // вручную: он снимается в `data()` до первого ввода, иначе очистка поля
+        // откатила бы его в пустоту, а пустым поле 3 быть не может.
+        const diameter = firstDiameter(this.toolNodes)
+        if (diameter !== null) {
+            this.form.diameter = formatNum(diameter, getField('diameter').decimals)
+            this.accepted.diameter = this.form.diameter
         }
+
+        // «Если поле 2) заполнено то выполняем Алгоритм заполнения режимов» —
+        // с уже заполненными полями 1, 2 и 3 режимы переписываются сразу.
+        if (this.form.diameter) {
+            this.applyReaction('diameter')
+        }
+    },
+
+    methods: {
+        fieldLabel,
+
+        parseNum,
+
+        /**
+         * Единственная точка входа для числового поля: чистим значение, пишем его
+         * в состояние и прогоняем реакцию из спецификации. Watcher'ов нет намеренно —
+         * из-за их порядка срабатывания прототип терял Vc.
+         */
+        onNumericInput(key, event) {
+            const value = sanitiseNumericInput(event.target.value, getField(key).decimals)
+            if (value === null) {
+                // «сбрасывать к значению до»
+                event.target.value = this.form[key]
+                return
+            }
+
+            this.form[key] = value
+            if (this.isAcceptable(key, value)) {
+                this.accepted[key] = value
+            }
+            this.applyReaction(key)
+        },
+
+        /**
+         * «Пустым или равным 0 поле сделать нельзя» — проверяем на уходе фокуса,
+         * чтобы пользователь мог набрать «0,5» с нуля.
+         */
+        onNumericBlur(key, event) {
+            const value = sanitiseNumericInput(event.target.value, getField(key).decimals)
+            if (value !== null && this.isAcceptable(key, value)) {
+                this.accepted[key] = value
+                return
+            }
+
+            const restored = this.accepted[key]
+            event.target.value = restored
+            this.form[key] = restored
+            this.applyReaction(key)
+        },
+
+        isAcceptable(key, value) {
+            const field = getField(key)
+            if (!field.restrict) {
+                return true
+            }
+            const parsed = parseNum(value)
+            return parsed !== null && parsed !== 0
+        },
+
+        onUsageChange(value) {
+            this.form.usage = value
+            this.applyReaction('usage')
+        },
+
+        onProcessingTypeChange(value) {
+            this.form.processingType = value === NOT_SELECTED ? null : value
+            this.applyReaction('processingType')
+        },
+
+        /** «Рядом разместить кнопку "Подобрать по каталогу"» (поле 4). */
+        onPickCogs() {
+            const cogs = pickCogs(this.toolNodes, this.form.diameter)
+            if (cogs === null) {
+                return
+            }
+
+            this.form.cogs = formatNum(cogs, 0)
+            this.accepted.cogs = this.form.cogs
+            this.applyReaction('cogs')
+        },
+
+        applyReaction(key) {
+            const patch = applyFieldReaction(key, this.form, {
+                group: resolveModeGroup(this.modeGroups, this.form.usage, this.form.processingType),
+                tools: this.toolNodes,
+            })
+            Object.assign(this.form, patch)
+        },
     },
 }
 </script>
+
+<style lang="scss">
+.cutting-calculator {
+    max-width: 40rem;
+}
+</style>
