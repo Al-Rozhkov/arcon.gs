@@ -52,7 +52,7 @@
                 />
             </b-input-group>
             <b-button
-                v-if="field.key === 'cogs'"
+                v-if="field.key === 'cogs' && hasCogsCatalog"
                 variant="outline-secondary"
                 size="sm"
                 class="mt-1"
@@ -108,10 +108,6 @@ export default {
     },
 
     props: {
-        series: {
-            type: Object,
-            required: true,
-        },
         tools: {
             type: Array,
             required: true,
@@ -143,6 +139,14 @@ export default {
         /** Инструменты серии без обёртки `edges`. */
         toolNodes() {
             return this.tools.map(({ node }) => node)
+        },
+
+        /**
+         * `Z` есть не у всех типов инструментов: в таблице сверл его нет, и
+         * подбором «по каталогу» там взяться неоткуда — поле остаётся ручным.
+         */
+        hasCogsCatalog() {
+            return this.toolNodes.some((tool) => parseNum(tool.z) !== null)
         },
 
         usageOptions() {

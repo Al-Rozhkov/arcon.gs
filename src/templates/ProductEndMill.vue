@@ -3,7 +3,7 @@
     <main class="container">
       <series-page-header :node="$page.series" />
       
-      <series-page-tabs :id="$page.series.id" />
+      <series-page-tabs :node="$page.series" />
       
       <series-page-tools :node="$page.series" :tools="$page.tools" />
     </main>
@@ -52,6 +52,7 @@ query EndMill($path: String, $id: String!) {
     productSeriesSet {
       set
     }
+    hasCuttingModes
   }
   tools: allProductItemEndMill(
     filter: { series: { eq: $id } }

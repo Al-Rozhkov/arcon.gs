@@ -51,13 +51,15 @@ module.exports = {
       },
     },
 
-    // Cutting modes
+    // Cutting modes. One sheet per series, every sheet holds groups of
+    // `material`/`type` with diameter rows in `nodes`. Series of all tool types
+    // live here, hence the type name is not `ModeEndMill` anymore.
     {
       use: '~/plugins/source-google-sheets',
       options: {
         spreadsheetId: '1cH4sQibid4YHh8Ipe0XNXtL-PdiabYF6vvP9o5MqTw4', // '1-nGaU1QQXdQ85pxcJDZncR2sMwGh9AqeiOUvbN78bCQ',
         apiKey: GOOGLE_API_KEY,
-        typeName: 'ModeEndMill',
+        typeName: 'CuttingMode',
         mergeToNodes: ['d', 'n', 'fv', 'fn', 'ap', 'ae']
       },
     },
@@ -345,8 +347,38 @@ module.exports = {
         component: './src/templates/ProductEndMill-Calculator.vue'
       }
     ],
-    ProductDrill: '/catalog/drills/:id',
-    ProductThreadMill: '/catalog/thread-mills/:id',
+    ProductDrill: [
+      {
+        path: '/catalog/drills/:id',
+        component: './src/templates/ProductDrill.vue'
+      },
+      {
+        name: 'cuttingModes',
+        path: '/catalog/drills/:id/modes',
+        component: './src/templates/ProductDrill-CuttingModes.vue'
+      },
+      {
+        name: 'calculator',
+        path: '/catalog/drills/:id/calculator',
+        component: './src/templates/ProductDrill-Calculator.vue'
+      }
+    ],
+    ProductThreadMill: [
+      {
+        path: '/catalog/thread-mills/:id',
+        component: './src/templates/ProductThreadMill.vue'
+      },
+      {
+        name: 'cuttingModes',
+        path: '/catalog/thread-mills/:id/modes',
+        component: './src/templates/ProductThreadMill-CuttingModes.vue'
+      },
+      {
+        name: 'calculator',
+        path: '/catalog/thread-mills/:id/calculator',
+        component: './src/templates/ProductThreadMill-Calculator.vue'
+      }
+    ],
     News: '/news/:year/:title',
     Service: '/services/:title',
     Tech: '/tech#:title',

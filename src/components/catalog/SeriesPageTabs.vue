@@ -5,12 +5,12 @@
         <span class="menu-link__dashed">Все инструменты серии</span>
       </g-link>
     </li>
-    <li>
+    <li v-if="node.hasCuttingModes">
       <g-link :to="toModes" class="menu-link">
         <span class="menu-link__dashed">Режимы резания</span>
       </g-link>
     </li>
-    <li>
+    <li v-if="node.hasCuttingModes">
       <g-link :to="toCalculator" class="menu-link">
         <span class="menu-link__dashed">Калькулятор режимов резания</span>
       </g-link>
@@ -24,8 +24,9 @@
 <script>
 export default {
   props: {
-    id: {
-      type: String,
+    /** Серия: идентификатор для адресов и признак наличия режимов резания. */
+    node: {
+      type: Object,
       required: true,
     },
   },
@@ -35,16 +36,33 @@ export default {
     }
   },
   computed: {
+    /**
+     * Адрес серии: `/catalog/<section>/<id>`. Раздел каталога берётся из текущего
+     * адреса, поэтому вкладки одинаково работают для концевых фрез, сверл и
+     * резьбовых фрез.
+     */
+    seriesBase() {
+      const segments = this.$route.path.split('/').filter(Boolean)
+
+      // На странице серии последний сегмент — сама серия, на страницах режимов
+      // резания — «modes» или «calculator», его надо отбросить.
+      if (segments[segments.length - 1] !== this.node.id) {
+        segments.pop()
+      }
+
+      return '/' + segments.join('/')
+    },
+
     toSeries() {
-      return `/catalog/end-mills/${this.id}/`
+      return `${this.seriesBase}/`
     },
 
     toModes() {
-      return `/catalog/end-mills/${this.id}/modes/#${this.navId}`
+      return `${this.seriesBase}/modes/#${this.navId}`
     },
 
     toCalculator() {
-      return `/catalog/end-mills/${this.id}/calculator/#${this.navId}`
+      return `${this.seriesBase}/calculator/#${this.navId}`
     },
   },
 }

@@ -5,6 +5,7 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/\\.kilo/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^~/(.*)$': '<rootDir>/src/$1',
   },
   transform: {
     "^.+\\.js$": "babel-jest",

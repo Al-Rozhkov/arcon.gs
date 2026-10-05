@@ -3,44 +3,33 @@
     <li v-for="(material, matIndex) in items" :key="matIndex" class="mode-material">
       <h3 class="mode-header">{{ material.material }}</h3>
 
-      <div class="mode-material__table" :class="ledges ? 'mode-material__table--5' : 'mode-material__table--4'">
+      <div class="mode-material__table" :class="`mode-material__table--${columns.length}`">
         <div class="mode-material__header">
           <div class="mode-value-header mode-diameter">
             <h4>Диам.</h4>
           </div>
-          <div class="mode-value-header mode-value--n">
-            <h4>n</h4>
-            <p>об/мин</p>
-          </div>
-          <div class="mode-value-header">
-            <h4>fv</h4>
-            <p>мм/мин</p>
-          </div>
-          <div class="mode-value-header">
-            <h4>fn</h4>
-            <p>мм/об</p>
-          </div>
-          <div class="mode-value-header">
-            <h4>ap</h4>
-            <p>мм</p>
-          </div>
-          <div v-if="ledges" class="mode-value-header">
-            <h4>ae</h4>
-            <p>мм</p>
+          <div
+            v-for="column in columns"
+            :key="column.key"
+            class="mode-value-header"
+            :class="`mode-value--${column.key}`"
+          >
+            <h4>{{ column.key }}</h4>
+            <p>{{ column.unit }}</p>
           </div>
         </div>
 
         <div v-for="node in material.nodes" :key="node.d" class="mode-material__node">
           <div class="mode-diameter" :class="{ highlighted: highlightedDiameter === node.d }">{{ node.d }}</div>
           <div
-            v-for="value in columns"
-            :key="value"
+            v-for="column in columns"
+            :key="column.key"
             class="mode-value"
-            :class="`mode-value--${value}`"
+            :class="`mode-value--${column.key}`"
             @mouseover="onMouseOver(node)"
             @mouseleave="highlightedDiameter = null"
           >
-            {{ node[value] }}
+            {{ node[column.key] }}
           </div>
         </div>
       </div>
@@ -49,15 +38,28 @@
 </template>
 
 <script>
+/**
+ * Таблица режимов резания серии. Колонки приходят из самих данных, а не из типа
+ * инструмента: `n`, `fv` и `fn` есть везде, `ap` и `ae` — только в режимах, где
+ * их приводит каталог. У сверл и резьбовых фрез ap/ae нет вообще, у концевых
+ * фрез ap есть у всех, а ae — только у режимов в уступ.
+ */
+const BASE_COLUMNS = ['n', 'fv', 'fn']
+const EXTRA_COLUMNS = ['ap', 'ae']
+
+const UNITS = {
+    n: 'об/мин',
+    fv: 'мм/мин',
+    fn: 'мм/об',
+    ap: 'мм',
+    ae: 'мм',
+}
+
 export default {
   props: {
     items: {
       type: Array,
       required: true,
-    },
-    ledges: {
-      type: Boolean,
-      default: true,
     },
   },
   data() {
@@ -67,7 +69,20 @@ export default {
   },
   computed: {
     columns() {
-      return this.ledges ? ['n', 'fv', 'fn', 'ap', 'ae'] : ['n', 'fv', 'fn', 'ap']
+      const filled = new Set()
+
+      for (const item of this.items || []) {
+        for (const node of item.nodes || []) {
+          for (const key of EXTRA_COLUMNS) {
+            if (node[key]) {
+              filled.add(key)
+            }
+          }
+        }
+      }
+
+      const keys = BASE_COLUMNS.concat(EXTRA_COLUMNS.filter((key) => filled.has(key)))
+      return keys.map((key) => ({ key, unit: UNITS[key] }))
     }
   },
   methods: {
@@ -122,15 +137,13 @@ $diameter-width: 4rem;
 .mode-material__header,
 .mode-material__node {
   display: grid;
-  // grid-template-columns: $diameter-width minmax(4rem, 8fr) repeat(4, minmax(3.5rem, 7fr));
-  // grid-template-columns: $diameter-width minmax(5rem, 10fr) repeat(2, minmax(3.5rem, 7fr)) repeat(2, minmax(3rem, 6fr));
 }
 
-.mode-material__table--5 {
+.mode-material__table--3 {
 
   .mode-material__header,
   .mode-material__node {
-    grid-template-columns: $diameter-width minmax(5rem, 10fr) repeat(2, minmax(3.5rem, 7fr)) repeat(2, minmax(3rem, 6fr));
+    grid-template-columns: $diameter-width minmax(5rem, 10fr) repeat(2, minmax(4rem, 9fr));
   }
 }
 
@@ -139,6 +152,14 @@ $diameter-width: 4rem;
   .mode-material__header,
   .mode-material__node {
     grid-template-columns: $diameter-width minmax(6rem, 12fr) repeat(3, minmax(4rem, 8fr));
+  }
+}
+
+.mode-material__table--5 {
+
+  .mode-material__header,
+  .mode-material__node {
+    grid-template-columns: $diameter-width minmax(5rem, 10fr) repeat(2, minmax(3.5rem, 7fr)) repeat(2, minmax(3rem, 6fr));
   }
 }
 

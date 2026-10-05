@@ -32,7 +32,6 @@ const TOOLS = [
 const build = (modes = MODES, tools = TOOLS) =>
     mount(SeriesPageModesCalculator, {
         propsData: {
-            series: { id: '1c002', title: 'Концевая фреза 1C002' },
             tools,
             modes,
         },
@@ -68,14 +67,20 @@ describe('SeriesPageModesCalculator', () => {
     })
 
     test('рядом с полем 4 есть кнопка «Подобрать по каталогу»', async () => {
-        // без инструментов в серии поле 3 пусто — подбирать Z не из чего
-        const wrapper = build(MODES, [])
+        const wrapper = build()
         const button = wrapper.find('button.btn')
 
         expect(button.text()).toBe('Подобрать по каталогу')
-        expect(button.attributes('disabled')).toBe('disabled')
+        expect(button.attributes('disabled')).toBeUndefined()
 
+        // пока поле 3 пустое — подбирать Z не из чего
         const diameter = wrapper.find('#js-calc-diameter')
+        diameter.element.value = ''
+        diameter.trigger('input')
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('button.btn').attributes('disabled')).toBe('disabled')
+
         diameter.element.value = '4'
         diameter.trigger('input')
         await wrapper.vm.$nextTick()
@@ -196,6 +201,74 @@ describe('SeriesPageModesCalculator', () => {
 
         expect(wrapper.vm.form.cogs).toBe('4')
         expect(wrapper.vm.form.pitchPerCog).toBe('0,029')
+    })
+
+    describe('серия без зубьев в каталоге — сверло', () => {
+        // У сверла в таблице инструментов нет `z`, в режимах нет ap и ae.
+        const DRILL_MODES = [
+            {
+                node: {
+                    id: '1',
+                    type: '',
+                    material: 'Углеродистые и легированные стали, чугун (< 30HRC). Vc = 85 м/мин\t\t\n',
+                    kap: '',
+                    kae: '',
+                    nodes: [{ d: '3', n: '9 000', fv: '1 080', fn: '0,12' }],
+                },
+            },
+        ]
+        const DRILL_TOOLS = [{ node: { id: 'a', d1: '3' } }]
+
+        const buildDrill = () =>
+            mount(SeriesPageModesCalculator, {
+                propsData: {
+                    tools: DRILL_TOOLS,
+                    modes: DRILL_MODES,
+                },
+            })
+
+        test('кнопки подбора Z нет — подбирать не из чего', () => {
+            const wrapper = buildDrill()
+
+            expect(wrapper.findAll('button.btn')).toHaveLength(0)
+        })
+
+        test('поле Z остаётся пустым, режимы заполняются без ap и ae', () => {
+            const wrapper = buildDrill()
+
+            expect(wrapper.vm.form).toMatchObject({
+                diameter: '3,00',
+                rotationalSpeed: '9000',
+                pitchPerTurn: '0,120',
+                cuttingSpeed: '85',
+                minutePitch: '1080',
+                cogs: '',
+                pitchPerCog: '',
+                cuttingDepth: '',
+                cuttingWidth: '',
+            })
+        })
+
+        test('поле Z можно ввести вручную — fz и fv пересчитываются', async () => {
+            const wrapper = buildDrill()
+            const cogs = wrapper.find('#js-calc-cogs')
+
+            cogs.element.value = '2'
+            cogs.trigger('input')
+            await wrapper.vm.$nextTick()
+
+            expect(wrapper.vm.form.pitchPerCog).toBe('0,060')
+        })
+
+        test('тип обработки один — общие режимы резания', () => {
+            const wrapper = buildDrill()
+            const options = wrapper
+                .findAll('#js-calc-processing-type option')
+                .wrappers.map((o) => o.text())
+
+            expect(options).toEqual(['— Не выбрано —', 'Общие режимы резания'])
+            expect(wrapper.vm.form.processingType).toBe('')
+        })
     })
 
     test('нецифровой ввод откатывается к предыдущему значению', async () => {

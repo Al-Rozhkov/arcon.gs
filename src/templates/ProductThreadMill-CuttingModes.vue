@@ -12,12 +12,11 @@
 </template>
 
 <page-query>
-query EndMill($path: String, $id: String!, $cuttingModesSeries: String) {
-  series: productEndMill(path: $path) {
+query TreadMill($path: String, $id: String!, $cuttingModesSeries: String) {
+  series: productThreadMill(path: $path) {
     title
     keywords
     id
-    fusion
     photos(width: 800, quality: 75)
     content
     scheme {
@@ -36,27 +35,22 @@ query EndMill($path: String, $id: String!, $cuttingModesSeries: String) {
       text
     }
     tail
-    endShapes {
-      id
-      text
-    }
     cuttingShapes {
       id
       text
     }
-    cogsPitch
-    cogsNumber
-    cogsCuttingCenter
-    grooveInclination
-    allowanceRadius
-    allowanceCuttingDiameter
+    coolantSupply {
+      id
+      text
+    }
     productSeriesSet {
       set
     }
+    toolProfile
+    toolForming
     hasCuttingModes
-    modesComment
   }
-  tools: allProductItemEndMill(
+  tools: allProductItemThreadMill(
     filter: { series: { eq: $id } }
     sortBy: "id"
     order: ASC

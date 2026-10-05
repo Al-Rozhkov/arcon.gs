@@ -7,6 +7,7 @@
 
 const path = require('path')
 const moment = require('moment')
+const { resolveModesSeries } = require('./lib/series-modes')
 
 const envLocale = process.env.LOCALE
 const dateFormat = {
@@ -68,6 +69,18 @@ module.exports = function (api) {
   }
 
   /**
+   * Cutting modes live in one collection for every tool type: `CuttingMode`
+   * holds the `1c001`…`7v52`, `2cs02`…`2ss` and `6rp` sheets.
+   * @see lib/series-modes.js for why a sheet is also matched by series prefix.
+   */
+  const cuttingModesSeriesList = () =>
+    api._store
+      .getCollection('CuttingMode')
+      .data()
+      .map((node) => node.series)
+      .filter(Boolean)
+
+  /**
    * Implements hook on each node creation.
    */
   api.onCreateNode((options) => {
@@ -123,6 +136,16 @@ module.exports = function (api) {
         titleMap[options.internal.typeName] + ' ' + options.id.toUpperCase()
       options.description = options.content
       options.keywords = productItems.map((i) => i.series + i.name).join(', ')
+
+      // Cutting modes page filters the modes collection by series, so the series
+      // node carries the name of its modes sheet and whether it has one at all.
+      // Series without modes still gets the page: it renders the "contact us"
+      // message, and the series page hides the tab.
+      options.cuttingModesSeries = resolveModesSeries(
+        options.id,
+        cuttingModesSeriesList()
+      )
+      options.hasCuttingModes = Boolean(options.cuttingModesSeries)
     }
 
     return options

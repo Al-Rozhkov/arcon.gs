@@ -3,6 +3,8 @@
     <main class="container">
       <series-page-header :node="$page.series" />
       
+      <series-page-tabs :node="$page.series" />
+      
       <series-page-tools :node="$page.series" :tools="$page.tools" />
     </main>
   </page-layout>
@@ -45,6 +47,7 @@ query Drill($path: String, $id: String!) {
     productSeriesSet {
       set
     }
+    hasCuttingModes
   }
   tools: allProductItemDrill(
     filter: { series: { eq: $id } }
@@ -73,12 +76,14 @@ query Drill($path: String, $id: String!) {
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesPageHeader from '~/components/catalog/SeriesPageHeader.vue'
+import SeriesPageTabs from '~/components/catalog/SeriesPageTabs.vue'
 import SeriesPageTools from '~/components/catalog/SeriesPageTools.vue'
 
 export default {
   components: {
     PageLayout,
     SeriesPageHeader,
+    SeriesPageTabs,
     SeriesPageTools
   },
 
