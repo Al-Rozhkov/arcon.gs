@@ -1,67 +1,71 @@
 <template>
-    <div class="cutting-calculator">
-        <b-form-group label="Применение" label-cols="auto" label-for="js-calc-usage">
-            <b-form-select
-                id="js-calc-usage"
-                :value="form.usage"
-                :options="usageOptions"
-                @change="onUsageChange"
-            />
-        </b-form-group>
+    <div>
+        <h2 class="mb-2">Калькулятор режимов резания</h2>
 
-        <b-form-group label="Тип обработки" label-cols="auto" label-for="js-calc-processing-type">
-            <b-form-select
-                id="js-calc-processing-type"
-                :value="selectedProcessingType"
-                @change="onProcessingTypeChange"
-            >
-                <b-form-select-option :value="NOT_SELECTED">— Не выбрано —</b-form-select-option>
-                <b-form-select-option
-                    v-for="option in processingTypeOptions"
-                    :key="option.value"
-                    :value="option.value"
-                >
-                    {{ option.label }}
-                </b-form-select-option>
-            </b-form-select>
-        </b-form-group>
-
-        <b-form-group
-            v-for="field in numericFields"
-            :key="field.key"
-            :label="fieldLabel(field)"
-            label-cols="auto"
-            :label-for="`js-calc-${field.key}`"
-        >
-            <b-input-group :append="field.unit || null">
-                <!--
-                    Обычный input, а не b-form-input: у того своё внутреннее
-                    значение, которое рассинхронизируется с нашим откатом значения.
-                -->
-                <input
-                    :id="`js-calc-${field.key}`"
-                    class="form-control"
-                    type="text"
-                    inputmode="decimal"
-                    autocomplete="off"
-                    maxlength="12"
-                    :value="form[field.key]"
-                    :disabled="field.readonly"
-                    @input="onNumericInput(field.key, $event)"
-                    @change="onNumericBlur(field.key, $event)"
+        <div class="cutting-calculator">
+            <b-form-group label="Применение" label-cols="auto" label-for="js-calc-usage">
+                <b-form-select
+                    id="js-calc-usage"
+                    :value="form.usage"
+                    :options="usageOptions"
+                    @change="onUsageChange"
                 />
-            </b-input-group>
-            <b-button
-                v-if="field.key === 'cogs' && hasCogsCatalog"
-                variant="outline-secondary"
-                size="sm"
-                class="mt-1"
-                :disabled="!parseNum(form.diameter)"
-                @click="onPickCogs"
+            </b-form-group>
+
+            <b-form-group label="Тип обработки" label-cols="auto" label-for="js-calc-processing-type">
+                <b-form-select
+                    id="js-calc-processing-type"
+                    :value="selectedProcessingType"
+                    @change="onProcessingTypeChange"
+                >
+                    <b-form-select-option :value="NOT_SELECTED">— Не выбрано —</b-form-select-option>
+                    <b-form-select-option
+                        v-for="option in processingTypeOptions"
+                        :key="option.value"
+                        :value="option.value"
+                    >
+                        {{ option.label }}
+                    </b-form-select-option>
+                </b-form-select>
+            </b-form-group>
+
+            <b-form-group
+                v-for="field in numericFields"
+                :key="field.key"
+                :label="fieldLabel(field)"
+                label-cols="auto"
+                :label-for="`js-calc-${field.key}`"
             >
-                Подобрать по каталогу
-            </b-button>
-        </b-form-group>
+                <b-input-group :append="field.unit || null">
+                    <!--
+                        Обычный input, а не b-form-input: у того своё внутреннее
+                        значение, которое рассинхронизируется с нашим откатом значения.
+                    -->
+                    <input
+                        :id="`js-calc-${field.key}`"
+                        class="form-control"
+                        type="text"
+                        inputmode="decimal"
+                        autocomplete="off"
+                        maxlength="12"
+                        :value="form[field.key]"
+                        :disabled="field.readonly"
+                        @input="onNumericInput(field.key, $event)"
+                        @change="onNumericBlur(field.key, $event)"
+                    />
+                </b-input-group>
+                <b-button
+                    v-if="field.key === 'cogs' && hasCogsCatalog"
+                    variant="outline-secondary"
+                    size="sm"
+                    class="mt-1"
+                    :disabled="!parseNum(form.diameter)"
+                    @click="onPickCogs"
+                >
+                    Подобрать по каталогу
+                </b-button>
+            </b-form-group>
+        </div>
     </div>
 </template>
 

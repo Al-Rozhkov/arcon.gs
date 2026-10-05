@@ -3,9 +3,11 @@
     <main class="container">
       <series-modes-page
         :series="$page.series"
-        :tools="$page.tools.edges"
         :modes="$page.modes.edges"
-      />
+        :title="'Калькулятор режимов резания ' + $page.series.title"
+      >
+        <series-page-modes-calculator :tools="$page.tools.edges" :modes="$page.modes.edges" />
+      </series-modes-page>
     </main>
   </page-layout>
 </template>
@@ -88,11 +90,13 @@ query Drill($path: String, $id: String!, $cuttingModesSeries: String) {
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesModesPage from '~/components/catalog/SeriesModesPage.vue'
+import SeriesPageModesCalculator from '~/components/catalog/SeriesPageModesCalculator.vue'
 
 export default {
   components: {
     PageLayout,
     SeriesModesPage,
+    SeriesPageModesCalculator,
   },
 }
 </script>

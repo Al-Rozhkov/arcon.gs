@@ -1,18 +1,15 @@
 <template>
   <page-layout>
     <main class="container">
-      <series-modes-page
-        :series="$page.series"
-        :tools="$page.tools.edges"
-        :modes="$page.modes.edges"
-        tables
-      />
+      <series-modes-page :series="$page.series" :modes="$page.modes.edges">
+        <series-cutting-modes-tables :modes="$page.modes.edges" />
+      </series-modes-page>
     </main>
   </page-layout>
 </template>
 
 <page-query>
-query Drill($path: String, $id: String!, $cuttingModesSeries: String) {
+query Drill($path: String, $cuttingModesSeries: String) {
   series: productDrill(path: $path) {
     title
     keywords
@@ -50,17 +47,6 @@ query Drill($path: String, $id: String!, $cuttingModesSeries: String) {
     }
     hasCuttingModes
   }
-  tools: allProductItemDrill(
-    filter: { series: { eq: $id } }
-    sortBy: "id"
-    order: ASC
-  ) {
-    edges {
-      node {
-        d1
-      }
-    }
-  }
   modes: allCuttingMode(
     filter: { series: { eq: $cuttingModesSeries } }
     sortBy: "id"
@@ -89,11 +75,13 @@ query Drill($path: String, $id: String!, $cuttingModesSeries: String) {
 <script>
 import PageLayout from '~/layouts/Catalog.vue'
 import SeriesModesPage from '~/components/catalog/SeriesModesPage.vue'
+import SeriesCuttingModesTables from '~/components/catalog/SeriesCuttingModesTables.vue'
 
 export default {
   components: {
     PageLayout,
     SeriesModesPage,
+    SeriesCuttingModesTables,
   },
 }
 </script>
